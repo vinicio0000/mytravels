@@ -21,7 +21,7 @@
       width: 100vw;
     }
 
-    /* Box per la selezione dell'anno */
+    /* Menu di selezione dell'anno */
     #filtro-anno-container {
       position: absolute;
       top: 15px;
@@ -45,7 +45,7 @@
       cursor: pointer;
     }
 
-    /* Stile per le immagini nei Popup */
+    /* Immagini nei Popup */
     .popup-foto {
       max-width: 220px;
       max-height: 160px;
@@ -58,7 +58,7 @@
 </head>
 <body>
 
-  <!-- Menu Filtro Anno -->
+  <!-- Box Filtro Anno -->
   <div id="filtro-anno-container">
     <label for="select-anno"><b>Seleziona Anno:</b></label>
     <select id="select-anno" onchange="filtraPerAnno()">
@@ -66,17 +66,15 @@
     </select>
   </div>
 
-  <!-- Contenitore Mappa -->
+  <!-- Mappa -->
   <div id="map"></div>
 
   <!-- Leaflet JS -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
   <script>
-    // Inizializza la mappa Leaflet
-    const map = L.map('map').setView([41.9028, 12.4964], 6); // Centrata sull'Italia
+    const map = L.map('map').setView([41.9028, 12.4964], 6);
 
-    // Aggiungi il layer OpenStreetMap
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 19,
       attribution: '© OpenStreetMap'
@@ -85,7 +83,6 @@
     let tuttiIDati = [];
     const layerMarkers = L.layerGroup().addTo(map);
 
-    // Carica il file dati.json
     fetch('dati.json')
       .then(response => response.json())
       .then(dati => {
@@ -95,23 +92,34 @@
       })
       .catch(err => console.error("Errore nel caricamento del file dati.json:", err));
 
-    // Popola il menu a tendina in base agli anni presenti nel file dati.json
+    // Popola il menu a tendina estraendo solo gli anni numerici a 4 cifre
     function popolaSelettoreAnni(dati) {
       const select = document.getElementById('select-anno');
       const anni = new Set();
 
       dati.forEach(item => {
-        // Estrae i primi 4 caratteri del nome (es. "2026" da "2026-05-13...")
-        if (item.nome) {
-          const anno = item.nome.substring(0, 4);
-          if (!isNaN(anno) && anno.length === 4) {
-            anni.add(anno);
+        let annoTrovato = null;
+
+        if (item.anno && item.anno.length === 4 && !isNaN(item.anno)) {
+          annoTrovato = item.anno;
+        } else if (item.nome) {
+          const primi4 = item.nome.substring(0, 4);
+          if (/^\d{4}$/.test(primi4)) {
+            annoTrovato = primi4;
           }
+        }
+
+        if (annoTrovato) {
+          anni.add(annoTrovato);
         }
       });
 
-      // Ordina gli anni dal più recente al più vecchio
-      Array.from(anni).sort((a, b) => b - a).forEach(anno => {
+      // Ordina gli anni come numeri (dal più recente al più vecchio)
+      const anniOrdinati = Array.from(anni).sort((a, b) => Number(b) - Number(a));
+
+      select.innerHTML = '<option value="tutti">Tutti gli anni</option>';
+      
+      anniOrdinati.forEach(anno => {
         const option = document.createElement('option');
         option.value = anno;
         option.textContent = anno;
@@ -119,7 +127,6 @@
       });
     }
 
-    // Disegna i marker sulla mappa
     function disegnaMarker(datiDaMostrare) {
       layerMarkers.clearLayers();
       const puntiValidi = [];
@@ -128,10 +135,7 @@
         const lat = parseFloat(p.lat);
         let lon = parseFloat(p.lon !== undefined ? p.lon : p.lng);
 
-        // Correggi la longitudine se in formato 0-360
-        if (lon > 180) {
-          lon = lon - 360;
-        }
+        if (lon > 180) lon = lon - 360;
 
         if (!isNaN(lat) && !isNaN(lon) && lat !== 0 && lon !== 0) {
           const marker = L.marker([lat, lon]);
@@ -152,21 +156,23 @@
         }
       });
 
-      // Inquadra automaticamente i marker presenti sulla mappa
       if (puntiValidi.length > 0) {
         const bounds = L.latLngBounds(puntiValidi);
         map.fitBounds(bounds, { padding: [50, 50], maxZoom: 15 });
       }
     }
 
-    // Filtra i marker quando l'utente cambia l'opzione nel menu
     function filtraPerAnno() {
       const annoSelezionato = document.getElementById('select-anno').value;
 
       if (annoSelezionato === 'tutti') {
         disegnaMarker(tuttiIDati);
       } else {
-        const datiFiltrati = tuttiIDati.filter(item => item.nome && item.nome.startsWith(annoSelezionato));
+        const datiFiltrati = tuttiIDati.filter(item => {
+          if (item.anno === annoSelezionato) return true;
+          if (item.nome && item.nome.startsWith(annoSelezionato)) return true;
+          return false;
+        });
         disegnaMarker(datiFiltrati);
       }
     }
