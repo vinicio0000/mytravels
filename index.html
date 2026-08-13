@@ -53,9 +53,10 @@
       font-size: 35px;
       font-weight: bold;
       cursor: pointer;
+      user-select: none;
     }
 
-    /* Cursore a manina sulla foto del popup per far capire che è cliccabile */
+    /* Cursore a manina sulla foto del popup */
     .popup-img {
       cursor: pointer;
       transition: transform 0.2s;
@@ -70,8 +71,8 @@
   <div id="map"></div>
 
   <!-- Finestra Modale per foto a tutto schermo -->
-  <div id="modal-foto" class="modal-foto" onclick="chiudiFotoA TuttoSchermo()">
-    <span class="modal-chiudi">&times;</span>
+  <div id="modal-foto" class="modal-foto" onclick="chiudiFotoATuttoSchermo()">
+    <span class="modal-chiudi" onclick="chiudiFotoATuttoSchermo()">&times;</span>
     <img id="img-full" src="" alt="Foto ingrandita">
   </div>
 
@@ -122,7 +123,6 @@
           const lon = parseFloat(p.lon !== undefined ? p.lon : p.lng);
 
           if (!isNaN(lat) && !isNaN(lon) && lat !== 0 && lon !== 0) {
-            // Aggiunto onclick sulla miniatura per richiamare il tutto schermo
             const popupContent = `
               <div style="text-align: center;">
                 <b>${p.nome}</b><br>
