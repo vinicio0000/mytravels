@@ -19,11 +19,61 @@
       width: 100%;
       height: 100vh;
     }
+
+    /* Stile per il visualizzatore a tutto schermo (Modal) */
+    .modal-foto {
+      display: none; /* Nascosto di default */
+      position: fixed;
+      z-index: 9999; /* Sta sopra la mappa */
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9); /* Sfondo scuro semi-trasparente */
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    /* Immagine nel visualizzatore */
+    .modal-foto img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 6px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+      object-fit: contain;
+    }
+
+    /* Pulsante di chiusura (X) */
+    .modal-chiudi {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      color: white;
+      font-size: 35px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    /* Cursore a manina sulla foto del popup per far capire che è cliccabile */
+    .popup-img {
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .popup-img:hover {
+      transform: scale(1.03);
+    }
   </style>
 </head>
 <body>
 
   <div id="map"></div>
+
+  <!-- Finestra Modale per foto a tutto schermo -->
+  <div id="modal-foto" class="modal-foto" onclick="chiudiFotoA TuttoSchermo()">
+    <span class="modal-chiudi">&times;</span>
+    <img id="img-full" src="" alt="Foto ingrandita">
+  </div>
 
   <!-- Leaflet JS -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -38,26 +88,49 @@
       attribution: '© OpenStreetMap'
     }).addTo(map);
 
+    // Funzione per aprire la foto a tutto schermo
+    function apriFotoATuttoSchermo(urlFoto) {
+      const modal = document.getElementById('modal-foto');
+      const imgFull = document.getElementById('img-full');
+      imgFull.src = urlFoto;
+      modal.style.display = 'flex';
+    }
+
+    // Funzione per chiudere la foto
+    function chiudiFotoATuttoSchermo() {
+      document.getElementById('modal-foto').style.display = 'none';
+    }
+
+    // Permette di chiudere la foto anche premendo il tasto 'ESC' sulla tastiera
+    document.addEventListener('keydown', function(event) {
+      if (event.key === "Escape") {
+        chiudiFotoATuttoSchermo();
+      }
+    });
+
     // Chiamata dati.json
     fetch('dati.json')
       .then(response => {
         if (!response.ok) {
-          throw new Error('Errore nella risposta di rete');
+          throw new Error('Errore nel caricamento del file JSON');
         }
         return response.json();
       })
       .then(dati => {
         dati.forEach(p => {
-          // Estrazione sicura della latitudine e longitudine (gestisce sia "lon" che "lng")
           const lat = parseFloat(p.lat);
           const lon = parseFloat(p.lon !== undefined ? p.lon : p.lng);
 
-          // Verifica che le coordinate siano numeri validi e diversi da 0
           if (!isNaN(lat) && !isNaN(lon) && lat !== 0 && lon !== 0) {
+            // Aggiunto onclick sulla miniatura per richiamare il tutto schermo
             const popupContent = `
               <div style="text-align: center;">
                 <b>${p.nome}</b><br>
-                <img src="${p.foto}" style="max-width: 200px; max-height: 150px; margin-top: 5px; border-radius: 4px;">
+                <img src="${p.foto}" 
+                     class="popup-img"
+                     style="max-width: 200px; max-height: 150px; margin-top: 5px; border-radius: 4px;"
+                     onclick="apriFotoATuttoSchermo('${p.foto}')"
+                     title="Clicca per ingrandire">
               </div>
             `;
             
@@ -68,7 +141,7 @@
         });
       })
       .catch(err => {
-        console.error('Errore durante il caricamento dei dati (CORS in locale o file mancante):', err);
+        console.error('Errore durante il caricamento dei dati:', err);
       });
   </script>
 </body>
