@@ -3,134 +3,143 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mappa delle Miei Foto</title>
   
-  <!-- Leaflet CSS -->
+  <!-- Titolo della scheda del browser -->
+  <title>Vinicio and Luisa's travels around the World</title>
+  
+  <!-- Foglio di stile Leaflet per la mappa -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   
   <style>
-    body, html {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      font-family: Arial, sans-serif;
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, sans-serif; }
+    body { display: flex; height: 100vh; overflow: hidden; }
+    
+    #map { flex: 3; height: 100%; }
+    
+    #sidebar { 
+      flex: 1; 
+      height: 100%; 
+      background: #f8f9fa; 
+      border-left: 2px solid #dee2e6; 
+      padding: 20px; 
+      overflow-y: auto; 
     }
-    #map {
-      width: 100%;
-      height: 100vh;
+    
+    h1 { margin-bottom: 10px; font-size: 1.3rem; color: #1a252f; line-height: 1.2; }
+    .info-text { color: #666; font-size: 0.85rem; margin-bottom: 15px; }
+    
+    .gallery { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); 
+      gap: 10px; 
     }
-    /* Stile del menu filtro in sovrimpressione */
-    .filtro-container {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      z-index: 1000;
-      background: white;
-      padding: 10px 15px;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-    }
-    .filtro-container label {
-      font-weight: bold;
-      margin-right: 5px;
-    }
-    .filtro-container select {
-      padding: 5px;
-      font-size: 14px;
-      border-radius: 4px;
+    
+    .gallery img { 
+      width: 100%; 
+      height: 80px; 
+      object-fit: cover; 
+      border-radius: 6px; 
+      cursor: pointer; 
       border: 1px solid #ccc;
+      transition: transform 0.2s;
+    }
+
+    .gallery img:hover { transform: scale(1.05); }
+    
+    .error-msg {
+      color: #721c24;
+      background-color: #f8d7da;
+      border: 1px solid #f5c6cb;
+      padding: 10px;
+      border-radius: 5px;
+      font-size: 0.85rem;
     }
   </style>
 </head>
 <body>
 
-  <div class="filtro-container">
-    <label for="select-anno">Filtra per anno:</label>
-    <select id="select-anno" onchange="filtraPerAnno()">
-      <option value="tutti">Tutti gli anni</option>
-    </select>
-  </div>
-
   <div id="map"></div>
 
-  <!-- Leaflet JS -->
+  <div id="sidebar">
+    <!-- Nome del sito visibile nella barra laterale -->
+    <h1>Vinicio and Luisa's travels around the World</h1>
+    <p class="info-text">Clicca su un punto o sulla miniatura per centrare la foto sulla mappa.</p>
+    <div id="error-container"></div>
+    <div id="gallery" class="gallery"></div>
+  </div>
+
+  <!-- Libreria Leaflet JS -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-
+  
   <script>
-    // Inizializza la mappa
-    const map = L.map('map').setView([41.9028, 12.4964], 6); // Coordinate default (Italia)
-
-    // Aggiungi la mappa base (OpenStreetMap)
+    // 1. Inizializza la Mappa centrata sull'Italia
+    const map = L.map('map').setView([41.9028, 12.4964], 6);
+    
+    // Inserisce i tasselli OpenStreetMap
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      maxZoom: 19,
       attribution: '© OpenStreetMap'
     }).addTo(map);
 
-    let tuttiIPunti = [];
-    let layerGroup = L.layerGroup().addTo(map);
+    const bounds = [];
 
-    // Carica il file dati.json
+    // 2. Carica ed elabora il file dati.json
     fetch('dati.json')
-      .then(response => response.json())
-      .then(dati => {
-        tuttiIPunti = dati;
-        popolaSelezionaAnni(dati);
-        mostraMarker(dati);
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Impossibile caricare il file dati.json (Stato: ' + response.status + ')');
+        }
+        return response.json();
       })
-      .catch(err => console.error('Errore nel caricamento del file JSON:', err));
+      .then(punti => {
+        const gallery = document.getElementById('gallery');
 
-    // Popola il menu a tendina con gli anni presenti nel JSON
-    function popolaSelezionaAnni(dati) {
-      const select = document.getElementById('select-anno');
-      const anniSet = new Set();
+        if (!punti || punti.length === 0) {
+          document.getElementById('error-container').innerHTML = 
+            '<div class="error-msg">⚠️ Il file dati.json è vuoto o non contiene punti GPS validi.</div>';
+          return;
+        }
 
-      dati.forEach(p => {
-        if (p.anno) anniSet.add(p.anno);
-      });
-
-      // Ordina gli anni dal più recente al più vecchio
-      const anniOrdinati = Array.from(anniSet).sort((a, b) => b - a);
-
-      anniOrdinati.forEach(anno => {
-        const option = document.createElement('option');
-        option.value = anno;
-        option.textContent = anno;
-        select.appendChild(option);
-      });
-    }
-
-    // Disegna i marker sulla mappa
-    function mostraMarker(punti) {
-      layerGroup.clearLayers(); // Pulisce i vecchi marker
-
-      punti.forEach(p => {
-        // Mostra solo i punti con coordinate valide
-        if (p.lat !== 0 && p.lng !== 0) {
+        punti.forEach(p => {
+          // Crea il Marker sulla mappa
+          const marker = L.marker([p.lat, p.lng]).addTo(map);
+          
+          // Contenuto del fumetto Popup
           const popupContent = `
-            <div style="text-align: center;">
-              <b>${p.nome}</b> (${p.anno || ''})<br>
-              <img src="${p.foto}" style="max-width: 200px; max-height: 150px; margin-top: 5px; border-radius: 4px;">
+            <div style="text-align:center;">
+              <strong>${p.nome}</strong><br>
+              <img src="${p.foto}" style="max-width:200px; max-height:150px; border-radius:4px; margin-top:5px; object-fit:cover;">
             </div>
           `;
+          marker.bindPopup(popupContent);
+
+          // Crea l'elemento miniatura nella barra laterale
+          const img = document.createElement('img');
+          img.src = p.foto;
+          img.alt = p.nome;
+          img.title = p.nome;
           
-          L.marker([p.lat, p.lng])
-            .bindPopup(popupContent)
-            .addTo(layerGroup);
+          // Cliccando sulla foto nella barra laterale ci si sposta sul marker
+          img.onclick = () => {
+            map.setView([p.lat, p.lng], 15);
+            marker.openPopup();
+          };
+          
+          gallery.appendChild(img);
+
+          // Registra le coordinate per la centratura automatica dello zoom
+          bounds.push([p.lat, p.lng]);
+        });
+
+        // Adatta automaticamente lo zoom per mostrare tutti i punti inseriti
+        if (bounds.length > 0) {
+          map.fitBounds(bounds, { padding: [50, 50] });
         }
+      })
+      .catch(err => {
+        console.error("Errore nel caricamento dei dati JSON:", err);
+        document.getElementById('error-container').innerHTML = 
+          '<div class="error-msg">❌ Errore nel caricamento di <strong>dati.json</strong>.<br>Se sei in locale senza server web, il browser potrebbe aver bloccato il file per sicurezza (CORS).</div>';
       });
-    }
-
-    // Funzione richiamata al cambio opzione del menu
-    function filtraPerAnno() {
-      const annoSelezionato = document.getElementById('select-anno').value;
-
-      if (annoSelezionato === 'tutti') {
-        mostraMarker(tuttiIPunti);
-      } else {
-        const puntiFiltrati = tuttiIPunti.filter(p => p.anno == annoSelezionato);
-        mostraMarker(puntiFiltrati);
-      }
-    }
   </script>
 </body>
 </html>
