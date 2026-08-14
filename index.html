@@ -10,7 +10,7 @@
   <meta name="keywords" content="The Travel Map of Vinicio and Luisa, Vinicio Luisa travel map, travel photos, geotagged map">
   <meta name="robots" content="index, follow">
 
-  <!-- Open Graph per Social (WhatsApp, Facebook, Telegram) -->
+  <!-- Open Graph per Social -->
   <meta property="og:title" content="The Travel Map of Vinicio and Luisa">
   <meta property="og:description" content="Explore our travel memories and interactive photo map around the world.">
   <meta property="og:type" content="website">
@@ -31,7 +31,7 @@
       width: 100vw;
     }
 
-    /* Intestazione Titolo e Sottotitolo (in alto a sinistra) */
+    /* Intestazione Titolo e Sottotitolo */
     #header-container {
       position: absolute;
       top: 15px;
@@ -59,7 +59,7 @@
       font-style: italic;
     }
 
-    /* Menu di selezione dell'anno (in alto a destra) */
+    /* Menu di selezione dell'anno */
     #filtro-anno-container {
       position: absolute;
       top: 15px;
@@ -83,7 +83,7 @@
       cursor: pointer;
     }
 
-    /* Legenda dei colori (in basso a destra) */
+    /* Legenda dei colori */
     #legenda-container {
       position: absolute;
       bottom: 25px;
@@ -121,6 +121,21 @@
       border-radius: 50%;
       border: 1px solid rgba(0, 0, 0, 0.2);
       display: inline-block;
+    }
+
+    /* Style Tooltip (Passaggio Mouse) */
+    .custom-tooltip {
+      background: rgba(44, 62, 80, 0.9);
+      color: #ffffff;
+      border: none;
+      border-radius: 5px;
+      padding: 6px 10px;
+      font-size: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+
+    .leaflet-tooltip-top:before {
+      border-top-color: rgba(44, 62, 80, 0.9);
     }
 
     /* Immagini nei Popup */
@@ -179,17 +194,14 @@
     let tuttiIDati = [];
     const layerMarkers = L.layerGroup().addTo(map);
 
-    // Mappa Anno -> Colore Hex
     const mappaColoriAnni = {};
 
-    // Tavolozza di colori vivaci per distinguere gli anni
     const tavolozzaColori = [
       '#e6194B', '#3cb44b', '#ffe119', '#4363d8', '#f58231', 
       '#911eb4', '#42d4f4', '#f032e6', '#bfef45', '#fabed4', 
       '#469990', '#dcbeff', '#9A6324', '#800000', '#000075'
     ];
 
-    // Genera un'icona SVG colorata dello stesso stile di Leaflet
     function creaIconaColorata(coloreHex) {
       const svgPin = `
         <svg width="25" height="41" viewBox="0 0 25 41" xmlns="http://www.w3.org/2000/svg">
@@ -294,9 +306,21 @@
 
           const marker = L.marker([lat, lon], opzioniMarker);
 
+          // Info al passaggio del mouse (HOVER)
+          const dataMostrata = p.data ? p.data : (p.anno ? p.anno : 'N/A');
+          const tooltipContent = `<b>${p.nome}</b><br>📅 ${dataMostrata}`;
+          
+          marker.bindTooltip(tooltipContent, {
+            direction: 'top',
+            offset: [0, -35],
+            className: 'custom-tooltip'
+          });
+
+          // Contenuto del Popup al CLICK
           const popupContent = `
             <div style="text-align: center;">
               <b style="font-size: 13px;">${p.nome}</b><br>
+              <small style="color: #666;">📅 ${dataMostrata}</small><br>
               <a href="${p.foto}" target="_blank">
                 <img src="${p.foto}" class="popup-foto" alt="${p.nome}">
               </a><br>
