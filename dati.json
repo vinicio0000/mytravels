@@ -1,138 +1,111 @@
 [
   {
-    "nome": "2002_dsc",
-    "anno": "Sconosciuto",
-    "viaggio": "Viaggio 1",
-    "data": "Anno Sconosciuto",
-    "lat": 26.908702,
-    "lon": 70.92472,
-    "foto": "foto/2002_dsc.jpg"
-  },
-  {
-    "nome": "2002_DSC00016",
-    "anno": "Sconosciuto",
-    "viaggio": "Viaggio 2",
-    "data": "Anno Sconosciuto",
-    "lat": 26.9845,
-    "lon": 75.852366,
-    "foto": "foto/2002_DSC00016.jpg"
-  },
-  {
-    "nome": "2002_DSC00041",
-    "anno": "Sconosciuto",
-    "viaggio": "Viaggio 3",
-    "data": "Anno Sconosciuto",
-    "lat": 27.939152,
-    "lon": 73.282864,
-    "foto": "foto/2002_DSC00041.jpg"
-  },
-  {
-    "nome": "2002_DSC00043",
-    "anno": "Sconosciuto",
-    "viaggio": "Viaggio 4",
-    "data": "Anno Sconosciuto",
-    "lat": 28.0049,
-    "lon": 73.301658,
-    "foto": "foto/2002_DSC00043.jpg"
-  },
-  {
-    "nome": "2002_DSC00074",
-    "anno": "Sconosciuto",
-    "viaggio": "Viaggio 5",
-    "data": "Anno Sconosciuto",
-    "lat": 26.726031,
-    "lon": 72.912431,
-    "foto": "foto/2002_DSC00074.jpg"
-  },
-  {
-    "nome": "2002_DSC00103",
-    "anno": "Sconosciuto",
-    "viaggio": "Viaggio 6",
-    "data": "Anno Sconosciuto",
-    "lat": 24.633286,
-    "lon": 73.683929,
-    "foto": "foto/2002_DSC00103.jpg"
-  },
-  {
-    "nome": "2002_DSC00104",
-    "anno": "Sconosciuto",
-    "viaggio": "Viaggio 7",
-    "data": "Anno Sconosciuto",
-    "lat": 24.675098,
-    "lon": 73.637924,
-    "foto": "foto/2002_DSC00104.jpg"
-  },
-  {
-    "nome": "2002_DSC00120",
-    "anno": "Sconosciuto",
-    "viaggio": "Viaggio 8",
-    "data": "Anno Sconosciuto",
-    "lat": 24.573548,
-    "lon": 73.691053,
-    "foto": "foto/2002_DSC00120.jpg"
-  },
-  {
-    "nome": "2002_india 108",
+    "nome": "2002-08-06-00h00m00-1",
     "anno": "2002",
-    "viaggio": "2002 - Marzo",
-    "data": "14/03/2002",
+    "viaggio": "2002 - Agosto",
+    "data": "06/08/2002",
     "lat": 26.924199,
     "lon": 75.826983,
-    "foto": "foto/2002_india 108.jpg"
+    "foto": "foto/2002-08-06-00h00m00-1.jpg"
   },
   {
-    "nome": "2002_india 140",
+    "nome": "2002-08-06-00h00m00",
     "anno": "2002",
-    "viaggio": "2002 - Marzo",
-    "data": "14/03/2002",
-    "lat": 27.673433,
-    "lon": 71.661849,
-    "foto": "foto/2002_india 140.jpg"
-  },
-  {
-    "nome": "2002_dsc00010",
-    "anno": "2002",
-    "viaggio": "2002 - Marzo",
-    "data": "15/03/2002",
-    "lat": 26.984,
-    "lon": 75.852816,
-    "foto": "foto/2002_dsc00010.jpg"
-  },
-  {
-    "nome": "2002_dsc00022",
-    "anno": "2002",
-    "viaggio": "2002 - Marzo",
-    "data": "15/03/2002",
-    "lat": 26.986115,
-    "lon": 75.8507,
-    "foto": "foto/2002_dsc00022.jpg"
-  },
-  {
-    "nome": "2002_dsc00065",
-    "anno": "2002",
-    "viaggio": "2002 - Marzo",
-    "data": "15/03/2002",
-    "lat": 26.95528,
-    "lon": 70.8877,
-    "foto": "foto/2002_dsc00065.jpg"
-  },
-  {
-    "nome": "2002_india 103",
-    "anno": "2002",
-    "viaggio": "2002 - Marzo",
-    "data": "16/03/2002",
+    "viaggio": "2002 - Agosto",
+    "data": "06/08/2002",
     "lat": 26.916849,
     "lon": 75.858877,
-    "foto": "foto/2002_india 103.jpg"
+    "foto": "foto/2002-08-06-00h00m00.jpg"
   },
   {
-    "nome": "2002_India 24",
+    "nome": "2002-08-07-00h00m00",
     "anno": "2002",
-    "viaggio": "2002 - Marzo",
-    "data": "16/03/2002",
+    "viaggio": "2002 - Agosto",
+    "data": "07/08/2002",
+    "lat": 27.939152,
+    "lon": 73.282864,
+    "foto": "foto/2002-08-07-00h00m00.jpg"
+  },
+  {
+    "nome": "2002-08-08-00h00m00",
+    "anno": "2002",
+    "viaggio": "2002 - Agosto",
+    "data": "08/08/2002",
+    "lat": 26.9845,
+    "lon": 75.852366,
+    "foto": "foto/2002-08-08-00h00m00.jpg"
+  },
+  {
+    "nome": "2002-08-09-00h00m00",
+    "anno": "2002",
+    "viaggio": "2002 - Agosto",
+    "data": "09/08/2002",
+    "lat": 28.0049,
+    "lon": 73.301658,
+    "foto": "foto/2002-08-09-00h00m00.jpg"
+  },
+  {
+    "nome": "2002-08-10-00h00m00-1",
+    "anno": "2002",
+    "viaggio": "2002 - Agosto",
+    "data": "10/08/2002",
     "lat": 26.91303,
     "lon": 70.912725,
-    "foto": "foto/2002_India 24.jpg"
+    "foto": "foto/2002-08-10-00h00m00-1.jpg"
+  },
+  {
+    "nome": "2002-08-10-00h00m00",
+    "anno": "2002",
+    "viaggio": "2002 - Agosto",
+    "data": "10/08/2002",
+    "lat": 26.726031,
+    "lon": 72.912431,
+    "foto": "foto/2002-08-10-00h00m00.jpg"
+  },
+  {
+    "nome": "2002-08-11-00h00m00",
+    "anno": "2002",
+    "viaggio": "2002 - Agosto",
+    "data": "11/08/2002",
+    "lat": 26.908702,
+    "lon": 70.92472,
+    "foto": "foto/2002-08-11-00h00m00.jpg"
+  },
+  {
+    "nome": "2002-08-12-00h00m00-1",
+    "anno": "2002",
+    "viaggio": "2002 - Agosto",
+    "data": "12/08/2002",
+    "lat": 24.675098,
+    "lon": 73.637924,
+    "foto": "foto/2002-08-12-00h00m00-1.jpg"
+  },
+  {
+    "nome": "2002-08-12-00h00m00-2",
+    "anno": "2002",
+    "viaggio": "2002 - Agosto",
+    "data": "12/08/2002",
+    "lat": 27.673433,
+    "lon": 71.661849,
+    "foto": "foto/2002-08-12-00h00m00-2.jpg"
+  },
+  {
+    "nome": "2002-08-12-00h00m00",
+    "anno": "2002",
+    "viaggio": "2002 - Agosto",
+    "data": "12/08/2002",
+    "lat": 24.633286,
+    "lon": 73.683929,
+    "foto": "foto/2002-08-12-00h00m00.jpg"
+  },
+  {
+    "nome": "2002-08-14-00h00m00",
+    "anno": "2002",
+    "viaggio": "2002 - Agosto",
+    "data": "14/08/2002",
+    "lat": 24.573548,
+    "lon": 73.691053,
+    "foto": "foto/2002-08-14-00h00m00.jpg"
   },
   {
     "nome": "2023-02-23-22h51m31",
@@ -1055,7 +1028,7 @@
   {
     "nome": "2025-06-19-20h11m42",
     "anno": "2025",
-    "viaggio": "2025 - Maggio / Giugno",
+    "viaggio": "2025 - Giugno",
     "data": "19/06/2025",
     "lat": 45.448655,
     "lon": 13.516095,
@@ -1064,7 +1037,7 @@
   {
     "nome": "2025-06-20-11h46m15",
     "anno": "2025",
-    "viaggio": "2025 - Maggio / Giugno",
+    "viaggio": "2025 - Giugno",
     "data": "20/06/2025",
     "lat": 45.448777,
     "lon": 13.516197,
@@ -1073,7 +1046,7 @@
   {
     "nome": "2025-06-20-19h41m27",
     "anno": "2025",
-    "viaggio": "2025 - Maggio / Giugno",
+    "viaggio": "2025 - Giugno",
     "data": "20/06/2025",
     "lat": 45.436081,
     "lon": 13.523667,
@@ -1082,7 +1055,7 @@
   {
     "nome": "2025-06-21-14h55m56",
     "anno": "2025",
-    "viaggio": "2025 - Maggio / Giugno",
+    "viaggio": "2025 - Giugno",
     "data": "21/06/2025",
     "lat": 45.453818,
     "lon": 13.522353,
@@ -1091,7 +1064,7 @@
   {
     "nome": "2025-06-22-07h40m33",
     "anno": "2025",
-    "viaggio": "2025 - Maggio / Giugno",
+    "viaggio": "2025 - Giugno",
     "data": "22/06/2025",
     "lat": 45.454182,
     "lon": 13.51753,
@@ -1100,7 +1073,7 @@
   {
     "nome": "2025-06-22-11h30m01",
     "anno": "2025",
-    "viaggio": "2025 - Maggio / Giugno",
+    "viaggio": "2025 - Giugno",
     "data": "22/06/2025",
     "lat": 45.448913,
     "lon": 13.515892,
@@ -1109,7 +1082,7 @@
   {
     "nome": "2025-06-22-20h37m39",
     "anno": "2025",
-    "viaggio": "2025 - Maggio / Giugno",
+    "viaggio": "2025 - Giugno",
     "data": "22/06/2025",
     "lat": 45.316571,
     "lon": 13.561938,
@@ -1118,7 +1091,7 @@
   {
     "nome": "2025-06-22-20h55m59",
     "anno": "2025",
-    "viaggio": "2025 - Maggio / Giugno",
+    "viaggio": "2025 - Giugno",
     "data": "22/06/2025",
     "lat": 45.316124,
     "lon": 13.558675,
@@ -1127,7 +1100,7 @@
   {
     "nome": "2025-06-23-21h08m46",
     "anno": "2025",
-    "viaggio": "2025 - Maggio / Giugno",
+    "viaggio": "2025 - Giugno",
     "data": "23/06/2025",
     "lat": 45.44795,
     "lon": 13.550302,
@@ -1136,7 +1109,7 @@
   {
     "nome": "2025-06-25-11h17m24",
     "anno": "2025",
-    "viaggio": "2025 - Maggio / Giugno",
+    "viaggio": "2025 - Giugno",
     "data": "25/06/2025",
     "lat": 45.513656,
     "lon": 13.589858,
@@ -1145,7 +1118,7 @@
   {
     "nome": "2025-06-26-21h50m19",
     "anno": "2025",
-    "viaggio": "2025 - Maggio / Giugno",
+    "viaggio": "2025 - Giugno",
     "data": "26/06/2025",
     "lat": 45.433001,
     "lon": 13.51911,
@@ -1154,7 +1127,7 @@
   {
     "nome": "2025-06-26-21h50m32",
     "anno": "2025",
-    "viaggio": "2025 - Maggio / Giugno",
+    "viaggio": "2025 - Giugno",
     "data": "26/06/2025",
     "lat": 45.433001,
     "lon": 13.51911,
@@ -1163,7 +1136,7 @@
   {
     "nome": "2025-09-30-22h11m43",
     "anno": "2025",
-    "viaggio": "2025 Settembre / 2026 Gennaio",
+    "viaggio": "2025 - Settembre / Ottobre",
     "data": "30/09/2025",
     "lat": 42.119614,
     "lon": 11.771788,
@@ -1172,7 +1145,7 @@
   {
     "nome": "2025-10-01-19h52m34",
     "anno": "2025",
-    "viaggio": "2025 Settembre / 2026 Gennaio",
+    "viaggio": "2025 - Settembre / Ottobre",
     "data": "01/10/2025",
     "lat": 41.332149,
     "lon": 2.166881,
@@ -1181,7 +1154,7 @@
   {
     "nome": "2025-10-02-15h48m57",
     "anno": "2025",
-    "viaggio": "2025 Settembre / 2026 Gennaio",
+    "viaggio": "2025 - Settembre / Ottobre",
     "data": "02/10/2025",
     "lat": 40.370562,
     "lon": 0.40273,
@@ -1190,7 +1163,7 @@
   {
     "nome": "2025-10-04-12h06m35",
     "anno": "2025",
-    "viaggio": "2025 Settembre / 2026 Gennaio",
+    "viaggio": "2025 - Settembre / Ottobre",
     "data": "04/10/2025",
     "lat": 40.370445,
     "lon": 0.401937,
@@ -1199,7 +1172,7 @@
   {
     "nome": "2025-10-05-10h51m09",
     "anno": "2025",
-    "viaggio": "2025 Settembre / 2026 Gennaio",
+    "viaggio": "2025 - Settembre / Ottobre",
     "data": "05/10/2025",
     "lat": 40.39063,
     "lon": 0.412041,
@@ -1208,7 +1181,7 @@
   {
     "nome": "2025-10-05-19h52m02",
     "anno": "2025",
-    "viaggio": "2025 Settembre / 2026 Gennaio",
+    "viaggio": "2025 - Settembre / Ottobre",
     "data": "05/10/2025",
     "lat": 40.358868,
     "lon": 0.407433,
@@ -1217,7 +1190,7 @@
   {
     "nome": "2025-10-07-16h38m30",
     "anno": "2025",
-    "viaggio": "2025 Settembre / 2026 Gennaio",
+    "viaggio": "2025 - Settembre / Ottobre",
     "data": "07/10/2025",
     "lat": 37.879143,
     "lon": -0.767285,
@@ -1226,7 +1199,7 @@
   {
     "nome": "2025-10-07-16h51m08",
     "anno": "2025",
-    "viaggio": "2025 Settembre / 2026 Gennaio",
+    "viaggio": "2025 - Settembre / Ottobre",
     "data": "07/10/2025",
     "lat": 37.879023,
     "lon": -0.767031,
@@ -1235,7 +1208,7 @@
   {
     "nome": "2025-10-17-17h19m36",
     "anno": "2025",
-    "viaggio": "2025 Settembre / 2026 Gennaio",
+    "viaggio": "2025 - Ottobre",
     "data": "17/10/2025",
     "lat": 36.596325,
     "lon": -4.636542,
@@ -1244,7 +1217,7 @@
   {
     "nome": "2025-10-17-17h22m29",
     "anno": "2025",
-    "viaggio": "2025 Settembre / 2026 Gennaio",
+    "viaggio": "2025 - Ottobre",
     "data": "17/10/2025",
     "lat": 36.596074,
     "lon": -4.636358,
@@ -1253,7 +1226,7 @@
   {
     "nome": "2025-10-17-18h00m57",
     "anno": "2025",
-    "viaggio": "2025 Settembre / 2026 Gennaio",
+    "viaggio": "2025 - Ottobre",
     "data": "17/10/2025",
     "lat": 36.596894,
     "lon": -4.63777,
@@ -1262,7 +1235,7 @@
   {
     "nome": "2025-10-18-17h43m29",
     "anno": "2025",
-    "viaggio": "2025 Settembre / 2026 Gennaio",
+    "viaggio": "2025 - Ottobre",
     "data": "18/10/2025",
     "lat": 36.485789,
     "lon": -4.954369,
@@ -1271,7 +1244,7 @@
   {
     "nome": "2025-10-18-18h05m02",
     "anno": "2025",
-    "viaggio": "2025 Settembre / 2026 Gennaio",
+    "viaggio": "2025 - Ottobre",
     "data": "18/10/2025",
     "lat": 36.48575,
     "lon": -4.953434,
@@ -1280,7 +1253,7 @@
   {
     "nome": "2025-10-18-19h10m57",
     "anno": "2025",
-    "viaggio": "2025 Settembre / 2026 Gennaio",
+    "viaggio": "2025 - Ottobre",
     "data": "18/10/2025",
     "lat": 36.51008,
     "lon": -4.884919,
@@ -1289,7 +1262,7 @@
   {
     "nome": "2025-10-22-10h48m11",
     "anno": "2025",
-    "viaggio": "2025 Settembre / 2026 Gennaio",
+    "viaggio": "2025 - Ottobre",
     "data": "22/10/2025",
     "lat": 37.206369,
     "lon": -7.236703,
@@ -1298,7 +1271,7 @@
   {
     "nome": "2025-10-23-17h51m47",
     "anno": "2025",
-    "viaggio": "2025 Settembre / 2026 Gennaio",
+    "viaggio": "2025 - Ottobre",
     "data": "23/10/2025",
     "lat": 37.087257,
     "lon": -8.253178,
@@ -1307,7 +1280,7 @@
   {
     "nome": "2025-10-24-10h55m40",
     "anno": "2025",
-    "viaggio": "2025 Settembre / 2026 Gennaio",
+    "viaggio": "2025 - Ottobre",
     "data": "24/10/2025",
     "lat": 37.07587,
     "lon": -8.277838,
@@ -1316,7 +1289,7 @@
   {
     "nome": "2025-10-24-10h57m37",
     "anno": "2025",
-    "viaggio": "2025 Settembre / 2026 Gennaio",
+    "viaggio": "2025 - Ottobre",
     "data": "24/10/2025",
     "lat": 37.076167,
     "lon": -8.277495,
@@ -1325,7 +1298,7 @@
   {
     "nome": "2025-10-24-11h01m02",
     "anno": "2025",
-    "viaggio": "2025 Settembre / 2026 Gennaio",
+    "viaggio": "2025 - Ottobre",
     "data": "24/10/2025",
     "lat": 37.075877,
     "lon": -8.277435,
@@ -1334,7 +1307,7 @@
   {
     "nome": "2025-10-24-11h05m02",
     "anno": "2025",
-    "viaggio": "2025 Settembre / 2026 Gennaio",
+    "viaggio": "2025 - Ottobre",
     "data": "24/10/2025",
     "lat": 37.075498,
     "lon": -8.278222,
@@ -1343,7 +1316,7 @@
   {
     "nome": "2025-10-24-11h32m38",
     "anno": "2025",
-    "viaggio": "2025 Settembre / 2026 Gennaio",
+    "viaggio": "2025 - Ottobre",
     "data": "24/10/2025",
     "lat": 37.074984,
     "lon": -8.280765,
@@ -1352,7 +1325,7 @@
   {
     "nome": "2025-10-24-11h35m08",
     "anno": "2025",
-    "viaggio": "2025 Settembre / 2026 Gennaio",
+    "viaggio": "2025 - Ottobre",
     "data": "24/10/2025",
     "lat": 37.074615,
     "lon": -8.281058,
@@ -1361,7 +1334,7 @@
   {
     "nome": "2025-10-24-20h03m16",
     "anno": "2025",
-    "viaggio": "2025 Settembre / 2026 Gennaio",
+    "viaggio": "2025 - Ottobre",
     "data": "24/10/2025",
     "lat": 37.08954,
     "lon": -8.25387,
@@ -1370,7 +1343,7 @@
   {
     "nome": "2025-10-25-09h52m30",
     "anno": "2025",
-    "viaggio": "2025 Settembre / 2026 Gennaio",
+    "viaggio": "2025 - Ottobre",
     "data": "25/10/2025",
     "lat": 37.076092,
     "lon": -8.277383,
@@ -1379,7 +1352,7 @@
   {
     "nome": "2025-10-25-12h07m26",
     "anno": "2025",
-    "viaggio": "2025 Settembre / 2026 Gennaio",
+    "viaggio": "2025 - Ottobre",
     "data": "25/10/2025",
     "lat": 37.086145,
     "lon": -8.430357,
@@ -1388,7 +1361,7 @@
   {
     "nome": "2025-10-25-17h02m10",
     "anno": "2025",
-    "viaggio": "2025 Settembre / 2026 Gennaio",
+    "viaggio": "2025 - Ottobre",
     "data": "25/10/2025",
     "lat": 37.106058,
     "lon": -8.2515,
@@ -1397,7 +1370,7 @@
   {
     "nome": "2025-10-26-11h15m11",
     "anno": "2025",
-    "viaggio": "2025 Settembre / 2026 Gennaio",
+    "viaggio": "2025 - Ottobre",
     "data": "26/10/2025",
     "lat": 37.088835,
     "lon": -8.19924,
@@ -1406,7 +1379,7 @@
   {
     "nome": "2025-10-26-11h23m31",
     "anno": "2025",
-    "viaggio": "2025 Settembre / 2026 Gennaio",
+    "viaggio": "2025 - Ottobre",
     "data": "26/10/2025",
     "lat": 37.088832,
     "lon": -8.198622,
@@ -1415,7 +1388,7 @@
   {
     "nome": "2025-10-26-12h13m53",
     "anno": "2025",
-    "viaggio": "2025 Settembre / 2026 Gennaio",
+    "viaggio": "2025 - Ottobre",
     "data": "26/10/2025",
     "lat": 37.08585,
     "lon": -8.167625,
@@ -1424,7 +1397,7 @@
   {
     "nome": "2025-10-26-12h25m05",
     "anno": "2025",
-    "viaggio": "2025 Settembre / 2026 Gennaio",
+    "viaggio": "2025 - Ottobre",
     "data": "26/10/2025",
     "lat": 37.084439,
     "lon": -8.163516,
@@ -1433,7 +1406,7 @@
   {
     "nome": "2025-10-26-19h39m35",
     "anno": "2025",
-    "viaggio": "2025 Settembre / 2026 Gennaio",
+    "viaggio": "2025 - Ottobre",
     "data": "26/10/2025",
     "lat": 37.087933,
     "lon": -8.253228,
@@ -1442,7 +1415,7 @@
   {
     "nome": "2025-10-26-20h01m04",
     "anno": "2025",
-    "viaggio": "2025 Settembre / 2026 Gennaio",
+    "viaggio": "2025 - Ottobre",
     "data": "26/10/2025",
     "lat": 37.089507,
     "lon": -8.25361,
@@ -1451,7 +1424,7 @@
   {
     "nome": "2025-11-07-16h52m10",
     "anno": "2025",
-    "viaggio": "2025 Settembre / 2026 Gennaio",
+    "viaggio": "2025 Novembre / 2026 Gennaio",
     "data": "07/11/2025",
     "lat": 35.605748,
     "lon": -5.961613,
@@ -1460,7 +1433,7 @@
   {
     "nome": "2025-11-08-18h02m36",
     "anno": "2025",
-    "viaggio": "2025 Settembre / 2026 Gennaio",
+    "viaggio": "2025 Novembre / 2026 Gennaio",
     "data": "08/11/2025",
     "lat": 31.625938,
     "lon": -7.988541,
@@ -1469,7 +1442,7 @@
   {
     "nome": "2025-11-08-18h07m23",
     "anno": "2025",
-    "viaggio": "2025 Settembre / 2026 Gennaio",
+    "viaggio": "2025 Novembre / 2026 Gennaio",
     "data": "08/11/2025",
     "lat": 31.630647,
     "lon": -7.989131,
@@ -1478,7 +1451,7 @@
   {
     "nome": "2025-11-08-18h16m12",
     "anno": "2025",
-    "viaggio": "2025 Settembre / 2026 Gennaio",
+    "viaggio": "2025 Novembre / 2026 Gennaio",
     "data": "08/11/2025",
     "lat": 31.630524,
     "lon": -7.989402,
@@ -1487,7 +1460,7 @@
   {
     "nome": "2025-11-08-18h27m14",
     "anno": "2025",
-    "viaggio": "2025 Settembre / 2026 Gennaio",
+    "viaggio": "2025 Novembre / 2026 Gennaio",
     "data": "08/11/2025",
     "lat": 31.630818,
     "lon": -7.988686,
@@ -1496,7 +1469,7 @@
   {
     "nome": "2025-11-08-18h43m43",
     "anno": "2025",
-    "viaggio": "2025 Settembre / 2026 Gennaio",
+    "viaggio": "2025 Novembre / 2026 Gennaio",
     "data": "08/11/2025",
     "lat": 31.627458,
     "lon": -7.988728,
@@ -1505,7 +1478,7 @@
   {
     "nome": "2025-11-09-09h52m44",
     "anno": "2025",
-    "viaggio": "2025 Settembre / 2026 Gennaio",
+    "viaggio": "2025 Novembre / 2026 Gennaio",
     "data": "09/11/2025",
     "lat": 31.716752,
     "lon": -8.240102,
@@ -1514,7 +1487,7 @@
   {
     "nome": "2025-11-09-11h08m59",
     "anno": "2025",
-    "viaggio": "2025 Settembre / 2026 Gennaio",
+    "viaggio": "2025 Novembre / 2026 Gennaio",
     "data": "09/11/2025",
     "lat": 32.542183,
     "lon": -7.904663,
@@ -1523,7 +1496,7 @@
   {
     "nome": "2025-11-10-17h03m43",
     "anno": "2025",
-    "viaggio": "2025 Settembre / 2026 Gennaio",
+    "viaggio": "2025 Novembre / 2026 Gennaio",
     "data": "10/11/2025",
     "lat": 30.511495,
     "lon": -9.687623,
@@ -1532,7 +1505,7 @@
   {
     "nome": "2025-11-12-12h48m06",
     "anno": "2025",
-    "viaggio": "2025 Settembre / 2026 Gennaio",
+    "viaggio": "2025 Novembre / 2026 Gennaio",
     "data": "12/11/2025",
     "lat": 30.412547,
     "lon": -9.577879,
@@ -1541,7 +1514,7 @@
   {
     "nome": "2025-11-12-12h50m08",
     "anno": "2025",
-    "viaggio": "2025 Settembre / 2026 Gennaio",
+    "viaggio": "2025 Novembre / 2026 Gennaio",
     "data": "12/11/2025",
     "lat": 30.413314,
     "lon": -9.578299,
@@ -1550,7 +1523,7 @@
   {
     "nome": "2025-11-14-16h09m03",
     "anno": "2025",
-    "viaggio": "2025 Settembre / 2026 Gennaio",
+    "viaggio": "2025 Novembre / 2026 Gennaio",
     "data": "14/11/2025",
     "lat": 30.509457,
     "lon": -9.686907,
@@ -1559,7 +1532,7 @@
   {
     "nome": "2025-11-15-11h12m41",
     "anno": "2025",
-    "viaggio": "2025 Settembre / 2026 Gennaio",
+    "viaggio": "2025 Novembre / 2026 Gennaio",
     "data": "15/11/2025",
     "lat": 30.539627,
     "lon": -9.700588,
@@ -1568,7 +1541,7 @@
   {
     "nome": "2025-11-15-13h21m03",
     "anno": "2025",
-    "viaggio": "2025 Settembre / 2026 Gennaio",
+    "viaggio": "2025 Novembre / 2026 Gennaio",
     "data": "15/11/2025",
     "lat": 30.40909,
     "lon": -9.595449,
@@ -1577,7 +1550,7 @@
   {
     "nome": "2025-11-15-13h27m05",
     "anno": "2025",
-    "viaggio": "2025 Settembre / 2026 Gennaio",
+    "viaggio": "2025 Novembre / 2026 Gennaio",
     "data": "15/11/2025",
     "lat": 30.409034,
     "lon": -9.595394,
@@ -1586,7 +1559,7 @@
   {
     "nome": "2025-11-17-14h59m06",
     "anno": "2025",
-    "viaggio": "2025 Settembre / 2026 Gennaio",
+    "viaggio": "2025 Novembre / 2026 Gennaio",
     "data": "17/11/2025",
     "lat": 30.512202,
     "lon": -9.687465,
@@ -1595,7 +1568,7 @@
   {
     "nome": "2025-11-18-12h27m27",
     "anno": "2025",
-    "viaggio": "2025 Settembre / 2026 Gennaio",
+    "viaggio": "2025 Novembre / 2026 Gennaio",
     "data": "18/11/2025",
     "lat": 30.356206,
     "lon": -9.52686,
@@ -1604,7 +1577,7 @@
   {
     "nome": "2025-11-21-18h47m28",
     "anno": "2025",
-    "viaggio": "2025 Settembre / 2026 Gennaio",
+    "viaggio": "2025 Novembre / 2026 Gennaio",
     "data": "21/11/2025",
     "lat": 30.514772,
     "lon": -9.688074,
@@ -1613,7 +1586,7 @@
   {
     "nome": "2025-11-22-10h21m11",
     "anno": "2025",
-    "viaggio": "2025 Settembre / 2026 Gennaio",
+    "viaggio": "2025 Novembre / 2026 Gennaio",
     "data": "22/11/2025",
     "lat": 30.512029,
     "lon": -9.687324,
@@ -1622,7 +1595,7 @@
   {
     "nome": "2025-11-22-11h23m27",
     "anno": "2025",
-    "viaggio": "2025 Settembre / 2026 Gennaio",
+    "viaggio": "2025 Novembre / 2026 Gennaio",
     "data": "22/11/2025",
     "lat": 30.535555,
     "lon": -9.698656,
@@ -1631,7 +1604,7 @@
   {
     "nome": "2025-11-22-12h21m02",
     "anno": "2025",
-    "viaggio": "2025 Settembre / 2026 Gennaio",
+    "viaggio": "2025 Novembre / 2026 Gennaio",
     "data": "22/11/2025",
     "lat": 30.543103,
     "lon": -9.707998,
@@ -1640,7 +1613,7 @@
   {
     "nome": "2025-11-22-12h38m35",
     "anno": "2025",
-    "viaggio": "2025 Settembre / 2026 Gennaio",
+    "viaggio": "2025 Novembre / 2026 Gennaio",
     "data": "22/11/2025",
     "lat": 30.543076,
     "lon": -9.707982,
@@ -1649,7 +1622,7 @@
   {
     "nome": "2025-11-22-17h06m56",
     "anno": "2025",
-    "viaggio": "2025 Settembre / 2026 Gennaio",
+    "viaggio": "2025 Novembre / 2026 Gennaio",
     "data": "22/11/2025",
     "lat": 30.420399,
     "lon": -9.608118,
@@ -1658,7 +1631,7 @@
   {
     "nome": "2025-11-23-10h03m44",
     "anno": "2025",
-    "viaggio": "2025 Settembre / 2026 Gennaio",
+    "viaggio": "2025 Novembre / 2026 Gennaio",
     "data": "23/11/2025",
     "lat": 30.511268,
     "lon": -9.688607,
@@ -1667,7 +1640,7 @@
   {
     "nome": "2025-11-24-17h35m52",
     "anno": "2025",
-    "viaggio": "2025 Settembre / 2026 Gennaio",
+    "viaggio": "2025 Novembre / 2026 Gennaio",
     "data": "24/11/2025",
     "lat": 30.424813,
     "lon": -9.597032,
@@ -1676,7 +1649,7 @@
   {
     "nome": "2025-11-26-10h13m17",
     "anno": "2025",
-    "viaggio": "2025 Settembre / 2026 Gennaio",
+    "viaggio": "2025 Novembre / 2026 Gennaio",
     "data": "26/11/2025",
     "lat": 30.506841,
     "lon": -9.687477,
@@ -1685,7 +1658,7 @@
   {
     "nome": "2025-12-02-12h20m27",
     "anno": "2025",
-    "viaggio": "2025 Settembre / 2026 Gennaio",
+    "viaggio": "2025 Novembre / 2026 Gennaio",
     "data": "02/12/2025",
     "lat": 30.542987,
     "lon": -9.704456,
@@ -1694,7 +1667,7 @@
   {
     "nome": "2025-12-02-12h30m20",
     "anno": "2025",
-    "viaggio": "2025 Settembre / 2026 Gennaio",
+    "viaggio": "2025 Novembre / 2026 Gennaio",
     "data": "02/12/2025",
     "lat": 30.544596,
     "lon": -9.708322,
@@ -1703,7 +1676,7 @@
   {
     "nome": "2025-12-02-12h35m18",
     "anno": "2025",
-    "viaggio": "2025 Settembre / 2026 Gennaio",
+    "viaggio": "2025 Novembre / 2026 Gennaio",
     "data": "02/12/2025",
     "lat": 30.544446,
     "lon": -9.709297,
@@ -1712,7 +1685,7 @@
   {
     "nome": "2025-12-07-15h18m07",
     "anno": "2025",
-    "viaggio": "2025 Settembre / 2026 Gennaio",
+    "viaggio": "2025 Novembre / 2026 Gennaio",
     "data": "07/12/2025",
     "lat": 30.378511,
     "lon": -9.572539,
@@ -1721,7 +1694,7 @@
   {
     "nome": "2025-12-11-14h36m14",
     "anno": "2025",
-    "viaggio": "2025 Settembre / 2026 Gennaio",
+    "viaggio": "2025 Novembre / 2026 Gennaio",
     "data": "11/12/2025",
     "lat": 28.435684,
     "lon": -11.069745,
@@ -1730,7 +1703,7 @@
   {
     "nome": "2025-12-11-16h24m45",
     "anno": "2025",
-    "viaggio": "2025 Settembre / 2026 Gennaio",
+    "viaggio": "2025 Novembre / 2026 Gennaio",
     "data": "11/12/2025",
     "lat": 28.494538,
     "lon": -11.336484,
@@ -1739,7 +1712,7 @@
   {
     "nome": "2025-12-11-19h02m09",
     "anno": "2025",
-    "viaggio": "2025 Settembre / 2026 Gennaio",
+    "viaggio": "2025 Novembre / 2026 Gennaio",
     "data": "11/12/2025",
     "lat": 28.494338,
     "lon": -11.33676,
@@ -1748,7 +1721,7 @@
   {
     "nome": "2025-12-13-18h25m00",
     "anno": "2025",
-    "viaggio": "2025 Settembre / 2026 Gennaio",
+    "viaggio": "2025 Novembre / 2026 Gennaio",
     "data": "13/12/2025",
     "lat": 29.803704,
     "lon": -9.827131,
@@ -1757,7 +1730,7 @@
   {
     "nome": "2025-12-17-10h37m30",
     "anno": "2025",
-    "viaggio": "2025 Settembre / 2026 Gennaio",
+    "viaggio": "2025 Novembre / 2026 Gennaio",
     "data": "17/12/2025",
     "lat": 30.465813,
     "lon": -8.879388,
@@ -1766,7 +1739,7 @@
   {
     "nome": "2025-12-20-09h31m23",
     "anno": "2025",
-    "viaggio": "2025 Settembre / 2026 Gennaio",
+    "viaggio": "2025 Novembre / 2026 Gennaio",
     "data": "20/12/2025",
     "lat": 30.587243,
     "lon": -9.75044,
@@ -1775,7 +1748,7 @@
   {
     "nome": "2025-12-20-12h53m36",
     "anno": "2025",
-    "viaggio": "2025 Settembre / 2026 Gennaio",
+    "viaggio": "2025 Novembre / 2026 Gennaio",
     "data": "20/12/2025",
     "lat": 30.588378,
     "lon": -9.75191,
@@ -1784,7 +1757,7 @@
   {
     "nome": "2025-12-23-16h54m06",
     "anno": "2025",
-    "viaggio": "2025 Settembre / 2026 Gennaio",
+    "viaggio": "2025 Novembre / 2026 Gennaio",
     "data": "23/12/2025",
     "lat": 31.496383,
     "lon": -9.763463,
@@ -1793,7 +1766,7 @@
   {
     "nome": "2025-12-23-20h25m25",
     "anno": "2025",
-    "viaggio": "2025 Settembre / 2026 Gennaio",
+    "viaggio": "2025 Novembre / 2026 Gennaio",
     "data": "23/12/2025",
     "lat": 30.840386,
     "lon": -9.81975,
@@ -1802,7 +1775,7 @@
   {
     "nome": "2025-12-29-08h58m29",
     "anno": "2025",
-    "viaggio": "2025 Settembre / 2026 Gennaio",
+    "viaggio": "2025 Novembre / 2026 Gennaio",
     "data": "29/12/2025",
     "lat": 33.726404,
     "lon": -7.335652,
@@ -1811,7 +1784,7 @@
   {
     "nome": "2026-01-01-09h38m06",
     "anno": "2025",
-    "viaggio": "2025 Settembre / 2026 Gennaio",
+    "viaggio": "2025 Novembre / 2026 Gennaio",
     "data": "01/01/2026",
     "lat": 41.370003,
     "lon": 2.176835,
@@ -1820,7 +1793,7 @@
   {
     "nome": "2026-01-01-10h41m19",
     "anno": "2025",
-    "viaggio": "2025 Settembre / 2026 Gennaio",
+    "viaggio": "2025 Novembre / 2026 Gennaio",
     "data": "01/01/2026",
     "lat": 41.369922,
     "lon": 2.176816,
@@ -1865,7 +1838,7 @@
   {
     "nome": "2026-04-23-22h25m59",
     "anno": "2026",
-    "viaggio": "2026 - Aprile / Maggio",
+    "viaggio": "2026 - Aprile",
     "data": "23/04/2026",
     "lat": 42.110374,
     "lon": 11.762576,
@@ -1874,7 +1847,7 @@
   {
     "nome": "2026-04-25-13h05m28",
     "anno": "2026",
-    "viaggio": "2026 - Aprile / Maggio",
+    "viaggio": "2026 - Aprile",
     "data": "25/04/2026",
     "lat": 41.056548,
     "lon": 1.027546,
@@ -1883,7 +1856,7 @@
   {
     "nome": "2026-04-26-09h09m42",
     "anno": "2026",
-    "viaggio": "2026 - Aprile / Maggio",
+    "viaggio": "2026 - Aprile",
     "data": "26/04/2026",
     "lat": 41.061451,
     "lon": 1.043491,
@@ -1892,7 +1865,7 @@
   {
     "nome": "2026-04-26-18h52m47",
     "anno": "2026",
-    "viaggio": "2026 - Aprile / Maggio",
+    "viaggio": "2026 - Aprile",
     "data": "26/04/2026",
     "lat": 41.075563,
     "lon": 1.132147,
@@ -1901,7 +1874,7 @@
   {
     "nome": "2026-04-29-13h15m00",
     "anno": "2026",
-    "viaggio": "2026 - Aprile / Maggio",
+    "viaggio": "2026 - Aprile",
     "data": "29/04/2026",
     "lat": 41.056729,
     "lon": 1.028074,
@@ -1910,7 +1883,7 @@
   {
     "nome": "2026-04-29-13h15m05",
     "anno": "2026",
-    "viaggio": "2026 - Aprile / Maggio",
+    "viaggio": "2026 - Aprile",
     "data": "29/04/2026",
     "lat": 41.056631,
     "lon": 1.028052,
@@ -1919,7 +1892,7 @@
   {
     "nome": "2026-05-11-11h33m22",
     "anno": "2026",
-    "viaggio": "2026 - Aprile / Maggio",
+    "viaggio": "2026 - Maggio",
     "data": "11/05/2026",
     "lat": 38.535627,
     "lon": -0.126346,
@@ -1928,7 +1901,7 @@
   {
     "nome": "2026-05-13-17h42m39",
     "anno": "2026",
-    "viaggio": "2026 - Aprile / Maggio",
+    "viaggio": "2026 - Maggio",
     "data": "13/05/2026",
     "lat": 37.564051,
     "lon": -1.312952,
@@ -1937,7 +1910,7 @@
   {
     "nome": "2026-05-14-11h43m34",
     "anno": "2026",
-    "viaggio": "2026 - Aprile / Maggio",
+    "viaggio": "2026 - Maggio",
     "data": "14/05/2026",
     "lat": 37.563571,
     "lon": -1.303291,
@@ -1946,7 +1919,7 @@
   {
     "nome": "2026-05-15-10h09m40",
     "anno": "2026",
-    "viaggio": "2026 - Aprile / Maggio",
+    "viaggio": "2026 - Maggio",
     "data": "15/05/2026",
     "lat": 37.562601,
     "lon": -1.302851,
@@ -1955,7 +1928,7 @@
   {
     "nome": "2026-05-15-20h27m10",
     "anno": "2026",
-    "viaggio": "2026 - Aprile / Maggio",
+    "viaggio": "2026 - Maggio",
     "data": "15/05/2026",
     "lat": 37.563035,
     "lon": -1.303704,
@@ -1964,7 +1937,7 @@
   {
     "nome": "2026-05-17-09h55m17",
     "anno": "2026",
-    "viaggio": "2026 - Aprile / Maggio",
+    "viaggio": "2026 - Maggio",
     "data": "17/05/2026",
     "lat": 40.361464,
     "lon": 0.402668,
@@ -1973,7 +1946,7 @@
   {
     "nome": "2026-05-22-21h54m01",
     "anno": "2026",
-    "viaggio": "2026 - Aprile / Maggio",
+    "viaggio": "2026 - Maggio",
     "data": "22/05/2026",
     "lat": 40.36028,
     "lon": 0.407524,
