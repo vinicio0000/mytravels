@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>The Travel Map of Vinicio and Luisa</title>
+  <meta name="description" content="Explore the travel memories, geotagged photos, and interactive map of Vinicio and Luisa around the world.">
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    #map {
+      height: 100vh;
+      width: 100vw;
+    }
+
+    /* Header Titolo */
+    #header-container {
+      position: absolute;
+      top: 15px;
+      left: 60px;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 12px 18px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+      max-width: 80vw;
+    }
+
+    #header-container h1 {
+      margin: 0;
+      font-size: 18px;
+      color: #2c3e50;
+      font-weight: 700;
+    }
+
+    #header-container p {
+      margin: 4px 0 0 0;
+      font-size: 12px;
+      color: #7f8c8d;
+      font-style: italic;
+    }
+
+    /* Filtri Box */
+    #filtro-container {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 12px 16px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .filtro-group {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .filtro-group label {
+      font-size: 13px;
+      color: #333;
+    }
+
+    select {
+      padding: 5px 10px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      font-size: 13px;
+      outline: none;
+      cursor: pointer;
+      min-width: 160px;
+    }
+
+    /* Legenda Colori */
+    #legenda-container {
+      position: absolute;
+      bottom: 25px;
+      right: 15px;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 12px 16px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+      max-height: 200px;
+      overflow-y: auto;
+      display: none;
+    }
+
+    #legenda-container h4 {
+      margin: 0 0 8px 0;
+      font-size: 12px;
+      text-transform: uppercase;
+      color: #333;
+    }
+
+    .legenda-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 5px;
+      font-size: 12px;
+      color: #444;
+    }
+
+    .legenda-color-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      display: inline-block;
+    }
+
+    /* Tooltip Hover */
+    .custom-tooltip {
+      background: rgba(44, 62, 80, 0.9);
+      color: #ffffff;
+      border: none;
+      border-radius: 5px;
+      padding: 6px 10px;
+      font-size: 12px;
+    }
+
+    /* Popup Foto */
+    .popup-foto {
+      max-width: 220px;
+      max-height: 160px;
+      border-radius: 6px;
+      margin-top: 8px;
+      object-fit: cover;
+    }
+
+    .custom-pin-icon {
+      background: none;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Title Box -->
+  <div id="header-container">
+    <h1>The Travel Map of Vinicio and Luisa</h1>
+    <p>Our travel memories and geotagged moments around the world</p>
+  </div>
+
+  <!-- Filters Box -->
+  <div id="filtro-container">
+    <div class="filtro-group">
+      <label for="select-anno"><b>Year:</b></label>
+      <select id="select-anno" onchange="cambiaAnno()">
+        <option value="tutti">All Years</option>
+      </select>
+    </div>
+    
+    <div class="filtro-group">
+      <label for="select-viaggio"><b>Trip:</b></label>
+      <select id="select-viaggio" onchange="cambiaViaggio()">
+        <option value="tutti">All Trips</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Legend Box -->
+  <div id="legenda-container">
+    <h4>Years Legend</h4>
+    <div id="legenda-items"></div>
+  </div>
+
+  <!-- Map -->
+  <div id="map"></div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <script>
+    const map = L.map('map').setView([41.9028, 12.4964], 6);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '© OpenStreetMap'
+    }).addTo(map);
+
+    let tuttiIDati = [];
+    const layerMarkers = L.layerGroup().addTo(map);
+    let layerLineaViaggio = L.polyline([], {color: '#e74c3c', weight: 4, opacity: 0.85, dashArray: '6, 8'}).addTo(map);
+
+    const mappaColoriAnni = {};
+    const tavolozzaColori = [
+      '#e6194B', '#3cb44b', '#ffe119', '#4363d8', '#f58231', 
+      '#911eb4', '#42d4f4', '#f032e6', '#bfef45', '#fabed4', 
+      '#469990', '#dcbeff', '#9A6324', '#800000', '#000075'
+    ];
+
+    function creaIconaColorata(coloreHex) {
+      const svgPin = `
+        <svg width="25" height="41" viewBox="0 0 25 41" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12.5 0C5.6 0 0 5.6 0 12.5C0 21.9 12.5 41 12.5 41C12.5 41 25 21.9 25 12.5C25 5.6 19.4 0 12.5 0Z" fill="${coloreHex}" stroke="#FFFFFF" stroke-width="1.5"/>
+          <circle cx="12.5" cy="12.5" r="5" fill="#FFFFFF"/>
+        </svg>
+      `;
+      return L.divIcon({
+        className: 'custom-pin-icon',
+        html: svgPin,
+        iconSize: [25, 41],
+        iconAnchor: [12, 41],
+        popupAnchor: [1, -34]
+      });
+    }
+
+    fetch('dati.json')
+      .then(response => response.json())
+      .then(dati => {
+        tuttiIDati = dati;
+        popolaAnni();
+        popolaViaggi();
+        aggiornaMappa();
+      })
+      .catch(err => console.error("Error loading dati.json:", err));
+
+    function popolaAnni() {
+      const selectAnno = document.getElementById('select-anno');
+      const anni = new Set();
+
+      tuttiIDati.forEach(p => {
+        if (p.anno && p.anno !== "Sconosciuto") anni.add(p.anno);
+      });
+
+      const anniOrdinati = Array.from(anni).sort((a, b) => Number(b) - Number(a));
+
+      anniOrdinati.forEach((anno, index) => {
+        mappaColoriAnni[anno] = tavolozzaColori[index % tavolozzaColori.length];
+      });
+
+      selectAnno.innerHTML = '<option value="tutti">All Years</option>';
+      anniOrdinati.forEach(anno => {
+        const option = document.createElement('option');
+        option.value = anno;
+        option.textContent = anno;
+        selectAnno.appendChild(option);
+      });
+
+      aggiornaLegenda(anniOrdinati);
+    }
+
+    function popolaViaggi() {
+      const selectAnno = document.getElementById('select-anno').value;
+      const selectViaggio = document.getElementById('select-viaggio');
+      
+      const viaggiSet = new Set();
+
+      tuttiIDati.forEach(p => {
+        if (selectAnno === 'tutti' || p.anno === selectAnno) {
+          if (p.viaggio) viaggiSet.add(p.viaggio);
+        }
+      });
+
+      selectViaggio.innerHTML = '<option value="tutti">All Trips</option>';
+      viaggiSet.forEach(v => {
+        const option = document.createElement('option');
+        option.value = v;
+        option.textContent = v;
+        selectViaggio.appendChild(option);
+      });
+    }
+
+    function cambiaAnno() {
+      popolaViaggi();
+      aggiornaMappa();
+    }
+
+    function cambiaViaggio() {
+      aggiornaMappa();
+    }
+
+    function aggiornaMappa() {
+      const annoSel = document.getElementById('select-anno').value;
+      const viaggioSel = document.getElementById('select-viaggio').value;
+      const legendaBox = document.getElementById('legenda-container');
+
+      layerMarkers.clearLayers();
+      layerLineaViaggio.setLatLngs([]);
+
+      let datiFiltrati = tuttiIDati;
+
+      if (annoSel !== 'tutti') {
+        datiFiltrati = datiFiltrati.filter(p => p.anno === annoSel);
+        legendaBox.style.display = 'none';
+      } else {
+        legendaBox.style.display = 'block';
+      }
+
+      if (viaggioSel !== 'tutti') {
+        datiFiltrati = datiFiltrati.filter(p => p.viaggio === viaggioSel);
+      }
+
+      const puntiValidi = [];
+      const coordinateLinea = [];
+
+      datiFiltrati.forEach(p => {
+        const lat = parseFloat(p.lat);
+        let lon = parseFloat(p.lon);
+
+        if (!isNaN(lat) && !isNaN(lon)) {
+          let opzioniMarker = {};
+          if (annoSel === 'tutti' && mappaColoriAnni[p.anno]) {
+            opzioniMarker.icon = creaIconaColorata(mappaColoriAnni[p.anno]);
+          }
+
+          const marker = L.marker([lat, lon], opzioniMarker);
+
+          const tooltipContent = `<b>${p.nome}</b><br>📅 ${p.data}`;
+          
+          marker.bindTooltip(tooltipContent, {
+            direction: 'top',
+            offset: [0, -35],
+            className: 'custom-tooltip'
+          });
+
+          const popupContent = `
+            <div style="text-align: center;">
+              <b style="font-size: 13px;">${p.nome}</b><br>
+              <small style="color: #666;">📅 ${p.data}</small><br>
+              <a href="${p.foto}" target="_blank">
+                <img src="${p.foto}" class="popup-foto" alt="${p.nome}">
+              </a><br>
+              <small><a href="${p.foto}" target="_blank" style="display:inline-block; margin-top:6px;">Enlarge photo 🔍</a></small>
+            </div>
+          `;
+
+          marker.bindPopup(popupContent);
+          layerMarkers.addLayer(marker);
+          puntiValidi.push([lat, lon]);
+          coordinateLinea.push([lat, lon]);
+        }
+      });
+
+      // Se viene selezionato un singolo viaggio, disegna la linea rossa tratteggiata
+      if (viaggioSel !== 'tutti' && coordinateLinea.length > 1) {
+        layerLineaViaggio.setLatLngs(coordinateLinea);
+      }
+
+      if (puntiValidi.length > 0) {
+        const bounds = L.latLngBounds(puntiValidi);
+        map.fitBounds(bounds, { padding: [50, 50], maxZoom: 15 });
+      }
+    }
+
+    function aggiornaLegenda(anniOrdinati) {
+      const containerItems = document.getElementById('legenda-items');
+      containerItems.innerHTML = '';
+      anniOrdinati.forEach(anno => {
+        const item = document.createElement('div');
+        item.className = 'legenda-item';
+        item.innerHTML = `
+          <span class="legenda-color-dot" style="background-color: ${mappaColoriAnni[anno]};"></span>
+          <span><b>${anno}</b></span>
+        `;
+        containerItems.appendChild(item);
+      });
+    }
+  </script>
+</body>
+</html>
