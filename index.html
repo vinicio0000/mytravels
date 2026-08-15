@@ -90,6 +90,23 @@
       min-width: 160px;
     }
 
+    /* Checkbox Option */
+    #cluster-option-container {
+      border-top: 1px solid #eee;
+      padding-top: 8px;
+      margin-top: 2px;
+    }
+
+    .checkbox-label {
+      font-size: 12px;
+      color: #444;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      user-select: none;
+    }
+
     /* Legenda Colori */
     #legenda-container {
       position: absolute;
@@ -177,6 +194,14 @@
         <option value="tutti">All Trips</option>
       </select>
     </div>
+
+    <!-- Checkbox Opzione Cluster (Visibile solo per All Trips) -->
+    <div id="cluster-option-container">
+      <label class="checkbox-label">
+        <input type="checkbox" id="check-cluster" checked onchange="aggiornaMappa()">
+        Group markers (Clustering)
+      </label>
+    </div>
   </div>
 
   <!-- Legend Box -->
@@ -202,7 +227,7 @@
 
     let tuttiIDati = [];
     
-    // Gruppi distinti per gestiore Cluster vs Singoli Marker
+    // Gruppi distinti per gestire Cluster vs Singoli Marker
     const clusterGroup = L.markerClusterGroup({ disableClusteringAtZoom: 16 });
     const singleGroup = L.layerGroup();
     
@@ -301,6 +326,15 @@
       const annoSel = document.getElementById('select-anno').value;
       const viaggioSel = document.getElementById('select-viaggio').value;
       const legendaBox = document.getElementById('legenda-container');
+      const clusterOptContainer = document.getElementById('cluster-option-container');
+      const usaClusterCheckbox = document.getElementById('check-cluster').checked;
+
+      // Mostra l'opzione del checkbox cluster solo quando si guarda "All Trips"
+      if (viaggioSel === 'tutti') {
+        clusterOptContainer.style.display = 'block';
+      } else {
+        clusterOptContainer.style.display = 'none';
+      }
 
       // Svuota entrambi i gruppi
       clusterGroup.clearLayers();
@@ -355,12 +389,12 @@
 
           marker.bindPopup(popupContent);
 
-          // Se è selezionato un VIAGGIO SPECIFICO: niente cluster
-          // Se siamo su "All Trips": usa il cluster
-          if (viaggioSel !== 'tutti') {
-            singleGroup.addLayer(marker);
-          } else {
+          // Determina se aggiungere al Cluster o ai Singoli
+          // Il clustering viene usato se siamo su All Trips E il checkbox è spuntato
+          if (viaggioSel === 'tutti' && usaClusterCheckbox) {
             clusterGroup.addLayer(marker);
+          } else {
+            singleGroup.addLayer(marker);
           }
 
           puntiValidi.push([lat, lon]);
