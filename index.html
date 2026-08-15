@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mappa delle Foto</title>
-    
+    <title>Mappa dei Miei Viaggi</title>
+
+    <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
+    <!-- Leaflet MarkerCluster -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
     <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
@@ -19,10 +21,12 @@
             height: 100%;
             font-family: Arial, sans-serif;
         }
+
         #container {
             display: flex;
             height: 100vh;
         }
+
         #sidebar {
             width: 320px;
             background-color: #f8f9fa;
@@ -35,25 +39,41 @@
             z-index: 1000;
             overflow-y: auto;
         }
+
         #map {
             flex-grow: 1;
             height: 100%;
         }
+
         .filter-group {
             display: flex;
             flex-direction: column;
             gap: 5px;
         }
+
         label {
             font-weight: bold;
             font-size: 14px;
         }
-        select {
+
+        select, button {
             padding: 8px;
             border-radius: 4px;
             border: 1px solid #ccc;
             font-size: 14px;
         }
+
+        .toggle-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 5px;
+        }
+
+        .toggle-group input {
+            cursor: pointer;
+        }
+
         #info {
             margin-top: auto;
             padding: 10px;
@@ -61,17 +81,38 @@
             border-radius: 4px;
             font-size: 13px;
         }
+
+        /* Stile Custom per le puntine numerate */
+        .custom-pin {
+            background-color: #e74c3c;
+            color: white;
+            border-radius: 50%;
+            width: 26px;
+            height: 26px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 12px;
+            border: 2px solid white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+        }
+
         .popup-img {
             width: 100%;
             max-width: 250px;
             height: auto;
             border-radius: 4px;
             margin-bottom: 5px;
+            display: block;
         }
+
         .popup-title {
             font-weight: bold;
             font-size: 14px;
+            margin-bottom: 2px;
         }
+
         .popup-date {
             color: #666;
             font-size: 12px;
@@ -82,24 +123,36 @@
 
 <div id="container">
     <div id="sidebar">
-        <h2>Filtri</h2>
-        
+        <h2>Filtri Viaggi</h2>
+
         <div class="filter-group">
             <label for="filtro-anno">Anno:</label>
             <select id="filtro-anno">
-                <option value="Tutti">Tutti</option>
+                <option value="Tutti">Tutti gli Anni</option>
             </select>
         </div>
 
         <div class="filter-group">
             <label for="filtro-viaggio">Viaggio:</label>
             <select id="filtro-viaggio">
-                <option value="Tutti">Tutti</option>
+                <option value="Tutti">Tutti i Viaggi</option>
             </select>
         </div>
 
+        <hr style="width: 100%; border: 0; border-top: 1px solid #ddd; margin: 10px 0;">
+
+        <div class="toggle-group">
+            <input type="checkbox" id="chk-percorso" checked>
+            <label for="chk-percorso">Mostra Percorso Tratteggiato</label>
+        </div>
+
+        <div class="toggle-group">
+            <input type="checkbox" id="chk-cluster" checked>
+            <label for="chk-cluster">Raggruppa Foto Vicine (Cluster)</label>
+        </div>
+
         <div id="info">
-            Foto caricate: <span id="totale-foto">0</span>
+            Foto filtrate: <span id="totale-foto">0</span>
         </div>
     </div>
 
@@ -113,8 +166,17 @@
         attribution: '&copy; OpenStreetMap contributors'
     }).addTo(map);
 
-    var markers = L.markerClusterGroup();
-    map.addLayer(markers);
+    var markersCluster = L.markerClusterGroup();
+    var gruppoMarkersSingoli = L.layerGroup();
+    var lineaPercorso = L.polyline([], {
+        color: '#e74c3c',
+        weight: 3,
+        opacity: 0.8,
+        dashArray: '6, 8' // Linea tratteggiata
+    });
+
+    map.addLayer(markersCluster);
+    map.addLayer(lineaPercorso);
 
     var tutteLeFoto = [];
 
@@ -122,12 +184,12 @@
         .then(response => response.json())
         .then(data => {
             tutteLeFoto = data;
-            initalizzaFiltri();
+            inizializzaFiltri();
             aggiornaMappa();
         })
         .catch(err => console.error("Errore nel caricamento del file dati.json:", err));
 
-    function initalizzaFiltri() {
+    function inizializzaFiltri() {
         var anni = new Set();
         var viaggi = new Set();
 
@@ -154,13 +216,15 @@
 
         selectAnno.addEventListener('change', aggiornaFiltroViaggi);
         selectViaggio.addEventListener('change', aggiornaMappa);
+        document.getElementById('chk-percorso').addEventListener('change', aggiornaMappa);
+        document.getElementById('chk-cluster').addEventListener('change', aggiornaMappa);
     }
 
     function aggiornaFiltroViaggi() {
         var annoSelezionato = document.getElementById('filtro-anno').value;
         var selectViaggio = document.getElementById('filtro-viaggio');
         
-        selectViaggio.innerHTML = '<option value="Tutti">Tutti</option>';
+        selectViaggio.innerHTML = '<option value="Tutti">Tutti i Viaggi</option>';
 
         var viaggiFiltrati = new Set();
         tutteLeFoto.forEach(f => {
@@ -182,8 +246,15 @@
     function aggiornaMappa() {
         var anno = document.getElementById('filtro-anno').value;
         var viaggio = document.getElementById('filtro-viaggio').value;
+        var mostraPercorso = document.getElementById('chk-percorso').checked;
+        var usaCluster = document.getElementById('chk-cluster').checked;
 
-        markers.clearLayers();
+        // Pulizia layer
+        markersCluster.clearLayers();
+        gruppoMarkersSingoli.clearLayers();
+        map.removeLayer(markersCluster);
+        map.removeLayer(gruppoMarkersSingoli);
+        lineaPercorso.setLatLngs([]);
 
         var fotoFiltrate = tutteLeFoto.filter(f => {
             var matchAnno = (anno === 'Tutti' || f.anno === anno);
@@ -191,30 +262,59 @@
             return matchAnno && matchViaggio;
         });
 
+        var coordinatePercorso = [];
         var bounds = [];
 
-        fotoFiltrate.forEach(f => {
+        fotoFiltrate.forEach((f, index) => {
             if (f.lat && f.lon) {
-                var marker = L.marker([f.lat, f.lon]);
+                var coord = [f.lat, f.lon];
+                coordinatePercorso.push(coord);
+                bounds.push(coord);
+
+                // Creazione Puntina Numerata
+                var pinIcon = L.divIcon({
+                    className: 'custom-div-icon',
+                    html: `<div class="custom-pin">${index + 1}</div>`,
+                    iconSize: [26, 26],
+                    iconAnchor: [13, 13]
+                });
+
+                var marker = L.marker(coord, { icon: pinIcon });
                 
                 var contenutoPopup = `
                     <a href="${f.foto}" target="_blank">
-                        <img src="${f.foto}" class="popup-img" alt="${f.nome}">
+                        <img src="${f.foto}" class="popup-img" alt="${f.nome}" loading="lazy">
                     </a>
                     <div class="popup-title">${f.viaggio}</div>
-                    <div class="popup-date">Data: ${f.data}</div>
+                    <div class="popup-date">📅 Data: ${f.data}</div>
                 `;
 
                 marker.bindPopup(contenutoPopup);
-                markers.addLayer(marker);
-                bounds.push([f.lat, f.lon]);
+
+                if (usaCluster) {
+                    markersCluster.addLayer(marker);
+                } else {
+                    gruppoMarkersSingoli.addLayer(marker);
+                }
             }
         });
+
+        // Aggiungi al layer corretto
+        if (usaCluster) {
+            map.addLayer(markersCluster);
+        } else {
+            map.addLayer(gruppoMarkersSingoli);
+        }
+
+        // Traccia la riga tratteggiata se abilitata
+        if (mostraPercorso && coordinatePercorso.length > 1) {
+            lineaPercorso.setLatLngs(coordinatePercorso);
+        }
 
         document.getElementById('totale-foto').textContent = fotoFiltrate.length;
 
         if (bounds.length > 0) {
-            map.fitBounds(bounds, { padding: [30, 30] });
+            map.fitBounds(bounds, { padding: [40, 40] });
         }
     }
 </script>
