@@ -1,0 +1,5 @@
+Plaintext
+User-agent: *
+Allow: /
+
+Sitemap: https://vinicio0000.github.io/mytravels//sitemap.xml
