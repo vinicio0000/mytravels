@@ -3,306 +3,221 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mappa dei Miei Viaggi</title>
-
-    <!-- Leaflet CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <title>Mappa delle Foto</title>
     
-    <!-- MarkerCluster CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
-    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
+    <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
 
     <style>
-        * {
-            box-sizing: border-box;
+        body, html {
             margin: 0;
             padding: 0;
-        }
-        body, html {
             height: 100%;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f4f9;
+            font-family: Arial, sans-serif;
         }
-        
-        /* Layout principale */
         #container {
             display: flex;
-            flex-direction: column;
             height: 100vh;
         }
-
-        /* Pannello di controllo superiore */
-        #controls {
-            background-color: #ffffff;
-            padding: 12px 20px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-            z-index: 1000;
+        #sidebar {
+            width: 320px;
+            background-color: #f8f9fa;
+            border-right: 1px solid #ccc;
+            padding: 20px;
+            box-sizing: border-box;
             display: flex;
+            flex-direction: column;
             gap: 15px;
-            align-items: center;
-            flex-wrap: wrap;
+            z-index: 1000;
+            overflow-y: auto;
         }
-
-        .control-group {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        label {
-            font-weight: 600;
-            font-size: 14px;
-            color: #333;
-        }
-
-        select {
-            padding: 8px 12px;
-            border-radius: 6px;
-            border: 1px solid #ccc;
-            background-color: #fff;
-            font-size: 14px;
-            outline: none;
-            cursor: pointer;
-            transition: border-color 0.2s;
-        }
-
-        select:focus {
-            border-color: #007bff;
-        }
-
-        #stats {
-            margin-left: auto;
-            font-size: 14px;
-            font-weight: 600;
-            color: #555;
-            background: #e9ecef;
-            padding: 6px 12px;
-            border-radius: 20px;
-        }
-
-        /* Mappa */
         #map {
             flex-grow: 1;
-            width: 100%;
             height: 100%;
         }
-
-        /* Popup personalizzato */
-        .popup-content {
-            text-align: center;
-            max-width: 250px;
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
         }
-
-        .popup-content img {
+        label {
+            font-weight: bold;
+            font-size: 14px;
+        }
+        select {
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+        #info {
+            margin-top: auto;
+            padding: 10px;
+            background-color: #e9ecef;
+            border-radius: 4px;
+            font-size: 13px;
+        }
+        .popup-img {
             width: 100%;
-            max-height: 180px;
-            object-fit: cover;
-            border-radius: 8px;
-            margin-bottom: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            max-width: 250px;
+            height: auto;
+            border-radius: 4px;
+            margin-bottom: 5px;
         }
-
         .popup-title {
             font-weight: bold;
-            font-size: 15px;
-            margin-bottom: 4px;
-            color: #2c3e50;
+            font-size: 14px;
         }
-
         .popup-date {
+            color: #666;
             font-size: 12px;
-            color: #7f8c8d;
         }
     </style>
 </head>
 <body>
 
-    <div id="container">
-        <div id="controls">
-            <div class="control-group">
-                <label for="select-anno">Anno:</label>
-                <select id="select-anno">
-                    <option value="Tutti">Tutti gli Anni</option>
-                </select>
-            </div>
-
-            <div class="control-group">
-                <label for="select-viaggio">Viaggio (Cartella):</label>
-                <select id="select-viaggio">
-                    <option value="Tutti">Tutti i Viaggi</option>
-                </select>
-            </div>
-
-            <div id="stats">Caricamento...</div>
+<div id="container">
+    <div id="sidebar">
+        <h2>Filtri</h2>
+        
+        <div class="filter-group">
+            <label for="filtro-anno">Anno:</label>
+            <select id="filtro-anno">
+                <option value="Tutti">Tutti</option>
+            </select>
         </div>
 
-        <div id="map"></div>
+        <div class="filter-group">
+            <label for="filtro-viaggio">Viaggio:</label>
+            <select id="filtro-viaggio">
+                <option value="Tutti">Tutti</option>
+            </select>
+        </div>
+
+        <div id="info">
+            Foto caricate: <span id="totale-foto">0</span>
+        </div>
     </div>
 
-    <!-- Leaflet JS -->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <!-- MarkerCluster JS -->
-    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <div id="map"></div>
+</div>
 
-    <script>
-        let mappa;
-        let markersCluster;
-        let datiFoto = [];
+<script>
+    var map = L.map('map').setView([41.9028, 12.4964], 6);
 
-        // Inizializzazione della Mappa
-        function initMap() {
-            mappa = L.map('map').setView([41.9028, 12.4964], 5); // Coordinate iniziali: Italia
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
 
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                maxZoom: 19,
-                attribution: '&copy; OpenStreetMap contributors'
-            }).addTo(mappa);
+    var markers = L.markerClusterGroup();
+    map.addLayer(markers);
 
-            markersCluster = L.markerClusterGroup({
-                chunkedLoading: true,
-                spiderfyOnMaxZoom: true,
-                showCoverageOnHover: false
-            });
+    var tutteLeFoto = [];
 
-            mappa.addLayer(markersCluster);
-
-            caricaDati();
-        }
-
-        // Caricamento del file JSON
-        function caricaDati() {
-            fetch('dati.json')
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error("Impossibile caricare dati.json");
-                    }
-                    return response.json();
-                })
-                .then(dati => {
-                    datiFoto = dati;
-                    popolaFiltri();
-                    aggiornaMappa();
-                })
-                .catch(err => {
-                    console.error("Errore nel caricamento dei dati:", err);
-                    document.getElementById('stats').innerText = "Errore nel caricamento del file dati.json";
-                });
-        }
-
-        // Popola i menu a tendina Anno e Viaggio
-        function popolaFiltri() {
-            const selectAnno = document.getElementById('select-anno');
-            const selectViaggio = document.getElementById('select-viaggio');
-
-            const anni = new Set();
-            const viaggi = new Set();
-
-            datiFoto.forEach(f => {
-                if (f.anno) anni.add(f.anno);
-                if (f.viaggio) viaggi.add(f.viaggio);
-            });
-
-            // Ordina e aggiungi gli anni
-            Array.from(anni).sort().reverse().forEach(anno => {
-                const opt = document.createElement('option');
-                opt.value = anno;
-                opt.textContent = anno;
-                selectAnno.appendChild(opt);
-            });
-
-            // Ordina e aggiungi i viaggi (nomi delle sottocartelle)
-            Array.from(viaggi).sort().forEach(viaggio => {
-                const opt = document.createElement('option');
-                opt.value = viaggio;
-                opt.textContent = viaggio;
-                selectViaggio.appendChild(opt);
-            });
-
-            selectAnno.addEventListener('change', gestisciCambioAnno);
-            selectViaggio.addEventListener('change', aggiornaMappa);
-        }
-
-        // Aggiorna le opzioni dei viaggi quando si seleziona un anno
-        function gestisciCambioAnno() {
-            const annoSelezionato = document.getElementById('select-anno').value;
-            const selectViaggio = document.getElementById('select-viaggio');
-
-            // Salva la selezione corrente
-            const viaggioCorrente = selectViaggio.value;
-
-            // Svuota i viaggi tenendo solo "Tutti"
-            selectViaggio.innerHTML = '<option value="Tutti">Tutti i Viaggi</option>';
-
-            const viaggiFiltrati = new Set();
-            datiFoto.forEach(f => {
-                if (annoSelezionato === "Tutti" || f.anno === annoSelezionato) {
-                    if (f.viaggio) viaggiFiltrati.add(f.viaggio);
-                }
-            });
-
-            Array.from(viaggiFiltrati).sort().forEach(viaggio => {
-                const opt = document.createElement('option');
-                opt.value = viaggio;
-                opt.textContent = viaggio;
-                selectViaggio.appendChild(opt);
-            });
-
-            // Ripristina il viaggio se fa parte del nuovo anno, altrimenti "Tutti"
-            if (viaggiFiltrati.has(viaggioCorrente)) {
-                selectViaggio.value = viaggioCorrente;
-            } else {
-                selectViaggio.value = "Tutti";
-            }
-
+    fetch('dati.json')
+        .then(response => response.json())
+        .then(data => {
+            tutteLeFoto = data;
+            initalizzaFiltri();
             aggiornaMappa();
-        }
+        })
+        .catch(err => console.error("Errore nel caricamento del file dati.json:", err));
 
-        // Disegna i marker sulla mappa in base ai filtri
-        function aggiornaMappa() {
-            const annoSelezionato = document.getElementById('select-anno').value;
-            const viaggioSelezionato = document.getElementById('select-viaggio').value;
+    function initalizzaFiltri() {
+        var anni = new Set();
+        var viaggi = new Set();
 
-            markersCluster.clearLayers();
+        tutteLeFoto.forEach(f => {
+            if (f.anno) anni.add(f.anno);
+            if (f.viaggio) viaggi.add(f.viaggio);
+        });
 
-            const fotoFiltrate = datiFoto.filter(f => {
-                const matchAnno = (annoSelezionato === "Tutti" || f.anno === annoSelezionato);
-                const matchViaggio = (viaggioSelezionato === "Tutti" || f.viaggio === viaggioSelezionato);
-                return matchAnno && matchViaggio;
-            });
+        var selectAnno = document.getElementById('filtro-anno');
+        Array.from(anni).sort().reverse().forEach(anno => {
+            var opt = document.createElement('option');
+            opt.value = anno;
+            opt.textContent = anno;
+            selectAnno.appendChild(opt);
+        });
 
-            const bounds = [];
+        var selectViaggio = document.getElementById('filtro-viaggio');
+        Array.from(viaggi).sort().forEach(viaggio => {
+            var opt = document.createElement('option');
+            opt.value = viaggio;
+            opt.textContent = viaggio;
+            selectViaggio.appendChild(opt);
+        });
 
-            fotoFiltrate.forEach(f => {
-                if (f.lat && f.lon) {
-                    const marker = L.marker([f.lat, f.lon]);
-                    
-                    const popupHtml = `
-                        <div class="popup-content">
-                            <a href="${f.foto}" target="_blank">
-                                <img src="${f.foto}" alt="${f.nome}" loading="lazy" />
-                            </a>
-                            <div class="popup-title">${f.viaggio}</div>
-                            <div class="popup-date">📅 ${f.data}</div>
-                        </div>
-                    `;
+        selectAnno.addEventListener('change', aggiornaFiltroViaggi);
+        selectViaggio.addEventListener('change', aggiornaMappa);
+    }
 
-                    marker.bindPopup(popupHtml);
-                    markersCluster.addLayer(marker);
-                    bounds.push([f.lat, f.lon]);
-                }
-            });
+    function aggiornaFiltroViaggi() {
+        var annoSelezionato = document.getElementById('filtro-anno').value;
+        var selectViaggio = document.getElementById('filtro-viaggio');
+        
+        selectViaggio.innerHTML = '<option value="Tutti">Tutti</option>';
 
-            // Aggiorna contatore
-            document.getElementById('stats').innerText = `Foto visibili: ${fotoFiltrate.length}`;
-
-            // Centra la mappa sui dati filtrati se presenti
-            if (bounds.length > 0) {
-                mappa.fitBounds(bounds, { padding: [50, 50], maxZoom: 15 });
+        var viaggiFiltrati = new Set();
+        tutteLeFoto.forEach(f => {
+            if (annoSelezionato === 'Tutti' || f.anno === annoSelezionato) {
+                if (f.viaggio) viaggiFiltrati.add(f.viaggio);
             }
-        }
+        });
 
-        // Avvio all'apertura della pagina
-        window.onload = initMap;
-    </script>
+        Array.from(viaggiFiltrati).sort().forEach(viaggio => {
+            var opt = document.createElement('option');
+            opt.value = viaggio;
+            opt.textContent = viaggio;
+            selectViaggio.appendChild(opt);
+        });
+
+        aggiornaMappa();
+    }
+
+    function aggiornaMappa() {
+        var anno = document.getElementById('filtro-anno').value;
+        var viaggio = document.getElementById('filtro-viaggio').value;
+
+        markers.clearLayers();
+
+        var fotoFiltrate = tutteLeFoto.filter(f => {
+            var matchAnno = (anno === 'Tutti' || f.anno === anno);
+            var matchViaggio = (viaggio === 'Tutti' || f.viaggio === viaggio);
+            return matchAnno && matchViaggio;
+        });
+
+        var bounds = [];
+
+        fotoFiltrate.forEach(f => {
+            if (f.lat && f.lon) {
+                var marker = L.marker([f.lat, f.lon]);
+                
+                var contenutoPopup = `
+                    <a href="${f.foto}" target="_blank">
+                        <img src="${f.foto}" class="popup-img" alt="${f.nome}">
+                    </a>
+                    <div class="popup-title">${f.viaggio}</div>
+                    <div class="popup-date">Data: ${f.data}</div>
+                `;
+
+                marker.bindPopup(contenutoPopup);
+                markers.addLayer(marker);
+                bounds.push([f.lat, f.lon]);
+            }
+        });
+
+        document.getElementById('totale-foto').textContent = fotoFiltrate.length;
+
+        if (bounds.length > 0) {
+            map.fitBounds(bounds, { padding: [30, 30] });
+        }
+    }
+</script>
+
 </body>
 </html>
