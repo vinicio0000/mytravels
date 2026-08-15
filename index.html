@@ -389,8 +389,7 @@
 
           marker.bindPopup(popupContent);
 
-          // Determina se aggiungere al Cluster o ai Singoli
-          // Il clustering viene usato se siamo su All Trips E il checkbox è spuntato
+          // Usa il cluster solo se siamo su "All Trips" E la checkbox è spuntata
           if (viaggioSel === 'tutti' && usaClusterCheckbox) {
             clusterGroup.addLayer(marker);
           } else {
