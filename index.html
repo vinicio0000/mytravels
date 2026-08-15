@@ -1,379 +1,308 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>The Travel Map of Vinicio and Luisa</title>
-  <meta name="description" content="Explore the travel memories, geotagged photos, and interactive map of Vinicio and Luisa around the world.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mappa dei Miei Viaggi</title>
 
-  <!-- Leaflet CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    <!-- MarkerCluster CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
 
-  <style>
-    html, body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body, html {
+            height: 100%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f9;
+        }
+        
+        /* Layout principale */
+        #container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
 
-    #map {
-      height: 100vh;
-      width: 100vw;
-    }
+        /* Pannello di controllo superiore */
+        #controls {
+            background-color: #ffffff;
+            padding: 12px 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            z-index: 1000;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
 
-    /* Header Titolo */
-    #header-container {
-      position: absolute;
-      top: 15px;
-      left: 60px;
-      z-index: 1000;
-      background: rgba(255, 255, 255, 0.95);
-      padding: 12px 18px;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-      max-width: 80vw;
-    }
+        .control-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
 
-    #header-container h1 {
-      margin: 0;
-      font-size: 18px;
-      color: #2c3e50;
-      font-weight: 700;
-    }
+        label {
+            font-weight: 600;
+            font-size: 14px;
+            color: #333;
+        }
 
-    #header-container p {
-      margin: 4px 0 0 0;
-      font-size: 12px;
-      color: #7f8c8d;
-      font-style: italic;
-    }
+        select {
+            padding: 8px 12px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            font-size: 14px;
+            outline: none;
+            cursor: pointer;
+            transition: border-color 0.2s;
+        }
 
-    /* Filtri Box */
-    #filtro-container {
-      position: absolute;
-      top: 15px;
-      right: 15px;
-      z-index: 1000;
-      background: rgba(255, 255, 255, 0.95);
-      padding: 12px 16px;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
+        select:focus {
+            border-color: #007bff;
+        }
 
-    .filtro-group {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-    }
+        #stats {
+            margin-left: auto;
+            font-size: 14px;
+            font-weight: 600;
+            color: #555;
+            background: #e9ecef;
+            padding: 6px 12px;
+            border-radius: 20px;
+        }
 
-    .filtro-group label {
-      font-size: 13px;
-      color: #333;
-    }
+        /* Mappa */
+        #map {
+            flex-grow: 1;
+            width: 100%;
+            height: 100%;
+        }
 
-    select {
-      padding: 5px 10px;
-      border-radius: 4px;
-      border: 1px solid #ccc;
-      font-size: 13px;
-      outline: none;
-      cursor: pointer;
-      min-width: 160px;
-    }
+        /* Popup personalizzato */
+        .popup-content {
+            text-align: center;
+            max-width: 250px;
+        }
 
-    /* Legenda Colori */
-    #legenda-container {
-      position: absolute;
-      bottom: 25px;
-      right: 15px;
-      z-index: 1000;
-      background: rgba(255, 255, 255, 0.95);
-      padding: 12px 16px;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-      max-height: 200px;
-      overflow-y: auto;
-      display: none;
-    }
+        .popup-content img {
+            width: 100%;
+            max-height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
 
-    #legenda-container h4 {
-      margin: 0 0 8px 0;
-      font-size: 12px;
-      text-transform: uppercase;
-      color: #333;
-    }
+        .popup-title {
+            font-weight: bold;
+            font-size: 15px;
+            margin-bottom: 4px;
+            color: #2c3e50;
+        }
 
-    .legenda-item {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 5px;
-      font-size: 12px;
-      color: #444;
-    }
-
-    .legenda-color-dot {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      border: 1px solid rgba(0, 0, 0, 0.2);
-      display: inline-block;
-    }
-
-    /* Tooltip Hover */
-    .custom-tooltip {
-      background: rgba(44, 62, 80, 0.9);
-      color: #ffffff;
-      border: none;
-      border-radius: 5px;
-      padding: 6px 10px;
-      font-size: 12px;
-    }
-
-    /* Popup Foto */
-    .popup-foto {
-      max-width: 220px;
-      max-height: 160px;
-      border-radius: 6px;
-      margin-top: 8px;
-      object-fit: cover;
-    }
-
-    .custom-pin-icon {
-      background: none;
-      border: none;
-    }
-  </style>
+        .popup-date {
+            font-size: 12px;
+            color: #7f8c8d;
+        }
+    </style>
 </head>
 <body>
 
-  <!-- Title Box -->
-  <div id="header-container">
-    <h1>The Travel Map of Vinicio and Luisa</h1>
-    <p>Our travel memories and geotagged moments around the world</p>
-  </div>
-
-  <!-- Filters Box -->
-  <div id="filtro-container">
-    <div class="filtro-group">
-      <label for="select-anno"><b>Year:</b></label>
-      <select id="select-anno" onchange="cambiaAnno()">
-        <option value="tutti">All Years</option>
-      </select>
-    </div>
-    
-    <div class="filtro-group">
-      <label for="select-viaggio"><b>Trip:</b></label>
-      <select id="select-viaggio" onchange="cambiaViaggio()">
-        <option value="tutti">All Trips</option>
-      </select>
-    </div>
-  </div>
-
-  <!-- Legend Box -->
-  <div id="legenda-container">
-    <h4>Years Legend</h4>
-    <div id="legenda-items"></div>
-  </div>
-
-  <!-- Map -->
-  <div id="map"></div>
-
-  <!-- Leaflet JS -->
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-
-  <script>
-    const map = L.map('map').setView([41.9028, 12.4964], 6);
-
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      maxZoom: 19,
-      attribution: '© OpenStreetMap'
-    }).addTo(map);
-
-    let tuttiIDati = [];
-    const layerMarkers = L.layerGroup().addTo(map);
-    let layerLineaViaggio = L.polyline([], {color: '#e74c3c', weight: 4, opacity: 0.85, dashArray: '6, 8'}).addTo(map);
-
-    const mappaColoriAnni = {};
-    const tavolozzaColori = [
-      '#e6194B', '#3cb44b', '#ffe119', '#4363d8', '#f58231', 
-      '#911eb4', '#42d4f4', '#f032e6', '#bfef45', '#fabed4', 
-      '#469990', '#dcbeff', '#9A6324', '#800000', '#000075'
-    ];
-
-    function creaIconaColorata(coloreHex) {
-      const svgPin = `
-        <svg width="25" height="41" viewBox="0 0 25 41" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12.5 0C5.6 0 0 5.6 0 12.5C0 21.9 12.5 41 12.5 41C12.5 41 25 21.9 25 12.5C25 5.6 19.4 0 12.5 0Z" fill="${coloreHex}" stroke="#FFFFFF" stroke-width="1.5"/>
-          <circle cx="12.5" cy="12.5" r="5" fill="#FFFFFF"/>
-        </svg>
-      `;
-      return L.divIcon({
-        className: 'custom-pin-icon',
-        html: svgPin,
-        iconSize: [25, 41],
-        iconAnchor: [12, 41],
-        popupAnchor: [1, -34]
-      });
-    }
-
-    fetch('dati.json')
-      .then(response => response.json())
-      .then(dati => {
-        tuttiIDati = dati;
-        popolaAnni();
-        popolaViaggi();
-        aggiornaMappa();
-      })
-      .catch(err => console.error("Error loading dati.json:", err));
-
-    function popolaAnni() {
-      const selectAnno = document.getElementById('select-anno');
-      const anni = new Set();
-
-      tuttiIDati.forEach(p => {
-        if (p.anno && p.anno !== "Sconosciuto") anni.add(p.anno);
-      });
-
-      const anniOrdinati = Array.from(anni).sort((a, b) => Number(b) - Number(a));
-
-      anniOrdinati.forEach((anno, index) => {
-        mappaColoriAnni[anno] = tavolozzaColori[index % tavolozzaColori.length];
-      });
-
-      selectAnno.innerHTML = '<option value="tutti">All Years</option>';
-      anniOrdinati.forEach(anno => {
-        const option = document.createElement('option');
-        option.value = anno;
-        option.textContent = anno;
-        selectAnno.appendChild(option);
-      });
-
-      aggiornaLegenda(anniOrdinati);
-    }
-
-    function popolaViaggi() {
-      const selectAnno = document.getElementById('select-anno').value;
-      const selectViaggio = document.getElementById('select-viaggio');
-      
-      const viaggiSet = new Set();
-
-      tuttiIDati.forEach(p => {
-        if (selectAnno === 'tutti' || p.anno === selectAnno) {
-          if (p.viaggio) viaggiSet.add(p.viaggio);
-        }
-      });
-
-      selectViaggio.innerHTML = '<option value="tutti">All Trips</option>';
-      viaggiSet.forEach(v => {
-        const option = document.createElement('option');
-        option.value = v;
-        option.textContent = v;
-        selectViaggio.appendChild(option);
-      });
-    }
-
-    function cambiaAnno() {
-      popolaViaggi();
-      aggiornaMappa();
-    }
-
-    function cambiaViaggio() {
-      aggiornaMappa();
-    }
-
-    function aggiornaMappa() {
-      const annoSel = document.getElementById('select-anno').value;
-      const viaggioSel = document.getElementById('select-viaggio').value;
-      const legendaBox = document.getElementById('legenda-container');
-
-      layerMarkers.clearLayers();
-      layerLineaViaggio.setLatLngs([]);
-
-      let datiFiltrati = tuttiIDati;
-
-      if (annoSel !== 'tutti') {
-        datiFiltrati = datiFiltrati.filter(p => p.anno === annoSel);
-        legendaBox.style.display = 'none';
-      } else {
-        legendaBox.style.display = 'block';
-      }
-
-      if (viaggioSel !== 'tutti') {
-        datiFiltrati = datiFiltrati.filter(p => p.viaggio === viaggioSel);
-      }
-
-      const puntiValidi = [];
-      const coordinateLinea = [];
-
-      datiFiltrati.forEach(p => {
-        const lat = parseFloat(p.lat);
-        let lon = parseFloat(p.lon);
-
-        if (!isNaN(lat) && !isNaN(lon)) {
-          let opzioniMarker = {};
-          if (annoSel === 'tutti' && mappaColoriAnni[p.anno]) {
-            opzioniMarker.icon = creaIconaColorata(mappaColoriAnni[p.anno]);
-          }
-
-          const marker = L.marker([lat, lon], opzioniMarker);
-
-          const tooltipContent = `<b>${p.nome}</b><br>📅 ${p.data}`;
-          
-          marker.bindTooltip(tooltipContent, {
-            direction: 'top',
-            offset: [0, -35],
-            className: 'custom-tooltip'
-          });
-
-          const popupContent = `
-            <div style="text-align: center;">
-              <b style="font-size: 13px;">${p.nome}</b><br>
-              <small style="color: #666;">📅 ${p.data}</small><br>
-              <a href="${p.foto}" target="_blank">
-                <img src="${p.foto}" class="popup-foto" alt="${p.nome}">
-              </a><br>
-              <small><a href="${p.foto}" target="_blank" style="display:inline-block; margin-top:6px;">Enlarge photo 🔍</a></small>
+    <div id="container">
+        <div id="controls">
+            <div class="control-group">
+                <label for="select-anno">Anno:</label>
+                <select id="select-anno">
+                    <option value="Tutti">Tutti gli Anni</option>
+                </select>
             </div>
-          `;
 
-          marker.bindPopup(popupContent);
-          layerMarkers.addLayer(marker);
-          puntiValidi.push([lat, lon]);
-          coordinateLinea.push([lat, lon]);
+            <div class="control-group">
+                <label for="select-viaggio">Viaggio (Cartella):</label>
+                <select id="select-viaggio">
+                    <option value="Tutti">Tutti i Viaggi</option>
+                </select>
+            </div>
+
+            <div id="stats">Caricamento...</div>
+        </div>
+
+        <div id="map"></div>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- MarkerCluster JS -->
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+
+    <script>
+        let mappa;
+        let markersCluster;
+        let datiFoto = [];
+
+        // Inizializzazione della Mappa
+        function initMap() {
+            mappa = L.map('map').setView([41.9028, 12.4964], 5); // Coordinate iniziali: Italia
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                attribution: '&copy; OpenStreetMap contributors'
+            }).addTo(mappa);
+
+            markersCluster = L.markerClusterGroup({
+                chunkedLoading: true,
+                spiderfyOnMaxZoom: true,
+                showCoverageOnHover: false
+            });
+
+            mappa.addLayer(markersCluster);
+
+            caricaDati();
         }
-      });
 
-      // Se viene selezionato un singolo viaggio, disegna la linea rossa tratteggiata
-      if (viaggioSel !== 'tutti' && coordinateLinea.length > 1) {
-        layerLineaViaggio.setLatLngs(coordinateLinea);
-      }
+        // Caricamento del file JSON
+        function caricaDati() {
+            fetch('dati.json')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error("Impossibile caricare dati.json");
+                    }
+                    return response.json();
+                })
+                .then(dati => {
+                    datiFoto = dati;
+                    popolaFiltri();
+                    aggiornaMappa();
+                })
+                .catch(err => {
+                    console.error("Errore nel caricamento dei dati:", err);
+                    document.getElementById('stats').innerText = "Errore nel caricamento del file dati.json";
+                });
+        }
 
-      if (puntiValidi.length > 0) {
-        const bounds = L.latLngBounds(puntiValidi);
-        map.fitBounds(bounds, { padding: [50, 50], maxZoom: 15 });
-      }
-    }
+        // Popola i menu a tendina Anno e Viaggio
+        function popolaFiltri() {
+            const selectAnno = document.getElementById('select-anno');
+            const selectViaggio = document.getElementById('select-viaggio');
 
-    function aggiornaLegenda(anniOrdinati) {
-      const containerItems = document.getElementById('legenda-items');
-      containerItems.innerHTML = '';
-      anniOrdinati.forEach(anno => {
-        const item = document.createElement('div');
-        item.className = 'legenda-item';
-        item.innerHTML = `
-          <span class="legenda-color-dot" style="background-color: ${mappaColoriAnni[anno]};"></span>
-          <span><b>${anno}</b></span>
-        `;
-        containerItems.appendChild(item);
-      });
-    }
-  </script>
+            const anni = new Set();
+            const viaggi = new Set();
+
+            datiFoto.forEach(f => {
+                if (f.anno) anni.add(f.anno);
+                if (f.viaggio) viaggi.add(f.viaggio);
+            });
+
+            // Ordina e aggiungi gli anni
+            Array.from(anni).sort().reverse().forEach(anno => {
+                const opt = document.createElement('option');
+                opt.value = anno;
+                opt.textContent = anno;
+                selectAnno.appendChild(opt);
+            });
+
+            // Ordina e aggiungi i viaggi (nomi delle sottocartelle)
+            Array.from(viaggi).sort().forEach(viaggio => {
+                const opt = document.createElement('option');
+                opt.value = viaggio;
+                opt.textContent = viaggio;
+                selectViaggio.appendChild(opt);
+            });
+
+            selectAnno.addEventListener('change', gestisciCambioAnno);
+            selectViaggio.addEventListener('change', aggiornaMappa);
+        }
+
+        // Aggiorna le opzioni dei viaggi quando si seleziona un anno
+        function gestisciCambioAnno() {
+            const annoSelezionato = document.getElementById('select-anno').value;
+            const selectViaggio = document.getElementById('select-viaggio');
+
+            // Salva la selezione corrente
+            const viaggioCorrente = selectViaggio.value;
+
+            // Svuota i viaggi tenendo solo "Tutti"
+            selectViaggio.innerHTML = '<option value="Tutti">Tutti i Viaggi</option>';
+
+            const viaggiFiltrati = new Set();
+            datiFoto.forEach(f => {
+                if (annoSelezionato === "Tutti" || f.anno === annoSelezionato) {
+                    if (f.viaggio) viaggiFiltrati.add(f.viaggio);
+                }
+            });
+
+            Array.from(viaggiFiltrati).sort().forEach(viaggio => {
+                const opt = document.createElement('option');
+                opt.value = viaggio;
+                opt.textContent = viaggio;
+                selectViaggio.appendChild(opt);
+            });
+
+            // Ripristina il viaggio se fa parte del nuovo anno, altrimenti "Tutti"
+            if (viaggiFiltrati.has(viaggioCorrente)) {
+                selectViaggio.value = viaggioCorrente;
+            } else {
+                selectViaggio.value = "Tutti";
+            }
+
+            aggiornaMappa();
+        }
+
+        // Disegna i marker sulla mappa in base ai filtri
+        function aggiornaMappa() {
+            const annoSelezionato = document.getElementById('select-anno').value;
+            const viaggioSelezionato = document.getElementById('select-viaggio').value;
+
+            markersCluster.clearLayers();
+
+            const fotoFiltrate = datiFoto.filter(f => {
+                const matchAnno = (annoSelezionato === "Tutti" || f.anno === annoSelezionato);
+                const matchViaggio = (viaggioSelezionato === "Tutti" || f.viaggio === viaggioSelezionato);
+                return matchAnno && matchViaggio;
+            });
+
+            const bounds = [];
+
+            fotoFiltrate.forEach(f => {
+                if (f.lat && f.lon) {
+                    const marker = L.marker([f.lat, f.lon]);
+                    
+                    const popupHtml = `
+                        <div class="popup-content">
+                            <a href="${f.foto}" target="_blank">
+                                <img src="${f.foto}" alt="${f.nome}" loading="lazy" />
+                            </a>
+                            <div class="popup-title">${f.viaggio}</div>
+                            <div class="popup-date">📅 ${f.data}</div>
+                        </div>
+                    `;
+
+                    marker.bindPopup(popupHtml);
+                    markersCluster.addLayer(marker);
+                    bounds.push([f.lat, f.lon]);
+                }
+            });
+
+            // Aggiorna contatore
+            document.getElementById('stats').innerText = `Foto visibili: ${fotoFiltrate.length}`;
+
+            // Centra la mappa sui dati filtrati se presenti
+            if (bounds.length > 0) {
+                mappa.fitBounds(bounds, { padding: [50, 50], maxZoom: 15 });
+            }
+        }
+
+        // Avvio all'apertura della pagina
+        window.onload = initMap;
+    </script>
 </body>
 </html>
