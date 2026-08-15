@@ -152,22 +152,6 @@
       background: none;
       border: none;
     }
-
-    /* Stile Puntina Numerata per singolo Viaggio */
-    .custom-pin-number {
-      background-color: #e74c3c;
-      color: white;
-      border-radius: 50%;
-      width: 26px;
-      height: 26px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-      font-size: 12px;
-      border: 2px solid white;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.4);
-    }
   </style>
 </head>
 <body>
@@ -218,13 +202,12 @@
 
     let tuttiIDati = [];
     
-    // Gruppo per i Cluster e Gruppo per Marker Singoli
-    let clusterGroup = L.markerClusterGroup({ disableClusteringAtZoom: 16 });
-    let unclusteredGroup = L.layerGroup();
+    // Gruppi distinti per gestiore Cluster vs Singoli Marker
+    const clusterGroup = L.markerClusterGroup({ disableClusteringAtZoom: 16 });
+    const singleGroup = L.layerGroup();
+    
     map.addLayer(clusterGroup);
-    map.addLayer(unclusteredGroup);
-
-    let layerLineaViaggio = L.polyline([], {color: '#e74c3c', weight: 4, opacity: 0.85, dashArray: '6, 8'}).addTo(map);
+    map.addLayer(singleGroup);
 
     const mappaColoriAnni = {};
     const tavolozzaColori = [
@@ -246,16 +229,6 @@
         iconSize: [25, 41],
         iconAnchor: [12, 41],
         popupAnchor: [1, -34]
-      });
-    }
-
-    function creaIconaNumerata(numero) {
-      return L.divIcon({
-        className: 'custom-pin-icon',
-        html: `<div class="custom-pin-number">${numero}</div>`,
-        iconSize: [26, 26],
-        iconAnchor: [13, 13],
-        popupAnchor: [0, -13]
       });
     }
 
@@ -329,9 +302,9 @@
       const viaggioSel = document.getElementById('select-viaggio').value;
       const legendaBox = document.getElementById('legenda-container');
 
+      // Svuota entrambi i gruppi
       clusterGroup.clearLayers();
-      unclusteredGroup.clearLayers();
-      layerLineaViaggio.setLatLngs([]);
+      singleGroup.clearLayers();
 
       let datiFiltrati = tuttiIDati;
 
@@ -347,21 +320,15 @@
       }
 
       const puntiValidi = [];
-      const coordinateLinea = [];
 
-      datiFiltrati.forEach((p, index) => {
+      datiFiltrati.forEach(p => {
         const lat = parseFloat(p.lat);
-        let lon = parseFloat(p.lon);
+        const lon = parseFloat(p.lon);
 
         if (!isNaN(lat) && !isNaN(lon)) {
           let opzioniMarker = {};
 
-          // Se è selezionato un singolo viaggio -> Puntine Numerate
-          if (viaggioSel !== 'tutti') {
-            opzioniMarker.icon = creaIconaNumerata(index + 1);
-          } 
-          // Altrimenti -> Puntine Colorate per Anno
-          else if (annoSel === 'tutti' && mappaColoriAnni[p.anno]) {
+          if (mappaColoriAnni[p.anno]) {
             opzioniMarker.icon = creaIconaColorata(mappaColoriAnni[p.anno]);
           }
 
@@ -388,23 +355,19 @@
 
           marker.bindPopup(popupContent);
 
-          // Se si visualizza un singolo viaggio, niente cluster per mostrare bene la sequenza numerata
+          // Se è selezionato un VIAGGIO SPECIFICO: niente cluster
+          // Se siamo su "All Trips": usa il cluster
           if (viaggioSel !== 'tutti') {
-            unclusteredGroup.addLayer(marker);
+            singleGroup.addLayer(marker);
           } else {
             clusterGroup.addLayer(marker);
           }
 
           puntiValidi.push([lat, lon]);
-          coordinateLinea.push([lat, lon]);
         }
       });
 
-      // Disegna la linea se è selezionato un viaggio specifico
-      if (viaggioSel !== 'tutti' && coordinateLinea.length > 1) {
-        layerLineaViaggio.setLatLngs(coordinateLinea);
-      }
-
+      // Zoom automatico per inquadrare tutti i punti filtrati
       if (puntiValidi.length > 0) {
         const bounds = L.latLngBounds(puntiValidi);
         map.fitBounds(bounds, { padding: [50, 50], maxZoom: 15 });
