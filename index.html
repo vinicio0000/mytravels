@@ -164,7 +164,7 @@
       border: none;
     }
 
-    /* Modale Foto a Schermo Intero */
+    /* Modale Foto a Schermo Intero - BASE DESKTOP */
     .modal-foto {
       display: none;
       position: fixed;
@@ -187,7 +187,7 @@
       box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
     }
 
-    /* Pulsante Chiudi (X) */
+    /* Pulsante Chiudi (X) Desktop */
     .close-modal-btn {
       position: fixed;
       top: 20px;
@@ -225,7 +225,7 @@
         display: none !important;
       }
 
-      /* Riduce leggermente i caratteri e la spaziatura del Menu Filtri */
+      /* Menu Filtri ottimizzato */
       #filtro-container {
         padding: 8px 12px;
         gap: 6px;
@@ -247,13 +247,39 @@
         font-size: 11px;
       }
 
+      /* RIPRISTINO DIMENSIONI FOTO SU CELLULARE */
+      .modal-foto {
+        padding-top: 0;
+        display: none;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .modal-foto-content {
+        max-width: 98vw;
+        max-height: 92vh;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        border-radius: 4px;
+        margin: auto;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
+
+      /* Tasto X compatto e discreto su cellulare */
       .close-modal-btn {
-        top: 15px;
-        right: 15px;
-        width: 42px;
-        height: 42px;
-        line-height: 38px;
-        font-size: 28px;
+        top: 10px;
+        right: 10px;
+        width: 36px;
+        height: 36px;
+        line-height: 32px;
+        font-size: 24px;
+        background: rgba(0, 0, 0, 0.5);
+        box-shadow: none;
       }
     }
   </style>
@@ -299,10 +325,10 @@
   <!-- Map -->
   <div id="map"></div>
 
-  <!-- Modale Foto a Schermo Intero con Pulsante X -->
+  <!-- Modale Foto a Schermo Intero -->
   <div id="imageModal" class="modal-foto" onclick="chiudiModalFoto()">
     <span class="close-modal-btn" title="Chiudi foto" onclick="chiudiModalFoto()">&times;</span>
-    <img class="modal-foto-content" id="imgModalSrc" onclick="event.stopPropagation();">
+    <img class="modal-foto-content" id="imgModalSrc" onclick="chiudiModalFoto();">
   </div>
 
   <!-- Leaflet JS & MarkerCluster Plugin -->
@@ -517,7 +543,9 @@
 
     // Funzioni per la Modale Foto
     function apriModalFoto(urlFoto) {
-      document.getElementById('imageModal').style.display = 'block';
+      const modal = document.getElementById('imageModal');
+      const isSmartphone = window.innerWidth <= 600;
+      modal.style.display = isSmartphone ? 'flex' : 'block';
       document.getElementById('imgModalSrc').src = urlFoto;
     }
 
