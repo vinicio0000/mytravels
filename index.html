@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>The Travel Map of Vinicio and Luisa</title>
-  <meta name="description" content="Explore the travel memories, geotagged photos, and interactive map of Vinicio and Luisa around the world.">
+  <title>La mappa dei viaggi di Vinicio e Luisa</title>
+  <meta name="description" content="Esplora la mappa dei viaggi e i ricordi fotografici di Vinicio e Luisa nel mondo.">
 
   <!-- Leaflet CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
@@ -44,13 +44,6 @@
       font-size: 18px;
       color: #2c3e50;
       font-weight: 700;
-    }
-
-    #header-container p {
-      margin: 4px 0 0 0;
-      font-size: 12px;
-      color: #7f8c8d;
-      font-style: italic;
     }
 
     /* Filtri Box */
@@ -169,44 +162,78 @@
       background: none;
       border: none;
     }
+
+    /* Stili specifici per Smartphone (schermi sotto i 600px) */
+    @media (max-width: 600px) {
+      /* Nasconde il Titolo su smartphone */
+      #header-container {
+        display: none !important;
+      }
+
+      /* Nasconde la Legenda su smartphone */
+      #legenda-container {
+        display: none !important;
+      }
+
+      /* Riduce leggermente i caratteri e la spaziatura del Menu Filtri */
+      #filtro-container {
+        padding: 8px 12px;
+        gap: 6px;
+        top: 10px;
+        right: 10px;
+      }
+
+      .filtro-group label {
+        font-size: 11px;
+      }
+
+      select {
+        padding: 4px 6px;
+        font-size: 11px;
+        min-width: 120px;
+      }
+
+      .checkbox-label {
+        font-size: 11px;
+      }
+    }
   </style>
 </head>
 <body>
 
   <!-- Title Box -->
   <div id="header-container">
-    <h1>The Travel Map of Vinicio and Luisa</h1>
-    <p>Our travel memories and geotagged moments around the world</p>
+    <h1>La mappa dei viaggi di Vinicio e Luisa</h1>
   </div>
 
   <!-- Filters Box -->
   <div id="filtro-container">
     <div class="filtro-group">
-      <label for="select-anno"><b>Year:</b></label>
+      <label for="select-anno"><b>Anno:</b></label>
       <select id="select-anno" onchange="cambiaAnno()">
-        <option value="tutti">All Years</option>
+        <option value="tutti">Tutti gli anni</option>
       </select>
     </div>
     
     <div class="filtro-group">
-      <label for="select-viaggio"><b>Trip:</b></label>
+      <label for="select-viaggio"><b>Viaggio:</b></label>
       <select id="select-viaggio" onchange="cambiaViaggio()">
-        <option value="tutti">All Trips</option>
+        <option value="tutti">Tutti i viaggi</option>
       </select>
     </div>
 
-    <!-- Checkbox Opzione Cluster (Visibile solo per All Trips) -->
+    <!-- Checkbox Opzione Cluster (Visibile solo per Tutti i viaggi, Default: OFF) -->
     <div id="cluster-option-container">
       <label class="checkbox-label">
-        <input type="checkbox" id="check-cluster" checked onchange="aggiornaMappa()">
-        Group markers (Clustering)
+        <input type="checkbox" id="check-cluster" onchange="aggiornaMappa()">
+        Raggruppa punti (Clustering)
       </label>
     </div>
   </div>
 
   <!-- Legend Box -->
   <div id="legenda-container">
-    <h4>Years Legend</h4>
+    <h4>Legenda Anni</h4>
     <div id="legenda-items"></div>
   </div>
 
@@ -265,7 +292,7 @@
         popolaViaggi();
         aggiornaMappa();
       })
-      .catch(err => console.error("Error loading dati.json:", err));
+      .catch(err => console.error("Errore nel caricamento di dati.json:", err));
 
     function popolaAnni() {
       const selectAnno = document.getElementById('select-anno');
@@ -281,7 +308,7 @@
         mappaColoriAnni[anno] = tavolozzaColori[index % tavolozzaColori.length];
       });
 
-      selectAnno.innerHTML = '<option value="tutti">All Years</option>';
+      selectAnno.innerHTML = '<option value="tutti">Tutti gli anni</option>';
       anniOrdinati.forEach(anno => {
         const option = document.createElement('option');
         option.value = anno;
@@ -304,7 +331,7 @@
         }
       });
 
-      selectViaggio.innerHTML = '<option value="tutti">All Trips</option>';
+      selectViaggio.innerHTML = '<option value="tutti">Tutti i viaggi</option>';
       Array.from(viaggiSet).sort().forEach(v => {
         const option = document.createElement('option');
         option.value = v;
@@ -328,8 +355,9 @@
       const legendaBox = document.getElementById('legenda-container');
       const clusterOptContainer = document.getElementById('cluster-option-container');
       const usaClusterCheckbox = document.getElementById('check-cluster').checked;
+      const isSmartphone = window.innerWidth <= 600;
 
-      // Mostra l'opzione del checkbox cluster solo quando si guarda "All Trips"
+      // Mostra l'opzione del checkbox cluster solo quando si guarda "Tutti i viaggi"
       if (viaggioSel === 'tutti') {
         clusterOptContainer.style.display = 'block';
       } else {
@@ -346,7 +374,8 @@
         datiFiltrati = datiFiltrati.filter(p => p.anno === annoSel);
         legendaBox.style.display = 'none';
       } else {
-        legendaBox.style.display = 'block';
+        // Mostra la legenda solo su desktop quando sono selezionati tutti gli anni
+        legendaBox.style.display = isSmartphone ? 'none' : 'block';
       }
 
       if (viaggioSel !== 'tutti') {
@@ -383,13 +412,13 @@
               <a href="${p.foto}" target="_blank">
                 <img src="${p.foto}" class="popup-foto" alt="${p.nome}">
               </a><br>
-              <small><a href="${p.foto}" target="_blank" style="display:inline-block; margin-top:6px;">Enlarge photo 🔍</a></small>
+              <small><a href="${p.foto}" target="_blank" style="display:inline-block; margin-top:6px;">Ingrandisci foto 🔍</a></small>
             </div>
           `;
 
           marker.bindPopup(popupContent);
 
-          // Usa il cluster solo se siamo su "All Trips" E la checkbox è spuntata
+          // Usa il cluster solo se siamo su "Tutti i viaggi" E la checkbox è spuntata
           if (viaggioSel === 'tutti' && usaClusterCheckbox) {
             clusterGroup.addLayer(marker);
           } else {
@@ -420,6 +449,9 @@
         containerItems.appendChild(item);
       });
     }
+
+    // Gestione ridimensionamento finestra per aggiornare la visibilità della legenda
+    window.addEventListener('resize', aggiornaMappa);
   </script>
 </body>
 </html>
