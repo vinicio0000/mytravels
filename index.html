@@ -30,16 +30,10 @@
       top: 10px;
       left: 10px;
       z-index: 1000;
-      background: rgba(255, 255, 255, 0.95);
-      padding: 12px 15px;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 10px 15px;
       border-radius: 8px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-      max-width: 90%;
-    }
-
-    .controls select, .controls label {
-      font-size: 14px;
-      margin-right: 10px;
     }
 
     /* Modale Immagine a Schermo Intero */
@@ -47,7 +41,7 @@
       display: none; 
       position: fixed; 
       z-index: 99999; 
-      padding-top: 40px; 
+      padding-top: 30px; 
       left: 0;
       top: 0;
       width: 100%; 
@@ -60,35 +54,32 @@
       margin: auto;
       display: block;
       max-width: 90%;
-      max-height: 80vh;
-      border-radius: 5px;
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+      max-height: 85vh;
+      border-radius: 4px;
     }
 
-    /* Tasto Chiudi (X) visibile su Desktop e Cellulare */
+    /* Tasto Chiudi (X) visibile in alto a destra */
     .close-modal-btn {
       position: fixed;
-      top: 20px;
-      right: 25px;
+      top: 15px;
+      right: 20px;
       color: #ffffff;
-      font-size: 35px;
+      font-size: 30px;
       font-weight: bold;
       cursor: pointer;
       z-index: 100000;
-      background: rgba(255, 0, 0, 0.7);
-      width: 50px;
-      height: 50px;
-      line-height: 45px;
+      background: rgba(220, 53, 69, 0.9);
+      width: 45px;
+      height: 45px;
+      line-height: 40px;
       text-align: center;
       border-radius: 50%;
       user-select: none;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-      transition: background 0.2s, transform 0.2s;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.5);
     }
 
     .close-modal-btn:hover {
       background: rgba(255, 0, 0, 1);
-      transform: scale(1.1);
     }
 
     .popup-img {
@@ -108,149 +99,88 @@
     <label for="yearFilter"><strong>Anno:</strong></label>
     <select id="yearFilter" onchange="filterMarkers()">
       <option value="all">Tutti gli anni</option>
-      <!-- Aggiungi i tuoi anni qui -->
-      <option value="2023">2023</option>
-      <option value="2024">2024</option>
     </select>
-
-    <br style="margin-bottom: 5px;">
-
-    <!-- Raggruppamento disattivato di default (SENZA 'checked') -->
-    <label style="cursor: pointer; user-select: none;">
-      <input type="checkbox" id="clusterToggle" onchange="toggleClustering()"> Raggruppa punti
+    <br><br>
+    <!-- Raggruppamento SENZA spunta 'checked' all'avvio -->
+    <label style="cursor: pointer;">
+      <input type="checkbox" id="clusterToggle" onchange="filterMarkers()"> Raggruppa punti
     </label>
   </div>
 
-  <!-- Contenitore Mappa -->
+  <!-- Mappa -->
   <div id="map"></div>
 
-  <!-- Modale Foto a Schermo Intero con Pulsante X -->
+  <!-- Modale Foto con Pulsante X -->
   <div id="imageModal" class="modal" onclick="closeModal()">
     <span class="close-modal-btn" title="Chiudi foto" onclick="closeModal()">&times;</span>
     <img class="modal-content" id="img01" onclick="event.stopPropagation();">
   </div>
 
-  <!-- Script Leaflet e MarkerCluster -->
+  <!-- Script Leaflet -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
 
   <script>
-    // 1. Inizializzazione Mappa
-    const map = L.map('map').setView([41.9028, 12.4964], 5); // Vista Italia
+    const map = L.map('map').setView([41.9028, 12.4964], 5);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 19,
       attribution: '© OpenStreetMap'
     }).addTo(map);
 
-    // Gruppo per i punti raggruppati (Cluster)
     const clusterGroup = L.markerClusterGroup();
-    // Gruppo per i punti singoli (Senza raggruppamento)
     const singleGroup = L.layerGroup().addTo(map);
-
-    // 2. Dati dei Viaggi (Personalizza o sostituisci con i tuoi dati)
-    const travelData = [
-      {
-        title: "Roma",
-        year: "2023",
-        lat: 41.9028,
-        lng: 12.4964,
-        img: "https://picsum.photos/400/300?random=1",
-        desc: "Viaggio a Roma"
-      },
-      {
-        title: "Firenze",
-        year: "2024",
-        lat: 43.7696,
-        lng: 11.2558,
-        img: "https://picsum.photos/400/300?random=2",
-        desc: "Gita a Firenze"
-      }
-    ];
 
     let allMarkers = [];
 
-    // 3. Creazione Marcatori
-    function createMarkers() {
-      allMarkers = [];
-      
-      travelData.forEach(place => {
-        const marker = L.marker([place.lat, place.lng]);
-        
-        const popupContent = `
-          <div style="text-align:center;">
-            <h3 style="margin:0 0 5px 0;">${place.title}</h3>
-            <p style="margin:0 0 5px 0;"><b>Anno:</b> ${place.year}</p>
-            <p style="margin:0 0 5px 0;">${place.desc}</p>
-            <img class="popup-img" src="${place.img}" alt="${place.title}" onclick="openModal('${place.img}')">
-          </div>
-        `;
-        
-        marker.bindPopup(popupContent);
-        marker.year = place.year;
-        allMarkers.push(marker);
-      });
+    // Inserisci qui i tuoi dati o la chiamata al tuo file dati
+    const travelData = []; 
 
-      renderMarkers();
+    function loadData() {
+      // Sostituisci o carica qui i tuoi punti come facevi prima
+      render();
     }
 
-    // 4. Rendering dei Marcatori in base al filtro e al clustering
-    function renderMarkers() {
+    function render() {
       const selectedYear = document.getElementById('yearFilter').value;
       const isClustered = document.getElementById('clusterToggle').checked;
 
-      // Pulisci i layer attuali
       clusterGroup.clearLayers();
       singleGroup.clearLayers();
       map.removeLayer(clusterGroup);
 
-      // Filtra i punti per anno
-      const filteredMarkers = allMarkers.filter(m => selectedYear === 'all' || m.year === selectedYear);
+      const filtered = allMarkers.filter(m => selectedYear === 'all' || m.year === selectedYear);
 
       if (isClustered) {
-        // Aggiungi al gruppo di raggruppamento
-        filteredMarkers.forEach(m => clusterGroup.addLayer(m));
+        filtered.forEach(m => clusterGroup.addLayer(m));
         map.addLayer(clusterGroup);
       } else {
-        // Aggiungi direttamente alla mappa come punti singoli
-        filteredMarkers.forEach(m => singleGroup.addLayer(m));
+        filtered.forEach(m => singleGroup.addLayer(m));
       }
     }
 
     function filterMarkers() {
-      renderMarkers();
+      render();
     }
 
-    function toggleClustering() {
-      renderMarkers();
-    }
-
-    // 5. Funzioni Modale Immagine (Apertura e Chiusura)
     function openModal(src) {
-      const modal = document.getElementById('imageModal');
-      const modalImg = document.getElementById('img01');
-      modal.style.display = "block";
-      modalImg.src = src;
+      document.getElementById('imageModal').style.display = "block";
+      document.getElementById('img01').src = src;
     }
 
     function closeModal() {
       document.getElementById('imageModal').style.display = "none";
     }
 
-    // Chiusura tramite tasto ESC da tastiera
     document.addEventListener('keydown', function(e) {
-      if (e.key === "Escape") {
-        closeModal();
-      }
+      if (e.key === "Escape") closeModal();
     });
 
-    // 6. Inizializzazione all'avvio
     window.onload = function() {
-      // Forza la spunta "Raggruppa punti" su FALSE all'apertura (Sia PC che Cellulare)
+      // Disattiva il raggruppamento all'avvio
       document.getElementById('clusterToggle').checked = false;
-      createMarkers();
+      loadData();
     };
   </script>
-
 </body>
 </html>
