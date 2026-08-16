@@ -238,6 +238,7 @@
       height: 100%;
       background-color: rgba(0, 0, 0, 0.9);
       text-align: center;
+      cursor: pointer;
     }
 
     .modal-foto-content {
@@ -247,32 +248,6 @@
       max-height: 80vh;
       border-radius: 6px;
       box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
-    }
-
-    /* Pulsante Chiudi (X) Desktop */
-    .close-modal-btn {
-      position: fixed;
-      top: 20px;
-      right: 25px;
-      color: #ffffff;
-      font-size: 32px;
-      font-weight: bold;
-      cursor: pointer;
-      z-index: 100000;
-      background: rgba(220, 53, 69, 0.85);
-      width: 48px;
-      height: 48px;
-      line-height: 44px;
-      text-align: center;
-      border-radius: 50%;
-      user-select: none;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-      transition: background 0.2s, transform 0.2s;
-    }
-
-    .close-modal-btn:hover {
-      background: rgba(220, 53, 69, 1);
-      transform: scale(1.08);
     }
 
     /* Stili specifici per Smartphone (schermi sotto i 600px) */
@@ -330,18 +305,6 @@
         bottom: 0;
         left: 0;
         right: 0;
-      }
-
-      /* Tasto X compatto su cellulare */
-      .close-modal-btn {
-        top: 10px;
-        right: 10px;
-        width: 36px;
-        height: 36px;
-        line-height: 32px;
-        font-size: 24px;
-        background: rgba(0, 0, 0, 0.5);
-        box-shadow: none;
       }
 
       #slideshow-controls {
@@ -410,10 +373,9 @@
   <!-- Map -->
   <div id="map"></div>
 
-  <!-- Modale Foto -->
+  <!-- Modale Foto (Senza pulsante X) -->
   <div id="imageModal" class="modal-foto" onclick="chiudiModalFoto()">
-    <span class="close-modal-btn" title="Chiudi foto" onclick="chiudiModalFoto()">&times;</span>
-    <img class="modal-foto-content" id="imgModalSrc" onclick="chiudiModalFoto();">
+    <img class="modal-foto-content" id="imgModalSrc">
   </div>
 
   <!-- Leaflet JS & MarkerCluster Plugin -->
@@ -588,7 +550,6 @@
 
           const marker = L.marker([lat, lon], opzioniMarker);
 
-          // Salva informazioni originali nel marker per lo slideshow
           marker.coloreOriginale = coloreHex;
 
           const tooltipContent = `<b>${p.nome}</b><br>📅 ${p.data}`;
@@ -649,27 +610,23 @@
         if (!isSlideshowPaused) {
           nextSlide();
         }
-      }, 4000); // 4 secondi per foto
+      }, 4000);
     }
 
     function mostraSlide(index) {
       if (index < 0 || index >= markersSlideshow.length) return;
 
-      // Ripristina tutti i marker allo stato/colore standard (Blu/Colore Anno)
       markersSlideshow.forEach(m => {
         m.setIcon(creaIconaColorata('#007bff', false));
       });
 
       const activeMarker = markersSlideshow[index];
 
-      // Evidenzia il marker attivo in ORO/GIALLO e ingrandiscilo
       activeMarker.setIcon(creaIconaColorata('#FFD700', true));
 
-      // Sposta la mappa sul punto e apri il popup con la foto
       map.panTo(activeMarker.getLatLng(), { animate: true, duration: 1 });
       activeMarker.openPopup();
 
-      // Aggiorna contatore
       document.getElementById('slideshow-counter').textContent = `${index + 1} / ${markersSlideshow.length}`;
     }
 
@@ -693,7 +650,7 @@
       clearInterval(slideshowTimer);
       document.getElementById('slideshow-controls').style.display = 'none';
       map.closePopup();
-      aggiornaMappa(); // Ripristina mappa standard
+      aggiornaMappa();
     }
 
     function aggiornaLegenda(anniOrdinati) {
