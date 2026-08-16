@@ -7,6 +7,9 @@
   <title>La mappa dei viaggi di Vinicio e Luisa</title>
   <meta name="description" content="Esplora la mappa dei viaggi e i ricordi fotografici di Vinicio e Luisa nel mondo.">
 
+  <!-- Favicon Cartina del Mondo -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='%232c3e50'/><path fill='%233498db' d='M10 16c2-4 8-6 12-4s8 6 12 4 8-6 12-4 8 4 8 8-4 8-8 6-12 4-8-6-12-4-8 4-8-8z' opacity='0.3'/><path fill='%23ffffff' d='M14 18c0-2.2 1.8-4 4-4h28c2.2 0 4 1.8 4 4v28c0 2.2-1.8 4-4 4H18c-2.2 0-4-1.8-4-4V18zm6 4c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12-10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12-10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z'/><path fill='%23e74c3c' d='M32 12c-4.4 0-8 3.6-8 8 0 6 8 14 8 14s8-8 8-14c0-4.4-3.6-8-8-8zm0 11c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3z'/></svg>">
+
   <!-- Leaflet CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <!-- Leaflet MarkerCluster CSS -->
@@ -100,6 +103,65 @@
       user-select: none;
     }
 
+    /* Pulsante Slideshow */
+    #btn-slideshow {
+      display: none;
+      background: #007bff;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 13px;
+      cursor: pointer;
+      text-align: center;
+      transition: background 0.2s;
+      margin-top: 4px;
+    }
+
+    #btn-slideshow:hover {
+      background: #0056b3;
+    }
+
+    /* Controlli Slideshow in Basso */
+    #slideshow-controls {
+      display: none;
+      position: absolute;
+      bottom: 25px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1000;
+      background: rgba(44, 62, 80, 0.95);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 30px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      align-items: center;
+      gap: 12px;
+    }
+
+    #slideshow-controls button {
+      background: rgba(255, 255, 255, 0.2);
+      border: none;
+      color: white;
+      padding: 6px 12px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 13px;
+      transition: background 0.2s;
+    }
+
+    #slideshow-controls button:hover {
+      background: rgba(255, 255, 255, 0.4);
+    }
+
+    #slideshow-counter {
+      font-size: 13px;
+      font-weight: bold;
+      min-width: 60px;
+      text-align: center;
+    }
+
     /* Legenda Colori */
     #legenda-container {
       position: absolute;
@@ -156,11 +218,61 @@
       border-radius: 6px;
       margin-top: 8px;
       object-fit: cover;
+      cursor: pointer;
     }
 
     .custom-pin-icon {
       background: none;
       border: none;
+    }
+
+    /* Modale Foto - BASE DESKTOP */
+    .modal-foto {
+      display: none;
+      position: fixed;
+      z-index: 99999;
+      padding-top: 40px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      text-align: center;
+    }
+
+    .modal-foto-content {
+      margin: auto;
+      display: block;
+      max-width: 90%;
+      max-height: 80vh;
+      border-radius: 6px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    }
+
+    /* Pulsante Chiudi (X) Desktop */
+    .close-modal-btn {
+      position: fixed;
+      top: 20px;
+      right: 25px;
+      color: #ffffff;
+      font-size: 32px;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 100000;
+      background: rgba(220, 53, 69, 0.85);
+      width: 48px;
+      height: 48px;
+      line-height: 44px;
+      text-align: center;
+      border-radius: 50%;
+      user-select: none;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .close-modal-btn:hover {
+      background: rgba(220, 53, 69, 1);
+      transform: scale(1.08);
     }
 
     /* Stili specifici per Smartphone (schermi sotto i 600px) */
@@ -175,7 +287,7 @@
         display: none !important;
       }
 
-      /* Riduce leggermente i caratteri e la spaziatura del Menu Filtri */
+      /* Menu Filtri ottimizzato */
       #filtro-container {
         padding: 8px 12px;
         gap: 6px;
@@ -194,6 +306,52 @@
       }
 
       .checkbox-label {
+        font-size: 11px;
+      }
+
+      /* DIMENSIONI FOTO SU CELLULARE */
+      .modal-foto {
+        padding-top: 0;
+        display: none;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .modal-foto-content {
+        max-width: 98vw;
+        max-height: 92vh;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        border-radius: 4px;
+        margin: auto;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
+
+      /* Tasto X compatto su cellulare */
+      .close-modal-btn {
+        top: 10px;
+        right: 10px;
+        width: 36px;
+        height: 36px;
+        line-height: 32px;
+        font-size: 24px;
+        background: rgba(0, 0, 0, 0.5);
+        box-shadow: none;
+      }
+
+      #slideshow-controls {
+        bottom: 15px;
+        padding: 6px 12px;
+        gap: 8px;
+      }
+
+      #slideshow-controls button {
+        padding: 4px 8px;
         font-size: 11px;
       }
     }
@@ -229,6 +387,18 @@
         Raggruppa punti (Clustering)
       </label>
     </div>
+
+    <!-- Pulsante Slideshow -->
+    <button id="btn-slideshow" onclick="avviaSlideshow()">▶ Avvia Slideshow</button>
+  </div>
+
+  <!-- Controlli Slideshow in Basso -->
+  <div id="slideshow-controls">
+    <button onclick="prevSlide()">◀ Precedente</button>
+    <button id="btn-play-pause" onclick="togglePlayPause()">⏸ Pausa</button>
+    <button onclick="nextSlide()">Successivo ▶</button>
+    <span id="slideshow-counter">1 / 1</span>
+    <button onclick="fermaSlideshow()" style="background: rgba(220, 53, 69, 0.8);">✖ Esci</button>
   </div>
 
   <!-- Legend Box -->
@@ -239,6 +409,12 @@
 
   <!-- Map -->
   <div id="map"></div>
+
+  <!-- Modale Foto -->
+  <div id="imageModal" class="modal-foto" onclick="chiudiModalFoto()">
+    <span class="close-modal-btn" title="Chiudi foto" onclick="chiudiModalFoto()">&times;</span>
+    <img class="modal-foto-content" id="imgModalSrc" onclick="chiudiModalFoto();">
+  </div>
 
   <!-- Leaflet JS & MarkerCluster Plugin -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -268,9 +444,19 @@
       '#469990', '#dcbeff', '#9A6324', '#800000', '#000075'
     ];
 
-    function creaIconaColorata(coloreHex) {
+    // Variabili per la gestione dello Slideshow
+    let slideshowTimer = null;
+    let isSlideshowActive = false;
+    let isSlideshowPaused = false;
+    let currentSlideIndex = 0;
+    let puntiSlideshow = [];
+    let markersSlideshow = [];
+
+    function creaIconaColorata(coloreHex, isBig = false) {
+      const w = isBig ? 32 : 25;
+      const h = isBig ? 52 : 41;
       const svgPin = `
-        <svg width="25" height="41" viewBox="0 0 25 41" xmlns="http://www.w3.org/2000/svg">
+        <svg width="${w}" height="${h}" viewBox="0 0 25 41" xmlns="http://www.w3.org/2000/svg">
           <path d="M12.5 0C5.6 0 0 5.6 0 12.5C0 21.9 12.5 41 12.5 41C12.5 41 25 21.9 25 12.5C25 5.6 19.4 0 12.5 0Z" fill="${coloreHex}" stroke="#FFFFFF" stroke-width="1.5"/>
           <circle cx="12.5" cy="12.5" r="5" fill="#FFFFFF"/>
         </svg>
@@ -278,8 +464,8 @@
       return L.divIcon({
         className: 'custom-pin-icon',
         html: svgPin,
-        iconSize: [25, 41],
-        iconAnchor: [12, 41],
+        iconSize: [w, h],
+        iconAnchor: [w / 2, h],
         popupAnchor: [1, -34]
       });
     }
@@ -290,6 +476,7 @@
         tuttiIDati = dati;
         popolaAnni();
         popolaViaggi();
+        document.getElementById('check-cluster').checked = false;
         aggiornaMappa();
       })
       .catch(err => console.error("Errore nel caricamento di dati.json:", err));
@@ -341,11 +528,13 @@
     }
 
     function cambiaAnno() {
+      if (isSlideshowActive) fermaSlideshow();
       popolaViaggi();
       aggiornaMappa();
     }
 
     function cambiaViaggio() {
+      if (isSlideshowActive) fermaSlideshow();
       aggiornaMappa();
     }
 
@@ -354,19 +543,23 @@
       const viaggioSel = document.getElementById('select-viaggio').value;
       const legendaBox = document.getElementById('legenda-container');
       const clusterOptContainer = document.getElementById('cluster-option-container');
+      const btnSlideshow = document.getElementById('btn-slideshow');
       const usaClusterCheckbox = document.getElementById('check-cluster').checked;
       const isSmartphone = window.innerWidth <= 600;
 
-      // Mostra l'opzione del checkbox cluster solo quando si guarda "Tutti i viaggi"
+      // Gestione opzione cluster e pulsante slideshow
       if (viaggioSel === 'tutti') {
         clusterOptContainer.style.display = 'block';
+        btnSlideshow.style.display = 'none';
       } else {
         clusterOptContainer.style.display = 'none';
+        btnSlideshow.style.display = 'block'; // Mostra il pulsante Slideshow solo quando un viaggio è selezionato
       }
 
-      // Svuota entrambi i gruppi
       clusterGroup.clearLayers();
       singleGroup.clearLayers();
+      markersSlideshow = [];
+      puntiSlideshow = [];
 
       let datiFiltrati = tuttiIDati;
 
@@ -374,7 +567,6 @@
         datiFiltrati = datiFiltrati.filter(p => p.anno === annoSel);
         legendaBox.style.display = 'none';
       } else {
-        // Mostra la legenda solo su desktop quando sono selezionati tutti gli anni
         legendaBox.style.display = isSmartphone ? 'none' : 'block';
       }
 
@@ -389,13 +581,15 @@
         const lon = parseFloat(p.lon);
 
         if (!isNaN(lat) && !isNaN(lon)) {
-          let opzioniMarker = {};
-
-          if (mappaColoriAnni[p.anno]) {
-            opzioniMarker.icon = creaIconaColorata(mappaColoriAnni[p.anno]);
-          }
+          let coloreHex = mappaColoriAnni[p.anno] || '#007bff';
+          let opzioniMarker = {
+            icon: creaIconaColorata(coloreHex)
+          };
 
           const marker = L.marker([lat, lon], opzioniMarker);
+
+          // Salva informazioni originali nel marker per lo slideshow
+          marker.coloreOriginale = coloreHex;
 
           const tooltipContent = `<b>${p.nome}</b><br>📅 ${p.data}`;
           
@@ -409,16 +603,13 @@
             <div style="text-align: center;">
               <b style="font-size: 13px;">${p.viaggio}</b><br>
               <small style="color: #666;">📅 ${p.data}</small><br>
-              <a href="${p.foto}" target="_blank">
-                <img src="${p.foto}" class="popup-foto" alt="${p.nome}">
-              </a><br>
-              <small><a href="${p.foto}" target="_blank" style="display:inline-block; margin-top:6px;">Ingrandisci foto 🔍</a></small>
+              <img src="${p.foto}" class="popup-foto" alt="${p.nome}" onclick="apriModalFoto('${p.foto}')"><br>
+              <small><a href="javascript:void(0)" onclick="apriModalFoto('${p.foto}')" style="display:inline-block; margin-top:6px; color:#007bff; text-decoration:none;">Ingrandisci foto 🔍</a></small>
             </div>
           `;
 
           marker.bindPopup(popupContent);
 
-          // Usa il cluster solo se siamo su "Tutti i viaggi" E la checkbox è spuntata
           if (viaggioSel === 'tutti' && usaClusterCheckbox) {
             clusterGroup.addLayer(marker);
           } else {
@@ -426,14 +617,83 @@
           }
 
           puntiValidi.push([lat, lon]);
+          markersSlideshow.push(marker);
+          puntiSlideshow.push(p);
         }
       });
 
-      // Zoom automatico per inquadrare tutti i punti filtrati
-      if (puntiValidi.length > 0) {
+      if (puntiValidi.length > 0 && !isSlideshowActive) {
         const bounds = L.latLngBounds(puntiValidi);
         map.fitBounds(bounds, { padding: [50, 50], maxZoom: 15 });
       }
+    }
+
+    /* LOGICA SLIDESHOW */
+    function avviaSlideshow() {
+      if (markersSlideshow.length === 0) return;
+
+      isSlideshowActive = true;
+      isSlideshowPaused = false;
+      currentSlideIndex = 0;
+
+      document.getElementById('slideshow-controls').style.display = 'flex';
+      document.getElementById('btn-play-pause').textContent = '⏸ Pausa';
+
+      mostraSlide(currentSlideIndex);
+      avviaTimer();
+    }
+
+    function avviaTimer() {
+      clearInterval(slideshowTimer);
+      slideshowTimer = setInterval(() => {
+        if (!isSlideshowPaused) {
+          nextSlide();
+        }
+      }, 4000); // 4 secondi per foto
+    }
+
+    function mostraSlide(index) {
+      if (index < 0 || index >= markersSlideshow.length) return;
+
+      // Ripristina tutti i marker allo stato/colore standard (Blu/Colore Anno)
+      markersSlideshow.forEach(m => {
+        m.setIcon(creaIconaColorata('#007bff', false));
+      });
+
+      const activeMarker = markersSlideshow[index];
+
+      // Evidenzia il marker attivo in ORO/GIALLO e ingrandiscilo
+      activeMarker.setIcon(creaIconaColorata('#FFD700', true));
+
+      // Sposta la mappa sul punto e apri il popup con la foto
+      map.panTo(activeMarker.getLatLng(), { animate: true, duration: 1 });
+      activeMarker.openPopup();
+
+      // Aggiorna contatore
+      document.getElementById('slideshow-counter').textContent = `${index + 1} / ${markersSlideshow.length}`;
+    }
+
+    function nextSlide() {
+      currentSlideIndex = (currentSlideIndex + 1) % markersSlideshow.length;
+      mostraSlide(currentSlideIndex);
+    }
+
+    function prevSlide() {
+      currentSlideIndex = (currentSlideIndex - 1 + markersSlideshow.length) % markersSlideshow.length;
+      mostraSlide(currentSlideIndex);
+    }
+
+    function togglePlayPause() {
+      isSlideshowPaused = !isSlideshowPaused;
+      document.getElementById('btn-play-pause').textContent = isSlideshowPaused ? '▶ Riprendi' : '⏸ Pausa';
+    }
+
+    function fermaSlideshow() {
+      isSlideshowActive = false;
+      clearInterval(slideshowTimer);
+      document.getElementById('slideshow-controls').style.display = 'none';
+      map.closePopup();
+      aggiornaMappa(); // Ripristina mappa standard
     }
 
     function aggiornaLegenda(anniOrdinati) {
@@ -450,7 +710,26 @@
       });
     }
 
-    // Gestione ridimensionamento finestra per aggiornare la visibilità della legenda
+    // Funzioni Modale Foto
+    function apriModalFoto(urlFoto) {
+      const modal = document.getElementById('imageModal');
+      const isSmartphone = window.innerWidth <= 600;
+
+      modal.style.display = isSmartphone ? 'flex' : 'block';
+      document.getElementById('imgModalSrc').src = urlFoto;
+    }
+
+    function chiudiModalFoto() {
+      document.getElementById('imageModal').style.display = 'none';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === "Escape") {
+        chiudiModalFoto();
+        if (isSlideshowActive) fermaSlideshow();
+      }
+    });
+
     window.addEventListener('resize', aggiornaMappa);
   </script>
 </body>
