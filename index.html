@@ -167,7 +167,7 @@
       border: none;
     }
 
-    /* Modale Foto a Schermo Intero - BASE DESKTOP */
+    /* Modale Foto - BASE DESKTOP */
     .modal-foto {
       display: none;
       position: fixed;
@@ -177,7 +177,7 @@
       top: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.95);
+      background-color: rgba(0, 0, 0, 0.9);
       text-align: center;
     }
 
@@ -250,7 +250,7 @@
         font-size: 11px;
       }
 
-      /* DIMENSIONI FOTO MASSIME SU CELLULARE */
+      /* RIPRISTINO DIMENSIONI FOTO SU CELLULARE */
       .modal-foto {
         padding-top: 0;
         display: none;
@@ -259,12 +259,12 @@
       }
 
       .modal-foto-content {
-        max-width: 100vw;
-        max-height: 100vh;
+        max-width: 98vw;
+        max-height: 92vh;
         width: auto;
         height: auto;
         object-fit: contain;
-        border-radius: 0;
+        border-radius: 4px;
         margin: auto;
         position: absolute;
         top: 0;
@@ -273,15 +273,15 @@
         right: 0;
       }
 
-      /* Tasto X compatto e discreto su cellulare */
+      /* Tasto X compatto su cellulare */
       .close-modal-btn {
-        top: 15px;
-        right: 15px;
-        width: 38px;
-        height: 38px;
-        line-height: 34px;
-        font-size: 26px;
-        background: rgba(0, 0, 0, 0.6);
+        top: 10px;
+        right: 10px;
+        width: 36px;
+        height: 36px;
+        line-height: 32px;
+        font-size: 24px;
+        background: rgba(0, 0, 0, 0.5);
         box-shadow: none;
       }
     }
@@ -328,7 +328,7 @@
   <!-- Map -->
   <div id="map"></div>
 
-  <!-- Modale Foto a Schermo Intero -->
+  <!-- Modale Foto -->
   <div id="imageModal" class="modal-foto" onclick="chiudiModalFoto()">
     <span class="close-modal-btn" title="Chiudi foto" onclick="chiudiModalFoto()">&times;</span>
     <img class="modal-foto-content" id="imgModalSrc" onclick="chiudiModalFoto();">
@@ -544,49 +544,21 @@
       });
     }
 
-    // Funzioni per la Modale Foto con Full Screen API per nascondere la barra degli indirizzi
+    // Funzioni per la Modale Foto
     function apriModalFoto(urlFoto) {
       const modal = document.getElementById('imageModal');
       const isSmartphone = window.innerWidth <= 600;
 
       modal.style.display = isSmartphone ? 'flex' : 'block';
       document.getElementById('imgModalSrc').src = urlFoto;
-
-      // Attiva lo schermo intero reale (nasconde la barra di navigazione del browser)
-      if (modal.requestFullscreen) {
-        modal.requestFullscreen().catch(() => {});
-      } else if (modal.webkitRequestFullscreen) { /* Safari / iOS */
-        modal.webkitRequestFullscreen();
-      } else if (modal.msRequestFullscreen) { /* IE/Edge vecchi */
-        modal.msRequestFullscreen();
-      }
     }
 
     function chiudiModalFoto() {
-      const modal = document.getElementById('imageModal');
-      modal.style.display = 'none';
-
-      // Esce dallo schermo intero e ripristina la barra degli indirizzi
-      if (document.fullscreenElement || document.webkitFullscreenElement || document.msFullscreenElement) {
-        if (document.exitFullscreen) {
-          document.exitFullscreen().catch(() => {});
-        } else if (document.webkitExitFullscreen) {
-          document.webkitExitFullscreen();
-        } else if (document.msExitFullscreen) {
-          document.msExitFullscreen();
-        }
-      }
+      document.getElementById('imageModal').style.display = 'none';
     }
 
     document.addEventListener('keydown', function(e) {
       if (e.key === "Escape") chiudiModalFoto();
-    });
-
-    // Gestione del tasto indietro del telefono o chiusura manuale del Fullscreen
-    document.addEventListener('fullscreenchange', function() {
-      if (!document.fullscreenElement) {
-        document.getElementById('imageModal').style.display = 'none';
-      }
     });
 
     // Gestione ridimensionamento finestra per aggiornare la visibilità della legenda
