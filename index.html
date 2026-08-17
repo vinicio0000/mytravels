@@ -237,30 +237,14 @@
       font-size: 12px;
     }
 
-    /* Personalizzazione Popup Leaflet Ampio */
-    .leaflet-popup-content-wrapper {
-      padding: 8px;
-      border-radius: 10px;
-    }
-
-    .leaflet-popup-content {
-      margin: 8px 10px;
-      line-height: 1.4;
-      width: auto !important;
-    }
-
-    /* Popup Foto Intera Senza Tagli */
+    /* Popup Foto */
     .popup-foto {
-      width: 100%;
-      max-width: 480px;
-      max-height: 55vh;
+      max-width: 220px;
+      max-height: 160px;
       border-radius: 6px;
       margin-top: 8px;
-      object-fit: contain; /* Garantisce che la foto si veda TUTTA senza essere tagliata */
-      background-color: #000000;
+      object-fit: cover;
       cursor: pointer;
-      display: block;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
     }
 
     .custom-pin-icon {
@@ -330,11 +314,6 @@
         font-size: 11px;
       }
 
-      .popup-foto {
-        max-width: 75vw;
-        max-height: 45vh;
-      }
-
       .modal-foto {
         padding: 0;
       }
@@ -380,11 +359,6 @@
         padding: 2px 4px;
         font-size: 10px;
         min-width: 100px;
-      }
-
-      .popup-foto {
-        max-width: 50vw;
-        max-height: 50vh;
       }
 
       #slideshow-controls {
@@ -469,7 +443,7 @@
 
   <!-- Leaflet JS & MarkerCluster Plugin -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.js"></script>
+  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
 
   <script>
     const map = L.map('map').setView([41.9028, 12.4964], 6);
@@ -655,14 +629,14 @@
 
           const popupContent = `
             <div style="text-align: center;">
-              <b style="font-size: 14px; color: #2c3e50;">${p.viaggio}</b><br>
-              <small style="color: #666; font-size: 12px;">📅 ${p.data}</small><br>
-              <img src="${p.foto}" class="popup-foto" alt="${p.nome}" onclick="apriModalFoto('${p.foto}', ${puntiSlideshow.length})">
-              <small><a href="javascript:void(0)" onclick="apriModalFoto('${p.foto}', ${puntiSlideshow.length})" style="display:inline-block; margin-top:8px; color:#007bff; text-decoration:none; font-weight:600;">Ingrandisci a schermo intero 🔍</a></small>
+              <b style="font-size: 13px;">${p.viaggio}</b><br>
+              <small style="color: #666;">📅 ${p.data}</small><br>
+              <img src="${p.foto}" class="popup-foto" alt="${p.nome}" onclick="apriModalFoto('${p.foto}', ${puntiSlideshow.length})"><br>
+              <small><a href="javascript:void(0)" onclick="apriModalFoto('${p.foto}', ${puntiSlideshow.length})" style="display:inline-block; margin-top:6px; color:#007bff; text-decoration:none;">Ingrandisci foto 🔍</a></small>
             </div>
           `;
 
-          marker.bindPopup(popupContent, { maxWidth: 500, minWidth: 260 });
+          marker.bindPopup(popupContent);
 
           if (viaggioSel === 'tutti' && usaClusterCheckbox) {
             clusterGroup.addLayer(marker);
