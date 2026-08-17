@@ -631,7 +631,7 @@
             <div style="text-align: center;">
               <b style="font-size: 13px;">${p.viaggio}</b><br>
               <small style="color: #666;">📅 ${p.data}</small><br>
-              <img src="${p.foto}" class="popup-foto" loading="lazy" alt="${p.nome}" onclick="apriModalFoto('${p.foto}', ${puntiSlideshow.length})"><br>
+              <img src="${p.foto}" class="popup-foto" alt="${p.nome}" onclick="apriModalFoto('${p.foto}', ${puntiSlideshow.length})"><br>
               <small><a href="javascript:void(0)" onclick="apriModalFoto('${p.foto}', ${puntiSlideshow.length})" style="display:inline-block; margin-top:6px; color:#007bff; text-decoration:none;">Ingrandisci foto 🔍</a></small>
             </div>
           `;
@@ -671,7 +671,7 @@
     function avviaSlideshow() {
       if (markersSlideshow.length === 0) return;
 
-     /* precaricaFotoSlideshow(); vinicio*/
+      precaricaFotoSlideshow();
 
       isSlideshowActive = true;
       isSlideshowPaused = false;
