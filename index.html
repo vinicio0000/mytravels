@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   
   <title>La mappa dei viaggi di Vinicio e Luisa</title>
   <meta name="description" content="Esplora la mappa dei viaggi e i ricordi fotografici di Vinicio e Luisa nel mondo.">
@@ -22,6 +22,7 @@
       margin: 0;
       padding: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      overflow: hidden;
     }
 
     #map {
@@ -251,32 +252,39 @@
       border: none;
     }
 
-    /* Modale Foto - BASE DESKTOP */
+    /* MODALE FOTO DESKTOP E MOBILE */
     .modal-foto {
       display: none;
       position: fixed;
       z-index: 99999;
-      padding-top: 40px;
       left: 0;
       top: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.9);
-      text-align: center;
+      width: 100vw;
+      height: 100vh;
+      height: 100dvh;
+      background-color: rgba(0, 0, 0, 0.95);
+      align-items: center;
+      justify-content: center;
       cursor: pointer;
+      touch-action: pan-y;
+      box-sizing: border-box;
     }
 
     .modal-foto-content {
+      max-width: 100vw;
+      max-height: 100vh;
+      max-height: 100dvh;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      user-select: none;
+      -webkit-user-drag: none;
       margin: auto;
       display: block;
-      max-width: 90%;
-      max-height: 80vh;
-      border-radius: 6px;
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
     }
 
-    /* Stili specifici per Smartphone (schermi sotto i 600px) */
-    @media (max-width: 600px) {
+    /* Stili specifici per Smartphone e Schermi Piccoli */
+    @media (max-width: 900px) {
       #header-container {
         display: none !important;
       }
@@ -307,25 +315,14 @@
       }
 
       .modal-foto {
-        padding-top: 0;
-        display: none;
-        align-items: center;
-        justify-content: center;
+        padding: 0;
       }
 
       .modal-foto-content {
-        max-width: 98vw;
-        max-height: 92vh;
-        width: auto;
-        height: auto;
-        object-fit: contain;
-        border-radius: 4px;
-        margin: auto;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
+        width: 100vw;
+        height: 100vh;
+        height: 100dvh;
+        border-radius: 0;
       }
 
       #slideshow-controls {
@@ -346,6 +343,32 @@
       #select-speed {
         font-size: 10px;
         padding: 2px 4px;
+      }
+    }
+
+    /* Regole specifiche per Modalità Orizzontale (Landscape) */
+    @media (max-height: 500px) and (orientation: landscape) {
+      #filtro-container {
+        top: 5px;
+        right: 5px;
+        padding: 5px 8px;
+        gap: 4px;
+      }
+
+      select {
+        padding: 2px 4px;
+        font-size: 10px;
+        min-width: 100px;
+      }
+
+      #slideshow-controls {
+        bottom: 8px;
+        padding: 4px 8px;
+      }
+
+      .modal-foto-content {
+        max-height: 100dvh;
+        max-width: 100dvw;
       }
     }
   </style>
@@ -414,7 +437,7 @@
   <div id="map"></div>
 
   <!-- Modale Foto -->
-  <div id="imageModal" class="modal-foto" onclick="chiudiModalFoto()">
+  <div id="imageModal" class="modal-foto" onclick="chiudiModalFoto(false)">
     <img class="modal-foto-content" id="imgModalSrc">
   </div>
 
@@ -454,6 +477,11 @@
     let puntiSlideshow = [];
     let markersSlideshow = [];
     let immaginiPrecaricate = [];
+
+    // Variabili per la gestione dello Swipe Touch
+    let touchStartX = 0;
+    let touchEndX = 0;
+    let currentModalPhotoIndex = -1;
 
     function creaIconaColorata(coloreHex, isBig = false) {
       const w = isBig ? 32 : 25;
@@ -548,7 +576,7 @@
       const clusterOptContainer = document.getElementById('cluster-option-container');
       const btnSlideshow = document.getElementById('btn-slideshow');
       const usaClusterCheckbox = document.getElementById('check-cluster').checked;
-      const isSmartphone = window.innerWidth <= 600;
+      const isSmartphone = window.innerWidth <= 900;
 
       if (viaggioSel === 'tutti') {
         clusterOptContainer.style.display = 'block';
@@ -578,7 +606,7 @@
 
       const puntiValidi = [];
 
-      datiFiltrati.forEach(p => {
+      datiFiltrati.forEach((p) => {
         const lat = parseFloat(p.lat);
         const lon = parseFloat(p.lon);
 
@@ -589,7 +617,6 @@
           };
 
           const marker = L.marker([lat, lon], opzioniMarker);
-
           marker.coloreOriginale = coloreHex;
 
           const tooltipContent = `<b>${p.nome}</b><br>📅 ${p.data}`;
@@ -604,8 +631,8 @@
             <div style="text-align: center;">
               <b style="font-size: 13px;">${p.viaggio}</b><br>
               <small style="color: #666;">📅 ${p.data}</small><br>
-              <img src="${p.foto}" class="popup-foto" alt="${p.nome}" onclick="apriModalFoto('${p.foto}')"><br>
-              <small><a href="javascript:void(0)" onclick="apriModalFoto('${p.foto}')" style="display:inline-block; margin-top:6px; color:#007bff; text-decoration:none;">Ingrandisci foto 🔍</a></small>
+              <img src="${p.foto}" class="popup-foto" alt="${p.nome}" onclick="apriModalFoto('${p.foto}', ${puntiSlideshow.length})"><br>
+              <small><a href="javascript:void(0)" onclick="apriModalFoto('${p.foto}', ${puntiSlideshow.length})" style="display:inline-block; margin-top:6px; color:#007bff; text-decoration:none;">Ingrandisci foto 🔍</a></small>
             </div>
           `;
 
@@ -629,7 +656,6 @@
       }
     }
 
-    /* PRE-CARICAMENTO FOTO */
     function precaricaFotoSlideshow() {
       immaginiPrecaricate = [];
       puntiSlideshow.forEach(p => {
@@ -645,16 +671,13 @@
     function avviaSlideshow() {
       if (markersSlideshow.length === 0) return;
 
-      // Pre-carica tutte le foto del viaggio
       precaricaFotoSlideshow();
 
       isSlideshowActive = true;
       isSlideshowPaused = false;
       currentSlideIndex = 0;
 
-      // Nasconde il filtro box in alto a destra
       document.getElementById('filtro-container').style.display = 'none';
-
       document.getElementById('slideshow-controls').style.display = 'flex';
       document.getElementById('btn-play-pause').textContent = '⏸ Pausa';
 
@@ -688,7 +711,6 @@
       });
 
       const activeMarker = markersSlideshow[index];
-
       activeMarker.setIcon(creaIconaColorata('#FFD700', true));
 
       map.panTo(activeMarker.getLatLng(), { animate: true, duration: 0.8 });
@@ -716,7 +738,6 @@
       isSlideshowActive = false;
       clearInterval(slideshowTimer);
       
-      // Fai riapparire il menu filtri
       document.getElementById('filtro-container').style.display = 'flex';
       document.getElementById('slideshow-controls').style.display = 'none';
       
@@ -738,27 +759,79 @@
       });
     }
 
-    // Funzioni Modale Foto
-    function apriModalFoto(urlFoto) {
+    /* GESTIONE MODALE FOTO, CRONOLOGIA E SWIPE */
+    function apriModalFoto(urlFoto, index = -1) {
       const modal = document.getElementById('imageModal');
-      const isSmartphone = window.innerWidth <= 600;
 
-      modal.style.display = isSmartphone ? 'flex' : 'block';
+      currentModalPhotoIndex = index;
+      modal.style.display = 'flex';
       document.getElementById('imgModalSrc').src = urlFoto;
+
+      history.pushState({ modalOpen: true }, "");
     }
 
-    function chiudiModalFoto() {
-      document.getElementById('imageModal').style.display = 'none';
+    function chiudiModalFoto(fromPopState = false) {
+      const modal = document.getElementById('imageModal');
+      if (modal.style.display !== 'none') {
+        modal.style.display = 'none';
+        currentModalPhotoIndex = -1;
+
+        if (!fromPopState && history.state && history.state.modalOpen) {
+          history.back();
+        }
+      }
+    }
+
+    window.addEventListener('popstate', function(e) {
+      const modal = document.getElementById('imageModal');
+      if (modal.style.display !== 'none') {
+        chiudiModalFoto(true);
+      }
+    });
+
+    // Gesture Swipe Touch
+    const modalEl = document.getElementById('imageModal');
+
+    modalEl.addEventListener('touchstart', function(e) {
+      touchStartX = e.changedTouches[0].screenX;
+    }, false);
+
+    modalEl.addEventListener('touchend', function(e) {
+      touchEndX = e.changedTouches[0].screenX;
+      gestisciSwipe();
+    }, false);
+
+    function gestisciSwipe() {
+      const diffX = touchEndX - touchStartX;
+      const sogliaMinima = 40;
+
+      if (Math.abs(diffX) > sogliaMinima && currentModalPhotoIndex !== -1 && puntiSlideshow.length > 0) {
+        if (diffX < 0) {
+          currentModalPhotoIndex = (currentModalPhotoIndex + 1) % puntiSlideshow.length;
+        } else {
+          currentModalPhotoIndex = (currentModalPhotoIndex - 1 + puntiSlideshow.length) % puntiSlideshow.length;
+        }
+
+        const nuovaFoto = puntiSlideshow[currentModalPhotoIndex].foto;
+        document.getElementById('imgModalSrc').src = nuovaFoto;
+
+        if (isSlideshowActive) {
+          mostraSlide(currentModalPhotoIndex);
+        }
+      }
     }
 
     document.addEventListener('keydown', function(e) {
       if (e.key === "Escape") {
-        chiudiModalFoto();
+        chiudiModalFoto(false);
         if (isSlideshowActive) fermaSlideshow();
       }
     });
 
-    window.addEventListener('resize', aggiornaMappa);
+    window.addEventListener('resize', function() {
+      map.invalidateSize();
+      aggiornaMappa();
+    });
   </script>
 </body>
 </html>
