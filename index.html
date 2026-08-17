@@ -127,12 +127,12 @@
       bottom: 25px;
       left: 50%;
       transform: translateX(-50%);
-      z-index: 1000;
+      z-index: 100000;
       background: rgba(44, 62, 80, 0.95);
       color: white;
       padding: 8px 16px;
       border-radius: 30px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
       align-items: center;
       gap: 12px;
     }
@@ -230,13 +230,21 @@
       font-size: 12px;
     }
 
+    .popup-container {
+      text-align: center;
+      min-width: 180px;
+    }
+
     .popup-foto {
-      max-width: 220px;
-      max-height: 160px;
+      width: 180px;
+      height: 130px;
       border-radius: 6px;
-      margin-top: 8px;
+      margin-top: 6px;
       object-fit: cover;
       cursor: pointer;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .custom-pin-icon {
@@ -244,6 +252,7 @@
       border: none;
     }
 
+    /* MODALE FOTO A TUTTO SCHERMO */
     .modal-foto {
       display: none;
       position: fixed;
@@ -253,18 +262,17 @@
       width: 100vw;
       height: 100vh;
       height: 100dvh;
-      background-color: rgba(0, 0, 0, 0.95);
+      background-color: rgba(0, 0, 0, 0.92);
       align-items: center;
       justify-content: center;
-      cursor: pointer;
       touch-action: pan-y;
       box-sizing: border-box;
     }
 
     .modal-foto-content {
       max-width: 100vw;
-      max-height: 100vh;
-      max-height: 100dvh;
+      max-height: calc(100vh - 80px);
+      max-height: calc(100dvh - 80px);
       width: auto;
       height: auto;
       object-fit: contain;
@@ -274,16 +282,35 @@
       display: block;
     }
 
+    #modal-caption {
+      position: absolute;
+      top: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: white;
+      font-size: 14px;
+      font-weight: 600;
+      background: rgba(0,0,0,0.6);
+      padding: 6px 14px;
+      border-radius: 20px;
+      text-align: center;
+      max-width: 85vw;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      z-index: 100001;
+    }
+
     @media (max-width: 900px) {
       #header-container, #legenda-container { display: none !important; }
       #filtro-container { padding: 8px 12px; gap: 6px; top: 10px; right: 10px; }
       .filtro-group label, select, .checkbox-label { font-size: 11px; }
       select { padding: 4px 6px; min-width: 120px; }
-      .modal-foto-content { width: 100vw; height: 100vh; height: 100dvh; border-radius: 0; }
-      #slideshow-controls { bottom: 15px; padding: 6px 10px; gap: 6px; }
-      #slideshow-controls button { padding: 4px 6px; font-size: 10px; }
+      #slideshow-controls { bottom: 12px; padding: 6px 10px; gap: 4px; width: 92vw; justify-content: space-between; }
+      #slideshow-controls button { padding: 6px 8px; font-size: 11px; }
       .slideshow-speed-container { font-size: 10px; }
       #select-speed { font-size: 10px; padding: 2px 4px; }
+      #modal-caption { font-size: 12px; top: 10px; }
     }
   </style>
 </head>
@@ -319,9 +346,9 @@
   </div>
 
   <div id="slideshow-controls">
-    <button onclick="prevSlide()">◀ Precedente</button>
+    <button onclick="prevSlide()">◀ Prec</button>
     <button id="btn-play-pause" onclick="togglePlayPause()">⏸ Pausa</button>
-    <button onclick="nextSlide()">Successivo ▶</button>
+    <button onclick="nextSlide()">Succ ▶</button>
 
     <div class="slideshow-speed-container">
       <select id="select-speed" onchange="cambiaVelocita()">
@@ -333,7 +360,7 @@
     </div>
 
     <span id="slideshow-counter">1 / 1</span>
-    <button onclick="fermaSlideshow()" style="background: rgba(220, 53, 69, 0.8);">✖ Esci</button>
+    <button onclick="fermaSlideshow()" style="background: rgba(220, 53, 69, 0.9);">✖ Esci</button>
   </div>
 
   <div id="legenda-container">
@@ -343,8 +370,9 @@
 
   <div id="map"></div>
 
-  <!-- MODALE FOTO (Con stopPropagation per evitare chiusure accidentali durante lo swipe) -->
+  <!-- MODALE FOTO -->
   <div id="imageModal" class="modal-foto" onclick="chiudiModalFoto(false)">
+    <div id="modal-caption"></div>
     <img class="modal-foto-content" id="imgModalSrc" onclick="event.stopPropagation()">
   </div>
 
@@ -530,19 +558,19 @@
             className: 'custom-tooltip'
           });
 
-          // QUI VIENE RICAVATA AUTOMATICAMENTE LA MINIATURA DALLA CARTELLA thumbs/
-          const fotoThumb = p.thumb || p.foto.replace(/^foto\//, 'thumbs/');
+          const indexAttuale = puntiSlideshow.length;
+          const fotoThumb = p.thumb || p.foto.replace(/^foto[\/\\]/, 'thumbs/');
 
           const popupContent = `
-            <div style="text-align: center;">
-              <b style="font-size: 13px;">${p.viaggio}</b><br>
+            <div class="popup-container">
+              <b style="font-size: 13px;">${p.nome || p.viaggio}</b><br>
               <small style="color: #666;">📅 ${p.data}</small><br>
-              <img src="${fotoThumb}" class="popup-foto" loading="lazy" alt="${p.nome}" onclick="apriModalFoto('${p.foto}', ${puntiSlideshow.length})"><br>
-              <small><a href="javascript:void(0)" onclick="apriModalFoto('${p.foto}', ${puntiSlideshow.length})" style="display:inline-block; margin-top:6px; color:#007bff; text-decoration:none;">Ingrandisci foto 🔍</a></small>
+              <img src="${fotoThumb}" class="popup-foto" alt="${p.nome}" onclick="apriModalFoto('${p.foto}', ${indexAttuale})"><br>
+              <a href="javascript:void(0)" onclick="apriModalFoto('${p.foto}', ${indexAttuale})" style="display:inline-block; margin-top:6px; color:#007bff; font-weight:bold; text-decoration:none; font-size:12px;">Ingrandisci foto 🔍</a>
             </div>
           `;
 
-          marker.bindPopup(popupContent);
+          marker.bindPopup(popupContent, { autoPanPadding: [20, 80] });
 
           if (viaggioSel === 'tutti' && usaClusterCheckbox) {
             clusterGroup.addLayer(marker);
@@ -576,7 +604,7 @@
     function avviaSlideshow() {
       if (markersSlideshow.length === 0) return;
 
-      precaricaFotoSlideshow(); // PRECARICAMENTO ATTIVATO
+      precaricaFotoSlideshow();
 
       isSlideshowActive = true;
       isSlideshowPaused = false;
@@ -611,15 +639,26 @@
     function mostraSlide(index) {
       if (index < 0 || index >= markersSlideshow.length) return;
 
-      markersSlideshow.forEach(m => {
-        m.setIcon(creaIconaColorata('#007bff', false));
+      markersSlideshow.forEach((m, idx) => {
+        const p = puntiSlideshow[idx];
+        const col = mappaColoriAnni[p.anno] || '#007bff';
+        m.setIcon(creaIconaColorata(col, false));
       });
 
       const activeMarker = markersSlideshow[index];
       activeMarker.setIcon(creaIconaColorata('#FFD700', true));
 
-      map.panTo(activeMarker.getLatLng(), { animate: true, duration: 0.8 });
-      activeMarker.openPopup();
+      const targetLatLng = activeMarker.getLatLng();
+      map.setView(targetLatLng, map.getZoom() < 12 ? 12 : map.getZoom(), { animate: true });
+
+      // Apre direttamente la foto a tutto schermo
+      const modal = document.getElementById('imageModal');
+      const p = puntiSlideshow[index];
+      
+      modal.style.display = 'flex';
+      document.getElementById('imgModalSrc').src = p.foto;
+      document.getElementById('modal-caption').textContent = `${p.nome || p.viaggio} (${p.data})`;
+      currentModalPhotoIndex = index;
 
       document.getElementById('slideshow-counter').textContent = `${index + 1} / ${markersSlideshow.length}`;
     }
@@ -646,7 +685,7 @@
       document.getElementById('filtro-container').style.display = 'flex';
       document.getElementById('slideshow-controls').style.display = 'none';
       
-      map.closePopup();
+      chiudiModalFoto(false);
       aggiornaMappa();
     }
 
@@ -669,6 +708,14 @@
       currentModalPhotoIndex = index;
       modal.style.display = 'flex';
       document.getElementById('imgModalSrc').src = urlFoto;
+
+      if (index !== -1 && puntiSlideshow[index]) {
+        const p = puntiSlideshow[index];
+        document.getElementById('modal-caption').textContent = `${p.nome || p.viaggio} (${p.data})`;
+      } else {
+        document.getElementById('modal-caption').textContent = '';
+      }
+
       history.pushState({ modalOpen: true }, "");
     }
 
@@ -715,16 +762,19 @@
 
       if (Math.abs(diffX) > sogliaMinima && currentModalPhotoIndex !== -1 && puntiSlideshow.length > 0) {
         if (diffX < 0) {
-          currentModalPhotoIndex = (currentModalPhotoIndex + 1) % puntiSlideshow.length;
+          if (isSlideshowActive) {
+            nextSlide();
+          } else {
+            currentModalPhotoIndex = (currentModalPhotoIndex + 1) % puntiSlideshow.length;
+            apriModalFoto(puntiSlideshow[currentModalPhotoIndex].foto, currentModalPhotoIndex);
+          }
         } else {
-          currentModalPhotoIndex = (currentModalPhotoIndex - 1 + puntiSlideshow.length) % puntiSlideshow.length;
-        }
-
-        const nuovaFoto = puntiSlideshow[currentModalPhotoIndex].foto;
-        document.getElementById('imgModalSrc').src = nuovaFoto;
-
-        if (isSlideshowActive) {
-          mostraSlide(currentModalPhotoIndex);
+          if (isSlideshowActive) {
+            prevSlide();
+          } else {
+            currentModalPhotoIndex = (currentModalPhotoIndex - 1 + puntiSlideshow.length) % puntiSlideshow.length;
+            apriModalFoto(puntiSlideshow[currentModalPhotoIndex].foto, currentModalPhotoIndex);
+          }
         }
       }
     }
@@ -736,7 +786,6 @@
       }
     });
 
-    // CORRETTO: Nessun reset della mappa al ridimensionamento
     window.addEventListener('resize', function() {
       map.invalidateSize();
     });
