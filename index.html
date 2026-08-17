@@ -264,6 +264,7 @@
       background-color: rgba(0, 0, 0, 0.9);
       text-align: center;
       cursor: pointer;
+      touch-action: pan-y;
     }
 
     .modal-foto-content {
@@ -273,6 +274,8 @@
       max-height: 80vh;
       border-radius: 6px;
       box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+      user-select: none;
+      -webkit-user-drag: none;
     }
 
     /* Stili specifici per Smartphone (schermi sotto i 600px) */
@@ -414,7 +417,7 @@
   <div id="map"></div>
 
   <!-- Modale Foto -->
-  <div id="imageModal" class="modal-foto" onclick="chiudiModalFoto()">
+  <div id="imageModal" class="modal-foto" onclick="chiudiModalFoto(false)">
     <img class="modal-foto-content" id="imgModalSrc">
   </div>
 
@@ -454,6 +457,11 @@
     let puntiSlideshow = [];
     let markersSlideshow = [];
     let immaginiPrecaricate = [];
+
+    // Variabili per la gestione dello Swipe Touch
+    let touchStartX = 0;
+    let touchEndX = 0;
+    let currentModalPhotoIndex = -1;
 
     function creaIconaColorata(coloreHex, isBig = false) {
       const w = isBig ? 32 : 25;
@@ -578,7 +586,7 @@
 
       const puntiValidi = [];
 
-      datiFiltrati.forEach(p => {
+      datiFiltrati.forEach((p, idx) => {
         const lat = parseFloat(p.lat);
         const lon = parseFloat(p.lon);
 
@@ -589,7 +597,6 @@
           };
 
           const marker = L.marker([lat, lon], opzioniMarker);
-
           marker.coloreOriginale = coloreHex;
 
           const tooltipContent = `<b>${p.nome}</b><br>📅 ${p.data}`;
@@ -604,8 +611,8 @@
             <div style="text-align: center;">
               <b style="font-size: 13px;">${p.viaggio}</b><br>
               <small style="color: #666;">📅 ${p.data}</small><br>
-              <img src="${p.foto}" class="popup-foto" alt="${p.nome}" onclick="apriModalFoto('${p.foto}')"><br>
-              <small><a href="javascript:void(0)" onclick="apriModalFoto('${p.foto}')" style="display:inline-block; margin-top:6px; color:#007bff; text-decoration:none;">Ingrandisci foto 🔍</a></small>
+              <img src="${p.foto}" class="popup-foto" alt="${p.nome}" onclick="apriModalFoto('${p.foto}', ${puntiSlideshow.length})"><br>
+              <small><a href="javascript:void(0)" onclick="apriModalFoto('${p.foto}', ${puntiSlideshow.length})" style="display:inline-block; margin-top:6px; color:#007bff; text-decoration:none;">Ingrandisci foto 🔍</a></small>
             </div>
           `;
 
@@ -629,7 +636,6 @@
       }
     }
 
-    /* PRE-CARICAMENTO FOTO */
     function precaricaFotoSlideshow() {
       immaginiPrecaricate = [];
       puntiSlideshow.forEach(p => {
@@ -645,16 +651,13 @@
     function avviaSlideshow() {
       if (markersSlideshow.length === 0) return;
 
-      // Pre-carica tutte le foto del viaggio
       precaricaFotoSlideshow();
 
       isSlideshowActive = true;
       isSlideshowPaused = false;
       currentSlideIndex = 0;
 
-      // Nasconde il filtro box in alto a destra
       document.getElementById('filtro-container').style.display = 'none';
-
       document.getElementById('slideshow-controls').style.display = 'flex';
       document.getElementById('btn-play-pause').textContent = '⏸ Pausa';
 
@@ -688,7 +691,6 @@
       });
 
       const activeMarker = markersSlideshow[index];
-
       activeMarker.setIcon(creaIconaColorata('#FFD700', true));
 
       map.panTo(activeMarker.getLatLng(), { animate: true, duration: 0.8 });
@@ -716,7 +718,6 @@
       isSlideshowActive = false;
       clearInterval(slideshowTimer);
       
-      // Fai riapparire il menu filtri
       document.getElementById('filtro-container').style.display = 'flex';
       document.getElementById('slideshow-controls').style.display = 'none';
       
@@ -738,22 +739,78 @@
       });
     }
 
-    // Funzioni Modale Foto
-    function apriModalFoto(urlFoto) {
+    /* GESTIONE MODALE FOTO, CRONOLOGIA E SWIPE */
+    function apriModalFoto(urlFoto, index = -1) {
       const modal = document.getElementById('imageModal');
       const isSmartphone = window.innerWidth <= 600;
 
+      currentModalPhotoIndex = index;
       modal.style.display = isSmartphone ? 'flex' : 'block';
       document.getElementById('imgModalSrc').src = urlFoto;
+
+      // Inserisce uno stato fittizio nella cronologia per intercettare il tasto "Indietro" del telefono
+      history.pushState({ modalOpen: true }, "");
     }
 
-    function chiudiModalFoto() {
-      document.getElementById('imageModal').style.display = 'none';
+    function chiudiModalFoto(fromPopState = false) {
+      const modal = document.getElementById('imageModal');
+      if (modal.style.display !== 'none') {
+        modal.style.display = 'none';
+        currentModalPhotoIndex = -1;
+
+        // Se la chiusura è avvenuta toccando la foto (e non con il tasto indietro), ripristina la cronologia
+        if (!fromPopState && history.state && history.state.modalOpen) {
+          history.back();
+        }
+      }
+    }
+
+    // Intercetta la pressione del tasto Indietro dello smartphone
+    window.addEventListener('popstate', function(e) {
+      const modal = document.getElementById('imageModal');
+      if (modal.style.display !== 'none') {
+        chiudiModalFoto(true);
+      }
+    });
+
+    // Gestione Gesture Swipe (Strisciamento Dito) sulla foto ingrandita
+    const modalEl = document.getElementById('imageModal');
+
+    modalEl.addEventListener('touchstart', function(e) {
+      touchStartX = e.changedTouches[0].screenX;
+    }, false);
+
+    modalEl.addEventListener('touchend', function(e) {
+      touchEndX = e.changedTouches[0].screenX;
+      gestisciSwipe();
+    }, false);
+
+    function gestisciSwipe() {
+      const diffX = touchEndX - touchStartX;
+      const sogliaMinima = 50; // pixel minimi per considerare lo swipe
+
+      if (Math.abs(diffX) > sogliaMinima && currentModalPhotoIndex !== -1 && puntiSlideshow.length > 0) {
+        if (diffX < 0) {
+          // Swipe verso Sinistra -> Foto Successiva
+          currentModalPhotoIndex = (currentModalPhotoIndex + 1) % puntiSlideshow.length;
+        } else {
+          // Swipe verso Destra -> Foto Precedente
+          currentModalPhotoIndex = (currentModalPhotoIndex - 1 + puntiSlideshow.length) % puntiSlideshow.length;
+        }
+
+        const nuovaFoto = puntiSlideshow[currentModalPhotoIndex].foto;
+        document.getElementById('imgModalSrc').src = nuovaFoto;
+
+        // Se lo slideshow è attivo, sincronizza la posizione dello slideshow
+        if (isSlideshowActive) {
+          mostraSlide(currentModalPhotoIndex);
+        }
+      }
     }
 
     document.addEventListener('keydown', function(e) {
       if (e.key === "Escape") {
-        chiudiModalFoto();
+        chiudiModalFoto(false);
         if (isSlideshowActive) fermaSlideshow();
       }
     });
