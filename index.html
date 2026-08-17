@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   
   <title>La mappa dei viaggi di Vinicio e Luisa</title>
   <meta name="description" content="Esplora la mappa dei viaggi e i ricordi fotografici di Vinicio e Luisa nel mondo.">
@@ -22,6 +22,7 @@
       margin: 0;
       padding: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      overflow: hidden;
     }
 
     #map {
@@ -251,35 +252,39 @@
       border: none;
     }
 
-    /* Modale Foto - BASE DESKTOP */
+    /* MODALE FOTO DESKTOP E MOBILE */
     .modal-foto {
       display: none;
       position: fixed;
       z-index: 99999;
-      padding-top: 40px;
       left: 0;
       top: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.9);
-      text-align: center;
+      width: 100vw;
+      height: 100vh;
+      height: 100dvh;
+      background-color: rgba(0, 0, 0, 0.95);
+      align-items: center;
+      justify-content: center;
       cursor: pointer;
       touch-action: pan-y;
+      box-sizing: border-box;
     }
 
     .modal-foto-content {
-      margin: auto;
-      display: block;
-      max-width: 90%;
-      max-height: 80vh;
-      border-radius: 6px;
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+      max-width: 100vw;
+      max-height: 100vh;
+      max-height: 100dvh;
+      width: auto;
+      height: auto;
+      object-fit: contain;
       user-select: none;
       -webkit-user-drag: none;
+      margin: auto;
+      display: block;
     }
 
-    /* Stili specifici per Smartphone (schermi sotto i 600px) */
-    @media (max-width: 600px) {
+    /* Stili specifici per Smartphone e Schermi Piccoli */
+    @media (max-width: 900px) {
       #header-container {
         display: none !important;
       }
@@ -310,25 +315,14 @@
       }
 
       .modal-foto {
-        padding-top: 0;
-        display: none;
-        align-items: center;
-        justify-content: center;
+        padding: 0;
       }
 
       .modal-foto-content {
-        max-width: 98vw;
-        max-height: 92vh;
-        width: auto;
-        height: auto;
-        object-fit: contain;
-        border-radius: 4px;
-        margin: auto;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
+        width: 100vw;
+        height: 100vh;
+        height: 100dvh;
+        border-radius: 0;
       }
 
       #slideshow-controls {
@@ -349,6 +343,32 @@
       #select-speed {
         font-size: 10px;
         padding: 2px 4px;
+      }
+    }
+
+    /* Regole specifiche per Modalità Orizzontale (Landscape) */
+    @media (max-height: 500px) and (orientation: landscape) {
+      #filtro-container {
+        top: 5px;
+        right: 5px;
+        padding: 5px 8px;
+        gap: 4px;
+      }
+
+      select {
+        padding: 2px 4px;
+        font-size: 10px;
+        min-width: 100px;
+      }
+
+      #slideshow-controls {
+        bottom: 8px;
+        padding: 4px 8px;
+      }
+
+      .modal-foto-content {
+        max-height: 100dvh;
+        max-width: 100dvw;
       }
     }
   </style>
@@ -556,7 +576,7 @@
       const clusterOptContainer = document.getElementById('cluster-option-container');
       const btnSlideshow = document.getElementById('btn-slideshow');
       const usaClusterCheckbox = document.getElementById('check-cluster').checked;
-      const isSmartphone = window.innerWidth <= 600;
+      const isSmartphone = window.innerWidth <= 900;
 
       if (viaggioSel === 'tutti') {
         clusterOptContainer.style.display = 'block';
@@ -586,7 +606,7 @@
 
       const puntiValidi = [];
 
-      datiFiltrati.forEach((p, idx) => {
+      datiFiltrati.forEach((p) => {
         const lat = parseFloat(p.lat);
         const lon = parseFloat(p.lon);
 
@@ -742,13 +762,11 @@
     /* GESTIONE MODALE FOTO, CRONOLOGIA E SWIPE */
     function apriModalFoto(urlFoto, index = -1) {
       const modal = document.getElementById('imageModal');
-      const isSmartphone = window.innerWidth <= 600;
 
       currentModalPhotoIndex = index;
-      modal.style.display = isSmartphone ? 'flex' : 'block';
+      modal.style.display = 'flex';
       document.getElementById('imgModalSrc').src = urlFoto;
 
-      // Inserisce uno stato fittizio nella cronologia per intercettare il tasto "Indietro" del telefono
       history.pushState({ modalOpen: true }, "");
     }
 
@@ -758,14 +776,12 @@
         modal.style.display = 'none';
         currentModalPhotoIndex = -1;
 
-        // Se la chiusura è avvenuta toccando la foto (e non con il tasto indietro), ripristina la cronologia
         if (!fromPopState && history.state && history.state.modalOpen) {
           history.back();
         }
       }
     }
 
-    // Intercetta la pressione del tasto Indietro dello smartphone
     window.addEventListener('popstate', function(e) {
       const modal = document.getElementById('imageModal');
       if (modal.style.display !== 'none') {
@@ -773,7 +789,7 @@
       }
     });
 
-    // Gestione Gesture Swipe (Strisciamento Dito) sulla foto ingrandita
+    // Gesture Swipe Touch
     const modalEl = document.getElementById('imageModal');
 
     modalEl.addEventListener('touchstart', function(e) {
@@ -787,21 +803,18 @@
 
     function gestisciSwipe() {
       const diffX = touchEndX - touchStartX;
-      const sogliaMinima = 50; // pixel minimi per considerare lo swipe
+      const sogliaMinima = 40;
 
       if (Math.abs(diffX) > sogliaMinima && currentModalPhotoIndex !== -1 && puntiSlideshow.length > 0) {
         if (diffX < 0) {
-          // Swipe verso Sinistra -> Foto Successiva
           currentModalPhotoIndex = (currentModalPhotoIndex + 1) % puntiSlideshow.length;
         } else {
-          // Swipe verso Destra -> Foto Precedente
           currentModalPhotoIndex = (currentModalPhotoIndex - 1 + puntiSlideshow.length) % puntiSlideshow.length;
         }
 
         const nuovaFoto = puntiSlideshow[currentModalPhotoIndex].foto;
         document.getElementById('imgModalSrc').src = nuovaFoto;
 
-        // Se lo slideshow è attivo, sincronizza la posizione dello slideshow
         if (isSlideshowActive) {
           mostraSlide(currentModalPhotoIndex);
         }
@@ -815,7 +828,10 @@
       }
     });
 
-    window.addEventListener('resize', aggiornaMappa);
+    window.addEventListener('resize', function() {
+      map.invalidateSize();
+      aggiornaMappa();
+    });
   </script>
 </body>
 </html>
