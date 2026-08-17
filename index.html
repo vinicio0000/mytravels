@@ -1,4 +1,4 @@
-<!-- VERSION: 1.2_SPLITSCREEN_PERFECT_CENTER -->
+<!-- VERSION: 1.3_SPLITSCREEN_FIX_DESKTOP_CENTER -->
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -8,8 +8,8 @@
   <title>La mappa dei viaggi di Vinicio e Luisa</title>
   <meta name="description" content="Esplora la mappa dei viaggi e i ricordi fotografici di Vinicio e Luisa nel mondo.">
 
-  <!-- Favicon Cartina del Mondo -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='%232c3e50'/><path fill='%233498db' d='M10 16c2-4 8-6 12-4s8 6 12 4 8-6 12-4 8 4 8-8z' opacity='0.3'/><path fill='%23ffffff' d='M14 18c0-2.2 1.8-4 4-4h28c2.2 0 4 1.8 4 4v28c0 2.2-1.8 4-4 4H18c-2.2 0-4-1.8-4-4V18zm6 4c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12-10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12-10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z'/><path fill='%23e74c3c' d='M32 12c-4.4 0-8 3.6-8 8 0 6 8 14 8 14s8-8 8-14c0-4.4-3.6-8-8-8zm0 11c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3z'/></svg>">
+  <!-- Favicon Cartina del Mondo Verde Acqua / Bianco -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><circle cx='32' cy='32' r='30' fill='%2352b69a'/><path fill='%23ffffff' d='M10 20c2-5 10-6 14-2-1 4-4 7-8 9-4 1-6-4-6-7zm7 13c4 0 9 6 7 15-2 4-6 3-7-4-1-6 0-10 0-11zm11-21c6-2 24-2 26 10-6 2-16-2-22 0-4-2-6-7-4-10zm0 12c8-2 14 4 10 18-4 6-8 4-10-6-1-6-2-10 0-12zm22 18c4 0 6 4 2 6-4 0-4-4 2-6z'/></svg>">
 
   <!-- Leaflet CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
@@ -37,12 +37,16 @@
       left: 0;
     }
 
-    /* LAYOUT SPLIT-SCREEN DURANTE LO SLIDESHOW (CAMBIO ISTANTANEO PER PRECISIONE CENTRO) */
+    /* LAYOUT SPLIT-SCREEN DURANTE LO SLIDESHOW */
     body.slideshow-active #map {
       height: 50vh;
       height: 50dvh;
       top: 50vh;
       top: 50dvh;
+    }
+
+    body.slideshow-active #header-container {
+      display: none !important;
     }
 
     #slideshow-photo-panel {
@@ -676,9 +680,8 @@
       isSlideshowPaused = false;
       currentSlideIndex = 0;
 
-      // Attiva il layout split-screen
+      // Attiva layout split-screen
       document.body.classList.add('slideshow-active');
-      map.invalidateSize();
 
       document.getElementById('filtro-container').style.display = 'none';
       document.getElementById('slideshow-controls').style.display = 'flex';
@@ -686,8 +689,12 @@
 
       tempoIntervallo = parseInt(document.getElementById('select-speed').value, 10) || 4000;
 
-      mostraSlide(currentSlideIndex);
-      avviaTimer();
+      // Attesa asincrona per garantire il reflow del DOM prima di centrare la mappa su desktop
+      setTimeout(() => {
+        map.invalidateSize();
+        mostraSlide(currentSlideIndex);
+        avviaTimer();
+      }, 100);
     }
 
     function cambiaVelocita() {
@@ -709,8 +716,7 @@
     function mostraSlide(index) {
       if (index < 0 || index >= markersSlideshow.length) return;
 
-      // Forza ricalcolo dimensioni esatte della mezza mappa prima di centrare
-      map.invalidateSize();
+      map.invalidateSize({ pan: false });
 
       // Ripristina tutte le icone
       markersSlideshow.forEach((m, idx) => {
@@ -725,7 +731,8 @@
 
       // Sposta e centra la mappa sul punto
       const targetLatLng = activeMarker.getLatLng();
-      map.setView(targetLatLng, map.getZoom() < 12 ? 12 : map.getZoom(), { animate: true });
+      const zoomLivello = map.getZoom() < 12 ? 12 : map.getZoom();
+      map.setView(targetLatLng, zoomLivello, { animate: true });
 
       // Aggiorna foto e titolo nella metà superiore
       const p = puntiSlideshow[index];
