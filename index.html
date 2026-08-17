@@ -1,3 +1,4 @@
+<!-- VERSION: 1.1_SPLITSCREEN - Foto 50% sopra / Mappa 50% sotto -->
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -23,11 +24,71 @@
       padding: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       overflow: hidden;
+      background: #000;
     }
 
+    /* MAPPA A TUTTO SCHERMO DI DEFAULT */
     #map {
       height: 100vh;
+      height: 100dvh;
       width: 100vw;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: height 0.3s ease, top 0.3s ease;
+    }
+
+    /* LAYOUT SPLIT-SCREEN DURANTE LO SLIDESHOW */
+    body.slideshow-active #map {
+      height: 50vh;
+      height: 50dvh;
+      top: 50vh;
+      top: 50dvh;
+    }
+
+    #slideshow-photo-panel {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 50vh;
+      height: 50dvh;
+      background: #111;
+      z-index: 2000;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 6px;
+      box-sizing: border-box;
+      user-select: none;
+    }
+
+    body.slideshow-active #slideshow-photo-panel {
+      display: flex;
+    }
+
+    #slideshow-img {
+      max-width: 100%;
+      max-height: calc(100% - 32px);
+      object-fit: contain;
+      border-radius: 4px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    }
+
+    #slideshow-caption {
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: 600;
+      background: rgba(255, 255, 255, 0.15);
+      padding: 3px 12px;
+      border-radius: 12px;
+      margin-bottom: 6px;
+      text-align: center;
+      max-width: 90vw;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     #header-container {
@@ -124,7 +185,7 @@
     #slideshow-controls {
       display: none;
       position: absolute;
-      bottom: 25px;
+      bottom: 15px;
       left: 50%;
       transform: translateX(-50%);
       z-index: 100000;
@@ -252,7 +313,7 @@
       border: none;
     }
 
-    /* MODALE FOTO A TUTTO SCHERMO */
+    /* MODALE FOTO SINGOLA (FUORI DALLO SLIDESHOW) */
     .modal-foto {
       display: none;
       position: fixed;
@@ -306,7 +367,7 @@
       #filtro-container { padding: 8px 12px; gap: 6px; top: 10px; right: 10px; }
       .filtro-group label, select, .checkbox-label { font-size: 11px; }
       select { padding: 4px 6px; min-width: 120px; }
-      #slideshow-controls { bottom: 12px; padding: 6px 10px; gap: 4px; width: 92vw; justify-content: space-between; }
+      #slideshow-controls { bottom: 10px; padding: 6px 10px; gap: 4px; width: 92vw; justify-content: space-between; }
       #slideshow-controls button { padding: 6px 8px; font-size: 11px; }
       .slideshow-speed-container { font-size: 10px; }
       #select-speed { font-size: 10px; padding: 2px 4px; }
@@ -345,6 +406,13 @@
     <button id="btn-slideshow" onclick="avviaSlideshow()">▶ Avvia Slideshow</button>
   </div>
 
+  <!-- PANNELLO FOTO SUPERIORE (SLIDESHOW) -->
+  <div id="slideshow-photo-panel">
+    <div id="slideshow-caption"></div>
+    <img id="slideshow-img" src="" alt="Foto slideshow">
+  </div>
+
+  <!-- CONTROLLI SLIDESHOW -->
   <div id="slideshow-controls">
     <button onclick="prevSlide()">◀ Prec</button>
     <button id="btn-play-pause" onclick="togglePlayPause()">⏸ Pausa</button>
@@ -368,9 +436,10 @@
     <div id="legenda-items"></div>
   </div>
 
+  <!-- MAPPA -->
   <div id="map"></div>
 
-  <!-- MODALE FOTO -->
+  <!-- MODALE FOTO SINGOLA (FUORI SLIDESHOW) -->
   <div id="imageModal" class="modal-foto" onclick="chiudiModalFoto(false)">
     <div id="modal-caption"></div>
     <img class="modal-foto-content" id="imgModalSrc" onclick="event.stopPropagation()">
@@ -413,7 +482,6 @@
 
     let touchStartX = 0;
     let touchStartY = 0;
-    let currentModalPhotoIndex = -1;
 
     function creaIconaColorata(coloreHex, isBig = false) {
       const w = isBig ? 32 : 25;
@@ -610,6 +678,12 @@
       isSlideshowPaused = false;
       currentSlideIndex = 0;
 
+      // Attiva il layout split-screen
+      document.body.classList.add('slideshow-active');
+      
+      // Aggiorna la dimensione della mappa per la modalità 50/50
+      setTimeout(() => { map.invalidateSize(); }, 50);
+
       document.getElementById('filtro-container').style.display = 'none';
       document.getElementById('slideshow-controls').style.display = 'flex';
       document.getElementById('btn-play-pause').textContent = '⏸ Pausa';
@@ -639,26 +713,25 @@
     function mostraSlide(index) {
       if (index < 0 || index >= markersSlideshow.length) return;
 
+      // Ripristina tutte le icone
       markersSlideshow.forEach((m, idx) => {
         const p = puntiSlideshow[idx];
         const col = mappaColoriAnni[p.anno] || '#007bff';
         m.setIcon(creaIconaColorata(col, false));
       });
 
+      // Evidenzia l'icona attiva
       const activeMarker = markersSlideshow[index];
       activeMarker.setIcon(creaIconaColorata('#FFD700', true));
 
+      // Sposta la mappa sul punto
       const targetLatLng = activeMarker.getLatLng();
       map.setView(targetLatLng, map.getZoom() < 12 ? 12 : map.getZoom(), { animate: true });
 
-      // Apre direttamente la foto a tutto schermo
-      const modal = document.getElementById('imageModal');
+      // Aggiorna foto e titolo nella metà superiore
       const p = puntiSlideshow[index];
-      
-      modal.style.display = 'flex';
-      document.getElementById('imgModalSrc').src = p.foto;
-      document.getElementById('modal-caption').textContent = `${p.nome || p.viaggio} (${p.data})`;
-      currentModalPhotoIndex = index;
+      document.getElementById('slideshow-img').src = p.foto;
+      document.getElementById('slideshow-caption').textContent = `${p.nome || p.viaggio} (${p.data})`;
 
       document.getElementById('slideshow-counter').textContent = `${index + 1} / ${markersSlideshow.length}`;
     }
@@ -682,10 +755,13 @@
       isSlideshowActive = false;
       clearInterval(slideshowTimer);
       
+      // Ripristina layout originale
+      document.body.classList.remove('slideshow-active');
+      setTimeout(() => { map.invalidateSize(); }, 50);
+
       document.getElementById('filtro-container').style.display = 'flex';
       document.getElementById('slideshow-controls').style.display = 'none';
       
-      chiudiModalFoto(false);
       aggiornaMappa();
     }
 
@@ -703,9 +779,9 @@
       });
     }
 
+    /* GESTIONE MODALE FOTO SINGOLA (FUORI DALLO SLIDESHOW) */
     function apriModalFoto(urlFoto, index = -1) {
       const modal = document.getElementById('imageModal');
-      currentModalPhotoIndex = index;
       modal.style.display = 'flex';
       document.getElementById('imgModalSrc').src = urlFoto;
 
@@ -723,7 +799,6 @@
       const modal = document.getElementById('imageModal');
       if (modal.style.display !== 'none') {
         modal.style.display = 'none';
-        currentModalPhotoIndex = -1;
 
         if (!fromPopState && history.state && history.state.modalOpen) {
           history.back();
@@ -738,46 +813,29 @@
       }
     });
 
-    const modalEl = document.getElementById('imageModal');
+    /* SWIPE TOUCH SUL PANNELLO FOTO SUPERIORE */
+    const photoPanel = document.getElementById('slideshow-photo-panel');
 
-    modalEl.addEventListener('touchstart', function(e) {
+    photoPanel.addEventListener('touchstart', function(e) {
       touchStartX = e.changedTouches[0].screenX;
       touchStartY = e.changedTouches[0].screenY;
     }, false);
 
-    modalEl.addEventListener('touchend', function(e) {
+    photoPanel.addEventListener('touchend', function(e) {
       const touchEndX = e.changedTouches[0].screenX;
       const touchEndY = e.changedTouches[0].screenY;
       
       const diffX = touchEndX - touchStartX;
       const diffY = touchEndY - touchStartY;
 
-      if (Math.abs(diffX) > Math.abs(diffY)) {
-        gestisciSwipe(diffX);
-      }
-    }, false);
-
-    function gestisciSwipe(diffX) {
-      const sogliaMinima = 40;
-
-      if (Math.abs(diffX) > sogliaMinima && currentModalPhotoIndex !== -1 && puntiSlideshow.length > 0) {
+      if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 40) {
         if (diffX < 0) {
-          if (isSlideshowActive) {
-            nextSlide();
-          } else {
-            currentModalPhotoIndex = (currentModalPhotoIndex + 1) % puntiSlideshow.length;
-            apriModalFoto(puntiSlideshow[currentModalPhotoIndex].foto, currentModalPhotoIndex);
-          }
+          nextSlide();
         } else {
-          if (isSlideshowActive) {
-            prevSlide();
-          } else {
-            currentModalPhotoIndex = (currentModalPhotoIndex - 1 + puntiSlideshow.length) % puntiSlideshow.length;
-            apriModalFoto(puntiSlideshow[currentModalPhotoIndex].foto, currentModalPhotoIndex);
-          }
+          prevSlide();
         }
       }
-    }
+    }, false);
 
     document.addEventListener('keydown', function(e) {
       if (e.key === "Escape") {
