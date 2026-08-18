@@ -1,4 +1,4 @@
-<!-- VERSION: 1.8_NO_CLUSTER_DEFAULT_E_PAN_INIZIALE -->
+<!-- VERSION: 1.9_PAN_INIZIALE_FLUIDO_RAF -->
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -542,12 +542,12 @@
         setTimeout(() => {
           splash.style.display = 'none';
           map.invalidateSize();
-          avviaPanIniziale(); // Avvia lo scorrimento lento da Alaska a Giappone
+          avviaPanIniziale(); // Avvia lo scorrimento fluido quadro per quadro
         }, 800);
       }
     }
 
-    const map = L.map('map', { minZoom: 2 }).setView([45, -140], 3);
+    const map = L.map('map', { minZoom: 2 }).setView([40, -140], 3);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 19,
@@ -556,7 +556,8 @@
 
     let tuttiIDati = [];
     let panInizialeAttivo = false;
-    
+    let animazionePanId = null;
+
     const clusterGroup = L.markerClusterGroup({ 
       disableClusteringAtZoom: 16,
       maxClusterRadius: 40 
@@ -589,30 +590,56 @@
     let touchStartX = 0;
     let touchStartY = 0;
 
-    // SCORRIMENTO AUTOMATICO ALL'APERTURA (Alaska -> Giappone)
+    // SCORRIMENTO FLUIDO DA ALASKA A GIAPPONE TRAMITE requestAnimationFrame
     function avviaPanIniziale() {
       panInizialeAttivo = true;
-      map.setView([45, -140], 3, { animate: false });
+      map.setView([40, -140], 3, { animate: false });
+
+      let startTime = null;
+      const durataMs = 20000; // 20 secondi di scorrimento uniforme e progressivo
+
+      const startLat = 40;
+      const endLat = 30;
+      const startLon = -140;
+      const endLon = 140;
+
+      function anima(timestamp) {
+        if (!panInizialeAttivo) return;
+        if (!startTime) startTime = timestamp;
+
+        const trascorso = timestamp - startTime;
+        const progresso = Math.min(trascorso / durataMs, 1);
+
+        const currentLat = startLat + (endLat - startLat) * progresso;
+        const currentLon = startLon + (endLon - startLon) * progresso;
+
+        map.setView([currentLat, currentLon], 3, { animate: false });
+
+        if (progresso < 1 && panInizialeAttivo) {
+          animazionePanId = requestAnimationFrame(anima);
+        } else {
+          panInizialeAttivo = false;
+        }
+      }
 
       setTimeout(() => {
         if (panInizialeAttivo) {
-          map.panTo([35, 140], {
-            animate: true,
-            duration: 12, // 12 secondi di scorrimento lento da Ovest a Est
-            easeLinearity: 0.1
-          });
+          animazionePanId = requestAnimationFrame(anima);
         }
-      }, 300);
+      }, 400);
     }
 
     function fermaPanIniziale() {
       if (panInizialeAttivo) {
         panInizialeAttivo = false;
-        map.stop(); // Interrompe immediatamente l'animazione di scorrimento
+        if (animazionePanId) {
+          cancelAnimationFrame(animazionePanId);
+          animazionePanId = null;
+        }
       }
     }
 
-    // Ferma il pan automatico se l'utente interagisce con la mappa
+    // Interrompe la panoramica automatica se l'utente interagisce
     map.on('dragstart zoomstart mousedown touchstart', fermaPanIniziale);
 
     function creaIconaColorata(coloreHex, isBig = false) {
@@ -639,7 +666,6 @@
         tuttiIDati = dati;
         popolaAnni();
         popolaViaggi();
-        // CLUSTERING DISATTIVATO DI DEFAULT
         document.getElementById('check-cluster').checked = false;
         aggiornaMappa();
       })
