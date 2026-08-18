@@ -1,4 +1,4 @@
-<!-- VERSION: 1.4_DESCRIZIONE_SUPPORT -->
+<!-- VERSION: 1.5_DESCRIZIONE_DESKTOP_FIX -->
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -83,13 +83,13 @@
       color: #ffffff;
       font-size: 13px;
       font-weight: 600;
-      background: rgba(0, 0, 0, 0.65);
-      padding: 4px 14px;
+      background: rgba(0, 0, 0, 0.75);
+      padding: 6px 16px;
       border-radius: 12px;
       margin-bottom: 6px;
       text-align: center;
       max-width: 90vw;
-      max-height: 55px;
+      max-height: 65px;
       overflow-y: auto;
       word-break: break-word;
     }
@@ -284,27 +284,33 @@
       display: inline-block;
     }
 
+    /* TOOLTIP HOVER (PASSAGGIO MOUSE SU PC) */
     .custom-tooltip {
-      background: rgba(44, 62, 80, 0.9);
+      background: rgba(44, 62, 80, 0.95);
       color: #ffffff;
       border: none;
-      border-radius: 5px;
-      padding: 6px 10px;
+      border-radius: 6px;
+      padding: 8px 12px;
       font-size: 12px;
+      max-width: 280px;
+      white-space: normal;
+      word-break: break-word;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
     }
 
     .popup-container {
       text-align: center;
       min-width: 180px;
-      max-width: 230px;
+      max-width: 240px;
     }
 
     .popup-descrizione {
       font-size: 12px;
       color: #444;
-      margin: 6px 0 4px 0;
-      line-height: 1.3;
+      margin: 6px 0 6px 0;
+      line-height: 1.35;
       font-style: italic;
+      word-break: break-word;
     }
 
     .popup-foto {
@@ -343,8 +349,8 @@
 
     .modal-foto-content {
       max-width: 100vw;
-      max-height: calc(100vh - 90px);
-      max-height: calc(100dvh - 90px);
+      max-height: calc(100vh - 100px);
+      max-height: calc(100dvh - 100px);
       width: auto;
       height: auto;
       object-fit: contain;
@@ -362,15 +368,16 @@
       color: white;
       font-size: 13px;
       font-weight: 600;
-      background: rgba(0,0,0,0.75);
-      padding: 6px 16px;
+      background: rgba(0, 0, 0, 0.85);
+      padding: 8px 18px;
       border-radius: 20px;
       text-align: center;
       max-width: 85vw;
-      max-height: 75px;
+      max-height: 90px;
       overflow-y: auto;
       word-break: break-word;
       z-index: 100001;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
     }
 
     @media (max-width: 900px) {
@@ -629,7 +636,9 @@
           const marker = L.marker([lat, lon], opzioniMarker);
           marker.coloreOriginale = coloreHex;
 
-          const tooltipContent = `<b>${p.nome || p.viaggio}</b><br>📅 ${p.data}`;
+          /* Tooltip su passaggio del mouse su PC */
+          const descTooltip = p.descrizione ? `<br><span style="font-weight:normal; font-style:italic; color:#e0e0e0;">${p.descrizione}</span>` : '';
+          const tooltipContent = `<b>${p.nome || p.viaggio}</b><br>📅 ${p.data}${descTooltip}`;
           
           marker.bindTooltip(tooltipContent, {
             direction: 'top',
@@ -637,8 +646,13 @@
             className: 'custom-tooltip'
           });
 
-          const indexAttuale = puntiSlideshow.length;
           const fotoThumb = p.thumb || p.foto.replace(/^foto[\/\\]/, 'thumbs/');
+
+          /* Sanitizzazione stringhe per evitare errori JS con virgolette/apostrofi */
+          const fotoSafe = (p.foto || '').replace(/'/g, "\\'");
+          const nomeSafe = (p.nome || p.viaggio || '').replace(/'/g, "\\'");
+          const dataSafe = (p.data || '').replace(/'/g, "\\'");
+          const descSafe = (p.descrizione || '').replace(/'/g, "\\'").replace(/\r?\n|\r/g, ' ');
 
           /* Gestione Descrizione nel Popup */
           const htmlDescrizione = p.descrizione ? `<div class="popup-descrizione">${p.descrizione}</div>` : '';
@@ -648,8 +662,8 @@
               <b style="font-size: 13px;">${p.nome || p.viaggio}</b><br>
               <small style="color: #666;">📅 ${p.data}</small>
               ${htmlDescrizione}
-              <img src="${fotoThumb}" class="popup-foto" alt="${p.nome}" onclick="apriModalFoto('${p.foto}', ${indexAttuale})">
-              <a href="javascript:void(0)" onclick="apriModalFoto('${p.foto}', ${indexAttuale})" style="display:inline-block; margin-top:6px; color:#007bff; font-weight:bold; text-decoration:none; font-size:12px;">Ingrandisci foto 🔍</a>
+              <img src="${fotoThumb}" class="popup-foto" alt="${p.nome}" onclick="apriModalFoto('${fotoSafe}', '${nomeSafe}', '${dataSafe}', '${descSafe}')">
+              <a href="javascript:void(0)" onclick="apriModalFoto('${fotoSafe}', '${nomeSafe}', '${dataSafe}', '${descSafe}')" style="display:inline-block; margin-top:6px; color:#007bff; font-weight:bold; text-decoration:none; font-size:12px;">Ingrandisci foto 🔍</a>
             </div>
           `;
 
@@ -693,7 +707,6 @@
       isSlideshowPaused = false;
       currentSlideIndex = 0;
 
-      // Attiva layout split-screen
       document.body.classList.add('slideshow-active');
 
       document.getElementById('filtro-container').style.display = 'none';
@@ -730,28 +743,24 @@
 
       map.invalidateSize({ pan: false });
 
-      // Ripristina tutte le icone
       markersSlideshow.forEach((m, idx) => {
         const p = puntiSlideshow[idx];
         const col = mappaColoriAnni[p.anno] || '#007bff';
         m.setIcon(creaIconaColorata(col, false));
       });
 
-      // Evidenzia l'icona attiva
       const activeMarker = markersSlideshow[index];
       activeMarker.setIcon(creaIconaColorata('#FFD700', true));
 
-      // Sposta e centra la mappa sul punto
       const targetLatLng = activeMarker.getLatLng();
       const zoomLivello = map.getZoom() < 12 ? 12 : map.getZoom();
       map.setView(targetLatLng, zoomLivello, { animate: true });
 
-      // Aggiorna foto, titolo e descrizione nella metà superiore
       const p = puntiSlideshow[index];
       document.getElementById('slideshow-img').src = p.foto;
       
-      const descTesto = p.descrizione ? ` — ${p.descrizione}` : '';
-      document.getElementById('slideshow-caption').textContent = `${p.nome || p.viaggio} (${p.data})${descTesto}`;
+      const descTesto = p.descrizione ? `<br><span style="font-weight:normal; font-style:italic; font-size:12px;">${p.descrizione}</span>` : '';
+      document.getElementById('slideshow-caption').innerHTML = `<b>${p.nome || p.viaggio}</b> (${p.data})${descTesto}`;
 
       document.getElementById('slideshow-counter').textContent = `${index + 1} / ${markersSlideshow.length}`;
     }
@@ -775,7 +784,6 @@
       isSlideshowActive = false;
       clearInterval(slideshowTimer);
       
-      // Ripristina layout originale
       document.body.classList.remove('slideshow-active');
       map.invalidateSize();
 
@@ -800,18 +808,17 @@
     }
 
     /* GESTIONE MODALE FOTO SINGOLA (A SCHERMO INTERO) */
-    function apriModalFoto(urlFoto, index = -1) {
+    function apriModalFoto(urlFoto, titolo = '', data = '', descrizione = '') {
       const modal = document.getElementById('imageModal');
       modal.style.display = 'flex';
       document.getElementById('imgModalSrc').src = urlFoto;
 
-      if (index !== -1 && puntiSlideshow[index]) {
-        const p = puntiSlideshow[index];
-        const descTesto = p.descrizione ? ` — ${p.descrizione}` : '';
-        document.getElementById('modal-caption').textContent = `${p.nome || p.viaggio} (${p.data})${descTesto}`;
-      } else {
-        document.getElementById('modal-caption').textContent = '';
-      }
+      let captionHTML = '';
+      if (titolo) captionHTML += `<b>${titolo}</b>`;
+      if (data) captionHTML += ` <small style="color:#ccc;">(${data})</small>`;
+      if (descrizione) captionHTML += `<div style="font-weight: normal; font-style: italic; margin-top: 4px; font-size: 12px; color: #eee;">${descrizione}</div>`;
+
+      document.getElementById('modal-caption').innerHTML = captionHTML;
 
       history.pushState({ modalOpen: true }, "");
     }
