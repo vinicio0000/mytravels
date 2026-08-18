@@ -1,4 +1,4 @@
-<!-- VERSION: 1.6_SPLASH_SCREEN_E_FIX_ESTETICO -->
+<!-- VERSION: 1.7_CLUSTER_40_E_35_COLORI_NO_GIALLO -->
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -24,7 +24,7 @@
       padding: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       overflow: hidden;
-      background: #aad3df; /* Colore oceano al posto del grigio */
+      background: #aad3df; /* Colore oceano */
     }
 
     /* SCHERMATA DI BENVENUTO (SPLASH SCREEN) */
@@ -555,17 +555,27 @@
 
     let tuttiIDati = [];
     
-    const clusterGroup = L.markerClusterGroup({ disableClusteringAtZoom: 16 });
+    // Raggio del cluster ridotto a 40px
+    const clusterGroup = L.markerClusterGroup({ 
+      disableClusteringAtZoom: 16,
+      maxClusterRadius: 40 
+    });
     const singleGroup = L.layerGroup();
     
     map.addLayer(clusterGroup);
     map.addLayer(singleGroup);
 
     const mappaColoriAnni = {};
+    
+    // Tavolozza di 35 colori distinti - SENZA GIALLI (il giallo è riservato al marker dello slideshow)
     const tavolozzaColori = [
-      '#e6194B', '#3cb44b', '#ffe119', '#4363d8', '#f58231', 
-      '#911eb4', '#42d4f4', '#f032e6', '#bfef45', '#fabed4', 
-      '#469990', '#dcbeff', '#9A6324', '#800000', '#000075'
+      '#e6194B', '#3cb44b', '#4363d8', '#f58231', '#911eb4', 
+      '#42d4f4', '#f032e6', '#bfef45', '#fabed4', '#469990', 
+      '#dcbeff', '#9A6324', '#800000', '#000075', '#a9a9a9', 
+      '#808000', '#a30000', '#117864', '#1f618d', '#6c3483', 
+      '#b03a2e', '#1e8449', '#283747', '#d35400', '#884ea0', 
+      '#17a589', '#d81b60', '#3f51b5', '#009688', '#795548', 
+      '#607d8b', '#e91e63', '#0288d1', '#558b2f', '#ad1457'
     ];
 
     let slideshowTimer = null;
@@ -604,7 +614,6 @@
         tuttiIDati = dati;
         popolaAnni();
         popolaViaggi();
-        // Attivo il clustering di default per evitare il caos di spilli all'apertura
         document.getElementById('check-cluster').checked = true;
         aggiornaMappa();
       })
@@ -757,7 +766,6 @@
           const bounds = L.latLngBounds(puntiValidi);
           map.fitBounds(bounds, { padding: [50, 50], maxZoom: 15 });
         } else {
-          // Quando tutti i viaggi sono visibili, manteniamo una vista globale centrata e gradevole
           map.setView([20, 10], 2);
         }
       }
@@ -826,7 +834,7 @@
       });
 
       const activeMarker = markersSlideshow[index];
-      activeMarker.setIcon(creaIconaColorata('#FFD700', true));
+      activeMarker.setIcon(creaIconaColorata('#FFD700', true)); // Evidenziatore giallo/oro per lo slideshow
 
       const targetLatLng = activeMarker.getLatLng();
       const zoomLivello = map.getZoom() < 12 ? 12 : map.getZoom();
