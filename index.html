@@ -1,1018 +1,446 @@
-<!-- VERSION: 1.9_PAN_INIZIALE_FLUIDO_RAF -->
 <!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mappa dei Viaggi in Camper e Viaggi Indipendenti - Vinicio e Luisa</title>
+  <meta name="description" content="Esplora la geografia dei percorsi, le tappe e i viaggi in camper e indipendenti nel mondo realizzati da Vinicio e Luisa.">
+  <meta name="keywords" content="viaggi, geografia, camper, viaggi indipendenti, itinerari, mappa geografica">
   
-  <title>La mappa dei viaggi di Vinicio e Luisa</title>
-  <meta name="description" content="Esplora la mappa dei viaggi e i ricordi fotografici di Vinicio e Luisa nel mondo.">
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><circle cx='32' cy='32' r='30' fill='%2352b69a'/><path fill='%23ffffff' d='M10 20c2-5 10-6 14-2-1 4-4 7-8 9-4 1-6-4-6-7zm7 13c4 0 9 6 7 15-2 4-6 3-7-4-1-6 0-10 0-11zm11-21c6-2 24-2 26 10-6 2-16-2-22 0-4-2-6-7-4-10zm0 12c8-2 14 4 10 18-4 6-8 4-10-6-1-6-2-10 0-12zm22 18c4 0 6 4 2 6-4 0-4-4 2-6z'/></svg>">
-
-  <!-- Leaflet CSS -->
+  <!-- Leaflet CSS & Leaflet MarkerCluster CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  <!-- Leaflet MarkerCluster CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
 
+  <!-- Dati Strutturati Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Mappa dei Viaggi in Camper e Viaggi Indipendenti - Vinicio e Luisa",
+    "description": "Esplora la geografia dei percorsi, le tappe e i viaggi in camper e indipendenti nel mondo realizzati da Vinicio e Luisa.",
+    "url": "https://vinicio0000.github.io/mytravels/",
+    "keywords": "viaggi, geografia, camper, viaggi indipendenti, itinerari, mappa geografica",
+    "inLanguage": "it"
+  }
+  </script>
+
   <style>
-    html, body {
-      height: 100%;
+    /* Base & Layout Responsivo */
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      overflow: hidden;
-      background: #aad3df; /* Colore oceano */
     }
-
-    /* SCHERMATA DI BENVENUTO (SPLASH SCREEN) */
-    #splash-screen {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      height: 100dvh;
-      background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-      color: #ffffff;
-      z-index: 999999;
+    html, body {
+      height: 100%;
+      width: 100%;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    body {
       display: flex;
       flex-direction: column;
+      height: 100dvh; /* dvh ottimizzato per browser mobile */
+      overflow: hidden;
+      background-color: #f8f9fa;
+    }
+
+    /* Barra Superiore / Filtri */
+    header {
+      background: #1e293b;
+      color: #ffffff;
+      padding: 10px 15px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
       align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 20px;
-      box-sizing: border-box;
-      transition: opacity 0.8s ease, visibility 0.8s ease;
+      gap: 10px;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+    h1 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin: 0;
+    }
+    .filters {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    select {
+      padding: 6px 12px;
+      border-radius: 6px;
+      border: 1px solid #475569;
+      background: #334155;
+      color: #ffffff;
+      font-size: 0.85rem;
+      outline: none;
+      cursor: pointer;
+    }
+    select:focus {
+      border-color: #38bdf8;
+    }
+
+    /* Contenitore Mappa */
+    #map {
+      flex: 1;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Stile Popup Leaflet */
+    .popup-container {
+      max-width: 240px;
+      font-size: 13px;
+      line-height: 1.4;
+    }
+    .popup-descrizione {
+      margin: 6px 0;
+      color: #334155;
+    }
+    .popup-foto {
+      width: 100%;
+      height: auto;
+      max-height: 150px;
+      object-fit: cover;
+      border-radius: 6px;
+      margin-top: 6px;
       cursor: pointer;
     }
 
-    .splash-card {
-      background: rgba(255, 255, 255, 0.12);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      padding: 30px 24px;
-      border-radius: 16px;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-      max-width: 90vw;
-      width: 360px;
-    }
-
-    .splash-card h1 {
-      margin: 0 0 10px 0;
-      font-size: 22px;
-      font-weight: 700;
-      line-height: 1.3;
-    }
-
-    .splash-card p {
-      margin: 0 0 20px 0;
-      font-size: 14px;
-      opacity: 0.9;
-    }
-
-    .splash-timer-badge {
-      display: inline-block;
-      background: rgba(255, 255, 255, 0.25);
-      padding: 6px 14px;
-      border-radius: 20px;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-    }
-
-    /* MAPPA A TUTTO SCHERMO */
-    #map {
-      height: 100vh;
-      height: 100dvh;
-      width: 100vw;
-      position: absolute;
-      top: 0;
-      left: 0;
-      background: #aad3df;
-    }
-
-    /* LAYOUT SPLIT-SCREEN DURANTE LO SLIDESHOW */
-    body.slideshow-active #map {
-      height: 50vh;
-      height: 50dvh;
-      top: 50vh;
-      top: 50dvh;
-    }
-
-    body.slideshow-active #header-container {
-      display: none !important;
-    }
-
-    #slideshow-photo-panel {
+    /* Modal Slideshow Foto */
+    .modal {
       display: none;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 50vh;
-      height: 50dvh;
-      background: #111;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
       z-index: 2000;
-      flex-direction: column;
-      align-items: center;
       justify-content: center;
-      padding: 6px;
-      box-sizing: border-box;
-      user-select: none;
+      align-items: center;
+      touch-action: pan-y pinch-zoom;
     }
-
-    body.slideshow-active #slideshow-photo-panel {
+    .modal.active {
       display: flex;
     }
-
-    #slideshow-img {
+    .modal-content {
+      position: relative;
+      max-width: 90%;
+      max-height: 90%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .modal-img {
       max-width: 100%;
-      max-height: calc(100% - 40px);
+      max-height: 80vh;
       object-fit: contain;
       border-radius: 4px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.5);
     }
-
-    #slideshow-caption {
+    .modal-caption {
       color: #ffffff;
-      font-size: 13px;
-      font-weight: 600;
-      background: rgba(0, 0, 0, 0.65);
-      padding: 4px 14px;
-      border-radius: 12px;
-      margin-bottom: 6px;
+      margin-top: 10px;
       text-align: center;
-      max-width: 90vw;
-      max-height: 55px;
-      overflow-y: auto;
-      word-break: break-word;
+      font-size: 0.9rem;
     }
-
-    #header-container {
+    .modal-close {
       position: absolute;
-      top: 15px;
-      left: 60px;
-      z-index: 1000;
-      background: rgba(255, 255, 255, 0.95);
-      padding: 12px 18px;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-      max-width: 80vw;
-    }
-
-    #header-container h1 {
-      margin: 0;
-      font-size: 18px;
-      color: #2c3e50;
-      font-weight: 700;
-    }
-
-    #filtro-container {
-      position: absolute;
-      top: 15px;
-      right: 15px;
-      z-index: 1000;
-      background: rgba(255, 255, 255, 0.95);
-      padding: 12px 16px;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .filtro-group {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-    }
-
-    .filtro-group label {
-      font-size: 13px;
-      color: #333;
-    }
-
-    select {
-      padding: 5px 10px;
-      border-radius: 4px;
-      border: 1px solid #ccc;
-      font-size: 13px;
-      outline: none;
-      cursor: pointer;
-      min-width: 160px;
-    }
-
-    #cluster-option-container {
-      border-top: 1px solid #eee;
-      padding-top: 8px;
-      margin-top: 2px;
-    }
-
-    .checkbox-label {
-      font-size: 12px;
-      color: #444;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      user-select: none;
-    }
-
-    #btn-slideshow {
-      display: none;
-      background: #007bff;
-      color: white;
-      border: none;
-      padding: 8px 12px;
-      border-radius: 6px;
-      font-weight: 600;
-      font-size: 13px;
-      cursor: pointer;
-      text-align: center;
-      transition: background 0.2s;
-      margin-top: 4px;
-    }
-
-    #btn-slideshow:hover {
-      background: #0056b3;
-    }
-
-    #slideshow-controls {
-      display: none;
-      position: absolute;
-      bottom: 15px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 100000;
-      background: rgba(44, 62, 80, 0.95);
-      color: white;
-      padding: 8px 16px;
-      border-radius: 30px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-      align-items: center;
-      gap: 12px;
-    }
-
-    #slideshow-controls button {
-      background: rgba(255, 255, 255, 0.2);
-      border: none;
-      color: white;
-      padding: 6px 12px;
-      border-radius: 20px;
-      cursor: pointer;
-      font-size: 13px;
-      transition: background 0.2s;
-    }
-
-    #slideshow-controls button:hover {
-      background: rgba(255, 255, 255, 0.4);
-    }
-
-    .slideshow-speed-container {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 12px;
-    }
-
-    #select-speed {
-      background: rgba(255, 255, 255, 0.2);
-      color: white;
-      border: none;
-      padding: 4px 8px;
-      border-radius: 12px;
-      font-size: 12px;
-      outline: none;
-      cursor: pointer;
-      min-width: auto;
-    }
-
-    #select-speed option {
-      background: #2c3e50;
-      color: white;
-    }
-
-    #slideshow-counter {
-      font-size: 13px;
+      top: 15px; right: 20px;
+      color: #ffffff;
+      font-size: 32px;
       font-weight: bold;
-      min-width: 50px;
-      text-align: center;
-    }
-
-    #legenda-container {
-      position: absolute;
-      bottom: 25px;
-      right: 15px;
-      z-index: 1000;
-      background: rgba(255, 255, 255, 0.95);
-      padding: 12px 16px;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-      max-height: 200px;
-      overflow-y: auto;
-      display: none;
-    }
-
-    #legenda-container h4 {
-      margin: 0 0 8px 0;
-      font-size: 12px;
-      text-transform: uppercase;
-      color: #333;
-    }
-
-    .legenda-item {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 5px;
-      font-size: 12px;
-      color: #444;
-    }
-
-    .legenda-color-dot {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      border: 1px solid rgba(0, 0, 0, 0.2);
-      display: inline-block;
-    }
-
-    .custom-tooltip {
-      background: rgba(44, 62, 80, 0.9);
-      color: #ffffff;
-      border: none;
-      border-radius: 5px;
-      padding: 6px 10px;
-      font-size: 12px;
-    }
-
-    .popup-container {
-      text-align: center;
-      min-width: 180px;
-      max-width: 230px;
-    }
-
-    .popup-descrizione {
-      font-size: 12px;
-      color: #444;
-      margin: 6px 0 4px 0;
-      line-height: 1.3;
-      font-style: italic;
-    }
-
-    .popup-foto {
-      width: 180px;
-      height: 130px;
-      border-radius: 6px;
-      margin-top: 6px;
-      object-fit: cover;
       cursor: pointer;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .custom-pin-icon {
+      z-index: 2010;
       background: none;
       border: none;
+      line-height: 1;
     }
-
-    .modal-foto {
-      display: none;
-      position: fixed;
-      z-index: 99999;
-      left: 0;
-      top: 0;
-      width: 100vw;
-      height: 100vh;
-      height: 100dvh;
-      background-color: rgba(0, 0, 0, 0.92);
-      align-items: center;
-      justify-content: center;
-      touch-action: pan-y;
-      box-sizing: border-box;
-    }
-
-    .modal-foto-content {
-      max-width: 100vw;
-      max-height: calc(100vh - 90px);
-      max-height: calc(100dvh - 90px);
-      width: auto;
-      height: auto;
-      object-fit: contain;
-      user-select: none;
-      -webkit-user-drag: none;
-      margin: auto;
-      display: block;
-    }
-
-    #modal-caption {
+    .modal-nav {
       position: absolute;
-      top: 15px;
-      left: 50%;
-      transform: translateX(-50%);
-      color: white;
-      font-size: 13px;
-      font-weight: 600;
-      background: rgba(0,0,0,0.75);
-      padding: 6px 16px;
-      border-radius: 20px;
-      text-align: center;
-      max-width: 85vw;
-      max-height: 75px;
-      overflow-y: auto;
-      word-break: break-word;
-      z-index: 100001;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #ffffff;
+      font-size: 30px;
+      font-weight: bold;
+      cursor: pointer;
+      background: rgba(0, 0, 0, 0.4);
+      border: none;
+      padding: 10px 15px;
+      border-radius: 50%;
+      user-select: none;
+      z-index: 2010;
+      transition: background 0.2s;
     }
-
-    @media (max-width: 900px) {
-      #header-container, #legenda-container { display: none !important; }
-      #filtro-container { padding: 8px 12px; gap: 6px; top: 10px; right: 10px; }
-      .filtro-group label, select, .checkbox-label { font-size: 11px; }
-      select { padding: 4px 6px; min-width: 120px; }
-      #slideshow-controls { bottom: 10px; padding: 6px 10px; gap: 4px; width: 92vw; justify-content: space-between; }
-      #slideshow-controls button { padding: 6px 8px; font-size: 11px; }
-      .slideshow-speed-container { font-size: 10px; }
-      #select-speed { font-size: 10px; padding: 2px 4px; }
-      #modal-caption { font-size: 11px; top: 10px; }
+    .modal-nav:hover {
+      background: rgba(0, 0, 0, 0.8);
     }
+    .modal-prev { left: 10px; }
+    .modal-next { right: 10px; }
   </style>
 </head>
 <body>
 
-  <!-- SCHERMATA DI BENVENUTO (SPLASH SCREEN) -->
-  <div id="splash-screen" onclick="chiudiSplash()">
-    <div class="splash-card">
-      <h1>🌍 La mappa dei viaggi<br>di Vinicio e Luisa</h1>
-      <p>Esplora i ricordi e le tappe nel mondo</p>
-      <div class="splash-timer-badge">Apertura tra <span id="splash-countdown">3</span>s • Tocca per entrare</div>
-    </div>
-  </div>
-
-  <div id="header-container">
-    <h1>La mappa dei viaggi di Vinicio e Luisa</h1>
-  </div>
-
-  <div id="filtro-container">
-    <div class="filtro-group">
-      <label for="select-anno"><b>Anno:</b></label>
-      <select id="select-anno" onchange="cambiaAnno()">
+  <!-- Intestazione e Filtri -->
+  <header>
+    <h1>🌍 Viaggi in Camper & Indipendenti</h1>
+    <div class="filters">
+      <select id="filterViaggio" onchange="applicaFiltri()">
+        <option value="tutti">Tutti i viaggi</option>
+      </select>
+      <select id="filterAnno" onchange="applicaFiltri()">
         <option value="tutti">Tutti gli anni</option>
       </select>
     </div>
-    
-    <div class="filtro-group">
-      <label for="select-viaggio"><b>Viaggio:</b></label>
-      <select id="select-viaggio" onchange="cambiaViaggio()">
-        <option value="tutti">Tutti i viaggi</option>
-      </select>
-    </div>
+  </header>
 
-    <div id="cluster-option-container">
-      <label class="checkbox-label">
-        <input type="checkbox" id="check-cluster" onchange="aggiornaMappa()">
-        Raggruppa punti (Clustering)
-      </label>
-    </div>
-
-    <button id="btn-slideshow" onclick="avviaSlideshow()">▶ Avvia Slideshow</button>
-  </div>
-
-  <div id="slideshow-photo-panel">
-    <div id="slideshow-caption"></div>
-    <img id="slideshow-img" src="" alt="Foto slideshow">
-  </div>
-
-  <div id="slideshow-controls">
-    <button onclick="prevSlide()">◀ Prec</button>
-    <button id="btn-play-pause" onclick="togglePlayPause()">⏸ Pausa</button>
-    <button onclick="nextSlide()">Succ ▶</button>
-
-    <div class="slideshow-speed-container">
-      <select id="select-speed" onchange="cambiaVelocita()">
-        <option value="2000">2s</option>
-        <option value="4000" selected>4s</option>
-        <option value="6000">6s</option>
-        <option value="8000">8s</option>
-      </select>
-    </div>
-
-    <span id="slideshow-counter">1 / 1</span>
-    <button onclick="fermaSlideshow()" style="background: rgba(220, 53, 69, 0.9);">✖ Esci</button>
-  </div>
-
-  <div id="legenda-container">
-    <h4>Legenda Anni</h4>
-    <div id="legenda-items"></div>
-  </div>
-
+  <!-- Elemento Mappa -->
   <div id="map"></div>
 
-  <div id="imageModal" class="modal-foto" onclick="chiudiModalFoto(false)">
-    <div id="modal-caption"></div>
-    <img class="modal-foto-content" id="imgModalSrc" onclick="event.stopPropagation()">
+  <!-- Modal per Visualizzazione e Slideshow Immagini -->
+  <div id="fotoModal" class="modal">
+    <button class="modal-close" onclick="chiudiModalFoto()">&times;</button>
+    <button class="modal-nav modal-prev" onclick="cambiaFoto(-1)">&#10094;</button>
+    <div class="modal-content">
+      <img id="modalImg" class="modal-img" src="" alt="Foto tappa">
+      <div id="modalCaption" class="modal-caption"></div>
+    </div>
+    <button class="modal-nav modal-next" onclick="cambiaFoto(1)">&#10095;</button>
   </div>
 
+  <!-- Librerie JavaScript CDN -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
 
+  <!-- Script Principale -->
   <script>
-    // GESTIONE CONTO ALLA ROVESCIA SPLASH SCREEN
-    let splashSeconds = 3;
-    const splashTimer = setInterval(() => {
-      splashSeconds--;
-      const badge = document.getElementById('splash-countdown');
-      if (badge) badge.textContent = splashSeconds;
-      if (splashSeconds <= 0) {
-        chiudiSplash();
-      }
-    }, 1000);
-
-    function chiudiSplash() {
-      clearInterval(splashTimer);
-      const splash = document.getElementById('splash-screen');
-      if (splash && splash.style.display !== 'none') {
-        splash.style.opacity = '0';
-        splash.style.visibility = 'hidden';
-        setTimeout(() => {
-          splash.style.display = 'none';
-          map.invalidateSize();
-          avviaPanIniziale(); // Avvia lo scorrimento fluido quadro per quadro
-        }, 800);
-      }
-    }
-
-    const map = L.map('map', { minZoom: 2 }).setView([40, -140], 3);
-
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      maxZoom: 19,
-      attribution: '© OpenStreetMap'
-    }).addTo(map);
-
-    let tuttiIDati = [];
-    let panInizialeAttivo = false;
-    let animazionePanId = null;
-
-    const clusterGroup = L.markerClusterGroup({ 
-      disableClusteringAtZoom: 16,
-      maxClusterRadius: 40 
-    });
-    const singleGroup = L.layerGroup();
-    
-    map.addLayer(clusterGroup);
-    map.addLayer(singleGroup);
-
-    const mappaColoriAnni = {};
-    const tavolozzaColori = [
-      '#e6194B', '#3cb44b', '#4363d8', '#f58231', '#911eb4', 
-      '#42d4f4', '#f032e6', '#bfef45', '#fabed4', '#469990', 
-      '#dcbeff', '#9A6324', '#800000', '#000075', '#a9a9a9', 
-      '#808000', '#a30000', '#117864', '#1f618d', '#6c3483', 
-      '#b03a2e', '#1e8449', '#283747', '#d35400', '#884ea0', 
-      '#17a589', '#d81b60', '#3f51b5', '#009688', '#795548', 
-      '#607d8b', '#e91e63', '#0288d1', '#558b2f', '#ad1457'
-    ];
-
-    let slideshowTimer = null;
-    let isSlideshowActive = false;
-    let isSlideshowPaused = false;
-    let currentSlideIndex = 0;
-    let tempoIntervallo = 4000;
+    // Variabili Globali
+    let map, markersCluster;
+    let tuttiPunti = [];
+    let puntiFiltrati = [];
     let puntiSlideshow = [];
-    let markersSlideshow = [];
-    let immaginiPrecaricate = [];
-
+    let modalIndex = 0;
     let touchStartX = 0;
-    let touchStartY = 0;
+    let touchEndX = 0;
 
-    // SCORRIMENTO FLUIDO DA ALASKA A GIAPPONE TRAMITE requestAnimationFrame
-    function avviaPanIniziale() {
-      panInizialeAttivo = true;
-      map.setView([40, -140], 3, { animate: false });
+    // Inizializzazione della pagina
+    document.addEventListener("DOMContentLoaded", () => {
+      // Inizializza la mappa centrata su Roma
+      map = L.map('map').setView([41.9028, 12.4964], 5);
 
-      let startTime = null;
-      const durataMs = 20000; // 20 secondi di scorrimento uniforme e progressivo
+      // TileLayer OpenStreetMap
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+        maxZoom: 18
+      }).addTo(map);
 
-      const startLat = 40;
-      const endLat = 30;
-      const startLon = -140;
-      const endLon = 140;
-
-      function anima(timestamp) {
-        if (!panInizialeAttivo) return;
-        if (!startTime) startTime = timestamp;
-
-        const trascorso = timestamp - startTime;
-        const progresso = Math.min(trascorso / durataMs, 1);
-
-        const currentLat = startLat + (endLat - startLat) * progresso;
-        const currentLon = startLon + (endLon - startLon) * progresso;
-
-        map.setView([currentLat, currentLon], 3, { animate: false });
-
-        if (progresso < 1 && panInizialeAttivo) {
-          animazionePanId = requestAnimationFrame(anima);
-        } else {
-          panInizialeAttivo = false;
-        }
-      }
-
-      setTimeout(() => {
-        if (panInizialeAttivo) {
-          animazionePanId = requestAnimationFrame(anima);
-        }
-      }, 400);
-    }
-
-    function fermaPanIniziale() {
-      if (panInizialeAttivo) {
-        panInizialeAttivo = false;
-        if (animazionePanId) {
-          cancelAnimationFrame(animazionePanId);
-          animazionePanId = null;
-        }
-      }
-    }
-
-    // Interrompe la panoramica automatica se l'utente interagisce
-    map.on('dragstart zoomstart mousedown touchstart', fermaPanIniziale);
-
-    function creaIconaColorata(coloreHex, isBig = false) {
-      const w = isBig ? 32 : 25;
-      const h = isBig ? 52 : 41;
-      const svgPin = `
-        <svg width="${w}" height="${h}" viewBox="0 0 25 41" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12.5 0C5.6 0 0 5.6 0 12.5C0 21.9 12.5 41 12.5 41C12.5 41 25 21.9 25 12.5C25 5.6 19.4 0 12.5 0Z" fill="${coloreHex}" stroke="#FFFFFF" stroke-width="1.5"/>
-          <circle cx="12.5" cy="12.5" r="5" fill="#FFFFFF"/>
-        </svg>
-      `;
-      return L.divIcon({
-        className: 'custom-pin-icon',
-        html: svgPin,
-        iconSize: [w, h],
-        iconAnchor: [w / 2, h],
-        popupAnchor: [1, -34]
+      // Gruppo Marker Cluster
+      markersCluster = L.markerClusterGroup({
+        spiderfyOnMaxZoom: true,
+        showCoverageOnHover: false,
+        zoomToBoundsOnClick: true
       });
+      map.addLayer(markersCluster);
+
+      // Caricamento Dati
+      caricaDati();
+      setupTouchSwipe();
+    });
+
+    // Fetch del file dati.json
+    async function caricaDati() {
+      try {
+        const response = await fetch('dati.json');
+        if (!response.ok) throw new Error('Impossibile caricare il file dati.json');
+        tuttiPunti = await response.json();
+        
+        popolaFiltri(tuttiPunti);
+        applicaFiltri();
+      } catch (err) {
+        console.error('Errore nel caricamento dei dati:', err);
+      }
     }
 
-    fetch('dati.json')
-      .then(response => response.json())
-      .then(dati => {
-        tuttiIDati = dati;
-        popolaAnni();
-        popolaViaggi();
-        document.getElementById('check-cluster').checked = false;
-        aggiornaMappa();
-      })
-      .catch(err => console.error("Errore nel caricamento di dati.json:", err));
+    // Popolamento dei Menu a tendina (Filtri Viaggi ed Anni)
+    function popolaFiltri(punti) {
+      const selectViaggio = document.getElementById('filterViaggio');
+      const selectAnno = document.getElementById('filterAnno');
 
-    function popolaAnni() {
-      const selectAnno = document.getElementById('select-anno');
+      const viaggi = new Set();
       const anni = new Set();
 
-      tuttiIDati.forEach(p => {
-        if (p.anno && p.anno !== "Sconosciuto") anni.add(p.anno);
-      });
-
-      const anniOrdinati = Array.from(anni).sort((a, b) => Number(b) - Number(a));
-
-      anniOrdinati.forEach((anno, index) => {
-        mappaColoriAnni[anno] = tavolozzaColori[index % tavolozzaColori.length];
-      });
-
-      selectAnno.innerHTML = '<option value="tutti">Tutti gli anni</option>';
-      anniOrdinati.forEach(anno => {
-        const option = document.createElement('option');
-        option.value = anno;
-        option.textContent = anno;
-        selectAnno.appendChild(option);
-      });
-
-      aggiornaLegenda(anniOrdinati);
-    }
-
-    function popolaViaggi() {
-      const selectAnno = document.getElementById('select-anno').value;
-      const selectViaggio = document.getElementById('select-viaggio');
-      const viaggiSet = new Set();
-
-      tuttiIDati.forEach(p => {
-        if (selectAnno === 'tutti' || p.anno === selectAnno) {
-          if (p.viaggio) viaggiSet.add(p.viaggio);
+      punti.forEach(p => {
+        if (p.viaggio) viaggi.add(p.viaggio);
+        if (p.data) {
+          const anno = p.data.substring(0, 4);
+          if (anno && !isNaN(anno)) anni.add(anno);
         }
       });
 
-      selectViaggio.innerHTML = '<option value="tutti">Tutti i viaggi</option>';
-      Array.from(viaggiSet).sort().forEach(v => {
-        const option = document.createElement('option');
-        option.value = v;
-        option.textContent = v;
-        selectViaggio.appendChild(option);
+      Array.from(viaggi).sort().forEach(v => {
+        const opt = document.createElement('option');
+        opt.value = v;
+        opt.textContent = v;
+        selectViaggio.appendChild(opt);
+      });
+
+      Array.from(anni).sort((a, b) => b - a).forEach(a => {
+        const opt = document.createElement('option');
+        opt.value = a;
+        opt.textContent = a;
+        selectAnno.appendChild(opt);
       });
     }
 
-    function cambiaAnno() {
-      fermaPanIniziale();
-      if (isSlideshowActive) fermaSlideshow();
-      popolaViaggi();
+    // Logica di Filtro
+    function applicaFiltri() {
+      const viaggioSelezionato = document.getElementById('filterViaggio').value;
+      const annoSelezionato = document.getElementById('filterAnno').value;
+
+      puntiFiltrati = tuttiPunti.filter(p => {
+        const matchViaggio = (viaggioSelezionato === 'tutti') || (p.viaggio === viaggioSelezionato);
+        const annoPunto = p.data ? p.data.substring(0, 4) : '';
+        const matchAnno = (annoSelezionato === 'tutti') || (annoPunto === annoSelezionato);
+        return matchViaggio && matchAnno;
+      });
+
       aggiornaMappa();
     }
 
-    function cambiaViaggio() {
-      fermaPanIniziale();
-      if (isSlideshowActive) fermaSlideshow();
-      aggiornaMappa();
-    }
-
+    // Aggiornamento dei Marker sulla mappa
     function aggiornaMappa() {
-      const annoSel = document.getElementById('select-anno').value;
-      const viaggioSel = document.getElementById('select-viaggio').value;
-      const legendaBox = document.getElementById('legenda-container');
-      const clusterOptContainer = document.getElementById('cluster-option-container');
-      const btnSlideshow = document.getElementById('btn-slideshow');
-      const usaClusterCheckbox = document.getElementById('check-cluster').checked;
-      const isSmartphone = window.innerWidth <= 900;
-
-      if (viaggioSel === 'tutti') {
-        clusterOptContainer.style.display = 'block';
-        btnSlideshow.style.display = 'none';
-      } else {
-        clusterOptContainer.style.display = 'none';
-        btnSlideshow.style.display = 'block';
-      }
-
-      clusterGroup.clearLayers();
-      singleGroup.clearLayers();
-      markersSlideshow = [];
+      markersCluster.clearLayers();
       puntiSlideshow = [];
 
-      let datiFiltrati = tuttiIDati;
+      const bounds = L.latLngBounds();
 
-      if (annoSel !== 'tutti') {
-        datiFiltrati = datiFiltrati.filter(p => p.anno === annoSel);
-        legendaBox.style.display = 'none';
-      } else {
-        legendaBox.style.display = isSmartphone ? 'none' : 'block';
-      }
+      puntiFiltrati.forEach(p => {
+        if (!p.lat || !p.lng) return;
 
-      if (viaggioSel !== 'tutti') {
-        datiFiltrati = datiFiltrati.filter(p => p.viaggio === viaggioSel);
-      }
+        const latLng = [p.lat, p.lng];
+        bounds.extend(latLng);
 
-      const puntiValidi = [];
-
-      datiFiltrati.forEach((p) => {
-        const lat = parseFloat(p.lat);
-        const lon = parseFloat(p.lon);
-
-        if (!isNaN(lat) && !isNaN(lon)) {
-          let coloreHex = mappaColoriAnni[p.anno] || '#007bff';
-          let opzioniMarker = {
-            icon: creaIconaColorata(coloreHex)
-          };
-
-          const marker = L.marker([lat, lon], opzioniMarker);
-          marker.coloreOriginale = coloreHex;
-
-          const tooltipContent = `<b>${p.nome || p.viaggio}</b><br>📅 ${p.data}`;
-          
-          marker.bindTooltip(tooltipContent, {
-            direction: 'top',
-            offset: [0, -35],
-            className: 'custom-tooltip'
+        // Controllo e gestione sicura Immagini/Thumbnail
+        const fotoUrl = p.foto || '';
+        const fotoThumb = p.thumb || (fotoUrl ? fotoUrl.replace(/^foto[\/\\]/, 'thumbs/') : '');
+        
+        let indexSlideshow = -1;
+        if (fotoUrl) {
+          indexSlideshow = puntiSlideshow.length;
+          puntiSlideshow.push({
+            url: fotoUrl,
+            titolo: p.nome || p.viaggio || '',
+            data: p.data || ''
           });
-
-          const indexAttuale = puntiSlideshow.length;
-          const fotoThumb = p.thumb || p.foto.replace(/^foto[\/\\]/, 'thumbs/');
-          const htmlDescrizione = p.descrizione ? `<div class="popup-descrizione">${p.descrizione}</div>` : '';
-
-          const popupContent = `
-            <div class="popup-container">
-              <b style="font-size: 13px;">${p.nome || p.viaggio}</b><br>
-              <small style="color: #666;">📅 ${p.data}</small>
-              ${htmlDescrizione}
-              <img src="${fotoThumb}" class="popup-foto" alt="${p.nome}" onclick="apriModalFoto('${p.foto}', ${indexAttuale})">
-              <a href="javascript:void(0)" onclick="apriModalFoto('${p.foto}', ${indexAttuale})" style="display:inline-block; margin-top:6px; color:#007bff; font-weight:bold; text-decoration:none; font-size:12px;">Ingrandisci foto 🔍</a>
-            </div>
-          `;
-
-          marker.bindPopup(popupContent, { autoPanPadding: [20, 80] });
-
-          if (viaggioSel === 'tutti' && usaClusterCheckbox) {
-            clusterGroup.addLayer(marker);
-          } else {
-            singleGroup.addLayer(marker);
-          }
-
-          puntiValidi.push([lat, lon]);
-          markersSlideshow.push(marker);
-          puntiSlideshow.push(p);
         }
-      });
 
-      if (puntiValidi.length > 0 && !isSlideshowActive) {
-        if (viaggioSel !== 'tutti') {
-          fermaPanIniziale();
-          const bounds = L.latLngBounds(puntiValidi);
-          map.fitBounds(bounds, { padding: [50, 50], maxZoom: 15 });
-        }
-      }
-    }
+        const htmlDescrizione = p.descrizione ? `<div class="popup-descrizione">${p.descrizione}</div>` : '';
+        const htmlFoto = fotoThumb ? `
+          <img src="${fotoThumb}" class="popup-foto" alt="${p.nome || 'Tappa'}" onclick="apriModalFoto('${fotoUrl}', ${indexSlideshow})">
+          <a href="javascript:void(0)" onclick="apriModalFoto('${fotoUrl}', ${indexSlideshow})" style="display:inline-block; margin-top:6px; color:#007bff; font-weight:bold; text-decoration:none; font-size:12px;">Ingrandisci foto 🔍</a>
+        ` : '';
 
-    function precaricaFotoSlideshow() {
-      immaginiPrecaricate = [];
-      puntiSlideshow.forEach(p => {
-        if (p.foto) {
-          const img = new Image();
-          img.src = p.foto;
-          immaginiPrecaricate.push(img);
-        }
-      });
-    }
-
-    function avviaSlideshow() {
-      if (markersSlideshow.length === 0) return;
-      fermaPanIniziale();
-
-      precaricaFotoSlideshow();
-
-      isSlideshowActive = true;
-      isSlideshowPaused = false;
-      currentSlideIndex = 0;
-
-      document.body.classList.add('slideshow-active');
-
-      document.getElementById('filtro-container').style.display = 'none';
-      document.getElementById('slideshow-controls').style.display = 'flex';
-      document.getElementById('btn-play-pause').textContent = '⏸ Pausa';
-
-      tempoIntervallo = parseInt(document.getElementById('select-speed').value, 10) || 4000;
-
-      setTimeout(() => {
-        map.invalidateSize();
-        mostraSlide(currentSlideIndex);
-        avviaTimer();
-      }, 100);
-    }
-
-    function cambiaVelocita() {
-      tempoIntervallo = parseInt(document.getElementById('select-speed').value, 10) || 4000;
-      if (isSlideshowActive && !isSlideshowPaused) {
-        avviaTimer();
-      }
-    }
-
-    function avviaTimer() {
-      clearInterval(slideshowTimer);
-      slideshowTimer = setInterval(() => {
-        if (!isSlideshowPaused) {
-          nextSlide();
-        }
-      }, tempoIntervallo);
-    }
-
-    function mostraSlide(index) {
-      if (index < 0 || index >= markersSlideshow.length) return;
-
-      map.invalidateSize({ pan: false });
-
-      markersSlideshow.forEach((m, idx) => {
-        const p = puntiSlideshow[idx];
-        const col = mappaColoriAnni[p.anno] || '#007bff';
-        m.setIcon(creaIconaColorata(col, false));
-      });
-
-      const activeMarker = markersSlideshow[index];
-      activeMarker.setIcon(creaIconaColorata('#FFD700', true));
-
-      const targetLatLng = activeMarker.getLatLng();
-      const zoomLivello = map.getZoom() < 12 ? 12 : map.getZoom();
-      map.setView(targetLatLng, zoomLivello, { animate: true });
-
-      const p = puntiSlideshow[index];
-      document.getElementById('slideshow-img').src = p.foto;
-      
-      const descTesto = p.descrizione ? ` — ${p.descrizione}` : '';
-      document.getElementById('slideshow-caption').textContent = `${p.nome || p.viaggio} (${p.data})${descTesto}`;
-
-      document.getElementById('slideshow-counter').textContent = `${index + 1} / ${markersSlideshow.length}`;
-    }
-
-    function nextSlide() {
-      currentSlideIndex = (currentSlideIndex + 1) % markersSlideshow.length;
-      mostraSlide(currentSlideIndex);
-    }
-
-    function prevSlide() {
-      currentSlideIndex = (currentSlideIndex - 1 + markersSlideshow.length) % markersSlideshow.length;
-      mostraSlide(currentSlideIndex);
-    }
-
-    function togglePlayPause() {
-      isSlideshowPaused = !isSlideshowPaused;
-      document.getElementById('btn-play-pause').textContent = isSlideshowPaused ? '▶ Riprendi' : '⏸ Pausa';
-    }
-
-    function fermaSlideshow() {
-      isSlideshowActive = false;
-      clearInterval(slideshowTimer);
-      
-      document.body.classList.remove('slideshow-active');
-      map.invalidateSize();
-
-      document.getElementById('filtro-container').style.display = 'flex';
-      document.getElementById('slideshow-controls').style.display = 'none';
-      
-      aggiornaMappa();
-    }
-
-    function aggiornaLegenda(anniOrdinati) {
-      const containerItems = document.getElementById('legenda-items');
-      containerItems.innerHTML = '';
-      anniOrdinati.forEach(anno => {
-        const item = document.createElement('div');
-        item.className = 'legenda-item';
-        item.innerHTML = `
-          <span class="legenda-color-dot" style="background-color: ${mappaColoriAnni[anno]};"></span>
-          <span><b>${anno}</b></span>
+        const popupContent = `
+          <div class="popup-container">
+            <b style="font-size: 13px;">${p.nome || p.viaggio}</b><br>
+            <small style="color: #666;">📅 ${p.data || ''}</small>
+            ${htmlDescrizione}
+            ${htmlFoto}
+          </div>
         `;
-        containerItems.appendChild(item);
+
+        const marker = L.marker(latLng);
+        marker.bindPopup(popupContent);
+        markersCluster.addLayer(marker);
       });
-    }
 
-    function apriModalFoto(urlFoto, index = -1) {
-      fermaPanIniziale();
-      const modal = document.getElementById('imageModal');
-      modal.style.display = 'flex';
-      document.getElementById('imgModalSrc').src = urlFoto;
-
-      if (index !== -1 && puntiSlideshow[index]) {
-        const p = puntiSlideshow[index];
-        const descTesto = p.descrizione ? ` — ${p.descrizione}` : '';
-        document.getElementById('modal-caption').textContent = `${p.nome || p.viaggio} (${p.data})${descTesto}`;
-      } else {
-        document.getElementById('modal-caption').textContent = '';
+      // Adatta lo zoom per mostrare tutti i punti filtrati
+      if (puntiFiltrati.length > 0 && bounds.isValid()) {
+        map.fitBounds(bounds, { padding: [30, 30] });
       }
-
-      history.pushState({ modalOpen: true }, "");
     }
 
-    function chiudiModalFoto(fromPopState = false) {
-      const modal = document.getElementById('imageModal');
-      if (modal.style.display !== 'none') {
-        modal.style.display = 'none';
+    // Apertura Modal & History API per gestire il pulsante "Indietro" dei browser mobile
+    function apriModalFoto(fotoUrl, index) {
+      if (!fotoUrl || index < 0) return;
+      modalIndex = index;
+      mostraFoto(modalIndex);
 
-        if (!fromPopState && history.state && history.state.modalOpen) {
+      const modal = document.getElementById('fotoModal');
+      modal.classList.add('active');
+
+      history.pushState({ modalOpen: true }, '');
+    }
+
+    function mostraFoto(index) {
+      if (puntiSlideshow.length === 0) return;
+      const item = puntiSlideshow[index];
+      
+      const modalImg = document.getElementById('modalImg');
+      const modalCaption = document.getElementById('modalCaption');
+
+      modalImg.src = item.url;
+      modalCaption.innerHTML = `<b>${item.titolo}</b> ${item.data ? '(' + item.data + ')' : ''}`;
+    }
+
+    function cambiaFoto(step) {
+      if (puntiSlideshow.length === 0) return;
+      modalIndex = (modalIndex + step + puntiSlideshow.length) % puntiSlideshow.length;
+      mostraFoto(modalIndex);
+    }
+
+    function chiudiModalFoto() {
+      const modal = document.getElementById('fotoModal');
+      if (modal.classList.contains('active')) {
+        modal.classList.remove('active');
+        if (history.state && history.state.modalOpen) {
           history.back();
         }
       }
     }
 
-    window.addEventListener('popstate', function(e) {
-      const modal = document.getElementById('imageModal');
-      if (modal.style.display !== 'none') {
-        chiudiModalFoto(true);
+    // Gestione Evento Tasto Indietro (Browser / Mobile)
+    window.addEventListener('popstate', (e) => {
+      const modal = document.getElementById('fotoModal');
+      if (modal.classList.contains('active')) {
+        modal.classList.remove('active');
       }
     });
 
-    const photoPanel = document.getElementById('slideshow-photo-panel');
+    // Tastiera (ESC, Frecce Destra / Sinistra)
+    document.addEventListener('keydown', (e) => {
+      const modal = document.getElementById('fotoModal');
+      if (!modal.classList.contains('active')) return;
 
-    photoPanel.addEventListener('touchstart', function(e) {
-      touchStartX = e.changedTouches[0].screenX;
-      touchStartY = e.changedTouches[0].screenY;
-    }, false);
-
-    photoPanel.addEventListener('touchend', function(e) {
-      const touchEndX = e.changedTouches[0].screenX;
-      const touchEndY = e.changedTouches[0].screenY;
-      
-      const diffX = touchEndX - touchStartX;
-      const diffY = touchEndY - touchStartY;
-
-      if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 40) {
-        if (diffX < 0) {
-          nextSlide();
-        } else {
-          prevSlide();
-        }
-      }
-    }, false);
-
-    document.addEventListener('keydown', function(e) {
-      if (e.key === "Escape") {
-        chiudiModalFoto(false);
-        if (isSlideshowActive) fermaSlideshow();
-      }
+      if (e.key === 'Escape') chiudiModalFoto();
+      if (e.key === 'ArrowLeft') cambiaFoto(-1);
+      if (e.key === 'ArrowRight') cambiaFoto(1);
     });
 
-    window.addEventListener('resize', function() {
-      map.invalidateSize();
-    });
+    // Supporto Touch Swipe su Mobile
+    function setupTouchSwipe() {
+      const modal = document.getElementById('fotoModal');
+
+      modal.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+      }, { passive: true });
+
+      modal.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+      }, { passive: true });
+    }
+
+    function handleSwipe() {
+      const threshold = 50; // Soglia minima swipe in px
+      if (touchEndX < touchStartX - threshold) {
+        cambiaFoto(1);  // Swipe a sinistra -> Foto successiva
+      }
+      if (touchEndX > touchStartX + threshold) {
+        cambiaFoto(-1); // Swipe a destra -> Foto precedente
+      }
+    }
   </script>
 </body>
 </html>
