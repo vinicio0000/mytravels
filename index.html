@@ -1,4 +1,4 @@
-<!-- VERSION: 1.3_SPLITSCREEN_FIX_DESKTOP_CENTER -->
+<!-- VERSION: 1.4_DESCRIZIONE_SUPPORT -->
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -73,7 +73,7 @@
 
     #slideshow-img {
       max-width: 100%;
-      max-height: calc(100% - 32px);
+      max-height: calc(100% - 40px);
       object-fit: contain;
       border-radius: 4px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.5);
@@ -83,15 +83,15 @@
       color: #ffffff;
       font-size: 13px;
       font-weight: 600;
-      background: rgba(255, 255, 255, 0.15);
-      padding: 3px 12px;
+      background: rgba(0, 0, 0, 0.65);
+      padding: 4px 14px;
       border-radius: 12px;
       margin-bottom: 6px;
       text-align: center;
       max-width: 90vw;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      max-height: 55px;
+      overflow-y: auto;
+      word-break: break-word;
     }
 
     #header-container {
@@ -296,6 +296,15 @@
     .popup-container {
       text-align: center;
       min-width: 180px;
+      max-width: 230px;
+    }
+
+    .popup-descrizione {
+      font-size: 12px;
+      color: #444;
+      margin: 6px 0 4px 0;
+      line-height: 1.3;
+      font-style: italic;
     }
 
     .popup-foto {
@@ -315,7 +324,7 @@
       border: none;
     }
 
-    /* MODALE FOTO SINGOLA (FUORI DALLO SLIDESHOW) */
+    /* MODALE FOTO SINGOLA A SCHERMO INTERO */
     .modal-foto {
       display: none;
       position: fixed;
@@ -334,8 +343,8 @@
 
     .modal-foto-content {
       max-width: 100vw;
-      max-height: calc(100vh - 80px);
-      max-height: calc(100dvh - 80px);
+      max-height: calc(100vh - 90px);
+      max-height: calc(100dvh - 90px);
       width: auto;
       height: auto;
       object-fit: contain;
@@ -351,16 +360,16 @@
       left: 50%;
       transform: translateX(-50%);
       color: white;
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 600;
-      background: rgba(0,0,0,0.6);
-      padding: 6px 14px;
+      background: rgba(0,0,0,0.75);
+      padding: 6px 16px;
       border-radius: 20px;
       text-align: center;
       max-width: 85vw;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      max-height: 75px;
+      overflow-y: auto;
+      word-break: break-word;
       z-index: 100001;
     }
 
@@ -373,7 +382,7 @@
       #slideshow-controls button { padding: 6px 8px; font-size: 11px; }
       .slideshow-speed-container { font-size: 10px; }
       #select-speed { font-size: 10px; padding: 2px 4px; }
-      #modal-caption { font-size: 12px; top: 10px; }
+      #modal-caption { font-size: 11px; top: 10px; }
     }
   </style>
 </head>
@@ -441,7 +450,7 @@
   <!-- MAPPA -->
   <div id="map"></div>
 
-  <!-- MODALE FOTO SINGOLA (FUORI SLIDESHOW) -->
+  <!-- MODALE FOTO SINGOLA (A SCHERMO INTERO) -->
   <div id="imageModal" class="modal-foto" onclick="chiudiModalFoto(false)">
     <div id="modal-caption"></div>
     <img class="modal-foto-content" id="imgModalSrc" onclick="event.stopPropagation()">
@@ -620,7 +629,7 @@
           const marker = L.marker([lat, lon], opzioniMarker);
           marker.coloreOriginale = coloreHex;
 
-          const tooltipContent = `<b>${p.nome}</b><br>📅 ${p.data}`;
+          const tooltipContent = `<b>${p.nome || p.viaggio}</b><br>📅 ${p.data}`;
           
           marker.bindTooltip(tooltipContent, {
             direction: 'top',
@@ -631,11 +640,15 @@
           const indexAttuale = puntiSlideshow.length;
           const fotoThumb = p.thumb || p.foto.replace(/^foto[\/\\]/, 'thumbs/');
 
+          /* Gestione Descrizione nel Popup */
+          const htmlDescrizione = p.descrizione ? `<div class="popup-descrizione">${p.descrizione}</div>` : '';
+
           const popupContent = `
             <div class="popup-container">
               <b style="font-size: 13px;">${p.nome || p.viaggio}</b><br>
-              <small style="color: #666;">📅 ${p.data}</small><br>
-              <img src="${fotoThumb}" class="popup-foto" alt="${p.nome}" onclick="apriModalFoto('${p.foto}', ${indexAttuale})"><br>
+              <small style="color: #666;">📅 ${p.data}</small>
+              ${htmlDescrizione}
+              <img src="${fotoThumb}" class="popup-foto" alt="${p.nome}" onclick="apriModalFoto('${p.foto}', ${indexAttuale})">
               <a href="javascript:void(0)" onclick="apriModalFoto('${p.foto}', ${indexAttuale})" style="display:inline-block; margin-top:6px; color:#007bff; font-weight:bold; text-decoration:none; font-size:12px;">Ingrandisci foto 🔍</a>
             </div>
           `;
@@ -689,7 +702,6 @@
 
       tempoIntervallo = parseInt(document.getElementById('select-speed').value, 10) || 4000;
 
-      // Attesa asincrona per garantire il reflow del DOM prima di centrare la mappa su desktop
       setTimeout(() => {
         map.invalidateSize();
         mostraSlide(currentSlideIndex);
@@ -734,10 +746,12 @@
       const zoomLivello = map.getZoom() < 12 ? 12 : map.getZoom();
       map.setView(targetLatLng, zoomLivello, { animate: true });
 
-      // Aggiorna foto e titolo nella metà superiore
+      // Aggiorna foto, titolo e descrizione nella metà superiore
       const p = puntiSlideshow[index];
       document.getElementById('slideshow-img').src = p.foto;
-      document.getElementById('slideshow-caption').textContent = `${p.nome || p.viaggio} (${p.data})`;
+      
+      const descTesto = p.descrizione ? ` — ${p.descrizione}` : '';
+      document.getElementById('slideshow-caption').textContent = `${p.nome || p.viaggio} (${p.data})${descTesto}`;
 
       document.getElementById('slideshow-counter').textContent = `${index + 1} / ${markersSlideshow.length}`;
     }
@@ -785,7 +799,7 @@
       });
     }
 
-    /* GESTIONE MODALE FOTO SINGOLA (FUORI DALLO SLIDESHOW) */
+    /* GESTIONE MODALE FOTO SINGOLA (A SCHERMO INTERO) */
     function apriModalFoto(urlFoto, index = -1) {
       const modal = document.getElementById('imageModal');
       modal.style.display = 'flex';
@@ -793,7 +807,8 @@
 
       if (index !== -1 && puntiSlideshow[index]) {
         const p = puntiSlideshow[index];
-        document.getElementById('modal-caption').textContent = `${p.nome || p.viaggio} (${p.data})`;
+        const descTesto = p.descrizione ? ` — ${p.descrizione}` : '';
+        document.getElementById('modal-caption').textContent = `${p.nome || p.viaggio} (${p.data})${descTesto}`;
       } else {
         document.getElementById('modal-caption').textContent = '';
       }
