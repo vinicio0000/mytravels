@@ -1,4 +1,4 @@
-<!-- VERSION: 1.4_DESCRIZIONE_SUPPORT -->
+<!-- VERSION: 1.6_SPLASH_SCREEN_E_FIX_ESTETICO -->
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -8,7 +8,7 @@
   <title>La mappa dei viaggi di Vinicio e Luisa</title>
   <meta name="description" content="Esplora la mappa dei viaggi e i ricordi fotografici di Vinicio e Luisa nel mondo.">
 
-  <!-- Favicon Cartina del Mondo Verde Acqua / Bianco -->
+  <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><circle cx='32' cy='32' r='30' fill='%2352b69a'/><path fill='%23ffffff' d='M10 20c2-5 10-6 14-2-1 4-4 7-8 9-4 1-6-4-6-7zm7 13c4 0 9 6 7 15-2 4-6 3-7-4-1-6 0-10 0-11zm11-21c6-2 24-2 26 10-6 2-16-2-22 0-4-2-6-7-4-10zm0 12c8-2 14 4 10 18-4 6-8 4-10-6-1-6-2-10 0-12zm22 18c4 0 6 4 2 6-4 0-4-4 2-6z'/></svg>">
 
   <!-- Leaflet CSS -->
@@ -24,10 +24,67 @@
       padding: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       overflow: hidden;
-      background: #000;
+      background: #aad3df; /* Colore oceano al posto del grigio */
     }
 
-    /* MAPPA A TUTTO SCHERMO DI DEFAULT */
+    /* SCHERMATA DI BENVENUTO (SPLASH SCREEN) */
+    #splash-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      height: 100dvh;
+      background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+      color: #ffffff;
+      z-index: 999999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+      box-sizing: border-box;
+      transition: opacity 0.8s ease, visibility 0.8s ease;
+      cursor: pointer;
+    }
+
+    .splash-card {
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      padding: 30px 24px;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      max-width: 90vw;
+      width: 360px;
+    }
+
+    .splash-card h1 {
+      margin: 0 0 10px 0;
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .splash-card p {
+      margin: 0 0 20px 0;
+      font-size: 14px;
+      opacity: 0.9;
+    }
+
+    .splash-timer-badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.25);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    /* MAPPA A TUTTO SCHERMO */
     #map {
       height: 100vh;
       height: 100dvh;
@@ -35,6 +92,7 @@
       position: absolute;
       top: 0;
       left: 0;
+      background: #aad3df;
     }
 
     /* LAYOUT SPLIT-SCREEN DURANTE LO SLIDESHOW */
@@ -324,7 +382,6 @@
       border: none;
     }
 
-    /* MODALE FOTO SINGOLA A SCHERMO INTERO */
     .modal-foto {
       display: none;
       position: fixed;
@@ -388,6 +445,15 @@
 </head>
 <body>
 
+  <!-- SCHERMATA DI BENVENUTO (SPLASH SCREEN) -->
+  <div id="splash-screen" onclick="chiudiSplash()">
+    <div class="splash-card">
+      <h1>🌍 La mappa dei viaggi<br>di Vinicio e Luisa</h1>
+      <p>Esplora i ricordi e le tappe nel mondo</p>
+      <div class="splash-timer-badge">Apertura tra <span id="splash-countdown">3</span>s • Tocca per entrare</div>
+    </div>
+  </div>
+
   <div id="header-container">
     <h1>La mappa dei viaggi di Vinicio e Luisa</h1>
   </div>
@@ -417,13 +483,11 @@
     <button id="btn-slideshow" onclick="avviaSlideshow()">▶ Avvia Slideshow</button>
   </div>
 
-  <!-- PANNELLO FOTO SUPERIORE (SLIDESHOW) -->
   <div id="slideshow-photo-panel">
     <div id="slideshow-caption"></div>
     <img id="slideshow-img" src="" alt="Foto slideshow">
   </div>
 
-  <!-- CONTROLLI SLIDESHOW -->
   <div id="slideshow-controls">
     <button onclick="prevSlide()">◀ Prec</button>
     <button id="btn-play-pause" onclick="togglePlayPause()">⏸ Pausa</button>
@@ -447,10 +511,8 @@
     <div id="legenda-items"></div>
   </div>
 
-  <!-- MAPPA -->
   <div id="map"></div>
 
-  <!-- MODALE FOTO SINGOLA (A SCHERMO INTERO) -->
   <div id="imageModal" class="modal-foto" onclick="chiudiModalFoto(false)">
     <div id="modal-caption"></div>
     <img class="modal-foto-content" id="imgModalSrc" onclick="event.stopPropagation()">
@@ -460,7 +522,31 @@
   <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
 
   <script>
-    const map = L.map('map').setView([41.9028, 12.4964], 6);
+    // GESTIONE CONTO ALLA ROVESCIA SPLASH SCREEN
+    let splashSeconds = 3;
+    const splashTimer = setInterval(() => {
+      splashSeconds--;
+      const badge = document.getElementById('splash-countdown');
+      if (badge) badge.textContent = splashSeconds;
+      if (splashSeconds <= 0) {
+        chiudiSplash();
+      }
+    }, 1000);
+
+    function chiudiSplash() {
+      clearInterval(splashTimer);
+      const splash = document.getElementById('splash-screen');
+      if (splash && splash.style.display !== 'none') {
+        splash.style.opacity = '0';
+        splash.style.visibility = 'hidden';
+        setTimeout(() => {
+          splash.style.display = 'none';
+          map.invalidateSize();
+        }, 800);
+      }
+    }
+
+    const map = L.map('map', { minZoom: 2 }).setView([20, 10], 2);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 19,
@@ -518,7 +604,8 @@
         tuttiIDati = dati;
         popolaAnni();
         popolaViaggi();
-        document.getElementById('check-cluster').checked = false;
+        // Attivo il clustering di default per evitare il caos di spilli all'apertura
+        document.getElementById('check-cluster').checked = true;
         aggiornaMappa();
       })
       .catch(err => console.error("Errore nel caricamento di dati.json:", err));
@@ -639,8 +726,6 @@
 
           const indexAttuale = puntiSlideshow.length;
           const fotoThumb = p.thumb || p.foto.replace(/^foto[\/\\]/, 'thumbs/');
-
-          /* Gestione Descrizione nel Popup */
           const htmlDescrizione = p.descrizione ? `<div class="popup-descrizione">${p.descrizione}</div>` : '';
 
           const popupContent = `
@@ -668,8 +753,13 @@
       });
 
       if (puntiValidi.length > 0 && !isSlideshowActive) {
-        const bounds = L.latLngBounds(puntiValidi);
-        map.fitBounds(bounds, { padding: [50, 50], maxZoom: 15 });
+        if (viaggioSel !== 'tutti') {
+          const bounds = L.latLngBounds(puntiValidi);
+          map.fitBounds(bounds, { padding: [50, 50], maxZoom: 15 });
+        } else {
+          // Quando tutti i viaggi sono visibili, manteniamo una vista globale centrata e gradevole
+          map.setView([20, 10], 2);
+        }
       }
     }
 
@@ -693,7 +783,6 @@
       isSlideshowPaused = false;
       currentSlideIndex = 0;
 
-      // Attiva layout split-screen
       document.body.classList.add('slideshow-active');
 
       document.getElementById('filtro-container').style.display = 'none';
@@ -730,23 +819,19 @@
 
       map.invalidateSize({ pan: false });
 
-      // Ripristina tutte le icone
       markersSlideshow.forEach((m, idx) => {
         const p = puntiSlideshow[idx];
         const col = mappaColoriAnni[p.anno] || '#007bff';
         m.setIcon(creaIconaColorata(col, false));
       });
 
-      // Evidenzia l'icona attiva
       const activeMarker = markersSlideshow[index];
       activeMarker.setIcon(creaIconaColorata('#FFD700', true));
 
-      // Sposta e centra la mappa sul punto
       const targetLatLng = activeMarker.getLatLng();
       const zoomLivello = map.getZoom() < 12 ? 12 : map.getZoom();
       map.setView(targetLatLng, zoomLivello, { animate: true });
 
-      // Aggiorna foto, titolo e descrizione nella metà superiore
       const p = puntiSlideshow[index];
       document.getElementById('slideshow-img').src = p.foto;
       
@@ -775,7 +860,6 @@
       isSlideshowActive = false;
       clearInterval(slideshowTimer);
       
-      // Ripristina layout originale
       document.body.classList.remove('slideshow-active');
       map.invalidateSize();
 
@@ -799,7 +883,6 @@
       });
     }
 
-    /* GESTIONE MODALE FOTO SINGOLA (A SCHERMO INTERO) */
     function apriModalFoto(urlFoto, index = -1) {
       const modal = document.getElementById('imageModal');
       modal.style.display = 'flex';
@@ -834,7 +917,6 @@
       }
     });
 
-    /* SWIPE TOUCH SUL PANNELLO FOTO SUPERIORE */
     const photoPanel = document.getElementById('slideshow-photo-panel');
 
     photoPanel.addEventListener('touchstart', function(e) {
