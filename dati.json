@@ -1125,7 +1125,8 @@
     "data": "01/07/2026",
     "lat": 43.616102,
     "lon": 13.506842,
-    "foto": "foto/grecia 2026/2026-07-01-16h40m10.jpg"
+    "foto": "foto/grecia 2026/2026-07-01-16h40m10.jpg",
+    "descrizione": "Ancona - Marche, Italia"
   },
   {
     "nome": "2026-07-02-15H22M33",
@@ -1134,7 +1135,8 @@
     "data": "02/07/2026",
     "lat": 40.028799,
     "lon": 19.619429,
-    "foto": "foto/grecia 2026/2026-07-02-15h22m33.jpg"
+    "foto": "foto/grecia 2026/2026-07-02-15h22m33.jpg",
+    "descrizione": "Igoumenitsa - Epiro, Grecia"
   },
   {
     "nome": "2026-07-03-15H36M01",
@@ -1143,7 +1145,8 @@
     "data": "04/07/2026",
     "lat": 39.459246,
     "lon": 20.261607,
-    "foto": "foto/grecia 2026/2026-07-03-15h36m01.jpg"
+    "foto": "foto/grecia 2026/2026-07-03-15h36m01.jpg",
+    "descrizione": "Parga - Epiro, Grecia"
   },
   {
     "nome": "2026-07-03-15H40M12",
@@ -1152,7 +1155,8 @@
     "data": "04/07/2026",
     "lat": 39.459325,
     "lon": 20.261588,
-    "foto": "foto/grecia 2026/2026-07-03-15h40m12.jpg"
+    "foto": "foto/grecia 2026/2026-07-03-15h40m12.jpg",
+    "descrizione": "Parga - Epiro, Grecia"
   },
   {
     "nome": "2026-07-03-20H09M42",
@@ -1161,7 +1165,8 @@
     "data": "04/07/2026",
     "lat": 39.459755,
     "lon": 20.260806,
-    "foto": "foto/grecia 2026/2026-07-03-20h09m42.jpg"
+    "foto": "foto/grecia 2026/2026-07-03-20h09m42.jpg",
+    "descrizione": "Parga - Epiro, Grecia"
   },
   {
     "nome": "2026-07-03-21H43M46",
@@ -1170,7 +1175,8 @@
     "data": "04/07/2026",
     "lat": 39.408213,
     "lon": 20.239906,
-    "foto": "foto/grecia 2026/2026-07-03-21h43m46.jpg"
+    "foto": "foto/grecia 2026/2026-07-03-21h43m46.jpg",
+    "descrizione": "Valtos - Epiro, Grecia"
   },
   {
     "nome": "2026-07-03-21H46M11",
@@ -1179,7 +1185,8 @@
     "data": "04/07/2026",
     "lat": 39.40755,
     "lon": 20.239649,
-    "foto": "foto/grecia 2026/2026-07-03-21h46m11.jpg"
+    "foto": "foto/grecia 2026/2026-07-03-21h46m11.jpg",
+    "descrizione": "Valtos - Epiro, Grecia"
   },
   {
     "nome": "2026-07-03-21H49M46",
@@ -1188,7 +1195,8 @@
     "data": "04/07/2026",
     "lat": 39.406481,
     "lon": 20.238533,
-    "foto": "foto/grecia 2026/2026-07-03-21h49m46.jpg"
+    "foto": "foto/grecia 2026/2026-07-03-21h49m46.jpg",
+    "descrizione": "Valtos - Epiro, Grecia"
   },
   {
     "nome": "2026-07-03-22H54M21",
@@ -1197,7 +1205,8 @@
     "data": "04/07/2026",
     "lat": 39.460086,
     "lon": 20.259551,
-    "foto": "foto/grecia 2026/2026-07-03-22h54m21.jpg"
+    "foto": "foto/grecia 2026/2026-07-03-22h54m21.jpg",
+    "descrizione": "Parga - Epiro, Grecia"
   },
   {
     "nome": "2026-07-04-09H29M42",
@@ -1206,7 +1215,8 @@
     "data": "05/07/2026",
     "lat": 39.460086,
     "lon": 20.259669,
-    "foto": "foto/grecia 2026/2026-07-04-09h29m42.jpg"
+    "foto": "foto/grecia 2026/2026-07-04-09h29m42.jpg",
+    "descrizione": "Parga - Epiro, Grecia"
   },
   {
     "nome": "2026-07-04-10H37M30",
@@ -1215,7 +1225,8 @@
     "data": "05/07/2026",
     "lat": 39.437651,
     "lon": 20.2351,
-    "foto": "foto/grecia 2026/2026-07-04-10h37m30.jpg"
+    "foto": "foto/grecia 2026/2026-07-04-10h37m30.jpg",
+    "descrizione": "Agia Kiriaki - Epiro, Grecia"
   },
   {
     "nome": "2026-07-04-11H17M52",
@@ -1224,7 +1235,8 @@
     "data": "05/07/2026",
     "lat": 39.450104,
     "lon": 20.276127,
-    "foto": "foto/grecia 2026/2026-07-04-11h17m52.jpg"
+    "foto": "foto/grecia 2026/2026-07-04-11h17m52.jpg",
+    "descrizione": "Anthousa - Epiro, Grecia"
   },
   {
     "nome": "2026-07-04-19H53M09",
@@ -1233,7 +1245,8 @@
     "data": "05/07/2026",
     "lat": 39.460078,
     "lon": 20.259819,
-    "foto": "foto/grecia 2026/2026-07-04-19h53m09.jpg"
+    "foto": "foto/grecia 2026/2026-07-04-19h53m09.jpg",
+    "descrizione": "Parga - Epiro, Grecia"
   },
   {
     "nome": "2026-07-05-13H17M36",
@@ -1242,7 +1255,8 @@
     "data": "06/07/2026",
     "lat": 39.458711,
     "lon": 20.261128,
-    "foto": "foto/grecia 2026/2026-07-05-13h17m36.jpg"
+    "foto": "foto/grecia 2026/2026-07-05-13h17m36.jpg",
+    "descrizione": "Parga - Epiro, Grecia"
   },
   {
     "nome": "2026-07-05-21H28M05",
@@ -1251,7 +1265,8 @@
     "data": "06/07/2026",
     "lat": 39.460194,
     "lon": 20.259669,
-    "foto": "foto/grecia 2026/2026-07-05-21h28m05.jpg"
+    "foto": "foto/grecia 2026/2026-07-05-21h28m05.jpg",
+    "descrizione": "Parga - Epiro, Grecia"
   },
   {
     "nome": "2026-07-06-09H43M25",
@@ -1260,7 +1275,8 @@
     "data": "07/07/2026",
     "lat": 39.406124,
     "lon": 20.232954,
-    "foto": "foto/grecia 2026/2026-07-06-09h43m25.jpg"
+    "foto": "foto/grecia 2026/2026-07-06-09h43m25.jpg",
+    "descrizione": "Kryoneri - Epiro, Grecia"
   },
   {
     "nome": "2026-07-06-09H53M24",
@@ -1269,7 +1285,8 @@
     "data": "07/07/2026",
     "lat": 39.402029,
     "lon": 20.229928,
-    "foto": "foto/grecia 2026/2026-07-06-09h53m24.jpg"
+    "foto": "foto/grecia 2026/2026-07-06-09h53m24.jpg",
+    "descrizione": "Sarakiniko - Epiro, Grecia"
   },
   {
     "nome": "2026-07-06-10H31M59",
@@ -1278,7 +1295,8 @@
     "data": "07/07/2026",
     "lat": 39.401183,
     "lon": 20.213385,
-    "foto": "foto/grecia 2026/2026-07-06-10h31m59.jpg"
+    "foto": "foto/grecia 2026/2026-07-06-10h31m59.jpg",
+    "descrizione": "Sarakiniko Beach - Epiro, Grecia"
   },
   {
     "nome": "2026-07-06-11H01M29",
@@ -1287,7 +1305,8 @@
     "data": "07/07/2026",
     "lat": 39.406157,
     "lon": 20.222912,
-    "foto": "foto/grecia 2026/2026-07-06-11h01m29.jpg"
+    "foto": "foto/grecia 2026/2026-07-06-11h01m29.jpg",
+    "descrizione": "Kryoneri - Epiro, Grecia"
   },
   {
     "nome": "2026-07-07-08H17M31",
@@ -1296,7 +1315,8 @@
     "data": "08/07/2026",
     "lat": 39.444678,
     "lon": 20.252867,
-    "foto": "foto/grecia 2026/2026-07-07-08h17m31.jpg"
+    "foto": "foto/grecia 2026/2026-07-07-08h17m31.jpg",
+    "descrizione": "Parga - Epiro, Grecia"
   },
   {
     "nome": "2026-07-09-10H44M48",
@@ -1305,7 +1325,8 @@
     "data": "10/07/2026",
     "lat": 38.84534,
     "lon": 20.730793,
-    "foto": "foto/grecia 2026/2026-07-09-10h44m48.jpg"
+    "foto": "foto/grecia 2026/2026-07-09-10h44m48.jpg",
+    "descrizione": "Lefkada - Isole Ionie, Grecia"
   },
   {
     "nome": "2026-07-09-15H47M24",
@@ -1314,7 +1335,8 @@
     "data": "10/07/2026",
     "lat": 38.803932,
     "lon": 20.713348,
-    "foto": "foto/grecia 2026/2026-07-09-15h47m24.jpg"
+    "foto": "foto/grecia 2026/2026-07-09-15h47m24.jpg",
+    "descrizione": "Nidri - Lefkada, Grecia"
   },
   {
     "nome": "2026-07-09-15H47M46",
@@ -1323,7 +1345,8 @@
     "data": "10/07/2026",
     "lat": 38.803831,
     "lon": 20.714421,
-    "foto": "foto/grecia 2026/2026-07-09-15h47m46.jpg"
+    "foto": "foto/grecia 2026/2026-07-09-15h47m46.jpg",
+    "descrizione": "Nidri - Lefkada, Grecia"
   },
   {
     "nome": "2026-07-10-09H20M21",
@@ -1332,7 +1355,8 @@
     "data": "11/07/2026",
     "lat": 38.835329,
     "lon": 20.709529,
-    "foto": "foto/grecia 2026/2026-07-10-09h20m21.jpg"
+    "foto": "foto/grecia 2026/2026-07-10-09h20m21.jpg",
+    "descrizione": "Lefkada - Isole Ionie, Grecia"
   },
   {
     "nome": "2026-07-10-19H53M04",
@@ -1341,7 +1365,8 @@
     "data": "11/07/2026",
     "lat": 38.833123,
     "lon": 20.707034,
-    "foto": "foto/grecia 2026/2026-07-10-19h53m04.jpg"
+    "foto": "foto/grecia 2026/2026-07-10-19h53m04.jpg",
+    "descrizione": "Lefkada - Isole Ionie, Grecia"
   },
   {
     "nome": "2026-07-10-20H09M42",
@@ -1350,7 +1375,8 @@
     "data": "11/07/2026",
     "lat": 38.834281,
     "lon": 20.708939,
-    "foto": "foto/grecia 2026/2026-07-10-20h09m42.jpg"
+    "foto": "foto/grecia 2026/2026-07-10-20h09m42.jpg",
+    "descrizione": "Lefkada - Isole Ionie, Grecia"
   },
   {
     "nome": "2026-07-10-21H13M43",
@@ -1359,7 +1385,8 @@
     "data": "11/07/2026",
     "lat": 38.835688,
     "lon": 20.709636,
-    "foto": "foto/grecia 2026/2026-07-10-21h13m43.jpg"
+    "foto": "foto/grecia 2026/2026-07-10-21h13m43.jpg",
+    "descrizione": "Lefkada - Isole Ionie, Grecia"
   },
   {
     "nome": "2026-07-10-21H14M57",
@@ -1368,7 +1395,8 @@
     "data": "11/07/2026",
     "lat": 38.835537,
     "lon": 20.70969,
-    "foto": "foto/grecia 2026/2026-07-10-21h14m57.jpg"
+    "foto": "foto/grecia 2026/2026-07-10-21h14m57.jpg",
+    "descrizione": "Lefkada - Isole Ionie, Grecia"
   },
   {
     "nome": "2026-07-11-13H26M29",
@@ -1377,7 +1405,8 @@
     "data": "12/07/2026",
     "lat": 39.444122,
     "lon": 20.255506,
-    "foto": "foto/grecia 2026/2026-07-11-13h26m29.jpg"
+    "foto": "foto/grecia 2026/2026-07-11-13h26m29.jpg",
+    "descrizione": "Parga - Epiro, Grecia"
   },
   {
     "nome": "2026-07-11-13H32M23",
@@ -1386,7 +1415,8 @@
     "data": "12/07/2026",
     "lat": 39.444214,
     "lon": 20.255485,
-    "foto": "foto/grecia 2026/2026-07-11-13h32m23.jpg"
+    "foto": "foto/grecia 2026/2026-07-11-13h32m23.jpg",
+    "descrizione": "Parga - Epiro, Grecia"
   },
   {
     "nome": "2026-07-11-14H29M47",
@@ -1395,7 +1425,8 @@
     "data": "12/07/2026",
     "lat": 39.445241,
     "lon": 20.256407,
-    "foto": "foto/grecia 2026/2026-07-11-14h29m47.jpg"
+    "foto": "foto/grecia 2026/2026-07-11-14h29m47.jpg",
+    "descrizione": "Parga - Epiro, Grecia"
   },
   {
     "nome": "2026-07-11-14H30M13",
@@ -1404,7 +1435,8 @@
     "data": "12/07/2026",
     "lat": 39.445272,
     "lon": 20.256418,
-    "foto": "foto/grecia 2026/2026-07-11-14h30m13.jpg"
+    "foto": "foto/grecia 2026/2026-07-11-14h30m13.jpg",
+    "descrizione": "Parga - Epiro, Grecia"
   },
   {
     "nome": "2026-07-11-21H01M53",
@@ -1413,7 +1445,8 @@
     "data": "12/07/2026",
     "lat": 39.445224,
     "lon": 20.256525,
-    "foto": "foto/grecia 2026/2026-07-11-21h01m53.jpg"
+    "foto": "foto/grecia 2026/2026-07-11-21h01m53.jpg",
+    "descrizione": "Parga - Epiro, Grecia"
   },
   {
     "nome": "2026-07-12-10H15M46",
@@ -1422,7 +1455,8 @@
     "data": "13/07/2026",
     "lat": 39.44411,
     "lon": 20.25556,
-    "foto": "foto/grecia 2026/2026-07-12-10h15m46.jpg"
+    "foto": "foto/grecia 2026/2026-07-12-10h15m46.jpg",
+    "descrizione": "Parga - Epiro, Grecia"
   },
   {
     "nome": "2026-07-12-12H25M07",
@@ -1431,7 +1465,8 @@
     "data": "13/07/2026",
     "lat": 39.445664,
     "lon": 20.256418,
-    "foto": "foto/grecia 2026/2026-07-12-12h25m07.jpg"
+    "foto": "foto/grecia 2026/2026-07-12-12h25m07.jpg",
+    "descrizione": "Parga - Epiro, Grecia"
   },
   {
     "nome": "2026-07-12-13H49M26",
@@ -1440,7 +1475,8 @@
     "data": "13/07/2026",
     "lat": 39.446459,
     "lon": 20.255806,
-    "foto": "foto/grecia 2026/2026-07-12-13h49m26.jpg"
+    "foto": "foto/grecia 2026/2026-07-12-13h49m26.jpg",
+    "descrizione": "Parga - Epiro, Grecia"
   },
   {
     "nome": "2026-07-12-14H10M03",
@@ -1449,7 +1485,8 @@
     "data": "13/07/2026",
     "lat": 39.445904,
     "lon": 20.255098,
-    "foto": "foto/grecia 2026/2026-07-12-14h10m03.jpg"
+    "foto": "foto/grecia 2026/2026-07-12-14h10m03.jpg",
+    "descrizione": "Parga - Epiro, Grecia"
   },
   {
     "nome": "2026-07-12-14H23M16",
@@ -1458,7 +1495,8 @@
     "data": "13/07/2026",
     "lat": 39.445504,
     "lon": 20.255922,
-    "foto": "foto/grecia 2026/2026-07-12-14h23m16.jpg"
+    "foto": "foto/grecia 2026/2026-07-12-14h23m16.jpg",
+    "descrizione": "Parga - Epiro, Grecia"
   },
   {
     "nome": "2026-07-13-11H10M17",
@@ -1467,7 +1505,8 @@
     "data": "14/07/2026",
     "lat": 39.445879,
     "lon": 20.256525,
-    "foto": "foto/grecia 2026/2026-07-13-11h10m17.jpg"
+    "foto": "foto/grecia 2026/2026-07-13-11h10m17.jpg",
+    "descrizione": "Parga - Epiro, Grecia"
   },
   {
     "nome": "2026-07-13-13H26M43",
@@ -1476,7 +1515,8 @@
     "data": "14/07/2026",
     "lat": 39.445212,
     "lon": 20.256445,
-    "foto": "foto/grecia 2026/2026-07-13-13h26m43.jpg"
+    "foto": "foto/grecia 2026/2026-07-13-13h26m43.jpg",
+    "descrizione": "Parga - Epiro, Grecia"
   },
   {
     "nome": "2026-07-14-20H51M44",
@@ -1485,7 +1525,8 @@
     "data": "15/07/2026",
     "lat": 39.444129,
     "lon": 20.255621,
-    "foto": "foto/grecia 2026/2026-07-14-20h51m44.jpg"
+    "foto": "foto/grecia 2026/2026-07-14-20h51m44.jpg",
+    "descrizione": "Parga - Epiro, Grecia"
   },
   {
     "nome": "2026-07-16-12H08M39",
@@ -1494,7 +1535,8 @@
     "data": "17/07/2026",
     "lat": 39.445382,
     "lon": 20.255345,
-    "foto": "foto/grecia 2026/2026-07-16-12h08m39.jpg"
+    "foto": "foto/grecia 2026/2026-07-16-12h08m39.jpg",
+    "descrizione": "Parga - Epiro, Grecia"
   },
   {
     "nome": "2026-07-18-15H15M47",
@@ -1503,7 +1545,8 @@
     "data": "19/07/2026",
     "lat": 39.738341,
     "lon": 19.952645,
-    "foto": "foto/grecia 2026/2026-07-18-15h15m47.jpg"
+    "foto": "foto/grecia 2026/2026-07-18-15h15m47.jpg",
+    "descrizione": "Corfù - Isole Ionie, Grecia"
   },
   {
     "nome": "2002-07-22-12H23M42",
@@ -3420,7 +3463,8 @@
     "data": "15/03/2025",
     "lat": 37.968594,
     "lon": 15.385979,
-    "foto": "foto/sicilia 2025/2025-03-15-16h18m30.jpg"
+    "foto": "foto/sicilia 2025/2025-03-15-16h18m30.jpg",
+    "descrizione": "Provincia di Messina - Sicilia, Italia"
   },
   {
     "nome": "2025-03-15-16H18M38",
@@ -3429,7 +3473,8 @@
     "data": "15/03/2025",
     "lat": 37.96736,
     "lon": 15.384823,
-    "foto": "foto/sicilia 2025/2025-03-15-16h18m38.jpg"
+    "foto": "foto/sicilia 2025/2025-03-15-16h18m38.jpg",
+    "descrizione": "Provincia di Messina - Sicilia, Italia"
   },
   {
     "nome": "2025-03-16-08H20M40",
@@ -3438,7 +3483,8 @@
     "data": "16/03/2025",
     "lat": 37.823402,
     "lon": 15.270035,
-    "foto": "foto/sicilia 2025/2025-03-16-08h20m40.jpg"
+    "foto": "foto/sicilia 2025/2025-03-16-08h20m40.jpg",
+    "descrizione": "Taormina / Giardini Naxos - Sicilia, Italia"
   },
   {
     "nome": "2025-03-16-08H44M00",
@@ -3447,7 +3493,8 @@
     "data": "16/03/2025",
     "lat": 37.821245,
     "lon": 15.26767,
-    "foto": "foto/sicilia 2025/2025-03-16-08h44m00.jpg"
+    "foto": "foto/sicilia 2025/2025-03-16-08h44m00.jpg",
+    "descrizione": "Giardini Naxos - Sicilia, Italia"
   },
   {
     "nome": "2025-03-16-08H49M39",
@@ -3456,7 +3503,8 @@
     "data": "16/03/2025",
     "lat": 37.821063,
     "lon": 15.267539,
-    "foto": "foto/sicilia 2025/2025-03-16-08h49m39.jpg"
+    "foto": "foto/sicilia 2025/2025-03-16-08h49m39.jpg",
+    "descrizione": "Giardini Naxos - Sicilia, Italia"
   },
   {
     "nome": "2025-03-16-10H08M11",
@@ -3465,7 +3513,8 @@
     "data": "16/03/2025",
     "lat": 37.851492,
     "lon": 15.284616,
-    "foto": "foto/sicilia 2025/2025-03-16-10h08m11.jpg"
+    "foto": "foto/sicilia 2025/2025-03-16-10h08m11.jpg",
+    "descrizione": "Castiglione di Sicilia - Sicilia, Italia"
   },
   {
     "nome": "2025-03-16-10H11M32",
@@ -3474,7 +3523,8 @@
     "data": "16/03/2025",
     "lat": 37.851547,
     "lon": 15.285229,
-    "foto": "foto/sicilia 2025/2025-03-16-10h11m32.jpg"
+    "foto": "foto/sicilia 2025/2025-03-16-10h11m32.jpg",
+    "descrizione": "Castiglione di Sicilia - Sicilia, Italia"
   },
   {
     "nome": "2025-03-16-10H29M13",
@@ -3483,7 +3533,8 @@
     "data": "16/03/2025",
     "lat": 37.853389,
     "lon": 15.287928,
-    "foto": "foto/sicilia 2025/2025-03-16-10h29m13.jpg"
+    "foto": "foto/sicilia 2025/2025-03-16-10h29m13.jpg",
+    "descrizione": "Gole dell'Alcantara - Sicilia, Italia"
   },
   {
     "nome": "2025-03-16-10H29M27",
@@ -3492,7 +3543,8 @@
     "data": "16/03/2025",
     "lat": 37.853415,
     "lon": 15.287963,
-    "foto": "foto/sicilia 2025/2025-03-16-10h29m27.jpg"
+    "foto": "foto/sicilia 2025/2025-03-16-10h29m27.jpg",
+    "descrizione": "Gole dell'Alcantara - Sicilia, Italia"
   },
   {
     "nome": "2025-03-16-10H29M30",
@@ -3501,7 +3553,8 @@
     "data": "16/03/2025",
     "lat": 37.85342,
     "lon": 15.287971,
-    "foto": "foto/sicilia 2025/2025-03-16-10h29m30.jpg"
+    "foto": "foto/sicilia 2025/2025-03-16-10h29m30.jpg",
+    "descrizione": "Gole dell'Alcantara - Sicilia, Italia"
   },
   {
     "nome": "2025-03-16-10H34M39",
@@ -3510,7 +3563,8 @@
     "data": "16/03/2025",
     "lat": 37.853459,
     "lon": 15.288895,
-    "foto": "foto/sicilia 2025/2025-03-16-10h34m39.jpg"
+    "foto": "foto/sicilia 2025/2025-03-16-10h34m39.jpg",
+    "descrizione": "Gole dell'Alcantara - Sicilia, Italia"
   },
   {
     "nome": "2025-03-16-10H38M30",
@@ -3519,7 +3573,8 @@
     "data": "16/03/2025",
     "lat": 37.853107,
     "lon": 15.289693,
-    "foto": "foto/sicilia 2025/2025-03-16-10h38m30.jpg"
+    "foto": "foto/sicilia 2025/2025-03-16-10h38m30.jpg",
+    "descrizione": "Gole dell'Alcantara - Sicilia, Italia"
   },
   {
     "nome": "2025-03-16-10H39M07",
@@ -3528,7 +3583,8 @@
     "data": "16/03/2025",
     "lat": 37.853051,
     "lon": 15.289821,
-    "foto": "foto/sicilia 2025/2025-03-16-10h39m07.jpg"
+    "foto": "foto/sicilia 2025/2025-03-16-10h39m07.jpg",
+    "descrizione": "Gole dell'Alcantara - Sicilia, Italia"
   },
   {
     "nome": "2025-03-16-10H50M38",
@@ -3537,7 +3593,8 @@
     "data": "16/03/2025",
     "lat": 37.853656,
     "lon": 15.290224,
-    "foto": "foto/sicilia 2025/2025-03-16-10h50m38.jpg"
+    "foto": "foto/sicilia 2025/2025-03-16-10h50m38.jpg",
+    "descrizione": "Gole dell'Alcantara - Sicilia, Italia"
   },
   {
     "nome": "2025-03-16-11H01M30",
@@ -3546,7 +3603,8 @@
     "data": "16/03/2025",
     "lat": 37.854946,
     "lon": 15.288944,
-    "foto": "foto/sicilia 2025/2025-03-16-11h01m30.jpg"
+    "foto": "foto/sicilia 2025/2025-03-16-11h01m30.jpg",
+    "descrizione": "Gole dell'Alcantara - Sicilia, Italia"
   },
   {
     "nome": "2025-03-16-11H33M39",
@@ -3555,7 +3613,8 @@
     "data": "16/03/2025",
     "lat": 37.821788,
     "lon": 15.267101,
-    "foto": "foto/sicilia 2025/2025-03-16-11h33m39.jpg"
+    "foto": "foto/sicilia 2025/2025-03-16-11h33m39.jpg",
+    "descrizione": "Giardini Naxos - Sicilia, Italia"
   },
   {
     "nome": "2025-03-17-09H41M43",
@@ -3564,7 +3623,8 @@
     "data": "17/03/2025",
     "lat": 37.69943,
     "lon": 15.000919,
-    "foto": "foto/sicilia 2025/2025-03-17-09h41m43.jpg"
+    "foto": "foto/sicilia 2025/2025-03-17-09h41m43.jpg",
+    "descrizione": "Zona Etna Nord - Sicilia, Italia"
   },
   {
     "nome": "2025-03-17-10H28M19",
@@ -3573,7 +3633,8 @@
     "data": "17/03/2025",
     "lat": 37.685527,
     "lon": 14.988843,
-    "foto": "foto/sicilia 2025/2025-03-17-10h28m19.jpg"
+    "foto": "foto/sicilia 2025/2025-03-17-10h28m19.jpg",
+    "descrizione": "Etna - Rifugio Sapienza - Sicilia, Italia"
   },
   {
     "nome": "2025-03-17-10H28M31",
@@ -3582,7 +3643,8 @@
     "data": "17/03/2025",
     "lat": 37.685165,
     "lon": 14.988713,
-    "foto": "foto/sicilia 2025/2025-03-17-10h28m31.jpg"
+    "foto": "foto/sicilia 2025/2025-03-17-10h28m31.jpg",
+    "descrizione": "Etna - Rifugio Sapienza - Sicilia, Italia"
   },
   {
     "nome": "2025-03-17-10H37M58",
@@ -3591,7 +3653,8 @@
     "data": "17/03/2025",
     "lat": 37.678689,
     "lon": 14.988134,
-    "foto": "foto/sicilia 2025/2025-03-17-10h37m58.jpg"
+    "foto": "foto/sicilia 2025/2025-03-17-10h37m58.jpg",
+    "descrizione": "Etna - Sicilia, Italia"
   },
   {
     "nome": "2025-03-17-11H21M47",
@@ -3600,7 +3663,8 @@
     "data": "17/03/2025",
     "lat": 37.580179,
     "lon": 14.981228,
-    "foto": "foto/sicilia 2025/2025-03-17-11h21m47.jpg"
+    "foto": "foto/sicilia 2025/2025-03-17-11h21m47.jpg",
+    "descrizione": "Nicolosi - Sicilia, Italia"
   },
   {
     "nome": "2025-03-17-11H34M50",
@@ -3609,7 +3673,8 @@
     "data": "17/03/2025",
     "lat": 37.531895,
     "lon": 14.99037,
-    "foto": "foto/sicilia 2025/2025-03-17-11h34m50.jpg"
+    "foto": "foto/sicilia 2025/2025-03-17-11h34m50.jpg",
+    "descrizione": "Gravina di Catania - Sicilia, Italia"
   },
   {
     "nome": "2025-03-17-11H39M07",
@@ -3618,7 +3683,8 @@
     "data": "17/03/2025",
     "lat": 37.514193,
     "lon": 15.006534,
-    "foto": "foto/sicilia 2025/2025-03-17-11h39m07.jpg"
+    "foto": "foto/sicilia 2025/2025-03-17-11h39m07.jpg",
+    "descrizione": "Catania - Sicilia, Italia"
   },
   {
     "nome": "2025-03-17-11H40M26",
@@ -3627,7 +3693,8 @@
     "data": "17/03/2025",
     "lat": 37.511763,
     "lon": 15.019118,
-    "foto": "foto/sicilia 2025/2025-03-17-11h40m26.jpg"
+    "foto": "foto/sicilia 2025/2025-03-17-11h40m26.jpg",
+    "descrizione": "Catania - Sicilia, Italia"
   },
   {
     "nome": "2025-03-17-16H21M46",
@@ -3636,7 +3703,8 @@
     "data": "17/03/2025",
     "lat": 37.072029,
     "lon": 15.232523,
-    "foto": "foto/sicilia 2025/2025-03-17-16h21m46.jpg"
+    "foto": "foto/sicilia 2025/2025-03-17-16h21m46.jpg",
+    "descrizione": "Siracusa - Ortigia, Sicilia, Italia"
   },
   {
     "nome": "2025-03-17-16H22M59",
@@ -3645,7 +3713,8 @@
     "data": "17/03/2025",
     "lat": 37.072027,
     "lon": 15.232529,
-    "foto": "foto/sicilia 2025/2025-03-17-16h22m59.jpg"
+    "foto": "foto/sicilia 2025/2025-03-17-16h22m59.jpg",
+    "descrizione": "Siracusa - Ortigia, Sicilia, Italia"
   },
   {
     "nome": "2025-03-17-16H28M17",
@@ -3654,7 +3723,8 @@
     "data": "17/03/2025",
     "lat": 37.072018,
     "lon": 15.232557,
-    "foto": "foto/sicilia 2025/2025-03-17-16h28m17.jpg"
+    "foto": "foto/sicilia 2025/2025-03-17-16h28m17.jpg",
+    "descrizione": "Siracusa - Ortigia, Sicilia, Italia"
   },
   {
     "nome": "2025-03-18-11H07M41",
@@ -3663,7 +3733,8 @@
     "data": "18/03/2025",
     "lat": 36.926974,
     "lon": 14.74139,
-    "foto": "foto/sicilia 2025/2025-03-18-11h07m41.jpg"
+    "foto": "foto/sicilia 2025/2025-03-18-11h07m41.jpg",
+    "descrizione": "Modica - Sicilia, Italia"
   },
   {
     "nome": "2025-03-18-11H08M31",
@@ -3672,7 +3743,8 @@
     "data": "18/03/2025",
     "lat": 36.926962,
     "lon": 14.741325,
-    "foto": "foto/sicilia 2025/2025-03-18-11h08m31.jpg"
+    "foto": "foto/sicilia 2025/2025-03-18-11h08m31.jpg",
+    "descrizione": "Modica - Sicilia, Italia"
   },
   {
     "nome": "2025-03-18-11H20M04",
@@ -3681,7 +3753,8 @@
     "data": "18/03/2025",
     "lat": 36.926803,
     "lon": 14.740414,
-    "foto": "foto/sicilia 2025/2025-03-18-11h20m04.jpg"
+    "foto": "foto/sicilia 2025/2025-03-18-11h20m04.jpg",
+    "descrizione": "Modica - Sicilia, Italia"
   },
   {
     "nome": "2025-03-18-11H20M10",
@@ -3690,7 +3763,8 @@
     "data": "18/03/2025",
     "lat": 36.926801,
     "lon": 14.740406,
-    "foto": "foto/sicilia 2025/2025-03-18-11h20m10.jpg"
+    "foto": "foto/sicilia 2025/2025-03-18-11h20m10.jpg",
+    "descrizione": "Modica - Sicilia, Italia"
   },
   {
     "nome": "2025-03-18-12H20M52",
@@ -3699,7 +3773,8 @@
     "data": "18/03/2025",
     "lat": 36.820502,
     "lon": 14.745848,
-    "foto": "foto/sicilia 2025/2025-03-18-12h20m52.jpg"
+    "foto": "foto/sicilia 2025/2025-03-18-12h20m52.jpg",
+    "descrizione": "Scicli - Sicilia, Italia"
   },
   {
     "nome": "2025-03-19-09H48M17",
@@ -3708,7 +3783,8 @@
     "data": "19/03/2025",
     "lat": 36.735661,
     "lon": 14.682362,
-    "foto": "foto/sicilia 2025/2025-03-19-09h48m17.jpg"
+    "foto": "foto/sicilia 2025/2025-03-19-09h48m17.jpg",
+    "descrizione": "Marina di Modica - Sicilia, Italia"
   },
   {
     "nome": "2025-03-19-10H02M03",
@@ -3717,7 +3793,8 @@
     "data": "19/03/2025",
     "lat": 36.788235,
     "lon": 14.696958,
-    "foto": "foto/sicilia 2025/2025-03-19-10h02m03.jpg"
+    "foto": "foto/sicilia 2025/2025-03-19-10h02m03.jpg",
+    "descrizione": "Ispica - Sicilia, Italia"
   },
   {
     "nome": "2025-03-19-10H02M16",
@@ -3726,7 +3803,8 @@
     "data": "19/03/2025",
     "lat": 36.788454,
     "lon": 14.697401,
-    "foto": "foto/sicilia 2025/2025-03-19-10h02m16.jpg"
+    "foto": "foto/sicilia 2025/2025-03-19-10h02m16.jpg",
+    "descrizione": "Ispica - Sicilia, Italia"
   },
   {
     "nome": "2025-03-19-10H21M12",
@@ -3735,7 +3813,8 @@
     "data": "19/03/2025",
     "lat": 36.792906,
     "lon": 14.703941,
-    "foto": "foto/sicilia 2025/2025-03-19-10h21m12.jpg"
+    "foto": "foto/sicilia 2025/2025-03-19-10h21m12.jpg",
+    "descrizione": "Ispica - Sicilia, Italia"
   },
   {
     "nome": "2025-03-19-10H22M46",
@@ -3744,7 +3823,8 @@
     "data": "19/03/2025",
     "lat": 36.792705,
     "lon": 14.703943,
-    "foto": "foto/sicilia 2025/2025-03-19-10h22m46.jpg"
+    "foto": "foto/sicilia 2025/2025-03-19-10h22m46.jpg",
+    "descrizione": "Ispica - Sicilia, Italia"
   },
   {
     "nome": "2025-03-19-11H36M56",
@@ -3753,7 +3833,8 @@
     "data": "19/03/2025",
     "lat": 36.778112,
     "lon": 14.686367,
-    "foto": "foto/sicilia 2025/2025-03-19-11h36m56.jpg"
+    "foto": "foto/sicilia 2025/2025-03-19-11h36m56.jpg",
+    "descrizione": "Pozzallo - Sicilia, Italia"
   },
   {
     "nome": "2025-03-19-11H39M15",
@@ -3762,7 +3843,8 @@
     "data": "19/03/2025",
     "lat": 36.77427,
     "lon": 14.684421,
-    "foto": "foto/sicilia 2025/2025-03-19-11h39m15.jpg"
+    "foto": "foto/sicilia 2025/2025-03-19-11h39m15.jpg",
+    "descrizione": "Pozzallo - Sicilia, Italia"
   },
   {
     "nome": "2025-03-19-11H53M15",
@@ -3771,7 +3853,8 @@
     "data": "19/03/2025",
     "lat": 36.74926,
     "lon": 14.681208,
-    "foto": "foto/sicilia 2025/2025-03-19-11h53m15.jpg"
+    "foto": "foto/sicilia 2025/2025-03-19-11h53m15.jpg",
+    "descrizione": "Marina di Modica - Sicilia, Italia"
   },
   {
     "nome": "2025-03-19-11H55M17",
@@ -3780,7 +3863,8 @@
     "data": "19/03/2025",
     "lat": 36.74815,
     "lon": 14.68215,
-    "foto": "foto/sicilia 2025/2025-03-19-11h55m17.jpg"
+    "foto": "foto/sicilia 2025/2025-03-19-11h55m17.jpg",
+    "descrizione": "Marina di Modica - Sicilia, Italia"
   },
   {
     "nome": "2025-03-19-12H07M23",
@@ -3789,7 +3873,8 @@
     "data": "19/03/2025",
     "lat": 36.763662,
     "lon": 14.652159,
-    "foto": "foto/sicilia 2025/2025-03-19-12h07m23.jpg"
+    "foto": "foto/sicilia 2025/2025-03-19-12h07m23.jpg",
+    "descrizione": "Sampieri - Sicilia, Italia"
   },
   {
     "nome": "2025-03-19-12H07M31",
@@ -3798,7 +3883,8 @@
     "data": "19/03/2025",
     "lat": 36.763662,
     "lon": 14.65216,
-    "foto": "foto/sicilia 2025/2025-03-19-12h07m31.jpg"
+    "foto": "foto/sicilia 2025/2025-03-19-12h07m31.jpg",
+    "descrizione": "Sampieri - Sicilia, Italia"
   },
   {
     "nome": "2025-03-19-12H07M45",
@@ -3807,7 +3893,8 @@
     "data": "19/03/2025",
     "lat": 36.763661,
     "lon": 14.652162,
-    "foto": "foto/sicilia 2025/2025-03-19-12h07m45.jpg"
+    "foto": "foto/sicilia 2025/2025-03-19-12h07m45.jpg",
+    "descrizione": "Sampieri - Sicilia, Italia"
   },
   {
     "nome": "2025-03-19-12H07M51",
@@ -3816,7 +3903,8 @@
     "data": "19/03/2025",
     "lat": 36.763661,
     "lon": 14.652163,
-    "foto": "foto/sicilia 2025/2025-03-19-12h07m51.jpg"
+    "foto": "foto/sicilia 2025/2025-03-19-12h07m51.jpg",
+    "descrizione": "Sampieri - Sicilia, Italia"
   },
   {
     "nome": "2025-03-20-11H51M50",
@@ -3825,7 +3913,8 @@
     "data": "20/03/2025",
     "lat": 36.885648,
     "lon": 15.080375,
-    "foto": "foto/sicilia 2025/2025-03-20-11h51m50.jpg"
+    "foto": "foto/sicilia 2025/2025-03-20-11h51m50.jpg",
+    "descrizione": "Marzamemi - Sicilia, Italia"
   },
   {
     "nome": "2025-03-20-11H54M29",
@@ -3834,7 +3923,8 @@
     "data": "20/03/2025",
     "lat": 36.885112,
     "lon": 15.081535,
-    "foto": "foto/sicilia 2025/2025-03-20-11h54m29.jpg"
+    "foto": "foto/sicilia 2025/2025-03-20-11h54m29.jpg",
+    "descrizione": "Marzamemi - Sicilia, Italia"
   },
   {
     "nome": "2025-03-20-12H01M13",
@@ -3843,7 +3933,8 @@
     "data": "20/03/2025",
     "lat": 36.883749,
     "lon": 15.084482,
-    "foto": "foto/sicilia 2025/2025-03-20-12h01m13.jpg"
+    "foto": "foto/sicilia 2025/2025-03-20-12h01m13.jpg",
+    "descrizione": "Marzamemi - Sicilia, Italia"
   },
   {
     "nome": "2025-03-20-12H01M49",
@@ -3852,7 +3943,8 @@
     "data": "20/03/2025",
     "lat": 36.883628,
     "lon": 15.084745,
-    "foto": "foto/sicilia 2025/2025-03-20-12h01m49.jpg"
+    "foto": "foto/sicilia 2025/2025-03-20-12h01m49.jpg",
+    "descrizione": "Marzamemi - Sicilia, Italia"
   },
   {
     "nome": "2025-03-20-12H03M13",
@@ -3861,7 +3953,8 @@
     "data": "20/03/2025",
     "lat": 36.885424,
     "lon": 15.0818,
-    "foto": "foto/sicilia 2025/2025-03-20-12h03m13.jpg"
+    "foto": "foto/sicilia 2025/2025-03-20-12h03m13.jpg",
+    "descrizione": "Marzamemi - Sicilia, Italia"
   },
   {
     "nome": "2025-03-20-12H08M13",
@@ -3870,7 +3963,8 @@
     "data": "20/03/2025",
     "lat": 36.888914,
     "lon": 15.075221,
-    "foto": "foto/sicilia 2025/2025-03-20-12h08m13.jpg"
+    "foto": "foto/sicilia 2025/2025-03-20-12h08m13.jpg",
+    "descrizione": "Marzamemi / Pachino - Sicilia, Italia"
   },
   {
     "nome": "2025-03-20-14H13M07",
@@ -3879,7 +3973,8 @@
     "data": "20/03/2025",
     "lat": 36.883491,
     "lon": 15.08435,
-    "foto": "foto/sicilia 2025/2025-03-20-14h13m07.jpg"
+    "foto": "foto/sicilia 2025/2025-03-20-14h13m07.jpg",
+    "descrizione": "Marzamemi - Sicilia, Italia"
   },
   {
     "nome": "2025-03-22-12H19M04",
@@ -3888,7 +3983,8 @@
     "data": "22/03/2025",
     "lat": 38.117208,
     "lon": 13.362589,
-    "foto": "foto/sicilia 2025/2025-03-22-12h19m04.jpg"
+    "foto": "foto/sicilia 2025/2025-03-22-12h19m04.jpg",
+    "descrizione": "Palermo - Centro Storico, Sicilia, Italia"
   },
   {
     "nome": "2025-03-22-12H27M12",
@@ -3897,7 +3993,8 @@
     "data": "22/03/2025",
     "lat": 38.120303,
     "lon": 13.356508,
-    "foto": "foto/sicilia 2025/2025-03-22-12h27m12.jpg"
+    "foto": "foto/sicilia 2025/2025-03-22-12h27m12.jpg",
+    "descrizione": "Palermo - Centro Storico, Sicilia, Italia"
   },
   {
     "nome": "2025-03-22-12H31M20",
@@ -3906,7 +4003,8 @@
     "data": "22/03/2025",
     "lat": 38.119835,
     "lon": 13.354951,
-    "foto": "foto/sicilia 2025/2025-03-22-12h31m20.jpg"
+    "foto": "foto/sicilia 2025/2025-03-22-12h31m20.jpg",
+    "descrizione": "Palermo - Centro Storico, Sicilia, Italia"
   },
   {
     "nome": "2025-03-22-12H34M47",
@@ -3915,7 +4013,8 @@
     "data": "22/03/2025",
     "lat": 38.119445,
     "lon": 13.353651,
-    "foto": "foto/sicilia 2025/2025-03-22-12h34m47.jpg"
+    "foto": "foto/sicilia 2025/2025-03-22-12h34m47.jpg",
+    "descrizione": "Palermo - Centro Storico, Sicilia, Italia"
   },
   {
     "nome": "2025-03-22-12H38M21",
@@ -3924,7 +4023,8 @@
     "data": "22/03/2025",
     "lat": 38.119589,
     "lon": 13.351878,
-    "foto": "foto/sicilia 2025/2025-03-22-12h38m21.jpg"
+    "foto": "foto/sicilia 2025/2025-03-22-12h38m21.jpg",
+    "descrizione": "Palermo - Centro Storico, Sicilia, Italia"
   },
   {
     "nome": "2025-03-22-13H02M31",
@@ -3933,7 +4033,8 @@
     "data": "22/03/2025",
     "lat": 38.144427,
     "lon": 13.330326,
-    "foto": "foto/sicilia 2025/2025-03-22-13h02m31.jpg"
+    "foto": "foto/sicilia 2025/2025-03-22-13h02m31.jpg",
+    "descrizione": "Palermo - Zona Porto, Sicilia, Italia"
   },
   {
     "nome": "2025-03-22-13H07M14",
@@ -3942,7 +4043,8 @@
     "data": "22/03/2025",
     "lat": 38.190614,
     "lon": 13.292113,
-    "foto": "foto/sicilia 2025/2025-03-22-13h07m14.jpg"
+    "foto": "foto/sicilia 2025/2025-03-22-13h07m14.jpg",
+    "descrizione": "Palermo - Mondello / Addaura, Sicilia, Italia"
   },
   {
     "nome": "2025-03-22-13H08M34",
@@ -3951,7 +4053,8 @@
     "data": "22/03/2025",
     "lat": 38.188929,
     "lon": 13.297726,
-    "foto": "foto/sicilia 2025/2025-03-22-13h08m34.jpg"
+    "foto": "foto/sicilia 2025/2025-03-22-13h08m34.jpg",
+    "descrizione": "Palermo - Mondello, Sicilia, Italia"
   },
   {
     "nome": "2025-03-22-13H09M46",
@@ -3960,7 +4063,8 @@
     "data": "22/03/2025",
     "lat": 38.190467,
     "lon": 13.300515,
-    "foto": "foto/sicilia 2025/2025-03-22-13h09m46.jpg"
+    "foto": "foto/sicilia 2025/2025-03-22-13h09m46.jpg",
+    "descrizione": "Palermo - Mondello, Sicilia, Italia"
   },
   {
     "nome": "2025-03-22-13H28M24",
@@ -3969,7 +4073,8 @@
     "data": "22/03/2025",
     "lat": 38.190984,
     "lon": 13.300927,
-    "foto": "foto/sicilia 2025/2025-03-22-13h28m24.jpg"
+    "foto": "foto/sicilia 2025/2025-03-22-13h28m24.jpg",
+    "descrizione": "Palermo - Mondello, Sicilia, Italia"
   },
   {
     "nome": "2024-10-04-12H46M59",
@@ -5436,7 +5541,8 @@
     "data": "28/09/2023",
     "lat": 42.100727,
     "lon": 11.783161,
-    "foto": "foto/spagna marocco 2023/2023-09-28-18h22m56.jpg"
+    "foto": "foto/spagna marocco 2023/2023-09-28-18h22m56.jpg",
+    "descrizione": "Montalto di Castro - Lazio, Italia"
   },
   {
     "nome": "2023-09-29-12H10M09",
@@ -5445,7 +5551,8 @@
     "data": "29/09/2023",
     "lat": 41.228036,
     "lon": 6.327731,
-    "foto": "foto/spagna marocco 2023/2023-09-29-12h10m09.jpg"
+    "foto": "foto/spagna marocco 2023/2023-09-29-12h10m09.jpg",
+    "descrizione": "Castilla y León - Spagna"
   },
   {
     "nome": "2023-09-30-11H39M38",
@@ -5454,7 +5561,8 @@
     "data": "30/09/2023",
     "lat": 41.076302,
     "lon": 1.116507,
-    "foto": "foto/spagna marocco 2023/2023-09-30-11h39m38.jpg"
+    "foto": "foto/spagna marocco 2023/2023-09-30-11h39m38.jpg",
+    "descrizione": "Tarragona - Catalogna, Spagna"
   },
   {
     "nome": "2023-09-30-11H41M12",
@@ -5463,7 +5571,8 @@
     "data": "30/09/2023",
     "lat": 41.077014,
     "lon": 1.116711,
-    "foto": "foto/spagna marocco 2023/2023-09-30-11h41m12.jpg"
+    "foto": "foto/spagna marocco 2023/2023-09-30-11h41m12.jpg",
+    "descrizione": "Tarragona - Catalogna, Spagna"
   },
   {
     "nome": "2023-09-30-11H43M50",
@@ -5472,7 +5581,8 @@
     "data": "30/09/2023",
     "lat": 41.07683,
     "lon": 1.116899,
-    "foto": "foto/spagna marocco 2023/2023-09-30-11h43m50.jpg"
+    "foto": "foto/spagna marocco 2023/2023-09-30-11h43m50.jpg",
+    "descrizione": "Tarragona - Catalogna, Spagna"
   },
   {
     "nome": "2023-09-30-12H40M18",
@@ -5481,7 +5591,8 @@
     "data": "30/09/2023",
     "lat": 41.077309,
     "lon": 1.116365,
-    "foto": "foto/spagna marocco 2023/2023-09-30-12h40m18.jpg"
+    "foto": "foto/spagna marocco 2023/2023-09-30-12h40m18.jpg",
+    "descrizione": "Tarragona - Catalogna, Spagna"
   },
   {
     "nome": "2023-09-30-13H02M23",
@@ -5490,7 +5601,8 @@
     "data": "30/09/2023",
     "lat": 41.078775,
     "lon": 1.11456,
-    "foto": "foto/spagna marocco 2023/2023-09-30-13h02m23.jpg"
+    "foto": "foto/spagna marocco 2023/2023-09-30-13h02m23.jpg",
+    "descrizione": "Tarragona - Catalogna, Spagna"
   },
   {
     "nome": "2023-09-30-13H05M28",
@@ -5499,7 +5611,8 @@
     "data": "30/09/2023",
     "lat": 41.07924,
     "lon": 1.114222,
-    "foto": "foto/spagna marocco 2023/2023-09-30-13h05m28.jpg"
+    "foto": "foto/spagna marocco 2023/2023-09-30-13h05m28.jpg",
+    "descrizione": "Tarragona - Catalogna, Spagna"
   },
   {
     "nome": "2023-09-30-13H37M31",
@@ -5508,7 +5621,8 @@
     "data": "30/09/2023",
     "lat": 41.079222,
     "lon": 1.112352,
-    "foto": "foto/spagna marocco 2023/2023-09-30-13h37m31.jpg"
+    "foto": "foto/spagna marocco 2023/2023-09-30-13h37m31.jpg",
+    "descrizione": "Tarragona - Catalogna, Spagna"
   },
   {
     "nome": "2023-09-30-13H41M41",
@@ -5517,7 +5631,8 @@
     "data": "30/09/2023",
     "lat": 41.079444,
     "lon": 1.111878,
-    "foto": "foto/spagna marocco 2023/2023-09-30-13h41m41.jpg"
+    "foto": "foto/spagna marocco 2023/2023-09-30-13h41m41.jpg",
+    "descrizione": "Tarragona - Catalogna, Spagna"
   },
   {
     "nome": "2023-09-30-13H42M55",
@@ -5526,7 +5641,8 @@
     "data": "30/09/2023",
     "lat": 41.07944,
     "lon": 1.111829,
-    "foto": "foto/spagna marocco 2023/2023-09-30-13h42m55.jpg"
+    "foto": "foto/spagna marocco 2023/2023-09-30-13h42m55.jpg",
+    "descrizione": "Tarragona - Catalogna, Spagna"
   },
   {
     "nome": "2023-09-30-17H55M47",
@@ -5535,7 +5651,8 @@
     "data": "30/09/2023",
     "lat": 41.075655,
     "lon": 1.118503,
-    "foto": "foto/spagna marocco 2023/2023-09-30-17h55m47.jpg"
+    "foto": "foto/spagna marocco 2023/2023-09-30-17h55m47.jpg",
+    "descrizione": "Tarragona - Catalogna, Spagna"
   },
   {
     "nome": "2023-09-30-19H58M18",
@@ -5544,7 +5661,8 @@
     "data": "30/09/2023",
     "lat": 41.076296,
     "lon": 1.116483,
-    "foto": "foto/spagna marocco 2023/2023-09-30-19h58m18.jpg"
+    "foto": "foto/spagna marocco 2023/2023-09-30-19h58m18.jpg",
+    "descrizione": "Tarragona - Catalogna, Spagna"
   },
   {
     "nome": "2023-10-01-11H26M37",
@@ -5553,7 +5671,8 @@
     "data": "01/10/2023",
     "lat": 41.065375,
     "lon": 1.06138,
-    "foto": "foto/spagna marocco 2023/2023-10-01-11h26m37.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-01-11h26m37.jpg",
+    "descrizione": "Vila-seca - Catalogna, Spagna"
   },
   {
     "nome": "2023-10-01-17H40M02",
@@ -5562,7 +5681,8 @@
     "data": "01/10/2023",
     "lat": 41.079444,
     "lon": 1.111733,
-    "foto": "foto/spagna marocco 2023/2023-10-01-17h40m02.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-01-17h40m02.jpg",
+    "descrizione": "Tarragona - Catalogna, Spagna"
   },
   {
     "nome": "2023-10-01-20H05M02",
@@ -5571,7 +5691,8 @@
     "data": "01/10/2023",
     "lat": 41.066273,
     "lon": 1.148758,
-    "foto": "foto/spagna marocco 2023/2023-10-01-20h05m02.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-01-20h05m02.jpg",
+    "descrizione": "Salou - Catalogna, Spagna"
   },
   {
     "nome": "2023-10-01-21H32M59",
@@ -5580,7 +5701,8 @@
     "data": "01/10/2023",
     "lat": 41.06624,
     "lon": 1.148973,
-    "foto": "foto/spagna marocco 2023/2023-10-01-21h32m59.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-01-21h32m59.jpg",
+    "descrizione": "Salou - Catalogna, Spagna"
   },
   {
     "nome": "2023-10-04-20H07M03",
@@ -5589,7 +5711,8 @@
     "data": "04/10/2023",
     "lat": 41.066131,
     "lon": 1.148747,
-    "foto": "foto/spagna marocco 2023/2023-10-04-20h07m03.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-04-20h07m03.jpg",
+    "descrizione": "Salou - Catalogna, Spagna"
   },
   {
     "nome": "2023-10-04-20H30M52",
@@ -5598,7 +5721,8 @@
     "data": "04/10/2023",
     "lat": 41.066133,
     "lon": 1.148873,
-    "foto": "foto/spagna marocco 2023/2023-10-04-20h30m52.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-04-20h30m52.jpg",
+    "descrizione": "Salou - Catalogna, Spagna"
   },
   {
     "nome": "2023-10-05-10H18M21",
@@ -5607,7 +5731,8 @@
     "data": "05/10/2023",
     "lat": 41.073132,
     "lon": 1.143699,
-    "foto": "foto/spagna marocco 2023/2023-10-05-10h18m21.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-05-10h18m21.jpg",
+    "descrizione": "Salou - Catalogna, Spagna"
   },
   {
     "nome": "2023-10-08-08H53M49",
@@ -5616,7 +5741,8 @@
     "data": "08/10/2023",
     "lat": 38.404691,
     "lon": -0.40427,
-    "foto": "foto/spagna marocco 2023/2023-10-08-08h53m49.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-08-08h53m49.jpg",
+    "descrizione": "Alicante - Comunità Valenciana, Spagna"
   },
   {
     "nome": "2023-10-08-11H02M32",
@@ -5625,7 +5751,8 @@
     "data": "08/10/2023",
     "lat": 38.343695,
     "lon": -0.48229,
-    "foto": "foto/spagna marocco 2023/2023-10-08-11h02m32.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-08-11h02m32.jpg",
+    "descrizione": "Alicante - Comunità Valenciana, Spagna"
   },
   {
     "nome": "2023-10-08-19H13M28",
@@ -5634,7 +5761,8 @@
     "data": "08/10/2023",
     "lat": 38.4298,
     "lon": -0.388041,
-    "foto": "foto/spagna marocco 2023/2023-10-08-19h13m28.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-08-19h13m28.jpg",
+    "descrizione": "Alicante - Comunità Valenciana, Spagna"
   },
   {
     "nome": "2023-10-08-19H17M45",
@@ -5643,7 +5771,8 @@
     "data": "08/10/2023",
     "lat": 38.430808,
     "lon": -0.386891,
-    "foto": "foto/spagna marocco 2023/2023-10-08-19h17m45.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-08-19h17m45.jpg",
+    "descrizione": "Alicante - Comunità Valenciana, Spagna"
   },
   {
     "nome": "2023-10-09-14H27M38",
@@ -5652,7 +5781,8 @@
     "data": "09/10/2023",
     "lat": 38.108227,
     "lon": -0.655541,
-    "foto": "foto/spagna marocco 2023/2023-10-09-14h27m38.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-09-14h27m38.jpg",
+    "descrizione": "Elche - Comunità Valenciana, Spagna"
   },
   {
     "nome": "2023-10-09-14H28M33",
@@ -5661,7 +5791,8 @@
     "data": "09/10/2023",
     "lat": 38.108277,
     "lon": -0.6551,
-    "foto": "foto/spagna marocco 2023/2023-10-09-14h28m33.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-09-14h28m33.jpg",
+    "descrizione": "Elche - Comunità Valenciana, Spagna"
   },
   {
     "nome": "2023-10-09-22H54M26",
@@ -5670,7 +5801,8 @@
     "data": "09/10/2023",
     "lat": 37.974332,
     "lon": -0.677374,
-    "foto": "foto/spagna marocco 2023/2023-10-09-22h54m26.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-09-22h54m26.jpg",
+    "descrizione": "Orihuela - Comunità Valenciana, Spagna"
   },
   {
     "nome": "2023-10-11-17H31M04",
@@ -5679,7 +5811,8 @@
     "data": "11/10/2023",
     "lat": 38.202106,
     "lon": -0.569686,
-    "foto": "foto/spagna marocco 2023/2023-10-11-17h31m04.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-11-17h31m04.jpg",
+    "descrizione": "Elche - Comunità Valenciana, Spagna"
   },
   {
     "nome": "2023-10-12-11H15M08",
@@ -5688,7 +5821,8 @@
     "data": "12/10/2023",
     "lat": 38.266689,
     "lon": -0.696551,
-    "foto": "foto/spagna marocco 2023/2023-10-12-11h15m08.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-12-11h15m08.jpg",
+    "descrizione": "Elche - Comunità Valenciana, Spagna"
   },
   {
     "nome": "2023-10-12-11H36M51",
@@ -5697,7 +5831,8 @@
     "data": "12/10/2023",
     "lat": 38.267003,
     "lon": -0.697047,
-    "foto": "foto/spagna marocco 2023/2023-10-12-11h36m51.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-12-11h36m51.jpg",
+    "descrizione": "Elche - Comunità Valenciana, Spagna"
   },
   {
     "nome": "2023-10-12-11H37M08",
@@ -5706,7 +5841,8 @@
     "data": "12/10/2023",
     "lat": 38.266982,
     "lon": -0.696908,
-    "foto": "foto/spagna marocco 2023/2023-10-12-11h37m08.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-12-11h37m08.jpg",
+    "descrizione": "Elche - Comunità Valenciana, Spagna"
   },
   {
     "nome": "2023-10-14-17H38M42",
@@ -5715,7 +5851,8 @@
     "data": "14/10/2023",
     "lat": 38.201009,
     "lon": -0.569484,
-    "foto": "foto/spagna marocco 2023/2023-10-14-17h38m42.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-14-17h38m42.jpg",
+    "descrizione": "Elche - Comunità Valenciana, Spagna"
   },
   {
     "nome": "2023-10-14-18H02M57",
@@ -5724,7 +5861,8 @@
     "data": "14/10/2023",
     "lat": 38.189256,
     "lon": -0.53472,
-    "foto": "foto/spagna marocco 2023/2023-10-14-18h02m57.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-14-18h02m57.jpg",
+    "descrizione": "Elche - Comunità Valenciana, Spagna"
   },
   {
     "nome": "2023-10-17-08H31M31",
@@ -5733,7 +5871,8 @@
     "data": "17/10/2023",
     "lat": 36.73367,
     "lon": -3.939429,
-    "foto": "foto/spagna marocco 2023/2023-10-17-08h31m31.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-17-08h31m31.jpg",
+    "descrizione": "Vélez-Málaga - Andalusia, Spagna"
   },
   {
     "nome": "2023-10-17-10H28M16",
@@ -5742,7 +5881,8 @@
     "data": "17/10/2023",
     "lat": 36.748116,
     "lon": -3.871447,
-    "foto": "foto/spagna marocco 2023/2023-10-17-10h28m16.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-17-10h28m16.jpg",
+    "descrizione": "Torre del Mar - Andalusia, Spagna"
   },
   {
     "nome": "2023-10-17-12H12M56",
@@ -5751,7 +5891,8 @@
     "data": "17/10/2023",
     "lat": 36.745214,
     "lon": -3.875952,
-    "foto": "foto/spagna marocco 2023/2023-10-17-12h12m56.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-17-12h12m56.jpg",
+    "descrizione": "Torre del Mar - Andalusia, Spagna"
   },
   {
     "nome": "2023-10-17-12H13M36",
@@ -5760,7 +5901,8 @@
     "data": "17/10/2023",
     "lat": 36.745137,
     "lon": -3.876019,
-    "foto": "foto/spagna marocco 2023/2023-10-17-12h13m36.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-17-12h13m36.jpg",
+    "descrizione": "Torre del Mar - Andalusia, Spagna"
   },
   {
     "nome": "2023-10-17-12H14M23",
@@ -5769,7 +5911,8 @@
     "data": "17/10/2023",
     "lat": 36.745153,
     "lon": -3.875921,
-    "foto": "foto/spagna marocco 2023/2023-10-17-12h14m23.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-17-12h14m23.jpg",
+    "descrizione": "Torre del Mar - Andalusia, Spagna"
   },
   {
     "nome": "2023-10-17-12H15M32",
@@ -5778,7 +5921,8 @@
     "data": "17/10/2023",
     "lat": 36.744965,
     "lon": -3.875772,
-    "foto": "foto/spagna marocco 2023/2023-10-17-12h15m32.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-17-12h15m32.jpg",
+    "descrizione": "Torre del Mar - Andalusia, Spagna"
   },
   {
     "nome": "2023-10-17-12H17M27",
@@ -5787,7 +5931,8 @@
     "data": "17/10/2023",
     "lat": 36.744529,
     "lon": -3.875963,
-    "foto": "foto/spagna marocco 2023/2023-10-17-12h17m27.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-17-12h17m27.jpg",
+    "descrizione": "Torre del Mar - Andalusia, Spagna"
   },
   {
     "nome": "2023-10-17-12H22M02",
@@ -5796,7 +5941,8 @@
     "data": "17/10/2023",
     "lat": 36.744287,
     "lon": -3.875448,
-    "foto": "foto/spagna marocco 2023/2023-10-17-12h22m02.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-17-12h22m02.jpg",
+    "descrizione": "Torre del Mar - Andalusia, Spagna"
   },
   {
     "nome": "2023-10-17-20H26M26",
@@ -5805,7 +5951,8 @@
     "data": "17/10/2023",
     "lat": 36.744335,
     "lon": -3.875545,
-    "foto": "foto/spagna marocco 2023/2023-10-17-20h26m26.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-17-20h26m26.jpg",
+    "descrizione": "Torre del Mar - Andalusia, Spagna"
   },
   {
     "nome": "2023-10-19-09H25M57",
@@ -5814,7 +5961,8 @@
     "data": "19/10/2023",
     "lat": 36.486833,
     "lon": -4.745922,
-    "foto": "foto/spagna marocco 2023/2023-10-19-09h25m57.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-19-09h25m57.jpg",
+    "descrizione": "Marbella - Andalusia, Spagna"
   },
   {
     "nome": "2023-10-19-09H30M17",
@@ -5823,7 +5971,8 @@
     "data": "19/10/2023",
     "lat": 36.485487,
     "lon": -4.743562,
-    "foto": "foto/spagna marocco 2023/2023-10-19-09h30m17.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-19-09h30m17.jpg",
+    "descrizione": "Marbella - Andalusia, Spagna"
   },
   {
     "nome": "2023-10-19-18H02M12",
@@ -5832,7 +5981,8 @@
     "data": "19/10/2023",
     "lat": 36.484693,
     "lon": -4.743433,
-    "foto": "foto/spagna marocco 2023/2023-10-19-18h02m12.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-19-18h02m12.jpg",
+    "descrizione": "Marbella - Andalusia, Spagna"
   },
   {
     "nome": "2023-10-20-10H59M30",
@@ -5841,7 +5991,8 @@
     "data": "20/10/2023",
     "lat": 36.507101,
     "lon": -4.883144,
-    "foto": "foto/spagna marocco 2023/2023-10-20-10h59m30.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-20-10h59m30.jpg",
+    "descrizione": "Estepona - Andalusia, Spagna"
   },
   {
     "nome": "2023-10-20-10H59M51",
@@ -5850,7 +6001,8 @@
     "data": "20/10/2023",
     "lat": 36.507066,
     "lon": -4.883289,
-    "foto": "foto/spagna marocco 2023/2023-10-20-10h59m51.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-20-10h59m51.jpg",
+    "descrizione": "Estepona - Andalusia, Spagna"
   },
   {
     "nome": "2023-10-20-11H02M47",
@@ -5859,7 +6011,8 @@
     "data": "20/10/2023",
     "lat": 36.508593,
     "lon": -4.885971,
-    "foto": "foto/spagna marocco 2023/2023-10-20-11h02m47.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-20-11h02m47.jpg",
+    "descrizione": "Estepona - Andalusia, Spagna"
   },
   {
     "nome": "2023-10-20-11H27M23",
@@ -5868,7 +6021,8 @@
     "data": "20/10/2023",
     "lat": 36.508644,
     "lon": -4.885504,
-    "foto": "foto/spagna marocco 2023/2023-10-20-11h27m23.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-20-11h27m23.jpg",
+    "descrizione": "Estepona - Andalusia, Spagna"
   },
   {
     "nome": "2023-10-20-11H51M49",
@@ -5877,7 +6031,8 @@
     "data": "20/10/2023",
     "lat": 36.510184,
     "lon": -4.88492,
-    "foto": "foto/spagna marocco 2023/2023-10-20-11h51m49.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-20-11h51m49.jpg",
+    "descrizione": "Estepona - Andalusia, Spagna"
   },
   {
     "nome": "2023-10-20-11H52M20",
@@ -5886,7 +6041,8 @@
     "data": "20/10/2023",
     "lat": 36.510188,
     "lon": -4.885107,
-    "foto": "foto/spagna marocco 2023/2023-10-20-11h52m20.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-20-11h52m20.jpg",
+    "descrizione": "Estepona - Andalusia, Spagna"
   },
   {
     "nome": "2023-10-20-13H21M41",
@@ -5895,7 +6051,8 @@
     "data": "20/10/2023",
     "lat": 36.489619,
     "lon": -4.742918,
-    "foto": "foto/spagna marocco 2023/2023-10-20-13h21m41.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-20-13h21m41.jpg",
+    "descrizione": "Marbella - Andalusia, Spagna"
   },
   {
     "nome": "2023-10-21-11H49M08",
@@ -5904,7 +6061,8 @@
     "data": "21/10/2023",
     "lat": 36.595527,
     "lon": -4.636174,
-    "foto": "foto/spagna marocco 2023/2023-10-21-11h49m08.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-21-11h49m08.jpg",
+    "descrizione": "Mijas - Andalusia, Spagna"
   },
   {
     "nome": "2023-10-21-11H58M12",
@@ -5913,7 +6071,8 @@
     "data": "21/10/2023",
     "lat": 36.595314,
     "lon": -4.636713,
-    "foto": "foto/spagna marocco 2023/2023-10-21-11h58m12.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-21-11h58m12.jpg",
+    "descrizione": "Mijas - Andalusia, Spagna"
   },
   {
     "nome": "2023-10-21-12H01M32",
@@ -5922,7 +6081,8 @@
     "data": "21/10/2023",
     "lat": 36.595268,
     "lon": -4.63692,
-    "foto": "foto/spagna marocco 2023/2023-10-21-12h01m32.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-21-12h01m32.jpg",
+    "descrizione": "Mijas - Andalusia, Spagna"
   },
   {
     "nome": "2023-10-21-12H12M38",
@@ -5931,7 +6091,8 @@
     "data": "21/10/2023",
     "lat": 36.595378,
     "lon": -4.635729,
-    "foto": "foto/spagna marocco 2023/2023-10-21-12h12m38.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-21-12h12m38.jpg",
+    "descrizione": "Mijas - Andalusia, Spagna"
   },
   {
     "nome": "2023-10-21-12H31M56",
@@ -5940,7 +6101,8 @@
     "data": "21/10/2023",
     "lat": 36.594648,
     "lon": -4.638655,
-    "foto": "foto/spagna marocco 2023/2023-10-21-12h31m56.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-21-12h31m56.jpg",
+    "descrizione": "Mijas - Andalusia, Spagna"
   },
   {
     "nome": "2023-10-21-12H34M15",
@@ -5949,7 +6111,8 @@
     "data": "21/10/2023",
     "lat": 36.594637,
     "lon": -4.638628,
-    "foto": "foto/spagna marocco 2023/2023-10-21-12h34m15.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-21-12h34m15.jpg",
+    "descrizione": "Mijas - Andalusia, Spagna"
   },
   {
     "nome": "2023-10-21-12H34M32",
@@ -5958,7 +6121,8 @@
     "data": "21/10/2023",
     "lat": 36.594637,
     "lon": -4.638591,
-    "foto": "foto/spagna marocco 2023/2023-10-21-12h34m32.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-21-12h34m32.jpg",
+    "descrizione": "Mijas - Andalusia, Spagna"
   },
   {
     "nome": "2023-10-21-12H34M36",
@@ -5967,7 +6131,8 @@
     "data": "21/10/2023",
     "lat": 36.594648,
     "lon": -4.638588,
-    "foto": "foto/spagna marocco 2023/2023-10-21-12h34m36.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-21-12h34m36.jpg",
+    "descrizione": "Mijas - Andalusia, Spagna"
   },
   {
     "nome": "2023-10-21-12H34M50",
@@ -5976,7 +6141,8 @@
     "data": "21/10/2023",
     "lat": 36.594607,
     "lon": -4.638593,
-    "foto": "foto/spagna marocco 2023/2023-10-21-12h34m50.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-21-12h34m50.jpg",
+    "descrizione": "Mijas - Andalusia, Spagna"
   },
   {
     "nome": "2023-10-21-12H37M28",
@@ -5985,7 +6151,8 @@
     "data": "21/10/2023",
     "lat": 36.594551,
     "lon": -4.638661,
-    "foto": "foto/spagna marocco 2023/2023-10-21-12h37m28.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-21-12h37m28.jpg",
+    "descrizione": "Mijas - Andalusia, Spagna"
   },
   {
     "nome": "2023-10-21-12H41M54",
@@ -5994,7 +6161,8 @@
     "data": "21/10/2023",
     "lat": 36.594553,
     "lon": -4.638623,
-    "foto": "foto/spagna marocco 2023/2023-10-21-12h41m54.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-21-12h41m54.jpg",
+    "descrizione": "Mijas - Andalusia, Spagna"
   },
   {
     "nome": "2023-10-21-18H42M03",
@@ -6003,7 +6171,8 @@
     "data": "21/10/2023",
     "lat": 36.487875,
     "lon": -4.95215,
-    "foto": "foto/spagna marocco 2023/2023-10-21-18h42m03.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-21-18h42m03.jpg",
+    "descrizione": "Benahavís - Andalusia, Spagna"
   },
   {
     "nome": "2023-10-21-18H44M16",
@@ -6012,7 +6181,8 @@
     "data": "21/10/2023",
     "lat": 36.487372,
     "lon": -4.952678,
-    "foto": "foto/spagna marocco 2023/2023-10-21-18h44m16.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-21-18h44m16.jpg",
+    "descrizione": "Benahavís - Andalusia, Spagna"
   },
   {
     "nome": "2023-10-21-18H48M09",
@@ -6021,7 +6191,8 @@
     "data": "21/10/2023",
     "lat": 36.485775,
     "lon": -4.954693,
-    "foto": "foto/spagna marocco 2023/2023-10-21-18h48m09.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-21-18h48m09.jpg",
+    "descrizione": "Benahavís - Andalusia, Spagna"
   },
   {
     "nome": "2023-10-21-18H50M29",
@@ -6030,7 +6201,8 @@
     "data": "21/10/2023",
     "lat": 36.485437,
     "lon": -4.954247,
-    "foto": "foto/spagna marocco 2023/2023-10-21-18h50m29.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-21-18h50m29.jpg",
+    "descrizione": "Benahavís - Andalusia, Spagna"
   },
   {
     "nome": "2023-10-21-18H54M16",
@@ -6039,7 +6211,8 @@
     "data": "21/10/2023",
     "lat": 36.484455,
     "lon": -4.953682,
-    "foto": "foto/spagna marocco 2023/2023-10-21-18h54m16.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-21-18h54m16.jpg",
+    "descrizione": "Benahavís - Andalusia, Spagna"
   },
   {
     "nome": "2023-10-21-18H55M56",
@@ -6048,7 +6221,8 @@
     "data": "21/10/2023",
     "lat": 36.484343,
     "lon": -4.953528,
-    "foto": "foto/spagna marocco 2023/2023-10-21-18h55m56.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-21-18h55m56.jpg",
+    "descrizione": "Benahavís - Andalusia, Spagna"
   },
   {
     "nome": "2023-10-21-19H04M25",
@@ -6057,7 +6231,8 @@
     "data": "21/10/2023",
     "lat": 36.486103,
     "lon": -4.954355,
-    "foto": "foto/spagna marocco 2023/2023-10-21-19h04m25.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-21-19h04m25.jpg",
+    "descrizione": "Benahavís - Andalusia, Spagna"
   },
   {
     "nome": "2023-10-23-16H43M38",
@@ -6066,7 +6241,8 @@
     "data": "23/10/2023",
     "lat": 36.490258,
     "lon": -4.744811,
-    "foto": "foto/spagna marocco 2023/2023-10-23-16h43m38.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-23-16h43m38.jpg",
+    "descrizione": "Marbella - Andalusia, Spagna"
   },
   {
     "nome": "2023-10-23-19H09M16",
@@ -6075,7 +6251,8 @@
     "data": "23/10/2023",
     "lat": 36.485447,
     "lon": -4.752911,
-    "foto": "foto/spagna marocco 2023/2023-10-23-19h09m16.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-23-19h09m16.jpg",
+    "descrizione": "Marbella - Andalusia, Spagna"
   },
   {
     "nome": "2023-10-23-20H36M07",
@@ -6084,7 +6261,8 @@
     "data": "23/10/2023",
     "lat": 36.508483,
     "lon": -4.88432,
-    "foto": "foto/spagna marocco 2023/2023-10-23-20h36m07.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-23-20h36m07.jpg",
+    "descrizione": "Estepona - Andalusia, Spagna"
   },
   {
     "nome": "2023-10-23-20H37M07",
@@ -6093,7 +6271,8 @@
     "data": "23/10/2023",
     "lat": 36.509739,
     "lon": -4.88659,
-    "foto": "foto/spagna marocco 2023/2023-10-23-20h37m07.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-23-20h37m07.jpg",
+    "descrizione": "Estepona - Andalusia, Spagna"
   },
   {
     "nome": "2023-10-23-20H38M07",
@@ -6102,7 +6281,8 @@
     "data": "23/10/2023",
     "lat": 36.509739,
     "lon": -4.88659,
-    "foto": "foto/spagna marocco 2023/2023-10-23-20h38m07.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-23-20h38m07.jpg",
+    "descrizione": "Estepona - Andalusia, Spagna"
   },
   {
     "nome": "2023-10-23-20H41M02",
@@ -6111,7 +6291,8 @@
     "data": "23/10/2023",
     "lat": 36.510473,
     "lon": -4.88528,
-    "foto": "foto/spagna marocco 2023/2023-10-23-20h41m02.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-23-20h41m02.jpg",
+    "descrizione": "Estepona - Andalusia, Spagna"
   },
   {
     "nome": "2023-10-24-15H20M37",
@@ -6120,7 +6301,8 @@
     "data": "24/10/2023",
     "lat": 36.125951,
     "lon": -5.445786,
-    "foto": "foto/spagna marocco 2023/2023-10-24-15h20m37.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-24-15h20m37.jpg",
+    "descrizione": "Algeciras - Andalusia, Spagna"
   },
   {
     "nome": "2023-10-24-17H24M17",
@@ -6129,7 +6311,8 @@
     "data": "24/10/2023",
     "lat": 36.066044,
     "lon": -5.401325,
-    "foto": "foto/spagna marocco 2023/2023-10-24-17h24m17.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-24-17h24m17.jpg",
+    "descrizione": "Tarifa - Andalusia, Spagna"
   },
   {
     "nome": "2023-10-24-21H04M35",
@@ -6138,7 +6321,8 @@
     "data": "24/10/2023",
     "lat": 35.467482,
     "lon": -6.035963,
-    "foto": "foto/spagna marocco 2023/2023-10-24-21h04m35.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-24-21h04m35.jpg",
+    "descrizione": "Asilah - Marocco"
   },
   {
     "nome": "2023-10-24-21H23M15",
@@ -6147,7 +6331,8 @@
     "data": "24/10/2023",
     "lat": 35.467058,
     "lon": -6.035914,
-    "foto": "foto/spagna marocco 2023/2023-10-24-21h23m15.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-24-21h23m15.jpg",
+    "descrizione": "Asilah - Marocco"
   },
   {
     "nome": "2023-10-24-21H25M04",
@@ -6156,7 +6341,8 @@
     "data": "24/10/2023",
     "lat": 35.467073,
     "lon": -6.035858,
-    "foto": "foto/spagna marocco 2023/2023-10-24-21h25m04.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-24-21h25m04.jpg",
+    "descrizione": "Asilah - Marocco"
   },
   {
     "nome": "2023-10-25-13H22M36",
@@ -6165,7 +6351,8 @@
     "data": "25/10/2023",
     "lat": 35.175405,
     "lon": -5.266273,
-    "foto": "foto/spagna marocco 2023/2023-10-25-13h22m36.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-25-13h22m36.jpg",
+    "descrizione": "Tetouan - Marocco"
   },
   {
     "nome": "2023-10-25-14H24M33",
@@ -6174,7 +6361,8 @@
     "data": "25/10/2023",
     "lat": 35.169002,
     "lon": -5.262076,
-    "foto": "foto/spagna marocco 2023/2023-10-25-14h24m33.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-25-14h24m33.jpg",
+    "descrizione": "Tetouan - Marocco"
   },
   {
     "nome": "2023-10-25-16H08M30",
@@ -6183,7 +6371,8 @@
     "data": "25/10/2023",
     "lat": 35.169941,
     "lon": -5.263556,
-    "foto": "foto/spagna marocco 2023/2023-10-25-16h08m30.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-25-16h08m30.jpg",
+    "descrizione": "Tetouan - Marocco"
   },
   {
     "nome": "2023-10-25-16H18M27",
@@ -6192,7 +6381,8 @@
     "data": "25/10/2023",
     "lat": 35.169706,
     "lon": -5.263537,
-    "foto": "foto/spagna marocco 2023/2023-10-25-16h18m27.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-25-16h18m27.jpg",
+    "descrizione": "Tetouan - Marocco"
   },
   {
     "nome": "2023-10-25-16H34M03",
@@ -6201,7 +6391,8 @@
     "data": "25/10/2023",
     "lat": 35.169568,
     "lon": -5.263859,
-    "foto": "foto/spagna marocco 2023/2023-10-25-16h34m03.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-25-16h34m03.jpg",
+    "descrizione": "Tetouan - Marocco"
   },
   {
     "nome": "2023-10-25-16H36M29",
@@ -6210,7 +6401,8 @@
     "data": "25/10/2023",
     "lat": 35.169592,
     "lon": -5.264157,
-    "foto": "foto/spagna marocco 2023/2023-10-25-16h36m29.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-25-16h36m29.jpg",
+    "descrizione": "Tetouan - Marocco"
   },
   {
     "nome": "2023-10-26-09H08M35",
@@ -6219,7 +6411,8 @@
     "data": "26/10/2023",
     "lat": 35.17551,
     "lon": -5.266485,
-    "foto": "foto/spagna marocco 2023/2023-10-26-09h08m35.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-26-09h08m35.jpg",
+    "descrizione": "Tetouan - Marocco"
   },
   {
     "nome": "2023-10-26-10H29M38",
@@ -6228,7 +6421,8 @@
     "data": "26/10/2023",
     "lat": 35.16984,
     "lon": -5.262985,
-    "foto": "foto/spagna marocco 2023/2023-10-26-10h29m38.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-26-10h29m38.jpg",
+    "descrizione": "Tetouan - Marocco"
   },
   {
     "nome": "2023-10-26-10H49M35",
@@ -6237,7 +6431,8 @@
     "data": "26/10/2023",
     "lat": 35.169695,
     "lon": -5.263028,
-    "foto": "foto/spagna marocco 2023/2023-10-26-10h49m35.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-26-10h49m35.jpg",
+    "descrizione": "Tetouan - Marocco"
   },
   {
     "nome": "2023-10-26-10H53M52",
@@ -6246,7 +6441,8 @@
     "data": "26/10/2023",
     "lat": 35.169513,
     "lon": -5.263347,
-    "foto": "foto/spagna marocco 2023/2023-10-26-10h53m52.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-26-10h53m52.jpg",
+    "descrizione": "Tetouan - Marocco"
   },
   {
     "nome": "2023-10-26-11H14M55",
@@ -6255,7 +6451,8 @@
     "data": "26/10/2023",
     "lat": 35.168704,
     "lon": -5.262151,
-    "foto": "foto/spagna marocco 2023/2023-10-26-11h14m55.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-26-11h14m55.jpg",
+    "descrizione": "Tetouan - Marocco"
   },
   {
     "nome": "2023-10-26-12H09M44",
@@ -6264,7 +6461,8 @@
     "data": "26/10/2023",
     "lat": 35.168704,
     "lon": -5.262151,
-    "foto": "foto/spagna marocco 2023/2023-10-26-12h09m44.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-26-12h09m44.jpg",
+    "descrizione": "Tetouan - Marocco"
   },
   {
     "nome": "2023-10-26-20H00M53",
@@ -6273,7 +6471,8 @@
     "data": "26/10/2023",
     "lat": 35.176264,
     "lon": -5.266786,
-    "foto": "foto/spagna marocco 2023/2023-10-26-20h00m53.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-26-20h00m53.jpg",
+    "descrizione": "Tetouan - Marocco"
   },
   {
     "nome": "2023-10-27-08H48M16",
@@ -6282,7 +6481,8 @@
     "data": "27/10/2023",
     "lat": 34.661946,
     "lon": -5.550499,
-    "foto": "foto/spagna marocco 2023/2023-10-27-08h48m16.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-27-08h48m16.jpg",
+    "descrizione": "Sidi Kacem - Marocco"
   },
   {
     "nome": "2023-10-27-10H36M28",
@@ -6291,7 +6491,8 @@
     "data": "27/10/2023",
     "lat": 34.4479,
     "lon": -5.506217,
-    "foto": "foto/spagna marocco 2023/2023-10-27-10h36m28.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-27-10h36m28.jpg",
+    "descrizione": "Sidi Kacem - Marocco"
   },
   {
     "nome": "2023-10-27-12H04M36",
@@ -6300,7 +6501,8 @@
     "data": "27/10/2023",
     "lat": 34.35605,
     "lon": -5.492134,
-    "foto": "foto/spagna marocco 2023/2023-10-27-12h04m36.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-27-12h04m36.jpg",
+    "descrizione": "Sidi Kacem - Marocco"
   },
   {
     "nome": "2023-10-27-15H48M17",
@@ -6309,7 +6511,8 @@
     "data": "27/10/2023",
     "lat": 33.987633,
     "lon": -5.019229,
-    "foto": "foto/spagna marocco 2023/2023-10-27-15h48m17.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-27-15h48m17.jpg",
+    "descrizione": "Fès - Marocco"
   },
   {
     "nome": "2023-10-27-15H48M41",
@@ -6318,7 +6521,8 @@
     "data": "27/10/2023",
     "lat": 33.987627,
     "lon": -5.019244,
-    "foto": "foto/spagna marocco 2023/2023-10-27-15h48m41.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-27-15h48m41.jpg",
+    "descrizione": "Fès - Marocco"
   },
   {
     "nome": "2023-10-27-18H01M21",
@@ -6327,7 +6531,8 @@
     "data": "27/10/2023",
     "lat": 33.987824,
     "lon": -5.018907,
-    "foto": "foto/spagna marocco 2023/2023-10-27-18h01m21.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-27-18h01m21.jpg",
+    "descrizione": "Fès - Marocco"
   },
   {
     "nome": "2023-10-28-09H33M59",
@@ -6336,7 +6541,8 @@
     "data": "28/10/2023",
     "lat": 34.053308,
     "lon": -4.993504,
-    "foto": "foto/spagna marocco 2023/2023-10-28-09h33m59.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-28-09h33m59.jpg",
+    "descrizione": "Fès - Marocco"
   },
   {
     "nome": "2023-10-28-09H55M44",
@@ -6345,7 +6551,8 @@
     "data": "28/10/2023",
     "lat": 34.058615,
     "lon": -4.99099,
-    "foto": "foto/spagna marocco 2023/2023-10-28-09h55m44.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-28-09h55m44.jpg",
+    "descrizione": "Fès - Marocco"
   },
   {
     "nome": "2023-10-28-09H58M14",
@@ -6354,7 +6561,8 @@
     "data": "28/10/2023",
     "lat": 34.058683,
     "lon": -4.990906,
-    "foto": "foto/spagna marocco 2023/2023-10-28-09h58m14.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-28-09h58m14.jpg",
+    "descrizione": "Fès - Marocco"
   },
   {
     "nome": "2023-10-28-09H59M52",
@@ -6363,7 +6571,8 @@
     "data": "28/10/2023",
     "lat": 34.052637,
     "lon": -4.992567,
-    "foto": "foto/spagna marocco 2023/2023-10-28-09h59m52.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-28-09h59m52.jpg",
+    "descrizione": "Fès - Marocco"
   },
   {
     "nome": "2023-10-28-10H00M05",
@@ -6372,7 +6581,8 @@
     "data": "28/10/2023",
     "lat": 34.059308,
     "lon": -4.989402,
-    "foto": "foto/spagna marocco 2023/2023-10-28-10h00m05.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-28-10h00m05.jpg",
+    "descrizione": "Fès - Marocco"
   },
   {
     "nome": "2023-10-28-10H01M50",
@@ -6381,7 +6591,8 @@
     "data": "28/10/2023",
     "lat": 34.053619,
     "lon": -4.992728,
-    "foto": "foto/spagna marocco 2023/2023-10-28-10h01m50.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-28-10h01m50.jpg",
+    "descrizione": "Fès - Marocco"
   },
   {
     "nome": "2023-10-28-10H31M55",
@@ -6390,7 +6601,8 @@
     "data": "28/10/2023",
     "lat": 34.054935,
     "lon": -4.99011,
-    "foto": "foto/spagna marocco 2023/2023-10-28-10h31m55.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-28-10h31m55.jpg",
+    "descrizione": "Fès - Marocco"
   },
   {
     "nome": "2023-10-28-10H55M43",
@@ -6399,7 +6611,8 @@
     "data": "28/10/2023",
     "lat": 34.052579,
     "lon": -4.991618,
-    "foto": "foto/spagna marocco 2023/2023-10-28-10h55m43.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-28-10h55m43.jpg",
+    "descrizione": "Fès - Marocco"
   },
   {
     "nome": "2023-10-28-10H58M17",
@@ -6408,7 +6621,8 @@
     "data": "28/10/2023",
     "lat": 34.058508,
     "lon": -4.991162,
-    "foto": "foto/spagna marocco 2023/2023-10-28-10h58m17.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-28-10h58m17.jpg",
+    "descrizione": "Fès - Marocco"
   },
   {
     "nome": "2023-10-28-11H04M44",
@@ -6417,7 +6631,8 @@
     "data": "28/10/2023",
     "lat": 34.058615,
     "lon": -4.990947,
-    "foto": "foto/spagna marocco 2023/2023-10-28-11h04m44.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-28-11h04m44.jpg",
+    "descrizione": "Fès - Marocco"
   },
   {
     "nome": "2023-10-28-11H08M38",
@@ -6426,7 +6641,8 @@
     "data": "28/10/2023",
     "lat": 34.052971,
     "lon": -4.990765,
-    "foto": "foto/spagna marocco 2023/2023-10-28-11h08m38.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-28-11h08m38.jpg",
+    "descrizione": "Fès - Marocco"
   },
   {
     "nome": "2023-10-28-11H09M25",
@@ -6435,7 +6651,8 @@
     "data": "28/10/2023",
     "lat": 34.053228,
     "lon": -4.990368,
-    "foto": "foto/spagna marocco 2023/2023-10-28-11h09m25.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-28-11h09m25.jpg",
+    "descrizione": "Fès - Marocco"
   },
   {
     "nome": "2023-10-28-11H11M35",
@@ -6444,7 +6661,8 @@
     "data": "28/10/2023",
     "lat": 34.057019,
     "lon": -4.990094,
-    "foto": "foto/spagna marocco 2023/2023-10-28-11h11m35.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-28-11h11m35.jpg",
+    "descrizione": "Fès - Marocco"
   },
   {
     "nome": "2023-10-28-11H14M11",
@@ -6453,7 +6671,8 @@
     "data": "28/10/2023",
     "lat": 34.055895,
     "lon": -4.988351,
-    "foto": "foto/spagna marocco 2023/2023-10-28-11h14m11.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-28-11h14m11.jpg",
+    "descrizione": "Fès - Marocco"
   },
   {
     "nome": "2023-10-28-11H14M56",
@@ -6462,7 +6681,8 @@
     "data": "28/10/2023",
     "lat": 34.057371,
     "lon": -4.989102,
-    "foto": "foto/spagna marocco 2023/2023-10-28-11h14m56.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-28-11h14m56.jpg",
+    "descrizione": "Fès - Marocco"
   },
   {
     "nome": "2023-10-28-11H16M00",
@@ -6471,7 +6691,8 @@
     "data": "28/10/2023",
     "lat": 34.057393,
     "lon": -4.99018,
-    "foto": "foto/spagna marocco 2023/2023-10-28-11h16m00.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-28-11h16m00.jpg",
+    "descrizione": "Fès - Marocco"
   },
   {
     "nome": "2023-10-28-16H13M01",
@@ -6480,7 +6701,8 @@
     "data": "28/10/2023",
     "lat": 33.987495,
     "lon": -5.020065,
-    "foto": "foto/spagna marocco 2023/2023-10-28-16h13m01.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-28-16h13m01.jpg",
+    "descrizione": "Fès - Marocco"
   },
   {
     "nome": "2023-10-28-16H19M15",
@@ -6489,7 +6711,8 @@
     "data": "28/10/2023",
     "lat": 33.986072,
     "lon": -5.01792,
-    "foto": "foto/spagna marocco 2023/2023-10-28-16h19m15.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-28-16h19m15.jpg",
+    "descrizione": "Fès - Marocco"
   },
   {
     "nome": "2023-10-30-14H03M05",
@@ -6498,7 +6721,8 @@
     "data": "30/10/2023",
     "lat": 31.090762,
     "lon": -4.004318,
-    "foto": "foto/spagna marocco 2023/2023-10-30-14h03m05.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-30-14h03m05.jpg",
+    "descrizione": "Merzouga / Deserto del Sahara - Marocco"
   },
   {
     "nome": "2023-10-30-14H03M42",
@@ -6507,7 +6731,8 @@
     "data": "30/10/2023",
     "lat": 31.090762,
     "lon": -4.004318,
-    "foto": "foto/spagna marocco 2023/2023-10-30-14h03m42.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-30-14h03m42.jpg",
+    "descrizione": "Merzouga / Deserto del Sahara - Marocco"
   },
   {
     "nome": "2023-10-30-14H03M48",
@@ -6516,7 +6741,8 @@
     "data": "30/10/2023",
     "lat": 31.090797,
     "lon": -4.004364,
-    "foto": "foto/spagna marocco 2023/2023-10-30-14h03m48.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-30-14h03m48.jpg",
+    "descrizione": "Merzouga / Deserto del Sahara - Marocco"
   },
   {
     "nome": "2023-10-30-14H34M54",
@@ -6525,7 +6751,8 @@
     "data": "30/10/2023",
     "lat": 31.090939,
     "lon": -4.004315,
-    "foto": "foto/spagna marocco 2023/2023-10-30-14h34m54.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-30-14h34m54.jpg",
+    "descrizione": "Merzouga / Deserto del Sahara - Marocco"
   },
   {
     "nome": "2023-10-30-14H35M35",
@@ -6534,7 +6761,8 @@
     "data": "30/10/2023",
     "lat": 31.090955,
     "lon": -4.003304,
-    "foto": "foto/spagna marocco 2023/2023-10-30-14h35m35.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-30-14h35m35.jpg",
+    "descrizione": "Merzouga / Deserto del Sahara - Marocco"
   },
   {
     "nome": "2023-10-30-17H39M23",
@@ -6543,7 +6771,8 @@
     "data": "30/10/2023",
     "lat": 31.090519,
     "lon": -4.003235,
-    "foto": "foto/spagna marocco 2023/2023-10-30-17h39m23.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-30-17h39m23.jpg",
+    "descrizione": "Merzouga / Deserto del Sahara - Marocco"
   },
   {
     "nome": "2023-10-30-17H42M26",
@@ -6552,7 +6781,8 @@
     "data": "30/10/2023",
     "lat": 31.090409,
     "lon": -3.997929,
-    "foto": "foto/spagna marocco 2023/2023-10-30-17h42m26.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-30-17h42m26.jpg",
+    "descrizione": "Merzouga / Deserto del Sahara - Marocco"
   },
   {
     "nome": "2023-10-30-17H44M17",
@@ -6561,7 +6791,8 @@
     "data": "30/10/2023",
     "lat": 31.090335,
     "lon": -4.002864,
-    "foto": "foto/spagna marocco 2023/2023-10-30-17h44m17.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-30-17h44m17.jpg",
+    "descrizione": "Merzouga / Deserto del Sahara - Marocco"
   },
   {
     "nome": "2023-10-30-17H44M58",
@@ -6570,7 +6801,8 @@
     "data": "30/10/2023",
     "lat": 31.089949,
     "lon": -4.00214,
-    "foto": "foto/spagna marocco 2023/2023-10-30-17h44m58.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-30-17h44m58.jpg",
+    "descrizione": "Merzouga / Deserto del Sahara - Marocco"
   },
   {
     "nome": "2023-10-30-17H47M05",
@@ -6579,7 +6811,8 @@
     "data": "30/10/2023",
     "lat": 31.090381,
     "lon": -4.001062,
-    "foto": "foto/spagna marocco 2023/2023-10-30-17h47m05.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-30-17h47m05.jpg",
+    "descrizione": "Merzouga / Deserto del Sahara - Marocco"
   },
   {
     "nome": "2023-10-30-17H48M33",
@@ -6588,7 +6821,8 @@
     "data": "30/10/2023",
     "lat": 31.089348,
     "lon": -4.000102,
-    "foto": "foto/spagna marocco 2023/2023-10-30-17h48m33.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-30-17h48m33.jpg",
+    "descrizione": "Merzouga / Deserto del Sahara - Marocco"
   },
   {
     "nome": "2023-10-30-17H50M28",
@@ -6597,7 +6831,8 @@
     "data": "30/10/2023",
     "lat": 31.089274,
     "lon": -4.00044,
-    "foto": "foto/spagna marocco 2023/2023-10-30-17h50m28.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-30-17h50m28.jpg",
+    "descrizione": "Merzouga / Deserto del Sahara - Marocco"
   },
   {
     "nome": "2023-10-30-17H54M43",
@@ -6606,7 +6841,8 @@
     "data": "30/10/2023",
     "lat": 31.088743,
     "lon": -4.000171,
-    "foto": "foto/spagna marocco 2023/2023-10-30-17h54m43.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-30-17h54m43.jpg",
+    "descrizione": "Merzouga / Deserto del Sahara - Marocco"
   },
   {
     "nome": "2023-10-31-07H34M37",
@@ -6615,7 +6851,8 @@
     "data": "31/10/2023",
     "lat": 31.090648,
     "lon": -4.003916,
-    "foto": "foto/spagna marocco 2023/2023-10-31-07h34m37.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-31-07h34m37.jpg",
+    "descrizione": "Merzouga / Deserto del Sahara - Marocco"
   },
   {
     "nome": "2023-10-31-07H55M34",
@@ -6624,7 +6861,8 @@
     "data": "31/10/2023",
     "lat": 31.088957,
     "lon": -3.991642,
-    "foto": "foto/spagna marocco 2023/2023-10-31-07h55m34.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-31-07h55m34.jpg",
+    "descrizione": "Merzouga / Deserto del Sahara - Marocco"
   },
   {
     "nome": "2023-10-31-08H36M43",
@@ -6633,7 +6871,8 @@
     "data": "31/10/2023",
     "lat": 31.0801,
     "lon": -3.978338,
-    "foto": "foto/spagna marocco 2023/2023-10-31-08h36m43.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-31-08h36m43.jpg",
+    "descrizione": "Hassilabie / Deserto del Sahara - Marocco"
   },
   {
     "nome": "2023-10-31-08H38M25",
@@ -6642,7 +6881,8 @@
     "data": "31/10/2023",
     "lat": 31.079916,
     "lon": -3.978081,
-    "foto": "foto/spagna marocco 2023/2023-10-31-08h38m25.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-31-08h38m25.jpg",
+    "descrizione": "Hassilabie / Deserto del Sahara - Marocco"
   },
   {
     "nome": "2023-10-31-08H51M55",
@@ -6651,7 +6891,8 @@
     "data": "31/10/2023",
     "lat": 31.090298,
     "lon": -4.006684,
-    "foto": "foto/spagna marocco 2023/2023-10-31-08h51m55.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-31-08h51m55.jpg",
+    "descrizione": "Merzouga / Deserto del Sahara - Marocco"
   },
   {
     "nome": "2023-10-31-10H18M57",
@@ -6660,7 +6901,8 @@
     "data": "31/10/2023",
     "lat": 31.094632,
     "lon": -4.010873,
-    "foto": "foto/spagna marocco 2023/2023-10-31-10h18m57.jpg"
+    "foto": "foto/spagna marocco 2023/2023-10-31-10h18m57.jpg",
+    "descrizione": "Merzouga / Deserto del Sahara - Marocco"
   },
   {
     "nome": "2023-11-01-08H29M26",
@@ -7992,7 +8234,8 @@
     "data": "30/09/2025",
     "lat": 42.114928,
     "lon": 11.771026,
-    "foto": "foto/spagna marocco 2025/2025-09-30-19h36m26.jpg"
+    "foto": "foto/spagna marocco 2025/2025-09-30-19h36m26.jpg",
+    "descrizione": "Montalto di Castro - Lazio, Italia"
   },
   {
     "nome": "2025-09-30-22H11M43",
@@ -8001,7 +8244,8 @@
     "data": "30/09/2025",
     "lat": 42.112667,
     "lon": 11.765169,
-    "foto": "foto/spagna marocco 2025/2025-09-30-22h11m43.jpg"
+    "foto": "foto/spagna marocco 2025/2025-09-30-22h11m43.jpg",
+    "descrizione": "Montalto di Castro - Lazio, Italia"
   },
   {
     "nome": "2025-09-30-22H14M31",
@@ -8010,7 +8254,8 @@
     "data": "30/09/2025",
     "lat": 42.112396,
     "lon": 11.764644,
-    "foto": "foto/spagna marocco 2025/2025-09-30-22h14m31.jpg"
+    "foto": "foto/spagna marocco 2025/2025-09-30-22h14m31.jpg",
+    "descrizione": "Montalto di Castro - Lazio, Italia"
   },
   {
     "nome": "2025-10-01-19H51M25",
@@ -8019,7 +8264,8 @@
     "data": "01/10/2025",
     "lat": 41.329517,
     "lon": 2.166278,
-    "foto": "foto/spagna marocco 2025/2025-10-01-19h51m25.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-01-19h51m25.jpg",
+    "descrizione": "Barcellona - Catalogna, Spagna"
   },
   {
     "nome": "2025-10-02-10H41M16",
@@ -8028,7 +8274,8 @@
     "data": "02/10/2025",
     "lat": 40.372735,
     "lon": 0.405202,
-    "foto": "foto/spagna marocco 2025/2025-10-02-10h41m16.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-02-10h41m16.jpg",
+    "descrizione": "Vinaròs - Comunità Valenciana, Spagna"
   },
   {
     "nome": "2025-10-02-15H48M57",
@@ -8037,7 +8284,8 @@
     "data": "02/10/2025",
     "lat": 40.370562,
     "lon": 0.40273,
-    "foto": "foto/spagna marocco 2025/2025-10-02-15h48m57.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-02-15h48m57.jpg",
+    "descrizione": "Vinaròs - Comunità Valenciana, Spagna"
   },
   {
     "nome": "2025-10-02-19H15M56",
@@ -8046,7 +8294,8 @@
     "data": "02/10/2025",
     "lat": 40.360806,
     "lon": 0.403268,
-    "foto": "foto/spagna marocco 2025/2025-10-02-19h15m56.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-02-19h15m56.jpg",
+    "descrizione": "Vinaròs - Comunità Valenciana, Spagna"
   },
   {
     "nome": "2025-10-02-19H33M27",
@@ -8055,7 +8304,8 @@
     "data": "02/10/2025",
     "lat": 40.360696,
     "lon": 0.402568,
-    "foto": "foto/spagna marocco 2025/2025-10-02-19h33m27.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-02-19h33m27.jpg",
+    "descrizione": "Vinaròs - Comunità Valenciana, Spagna"
   },
   {
     "nome": "2025-10-04-12H06M35",
@@ -8064,7 +8314,8 @@
     "data": "04/10/2025",
     "lat": 40.370445,
     "lon": 0.401937,
-    "foto": "foto/spagna marocco 2025/2025-10-04-12h06m35.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-04-12h06m35.jpg",
+    "descrizione": "Vinaròs - Comunità Valenciana, Spagna"
   },
   {
     "nome": "2025-10-04-14H55M38",
@@ -8073,7 +8324,8 @@
     "data": "04/10/2025",
     "lat": 40.468585,
     "lon": 0.475745,
-    "foto": "foto/spagna marocco 2025/2025-10-04-14h55m38.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-04-14h55m38.jpg",
+    "descrizione": "Sant Carles de la Ràpita - Catalogna, Spagna"
   },
   {
     "nome": "2025-10-04-14H56M22",
@@ -8082,7 +8334,8 @@
     "data": "04/10/2025",
     "lat": 40.468428,
     "lon": 0.475846,
-    "foto": "foto/spagna marocco 2025/2025-10-04-14h56m22.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-04-14h56m22.jpg",
+    "descrizione": "Sant Carles de la Ràpita - Catalogna, Spagna"
   },
   {
     "nome": "2025-10-04-15H15M56",
@@ -8091,7 +8344,8 @@
     "data": "04/10/2025",
     "lat": 40.468109,
     "lon": 0.475932,
-    "foto": "foto/spagna marocco 2025/2025-10-04-15h15m56.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-04-15h15m56.jpg",
+    "descrizione": "Sant Carles de la Ràpita - Catalogna, Spagna"
   },
   {
     "nome": "2025-10-04-16H36M26",
@@ -8100,7 +8354,8 @@
     "data": "04/10/2025",
     "lat": 40.361339,
     "lon": 0.401996,
-    "foto": "foto/spagna marocco 2025/2025-10-04-16h36m26.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-04-16h36m26.jpg",
+    "descrizione": "Vinaròs - Comunità Valenciana, Spagna"
   },
   {
     "nome": "2025-10-05-10H51M18",
@@ -8109,7 +8364,8 @@
     "data": "05/10/2025",
     "lat": 40.390209,
     "lon": 0.411843,
-    "foto": "foto/spagna marocco 2025/2025-10-05-10h51m18.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-05-10h51m18.jpg",
+    "descrizione": "Vinaròs - Comunità Valenciana, Spagna"
   },
   {
     "nome": "2025-10-05-10H53M15",
@@ -8118,7 +8374,8 @@
     "data": "05/10/2025",
     "lat": 40.389587,
     "lon": 0.411574,
-    "foto": "foto/spagna marocco 2025/2025-10-05-10h53m15.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-05-10h53m15.jpg",
+    "descrizione": "Vinaròs - Comunità Valenciana, Spagna"
   },
   {
     "nome": "2025-10-05-19H57M52",
@@ -8127,7 +8384,8 @@
     "data": "05/10/2025",
     "lat": 40.358166,
     "lon": 0.406791,
-    "foto": "foto/spagna marocco 2025/2025-10-05-19h57m52.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-05-19h57m52.jpg",
+    "descrizione": "Vinaròs - Comunità Valenciana, Spagna"
   },
   {
     "nome": "2025-10-05-19H58M08",
@@ -8136,7 +8394,8 @@
     "data": "05/10/2025",
     "lat": 40.358131,
     "lon": 0.406763,
-    "foto": "foto/spagna marocco 2025/2025-10-05-19h58m08.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-05-19h58m08.jpg",
+    "descrizione": "Vinaròs - Comunità Valenciana, Spagna"
   },
   {
     "nome": "2025-10-07-16H38M30",
@@ -8145,7 +8404,8 @@
     "data": "07/10/2025",
     "lat": 37.878487,
     "lon": -0.766642,
-    "foto": "foto/spagna marocco 2025/2025-10-07-16h38m30.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-07-16h38m30.jpg",
+    "descrizione": "Pilar de la Horadada - Comunità Valenciana, Spagna"
   },
   {
     "nome": "2025-10-08-11H08M10",
@@ -8154,7 +8414,8 @@
     "data": "08/10/2025",
     "lat": 37.975552,
     "lon": -0.675024,
-    "foto": "foto/spagna marocco 2025/2025-10-08-11h08m10.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-08-11h08m10.jpg",
+    "descrizione": "Orihuela - Comunità Valenciana, Spagna"
   },
   {
     "nome": "2025-10-08-11H14M59",
@@ -8163,7 +8424,8 @@
     "data": "08/10/2025",
     "lat": 37.975681,
     "lon": -0.673773,
-    "foto": "foto/spagna marocco 2025/2025-10-08-11h14m59.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-08-11h14m59.jpg",
+    "descrizione": "Orihuela - Comunità Valenciana, Spagna"
   },
   {
     "nome": "2025-10-10-18H49M21",
@@ -8172,7 +8434,8 @@
     "data": "10/10/2025",
     "lat": 36.717835,
     "lon": -3.54728,
-    "foto": "foto/spagna marocco 2025/2025-10-10-18h49m21.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-10-18h49m21.jpg",
+    "descrizione": "Vélez-Málaga - Andalusia, Spagna"
   },
   {
     "nome": "2025-10-12-11H01M53",
@@ -8181,7 +8444,8 @@
     "data": "12/10/2025",
     "lat": 36.715667,
     "lon": -3.554612,
-    "foto": "foto/spagna marocco 2025/2025-10-12-11h01m53.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-12-11h01m53.jpg",
+    "descrizione": "Vélez-Málaga - Andalusia, Spagna"
   },
   {
     "nome": "2025-10-15-16H01M22",
@@ -8190,7 +8454,8 @@
     "data": "15/10/2025",
     "lat": 36.489585,
     "lon": -4.742185,
-    "foto": "foto/spagna marocco 2025/2025-10-15-16h01m22.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-15-16h01m22.jpg",
+    "descrizione": "Marbella - Andalusia, Spagna"
   },
   {
     "nome": "2025-10-17-09H56M23",
@@ -8199,7 +8464,8 @@
     "data": "17/10/2025",
     "lat": 36.48575,
     "lon": -4.746308,
-    "foto": "foto/spagna marocco 2025/2025-10-17-09h56m23.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-17-09h56m23.jpg",
+    "descrizione": "Marbella - Andalusia, Spagna"
   },
   {
     "nome": "2025-10-17-10H28M35",
@@ -8208,7 +8474,8 @@
     "data": "17/10/2025",
     "lat": 36.487572,
     "lon": -4.754412,
-    "foto": "foto/spagna marocco 2025/2025-10-17-10h28m35.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-17-10h28m35.jpg",
+    "descrizione": "Marbella - Andalusia, Spagna"
   },
   {
     "nome": "2025-10-17-10H29M31",
@@ -8217,7 +8484,8 @@
     "data": "17/10/2025",
     "lat": 36.487746,
     "lon": -4.7544,
-    "foto": "foto/spagna marocco 2025/2025-10-17-10h29m31.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-17-10h29m31.jpg",
+    "descrizione": "Marbella - Andalusia, Spagna"
   },
   {
     "nome": "2025-10-17-17H19M43",
@@ -8226,7 +8494,8 @@
     "data": "17/10/2025",
     "lat": 36.59668,
     "lon": -4.636288,
-    "foto": "foto/spagna marocco 2025/2025-10-17-17h19m43.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-17-17h19m43.jpg",
+    "descrizione": "Mijas - Andalusia, Spagna"
   },
   {
     "nome": "2025-10-17-17H22M29",
@@ -8235,7 +8504,8 @@
     "data": "17/10/2025",
     "lat": 36.596164,
     "lon": -4.636503,
-    "foto": "foto/spagna marocco 2025/2025-10-17-17h22m29.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-17-17h22m29.jpg",
+    "descrizione": "Mijas - Andalusia, Spagna"
   },
   {
     "nome": "2025-10-17-17H24M03",
@@ -8244,7 +8514,8 @@
     "data": "17/10/2025",
     "lat": 36.59588,
     "lon": -4.636626,
-    "foto": "foto/spagna marocco 2025/2025-10-17-17h24m03.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-17-17h24m03.jpg",
+    "descrizione": "Mijas - Andalusia, Spagna"
   },
   {
     "nome": "2025-10-17-17H26M39",
@@ -8253,7 +8524,8 @@
     "data": "17/10/2025",
     "lat": 36.595782,
     "lon": -4.63692,
-    "foto": "foto/spagna marocco 2025/2025-10-17-17h26m39.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-17-17h26m39.jpg",
+    "descrizione": "Mijas - Andalusia, Spagna"
   },
   {
     "nome": "2025-10-17-17H26M55",
@@ -8262,7 +8534,8 @@
     "data": "17/10/2025",
     "lat": 36.595772,
     "lon": -4.63695,
-    "foto": "foto/spagna marocco 2025/2025-10-17-17h26m55.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-17-17h26m55.jpg",
+    "descrizione": "Mijas - Andalusia, Spagna"
   },
   {
     "nome": "2025-10-17-17H29M36",
@@ -8271,7 +8544,8 @@
     "data": "17/10/2025",
     "lat": 36.595672,
     "lon": -4.637254,
-    "foto": "foto/spagna marocco 2025/2025-10-17-17h29m36.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-17-17h29m36.jpg",
+    "descrizione": "Mijas - Andalusia, Spagna"
   },
   {
     "nome": "2025-10-17-18H00M57",
@@ -8280,7 +8554,8 @@
     "data": "17/10/2025",
     "lat": 36.5963,
     "lon": -4.637709,
-    "foto": "foto/spagna marocco 2025/2025-10-17-18h00m57.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-17-18h00m57.jpg",
+    "descrizione": "Mijas - Andalusia, Spagna"
   },
   {
     "nome": "2025-10-18-17H38M12",
@@ -8289,7 +8564,8 @@
     "data": "18/10/2025",
     "lat": 36.485205,
     "lon": -4.95355,
-    "foto": "foto/spagna marocco 2025/2025-10-18-17h38m12.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-18-17h38m12.jpg",
+    "descrizione": "Benahavís - Andalusia, Spagna"
   },
   {
     "nome": "2025-10-18-17H43M15",
@@ -8298,7 +8574,8 @@
     "data": "18/10/2025",
     "lat": 36.485205,
     "lon": -4.95355,
-    "foto": "foto/spagna marocco 2025/2025-10-18-17h43m15.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-18-17h43m15.jpg",
+    "descrizione": "Benahavís - Andalusia, Spagna"
   },
   {
     "nome": "2025-10-18-17H46M52",
@@ -8307,7 +8584,8 @@
     "data": "18/10/2025",
     "lat": 36.485205,
     "lon": -4.95355,
-    "foto": "foto/spagna marocco 2025/2025-10-18-17h46m52.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-18-17h46m52.jpg",
+    "descrizione": "Benahavís - Andalusia, Spagna"
   },
   {
     "nome": "2025-10-18-18H14M32",
@@ -8316,7 +8594,8 @@
     "data": "18/10/2025",
     "lat": 36.489188,
     "lon": -4.950075,
-    "foto": "foto/spagna marocco 2025/2025-10-18-18h14m32.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-18-18h14m32.jpg",
+    "descrizione": "Benahavís - Andalusia, Spagna"
   },
   {
     "nome": "2025-10-18-19H10M57",
@@ -8325,7 +8604,8 @@
     "data": "18/10/2025",
     "lat": 36.509899,
     "lon": -4.884968,
-    "foto": "foto/spagna marocco 2025/2025-10-18-19h10m57.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-18-19h10m57.jpg",
+    "descrizione": "Estepona - Andalusia, Spagna"
   },
   {
     "nome": "2025-10-18-19H38M20",
@@ -8334,7 +8614,8 @@
     "data": "18/10/2025",
     "lat": 36.510309,
     "lon": -4.884328,
-    "foto": "foto/spagna marocco 2025/2025-10-18-19h38m20.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-18-19h38m20.jpg",
+    "descrizione": "Estepona - Andalusia, Spagna"
   },
   {
     "nome": "2025-10-18-19H42M35",
@@ -8343,7 +8624,8 @@
     "data": "18/10/2025",
     "lat": 36.50999,
     "lon": -4.884623,
-    "foto": "foto/spagna marocco 2025/2025-10-18-19h42m35.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-18-19h42m35.jpg",
+    "descrizione": "Estepona - Andalusia, Spagna"
   },
   {
     "nome": "2025-10-20-16H06M29",
@@ -8352,7 +8634,8 @@
     "data": "20/10/2025",
     "lat": 37.386224,
     "lon": -5.993016,
-    "foto": "foto/spagna marocco 2025/2025-10-20-16h06m29.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-20-16h06m29.jpg",
+    "descrizione": "Siviglia - Andalusia, Spagna"
   },
   {
     "nome": "2025-10-20-16H10M17",
@@ -8361,7 +8644,8 @@
     "data": "20/10/2025",
     "lat": 37.38543,
     "lon": -5.993625,
-    "foto": "foto/spagna marocco 2025/2025-10-20-16h10m17.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-20-16h10m17.jpg",
+    "descrizione": "Siviglia - Andalusia, Spagna"
   },
   {
     "nome": "2025-10-20-16H12M44",
@@ -8370,7 +8654,8 @@
     "data": "20/10/2025",
     "lat": 37.385216,
     "lon": -5.993855,
-    "foto": "foto/spagna marocco 2025/2025-10-20-16h12m44.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-20-16h12m44.jpg",
+    "descrizione": "Siviglia - Andalusia, Spagna"
   },
   {
     "nome": "2025-10-21-18H45M48",
@@ -8379,7 +8664,8 @@
     "data": "21/10/2025",
     "lat": 37.199869,
     "lon": -7.325116,
-    "foto": "foto/spagna marocco 2025/2025-10-21-18h45m48.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-21-18h45m48.jpg",
+    "descrizione": "Ayamonte - Andalusia, Spagna"
   },
   {
     "nome": "2025-10-21-18H58M13",
@@ -8388,7 +8674,8 @@
     "data": "21/10/2025",
     "lat": 37.195167,
     "lon": -7.323948,
-    "foto": "foto/spagna marocco 2025/2025-10-21-18h58m13.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-21-18h58m13.jpg",
+    "descrizione": "Ayamonte - Andalusia, Spagna"
   },
   {
     "nome": "2025-10-22-18H43M53",
@@ -8397,7 +8684,8 @@
     "data": "22/10/2025",
     "lat": 37.221475,
     "lon": -7.320934,
-    "foto": "foto/spagna marocco 2025/2025-10-22-18h43m53.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-22-18h43m53.jpg",
+    "descrizione": "Ayamonte - Andalusia, Spagna"
   },
   {
     "nome": "2025-10-23-11H34M24",
@@ -8406,7 +8694,8 @@
     "data": "23/10/2025",
     "lat": 37.237021,
     "lon": -7.435363,
-    "foto": "foto/spagna marocco 2025/2025-10-23-11h34m24.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-23-11h34m24.jpg",
+    "descrizione": "Vila Real de Santo António - Algarve, Portogallo"
   },
   {
     "nome": "2025-10-23-17H53M24",
@@ -8415,7 +8704,8 @@
     "data": "23/10/2025",
     "lat": 37.106213,
     "lon": -8.25013,
-    "foto": "foto/spagna marocco 2025/2025-10-23-17h53m24.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-23-17h53m24.jpg",
+    "descrizione": "Albufeira - Algarve, Portogallo"
   },
   {
     "nome": "2025-10-23-17H56M46",
@@ -8424,7 +8714,8 @@
     "data": "23/10/2025",
     "lat": 37.106213,
     "lon": -8.25013,
-    "foto": "foto/spagna marocco 2025/2025-10-23-17h56m46.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-23-17h56m46.jpg",
+    "descrizione": "Albufeira - Algarve, Portogallo"
   },
   {
     "nome": "2025-10-23-18H15M48",
@@ -8433,7 +8724,8 @@
     "data": "23/10/2025",
     "lat": 37.106213,
     "lon": -8.25013,
-    "foto": "foto/spagna marocco 2025/2025-10-23-18h15m48.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-23-18h15m48.jpg",
+    "descrizione": "Albufeira - Algarve, Portogallo"
   },
   {
     "nome": "2025-10-23-18H19M01",
@@ -8442,7 +8734,8 @@
     "data": "23/10/2025",
     "lat": 37.106213,
     "lon": -8.25013,
-    "foto": "foto/spagna marocco 2025/2025-10-23-18h19m01.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-23-18h19m01.jpg",
+    "descrizione": "Albufeira - Algarve, Portogallo"
   },
   {
     "nome": "2025-10-23-18H22M53",
@@ -8451,7 +8744,8 @@
     "data": "23/10/2025",
     "lat": 37.106213,
     "lon": -8.25013,
-    "foto": "foto/spagna marocco 2025/2025-10-23-18h22m53.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-23-18h22m53.jpg",
+    "descrizione": "Albufeira - Algarve, Portogallo"
   },
   {
     "nome": "2025-10-23-18H23M10",
@@ -8460,7 +8754,8 @@
     "data": "23/10/2025",
     "lat": 37.106213,
     "lon": -8.25013,
-    "foto": "foto/spagna marocco 2025/2025-10-23-18h23m10.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-23-18h23m10.jpg",
+    "descrizione": "Albufeira - Algarve, Portogallo"
   },
   {
     "nome": "2025-10-23-18H23M17",
@@ -8469,7 +8764,8 @@
     "data": "23/10/2025",
     "lat": 37.106213,
     "lon": -8.25013,
-    "foto": "foto/spagna marocco 2025/2025-10-23-18h23m17.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-23-18h23m17.jpg",
+    "descrizione": "Albufeira - Algarve, Portogallo"
   },
   {
     "nome": "2025-10-24-09H46M15",
@@ -8478,7 +8774,8 @@
     "data": "24/10/2025",
     "lat": 37.105034,
     "lon": -8.252,
-    "foto": "foto/spagna marocco 2025/2025-10-24-09h46m15.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-24-09h46m15.jpg",
+    "descrizione": "Albufeira - Algarve, Portogallo"
   },
   {
     "nome": "2025-10-24-10H54M31",
@@ -8487,7 +8784,8 @@
     "data": "24/10/2025",
     "lat": 37.102594,
     "lon": -8.257434,
-    "foto": "foto/spagna marocco 2025/2025-10-24-10h54m31.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-24-10h54m31.jpg",
+    "descrizione": "Albufeira - Algarve, Portogallo"
   },
   {
     "nome": "2025-10-24-10H54M52",
@@ -8496,7 +8794,8 @@
     "data": "24/10/2025",
     "lat": 37.102708,
     "lon": -8.257519,
-    "foto": "foto/spagna marocco 2025/2025-10-24-10h54m52.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-24-10h54m52.jpg",
+    "descrizione": "Albufeira - Algarve, Portogallo"
   },
   {
     "nome": "2025-10-24-11H04M14",
@@ -8505,7 +8804,8 @@
     "data": "24/10/2025",
     "lat": 37.106307,
     "lon": -8.253283,
-    "foto": "foto/spagna marocco 2025/2025-10-24-11h04m14.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-24-11h04m14.jpg",
+    "descrizione": "Albufeira - Algarve, Portogallo"
   },
   {
     "nome": "2025-10-24-11H05M02",
@@ -8514,7 +8814,8 @@
     "data": "24/10/2025",
     "lat": 37.106264,
     "lon": -8.253275,
-    "foto": "foto/spagna marocco 2025/2025-10-24-11h05m02.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-24-11h05m02.jpg",
+    "descrizione": "Albufeira - Algarve, Portogallo"
   },
   {
     "nome": "2025-10-24-11H35M08",
@@ -8523,7 +8824,8 @@
     "data": "24/10/2025",
     "lat": 37.102578,
     "lon": -8.253205,
-    "foto": "foto/spagna marocco 2025/2025-10-24-11h35m08.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-24-11h35m08.jpg",
+    "descrizione": "Albufeira - Algarve, Portogallo"
   },
   {
     "nome": "2025-10-24-19H28M04",
@@ -8532,7 +8834,8 @@
     "data": "24/10/2025",
     "lat": 37.094417,
     "lon": -8.251727,
-    "foto": "foto/spagna marocco 2025/2025-10-24-19h28m04.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-24-19h28m04.jpg",
+    "descrizione": "Albufeira - Algarve, Portogallo"
   },
   {
     "nome": "2025-10-24-20H03M16",
@@ -8541,7 +8844,8 @@
     "data": "24/10/2025",
     "lat": 37.088497,
     "lon": -8.251015,
-    "foto": "foto/spagna marocco 2025/2025-10-24-20h03m16.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-24-20h03m16.jpg",
+    "descrizione": "Albufeira - Algarve, Portogallo"
   },
   {
     "nome": "2025-10-24-20H06M01",
@@ -8550,7 +8854,8 @@
     "data": "24/10/2025",
     "lat": 37.088571,
     "lon": -8.251168,
-    "foto": "foto/spagna marocco 2025/2025-10-24-20h06m01.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-24-20h06m01.jpg",
+    "descrizione": "Albufeira - Algarve, Portogallo"
   },
   {
     "nome": "2025-10-25-09H52M30",
@@ -8559,7 +8864,8 @@
     "data": "25/10/2025",
     "lat": 37.073797,
     "lon": -8.298114,
-    "foto": "foto/spagna marocco 2025/2025-10-25-09h52m30.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-25-09h52m30.jpg",
+    "descrizione": "Silves - Algarve, Portogallo"
   },
   {
     "nome": "2025-10-25-11H46M07",
@@ -8568,7 +8874,8 @@
     "data": "25/10/2025",
     "lat": 37.087178,
     "lon": -8.433563,
-    "foto": "foto/spagna marocco 2025/2025-10-25-11h46m07.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-25-11h46m07.jpg",
+    "descrizione": "Portimão - Algarve, Portogallo"
   },
   {
     "nome": "2025-10-25-11H46M23",
@@ -8577,7 +8884,8 @@
     "data": "25/10/2025",
     "lat": 37.087171,
     "lon": -8.433482,
-    "foto": "foto/spagna marocco 2025/2025-10-25-11h46m23.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-25-11h46m23.jpg",
+    "descrizione": "Portimão - Algarve, Portogallo"
   },
   {
     "nome": "2025-10-25-11H49M02",
@@ -8586,7 +8894,8 @@
     "data": "25/10/2025",
     "lat": 37.081661,
     "lon": -8.310567,
-    "foto": "foto/spagna marocco 2025/2025-10-25-11h49m02.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-25-11h49m02.jpg",
+    "descrizione": "Lagoa - Algarve, Portogallo"
   },
   {
     "nome": "2025-10-25-11H55M26",
@@ -8595,7 +8904,8 @@
     "data": "25/10/2025",
     "lat": 37.087358,
     "lon": -8.429722,
-    "foto": "foto/spagna marocco 2025/2025-10-25-11h55m26.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-25-11h55m26.jpg",
+    "descrizione": "Portimão - Algarve, Portogallo"
   },
   {
     "nome": "2025-10-25-11H56M40",
@@ -8604,7 +8914,8 @@
     "data": "25/10/2025",
     "lat": 37.087552,
     "lon": -8.428836,
-    "foto": "foto/spagna marocco 2025/2025-10-25-11h56m40.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-25-11h56m40.jpg",
+    "descrizione": "Portimão - Algarve, Portogallo"
   },
   {
     "nome": "2025-10-25-11H57M41",
@@ -8613,7 +8924,8 @@
     "data": "25/10/2025",
     "lat": 37.087711,
     "lon": -8.428107,
-    "foto": "foto/spagna marocco 2025/2025-10-25-11h57m41.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-25-11h57m41.jpg",
+    "descrizione": "Portimão - Algarve, Portogallo"
   },
   {
     "nome": "2025-10-25-12H07M26",
@@ -8622,7 +8934,8 @@
     "data": "25/10/2025",
     "lat": 37.106555,
     "lon": -8.381147,
-    "foto": "foto/spagna marocco 2025/2025-10-25-12h07m26.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-25-12h07m26.jpg",
+    "descrizione": "Lagoa - Algarve, Portogallo"
   },
   {
     "nome": "2025-10-25-12H07M52",
@@ -8631,7 +8944,8 @@
     "data": "25/10/2025",
     "lat": 37.107351,
     "lon": -8.384576,
-    "foto": "foto/spagna marocco 2025/2025-10-25-12h07m52.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-25-12h07m52.jpg",
+    "descrizione": "Lagoa - Algarve, Portogallo"
   },
   {
     "nome": "2025-10-25-12H11M16",
@@ -8640,7 +8954,8 @@
     "data": "25/10/2025",
     "lat": 37.087161,
     "lon": -8.432075,
-    "foto": "foto/spagna marocco 2025/2025-10-25-12h11m16.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-25-12h11m16.jpg",
+    "descrizione": "Portimão - Algarve, Portogallo"
   },
   {
     "nome": "2025-10-25-15H34M40",
@@ -8649,7 +8964,8 @@
     "data": "25/10/2025",
     "lat": 37.106023,
     "lon": -8.251188,
-    "foto": "foto/spagna marocco 2025/2025-10-25-15h34m40.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-25-15h34m40.jpg",
+    "descrizione": "Albufeira - Algarve, Portogallo"
   },
   {
     "nome": "2025-10-26-10H21M03",
@@ -8658,7 +8974,8 @@
     "data": "26/10/2025",
     "lat": 37.106835,
     "lon": -8.253984,
-    "foto": "foto/spagna marocco 2025/2025-10-26-10h21m03.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-26-10h21m03.jpg",
+    "descrizione": "Albufeira - Algarve, Portogallo"
   },
   {
     "nome": "2025-10-26-11H15M11",
@@ -8667,7 +8984,8 @@
     "data": "26/10/2025",
     "lat": 37.138781,
     "lon": -8.022503,
-    "foto": "foto/spagna marocco 2025/2025-10-26-11h15m11.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-26-11h15m11.jpg",
+    "descrizione": "Loulé - Algarve, Portogallo"
   },
   {
     "nome": "2025-10-26-11H15M33",
@@ -8676,7 +8994,8 @@
     "data": "26/10/2025",
     "lat": 37.13875,
     "lon": -8.0225,
-    "foto": "foto/spagna marocco 2025/2025-10-26-11h15m33.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-26-11h15m33.jpg",
+    "descrizione": "Loulé - Algarve, Portogallo"
   },
   {
     "nome": "2025-10-26-11H27M54",
@@ -8685,7 +9004,8 @@
     "data": "26/10/2025",
     "lat": 37.139317,
     "lon": -8.02978,
-    "foto": "foto/spagna marocco 2025/2025-10-26-11h27m54.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-26-11h27m54.jpg",
+    "descrizione": "Loulé - Algarve, Portogallo"
   },
   {
     "nome": "2025-10-26-12H13M30",
@@ -8694,7 +9014,8 @@
     "data": "26/10/2025",
     "lat": 37.089223,
     "lon": -8.19988,
-    "foto": "foto/spagna marocco 2025/2025-10-26-12h13m30.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-26-12h13m30.jpg",
+    "descrizione": "Silves - Algarve, Portogallo"
   },
   {
     "nome": "2025-10-26-12H13M55",
@@ -8703,7 +9024,8 @@
     "data": "26/10/2025",
     "lat": 37.089166,
     "lon": -8.199757,
-    "foto": "foto/spagna marocco 2025/2025-10-26-12h13m55.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-26-12h13m55.jpg",
+    "descrizione": "Silves - Algarve, Portogallo"
   },
   {
     "nome": "2025-10-26-12H25M16",
@@ -8712,7 +9034,8 @@
     "data": "26/10/2025",
     "lat": 37.091075,
     "lon": -8.20552,
-    "foto": "foto/spagna marocco 2025/2025-10-26-12h25m16.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-26-12h25m16.jpg",
+    "descrizione": "Silves - Algarve, Portogallo"
   },
   {
     "nome": "2025-10-26-19H39M35",
@@ -8721,7 +9044,8 @@
     "data": "26/10/2025",
     "lat": 37.092141,
     "lon": -8.227732,
-    "foto": "foto/spagna marocco 2025/2025-10-26-19h39m35.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-26-19h39m35.jpg",
+    "descrizione": "Silves - Algarve, Portogallo"
   },
   {
     "nome": "2025-10-26-19H41M17",
@@ -8730,7 +9054,8 @@
     "data": "26/10/2025",
     "lat": 37.092174,
     "lon": -8.227743,
-    "foto": "foto/spagna marocco 2025/2025-10-26-19h41m17.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-26-19h41m17.jpg",
+    "descrizione": "Silves - Algarve, Portogallo"
   },
   {
     "nome": "2025-10-26-20H05M05",
@@ -8739,7 +9064,8 @@
     "data": "26/10/2025",
     "lat": 37.094667,
     "lon": -8.249744,
-    "foto": "foto/spagna marocco 2025/2025-10-26-20h05m05.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-26-20h05m05.jpg",
+    "descrizione": "Albufeira - Algarve, Portogallo"
   },
   {
     "nome": "2025-10-27-10H32M11",
@@ -8748,7 +9074,8 @@
     "data": "27/10/2025",
     "lat": 37.085856,
     "lon": -8.430484,
-    "foto": "foto/spagna marocco 2025/2025-10-27-10h32m11.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-27-10h32m11.jpg",
+    "descrizione": "Portimão - Algarve, Portogallo"
   },
   {
     "nome": "2025-10-27-10H37M56",
@@ -8757,7 +9084,8 @@
     "data": "27/10/2025",
     "lat": 37.086607,
     "lon": -8.43164,
-    "foto": "foto/spagna marocco 2025/2025-10-27-10h37m56.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-27-10h37m56.jpg",
+    "descrizione": "Portimão - Algarve, Portogallo"
   },
   {
     "nome": "2025-10-27-11H24M48",
@@ -8766,7 +9094,8 @@
     "data": "27/10/2025",
     "lat": 37.075649,
     "lon": -8.282677,
-    "foto": "foto/spagna marocco 2025/2025-10-27-11h24m48.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-27-11h24m48.jpg",
+    "descrizione": "Silves - Algarve, Portogallo"
   },
   {
     "nome": "2025-10-29-10H18M08",
@@ -8775,7 +9104,8 @@
     "data": "29/10/2025",
     "lat": 37.134822,
     "lon": -8.587833,
-    "foto": "foto/spagna marocco 2025/2025-10-29-10h18m08.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-29-10h18m08.jpg",
+    "descrizione": "Lagos - Algarve, Portogallo"
   },
   {
     "nome": "2025-10-29-10H18M17",
@@ -8784,7 +9114,8 @@
     "data": "29/10/2025",
     "lat": 37.134817,
     "lon": -8.587809,
-    "foto": "foto/spagna marocco 2025/2025-10-29-10h18m17.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-29-10h18m17.jpg",
+    "descrizione": "Lagos - Algarve, Portogallo"
   },
   {
     "nome": "2025-10-29-21H03M15",
@@ -8793,7 +9124,8 @@
     "data": "29/10/2025",
     "lat": 37.124673,
     "lon": -7.651133,
-    "foto": "foto/spagna marocco 2025/2025-10-29-21h03m15.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-29-21h03m15.jpg",
+    "descrizione": "Tavira - Algarve, Portogallo"
   },
   {
     "nome": "2025-10-29-21H04M00",
@@ -8802,7 +9134,8 @@
     "data": "29/10/2025",
     "lat": 37.125286,
     "lon": -7.651503,
-    "foto": "foto/spagna marocco 2025/2025-10-29-21h04m00.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-29-21h04m00.jpg",
+    "descrizione": "Tavira - Algarve, Portogallo"
   },
   {
     "nome": "2025-10-30-09H25M00",
@@ -8811,7 +9144,8 @@
     "data": "30/10/2025",
     "lat": 37.135153,
     "lon": -7.600147,
-    "foto": "foto/spagna marocco 2025/2025-10-30-09h25m00.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-30-09h25m00.jpg",
+    "descrizione": "Tavira - Algarve, Portogallo"
   },
   {
     "nome": "2025-10-31-19H31M41",
@@ -8820,7 +9154,8 @@
     "data": "31/10/2025",
     "lat": 36.600049,
     "lon": -6.228155,
-    "foto": "foto/spagna marocco 2025/2025-10-31-19h31m41.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-31-19h31m41.jpg",
+    "descrizione": "Cadice - Andalusia, Spagna"
   },
   {
     "nome": "2025-10-31-19H45M04",
@@ -8829,7 +9164,8 @@
     "data": "31/10/2025",
     "lat": 36.598177,
     "lon": -6.226273,
-    "foto": "foto/spagna marocco 2025/2025-10-31-19h45m04.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-31-19h45m04.jpg",
+    "descrizione": "Cadice - Andalusia, Spagna"
   },
   {
     "nome": "2025-10-31-19H45M15",
@@ -8838,7 +9174,8 @@
     "data": "31/10/2025",
     "lat": 36.598183,
     "lon": -6.226256,
-    "foto": "foto/spagna marocco 2025/2025-10-31-19h45m15.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-31-19h45m15.jpg",
+    "descrizione": "Cadice - Andalusia, Spagna"
   },
   {
     "nome": "2025-10-31-19H46M33",
@@ -8847,7 +9184,8 @@
     "data": "31/10/2025",
     "lat": 36.598221,
     "lon": -6.226136,
-    "foto": "foto/spagna marocco 2025/2025-10-31-19h46m33.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-31-19h46m33.jpg",
+    "descrizione": "Cadice - Andalusia, Spagna"
   },
   {
     "nome": "2025-10-31-19H51M34",
@@ -8856,7 +9194,8 @@
     "data": "31/10/2025",
     "lat": 36.59837,
     "lon": -6.225672,
-    "foto": "foto/spagna marocco 2025/2025-10-31-19h51m34.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-31-19h51m34.jpg",
+    "descrizione": "Cadice - Andalusia, Spagna"
   },
   {
     "nome": "2025-10-31-19H52M56",
@@ -8865,7 +9204,8 @@
     "data": "31/10/2025",
     "lat": 36.59841,
     "lon": -6.225545,
-    "foto": "foto/spagna marocco 2025/2025-10-31-19h52m56.jpg"
+    "foto": "foto/spagna marocco 2025/2025-10-31-19h52m56.jpg",
+    "descrizione": "Cadice - Andalusia, Spagna"
   },
   {
     "nome": "2025-11-01-11H53M08",
@@ -8874,7 +9214,8 @@
     "data": "01/11/2025",
     "lat": 36.529567,
     "lon": -6.294437,
-    "foto": "foto/spagna marocco 2025/2025-11-01-11h53m08.jpg"
+    "foto": "foto/spagna marocco 2025/2025-11-01-11h53m08.jpg",
+    "descrizione": "Puerto Real - Andalusia, Spagna"
   },
   {
     "nome": "2025-11-02-16H59M23",
@@ -8883,7 +9224,8 @@
     "data": "02/11/2025",
     "lat": 36.588489,
     "lon": -6.238559,
-    "foto": "foto/spagna marocco 2025/2025-11-02-16h59m23.jpg"
+    "foto": "foto/spagna marocco 2025/2025-11-02-16h59m23.jpg",
+    "descrizione": "Cadice - Andalusia, Spagna"
   },
   {
     "nome": "2025-11-02-17H19M12",
@@ -8892,7 +9234,8 @@
     "data": "02/11/2025",
     "lat": 36.588698,
     "lon": -6.23866,
-    "foto": "foto/spagna marocco 2025/2025-11-02-17h19m12.jpg"
+    "foto": "foto/spagna marocco 2025/2025-11-02-17h19m12.jpg",
+    "descrizione": "Cadice - Andalusia, Spagna"
   },
   {
     "nome": "2025-11-02-17H19M20",
@@ -8901,7 +9244,8 @@
     "data": "02/11/2025",
     "lat": 36.588697,
     "lon": -6.23866,
-    "foto": "foto/spagna marocco 2025/2025-11-02-17h19m20.jpg"
+    "foto": "foto/spagna marocco 2025/2025-11-02-17h19m20.jpg",
+    "descrizione": "Cadice - Andalusia, Spagna"
   },
   {
     "nome": "2025-11-04-11H20M25",
@@ -8910,7 +9254,8 @@
     "data": "04/11/2025",
     "lat": 36.682432,
     "lon": -6.137506,
-    "foto": "foto/spagna marocco 2025/2025-11-04-11h20m25.jpg"
+    "foto": "foto/spagna marocco 2025/2025-11-04-11h20m25.jpg",
+    "descrizione": "El Puerto de Santa María - Andalusia, Spagna"
   },
   {
     "nome": "2025-11-04-11H38M18",
@@ -8919,7 +9264,8 @@
     "data": "04/11/2025",
     "lat": 36.683449,
     "lon": -6.136695,
-    "foto": "foto/spagna marocco 2025/2025-11-04-11h38m18.jpg"
+    "foto": "foto/spagna marocco 2025/2025-11-04-11h38m18.jpg",
+    "descrizione": "El Puerto de Santa María - Andalusia, Spagna"
   },
   {
     "nome": "2025-11-04-12H10M11",
@@ -8928,7 +9274,8 @@
     "data": "04/11/2025",
     "lat": 36.681826,
     "lon": -6.138024,
-    "foto": "foto/spagna marocco 2025/2025-11-04-12h10m11.jpg"
+    "foto": "foto/spagna marocco 2025/2025-11-04-12h10m11.jpg",
+    "descrizione": "El Puerto de Santa María - Andalusia, Spagna"
   },
   {
     "nome": "2025-11-06-08H55M23",
@@ -8937,7 +9284,8 @@
     "data": "06/11/2025",
     "lat": 36.585169,
     "lon": -6.245906,
-    "foto": "foto/spagna marocco 2025/2025-11-06-08h55m23.jpg"
+    "foto": "foto/spagna marocco 2025/2025-11-06-08h55m23.jpg",
+    "descrizione": "Cadice - Andalusia, Spagna"
   },
   {
     "nome": "2025-11-07-13H11M24",
@@ -8946,7 +9294,8 @@
     "data": "07/11/2025",
     "lat": 36.050869,
     "lon": -5.406446,
-    "foto": "foto/spagna marocco 2025/2025-11-07-13h11m24.jpg"
+    "foto": "foto/spagna marocco 2025/2025-11-07-13h11m24.jpg",
+    "descrizione": "Tarifa - Andalusia, Spagna"
   },
   {
     "nome": "2025-11-07-16H00M55",
@@ -8955,7 +9304,8 @@
     "data": "07/11/2025",
     "lat": 35.867119,
     "lon": -5.526232,
-    "foto": "foto/spagna marocco 2025/2025-11-07-16h00m55.jpg"
+    "foto": "foto/spagna marocco 2025/2025-11-07-16h00m55.jpg",
+    "descrizione": "Tangeri - Marocco"
   },
   {
     "nome": "2025-11-08-18H01M52",
@@ -8964,7 +9314,8 @@
     "data": "08/11/2025",
     "lat": 31.625701,
     "lon": -7.991873,
-    "foto": "foto/spagna marocco 2025/2025-11-08-18h01m52.jpg"
+    "foto": "foto/spagna marocco 2025/2025-11-08-18h01m52.jpg",
+    "descrizione": "Marrakech - Marocco"
   },
   {
     "nome": "2025-11-08-18H07M23",
@@ -8973,7 +9324,8 @@
     "data": "08/11/2025",
     "lat": 31.625288,
     "lon": -7.990908,
-    "foto": "foto/spagna marocco 2025/2025-11-08-18h07m23.jpg"
+    "foto": "foto/spagna marocco 2025/2025-11-08-18h07m23.jpg",
+    "descrizione": "Marrakech - Marocco"
   },
   {
     "nome": "2025-11-08-18H09M33",
@@ -8982,7 +9334,8 @@
     "data": "08/11/2025",
     "lat": 31.625126,
     "lon": -7.990529,
-    "foto": "foto/spagna marocco 2025/2025-11-08-18h09m33.jpg"
+    "foto": "foto/spagna marocco 2025/2025-11-08-18h09m33.jpg",
+    "descrizione": "Marrakech - Marocco"
   },
   {
     "nome": "2025-11-08-18H16M12",
@@ -8991,7 +9344,8 @@
     "data": "08/11/2025",
     "lat": 31.625283,
     "lon": -7.989558,
-    "foto": "foto/spagna marocco 2025/2025-11-08-18h16m12.jpg"
+    "foto": "foto/spagna marocco 2025/2025-11-08-18h16m12.jpg",
+    "descrizione": "Marrakech - Marocco"
   },
   {
     "nome": "2025-11-08-18H16M34",
@@ -9000,7 +9354,8 @@
     "data": "08/11/2025",
     "lat": 31.625456,
     "lon": -7.989553,
-    "foto": "foto/spagna marocco 2025/2025-11-08-18h16m34.jpg"
+    "foto": "foto/spagna marocco 2025/2025-11-08-18h16m34.jpg",
+    "descrizione": "Marrakech - Marocco"
   },
   {
     "nome": "2025-11-08-18H27M25",
@@ -9009,7 +9364,8 @@
     "data": "08/11/2025",
     "lat": 31.626981,
     "lon": -7.989118,
-    "foto": "foto/spagna marocco 2025/2025-11-08-18h27m25.jpg"
+    "foto": "foto/spagna marocco 2025/2025-11-08-18h27m25.jpg",
+    "descrizione": "Marrakech - Marocco"
   },
   {
     "nome": "2025-11-08-18H30M16",
@@ -9018,7 +9374,8 @@
     "data": "08/11/2025",
     "lat": 31.627109,
     "lon": -7.988984,
-    "foto": "foto/spagna marocco 2025/2025-11-08-18h30m16.jpg"
+    "foto": "foto/spagna marocco 2025/2025-11-08-18h30m16.jpg",
+    "descrizione": "Marrakech - Marocco"
   },
   {
     "nome": "2025-11-08-18H45M43",
@@ -9027,7 +9384,8 @@
     "data": "08/11/2025",
     "lat": 31.627804,
     "lon": -7.988252,
-    "foto": "foto/spagna marocco 2025/2025-11-08-18h45m43.jpg"
+    "foto": "foto/spagna marocco 2025/2025-11-08-18h45m43.jpg",
+    "descrizione": "Marrakech - Marocco"
   },
   {
     "nome": "2025-11-08-18H48M59",
@@ -9036,7 +9394,8 @@
     "data": "08/11/2025",
     "lat": 31.62795,
     "lon": -7.988097,
-    "foto": "foto/spagna marocco 2025/2025-11-08-18h48m59.jpg"
+    "foto": "foto/spagna marocco 2025/2025-11-08-18h48m59.jpg",
+    "descrizione": "Marrakech - Marocco"
   },
   {
     "nome": "2025-11-09-09H52M44",
@@ -9045,7 +9404,8 @@
     "data": "09/11/2025",
     "lat": 31.717512,
     "lon": -8.230339,
-    "foto": "foto/spagna marocco 2025/2025-11-09-09h52m44.jpg"
+    "foto": "foto/spagna marocco 2025/2025-11-09-09h52m44.jpg",
+    "descrizione": "Chichaoua - Marocco"
   },
   {
     "nome": "2025-11-09-11H40M50",
@@ -9054,7 +9414,8 @@
     "data": "09/11/2025",
     "lat": 30.750813,
     "lon": -9.166918,
-    "foto": "foto/spagna marocco 2025/2025-11-09-11h40m50.jpg"
+    "foto": "foto/spagna marocco 2025/2025-11-09-11h40m50.jpg",
+    "descrizione": "Essaouira - Marocco"
   },
   {
     "nome": "2025-11-10-10H22M19",
@@ -9063,7 +9424,8 @@
     "data": "10/11/2025",
     "lat": 30.525407,
     "lon": -9.687679,
-    "foto": "foto/spagna marocco 2025/2025-11-10-10h22m19.jpg"
+    "foto": "foto/spagna marocco 2025/2025-11-10-10h22m19.jpg",
+    "descrizione": "Agadir - Marocco"
   },
   {
     "nome": "2025-11-10-17H03M43",
@@ -9072,7 +9434,8 @@
     "data": "10/11/2025",
     "lat": 30.51,
     "lon": -9.68515,
-    "foto": "foto/spagna marocco 2025/2025-11-10-17h03m43.jpg"
+    "foto": "foto/spagna marocco 2025/2025-11-10-17h03m43.jpg",
+    "descrizione": "Agadir - Marocco"
   },
   {
     "nome": "2025-11-10-17H05M06",
@@ -9081,7 +9444,8 @@
     "data": "10/11/2025",
     "lat": 30.51,
     "lon": -9.68515,
-    "foto": "foto/spagna marocco 2025/2025-11-10-17h05m06.jpg"
+    "foto": "foto/spagna marocco 2025/2025-11-10-17h05m06.jpg",
+    "descrizione": "Agadir - Marocco"
   },
   {
     "nome": "2025-11-10-20H44M40",
@@ -9090,7 +9454,8 @@
     "data": "10/11/2025",
     "lat": 30.509574,
     "lon": -9.68674,
-    "foto": "foto/spagna marocco 2025/2025-11-10-20h44m40.jpg"
+    "foto": "foto/spagna marocco 2025/2025-11-10-20h44m40.jpg",
+    "descrizione": "Agadir - Marocco"
   },
   {
     "nome": "2025-11-11-16H01M41",
@@ -9099,7 +9464,8 @@
     "data": "11/11/2025",
     "lat": 30.509994,
     "lon": -9.685126,
-    "foto": "foto/spagna marocco 2025/2025-11-11-16h01m41.jpg"
+    "foto": "foto/spagna marocco 2025/2025-11-11-16h01m41.jpg",
+    "descrizione": "Agadir - Marocco"
   },
   {
     "nome": "2025-11-11-16H16M33",
@@ -9108,7 +9474,8 @@
     "data": "11/11/2025",
     "lat": 30.509994,
     "lon": -9.685126,
-    "foto": "foto/spagna marocco 2025/2025-11-11-16h16m33.jpg"
+    "foto": "foto/spagna marocco 2025/2025-11-11-16h16m33.jpg",
+    "descrizione": "Agadir - Marocco"
   },
   {
     "nome": "2025-11-11-16H22M18",
@@ -9117,7 +9484,8 @@
     "data": "11/11/2025",
     "lat": 30.509994,
     "lon": -9.685126,
-    "foto": "foto/spagna marocco 2025/2025-11-11-16h22m18.jpg"
+    "foto": "foto/spagna marocco 2025/2025-11-11-16h22m18.jpg",
+    "descrizione": "Agadir - Marocco"
   },
   {
     "nome": "2025-11-11-16H38M57",
@@ -9126,7 +9494,8 @@
     "data": "11/11/2025",
     "lat": 30.510324,
     "lon": -9.685238,
-    "foto": "foto/spagna marocco 2025/2025-11-11-16h38m57.jpg"
+    "foto": "foto/spagna marocco 2025/2025-11-11-16h38m57.jpg",
+    "descrizione": "Agadir - Marocco"
   },
   {
     "nome": "2025-11-12-12H48M29",
@@ -9135,7 +9504,8 @@
     "data": "12/11/2025",
     "lat": 30.413492,
     "lon": -9.578423,
-    "foto": "foto/spagna marocco 2025/2025-11-12-12h48m29.jpg"
+    "foto": "foto/spagna marocco 2025/2025-11-12-12h48m29.jpg",
+    "descrizione": "Inezgane - Marocco"
   },
   {
     "nome": "2025-11-12-12H50M08",
@@ -9144,7 +9514,8 @@
     "data": "12/11/2025",
     "lat": 30.413451,
     "lon": -9.57851,
-    "foto": "foto/spagna marocco 2025/2025-11-12-12h50m08.jpg"
+    "foto": "foto/spagna marocco 2025/2025-11-12-12h50m08.jpg",
+    "descrizione": "Inezgane - Marocco"
   },
   {
     "nome": "2025-11-12-13H23M40",
@@ -9153,7 +9524,8 @@
     "data": "12/11/2025",
     "lat": 30.412777,
     "lon": -9.580178,
-    "foto": "foto/spagna marocco 2025/2025-11-12-13h23m40.jpg"
+    "foto": "foto/spagna marocco 2025/2025-11-12-13h23m40.jpg",
+    "descrizione": "Inezgane - Marocco"
   },
   {
     "nome": "2025-11-12-13H45M36",
@@ -9162,7 +9534,8 @@
     "data": "12/11/2025",
     "lat": 30.412796,
     "lon": -9.580248,
-    "foto": "foto/spagna marocco 2025/2025-11-12-13h45m36.jpg"
+    "foto": "foto/spagna marocco 2025/2025-11-12-13h45m36.jpg",
+    "descrizione": "Inezgane - Marocco"
   },
   {
     "nome": "2025-11-14-15H41M04",
@@ -9171,7 +9544,8 @@
     "data": "14/11/2025",
     "lat": 30.509933,
     "lon": -9.686932,
-    "foto": "foto/spagna marocco 2025/2025-11-14-15h41m04.jpg"
+    "foto": "foto/spagna marocco 2025/2025-11-14-15h41m04.jpg",
+    "descrizione": "Agadir - Marocco"
   },
   {
     "nome": "2025-11-14-15H46M02",
@@ -9180,7 +9554,8 @@
     "data": "14/11/2025",
     "lat": 30.511857,
     "lon": -9.687247,
-    "foto": "foto/spagna marocco 2025/2025-11-14-15h46m02.jpg"
+    "foto": "foto/spagna marocco 2025/2025-11-14-15h46m02.jpg",
+    "descrizione": "Agadir - Marocco"
   },
   {
     "nome": "2025-11-15-10H52M55",
@@ -9189,7 +9564,8 @@
     "data": "15/11/2025",
     "lat": 30.531692,
     "lon": -9.69553,
-    "foto": "foto/spagna marocco 2025/2025-11-15-10h52m55.jpg"
+    "foto": "foto/spagna marocco 2025/2025-11-15-10h52m55.jpg",
+    "descrizione": "Agadir - Marocco"
   },
   {
     "nome": "2025-11-15-11H32M14",
@@ -9198,7 +9574,8 @@
     "data": "15/11/2025",
     "lat": 30.5442,
     "lon": -9.707771,
-    "foto": "foto/spagna marocco 2025/2025-11-15-11h32m14.jpg"
+    "foto": "foto/spagna marocco 2025/2025-11-15-11h32m14.jpg",
+    "descrizione": "Agadir - Marocco"
   },
   {
     "nome": "2025-11-15-11H55M19",
@@ -9207,7 +9584,8 @@
     "data": "15/11/2025",
     "lat": 30.544876,
     "lon": -9.710183,
-    "foto": "foto/spagna marocco 2025/2025-11-15-11h55m19.jpg"
+    "foto": "foto/spagna marocco 2025/2025-11-15-11h55m19.jpg",
+    "descrizione": "Agadir - Marocco"
   },
   {
     "nome": "2025-11-15-13H21M03",
@@ -9837,7 +10215,8 @@
     "data": "15/03/2004",
     "lat": 40.772449,
     "lon": -73.980904,
-    "foto": "foto/stati uniti 2004/2004-03-15-08h38m45.jpg"
+    "foto": "foto/stati uniti 2004/2004-03-15-08h38m45.jpg",
+    "descrizione": "Lincoln Center for the Performing Arts - New York City, New York"
   },
   {
     "nome": "2004-03-15-10H18M45",
@@ -9846,7 +10225,8 @@
     "data": "15/03/2004",
     "lat": 40.772482,
     "lon": -73.981075,
-    "foto": "foto/stati uniti 2004/2004-03-15-10h18m45.jpg"
+    "foto": "foto/stati uniti 2004/2004-03-15-10h18m45.jpg",
+    "descrizione": "Metropolitan Opera House Area - Upper West Side, New York City, New York"
   },
   {
     "nome": "2004-03-15-11H58M45",
@@ -9855,7 +10235,8 @@
     "data": "15/03/2004",
     "lat": 40.767509,
     "lon": -73.980603,
-    "foto": "foto/stati uniti 2004/2004-03-15-11h58m45.jpg"
+    "foto": "foto/stati uniti 2004/2004-03-15-11h58m45.jpg",
+    "descrizione": "Columbus Circle - Manhattan, New York City, New York"
   },
   {
     "nome": "2004-03-15-13H38M45",
@@ -9864,7 +10245,8 @@
     "data": "15/03/2004",
     "lat": 40.757786,
     "lon": -73.985705,
-    "foto": "foto/stati uniti 2004/2004-03-15-13h38m45.jpg"
+    "foto": "foto/stati uniti 2004/2004-03-15-13h38m45.jpg",
+    "descrizione": "Times Square - Manhattan, New York City, New York"
   },
   {
     "nome": "2004-03-15-15H18M45",
@@ -9873,7 +10255,8 @@
     "data": "15/03/2004",
     "lat": 40.758072,
     "lon": -73.985468,
-    "foto": "foto/stati uniti 2004/2004-03-15-15h18m45.jpg"
+    "foto": "foto/stati uniti 2004/2004-03-15-15h18m45.jpg",
+    "descrizione": "Duffy Square & Broadway Theater District - New York City, New York"
   },
   {
     "nome": "2004-03-15-16H58M45",
@@ -9882,7 +10265,8 @@
     "data": "15/03/2004",
     "lat": 40.748539,
     "lon": -73.985791,
-    "foto": "foto/stati uniti 2004/2004-03-15-16h58m45.jpg"
+    "foto": "foto/stati uniti 2004/2004-03-15-16h58m45.jpg",
+    "descrizione": "Empire State Building - Midtown Manhattan, New York City, New York"
   },
   {
     "nome": "2004-03-15-18H38M45",
@@ -9891,7 +10275,8 @@
     "data": "15/03/2004",
     "lat": 40.75532,
     "lon": -73.985453,
-    "foto": "foto/stati uniti 2004/2004-03-15-18h38m45.jpg"
+    "foto": "foto/stati uniti 2004/2004-03-15-18h38m45.jpg",
+    "descrizione": "Bryant Park - Midtown Manhattan, New York City, New York"
   },
   {
     "nome": "2004-03-15-20H18M45",
@@ -9900,7 +10285,8 @@
     "data": "15/03/2004",
     "lat": 40.703497,
     "lon": -74.014893,
-    "foto": "foto/stati uniti 2004/2004-03-15-20h18m45.jpg"
+    "foto": "foto/stati uniti 2004/2004-03-15-20h18m45.jpg",
+    "descrizione": "Battery Park - Lower Manhattan, New York City, New York"
   },
   {
     "nome": "2004-03-15-21H58M45",
@@ -9909,7 +10295,8 @@
     "data": "15/03/2004",
     "lat": 40.708231,
     "lon": -73.999701,
-    "foto": "foto/stati uniti 2004/2004-03-15-21h58m45.jpg"
+    "foto": "foto/stati uniti 2004/2004-03-15-21h58m45.jpg",
+    "descrizione": "Brooklyn Bridge - Manhattan Side, New York City, New York"
   },
   {
     "nome": "2004-03-15-23H38M45",
@@ -9918,7 +10305,8 @@
     "data": "15/03/2004",
     "lat": 40.750971,
     "lon": -73.991944,
-    "foto": "foto/stati uniti 2004/2004-03-15-23h38m45.jpg"
+    "foto": "foto/stati uniti 2004/2004-03-15-23h38m45.jpg",
+    "descrizione": "Madison Square Garden & Penn Station Area - New York City, New York"
   },
   {
     "nome": "2004-03-16-01H18M45",
@@ -9927,7 +10315,8 @@
     "data": "16/03/2004",
     "lat": 35.032667,
     "lon": -111.022768,
-    "foto": "foto/stati uniti 2004/2004-03-16-01h18m45.jpg"
+    "foto": "foto/stati uniti 2004/2004-03-16-01h18m45.jpg",
+    "descrizione": "Standin' on the Corner Park - Winslow, Arizona"
   },
   {
     "nome": "2004-03-16-02H58M45",
@@ -9936,7 +10325,8 @@
     "data": "16/03/2004",
     "lat": 35.032105,
     "lon": -111.025729,
-    "foto": "foto/stati uniti 2004/2004-03-16-02h58m45.jpg"
+    "foto": "foto/stati uniti 2004/2004-03-16-02h58m45.jpg",
+    "descrizione": "Route 66 Historic District - Winslow, Arizona"
   },
   {
     "nome": "2004-03-16-04H38M45",
@@ -9945,7 +10335,8 @@
     "data": "16/03/2004",
     "lat": 34.988999,
     "lon": -109.781264,
-    "foto": "foto/stati uniti 2004/2004-03-16-04h38m45.jpg"
+    "foto": "foto/stati uniti 2004/2004-03-16-04h38m45.jpg",
+    "descrizione": "Petrified Forest National Park - Holbrook, Arizona"
   },
   {
     "nome": "2004-03-16-06H18M45",
@@ -9954,7 +10345,8 @@
     "data": "16/03/2004",
     "lat": 36.039105,
     "lon": -112.126465,
-    "foto": "foto/stati uniti 2004/2004-03-16-06h18m45.jpg"
+    "foto": "foto/stati uniti 2004/2004-03-16-06h18m45.jpg",
+    "descrizione": "Grand Canyon Village Area - Grand Canyon National Park, Arizona"
   },
   {
     "nome": "2004-03-16-07H58M45",
@@ -9963,7 +10355,8 @@
     "data": "16/03/2004",
     "lat": 36.063809,
     "lon": -112.121658,
-    "foto": "foto/stati uniti 2004/2004-03-16-07h58m45.jpg"
+    "foto": "foto/stati uniti 2004/2004-03-16-07h58m45.jpg",
+    "descrizione": "Mather Point - South Rim, Grand Canyon National Park, Arizona"
   },
   {
     "nome": "2004-03-16-09H38M45",
@@ -9972,7 +10365,8 @@
     "data": "16/03/2004",
     "lat": 36.068805,
     "lon": -112.151012,
-    "foto": "foto/stati uniti 2004/2004-03-16-09h38m45.jpg"
+    "foto": "foto/stati uniti 2004/2004-03-16-09h38m45.jpg",
+    "descrizione": "Yavapai Point - South Rim, Grand Canyon National Park, Arizona"
   },
   {
     "nome": "2004-03-16-11H18M45",
@@ -9981,7 +10375,8 @@
     "data": "16/03/2004",
     "lat": 36.070799,
     "lon": -112.153716,
-    "foto": "foto/stati uniti 2004/2004-03-16-11h18m45.jpg"
+    "foto": "foto/stati uniti 2004/2004-03-16-11h18m45.jpg",
+    "descrizione": "Yavapai Geology Museum & Overlook - Grand Canyon National Park, Arizona"
   },
   {
     "nome": "2004-03-16-12H58M45",
@@ -9990,7 +10385,8 @@
     "data": "16/03/2004",
     "lat": 36.073592,
     "lon": -112.155218,
-    "foto": "foto/stati uniti 2004/2004-03-16-12h58m45.jpg"
+    "foto": "foto/stati uniti 2004/2004-03-16-12h58m45.jpg",
+    "descrizione": "Bright Angel Trailhead - South Rim, Grand Canyon National Park, Arizona"
   },
   {
     "nome": "2004-03-16-14H38M45",
@@ -9999,7 +10395,8 @@
     "data": "16/03/2004",
     "lat": 37.210131,
     "lon": -112.98593,
-    "foto": "foto/stati uniti 2004/2004-03-16-14h38m45.jpg"
+    "foto": "foto/stati uniti 2004/2004-03-16-14h38m45.jpg",
+    "descrizione": "Zion Canyon Visitor Center - Zion National Park, Springdale, Utah"
   },
   {
     "nome": "2004-03-16-16H18M45",
@@ -10008,7 +10405,8 @@
     "data": "16/03/2004",
     "lat": 37.201197,
     "lon": -112.986996,
-    "foto": "foto/stati uniti 2004/2004-03-16-16h18m45.jpg"
+    "foto": "foto/stati uniti 2004/2004-03-16-16h18m45.jpg",
+    "descrizione": "Watchman Trailhead & Virgin River - Zion National Park, Utah"
   },
   {
     "nome": "2004-03-16-17H58M45",
@@ -10017,7 +10415,8 @@
     "data": "16/03/2004",
     "lat": 36.303719,
     "lon": -116.813249,
-    "foto": "foto/stati uniti 2004/2004-03-16-17h58m45.jpg"
+    "foto": "foto/stati uniti 2004/2004-03-16-17h58m45.jpg",
+    "descrizione": "Zabriskie Point - Death Valley National Park, California"
   },
   {
     "nome": "2004-03-16-19H38M45",
@@ -10026,7 +10425,8 @@
     "data": "16/03/2004",
     "lat": 36.370433,
     "lon": -116.846466,
-    "foto": "foto/stati uniti 2004/2004-03-16-19h38m45.jpg"
+    "foto": "foto/stati uniti 2004/2004-03-16-19h38m45.jpg",
+    "descrizione": "Furnace Creek Visitor Center - Death Valley National Park, California"
   },
   {
     "nome": "2004-03-16-21H18M45",
@@ -10035,7 +10435,8 @@
     "data": "16/03/2004",
     "lat": 36.611118,
     "lon": -116.993408,
-    "foto": "foto/stati uniti 2004/2004-03-16-21h18m45.jpg"
+    "foto": "foto/stati uniti 2004/2004-03-16-21h18m45.jpg",
+    "descrizione": "Mesquite Flat Sand Dunes - Death Valley National Park, California"
   },
   {
     "nome": "2004-03-16-22H58M45",
@@ -10044,7 +10445,8 @@
     "data": "16/03/2004",
     "lat": 36.456964,
     "lon": -116.861689,
-    "foto": "foto/stati uniti 2004/2004-03-16-22h58m45.jpg"
+    "foto": "foto/stati uniti 2004/2004-03-16-22h58m45.jpg",
+    "descrizione": "Badwater Road Scenic Drive - Death Valley National Park, California"
   },
   {
     "nome": "2004-03-17-00H38M45",
@@ -10053,7 +10455,8 @@
     "data": "17/03/2004",
     "lat": 34.008417,
     "lon": -118.498719,
-    "foto": "foto/stati uniti 2004/2004-03-17-00h38m45.jpg"
+    "foto": "foto/stati uniti 2004/2004-03-17-00h38m45.jpg",
+    "descrizione": "Santa Monica Pier - Santa Monica, Los Angeles, California"
   },
   {
     "nome": "2004-03-17-02H18M45",
@@ -10062,7 +10465,8 @@
     "data": "17/03/2004",
     "lat": 33.98366,
     "lon": -118.466441,
-    "foto": "foto/stati uniti 2004/2004-03-17-02h18m45.jpg"
+    "foto": "foto/stati uniti 2004/2004-03-17-02h18m45.jpg",
+    "descrizione": "Venice Beach Boardwalk - Venice, Los Angeles, California"
   },
   {
     "nome": "2004-03-17-03H58M45",
@@ -10071,7 +10475,8 @@
     "data": "17/03/2004",
     "lat": 34.102081,
     "lon": -118.3296,
-    "foto": "foto/stati uniti 2004/2004-03-17-03h58m45.jpg"
+    "foto": "foto/stati uniti 2004/2004-03-17-03h58m45.jpg",
+    "descrizione": "Hollywood Walk of Fame - Hollywood, Los Angeles, California"
   },
   {
     "nome": "2004-03-17-05H38M45",
@@ -10080,7 +10485,8 @@
     "data": "17/03/2004",
     "lat": 36.095718,
     "lon": -115.180123,
-    "foto": "foto/stati uniti 2004/2004-03-17-05h38m45.jpg"
+    "foto": "foto/stati uniti 2004/2004-03-17-05h38m45.jpg",
+    "descrizione": "Welcome to Fabulous Las Vegas Sign - Las Vegas, Nevada"
   },
   {
     "nome": "2004-03-17-07H18M45",
@@ -10089,7 +10495,8 @@
     "data": "17/03/2004",
     "lat": 36.107543,
     "lon": -115.170536,
-    "foto": "foto/stati uniti 2004/2004-03-17-07h18m45.jpg"
+    "foto": "foto/stati uniti 2004/2004-03-17-07h18m45.jpg",
+    "descrizione": "MGM Grand & Tropicana Junction - The Strip, Las Vegas, Nevada"
   },
   {
     "nome": "2004-03-17-08H58M45",
@@ -10098,7 +10505,8 @@
     "data": "17/03/2004",
     "lat": 36.111044,
     "lon": -115.171952,
-    "foto": "foto/stati uniti 2004/2004-03-17-08h58m45.jpg"
+    "foto": "foto/stati uniti 2004/2004-03-17-08h58m45.jpg",
+    "descrizione": "Planet Hollywood & CityCenter Area - The Strip, Las Vegas, Nevada"
   },
   {
     "nome": "2004-03-17-10H38M45",
@@ -10107,7 +10515,8 @@
     "data": "17/03/2004",
     "lat": 36.112574,
     "lon": -115.172532,
-    "foto": "foto/stati uniti 2004/2004-03-17-10h38m45.jpg"
+    "foto": "foto/stati uniti 2004/2004-03-17-10h38m45.jpg",
+    "descrizione": "Bellagio Fountains & Resort - Las Vegas Boulevard, Las Vegas, Nevada"
   },
   {
     "nome": "2004-03-17-12H18M45",
@@ -10116,7 +10525,8 @@
     "data": "17/03/2004",
     "lat": 36.121808,
     "lon": -115.176217,
-    "foto": "foto/stati uniti 2004/2004-03-17-12h18m45.jpg"
+    "foto": "foto/stati uniti 2004/2004-03-17-12h18m45.jpg",
+    "descrizione": "The Mirage & Caesars Palace Area - The Strip, Las Vegas, Nevada"
   },
   {
     "nome": "2005-07-20-16H11M37",
