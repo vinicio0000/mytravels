@@ -1,4 +1,4 @@
-<!-- VERSION: 2.4_SPLASH_RESPONSIVE_PC_MOBILE_GRAPHIC_HELP -->
+<!-- VERSION: 2.5_SPLASH_FIX -->
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -17,7 +17,8 @@
   <link rel="canonical" href="https://vinicio0000.github.io/mytravels/">
 
   <!-- Favicon -->
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><circle cx='32' cy='32' r='30' fill='%231e3c72'/><circle cx='32' cy='32' r='28' fill='none' stroke='%2352b69a' stroke-width='2'/><path fill='none' stroke='%23ffffff' stroke-width='1.5' opacity='0.5' d='M8 32h48M32 8a30 30 0 0 0 0 48M32 8a30 30 0 0 1 0 48'/><path fill='%23e6194b' stroke='%23ffffff' stroke-width='1.5' d='M32 10c-5.5 0-10 4.5-10 10 0 7.5 10 17 10 17s10-9.5 10-17c0-5.5-4.5-10-10-10zm0 13a3 3 0 1 1 0-6 3 3 0 0 1 0 6z'/><rect x='18' y='42' width='28' height='12' rx='2' fill='%23ffffff'/><rect x='38' y='44' width='6' height='5' rx='1' fill='%231e3c72'/><circle cx='24' cy='54' r='2.5' fill='%23333333'/><circle cx='40' cy='54' r='2.5' fill='%23333333'/></svg>">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><circle cx='32' cy='32' r='30' fill='%231e3c72'/><circle cx='32' cy='32' r='28' fill='none' stroke='%2352b69a' stroke-width='2'/><path fill='none' stroke='%23ffffff' stroke-width='1.5' opacity='0.5' d='M8 32h48M32 8a30 30 0 0 0 0 48M32 8a30 30 0 0 1 0 48'/><path fill='%23e6194b' stroke='%23ffffff' stroke-width='1.5' d='M32 10c-5.5 0-10 4.5-10 10 0 7.5 10 17 10 17s10-9.5 10-17c0-5.5-4.5-10-10-10zm0 13a3 3 0 1 1 0-6 3 3 0 0 1 0 6z'/><rect x='18' y='42' width='28' height='12' rx='2' fill='%23ffffff'/><rect x='38' y='44' width='6' height='5' rx='1' fill='%231e3c72'/><circle cx='24' cy='54' r='2.5' fill='%23333333'/><circle cx='40' cy='54' r='2.5' fill='%23333333'/></svg>">
+  
   <!-- Leaflet CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <!-- Leaflet MarkerCluster CSS -->
@@ -42,7 +43,7 @@
       width: 100vw;
       height: 100vh;
       height: 100dvh;
-      background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+      background-color: #1e3c72; /* Sfondo solido istantaneo per evitare il flash della mappa */
       background-size: cover;
       background-position: center;
       color: #ffffff;
@@ -56,17 +57,6 @@
       box-sizing: border-box;
       transition: opacity 0.8s ease, visibility 0.8s ease;
       cursor: pointer;
-    }
-
-    @media (orientation: landscape) {
-      #splash-screen {
-        background-image: url('splash_oriz.jpg');
-      }
-    }
-    @media (orientation: portrait) {
-      #splash-screen {
-        background-image: url('splash_vert.jpg');
-      }
     }
 
     .splash-card {
@@ -638,7 +628,7 @@
         </ul>
 
         <hr style="border:0; border-top:1px solid #ddd; margin:10px 0;">
-        <small style="color:#666; display:block; text-align:center;">Software sviluppato nel 2026 da Ing. Vinicio Barone con AI Gemini</small>
+        <small style="color:#666; display:block; text-align:center;">Sito e codice sviluppati nel 2026 da Ing. Vinicio Barone con l'assistenza dell'AI Gemini</small>
       </div>
     </div>
   </div>
@@ -649,18 +639,13 @@
   <script>
     function applicaImmagineSplash() {
       const isMobile = window.innerWidth <= 900 || window.innerHeight > window.innerWidth;
-      const fileSplash = isMobile ? 'splash_vert.png' : 'splash_oriz.png';
-      
-      const imgSplash = new Image();
-      imgSplash.src = fileSplash;
-      imgSplash.onload = function() {
-        const splash = document.getElementById('splash-screen');
-        if (splash) {
-          splash.style.backgroundImage = "url('" + fileSplash + "')";
-          splash.style.backgroundSize = "cover";
-          splash.style.backgroundPosition = "center";
-        }
-      };
+      const fileSplash = isMobile ? 'splash_vert.jpg' : 'splash_oriz.jpg';
+      const splash = document.getElementById('splash-screen');
+      if (splash) {
+        splash.style.backgroundImage = "url('" + fileSplash + "')";
+        splash.style.backgroundSize = "cover";
+        splash.style.backgroundPosition = "center";
+      }
     }
 
     applicaImmagineSplash();
