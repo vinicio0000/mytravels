@@ -92,20 +92,10 @@
     }
 
     .splash-card p {
-      margin: 0 0 20px 0;
+      margin: 0;
       font-size: 14px;
       opacity: 0.95;
       text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-    }
-
-    .splash-timer-badge {
-      display: inline-block;
-      background: rgba(255, 255, 255, 0.25);
-      padding: 6px 14px;
-      border-radius: 20px;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.5px;
     }
 
     /* MAPPA A TUTTO SCHERMO */
@@ -515,7 +505,6 @@
     <div class="splash-card">
       <h1>🌍 La mappa dei viaggi<br>di Vinicio e Luisa</h1>
       <p>Ripercorri le nostre tappe: seleziona il viaggio e avvia la slideshow</p>
-      <div class="splash-timer-badge">Apertura tra <span id="splash-countdown">5</span>s • Tocca per entrare</div>
     </div>
   </div>
 
@@ -697,8 +686,6 @@
     let splashSeconds = 4;
     const splashTimer = setInterval(() => {
       splashSeconds--;
-      const badge = document.getElementById('splash-countdown');
-      if (badge) badge.textContent = splashSeconds;
       if (splashSeconds <= 0) {
         chiudiSplash();
       }
