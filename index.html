@@ -62,12 +62,12 @@
     /* Regola CSS di fallback per schermi orizzontali e verticali */
     @media (orientation: landscape) {
       #splash-screen {
-        background-image: url('splash_oriz.png');
+        background-image: url('splash_oriz.jpg');
       }
     }
     @media (orientation: portrait) {
       #splash-screen {
-        background-image: url('splash_vert.png');
+        background-image: url('splash_vert.jpg');
       }
     }
 
@@ -514,8 +514,8 @@
   <div id="splash-screen" onclick="chiudiSplash()">
     <div class="splash-card">
       <h1>🌍 La mappa dei viaggi<br>di Vinicio e Luisa</h1>
-      <p>Esplora i ricordi e le tappe nel mondo</p>
-      <div class="splash-timer-badge">Apertura tra <span id="splash-countdown">3</span>s • Tocca per entrare</div>
+      <p>Ripercorri le nostre tappe: seleziona il viaggio e avvia la slideshow</p>
+      <div class="splash-timer-badge">Apertura tra <span id="splash-countdown">5</span>s • Tocca per entrare</div>
     </div>
   </div>
 
@@ -694,7 +694,7 @@
     }
 
     // GESTIONE CONTO ALLA ROVESCIA SPLASH SCREEN
-    let splashSeconds = 3;
+    let splashSeconds = 4;
     const splashTimer = setInterval(() => {
       splashSeconds--;
       const badge = document.getElementById('splash-countdown');
