@@ -1,4 +1,4 @@
-<!-- VERSION: 2.2_SPLASH_RESPONSIVE_PC_MOBILE -->
+<!-- VERSION: 2.3_SPLASH_RESPONSIVE_PC_MOBILE_GRAPHIC_HELP -->
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -59,7 +59,6 @@
       cursor: pointer;
     }
 
-    /* Regola CSS di fallback per schermi orizzontali e verticali */
     @media (orientation: landscape) {
       #splash-screen {
         background-image: url('splash_oriz.jpg');
@@ -199,7 +198,6 @@
       gap: 8px;
     }
 
-    /* PULSANTE HAMBURGER */
     #btn-hamburger {
       background: #f0f4f8;
       border: 1px solid #ccc;
@@ -215,7 +213,6 @@
       background: #e2e8f0;
     }
 
-    /* PANNELLO MENU HAMBURGER */
     #menu-panel {
       display: none;
       position: absolute;
@@ -460,7 +457,7 @@
       padding: 20px;
       border-radius: 12px;
       max-width: 90vw;
-      width: 450px;
+      width: 480px;
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
       box-sizing: border-box;
     }
@@ -514,7 +511,6 @@
 
   <!-- CONTENITORE FILTRI PRINCIPALI -->
   <div id="filtro-container">
-    <!-- GRUPPO ANNO (NASCOSTO DI DEFAULT) -->
     <div id="group-anno" class="filtro-group" style="display: none;">
       <label for="select-anno"><b>Anno:</b></label>
       <select id="select-anno" onchange="cambiaAnno()">
@@ -522,7 +518,6 @@
       </select>
     </div>
     
-    <!-- GRUPPO VIAGGIO + HAMBURGER (SEMPRE IN ALTO) -->
     <div class="filtro-group">
       <label for="select-viaggio"><b>Viaggio:</b></label>
       <select id="select-viaggio" onchange="cambiaViaggio()">
@@ -533,7 +528,7 @@
 
     <button id="btn-slideshow" onclick="avviaSlideshow()">▶ Avvia Slideshow</button>
 
-    <!-- MENU A COMPARSA (HAMBURGER) -->
+    <!-- MENU HAMBURGER -->
     <div id="menu-panel">
       <label class="checkbox-label">
         <input type="checkbox" id="check-cluster" onchange="aggiornaMappa()">
@@ -589,14 +584,47 @@
     <img class="modal-foto-content" id="imgModalSrc" onclick="event.stopPropagation()">
   </div>
 
-  <!-- MODALE PER LA GUIDA / AIUTO -->
+  <!-- MODALE PER LA GUIDA / AIUTO CON SFONDO GRAFICO -->
   <div id="modal-aiuto" class="modal-foto" onclick="chiudiModalAiuto()" style="z-index: 100002;">
-    <div class="modal-aiuto-card" onclick="event.stopPropagation()">
-      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
-        <h3 style="margin:0; font-size:15px; color:#2c3e50;">ℹ️ Guida e Aiuto</h3>
-        <button onclick="chiudiModalAiuto()" style="background:none; border:none; font-size:18px; cursor:pointer; color:#666;">✖</button>
+    <div class="modal-aiuto-card" onclick="event.stopPropagation()" style="
+      background: linear-gradient(rgba(255, 255, 255, 0.93), rgba(255, 255, 255, 0.93)), url('mappamondo.jpg');
+      background-size: cover;
+      background-position: center;
+      border: 1px solid rgba(0,0,0,0.15);
+    ">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; border-bottom: 2px solid #007bff; padding-bottom: 6px;">
+        <h3 style="margin:0; font-size:16px; color:#2c3e50;">🌍 Guida e Informazioni</h3>
+        <button onclick="chiudiModalAiuto()" style="background:none; border:none; font-size:20px; cursor:pointer; color:#666;">✖</button>
       </div>
-      <pre id="aiuto-contenuto" style="white-space: pre-wrap; word-wrap: break-word; font-family: inherit; font-size: 13px; color: #333; max-height: 60vh; overflow-y: auto; margin: 0;"></pre>
+      
+      <div style="font-size: 13px; color: #2c3e50; max-height: 65vh; overflow-y: auto; padding-right: 5px; line-height: 1.5;">
+        <p style="margin-top:0;">Questo progetto raccoglie tutti i viaggi effettuati nel corso degli anni, sia in aereo (in modo individuale e auto-organizzato) sia in camper. Ogni scatto è geotaggato e posizionato sulla mappa esattamente nel punto in cui è stato realizzato.</p>
+
+        <hr style="border:0; border-top:1px solid #ddd; margin:10px 0;">
+
+        <b style="color:#007bff;">📍 ESPLORAZIONE INDIVIDUALE</b>
+        <p style="margin: 4px 0 10px 0;">
+          Clicca su una qualsiasi puntina colorata 
+          <svg width="14" height="22" viewBox="0 0 25 41" style="vertical-align: middle;"><path d="M12.5 0C5.6 0 0 5.6 0 12.5C0 21.9 12.5 41 12.5 41C12.5 41 25 21.9 25 12.5C25 5.6 19.4 0 12.5 0Z" fill="#007bff" stroke="#FFF" stroke-width="1.5"/><circle cx="12.5" cy="12.5" r="5" fill="#FFF"/></svg>
+          per aprire il popup con l'anteprima della foto, la data e la descrizione del luogo. Clicca sulla foto dentro il popup per ingrandirla a schermo intero.
+        </p>
+
+        <b style="color:#007bff;">▶ MODALITÀ SLIDESHOW</b>
+        <p style="margin: 4px 0 10px 0;">
+          Seleziona uno specifico **Viaggio** dal menu in alto e premi <b>▶ Avvia Slideshow</b>. Lo schermo si dividerà in due: la foto nella metà superiore e la mappa in basso con la puntina della foto corrente evidenziata in giallo 
+          <svg width="14" height="22" viewBox="0 0 25 41" style="vertical-align: middle;"><path d="M12.5 0C5.6 0 0 5.6 0 12.5C0 21.9 12.5 41 12.5 41C12.5 41 25 21.9 25 12.5C25 5.6 19.4 0 12.5 0Z" fill="#FFD700" stroke="#FFF" stroke-width="1.5"/><circle cx="12.5" cy="12.5" r="5" fill="#FFF"/></svg>.
+        </p>
+
+        <b style="color:#007bff;">🎛 CONTROLLI SLIDESHOW</b>
+        <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:6px; margin-bottom:10px;">
+          <span style="background:#2c3e50; color:#fff; padding:3px 8px; border-radius:12px; font-size:11px;">◀ Prec</span>
+          <span style="background:#2c3e50; color:#fff; padding:3px 8px; border-radius:12px; font-size:11px;">⏸ Pausa</span>
+          <span style="background:#2c3e50; color:#fff; padding:3px 8px; border-radius:12px; font-size:11px;">Succ ▶</span>
+          <span style="background:#2c3e50; color:#fff; padding:3px 8px; border-radius:12px; font-size:11px;">4s ▾ Velocità</span>
+          <span style="background:#dc3545; color:#fff; padding:3px 8px; border-radius:12px; font-size:11px;">✖ Esci</span>
+        </div>
+        <small style="color:#666; display:block; font-style:italic;">Su smartphone e tablet puoi fare lo swipe orizzontale direttamente sulla foto per scorrere avanti e indietro.</small>
+      </div>
     </div>
   </div>
 
@@ -604,7 +632,6 @@
   <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
 
   <script>
-    // PRECARICAMENTO E SELEZIONE DINAMICA DELL'IMMAGINE SPLASH (PC vs SMARTPHONE)
     function applicaImmagineSplash() {
       const isMobile = window.innerWidth <= 900 || window.innerHeight > window.innerWidth;
       const fileSplash = isMobile ? 'splash_vert.png' : 'splash_oriz.png';
@@ -623,13 +650,11 @@
 
     applicaImmagineSplash();
 
-    // GESTIONE MENU HAMBURGER
     function toggleMenu() {
       const menu = document.getElementById('menu-panel');
       if (menu) menu.classList.toggle('show');
     }
 
-    // Chiude il menu hamburger se si clicca fuori
     document.addEventListener('click', function(e) {
       const menu = document.getElementById('menu-panel');
       const btn = document.getElementById('btn-hamburger');
@@ -638,7 +663,6 @@
       }
     });
 
-    // GESTIONE ABILITAZIONE / DISABILITAZIONE FILTRO ANNO
     function toggleAbilitaAnno() {
       const abilita = document.getElementById('check-abilita-anno').checked;
       const groupAnno = document.getElementById('group-anno');
@@ -653,36 +677,18 @@
       }
     }
 
-    // GESTIONE VISUALIZZAZIONE FILE DI AIUTO
     function mostraAiuto() {
       const menu = document.getElementById('menu-panel');
       if (menu) menu.classList.remove('show');
 
       const modal = document.getElementById('modal-aiuto');
-      const contenuto = document.getElementById('aiuto-contenuto');
-      
-      fetch('aiuto.txt')
-        .then(response => {
-          if (!response.ok) {
-            throw new Error('File non trovato');
-          }
-          return response.text();
-        })
-        .then(text => {
-          contenuto.textContent = text;
-          modal.style.display = 'flex';
-        })
-        .catch(err => {
-          contenuto.textContent = 'File di aiuto (aiuto.txt) non presente nella cartella del sito.';
-          modal.style.display = 'flex';
-        });
+      modal.style.display = 'flex';
     }
 
     function chiudiModalAiuto() {
       document.getElementById('modal-aiuto').style.display = 'none';
     }
 
-    // GESTIONE CONTO ALLA ROVESCIA SPLASH SCREEN
     let splashSeconds = 4;
     const splashTimer = setInterval(() => {
       splashSeconds--;
@@ -700,7 +706,7 @@
         setTimeout(() => {
           splash.style.display = 'none';
           map.invalidateSize();
-          avviaPanIniziale(); // Avvia lo scorrimento fluido quadro per quadro
+          avviaPanIniziale();
         }, 800);
       }
     }
@@ -748,13 +754,12 @@
     let touchStartX = 0;
     let touchStartY = 0;
 
-    // SCORRIMENTO FLUIDO DA ALASKA A GIAPPONE TRAMITE requestAnimationFrame
     function avviaPanIniziale() {
       panInizialeAttivo = true;
       map.setView([40, -140], 3, { animate: false });
 
       let startTime = null;
-      const durataMs = 20000; // 20 secondi di scorrimento uniforme e progressivo
+      const durataMs = 20000;
 
       const startLat = 40;
       const endLat = 30;
@@ -797,7 +802,6 @@
       }
     }
 
-    // Interrompe la panoramica automatica se l'utente interagisce
     map.on('dragstart zoomstart mousedown touchstart', fermaPanIniziale);
 
     function creaIconaColorata(coloreHex, isBig = false) {
