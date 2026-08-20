@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mappa Foto Viaggi</title>
+  
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: #f4f6f8;
+      color: #333;
+    }
+
+    #map {
+      width: 100%;
+      height: 100vh;
+      z-index: 1;
+    }
+
+    /* Styling del Popup */
+    .popup-container {
+      text-align: center;
+      max-width: 220px;
+    }
+
+    .popup-foto {
+      width: 100%;
+      max-height: 160px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-top: 8px;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      transition: transform 0.2s;
+    }
+
+    .popup-foto:hover {
+      transform: scale(1.02);
+    }
+
+    /* Modal Foto Ingredita */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .modal-content {
+      max-width: 90%;
+      max-height: 80vh;
+      border-radius: 4px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    }
+
+    .modal-caption {
+      color: #fff;
+      margin-top: 15px;
+      font-size: 16px;
+      text-align: center;
+      max-width: 80%;
+    }
+
+    .close-modal {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      color: #fff;
+      font-size: 35px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    /* Controlli Slideshow nel Modal */
+    .modal-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      padding: 15px;
+      user-select: none;
+      background: rgba(0,0,0,0.3);
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-nav:hover {
+      background: rgba(0,0,0,0.8);
+    }
+
+    .prev-btn { left: 20px; }
+    .next-btn { right: 20px; }
+  </style>
+</head>
+<body>
+
+  <div id="map"></div>
+
+  <!-- Modal Ingrandimento Foto -->
+  <div id="photo-modal" class="modal">
+    <span class="close-modal" onclick="chiudiModal()">&times;</span>
+    <span class="modal-nav prev-btn" onclick="cambiaFotoModal(-1)">&#10094;</span>
+    <img class="modal-content" id="modal-img">
+    <div class="modal-caption" id="modal-caption"></div>
+    <span class="modal-nav next-btn" onclick="cambiaFotoModal(1)">&#10095;</span>
+  </div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <script>
+    let mappa;
+    let puntiData = [];
+    let fotoCorrenteIndex = 0;
+
+    // Inizializzazione della mappa
+    function inizializzaMappa() {
+      mappa = L.map('map').setView([41.9028, 12.4964], 6); // Coordinate Italia default
+
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors'
+      }).addTo(mappa);
+
+      caricaDati();
+    }
+
+    // Caricamento del file dati.json
+    function caricaDati() {
+      fetch('dati.json')
+        .then(response => response.json())
+        .then(data => {
+          puntiData = data;
+          aggiornaMappa();
+        })
+        .catch(error => console.error('Errore nel caricamento dei dati JSON:', error));
+    }
+
+    // Rendering dei punti sulla mappa
+    function aggiornaMappa() {
+      if (!puntiData || puntiData.length === 0) return;
+
+      const bounds = [];
+
+      puntiData.forEach((p, index) => {
+        if (p.lat && p.lng) {
+          bounds.push([p.lat, p.lng]);
+
+          const fotoThumb = p.foto || '';
+          const htmlDescrizione = p.descrizione ? `<p style="font-style:italic; margin: 4px 0; color:#555; font-size: 12px;">${p.descrizione}</p>` : '';
+
+          const tooltipContent = `📅 ${p.data}`;
+
+          const popupContent = `
+            <div class="popup-container">
+              <small style="color: #666; font-weight: 600;">📅 ${p.data}</small>
+              ${htmlDescrizione}
+              <img src="${fotoThumb}" class="popup-foto" alt="Foto" onclick="apriModalFoto('${p.foto}', ${index})">
+              <a href="javascript:void(0)" onclick="apriModalFoto('${p.foto}', ${index})" style="display:inline-block; margin-top:6px; color:#007bff; font-weight:bold; text-decoration:none; font-size:12px;">Ingrandisci foto 🔍</a>
+            </div>
+          `;
+
+          const marker = L.marker([p.lat, p.lng]).addTo(mappa);
+          marker.bindTooltip(tooltipContent);
+          marker.bindPopup(popupContent);
+        }
+      });
+
+      if (bounds.length > 0) {
+        mappa.fitBounds(bounds, { padding: [50, 50] });
+      }
+    }
+
+    // Apertura del Modale Ingrandimento
+    function apriModalFoto(fotoUrl, index) {
+      fotoCorrenteIndex = index;
+      const p = puntiData[index];
+      
+      const modal = document.getElementById('photo-modal');
+      const modalImg = document.getElementById('modal-img');
+      const caption = document.getElementById('modal-caption');
+
+      modalImg.src = fotoUrl;
+      const descTesto = p.descrizione ? ` - ${p.descrizione}` : '';
+      caption.textContent = `📅 ${p.data}${descTesto}`;
+
+      modal.style.display = 'flex';
+    }
+
+    // Navigazione foto nel Modale
+    function cambiaFotoModal(direzione) {
+      fotoCorrenteIndex += direzione;
+
+      if (fotoCorrenteIndex < 0) {
+        fotoCorrenteIndex = puntiData.length - 1;
+      } else if (fotoCorrenteIndex >= puntiData.length) {
+        fotoCorrenteIndex = 0;
+      }
+
+      const p = puntiData[fotoCorrenteIndex];
+      const modalImg = document.getElementById('modal-img');
+      const caption = document.getElementById('modal-caption');
+
+      modalImg.src = p.foto;
+      const descTesto = p.descrizione ? ` - ${p.descrizione}` : '';
+      caption.textContent = `📅 ${p.data}${descTesto}`;
+    }
+
+    // Chiusura del Modale
+    function chiudiModal() {
+      document.getElementById('photo-modal').style.display = 'none';
+    }
+
+    // Gestione tastiera per chiudere o scorrere (ESC, Frecce)
+    document.addEventListener('keydown', function(event) {
+      const modal = document.getElementById('photo-modal');
+      if (modal.style.display === 'flex') {
+        if (event.key === 'Escape') chiudiModal();
+        if (event.key === 'ArrowLeft') cambiaFotoModal(-1);
+        if (event.key === 'ArrowRight') cambiaFotoModal(1);
+      }
+    });
+
+    // Avvio al caricamento della pagina
+    window.onload = inizializzaMappa;
+  </script>
+</body>
+</html>
