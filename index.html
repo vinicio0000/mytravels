@@ -1,4 +1,4 @@
-<!-- VERSION: 2.2_SPLASH_RESPONSIVE_PC_MOBILE -->
+<!-- VERSION: 2.4_NO_COUNTDOWN_TEXT -->
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -59,7 +59,6 @@
       cursor: pointer;
     }
 
-    /* Regola CSS di fallback per schermi orizzontali e verticali */
     @media (orientation: landscape) {
       #splash-screen {
         background-image: url('splash_oriz.jpg');
@@ -92,20 +91,10 @@
     }
 
     .splash-card p {
-      margin: 0 0 20px 0;
+      margin: 0;
       font-size: 14px;
       opacity: 0.95;
       text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-    }
-
-    .splash-timer-badge {
-      display: inline-block;
-      background: rgba(255, 255, 255, 0.25);
-      padding: 6px 14px;
-      border-radius: 20px;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.5px;
     }
 
     /* MAPPA A TUTTO SCHERMO */
@@ -119,7 +108,6 @@
       background: #aad3df;
     }
 
-    /* LAYOUT SPLIT-SCREEN DURANTE LO SLIDESHOW */
     body.slideshow-active #map {
       height: 50vh;
       height: 50dvh;
@@ -209,7 +197,6 @@
       gap: 8px;
     }
 
-    /* PULSANTE HAMBURGER */
     #btn-hamburger {
       background: #f0f4f8;
       border: 1px solid #ccc;
@@ -225,7 +212,6 @@
       background: #e2e8f0;
     }
 
-    /* PANNELLO MENU HAMBURGER */
     #menu-panel {
       display: none;
       position: absolute;
@@ -515,7 +501,6 @@
     <div class="splash-card">
       <h1>🌍 La mappa dei viaggi<br>di Vinicio e Luisa</h1>
       <p>Ripercorri le nostre tappe: seleziona il viaggio e avvia la slideshow</p>
-      <div class="splash-timer-badge">Apertura tra <span id="splash-countdown">5</span>s • Tocca per entrare</div>
     </div>
   </div>
 
@@ -525,7 +510,6 @@
 
   <!-- CONTENITORE FILTRI PRINCIPALI -->
   <div id="filtro-container">
-    <!-- GRUPPO ANNO (NASCOSTO DI DEFAULT) -->
     <div id="group-anno" class="filtro-group" style="display: none;">
       <label for="select-anno"><b>Anno:</b></label>
       <select id="select-anno" onchange="cambiaAnno()">
@@ -533,7 +517,6 @@
       </select>
     </div>
     
-    <!-- GRUPPO VIAGGIO + HAMBURGER (SEMPRE IN ALTO) -->
     <div class="filtro-group">
       <label for="select-viaggio"><b>Viaggio:</b></label>
       <select id="select-viaggio" onchange="cambiaViaggio()">
@@ -544,7 +527,6 @@
 
     <button id="btn-slideshow" onclick="avviaSlideshow()">▶ Avvia Slideshow</button>
 
-    <!-- MENU A COMPARSA (HAMBURGER) -->
     <div id="menu-panel">
       <label class="checkbox-label">
         <input type="checkbox" id="check-cluster" onchange="aggiornaMappa()">
@@ -612,10 +594,9 @@
   </div>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.js"></script>
 
   <script>
-    // PRECARICAMENTO E SELEZIONE DINAMICA DELL'IMMAGINE SPLASH (PC vs SMARTPHONE)
     function applicaImmagineSplash() {
       const isMobile = window.innerWidth <= 900 || window.innerHeight > window.innerWidth;
       const fileSplash = isMobile ? 'splash_vert.png' : 'splash_oriz.png';
@@ -634,13 +615,11 @@
 
     applicaImmagineSplash();
 
-    // GESTIONE MENU HAMBURGER
     function toggleMenu() {
       const menu = document.getElementById('menu-panel');
       if (menu) menu.classList.toggle('show');
     }
 
-    // Chiude il menu hamburger se si clicca fuori
     document.addEventListener('click', function(e) {
       const menu = document.getElementById('menu-panel');
       const btn = document.getElementById('btn-hamburger');
@@ -649,7 +628,6 @@
       }
     });
 
-    // GESTIONE ABILITAZIONE / DISABILITAZIONE FILTRO ANNO
     function toggleAbilitaAnno() {
       const abilita = document.getElementById('check-abilita-anno').checked;
       const groupAnno = document.getElementById('group-anno');
@@ -664,7 +642,6 @@
       }
     }
 
-    // GESTIONE VISUALIZZAZIONE FILE DI AIUTO
     function mostraAiuto() {
       const menu = document.getElementById('menu-panel');
       if (menu) menu.classList.remove('show');
@@ -693,12 +670,10 @@
       document.getElementById('modal-aiuto').style.display = 'none';
     }
 
-    // GESTIONE CONTO ALLA ROVESCIA SPLASH SCREEN
-    let splashSeconds = 4;
+    // CHIUSURA AUTOMATICA SPLASH SCREEN DOPO 5 SECONDI
+    let splashSeconds = 5;
     const splashTimer = setInterval(() => {
       splashSeconds--;
-      const badge = document.getElementById('splash-countdown');
-      if (badge) badge.textContent = splashSeconds;
       if (splashSeconds <= 0) {
         chiudiSplash();
       }
@@ -712,31 +687,43 @@
         splash.style.visibility = 'hidden';
         setTimeout(() => {
           splash.style.display = 'none';
-          map.invalidateSize();
-          avviaPanIniziale(); // Avvia lo scorrimento fluido quadro per quadro
+          inizializzaMappa();
         }, 800);
       }
     }
 
-    const map = L.map('map', { minZoom: 2 }).setView([40, -140], 3);
+    let map = null;
+    let clusterGroup = null;
+    let singleGroup = null;
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      maxZoom: 19,
-      attribution: '© OpenStreetMap'
-    }).addTo(map);
+    function inizializzaMappa() {
+      if (map !== null) return;
+
+      map = L.map('map', { minZoom: 2 }).setView([40, -140], 3);
+
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '© OpenStreetMap'
+      }).addTo(map);
+
+      clusterGroup = L.markerClusterGroup({ 
+        disableClusteringAtZoom: 16,
+        maxClusterRadius: 40 
+      });
+      singleGroup = L.layerGroup();
+
+      map.addLayer(clusterGroup);
+      map.addLayer(singleGroup);
+
+      map.on('dragstart zoomstart mousedown touchstart', fermaPanIniziale);
+
+      aggiornaMappa();
+      avviaPanIniziale();
+    }
 
     let tuttiIDati = [];
     let panInizialeAttivo = false;
     let animazionePanId = null;
-
-    const clusterGroup = L.markerClusterGroup({ 
-      disableClusteringAtZoom: 16,
-      maxClusterRadius: 40 
-    });
-    const singleGroup = L.layerGroup();
-    
-    map.addLayer(clusterGroup);
-    map.addLayer(singleGroup);
 
     const mappaColoriAnni = {};
     const tavolozzaColori = [
@@ -761,13 +748,13 @@
     let touchStartX = 0;
     let touchStartY = 0;
 
-    // SCORRIMENTO FLUIDO DA ALASKA A GIAPPONE TRAMITE requestAnimationFrame
     function avviaPanIniziale() {
+      if (!map) return;
       panInizialeAttivo = true;
       map.setView([40, -140], 3, { animate: false });
 
       let startTime = null;
-      const durataMs = 20000; // 20 secondi di scorrimento uniforme e progressivo
+      const durataMs = 20000;
 
       const startLat = 40;
       const endLat = 30;
@@ -775,7 +762,7 @@
       const endLon = 140;
 
       function anima(timestamp) {
-        if (!panInizialeAttivo) return;
+        if (!panInizialeAttivo || !map) return;
         if (!startTime) startTime = timestamp;
 
         const trascorso = timestamp - startTime;
@@ -810,9 +797,6 @@
       }
     }
 
-    // Interrompe la panoramica automatica se l'utente interagisce
-    map.on('dragstart zoomstart mousedown touchstart', fermaPanIniziale);
-
     function creaIconaColorata(coloreHex, isBig = false) {
       const w = isBig ? 32 : 25;
       const h = isBig ? 52 : 41;
@@ -838,7 +822,7 @@
         popolaAnni();
         popolaViaggi();
         document.getElementById('check-cluster').checked = false;
-        aggiornaMappa();
+        if (map) aggiornaMappa();
       })
       .catch(err => console.error("Errore nel caricamento di dati.json:", err));
 
@@ -910,6 +894,8 @@
     }
 
     function aggiornaMappa() {
+      if (!map) return;
+
       const annoSel = document.getElementById('select-anno').value;
       const viaggioSel = document.getElementById('select-viaggio').value;
       const legendaBox = document.getElementById('legenda-container');
@@ -1031,7 +1017,7 @@
       tempoIntervallo = parseInt(document.getElementById('select-speed').value, 10) || 4000;
 
       setTimeout(() => {
-        map.invalidateSize();
+        if (map) map.invalidateSize();
         mostraSlide(currentSlideIndex);
         avviaTimer();
       }, 100);
@@ -1054,7 +1040,7 @@
     }
 
     function mostraSlide(index) {
-      if (index < 0 || index >= markersSlideshow.length) return;
+      if (index < 0 || index >= markersSlideshow.length || !map) return;
 
       map.invalidateSize({ pan: false });
 
@@ -1100,7 +1086,7 @@
       clearInterval(slideshowTimer);
       
       document.body.classList.remove('slideshow-active');
-      map.invalidateSize();
+      if (map) map.invalidateSize();
 
       document.getElementById('filtro-container').style.display = 'flex';
       document.getElementById('slideshow-controls').style.display = 'none';
@@ -1193,7 +1179,7 @@
     });
 
     window.addEventListener('resize', function() {
-      map.invalidateSize();
+      if (map) map.invalidateSize();
       applicaImmagineSplash();
     });
   </script>
