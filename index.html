@@ -1,4 +1,4 @@
-<!-- VERSION: 2.3_SPLASH_RESPONSIVE_PC_MOBILE_GRAPHIC_HELP -->
+<!-- VERSION: 2.4_SPLASH_RESPONSIVE_PC_MOBILE_GRAPHIC_HELP -->
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -482,7 +482,7 @@
     }
 
     @media (max-width: 900px) {
-      #header-container, #legenda-container { display: none !important; }
+      #header-container { display: none !important; }
       #filtro-container { padding: 6px 10px; gap: 6px; top: 10px; right: 10px; }
       #menu-panel { top: calc(100% + 5px); right: 0; min-width: 180px; }
       .filtro-group label, select, .checkbox-label { font-size: 11px; }
@@ -538,6 +538,11 @@
       <label class="checkbox-label">
         <input type="checkbox" id="check-abilita-anno" onchange="toggleAbilitaAnno()">
         Abilita selezione Anno
+      </label>
+
+      <label class="checkbox-label">
+        <input type="checkbox" id="check-legenda-anni" onchange="toggleLegendaAnni()">
+        Abilita legenda anni
       </label>
 
       <hr style="border:0; border-top:1px solid #eee; margin:2px 0;">
@@ -598,7 +603,7 @@
       </div>
       
       <div style="font-size: 13px; color: #2c3e50; max-height: 65vh; overflow-y: auto; padding-right: 5px; line-height: 1.5;">
-        <p style="margin-top:0;">Questo progetto raccoglie tutti i viaggi effettuati nel corso degli anni, sia in aereo (in modo individuale e auto-organizzato) sia in camper. Ogni scatto è geotaggato e posizionato sulla mappa esattamente nel punto in cui è stato realizzato.</p>
+        <p style="margin-top:0;">Questo progetto riunisce tutti i viaggi fatti in molti anni, sia in aereo (in modo individuale e auto-organizzato) sia in camper. È un'evoluzione della raccolta viaggi precedente (<i>I viaggi di Vinicio e Luisa</i>) che conteneva una selezione limitata di scatti, organizzata per anni e per area geografica: in questo nuovo sito tutte le foto sono geotaggate e posizionate esattamente nel punto in cui sono state scattate. In alcune foto è presente la descrizione del luogo (fatta con l'AI, non sempre precisa).</p>
 
         <hr style="border:0; border-top:1px solid #ddd; margin:10px 0;">
 
@@ -606,12 +611,12 @@
         <p style="margin: 4px 0 10px 0;">
           Clicca su una qualsiasi puntina colorata 
           <svg width="14" height="22" viewBox="0 0 25 41" style="vertical-align: middle;"><path d="M12.5 0C5.6 0 0 5.6 0 12.5C0 21.9 12.5 41 12.5 41C12.5 41 25 21.9 25 12.5C25 5.6 19.4 0 12.5 0Z" fill="#007bff" stroke="#FFF" stroke-width="1.5"/><circle cx="12.5" cy="12.5" r="5" fill="#FFF"/></svg>
-          per aprire il popup con l'anteprima della foto, la data e la descrizione del luogo. Clicca sulla foto dentro il popup per ingrandirla a schermo intero.
+          per aprire un popup con l'anteprima della foto, la data e la descrizione del luogo. Cliccando sulla foto all'interno del popup la si può ingrandire a schermo intero.
         </p>
 
         <b style="color:#007bff;">▶ MODALITÀ SLIDESHOW</b>
         <p style="margin: 4px 0 10px 0;">
-          Seleziona uno specifico **Viaggio** dal menu in alto e premi <b>▶ Avvia Slideshow</b>. Lo schermo si dividerà in due: la foto nella metà superiore e la mappa in basso con la puntina della foto corrente evidenziata in giallo 
+          Seleziona uno specifico <b>Viaggio</b> dal menu in alto per far apparire il pulsante <b>▶ Avvia Slideshow</b>. Durante la presentazione lo schermo si dividerà in due: la foto nella metà superiore e la mappa nella metà inferiore con la puntina della foto corrente evidenziata in giallo 
           <svg width="14" height="22" viewBox="0 0 25 41" style="vertical-align: middle;"><path d="M12.5 0C5.6 0 0 5.6 0 12.5C0 21.9 12.5 41 12.5 41C12.5 41 25 21.9 25 12.5C25 5.6 19.4 0 12.5 0Z" fill="#FFD700" stroke="#FFF" stroke-width="1.5"/><circle cx="12.5" cy="12.5" r="5" fill="#FFF"/></svg>.
         </p>
 
@@ -623,7 +628,18 @@
           <span style="background:#2c3e50; color:#fff; padding:3px 8px; border-radius:12px; font-size:11px;">4s ▾ Velocità</span>
           <span style="background:#dc3545; color:#fff; padding:3px 8px; border-radius:12px; font-size:11px;">✖ Esci</span>
         </div>
-        <small style="color:#666; display:block; font-style:italic;">Su smartphone e tablet puoi fare lo swipe orizzontale direttamente sulla foto per scorrere avanti e indietro.</small>
+        <small style="color:#666; display:block; font-style:italic; margin-bottom:10px;">Su smartphone e tablet puoi fare lo swipe orizzontale direttamente sulla foto per scorrere avanti e indietro.</small>
+
+        <b style="color:#007bff;">⚙ OPZIONI MENU (☰)</b>
+        <ul style="margin: 4px 0 10px 0; padding-left: 18px;">
+          <li><b>Raggruppa punti (Clustering):</b> unisce i punti di scatto vicini sulla mappa in un unico cerchio numerato, facilitando la consultazione.</li>
+          <li><b>Abilita selezione Anno:</b> attiva un menu per filtrare la mappa e visualizzare solo le puntine dell'anno selezionato.</li>
+          <li><b>Colori Puntine:</b> le puntine sulla mappa hanno colori diversi a seconda dell'anno in cui è stato effettuato il viaggio.</li>
+          <li><b>Abilita legenda anni:</b> mostra o nasconde sia su PC che su smartphone il box informativo in basso a destra con l'elenco dei colori associati a ciascun anno.</li>
+        </ul>
+
+        <hr style="border:0; border-top:1px solid #ddd; margin:10px 0;">
+        <small style="color:#666; display:block; text-align:center;">Software sviluppato nel 2026 da Ing. Vinicio Barone con AI Gemini</small>
       </div>
     </div>
   </div>
@@ -674,6 +690,17 @@
         groupAnno.style.display = 'none';
         selectAnno.value = 'tutti';
         cambiaAnno();
+      }
+    }
+
+    function toggleLegendaAnni() {
+      const mostra = document.getElementById('check-legenda-anni').checked;
+      const legendaBox = document.getElementById('legenda-container');
+      
+      if (mostra) {
+        legendaBox.style.display = 'block';
+      } else {
+        legendaBox.style.display = 'none';
       }
     }
 
@@ -903,10 +930,8 @@
     function aggiornaMappa() {
       const annoSel = document.getElementById('select-anno').value;
       const viaggioSel = document.getElementById('select-viaggio').value;
-      const legendaBox = document.getElementById('legenda-container');
       const btnSlideshow = document.getElementById('btn-slideshow');
       const usaClusterCheckbox = document.getElementById('check-cluster').checked;
-      const isSmartphone = window.innerWidth <= 900;
 
       if (viaggioSel === 'tutti') {
         btnSlideshow.style.display = 'none';
@@ -923,9 +948,6 @@
 
       if (annoSel !== 'tutti') {
         datiFiltrati = datiFiltrati.filter(p => p.anno === annoSel);
-        legendaBox.style.display = 'none';
-      } else {
-        legendaBox.style.display = isSmartphone ? 'none' : 'block';
       }
 
       if (viaggioSel !== 'tutti') {
