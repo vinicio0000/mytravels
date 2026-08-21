@@ -5,13 +5,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   
-  <meta name="description" content="Esplora la mappa dei viaggi e i ricordi fotografici di Vinicio e Luisa nel mondo.">
-  <title>Mappa dei Viaggi in Camper e Viaggi Indipendenti | Vinicio e Luisa</title>
-  
-  <meta name="description" content="Esplora la mappa interattiva dei viaggi in camper e dei viaggi indipendenti di Vinicio e Luisa. Tappe nel mondo, geografia dei percorsi e ricordi fotografici.">
-  <meta name="keywords" content="viaggi, geografia, camper, viaggi indipendenti, mappa viaggi, itinerari in camper, tappe di viaggio, foto di viaggio">
+  <title>Mappa Interattiva Viaggi Fai da Te e in Camper | La Mappa dei Viaggi</title>
+  <meta name="description" content="Esplora oltre 30 anni di viaggi fai da te e avventure in camper con la nostra mappa dinamica a schermo diviso: foto geolocalizzate e percorsi passo dopo passo di Vinicio e Luisa.">
+  <meta name="keywords" content="mappa viaggi interattiva, foto geolocalizzate viaggi, viaggi in camper, viaggi fai da te, itinerari camper marocco, viaggi avventura">
   <meta name="author" content="Vinicio e Luisa">
   <meta name="robots" content="index, follow">
+
+  <!-- Tag Open Graph per Social e WhatsApp -->
+  <meta property="og:title" content="Mappa Interattiva Viaggi Fai da Te e in Camper | La Mappa dei Viaggi">
+  <meta property="og:description" content="Oltre 30 anni di itinerari fai da te e viaggi in camper: scopri le nostre foto geolocalizzate in tempo reale sulla mappa.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://vinicio0000.github.io/mytravels/">
 
   <!-- URL CANONICO -->
   <link rel="canonical" href="https://vinicio0000.github.io/mytravels/">
@@ -35,6 +39,19 @@
       background: #aad3df;
     }
 
+    /* Struttura SEO Nascosta alla vista ma perfettamente leggibile dai bot di Google */
+    .seo-text-container {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
     /* SCHERMATA DI BENVENUTO (SPLASH SCREEN) RESPONSIVA */
     #splash-screen {
       position: fixed;
@@ -43,7 +60,7 @@
       width: 100vw;
       height: 100vh;
       height: 100dvh;
-      background-color: #1e3c72; /* Sfondo solido istantaneo per evitare il flash della mappa */
+      background-color: #1e3c72;
       background-size: cover;
       background-position: center;
       color: #ffffff;
@@ -485,6 +502,17 @@
   </style>
 </head>
 <body>
+
+  <!-- SEZIONE DI TESTO SEO LEGGIBILE DAI MOTORI DI RICERCA GOOGLE -->
+  <header class="seo-text-container">
+    <h1>La Mappa dei Viaggi: 30 Anni di Viaggi Fai da Te e Avventure in Camper</h1>
+    <p>
+      Benvenuti su <strong>La Mappa dei Viaggi</strong> di Vinicio e Luisa. Attraverso la nostra <strong>mappa dinamica e interattiva</strong>, vi guidiamo alla scoperta di oltre 30 anni di viaggi fai da te condotti in totale autonomia. Sperimentate i nostri itinerari con la vista a schermo diviso: una <strong>slideshow di foto geolocalizzate</strong> vi mostrerà luoghi, paesaggi e dettagli esatti mentre la mappa traccia il percorso in tempo reale, dai recenti viaggi in camper in Marocco ed Europa alle grandi spedizioni storiche in Asia, Africa e USA.
+    </p>
+    <h2>Itinerari in Camper e Viaggi On The Road (Marocco ed Europa)</h2>
+    <h2>30 Anni di Spedizioni Fai da Te nel Mondo: Asia, Africa e America</h2>
+    <h2>Mappa Interattiva e Foto Geolocalizzate nel Mondo</h2>
+  </header>
 
   <!-- SCHERMATA DI BENVENUTO (SPLASH SCREEN) -->
   <div id="splash-screen" onclick="chiudiSplash()">
