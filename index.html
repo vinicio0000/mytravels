@@ -1,4 +1,4 @@
-<!-- VERSION: 2.5_SPLASH_FIX -->
+<!-- VERSION: 2.6_SATELLITE_MAPS -->
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -231,7 +231,7 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.25);
       flex-direction: column;
       gap: 10px;
-      min-width: 210px;
+      min-width: 220px;
     }
 
     #menu-panel.show {
@@ -547,6 +547,17 @@
 
     <!-- MENU HAMBURGER -->
     <div id="menu-panel">
+      <div class="filtro-group" style="flex-direction: column; align-items: flex-start; gap: 4px; margin-bottom: 4px;">
+        <label for="select-mappa"><b>Stile Mappa:</b></label>
+        <select id="select-mappa" onchange="cambiaStileMappa()" style="width: 100%;">
+          <option value="osm">OpenStreetMap (Standard)</option>
+          <option value="satellite">Google Earth (Satellite)</option>
+          <option value="ibrida">Google Maps (Ibrida)</option>
+        </select>
+      </div>
+
+      <hr style="border:0; border-top:1px solid #eee; margin:2px 0;">
+
       <label class="checkbox-label">
         <input type="checkbox" id="check-cluster" onchange="aggiornaMappa()">
         Raggruppa punti (Clustering)
@@ -649,6 +660,7 @@
 
         <b style="color:#007bff;">⚙ OPZIONI MENU (☰)</b>
         <ul style="margin: 4px 0 10px 0; padding-left: 18px;">
+          <li><b>Stile Mappa:</b> permette di passare da OpenStreetMap alla vista Satellitare (stile Google Earth) o Ibrida (con le strade).</li>
           <li><b>Raggruppa punti (Clustering):</b> unisce i punti di scatto vicini sulla mappa in un unico cerchio numerato, facilitando la consultazione.</li>
           <li><b>Abilita selezione Anno:</b> attiva un menu per filtrare la mappa e visualizzare solo le puntine dell'anno selezionato.</li>
           <li><b>Colori Puntine:</b> le puntine sulla mappa hanno colori diversi a seconda dell'anno in cui è stato effettuato il viaggio.</li>
@@ -752,10 +764,37 @@
 
     const map = L.map('map', { minZoom: 2 }).setView([40, -140], 3);
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    // Definizione dei tile layer (mappe di sfondo)
+    const layerOSM = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 19,
       attribution: '© OpenStreetMap'
-    }).addTo(map);
+    });
+
+    const layerSatellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+      maxZoom: 19,
+      attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-eGP, and GIS User Community'
+    });
+
+    const layerIbrido = L.layerGroup([
+      L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', { maxZoom: 19 }),
+      L.tileLayer('https://services.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}', { maxZoom: 19 })
+    ]);
+
+    // Layer attivo di default
+    let currentTileLayer = layerOSM.addTo(map);
+
+    function cambiaStileMappa() {
+      const scelta = document.getElementById('select-mappa').value;
+      map.removeLayer(currentTileLayer);
+
+      if (scelta === 'satellite') {
+        currentTileLayer = layerSatellite.addTo(map);
+      } else if (scelta === 'ibrida') {
+        currentTileLayer = layerIbrido.addTo(map);
+      } else {
+        currentTileLayer = layerOSM.addTo(map);
+      }
+    }
 
     let tuttiIDati = [];
     let panInizialeAttivo = false;
