@@ -1,5 +1,655 @@
 [
   {
+    "nome": "2009-07-24-12H00M00-1",
+    "viaggio": "dubai 2009",
+    "anno": "2009",
+    "data": "24/07/2009",
+    "lat": 48.1351,
+    "lon": 11.582,
+    "foto": "foto/dubai 2009/2009-07-24-12h00m00-1.jpg",
+    "descrizione": "Vista della piazza principale a Monaco di Baviera con la torre e la facciata storica."
+  },
+  {
+    "nome": "2009-07-24-12H00M00-2",
+    "viaggio": "dubai 2009",
+    "anno": "2009",
+    "data": "24/07/2009",
+    "lat": 48.1351,
+    "lon": 11.582,
+    "foto": "foto/dubai 2009/2009-07-24-12h00m00-2.jpg",
+    "descrizione": "Ingresso dell'hotel Mövenpick con struttura in vetro e piazzale in mattoni rossi."
+  },
+  {
+    "nome": "2009-07-24-12H00M00",
+    "viaggio": "dubai 2009",
+    "anno": "2009",
+    "data": "24/07/2009",
+    "lat": 48.1351,
+    "lon": 11.582,
+    "foto": "foto/dubai 2009/2009-07-24-12h00m00.jpg",
+    "descrizione": "Dettaglio dell'orologio e delle figure meccaniche della torre a Monaco di Baviera."
+  },
+  {
+    "nome": "2009-07-25-12H00M00-1",
+    "viaggio": "dubai 2009",
+    "anno": "2009",
+    "data": "25/07/2009",
+    "lat": 25.2532,
+    "lon": 55.3657,
+    "foto": "foto/dubai 2009/2009-07-25-12h00m00-1.jpg",
+    "descrizione": "Corridoio luminoso con tappeto mobile all'interno di un aeroporto."
+  },
+  {
+    "nome": "2009-07-25-12H00M00-2",
+    "viaggio": "dubai 2009",
+    "anno": "2009",
+    "data": "25/07/2009",
+    "lat": 25.2532,
+    "lon": 55.3657,
+    "foto": "foto/dubai 2009/2009-07-25-12h00m00-2.jpg",
+    "descrizione": "Ampio atrio aeroportuale decorato con colonne e palme."
+  },
+  {
+    "nome": "2009-07-25-12H00M00-3",
+    "viaggio": "dubai 2009",
+    "anno": "2009",
+    "data": "25/07/2009",
+    "lat": 25.2048,
+    "lon": 55.2708,
+    "foto": "foto/dubai 2009/2009-07-25-12h00m00-3.jpg",
+    "descrizione": "Interno di una stanza d'albergo con scrivania, lampade e letti rifatti."
+  },
+  {
+    "nome": "2009-07-25-12H00M00",
+    "viaggio": "dubai 2009",
+    "anno": "2009",
+    "data": "25/07/2009",
+    "lat": 25.2532,
+    "lon": 55.3657,
+    "foto": "foto/dubai 2009/2009-07-25-12h00m00.jpg",
+    "descrizione": "Interno del terminal aeroportuale con pavimenti a scacchi e sedute."
+  },
+  {
+    "nome": "2009-07-26-12H00M00-1",
+    "viaggio": "dubai 2009",
+    "anno": "2009",
+    "data": "26/07/2009",
+    "lat": 25.2048,
+    "lon": 55.2708,
+    "foto": "foto/dubai 2009/2009-07-26-12h00m00-1.jpg",
+    "descrizione": "Inquadratura dal basso delle cupole e dei minareti di una moschea contro il cielo azzurro."
+  },
+  {
+    "nome": "2009-07-26-12H00M00-10",
+    "viaggio": "dubai 2009",
+    "anno": "2009",
+    "data": "26/07/2009",
+    "lat": 25.1853,
+    "lon": 55.2753,
+    "foto": "foto/dubai 2009/2009-07-26-12h00m00-10.jpg",
+    "descrizione": "Persona in abbigliamento da sci all'interno della grotta di ghiaccio di Ski Dubai."
+  },
+  {
+    "nome": "2009-07-26-12H00M00-11",
+    "viaggio": "dubai 2009",
+    "anno": "2009",
+    "data": "26/07/2009",
+    "lat": 25.1853,
+    "lon": 55.2753,
+    "foto": "foto/dubai 2009/2009-07-26-12h00m00-11.jpg",
+    "descrizione": "Visitatori con tute invernali all'interno dell'area ricreativa di Ski Dubai."
+  },
+  {
+    "nome": "2009-07-26-12H00M00-12",
+    "viaggio": "dubai 2009",
+    "anno": "2009",
+    "data": "26/07/2009",
+    "lat": 25.1853,
+    "lon": 55.2753,
+    "foto": "foto/dubai 2009/2009-07-26-12h00m00-12.jpg",
+    "descrizione": "Dettaglio della struttura meccanica e dei cavi degli impianti di risalita di Ski Dubai."
+  },
+  {
+    "nome": "2009-07-26-12H00M00-13",
+    "viaggio": "dubai 2009",
+    "anno": "2009",
+    "data": "26/07/2009",
+    "lat": 25.1853,
+    "lon": 55.2753,
+    "foto": "foto/dubai 2009/2009-07-26-12h00m00-13.jpg",
+    "descrizione": "Panoramica delle piste da sci e degli impianti di risalita a Ski Dubai."
+  },
+  {
+    "nome": "2009-07-26-12H00M00-14",
+    "viaggio": "dubai 2009",
+    "anno": "2009",
+    "data": "26/07/2009",
+    "lat": 25.1853,
+    "lon": 55.2753,
+    "foto": "foto/dubai 2009/2009-07-26-12h00m00-14.jpg",
+    "descrizione": "Ponte sospeso in corda all'interno dell'area tematica di Ski Dubai."
+  },
+  {
+    "nome": "2009-07-26-12H00M00-15",
+    "viaggio": "dubai 2009",
+    "anno": "2009",
+    "data": "26/07/2009",
+    "lat": 25.1853,
+    "lon": 55.2753,
+    "foto": "foto/dubai 2009/2009-07-26-12h00m00-15.jpg",
+    "descrizione": "Visitatore in tuta da sci in piedi sul ponte sospeso a Ski Dubai."
+  },
+  {
+    "nome": "2009-07-26-12H00M00-16",
+    "viaggio": "dubai 2009",
+    "anno": "2009",
+    "data": "26/07/2009",
+    "lat": 25.1853,
+    "lon": 55.2753,
+    "foto": "foto/dubai 2009/2009-07-26-12h00m00-16.jpg",
+    "descrizione": "L'Ice Cafe e sculture di ghiaccio all'interno del parco innevato di Ski Dubai."
+  },
+  {
+    "nome": "2009-07-26-12H00M00-2",
+    "viaggio": "dubai 2009",
+    "anno": "2009",
+    "data": "26/07/2009",
+    "lat": 25.1412,
+    "lon": 55.1853,
+    "foto": "foto/dubai 2009/2009-07-26-12h00m00-2.jpg",
+    "descrizione": "Vista esterna del celebre grattacielo Burj Al Arab a forma di vela a Dubai."
+  },
+  {
+    "nome": "2009-07-26-12H00M00-3",
+    "viaggio": "dubai 2009",
+    "anno": "2009",
+    "data": "26/07/2009",
+    "lat": 25.1413,
+    "lon": 55.1855,
+    "foto": "foto/dubai 2009/2009-07-26-12h00m00-3.jpg",
+    "descrizione": "Foto ricordo di fronte all'ingresso del Burj Al Arab a Dubai."
+  },
+  {
+    "nome": "2009-07-26-12H00M00-4",
+    "viaggio": "dubai 2009",
+    "anno": "2009",
+    "data": "26/07/2009",
+    "lat": 25.1304,
+    "lon": 55.1171,
+    "foto": "foto/dubai 2009/2009-07-26-12h00m00-4.jpg",
+    "descrizione": "Foto ricordo con lo sfondo dell'hotel Atlantis, The Palm a Dubai."
+  },
+  {
+    "nome": "2009-07-26-12H00M00-5",
+    "viaggio": "dubai 2009",
+    "anno": "2009",
+    "data": "26/07/2009",
+    "lat": 25.1853,
+    "lon": 55.2753,
+    "foto": "foto/dubai 2009/2009-07-26-12h00m00-5.jpg",
+    "descrizione": "Interno del centro commerciale Mall of the Emirates a Dubai, con decorazioni di palloncini colorati."
+  },
+  {
+    "nome": "2009-07-26-12H00M00-6",
+    "viaggio": "dubai 2009",
+    "anno": "2009",
+    "data": "26/07/2009",
+    "lat": 25.1853,
+    "lon": 55.2753,
+    "foto": "foto/dubai 2009/2009-07-26-12h00m00-6.jpg",
+    "descrizione": "Vista dall'alto della zona ristorazione / tavoli del ristorante Paul all'interno del Mall of the Emirates a Dubai."
+  },
+  {
+    "nome": "2009-07-26-12H00M00-7",
+    "viaggio": "dubai 2009",
+    "anno": "2009",
+    "data": "26/07/2009",
+    "lat": 25.1853,
+    "lon": 55.2753,
+    "foto": "foto/dubai 2009/2009-07-26-12h00m00-7.jpg",
+    "descrizione": "Persone che camminano nei corridoi del Mall of the Emirates vicino ai negozi di cosmetica."
+  },
+  {
+    "nome": "2009-07-26-12H00M00-8",
+    "viaggio": "dubai 2009",
+    "anno": "2009",
+    "data": "26/07/2009",
+    "lat": 25.1853,
+    "lon": 55.2753,
+    "foto": "foto/dubai 2009/2009-07-26-12h00m00-8.jpg",
+    "descrizione": "Ingresso principale della struttura Ski Dubai all'interno del Mall of the Emirates."
+  },
+  {
+    "nome": "2009-07-26-12H00M00-9",
+    "viaggio": "dubai 2009",
+    "anno": "2009",
+    "data": "26/07/2009",
+    "lat": 25.1853,
+    "lon": 55.2753,
+    "foto": "foto/dubai 2009/2009-07-26-12h00m00-9.jpg",
+    "descrizione": "Area innevata vista attraverso la rete di protezione all'interno di Ski Dubai."
+  },
+  {
+    "nome": "2009-07-26-12H00M00",
+    "viaggio": "dubai 2009",
+    "anno": "2009",
+    "data": "26/07/2009",
+    "lat": 25.2048,
+    "lon": 55.2708,
+    "foto": "foto/dubai 2009/2009-07-26-12h00m00.jpg",
+    "descrizione": "Persona con abito tradizionale e zaino rosso all'interno di un edificio con tappeto blu."
+  },
+  {
+    "nome": "2009-07-27-12H00M00-1",
+    "viaggio": "dubai 2009",
+    "anno": "2009",
+    "data": "27/07/2009",
+    "lat": 25.2677,
+    "lon": 55.2975,
+    "foto": "foto/dubai 2009/2009-07-27-12h00m00-1.jpg",
+    "descrizione": "Negozio di scarpe, borse e accessori per le strade di Dubai."
+  },
+  {
+    "nome": "2009-07-27-12H00M00-10",
+    "viaggio": "dubai 2009",
+    "anno": "2009",
+    "data": "27/07/2009",
+    "lat": 24.86,
+    "lon": 55.65,
+    "foto": "foto/dubai 2009/2009-07-27-12h00m00-10.jpg",
+    "descrizione": "Un pavone nell'area dell'escursione nel deserto."
+  },
+  {
+    "nome": "2009-07-27-12H00M00-11",
+    "viaggio": "dubai 2009",
+    "anno": "2009",
+    "data": "27/07/2009",
+    "lat": 24.86,
+    "lon": 55.65,
+    "foto": "foto/dubai 2009/2009-07-27-12h00m00-11.jpg",
+    "descrizione": "Dettaglio laterale di un fuoristrada Land Cruiser nel deserto."
+  },
+  {
+    "nome": "2009-07-27-12H00M00-12",
+    "viaggio": "dubai 2009",
+    "anno": "2009",
+    "data": "27/07/2009",
+    "lat": 24.86,
+    "lon": 55.65,
+    "foto": "foto/dubai 2009/2009-07-27-12h00m00-12.jpg",
+    "descrizione": "Persone accanto a un fuoristrada nel deserto durante una sosta tecnica."
+  },
+  {
+    "nome": "2009-07-27-12H00M00-13",
+    "viaggio": "dubai 2009",
+    "anno": "2009",
+    "data": "27/07/2009",
+    "lat": 24.86,
+    "lon": 55.65,
+    "foto": "foto/dubai 2009/2009-07-27-12h00m00-13.jpg",
+    "descrizione": "Vista panoramica del deserto con formazioni rocciose e dune."
+  },
+  {
+    "nome": "2009-07-27-12H00M00-14",
+    "viaggio": "dubai 2009",
+    "anno": "2009",
+    "data": "27/07/2009",
+    "lat": 24.86,
+    "lon": 55.65,
+    "foto": "foto/dubai 2009/2009-07-27-12h00m00-14.jpg",
+    "descrizione": "Fuoristrada Land Cruiser fermi sulle dune durante un'escursione nel deserto."
+  },
+  {
+    "nome": "2009-07-27-12H00M00-15",
+    "viaggio": "dubai 2009",
+    "anno": "2009",
+    "data": "27/07/2009",
+    "lat": 24.86,
+    "lon": 55.65,
+    "foto": "foto/dubai 2009/2009-07-27-12h00m00-15.jpg",
+    "descrizione": "Altra foto ricordo della coppia in piedi sulle dune sabbiose."
+  },
+  {
+    "nome": "2009-07-27-12H00M00-16",
+    "viaggio": "dubai 2009",
+    "anno": "2009",
+    "data": "27/07/2009",
+    "lat": 24.86,
+    "lon": 55.65,
+    "foto": "foto/dubai 2009/2009-07-27-12h00m00-16.jpg",
+    "descrizione": "Foto ricordo di una coppia in piedi sulle dune di sabbia durante l'escursione nel deserto."
+  },
+  {
+    "nome": "2009-07-27-12H00M00-17",
+    "viaggio": "dubai 2009",
+    "anno": "2009",
+    "data": "27/07/2009",
+    "lat": 24.86,
+    "lon": 55.65,
+    "foto": "foto/dubai 2009/2009-07-27-12h00m00-17.jpg",
+    "descrizione": "Vista dall'alto di fuoristrada fermi nel deserto e una persona che cammina sulla sabbia."
+  },
+  {
+    "nome": "2009-07-27-12H00M00-18",
+    "viaggio": "dubai 2009",
+    "anno": "2009",
+    "data": "27/07/2009",
+    "lat": 24.86,
+    "lon": 55.65,
+    "foto": "foto/dubai 2009/2009-07-27-12h00m00-18.jpg",
+    "descrizione": "Ampia panoramica delle dune di sabbia del deserto con tracce di pneumatici."
+  },
+  {
+    "nome": "2009-07-27-12H00M00-19",
+    "viaggio": "dubai 2009",
+    "anno": "2009",
+    "data": "27/07/2009",
+    "lat": 24.86,
+    "lon": 55.65,
+    "foto": "foto/dubai 2009/2009-07-27-12h00m00-19.jpg",
+    "descrizione": "Fila di fuoristrada bianchi parcheggiati in mezzo alle dune del deserto."
+  },
+  {
+    "nome": "2009-07-27-12H00M00-2",
+    "viaggio": "dubai 2009",
+    "anno": "2009",
+    "data": "27/07/2009",
+    "lat": 25.2677,
+    "lon": 55.2975,
+    "foto": "foto/dubai 2009/2009-07-27-12h00m00-2.jpg",
+    "descrizione": "Insegna e struttura d'ingresso del 'Dubai City of Gold'."
+  },
+  {
+    "nome": "2009-07-27-12H00M00-20",
+    "viaggio": "dubai 2009",
+    "anno": "2009",
+    "data": "27/07/2009",
+    "lat": 24.86,
+    "lon": 55.65,
+    "foto": "foto/dubai 2009/2009-07-27-12h00m00-20.jpg",
+    "descrizione": "Fuoristrada Toyota Land Cruiser in movimento tra le dune sabbiose."
+  },
+  {
+    "nome": "2009-07-27-12H00M00-21",
+    "viaggio": "dubai 2009",
+    "anno": "2009",
+    "data": "27/07/2009",
+    "lat": 24.86,
+    "lon": 55.65,
+    "foto": "foto/dubai 2009/2009-07-27-12h00m00-21.jpg",
+    "descrizione": "Ingresso dell'accampamento nel deserto con arco in stile fortificato e scritta Qasar Al Awar."
+  },
+  {
+    "nome": "2009-07-27-12H00M00-22",
+    "viaggio": "dubai 2009",
+    "anno": "2009",
+    "data": "27/07/2009",
+    "lat": 24.86,
+    "lon": 55.65,
+    "foto": "foto/dubai 2009/2009-07-27-12h00m00-22.jpg",
+    "descrizione": "Interno dell'accampamento nel deserto con tavoli bassi, tappeti e cuscini tradizionali."
+  },
+  {
+    "nome": "2009-07-27-12H00M00-23",
+    "viaggio": "dubai 2009",
+    "anno": "2009",
+    "data": "27/07/2009",
+    "lat": 24.86,
+    "lon": 55.65,
+    "foto": "foto/dubai 2009/2009-07-27-12h00m00-23.jpg",
+    "descrizione": "Cena serale all'interno del campo nel deserto con bevande e piatti tipici."
+  },
+  {
+    "nome": "2009-07-27-12H00M00-24",
+    "viaggio": "dubai 2009",
+    "anno": "2009",
+    "data": "27/07/2009",
+    "lat": 24.86,
+    "lon": 55.65,
+    "foto": "foto/dubai 2009/2009-07-27-12h00m00-24.jpg",
+    "descrizione": "Spettacolo di danza del ventre con ballerina in abito blu brillante nel deserto."
+  },
+  {
+    "nome": "2009-07-27-12H00M00-25",
+    "viaggio": "dubai 2009",
+    "anno": "2009",
+    "data": "27/07/2009",
+    "lat": 24.86,
+    "lon": 55.65,
+    "foto": "foto/dubai 2009/2009-07-27-12h00m00-25.jpg",
+    "descrizione": "Altra fase dello spettacolo di danza del ventre con il pubblico sullo sfondo."
+  },
+  {
+    "nome": "2009-07-27-12H00M00-26",
+    "viaggio": "dubai 2009",
+    "anno": "2009",
+    "data": "27/07/2009",
+    "lat": 24.86,
+    "lon": 55.65,
+    "foto": "foto/dubai 2009/2009-07-27-12h00m00-26.jpg",
+    "descrizione": "Primo piano dei dettagli del costume e dei bracciali della ballerina."
+  },
+  {
+    "nome": "2009-07-27-12H00M00-27",
+    "viaggio": "dubai 2009",
+    "anno": "2009",
+    "data": "27/07/2009",
+    "lat": 24.86,
+    "lon": 55.65,
+    "foto": "foto/dubai 2009/2009-07-27-12h00m00-27.jpg",
+    "descrizione": "Movimento della ballerina durante lo spettacolo serale nel campo nel deserto."
+  },
+  {
+    "nome": "2009-07-27-12H00M00-28",
+    "viaggio": "dubai 2009",
+    "anno": "2009",
+    "data": "27/07/2009",
+    "lat": 25.2677,
+    "lon": 55.2975,
+    "foto": "foto/dubai 2009/2009-07-27-12h00m00-28.jpg",
+    "descrizione": "Vista aerea di una rotonda stradale con palme e fontana a Dubai nei pressi del Claridge Hotel."
+  },
+  {
+    "nome": "2009-07-27-12H00M00-29",
+    "viaggio": "dubai 2009",
+    "anno": "2009",
+    "data": "27/07/2009",
+    "lat": 25.2677,
+    "lon": 55.2975,
+    "foto": "foto/dubai 2009/2009-07-27-12h00m00-29.jpg",
+    "descrizione": "Facciata dell'Hotel Oriental Palace e edifici circostanti a Dubai."
+  },
+  {
+    "nome": "2009-07-27-12H00M00-3",
+    "viaggio": "dubai 2009",
+    "anno": "2009",
+    "data": "27/07/2009",
+    "lat": 25.2677,
+    "lon": 55.2975,
+    "foto": "foto/dubai 2009/2009-07-27-12h00m00-3.jpg",
+    "descrizione": "Vetrina esposizione di innumerevoli bracciali d'oro al Gold Souk."
+  },
+  {
+    "nome": "2009-07-27-12H00M00-4",
+    "viaggio": "dubai 2009",
+    "anno": "2009",
+    "data": "27/07/2009",
+    "lat": 25.2677,
+    "lon": 55.2975,
+    "foto": "foto/dubai 2009/2009-07-27-12h00m00-4.jpg",
+    "descrizione": "Esposizione di parure e gioielli preziosi d'oro in vetrina."
+  },
+  {
+    "nome": "2009-07-27-12H00M00-5",
+    "viaggio": "dubai 2009",
+    "anno": "2009",
+    "data": "27/07/2009",
+    "lat": 25.2677,
+    "lon": 55.2975,
+    "foto": "foto/dubai 2009/2009-07-27-12h00m00-5.jpg",
+    "descrizione": "Vetrina di una gioielleria con collane d'oro elaborate al Dubai Gold Souk."
+  },
+  {
+    "nome": "2009-07-27-12H00M00-6",
+    "viaggio": "dubai 2009",
+    "anno": "2009",
+    "data": "27/07/2009",
+    "lat": 25.2677,
+    "lon": 55.2975,
+    "foto": "foto/dubai 2009/2009-07-27-12h00m00-6.jpg",
+    "descrizione": "Vetrina del Gold Souk con parure di gioielli d'oro su manichini."
+  },
+  {
+    "nome": "2009-07-27-12H00M00-7",
+    "viaggio": "dubai 2009",
+    "anno": "2009",
+    "data": "27/07/2009",
+    "lat": 25.2677,
+    "lon": 55.2975,
+    "foto": "foto/dubai 2009/2009-07-27-12h00m00-7.jpg",
+    "descrizione": "Vetrina con esposizione di collane d'oro massiccio al Gold Souk."
+  },
+  {
+    "nome": "2009-07-27-12H00M00-8",
+    "viaggio": "dubai 2009",
+    "anno": "2009",
+    "data": "27/07/2009",
+    "lat": 25.2677,
+    "lon": 55.2975,
+    "foto": "foto/dubai 2009/2009-07-27-12h00m00-8.jpg",
+    "descrizione": "Interno di una camera d'albergo a Dubai con letto matrimoniale."
+  },
+  {
+    "nome": "2009-07-27-12H00M00-9",
+    "viaggio": "dubai 2009",
+    "anno": "2009",
+    "data": "27/07/2009",
+    "lat": 24.86,
+    "lon": 55.65,
+    "foto": "foto/dubai 2009/2009-07-27-12h00m00-9.jpg",
+    "descrizione": "Vista panoramica del deserto con duna e moto fuoristrada (quad)."
+  },
+  {
+    "nome": "2009-07-27-12H00M00",
+    "viaggio": "dubai 2009",
+    "anno": "2009",
+    "data": "27/07/2009",
+    "lat": 25.2677,
+    "lon": 55.2975,
+    "foto": "foto/dubai 2009/2009-07-27-12h00m00.jpg",
+    "descrizione": "Persona per strada nei pressi del distretto commerciale di Dubai."
+  },
+  {
+    "nome": "2009-07-28-12H00M00-1",
+    "viaggio": "dubai 2009",
+    "anno": "2009",
+    "data": "28/07/2009",
+    "lat": 25.2677,
+    "lon": 55.2975,
+    "foto": "foto/dubai 2009/2009-07-28-12h00m00-1.jpg",
+    "descrizione": "Scatto ravvicinato nella sala da pranzo dell'Hotel Claridge con tavoli apparecchiati e decorazioni floreali."
+  },
+  {
+    "nome": "2009-07-28-12H00M00-2",
+    "viaggio": "dubai 2009",
+    "anno": "2009",
+    "data": "28/07/2009",
+    "lat": 25.2677,
+    "lon": 55.2975,
+    "foto": "foto/dubai 2009/2009-07-28-12h00m00-2.jpg",
+    "descrizione": "Spiaggia di Dubai con ombrelloni rossi, bianchi e blu, lettini e bagnanti con i grattacieli sullo sfondo."
+  },
+  {
+    "nome": "2009-07-28-12H00M00-3",
+    "viaggio": "dubai 2009",
+    "anno": "2009",
+    "data": "28/07/2009",
+    "lat": 25.2677,
+    "lon": 55.2975,
+    "foto": "foto/dubai 2009/2009-07-28-12h00m00-3.jpg",
+    "descrizione": "Litorale sabbioso e frangiflutti di pietra con le onde del mare che si infrangono sulla costa."
+  },
+  {
+    "nome": "2009-07-28-12H00M00-4",
+    "viaggio": "dubai 2009",
+    "anno": "2009",
+    "data": "28/07/2009",
+    "lat": 25.2677,
+    "lon": 55.2975,
+    "foto": "foto/dubai 2009/2009-07-28-12h00m00-4.jpg",
+    "descrizione": "Ampia visuale della spiaggia di sabbia chiara con palme, ombrelloni e persone che passeggiano."
+  },
+  {
+    "nome": "2009-07-28-12H00M00-5",
+    "viaggio": "dubai 2009",
+    "anno": "2009",
+    "data": "28/07/2009",
+    "lat": 25.2677,
+    "lon": 55.2975,
+    "foto": "foto/dubai 2009/2009-07-28-12h00m00-5.jpg",
+    "descrizione": "Foto ricordo sulla spiaggia di sabbia bianca con palme e una caratteristica torre di salvataggio in legno sullo sfondo."
+  },
+  {
+    "nome": "2009-07-28-12H00M00-6",
+    "viaggio": "dubai 2009",
+    "anno": "2009",
+    "data": "28/07/2009",
+    "lat": 25.1853,
+    "lon": 55.2753,
+    "foto": "foto/dubai 2009/2009-07-28-12h00m00-6.jpg",
+    "descrizione": "Dettaglio dell'architettura interna del centro commerciale con la struttura ondulata in legno e le insegne estive."
+  },
+  {
+    "nome": "2009-07-28-12H00M00-7",
+    "viaggio": "dubai 2009",
+    "anno": "2009",
+    "data": "28/07/2009",
+    "lat": 25.1853,
+    "lon": 55.2753,
+    "foto": "foto/dubai 2009/2009-07-28-12h00m00-7.jpg",
+    "descrizione": "Dettaglio artistico del pavimento in graniglia colorata con inserti floreali e decorazioni geometriche."
+  },
+  {
+    "nome": "2009-07-28-12H00M00-8",
+    "viaggio": "dubai 2009",
+    "anno": "2009",
+    "data": "28/07/2009",
+    "lat": 25.1853,
+    "lon": 55.2753,
+    "foto": "foto/dubai 2009/2009-07-28-12h00m00-8.jpg",
+    "descrizione": "Corridoio del centro commerciale con negozi, vetrine illuminate e soffitto decorato."
+  },
+  {
+    "nome": "2009-07-28-12H00M00-9",
+    "viaggio": "dubai 2009",
+    "anno": "2009",
+    "data": "28/07/2009",
+    "lat": 25.2677,
+    "lon": 55.2975,
+    "foto": "foto/dubai 2009/2009-07-28-12h00m00-9.jpg",
+    "descrizione": "Momento conviviale a un tavolo del ristorante con tovaglia a scacchi rossi e bianchi all'interno dell'hotel."
+  },
+  {
+    "nome": "2009-07-28-12H00M00",
+    "viaggio": "dubai 2009",
+    "anno": "2009",
+    "data": "28/07/2009",
+    "lat": 25.2677,
+    "lon": 55.2975,
+    "foto": "foto/dubai 2009/2009-07-28-12h00m00.jpg",
+    "descrizione": "Interno della sala da pranzo dell'Hotel Claridge con un cuoco al lavoro a una stazione di cucina dal vivo."
+  },
+  {
+    "nome": "2009-07-29-12H00M00",
+    "viaggio": "dubai 2009",
+    "anno": "2009",
+    "data": "29/07/2009",
+    "lat": 25.2532,
+    "lon": 55.3657,
+    "foto": "foto/dubai 2009/2009-07-29-12h00m00.jpg",
+    "descrizione": "Area esterna delle partenze e arrivi del Terminal dell'Aeroporto Internazionale di Dubai con la caratteristica copertura ad arco."
+  },
+  {
     "nome": "2024-03-21-09H12M16",
     "viaggio": "francia 2024",
     "anno": "2024",
