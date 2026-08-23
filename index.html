@@ -1,4 +1,4 @@
-<!-- VERSION: 2.8_MARKER_SIZE -->
+<!-- VERSION: 2.9_DIARIO_FIX -->
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -11,21 +11,15 @@
   <meta name="author" content="Vinicio e Luisa">
   <meta name="robots" content="index, follow">
 
-  <!-- Tag Open Graph per Social e WhatsApp -->
   <meta property="og:title" content="Mappa Interattiva Viaggi Fai da Te e in Camper | La Mappa dei Viaggi">
   <meta property="og:description" content="Oltre 30 anni di itinerari fai da te e viaggi in camper: scopri le nostre foto geolocalizzate in tempo reale sulla mappa.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://vinicio0000.github.io/mytravels/">
 
-  <!-- URL CANONICO -->
   <link rel="canonical" href="https://vinicio0000.github.io/mytravels/">
-
-  <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><circle cx='32' cy='32' r='30' fill='%231e3c72'/><circle cx='32' cy='32' r='28' fill='none' stroke='%2352b69a' stroke-width='2'/><path fill='none' stroke='%23ffffff' stroke-width='1.5' opacity='0.5' d='M8 32h48M32 8a30 30 0 0 0 0 48M32 8a30 30 0 0 1 0 48'/><path fill='%23e6194b' stroke='%23ffffff' stroke-width='1.5' d='M32 10c-5.5 0-10 4.5-10 10 0 7.5 10 17 10 17s10-9.5 10-17c0-5.5-4.5-10-10-10zm0 13a3 3 0 1 1 0-6 3 3 0 0 1 0 6z'/><rect x='18' y='42' width='28' height='12' rx='2' fill='%23ffffff'/><rect x='38' y='44' width='6' height='5' rx='1' fill='%231e3c72'/><circle cx='24' cy='54' r='2.5' fill='%23333333'/><circle cx='40' cy='54' r='2.5' fill='%23333333'/></svg>">
   
-  <!-- Leaflet CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  <!-- Leaflet MarkerCluster CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
 
@@ -420,6 +414,40 @@
       margin-right: auto;
     }
 
+    .btn-diario {
+      display: inline-block;
+      margin-top: 6px;
+      background-color: #28a745;
+      color: #ffffff !important;
+      padding: 5px 10px;
+      border-radius: 15px;
+      font-size: 11px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .btn-diario:hover {
+      background-color: #218838;
+    }
+
+    .btn-diario-modal {
+      display: inline-block;
+      margin-top: 6px;
+      background-color: #28a745;
+      color: #ffffff !important;
+      padding: 6px 12px;
+      border-radius: 16px;
+      font-size: 12px;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+    }
+
+    .btn-diario-modal:hover {
+      background-color: #218838;
+    }
+
     .custom-pin-icon {
       background: none;
       border: none;
@@ -443,8 +471,8 @@
 
     .modal-foto-content {
       max-width: 100vw;
-      max-height: calc(100vh - 90px);
-      max-height: calc(100dvh - 90px);
+      max-height: calc(100vh - 100px);
+      max-height: calc(100dvh - 100px);
       width: auto;
       height: auto;
       object-fit: contain;
@@ -477,7 +505,7 @@
       border-radius: 20px;
       text-align: center;
       max-width: 85vw;
-      max-height: 75px;
+      max-height: 85px;
       overflow-y: auto;
       word-break: break-word;
       z-index: 100001;
@@ -541,7 +569,7 @@
 
     <button id="btn-slideshow" onclick="avviaSlideshow()">▶ Avvia Slideshow</button>
 
-    <!-- MENU HAMBURGER CON ELENCO ESPANSO DELLE MAPPE E DIMENSIONE PUNTINE -->
+    <!-- MENU HAMBURGER -->
     <div id="menu-panel">
       <div class="filtro-group" style="flex-direction: column; align-items: flex-start; gap: 4px; margin-bottom: 4px;">
         <label for="select-mappa"><b>Stile Mappa:</b></label>
@@ -556,7 +584,6 @@
         </select>
       </div>
 
-      <!-- SELETTORE DIMENSIONE PUNTINE -->
       <div class="filtro-group" style="flex-direction: column; align-items: flex-start; gap: 4px; margin-bottom: 4px;">
         <label for="select-dimensione-pin"><b>Dimensione Puntine:</b></label>
         <select id="select-dimensione-pin" onchange="aggiornaMappa()" style="width: 100%;">
@@ -621,65 +648,75 @@
 
   <div id="map"></div>
 
-  <!-- MODALE PER INGRANDIRE LE FOTO -->
+  <!-- MODALE FOTO INGRANDITA -->
   <div id="imageModal" class="modal-foto" onclick="chiudiModalFoto(false)">
     <div id="modal-caption"></div>
     <img class="modal-foto-content" id="imgModalSrc" onclick="event.stopPropagation()">
   </div>
 
-  <!-- MODALE GUIDA/AIUTO AGGIORNATA ALLA VERSIONE 2.8 -->
+  <!-- MODALE GUIDA / AIUTO COMPLETA -->
   <div id="modal-aiuto" class="modal-foto" onclick="chiudiModalAiuto()" style="z-index: 100002;">
     <div class="modal-aiuto-card" onclick="event.stopPropagation()" style="
-      background: linear-gradient(rgba(255, 255, 255, 0.93), rgba(255, 255, 255, 0.3)), url('mappamondo.jpg');
+      background: linear-gradient(rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.35)), url('mappamondo.jpg');
       background-size: cover;
       background-position: center;
       border: 1px solid rgba(0,0,0,0.15);
     ">
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; border-bottom: 2px solid #007bff; padding-bottom: 6px;">
-        <h3 style="margin:0; font-size:16px; color:#2c3e50;">🌍 Guida e Informazioni (v2.8)</h3>
+        <h3 style="margin:0; font-size:16px; color:#2c3e50;">🌍 Guida e Informazioni (v2.9)</h3>
         <button onclick="chiudiModalAiuto()" style="background:none; border:none; font-size:20px; cursor:pointer; color:#666;">✖</button>
       </div>
       
       <div style="font-size: 13px; color: #2c3e50; max-height: 65vh; overflow-y: auto; padding-right: 5px; line-height: 1.5;">
-        <p style="margin-top:0;">Questo progetto riunisce tutti i viaggi fatti in molti anni, sia in aereo (in modo individuale e auto-organizzato) sia in camper. È un'evoluzione della raccolta viaggi precedente (<i>I viaggi di Vinicio e Luisa</i>): in questo nuovo sito tutte le foto sono geotaggate e posizionate esattamente nel punto in cui sono state scattate. In alcune foto è presente la descrizione del luogo.</p>
+        <p style="margin-top:0;">
+          Questo progetto raccoglie oltre 30 anni di viaggi condotti in totale autonomia, in camper e in aereo fai da te. Ogni foto è geolocalizzata ed è posizionata esattamente nel luogo in cui è stata scattata.
+        </p>
 
         <hr style="border:0; border-top:1px solid #ddd; margin:10px 0;">
 
-        <b style="color:#007bff;">📍 ESPLORAZIONE INDIVIDUALE</b>
+        <b style="color:#007bff;">📍 ESPLORAZIONE MAPPA E FOTO</b>
         <p style="margin: 4px 0 10px 0;">
-          Clicca su una qualsiasi puntina colorata 
+          Clicca su una puntina colorata 
           <svg width="14" height="22" viewBox="0 0 25 41" style="vertical-align: middle;"><path d="M12.5 0C5.6 0 0 5.6 0 12.5C0 21.9 12.5 41 12.5 41C12.5 41 25 21.9 25 12.5C25 5.6 19.4 0 12.5 0Z" fill="#007bff" stroke="#FFF" stroke-width="1.5"/><circle cx="12.5" cy="12.5" r="5" fill="#FFF"/></svg>
-          per aprire un popup con l'anteprima della foto, la data e la descrizione del luogo. Cliccando sulla foto la si può ingrandire a schermo intero.
+          per aprire la finestra con l'anteprima, la data e la descrizione del luogo. Cliccando sulla foto puoi ingrandirla a schermo intero.
+        </p>
+
+        <b style="color:#28a745;">📖 DIARIO DI VIAGGIO</b>
+        <p style="margin: 4px 0 10px 0;">
+          Se per il viaggio o la tappa selezionata è disponibile il resoconto scritto, troverai il pulsante verde <b>📖 Diario di Viaggio</b> sia all'interno del fumetto/popup sulla mappa, sia nella parte superiore della foto ingrandita a schermo intero. Cliccandolo si aprirà il file del diario in una nuova scheda.
         </p>
 
         <b style="color:#007bff;">▶ MODALITÀ SLIDESHOW</b>
         <p style="margin: 4px 0 10px 0;">
-          Seleziona uno specifico <b>Viaggio</b> dal menu in alto per far apparire il pulsante <b>▶ Avvia Slideshow</b>. Durante la presentazione lo schermo si dividerà in due: la foto nella metà superiore e la mappa nella metà inferiore con la puntina corrente evidenziata in giallo 
+          Selezionando uno specifico <b>Viaggio</b> dal menu in alto comparirà il pulsante <b>▶ Avvia Slideshow</b>. Lo schermo si dividerà in due: la foto in alto e la mappa in basso con la puntina corrente evidenziata in giallo 
           <svg width="14" height="22" viewBox="0 0 25 41" style="vertical-align: middle;"><path d="M12.5 0C5.6 0 0 5.6 0 12.5C0 21.9 12.5 41 12.5 41C12.5 41 25 21.9 25 12.5C25 5.6 19.4 0 12.5 0Z" fill="#FFD700" stroke="#FFF" stroke-width="1.5"/><circle cx="12.5" cy="12.5" r="5" fill="#FFF"/></svg>.
         </p>
 
-        <b style="color:#007bff;">🎛 CONTROLLI SLIDESHOW</b>
-        <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:6px; margin-bottom:10px;">
+        <b style="color:#007bff;">🎛 CONTROLLI E GESTI</b>
+        <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:6px; margin-bottom:8px;">
           <span style="background:#2c3e50; color:#fff; padding:3px 8px; border-radius:12px; font-size:11px;">◀ Prec</span>
           <span style="background:#2c3e50; color:#fff; padding:3px 8px; border-radius:12px; font-size:11px;">⏸ Pausa</span>
           <span style="background:#2c3e50; color:#fff; padding:3px 8px; border-radius:12px; font-size:11px;">Succ ▶</span>
           <span style="background:#2c3e50; color:#fff; padding:3px 8px; border-radius:12px; font-size:11px;">4s ▾ Velocità</span>
           <span style="background:#dc3545; color:#fff; padding:3px 8px; border-radius:12px; font-size:11px;">✖ Esci</span>
         </div>
-        <small style="color:#666; display:block; font-style:italic; margin-bottom:10px;">Su smartphone e tablet puoi fare lo swipe orizzontale sulla foto per scorrere avanti e indietro.</small>
+        <small style="color:#666; display:block; font-style:italic; margin-bottom:10px;">
+          Su dispositivi touch puoi fare uno scorrimento orizzontale (swipe) sulla foto per passare alla foto precedente o successiva.
+        </small>
 
         <b style="color:#007bff;">⚙ OPZIONI MENU (☰)</b>
         <ul style="margin: 4px 0 10px 0; padding-left: 18px;">
-          <li><b>Stile Mappa:</b> permette di scegliere tra diverse viste cartografiche (Standard OpenStreetMap, Satellitare Esri, Ibrida, Topografica, Terreno e Minimal CARTO).</li>
-          <li><b>Dimensione Puntine:</b> personalizza la grandezza delle puntine sulla mappa scegliendo tra <i>Piccole</i>, <i>Standard</i> o <i>Grandi</i> per rendere la navigazione più chiara sui diversi schermi.</li>
-          <li><b>Raggruppa punti (Clustering):</b> unisce i punti di scatto vicini in un unico cerchio numerato.</li>
-          <li><b>Abilita selezione Anno:</b> attiva un menu per filtrare e visualizzare solo le puntine dell'anno scelto.</li>
-          <li><b>Colori Puntine:</b> le puntine sulla mappa hanno colori diversi a seconda dell'anno di viaggio.</li>
-          <li><b>Abilita legenda anni:</b> mostra/nasconde il box in basso a destra con la corrispondenza dei colori per ciascun anno.</li>
+          <li><b>Stile Mappa:</b> per scegliere tra mappa standard (OpenStreetMap), satellitare (Esri), ibrida, topografica o sfondi minimali CARTO.</li>
+          <li><b>Dimensione Puntine:</b> permette di ingrandire o rimpicciolire i pin (Piccole, Standard, Grandi) per adattarli al tuo schermo.</li>
+          <li><b>Raggruppa punti (Clustering):</b> unisce le puntine vicine in un unico cerchio numerato per non affollare la mappa.</li>
+          <li><b>Abilita selezione Anno:</b> attiva un menu aggiuntivo per mostrare solo le tappe di un anno specifico.</li>
+          <li><b>Legenda Anni:</b> mostra un box in basso a destra con la corrispondenza dei colori per ogni anno.</li>
         </ul>
 
         <hr style="border:0; border-top:1px solid #ddd; margin:10px 0;">
-        <small style="color:#666; display:block; text-align:center;">Sito e codice sviluppati da Ing. Vinicio Barone con l'assistenza dell'AI Gemini</small>
+        <small style="color:#666; display:block; text-align:center;">
+          Sito e codice sviluppati da Ing. Vinicio Barone con l'assistenza dell'AI Gemini
+        </small>
       </div>
     </div>
   </div>
@@ -775,7 +812,6 @@
 
     const map = L.map('map', { minZoom: 2 }).setView([40, -140], 3);
 
-    // DEFINIZIONE TILE LAYERS (STILI DI MAPPA)
     const layerOSM = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 19,
       attribution: '© OpenStreetMap'
@@ -820,26 +856,13 @@
       map.removeLayer(currentTileLayer);
 
       switch(scelta) {
-        case 'satellite':
-          currentTileLayer = layerSatellite;
-          break;
-        case 'ibrida':
-          currentTileLayer = layerIbrido;
-          break;
-        case 'topo':
-          currentTileLayer = layerTopo;
-          break;
-        case 'terrain':
-          currentTileLayer = layerTerrain;
-          break;
-        case 'carto-light':
-          currentTileLayer = layerCartoLight;
-          break;
-        case 'carto-dark':
-          currentTileLayer = layerCartoDark;
-          break;
-        default:
-          currentTileLayer = layerOSM;
+        case 'satellite': currentTileLayer = layerSatellite; break;
+        case 'ibrida': currentTileLayer = layerIbrido; break;
+        case 'topo': currentTileLayer = layerTopo; break;
+        case 'terrain': currentTileLayer = layerTerrain; break;
+        case 'carto-light': currentTileLayer = layerCartoLight; break;
+        case 'carto-dark': currentTileLayer = layerCartoDark; break;
+        default: currentTileLayer = layerOSM;
       }
 
       currentTileLayer.addTo(map);
@@ -931,7 +954,6 @@
 
     map.on('dragstart zoomstart mousedown touchstart', fermaPanIniziale);
 
-    // GESTIONE DELLA DIMENSIONE DINAMICA DELE PUNTINE
     function creaIconaColorata(coloreHex, isBig = false) {
       const taglia = document.getElementById('select-dimensione-pin') ? document.getElementById('select-dimensione-pin').value : 'standard';
       
@@ -1096,6 +1118,9 @@
           const indexAttuale = puntiSlideshow.length;
           const fotoThumb = p.thumb || p.foto.replace(/^foto[\/\\]/, 'thumbs/');
           const htmlDescrizione = p.descrizione ? `<div class="popup-descrizione">${p.descrizione}</div>` : '';
+          
+          // Pulsante Diario nel Popup se p.diario è presente nel JSON
+          const htmlBtnDiario = p.diario ? `<br><a href="${p.diario}" target="_blank" rel="noopener" class="btn-diario">📖 Diario di Viaggio</a>` : '';
 
           const popupContent = `
             <div class="popup-container">
@@ -1104,6 +1129,7 @@
               ${htmlDescrizione}
               <img src="${fotoThumb}" class="popup-foto" alt="${p.nome}" onclick="apriModalFoto('${p.foto}', ${indexAttuale})">
               <a href="javascript:void(0)" onclick="apriModalFoto('${p.foto}', ${indexAttuale})" style="display:inline-block; margin-top:6px; color:#007bff; font-weight:bold; text-decoration:none; font-size:12px;">Ingrandisci foto 🔍</a>
+              ${htmlBtnDiario}
             </div>
           `;
 
@@ -1257,15 +1283,28 @@
       modal.style.display = 'flex';
       document.getElementById('imgModalSrc').src = urlFoto;
 
+      const captionElem = document.getElementById('modal-caption');
+
       if (index !== -1 && puntiSlideshow[index]) {
         const p = puntiSlideshow[index];
         const descTesto = p.descrizione ? ` — ${p.descrizione}` : '';
-        document.getElementById('modal-caption').textContent = `${p.nome || p.viaggio} (${p.data})${descTesto}`;
+        let htmlCaption = `<div>${p.nome || p.viaggio} (${p.data})${descTesto}</div>`;
+
+        if (p.diario) {
+          htmlCaption += `<a href="${p.diario}" target="_blank" rel="noopener" class="btn-diario-modal" onclick="event.stopPropagation()">📖 Diario di Viaggio</a>`;
+        }
+
+        captionElem.innerHTML = htmlCaption;
       } else {
-        document.getElementById('modal-caption').textContent = '';
+        captionElem.innerHTML = '';
       }
 
-      history.pushState({ modalOpen: true }, "");
+      // Protezione History API per server virtuali / ambienti locali
+      try {
+        history.pushState({ modalOpen: true }, "");
+      } catch(e) {
+        console.warn("Nessun supporto history API locale:", e);
+      }
     }
 
     function chiudiModalFoto(fromPopState = false) {
@@ -1273,15 +1312,21 @@
       if (modal.style.display !== 'none') {
         modal.style.display = 'none';
 
-        if (!fromPopState && history.state && history.state.modalOpen) {
-          history.back();
+        if (!fromPopState) {
+          try {
+            if (history.state && history.state.modalOpen) {
+              history.back();
+            }
+          } catch(e) {
+            console.warn("Errore ritorno history:", e);
+          }
         }
       }
     }
 
     window.addEventListener('popstate', function(e) {
       const modal = document.getElementById('imageModal');
-      if (modal.style.display !== 'none') {
+      if (modal && modal.style.display !== 'none') {
         chiudiModalFoto(true);
       }
       const modalAiuto = document.getElementById('modal-aiuto');
