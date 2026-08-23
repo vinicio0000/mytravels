@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- TITOLO E DESCRIZIONE SEO -->
-  <title>Diario di Viaggio in Camper in Marocco: Itinerario, Dogana e Consigli | Vinicio e Luisa</title>
+  <title>Diario di Viaggio in Camper in Marocco e Spagna: Itinerario, Dogana e Consigli | Vinicio e Luisa</title>
   <meta name="description" content="Racconto di viaggio completo in camper tra Spagna e Marocco di Vinicio e Luisa con il loro cocker Leo. Informazioni pratiche, itinerario completo, campeggi, dogana e consigli.">
   <meta name="author" content="Vinicio e Luisa">
   <meta name="robots" content="index, follow">
@@ -102,31 +102,143 @@
       color: #1e3c72;
     }
 
+    /* BOX HIGHLIGHT PER TAMRAGHT / AGADIR */
+    .box-highlight {
+      background-color: #fff9e6;
+      border-left: 6px solid #f39c12;
+      padding: 20px;
+      margin: 30px 0;
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+
+    .box-highlight h3 {
+      margin-top: 0;
+      color: #d35400;
+      font-size: 18px;
+    }
+
     ul {
       font-size: 16px;
       line-height: 1.8;
       padding-left: 20px;
     }
 
-    /* BOTTONE IN FONDO ALLA PAGINA */
-    .btn-mappa {
-      display: block;
-      width: fit-content;
-      margin: 40px auto 20px auto;
-      background-color: #007bff;
-      color: white;
-      text-decoration: none;
-      padding: 12px 24px;
+    /* BOTTONI IN FONDO ALLA PAGINA */
+    .action-buttons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      margin-top: 40px;
+    }
+
+    .btn-action {
+      display: inline-block;
+      width: 100%;
+      max-width: 350px;
+      padding: 14px 20px;
       border-radius: 6px;
       font-family: sans-serif;
       font-weight: bold;
       font-size: 16px;
       text-align: center;
-      transition: background 0.2s;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: background 0.2s, transform 0.1s;
+    }
+
+    .btn-mappa {
+      background-color: #007bff;
+      color: white;
     }
 
     .btn-mappa:hover {
       background-color: #0056b3;
+    }
+
+    .btn-feedback {
+      background-color: #27ae60;
+      color: white;
+    }
+
+    .btn-feedback:hover {
+      background-color: #219150;
+    }
+
+    /* MODAL PER FORM CONTATTI */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.6);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 8px;
+      width: 90%;
+      max-width: 500px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      font-family: sans-serif;
+      position: relative;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 24px;
+      cursor: pointer;
+      color: #aaa;
+    }
+
+    .close-btn:hover {
+      color: #000;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .form-group input, .form-group textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-family: inherit;
+    }
+
+    .btn-submit {
+      background-color: #1e3c72;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      width: 100%;
+      font-size: 16px;
+    }
+
+    .btn-submit:hover {
+      background-color: #162d56;
     }
 
     @media (max-width: 600px) {
@@ -142,27 +254,28 @@
 </head>
 <body>
 
+  
   <!-- BARRA DI NAVIGAZIONE IN ALTO -->
   <div class="top-bar">
     <span style="font-weight: bold; font-family: sans-serif;">La Mappa dei Viaggi</span>
-    <a href="index.html">🌍 Torna alla Mappa Interattiva</a>
+    <a href="index.html" onclick="if(window.opener){ window.close(); return false; }">🌍 Torna alla Mappa Interattiva</a>
   </div>
 
   <!-- CONTENUTO DEL DIARIO -->
   <div class="container">
     
-    <h1>Diario di Viaggio in Camper in Marocco: Itinerario, Dogana e Consigli</h1>
+    <h1>Diario di Viaggio in Camper in Marocco e Spagna: Itinerario, Dogana e Consigli</h1>
     
-    <p><i>Racconto del viaggio effettuato da noi due (Vinicio e Luisa) insieme al nostro bellissimo cocker spaniel inglese Leo, a bordo del nostro camper, alla scoperta della Spagna e del Marocco.</i></p>
+    <p><i>Racconto del viaggio effettuato da noi due (Vinicio e Luisa) insieme al nostro bellissimo cocker spaniel inglese nero Leo, a bordo del nostro camper, alla scoperta della Spagna e del Marocco.</i></p>
 
     <!-- BOX CON INFORMAZIONI GENERALI -->
     <div class="box-info">
       <h3>📌 Note e Dettagli del Viaggio</h3>
       <p style="margin:0; font-size: 14px;">
-        Questo viaggio è durato circa tre mesi: un mese in Spagna all'andata, uno in Marocco e uno in Spagna al ritorno.<br>
-        <b>Distanze indicative:</b> tra Ancona e Civitavecchia ci sono circa 300 km, tra Civitavecchia e Algeciras circa 1.100 km, mentre tra Tangeri e Agadir (per chi va direttamente a sud) circa 700 km.<br>
+        Questo viaggio è durato circa tre mesi: un mese in Spagna all'andata, uno in Marocco e un altro mese in Spagna per il rientro.<br>
+        <b>Distanze indicative:</b> tra Ancona e Civitavecchia ci sono circa 300 km, tra Civitavecchia e Algeciras circa 1.100 km, mentre tra Tangeri e Agadir (per chi va direttamente a sud) ci sono circa 700 km.<br>
         Il giro percorso in Marocco durante questo viaggio è stato di 3.400 km, per un totale complessivo su strada di circa 6.200 km. In tre mesi si tratta di una media inferiore ai 70 km al giorno: un viaggio decisamente tranquillo.<br>
-        Le autostrade marocchine sono bellissime, e stanno rifacendo e ammodernando anche le altre strade principali.
+        Le autostrade marocchine sono bellissime e stanno rifacendo e ammodernando anche le altre strade principali.
       </p>
     </div>
 
@@ -183,7 +296,7 @@
       <b>Nota sugli spostamenti locali:</b> In questa guida non troverete informazioni sui mezzi pubblici (autobus o tram) in quanto in Spagna non è consentito l'accesso ai cani. Noi ci muoviamo benissimo e in totale autonomia con il nostro scooter al seguito (o occasionalmente, a dicembre, noleggiando un'auto).
     </p>
 
-    <h2>2. Il Viaggio di Trasferimento in Spagna</h2>
+    <h2>2. Il Viaggio di TRASFERIMENTO in Spagna (Andata)</h2>
 
     <div class="box-info">
       <h3>🚢 28 Settembre: Inizio del Viaggio – Nave Civitavecchia / Barcellona</h3>
@@ -307,8 +420,8 @@
     <div class="box-info">
       <h3>🕌 27 Ottobre – 29 Ottobre: Fès</h3>
       <p style="margin:0; font-size: 14px;">
-        Fès è la più antica delle città imperiali e la sua medina è Patrimonio UNESCO. Ci siamo fermati al <b>Camping Le Diamant Vert</b>, molto bello e inserito all'interno di un complesso alberghiero (un po' distante dal centro se non si dispone di un mezzo di trasporto).<br>
-        Assolutamente da vedere la medina medievale: un intricato dedalo di vicoli stretti dove passa di tutto (carretti trainati da muli, motorini, biciclette e persone). Altra tappa imperdibile nella medina sono le <b>tanneries</b> (le concerie), caratterizzate dalle iconiche vasche in pietra con intrugli colorati e le pelli stese ad asciugare. Abbiamo girato comodamente la medina in scooter in totale serenità.
+        Fès è la più antica delle città imperiali e la sua medina è Patrimonio UNESCO. Ci siamo fermati al <b>Camping Le Diamant Vert</b>, molto bello e inserito all'interno di un complesso alberghiero (un po' distante dal centro se non si dispone di un mezzo di trasporto).<br><br>
+        Assolutamente da vedere la medina medievale: un intricato dedalo di vicoli stretti dove passa di tutto (carretti trainati da muli, motorini, biciclette e persone). Altra tappa imperdibile nella medina sono le <b>tanneries</b> (le concerie), caratterizzate dalle iconiche vasche in pietra con intrugli colorati e le pelli stese ad asciugare, dove nel 1997 abbiamo visto persino i resti delle carcasse degli animali morti. È uno spettacolo multicolore per gli occhi ma decisamente impattante per l'olfatto: non a caso ai gruppi organizzati danno un rametto di menta fresca da tenere sotto il naso durante la visita! Abbiamo vagato ed esplorato la medina con lo scooter in totale tranquillità.
       </p>
     </div>
 
@@ -322,49 +435,142 @@
     <div class="box-info">
       <h3>🏜️ 30 Ottobre – 31 Ottobre: Merzouga e il Deserto dell'Erg Chebbi</h3>
       <p style="margin:0; font-size: 14px;">
-        Merzouga è il deserto arancione, una tappa obbligata. Si tratta di un deserto di sabbia (<i>erg</i>) lungo circa 30 km e largo 10 km, circondato da un deserto sassoso a poca distanza dal confine con l'Algeria. Nel deserto ci sono pozzi d'acqua dolce e un'oasi con il tipico sistema di irrigazione a canali e chiuse.<br>
-        Oltrepassata la porta del deserto (un arco sulla strada), dopo un centinaio di metri l'asfalto finisce e si trova il <b>Camping La Gazelle Bleue</b>, dove abbiamo soggiornato (come in altri viaggi). Ci siamo mossi tranquillamente in scooter sulle piste del deserto sassoso: non occorre un camper 4x4. Per inoltrarsi tra le dune ci sono autisti di fuoristrada che per circa 50 € vi faranno fare un tour bellissimo con tutte le soste desiderate.
+        Merzouga è il deserto arancione, una tappa obbligata. Si tratta di un deserto di sabbia (<i>erg</i>) lungo circa 30 km e largo 10 km, circondato da un deserto sassoso a poca distanza dal confine con l'Algeria. Nel deserto ci sono pozzi d'acqua dolce e un'oasi con il tipico sistema di irrigazione a canali e chiuse.<br><br>
+        Oltrepassata la porta del deserto (un arco sulla strada), dopo un centinaio di metri l'asfalto finisce e si trova il <b>Camping La Gazelle Bleue</b>, dove abbiamo soggiornato. Ci siamo mossi tranquillamente in scooter sulle piste del deserto sassoso: non occorre un camper 4x4. Per inoltrarsi tra le dune ci sono autisti di fuoristrada che per circa 50 € vi faranno fare un tour bellissimo con tutte le soste desiderate. È possibile noleggiare quad e dune buggy, che però fanno un rumore un po' fastidioso.<br><br>
+        Rispetto al 1997, quando per arrivare si dovevano percorrere 40 km di pista da Rissani, oggi è molto più semplice accedere, anche se si è persa un po' di poesia: proprio ai bordi delle dune hanno costruito hotel con insegne al neon! Rimane comunque una tappa fondamentale da vedere.
       </p>
     </div>
 
     <div class="box-info">
       <h3>🏞️ 31 Ottobre – 1 Novembre: Tinghir e le Gole del Todra</h3>
       <p style="margin:0; font-size: 14px;">
-        Località famosa per le imponenti <b>Gole del Todra</b> e le sue estese palmeraie. In passato le gole si guadavano direttamente con il camper nell'acqua; oggi c'è una comoda strada asfaltata.
+        Località famosa per le imponenti <b>Gole del Todra</b> e le sue estese palmeraie. È ancora bellissima: in passato le gole si guadavano direttamente con il camper in 10 cm d'acqua, mentre oggi c'è una comoda strada asfaltata.
       </p>
     </div>
 
     <div class="box-info">
       <h3>🎬 1 Novembre – 2 Novembre: Aït-Ben-Haddou e Ouarzazate</h3>
       <p style="margin:0; font-size: 14px;">
-        Aït-Ben-Haddou è lo <i>ksar</i> (villaggio fortificato) più famoso del Marocco, Patrimonio UNESCO e set di celebri film (tra cui <i>Il Gladiatore</i>). All'interno si possono ammirare splendide <i>kasbah</i> e una mostra fotografica sulle produzioni cinematografiche. Nelle vicinanze si trova Ouarzazate, la capitale del cinema marocchino. Abbiamo soggiornato in una sosta spartana nei pressi di un hotel; suggeriamo di valutare un campeggio direttamente a Ouarzazate. La strada per Marrakech valica lo spettacolare passo del <b>Tizi n'Tichka</b> a circa 2.200 metri d'altitudine.
+        Aït-Ben-Haddou è lo <i>ksar</i> (villaggio fortificato) più famoso del Marocco, Patrimonio UNESCO e set di celebri film (tra cui <i>Il Gladiatore</i>). All'interno si possono ammirare splendide <i>kasbah</i> e una mostra fotografica sulle produzioni cinematografiche. Nelle vicinanze si trova Ouarzazate, la capitale del cinema marocchino. Abbiamo dormito in una sosta spartana nei pressi di un hotel; consigliamo di cercare un campeggio direttamente a Ouarzazate. Questa città si trova lungo la strada per Marrakech attraverso lo spettacolare passo del <b>Tizi n'Tichka</b>, a circa 2.200 metri d'altitudine.
       </p>
     </div>
 
-    <div class="box-info">
-      <h3>🏖️ 2 Novembre – 28 Novembre: La Sosta Residenziale a Tamraght / Agadir e le Escursioni nel Sud</h3>
-      <p style="margin:0; font-size: 14px;">
-        Dopo il lungo viaggio di trasferimento attraverso il paese, raggiungiamo la vera <b>destinazione residenziale del nostro viaggio</b>: Tamraght, 13 km a nord di Agadir.<br><br>
-        Qui facciamo base per oltre tre settimane (più di 20 giorni totali, divisi in due soggiorni con una parentesi verso il sud) presso il <b>Camping Atlantica Imourane (Atlantica Park)</b>. È una struttura fantastica e organizzata: appena varcato il cancello ci si trova direttamente sulla spiaggia dell'Oceano Atlantico. La spiaggia è dotata di un ottimo ristorante ed è percorsa da una meravigliosa <i>corniche</i> pedonale di 5 km che la collega alla celebre località surfistica di Taghazout. Sull'ampio litorale si trova un'animata vita locale con cavalli, cammelli, lettini e tratti di spiaggia libera.<br><br>
-        Alle spalle del campeggio si sviluppa il borgo di Tamraght, ricco di piccoli market, ristoranti e servizi di prima necessità, mentre ad appena 1 km a sud si trova il centro di Aourir. Questa location si è rivelata il punto d'appoggio perfetto per rilassarsi, godersi il mare e la vita residenziale in camper con il nostro Leo.<br><br>
-        <b>La grande metropoli di Agadir (13 km a sud):</b> raggiungibile in pochi minuti di scooter percorrendo la panoramica strada litoranea, Agadir è una moderna metropoli di oltre un milione di abitanti posizionata al 30° parallelo. Offre qualsiasi tipo di servizio occidentale: da modernissimi centri medici e ospedali, ai grandi supermercati come Carrefour, Marjane e Bricoma. Imperdibile per lo shopping è l'immenso e spettacolare <b>Souk El Had</b>, un mercato recintato con oltre 6.000 negozi disposti su 13 ettari dove si trova letteralmente di tutto.<br><br>
+    <!-- BOX HIGHLIGHT PER TAMRAGHT / AGADIR -->
+    <div class="box-highlight">
+      <h3>🌟 2 Novembre – 28 Novembre: La Sosta Residenziale a Tamraght / Agadir e le Escursioni nel Sud</h3>
+      <p style="margin:0; font-size: 15px; line-height: 1.8;">
+        Dopo il lungo viaggio di trasferimento attraverso il paese, raggiungiamo la vera <b>destinazione residenziale del nostro viaggio</b>: Tamraght, situata a 13 km a nord di Agadir.<br><br>
+        Qui facciamo base per quasi un mese presso il <b>Camping Atlantica d'Imourane (Atlantica Park)</b>. È una struttura fantastica: appena varcato il cancello ci si trova direttamente sulla spiaggia dell'Oceano Atlantico. Sulla spiaggia è presente un ottimo ristorante frequentato anche da residenti marocchini che arrivano da Agadir. Una bellissima <i>corniche</i> pedonale di 5 km passa davanti a hotel di lusso e collega la spiaggia a Taghazout, celebre località per ragazzi che imparano a fare surf (attività praticata lungo tutto il litorale).<br><br>
+        Sulla spiaggia si trova di tutto: cavalli, cammelli (che in Marocco non mancano mai), lettini e ombrelloni portati dai ragazzi del posto, anche se il 99% della spiaggia è completamente libera. Come accennato, ci sono piccoli branchi di cani randagi a cui nessuno fa caso: basta scacciarli e dopo qualche giorno non si avvicinano più. Alle spalle del campeggio c'è il paesino di Tamraght, ricco di piccoli supermarket, ristorantini e abitazioni locali spesso affittate ai surfisti. Ad appena 1 km a sud c'è Aourir, tipica cittadina marocchina dove, sapendo cercare, si trova di tutto per la vita quotidiana.<br><br>
+        <b>Agadir (13 km a sud):</b> Raggiungibile lungo una bellissima strada litoranea panoramica (siamo al 30° parallelo e ci si muove in scooter anche a dicembre), Agadir è una metropoli da un milione di abitanti, ordinata e non caotica come Marrakech. Vi si trova qualsiasi cosa: dal tipico <b>Souk El Had</b> (uno dei più grandi del Marocco con oltre 6.000 negozi su 13 ettari) ai supermercati occidentali (Carrefour, Marjane), fino a megastore di bricolage e di elettronica come Bricoma. Ci sono tantissimi ospedali: va considerato che moltissimi europei in pensione trascorrono qui l'inverno anche per 6 mesi di fila.<br><br>
         <b>Escursioni ed esplorazioni dal campeggio:</b><br>
-        • <i>Sidi Ifni, Aglou Beach e Tiznit:</i> Da Tamraght ci siamo spinti ancora più a sud per una brevissima parentesi esplorativa. Ad <b>Aglou Beach</b> abbiamo trovato un campeggio affacciato direttamente sull'oceano; a <b>Sidi Ifni</b> (la tappa più a sud del viaggio) abbiamo respirato l'Africa più autentica tra i mercati di piazza allestiti sui teli a terra; a <b>Tiznit</b>, la famosa "Città dell'Argento", ci siamo persi tra le centinaia di botteghe artigiane di gioielli berberi e le ottime macellerie locali.<br>
-        • <i>Escursione ad Essaouira:</i> Durante la seconda parte della sosta a Tamraght, per visitare la splendida <b>Essaouira</b> (Patrimonio UNESCO) abbiamo scelto di non spostare il camper: abbiamo contrattato un taxi con autista privato per l'intera giornata (100 €). È stata una scelta comodissima per esplorare in totale relax la famosa medina affacciata sull'oceano e i rinomati laboratori artigianali di intaglio del legno di radica di thuya con inserti in madreperla.
+        • <i>Aglou Beach e Sidi Ifni (10 - 13 Novembre):</i> Spingendoci più a sud, ad Aglou trovate un campeggio interessante su una spiaggia un po' dimessa. Sidi Ifni è stata la tappa più a sud del viaggio: rispetto ad Agadir sembra di essere entrati nell'Africa vera, con un grande mercato in piazza fatto di bancarelle allestite su teli per terra. Ci teniamo a precisare che in questi posti facciamo anche la spesa per mangiare, non ci limitiamo a fare fotografie!<br>
+        • <i>Tiznit (13 - 15 Novembre):</i> La città dell'argento, con un centro storico affascinante ricco di negozi di gioielleria berbera e un'ottima macelleria locale.<br>
+        • <i>Escursione ad Essaouira:</i> Durante il secondo soggiorno a Tamraght (15 - 28 Novembre), abbiamo contrattato con un taxi per affittarlo l'intera giornata con autista a 100 €, visitando la splendida Essaouira (Patrimonio UNESCO) senza spostare il camper. Famosa per la sua medina sul mare e l'artigianato in legno di radica intarsiato con madreperla.
       </p>
     </div>
 
     <div class="box-info">
       <h3>🎪 28 Novembre – 30 Novembre: Marrakech</h3>
       <p style="margin:0; font-size: 14px;">
-        Affascinante e caotica, la prima meta a Marrakech è immancabilmente la leggendaria <b>Piazza Djemaa el-Fna</b>, animata da spremitori d'arance, venditori tradizionali e bancarelle. Abbiamo esplorato la medina medievale in scooter facendoci strada tra viuzze, asini e carretti in completa armonia (sconsigliamo di addentrarsi in auto nella medina).
+        Bellissima e caotica, la prima destinazione è sempre la celebre <b>Piazza Djemaa el-Fna</b>, tra venditori di spremute d'arancia, venditori di dentiere e bancarelle. I migliori pezzi di artigianato li abbiamo acquistati qui. Abbiamo fatto un bellissimo giro in scooter all'interno della medina: tra viuzze strette si incontra di tutto (motorini, asini, carretti a mano e pedoni), ma nessuno si arrabbia e ci si sposta con rispetto. Sconsigliamo caldamente di entrare nella medina in auto!
+      </p>
+
+    </div>
+
+    <div class="box-info">
+      <h3>🏖️ 30 Novembre – 2 Dicembre: Kénitra e Mohammedia</h3>
+      <p style="margin:0; font-size: 14px;">
+        Risalendo verso nord ci fermiamo a Kénitra (Camping Mehdia, dotato di piscina sul mare; attenzione a un grosso branco di cani selvatici nella zona) e successivamente a Mohammedia (Camping Mimosa, comodo per i supermercati).
       </p>
     </div>
 
-    <!-- LINK FINALE DI RITORNO ALLA MAPPA FOTOGRAFICA -->
-    <a href="index.html" class="btn-mappa">🌍 Guarda le Foto Geolocalizzate sulla Mappa</a>
+    <h2>5. Il Viaggio di RITORNO in Spagna</h2>
+
+    <div class="box-info">
+      <h3>🌴 4 Dicembre – 16 Dicembre: Marbella (Camping Cabopino)</h3>
+      <p style="margin:0; font-size: 14px;">
+        Rientrati in Spagna, facciamo una sosta residenziale al Camping Cabopino a Marbella. A dicembre in Spagna muoversi in scooter fa un po' troppo freddo, quindi abbiamo noleggiato un'auto con cui abbiamo esplorato comodamente tutta la zona: Mijas, Fuengirola, Málaga, Marbella, Puerto Banús ed Estepona.
+      </p>
+    </div>
+
+    <div class="box-info">
+      <h3>💨 16 Dicembre – 17 Dicembre: Tarifa (Camping Valdevaqueros)</h3>
+      <p style="margin:0; font-size: 14px;">
+        Ci spostiamo a Tarifa, soggiornando al Camping Valdevaqueros. Tarifa ha un centro storico affascinante con marcate influenze arabeggianti. L'attrazione più spettacolare sono le <b>Dune di Valdevaqueros</b>, un piccolo pezzo di deserto affacciato sull'Europa, sovrastante una spiaggia celebre in tutto il mondo per il kitesurf.
+      </p>
+    </div>
+
+    <div class="box-info">
+      <h3>🏰 17 Dicembre – 20 Dicembre: El Puerto de Santa María</h3>
+      <p style="margin:0; font-size: 14px;">
+        Sostiamo al Camping El Puerto de Santa María, posizionato proprio davanti a una bella spiaggia. La cittadina è molto interessante ed è un punto di partenza ideale per visitare Cadice, raggiungibile sia in traghetto sia via strada.
+      </p>
+    </div>
+
+    <div class="box-info">
+      <h3>🌊 20 Dicembre – 27 Dicembre: Motril e Cambrils</h3>
+      <p style="margin:0; font-size: 14px;">
+        Dal 20 al 26 dicembre ci fermiamo a Motril in un ottimo campeggio situato di fronte a una bellissima spiaggia per goderci qualche giorno di relax natalizio sul mare. Il 26 dicembre ci spostiamo a Cambrils per l'ultima sosta tecnica in attesa dell'imbarco.
+      </p>
+    </div>
+
+    <div class="box-info">
+      <h3>🚢 28 Dicembre: Rientro in Italia</h3>
+      <p style="margin:0; font-size: 14px;">
+        Imbarco da Barcellona sul traghetto Grimaldi con destinazione Civitavecchia. Si chiude così un fantastico viaggio di tre mesi!
+      </p>
+    </div>
+
+    <!-- AZIONI E PULSANTI FINALI -->
+    <div class="action-buttons">
+      <button class="btn-action btn-feedback" onclick="openModal()">💬 Parlaci del tuo viaggio / Per approfondire</button>
+      <a href="index.html" class="btn-action btn-mappa">🌍 Guarda le Foto Geolocalizzate sulla Mappa</a>
+    </div>
 
   </div>
+
+  <!-- MODAL FORM PER FEEDBACK / CONTATTO -->
+  <div id="feedbackModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <h3 style="margin-top:0; color:#1e3c72;">Scrivici un messaggio</h3>
+      <p style="font-size:14px; color:#666; margin-bottom:20px;">Hai domande sul percorso o vuoi condividere un'esperienza? Lasciaci i tuoi contatti!</p>
+      
+      <!-- FORM DI CONTATTO (Punta a Formspree per proteggere l'email dall'HTML visibile) -->
+      <form action="https://formspree.io/f/mqpzoyng" method="POST">
+        <div class="form-group">
+          <label for="email">La tua Email:</label>
+          <input type="email" id="email" name="email" required placeholder="nome@esempio.it">
+        </div>
+        <div class="form-group">
+          <label for="message">Messaggio o Domanda:</label>
+          <textarea id="message" name="message" rows="4" required placeholder="Scrivi qui il tuo messaggio..."></textarea>
+        </div>
+        <!-- Email destinatario impostata lato server Formspree su baronevinicio@libero.it -->
+    
+        <button type="submit" class="btn-submit">Invia Messaggio</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function openModal() {
+      document.getElementById('feedbackModal').style.display = 'flex';
+    }
+
+    function closeModal() {
+      document.getElementById('feedbackModal').style.display = 'none';
+    }
+
+    // Chiudi la modal se si clicca fuori dal riquadro
+    window.onclick = function(event) {
+      var modal = document.getElementById('feedbackModal');
+      if (event.target == modal) {
+        modal.style.display = 'none';
+      }
+    }
+  </script>
 
 </body>
 </html>

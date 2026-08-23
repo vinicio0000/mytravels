@@ -1,18 +1,18 @@
-<!-- VERSION: 2.9_DIARIO_FIX -->
+<!-- VERSION: 2.9_DIARIO_FIX_SEO -->
 <!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   
-  <title>Mappa Interattiva Viaggi Fai da Te e in Camper | La Mappa dei Viaggi</title>
-  <meta name="description" content="Esplora oltre 30 anni di viaggi fai da te e avventure in camper con la nostra mappa dinamica a schermo diviso: foto geolocalizzate e percorsi passo dopo passo di Vinicio e Luisa.">
-  <meta name="keywords" content="mappa viaggi interattiva, foto geolocalizzate viaggi, viaggi in camper, viaggi fai da te, itinerari camper marocco, viaggi avventura">
+  <title>Mappa Interattiva Viaggi Fai da Te e in Camper | La Mappa dei Viaggi di Vinicio e Luisa</title>
+  <meta name="description" content="Esplora oltre 30 anni di viaggi fai da te e avventure in camper con la nostra mappa dinamica a schermo diviso: foto geolocalizzate, itinerari in Spagna e Marocco e diari di viaggio.">
+  <meta name="keywords" content="mappa viaggi interattiva, foto geolocalizzate viaggi, viaggi in camper, viaggi fai da te, itinerari camper marocco, sosta camper spagna marocco, diari di viaggio camper">
   <meta name="author" content="Vinicio e Luisa">
   <meta name="robots" content="index, follow">
 
   <meta property="og:title" content="Mappa Interattiva Viaggi Fai da Te e in Camper | La Mappa dei Viaggi">
-  <meta property="og:description" content="Oltre 30 anni di itinerari fai da te e viaggi in camper: scopri le nostre foto geolocalizzate in tempo reale sulla mappa.">
+  <meta property="og:description" content="Oltre 30 anni di itinerari fai da te e viaggi in camper: scopri le nostre foto geolocalizzate in tempo reale sulla mappa e i diari di viaggio.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://vinicio0000.github.io/mytravels/">
 
@@ -22,6 +22,21 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
+
+  <!-- DATI STRUTTURATI SCHEMA.ORG PER GOOGLE -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "La Mappa dei Viaggi di Vinicio e Luisa",
+    "url": "https://vinicio0000.github.io/mytravels/",
+    "description": "Mappa interattiva con oltre 30 anni di viaggi fai da te e itinerari in camper in Marocco, Spagna e Portogallo con foto geolocalizzate.",
+    "author": {
+      "@type": "People",
+      "name": "Vinicio e Luisa"
+    }
+  }
+  </script>
 
   <style>
     html, body {
@@ -511,6 +526,21 @@
       z-index: 100001;
     }
 
+    /* ESTENSIZIONE SEO - BOX IN EVIDENZA GUIDA */
+    .box-seo-guida {
+      background: #eef7f6;
+      border-left: 4px solid #52b69a;
+      padding: 10px 12px;
+      border-radius: 6px;
+      margin: 10px 0;
+      font-size: 12px;
+    }
+    .box-seo-guida a {
+      color: #1e3c72;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+
     @media (max-width: 900px) {
       #header-container { display: none !important; }
       #filtro-container { padding: 6px 10px; gap: 6px; top: 10px; right: 10px; }
@@ -527,13 +557,14 @@
 </head>
 <body>
 
-  <!-- SEZIONE SEO -->
+  <!-- SEZIONE SEO PER GOOGLE -->
   <header class="seo-text-container">
     <h1>La Mappa dei Viaggi: 30 Anni di Viaggi Fai da Te e Avventure in Camper</h1>
     <p>
       Benvenuti su <strong>La Mappa dei Viaggi</strong> di Vinicio e Luisa. Attraverso la nostra <strong>mappa dinamica e interattiva</strong>, vi guidiamo alla scoperta di oltre 30 anni di viaggi fai da te condotti in totale autonomia.
     </p>
-    <h2>Itinerari in Camper e Viaggi On The Road (Marocco ed Europa)</h2>
+    <h2>Itinerari in Camper e Viaggi On The Road (Spagna e Marocco)</h2>
+    <p>Diario di viaggio completo in camper tra Spagna e Marocco con consigli pratici su dogana Tangeri Med, titolazione antirabica cane, autostrade e sosta campeggi ad Agadir e Marbella.</p>
     <h2>30 Anni di Spedizioni Fai da Te nel Mondo: Asia, Africa e America</h2>
     <h2>Mappa Interattiva e Foto Geolocalizzate nel Mondo</h2>
   </header>
@@ -613,7 +644,7 @@
       <hr style="border:0; border-top:1px solid #eee; margin:2px 0;">
 
       <a href="javascript:void(0)" onclick="mostraAiuto()" style="text-decoration:none; color:#007bff; font-size:12px; font-weight:600; display:flex; align-items:center; gap:6px;">
-        ❓ Guida / Aiuto
+        ❓ Guida / Aiuto / Diari
       </a>
     </div>
   </div>
@@ -668,7 +699,14 @@
       </div>
       
       <div style="font-size: 13px; color: #2c3e50; max-height: 65vh; overflow-y: auto; padding-right: 5px; line-height: 1.5;">
-        <p style="margin-top:0;">
+        
+        <!-- BANNER PROMOZIONALE SEO VERSO IL DIARIO COMPLETO -->
+        <div class="box-seo-guida">
+          📖 <b>Guida In Evidenza:</b> Leggi il nostro resoconto di viaggio completo<br>
+          <a href="diario_marocco_2023.html" target="_blank">Diario di Viaggio in Camper in Marocco e Spagna: Itinerario, Dogana e Consigli</a>
+        </div>
+
+        <p style="margin-top:6px;">
           Questo progetto raccoglie oltre 30 anni di viaggi condotti in totale autonomia, in camper e in aereo fai da te. Ogni foto è geolocalizzata ed è posizionata esattamente nel luogo in cui è stata scattata.
         </p>
 
@@ -1299,7 +1337,6 @@
         captionElem.innerHTML = '';
       }
 
-      // Protezione History API per server virtuali / ambienti locali
       try {
         history.pushState({ modalOpen: true }, "");
       } catch(e) {
