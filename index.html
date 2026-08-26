@@ -3,7 +3,7 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
-  <meta id="viewport-meta" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   
   <title>Mappa Interattiva Viaggi Fai da Te e in Camper | La Mappa dei Viaggi di Vinicio e Luisa</title>
   <meta name="description" content="Esplora oltre 30 anni di viaggi fai da te e avventure in camper con la nostra mappa dinamica a schermo diviso: foto geolocalizzate, itinerari in Spagna e Marocco e diari di viaggio.">
@@ -514,7 +514,6 @@
       z-index: 100001;
     }
 
-    /* ESTENSIZIONE SEO - BOX IN EVIDENZA GUIDA */
     .box-seo-guida {
       background: #eef7f6;
       border-left: 4px solid #52b69a;
@@ -676,13 +675,11 @@
       
       <div style="font-size: 13px; color: #2c3e50; max-height: 65vh; overflow-y: auto; padding-right: 5px; line-height: 1.5;">
 
- 
-        <!-- BANNER PROMOZIONALE SEO VERSO IL DIARIO COMPLETO -->
         <div class="box-seo-guida">
           📖 <b>Guida In Evidenza:</b> Leggi il nostro resoconto di viaggio completo<br>
           <a href="diario_spagna_marocco_2023.html" target="_blank">Diario di Viaggio in Camper in Marocco e Spagna: Itinerario, Dogana e Consigli</a>
         </div>
-   <div class="box-seo-guida">
+        <div class="box-seo-guida">
           📖 <b>Guida In Evidenza:</b> Leggi il nostro resoconto di viaggio completo<br>
           <a href="Diario_Sudafrica_2009.html" target="_blank">Diario di Viaggio in Sudafrica: Itinerario, Dogana e Consigli</a>
         </div>
@@ -825,8 +822,7 @@
           splash.style.display = 'none';
           map.invalidateSize();
           avviaPanIniziale();
-		 
-        }, 800);
+        }, 850);
       }
     }
 
@@ -1139,7 +1135,6 @@
           const fotoThumb = p.thumb || p.foto.replace(/^foto[\/\\]/, 'thumbs/');
           const htmlDescrizione = p.descrizione ? `<div class="popup-descrizione">${p.descrizione}</div>` : '';
           
-          // Pulsante Diario nel Popup se p.diario è presente nel JSON
           const htmlBtnDiario = p.diario ? `<br><a href="${p.diario}" target="_blank" rel="noopener" class="btn-diario">📖 Diario di Viaggio</a>` : '';
 
           const popupContent = `
@@ -1187,32 +1182,6 @@
       });
     }
 
-    // Abilita lo zoom nativo (pinch-to-zoom) durante la slideshow, così il
-    // comportamento è identico su tablet e su cellulare.
-    function abilitaZoomTouch() {
-      const meta = document.getElementById('viewport-meta');
-      if (meta) meta.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes');
-    }
-
-    function disabilitaZoomTouch() {
-      const meta = document.getElementById('viewport-meta');
-      if (meta) meta.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no');
-    }
-
-    // Quando lo zoom touch modifica la vista (pinch), ricentra la mappa
-    // sulla puntina attualmente in evidenza.
-    function ricentraSuPuntinaAttiva() {
-      if (!isSlideshowActive) return;
-      const activeMarker = markersSlideshow[currentSlideIndex];
-      if (activeMarker) {
-        map.setView(activeMarker.getLatLng(), map.getZoom(), { animate: false });
-      }
-    }
-
-    if (window.visualViewport) {
-      window.visualViewport.addEventListener('resize', ricentraSuPuntinaAttiva);
-    }
-
     function avviaSlideshow() {
       if (markersSlideshow.length === 0) return;
       fermaPanIniziale();
@@ -1223,7 +1192,6 @@
       isSlideshowPaused = false;
       currentSlideIndex = 0;
 
-      abilitaZoomTouch();
       document.body.classList.add('slideshow-active');
 
       document.getElementById('filtro-container').style.display = 'none';
@@ -1300,8 +1268,7 @@
     function fermaSlideshow() {
       isSlideshowActive = false;
       clearInterval(slideshowTimer);
-      disabilitaZoomTouch();
-
+      
       document.body.classList.remove('slideshow-active');
       map.invalidateSize();
 
