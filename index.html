@@ -1,4 +1,4 @@
-<!-- VERSION: 2.92_DIARIO_FIX_SEO -->
+<!-- VERSION: 2.93_FIX_TOUCH_AND_FULLSCREEN_SWIPE -->
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -23,7 +23,6 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
 
-  <!-- DATI STRUTTURATI SCHEMA.ORG PER GOOGLE -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -514,7 +513,6 @@
       z-index: 100001;
     }
 
-    /* ESTENSIZIONE SEO - BOX IN EVIDENZA GUIDA */
     .box-seo-guida {
       background: #eef7f6;
       border-left: 4px solid #52b69a;
@@ -670,19 +668,16 @@
       border: 1px solid rgba(0,0,0,0.15);
     ">
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; border-bottom: 2px solid #007bff; padding-bottom: 6px;">
-        <h3 style="margin:0; font-size:16px; color:#2c3e50;">🌍 Guida e Informazioni (v2.92)</h3>
+        <h3 style="margin:0; font-size:16px; color:#2c3e50;">🌍 Guida e Informazioni (v2.93)</h3>
         <button onclick="chiudiModalAiuto()" style="background:none; border:none; font-size:20px; cursor:pointer; color:#666;">✖</button>
       </div>
       
       <div style="font-size: 13px; color: #2c3e50; max-height: 65vh; overflow-y: auto; padding-right: 5px; line-height: 1.5;">
-
- 
-        <!-- BANNER PROMOZIONALE SEO VERSO IL DIARIO COMPLETO -->
         <div class="box-seo-guida">
           📖 <b>Guida In Evidenza:</b> Leggi il nostro resoconto di viaggio completo<br>
           <a href="diario_spagna_marocco_2023.html" target="_blank">Diario di Viaggio in Camper in Marocco e Spagna: Itinerario, Dogana e Consigli</a>
         </div>
-   <div class="box-seo-guida">
+        <div class="box-seo-guida">
           📖 <b>Guida In Evidenza:</b> Leggi il nostro resoconto di viaggio completo<br>
           <a href="Diario_Sudafrica_2009.html" target="_blank">Diario di Viaggio in Sudafrica: Itinerario, Dogana e Consigli</a>
         </div>
@@ -695,42 +690,18 @@
 
         <b style="color:#007bff;">📍 ESPLORAZIONE MAPPA E FOTO</b>
         <p style="margin: 4px 0 10px 0;">
-          Clicca su una puntina colorata 
-          <svg width="14" height="22" viewBox="0 0 25 41" style="vertical-align: middle;"><path d="M12.5 0C5.6 0 0 5.6 0 12.5C0 21.9 12.5 41 12.5 41C12.5 41 25 21.9 25 12.5C25 5.6 19.4 0 12.5 0Z" fill="#007bff" stroke="#FFF" stroke-width="1.5"/><circle cx="12.5" cy="12.5" r="5" fill="#FFF"/></svg>
-          per aprire la finestra con l'anteprima, la data e la descrizione del luogo. Cliccando sulla foto puoi ingrandirla a schermo intero.
+          Clicca su una puntina colorata per aprire la finestra con l'anteprima, la data e la descrizione del luogo. Cliccando sulla foto puoi ingrandirla a schermo intero. Quando la foto è a schermo intero puoi fare lo <b>swipe (scorrimento orizzontale)</b> per passare alle altre foto del viaggio.
         </p>
 
         <b style="color:#28a745;">📖 DIARIO DI VIAGGIO</b>
         <p style="margin: 4px 0 10px 0;">
-          Se per il viaggio o la tappa selezionata è disponibile il resoconto scritto, troverai il pulsante verde <b>📖 Diario di Viaggio</b> sia all'interno del fumetto/popup sulla mappa, sia nella parte superiore della foto ingrandita a schermo intero. Cliccandolo si aprirà il file del diario in una nuova scheda.
+          Se per il viaggio o la tappa selezionata è disponibile il resoconto scritto, troverai il pulsante verde <b>📖 Diario di Viaggio</b> sia nel popup sia nella foto ingrandita.
         </p>
 
         <b style="color:#007bff;">▶ MODALITÀ SLIDESHOW</b>
         <p style="margin: 4px 0 10px 0;">
-          Selezionando uno specifico <b>Viaggio</b> dal menu in alto comparirà il pulsante <b>▶ Avvia Slideshow</b>. Lo schermo si dividerà in due: la foto in alto e la mappa in basso con la puntina corrente evidenziata in giallo 
-          <svg width="14" height="22" viewBox="0 0 25 41" style="vertical-align: middle;"><path d="M12.5 0C5.6 0 0 5.6 0 12.5C0 21.9 12.5 41 12.5 41C12.5 41 25 21.9 25 12.5C25 5.6 19.4 0 12.5 0Z" fill="#FFD700" stroke="#FFF" stroke-width="1.5"/><circle cx="12.5" cy="12.5" r="5" fill="#FFF"/></svg>.
+          Selezionando uno specifico <b>Viaggio</b> dal menu in alto comparirà il pulsante <b>▶ Avvia Slideshow</b> per scorrere automaticamente foto e mappa insieme.
         </p>
-
-        <b style="color:#007bff;">🎛 CONTROLLI E GESTI</b>
-        <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:6px; margin-bottom:8px;">
-          <span style="background:#2c3e50; color:#fff; padding:3px 8px; border-radius:12px; font-size:11px;">◀ Prec</span>
-          <span style="background:#2c3e50; color:#fff; padding:3px 8px; border-radius:12px; font-size:11px;">⏸ Pausa</span>
-          <span style="background:#2c3e50; color:#fff; padding:3px 8px; border-radius:12px; font-size:11px;">Succ ▶</span>
-          <span style="background:#2c3e50; color:#fff; padding:3px 8px; border-radius:12px; font-size:11px;">4s ▾ Velocità</span>
-          <span style="background:#dc3545; color:#fff; padding:3px 8px; border-radius:12px; font-size:11px;">✖ Esci</span>
-        </div>
-        <small style="color:#666; display:block; font-style:italic; margin-bottom:10px;">
-          Su dispositivi touch puoi fare uno scorrimento orizzontale (swipe) sulla foto per passare alla foto precedente o successiva.
-        </small>
-
-        <b style="color:#007bff;">⚙ OPZIONI MENU (☰)</b>
-        <ul style="margin: 4px 0 10px 0; padding-left: 18px;">
-          <li><b>Stile Mappa:</b> per scegliere tra mappa standard (OpenStreetMap), satellitare (Esri), ibrida, topografica o sfondi minimali CARTO.</li>
-          <li><b>Dimensione Puntine:</b> permette di ingrandire o rimpicciolire i pin (Piccole, Standard, Grandi) per adattarli al tuo schermo.</li>
-          <li><b>Raggruppa punti (Clustering):</b> unisce le puntine vicine in un unico cerchio numerato per non affollare la mappa.</li>
-          <li><b>Abilita selezione Anno:</b> attiva un menu aggiuntivo per mostrare solo le tappe di un anno specifico.</li>
-          <li><b>Legenda Anni:</b> mostra un box in basso a destra con la corrispondenza dei colori per ogni anno.</li>
-        </ul>
 
         <hr style="border:0; border-top:1px solid #ddd; margin:10px 0;">
         <small style="color:#666; display:block; text-align:center;">
@@ -825,7 +796,6 @@
           splash.style.display = 'none';
           map.invalidateSize();
           avviaPanIniziale();
-		 
         }, 800);
       }
     }
@@ -1138,8 +1108,6 @@
           const indexAttuale = puntiSlideshow.length;
           const fotoThumb = p.thumb || p.foto.replace(/^foto[\/\\]/, 'thumbs/');
           const htmlDescrizione = p.descrizione ? `<div class="popup-descrizione">${p.descrizione}</div>` : '';
-          
-          // Pulsante Diario nel Popup se p.diario è presente nel JSON
           const htmlBtnDiario = p.diario ? `<br><a href="${p.diario}" target="_blank" rel="noopener" class="btn-diario">📖 Diario di Viaggio</a>` : '';
 
           const popupContent = `
@@ -1297,16 +1265,31 @@
       });
     }
 
+    // --- GESTIONE FOTO INGRANDITA CON SWIPE ---
+    let currentModalIndex = -1;
+
     function apriModalFoto(urlFoto, index = -1) {
       fermaPanIniziale();
+      currentModalIndex = index;
+
       const modal = document.getElementById('imageModal');
       modal.style.display = 'flex';
       document.getElementById('imgModalSrc').src = urlFoto;
 
+      aggiornaModalCaption();
+
+      try {
+        history.pushState({ modalOpen: true }, "");
+      } catch(e) {
+        console.warn("Nessun supporto history API locale:", e);
+      }
+    }
+
+    function aggiornaModalCaption() {
       const captionElem = document.getElementById('modal-caption');
 
-      if (index !== -1 && puntiSlideshow[index]) {
-        const p = puntiSlideshow[index];
+      if (currentModalIndex !== -1 && puntiSlideshow[currentModalIndex]) {
+        const p = puntiSlideshow[currentModalIndex];
         const descTesto = p.descrizione ? ` — ${p.descrizione}` : '';
         let htmlCaption = `<div>${p.nome || p.viaggio} (${p.data})${descTesto}</div>`;
 
@@ -1318,12 +1301,22 @@
       } else {
         captionElem.innerHTML = '';
       }
+    }
 
-      try {
-        history.pushState({ modalOpen: true }, "");
-      } catch(e) {
-        console.warn("Nessun supporto history API locale:", e);
-      }
+    function modalFotoNext() {
+      if (currentModalIndex === -1 || markersSlideshow.length === 0) return;
+      currentModalIndex = (currentModalIndex + 1) % markersSlideshow.length;
+      const p = puntiSlideshow[currentModalIndex];
+      document.getElementById('imgModalSrc').src = p.foto;
+      aggiornaModalCaption();
+    }
+
+    function modalFotoPrev() {
+      if (currentModalIndex === -1 || markersSlideshow.length === 0) return;
+      currentModalIndex = (currentModalIndex - 1 + markersSlideshow.length) % markersSlideshow.length;
+      const p = puntiSlideshow[currentModalIndex];
+      document.getElementById('imgModalSrc').src = p.foto;
+      aggiornaModalCaption();
     }
 
     function chiudiModalFoto(fromPopState = false) {
@@ -1354,6 +1347,33 @@
       }
     });
 
+    // TOUCH SWIPE SULLA FOTO FULLSCREEN
+    const modalFotoElem = document.getElementById('imageModal');
+    let modalTouchStartX = 0;
+    let modalTouchStartY = 0;
+
+    modalFotoElem.addEventListener('touchstart', function(e) {
+      modalTouchStartX = e.changedTouches[0].screenX;
+      modalTouchStartY = e.changedTouches[0].screenY;
+    }, false);
+
+    modalFotoElem.addEventListener('touchend', function(e) {
+      const modalTouchEndX = e.changedTouches[0].screenX;
+      const modalTouchEndY = e.changedTouches[0].screenY;
+      
+      const diffX = modalTouchEndX - modalTouchStartX;
+      const diffY = modalTouchEndY - modalTouchStartY;
+
+      if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 40) {
+        if (diffX < 0) {
+          modalFotoNext();
+        } else {
+          modalFotoPrev();
+        }
+      }
+    }, false);
+
+    // TOUCH SWIPE IN SLIDESHOW
     const photoPanel = document.getElementById('slideshow-photo-panel');
 
     photoPanel.addEventListener('touchstart', function(e) {
@@ -1378,10 +1398,17 @@
     }, false);
 
     document.addEventListener('keydown', function(e) {
+      const modal = document.getElementById('imageModal');
+      const isModalOpen = modal && modal.style.display !== 'none';
+
       if (e.key === "Escape") {
         chiudiModalFoto(false);
         chiudiModalAiuto();
         if (isSlideshowActive) fermaSlideshow();
+      } else if (isModalOpen && e.key === "ArrowRight") {
+        modalFotoNext();
+      } else if (isModalOpen && e.key === "ArrowLeft") {
+        modalFotoPrev();
       }
     });
 
