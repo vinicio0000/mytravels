@@ -1,5 +1,495 @@
 [
   {
+    "nome": "2009-04-02-16H50M31",
+    "viaggio": "cairo 2009",
+    "anno": "2009",
+    "data": "02/04/2009",
+    "lat": 30.113652,
+    "lon": 31.409569,
+    "foto": "foto/cairo 2009/2009-04-02-16h50m31.jpg",
+    "descrizione": "Remote Apron, Il Cairo - Governatorato del Cairo, Egitto"
+  },
+  {
+    "nome": "2009-04-02-18H28M15",
+    "viaggio": "cairo 2009",
+    "anno": "2009",
+    "data": "02/04/2009",
+    "lat": 30.123948,
+    "lon": 31.348147,
+    "foto": "foto/cairo 2009/2009-04-02-18h28m15.jpg",
+    "descrizione": "كونكورد السلام, Il Cairo - Governatorato del Cairo, Egitto"
+  },
+  {
+    "nome": "2009-04-02-18H30M22",
+    "viaggio": "cairo 2009",
+    "anno": "2009",
+    "data": "02/04/2009",
+    "lat": 30.123758,
+    "lon": 31.348275,
+    "foto": "foto/cairo 2009/2009-04-02-18h30m22.jpg",
+    "descrizione": "كونكورد السلام, Il Cairo - Governatorato del Cairo, Egitto"
+  },
+  {
+    "nome": "2009-04-02-19H01M58",
+    "viaggio": "cairo 2009",
+    "anno": "2009",
+    "data": "02/04/2009",
+    "lat": 30.124106,
+    "lon": 31.348157,
+    "foto": "foto/cairo 2009/2009-04-02-19h01m58.jpg",
+    "descrizione": "كونكورد السلام, Il Cairo - Governatorato del Cairo, Egitto"
+  },
+  {
+    "nome": "2009-04-03-08H32M27",
+    "viaggio": "cairo 2009",
+    "anno": "2009",
+    "data": "03/04/2009",
+    "lat": 30.047804,
+    "lon": 31.231213,
+    "foto": "foto/cairo 2009/2009-04-03-08h32m27.jpg",
+    "descrizione": "شارع كورنيش النيل, Il Cairo - Governatorato del Cairo, Egitto"
+  },
+  {
+    "nome": "2009-04-03-08H39M36",
+    "viaggio": "cairo 2009",
+    "anno": "2009",
+    "data": "03/04/2009",
+    "lat": 30.047778,
+    "lon": 31.233333,
+    "foto": "foto/cairo 2009/2009-04-03-08h39m36.jpg",
+    "descrizione": "Ingresso del Museo Egizio in Tahrir Square, Il Cairo."
+  },
+  {
+    "nome": "2009-04-03-10H41M09",
+    "viaggio": "cairo 2009",
+    "anno": "2009",
+    "data": "03/04/2009",
+    "lat": 29.975643,
+    "lon": 31.128806,
+    "foto": "foto/cairo 2009/2009-04-03-10h41m09.jpg",
+    "descrizione": "مساكن البنائين, Giza - Governatorato di Giza, Egitto"
+  },
+  {
+    "nome": "2009-04-03-10H44M05",
+    "viaggio": "cairo 2009",
+    "anno": "2009",
+    "data": "03/04/2009",
+    "lat": 29.975848,
+    "lon": 31.128806,
+    "foto": "foto/cairo 2009/2009-04-03-10h44m05.jpg",
+    "descrizione": "La Piramide di Chefren, Giza."
+  },
+  {
+    "nome": "2009-04-03-10H51M31",
+    "viaggio": "cairo 2009",
+    "anno": "2009",
+    "data": "03/04/2009",
+    "lat": 29.975337,
+    "lon": 31.13757,
+    "foto": "foto/cairo 2009/2009-04-03-10h51m31.jpg",
+    "descrizione": "Grande Sfinge di Giza, Giza - Governatorato di Giza, Egitto"
+  },
+  {
+    "nome": "2009-04-03-11H25M31",
+    "viaggio": "cairo 2009",
+    "anno": "2009",
+    "data": "03/04/2009",
+    "lat": 29.977967,
+    "lon": 31.132336,
+    "foto": "foto/cairo 2009/2009-04-03-11h25m31.jpg",
+    "descrizione": "La Grande Piramide di Cheope, Giza."
+  },
+  {
+    "nome": "2009-04-03-13H41M19",
+    "viaggio": "cairo 2009",
+    "anno": "2009",
+    "data": "03/04/2009",
+    "lat": 30.124041,
+    "lon": 31.347669,
+    "foto": "foto/cairo 2009/2009-04-03-13h41m19.jpg",
+    "descrizione": "كونكورد السلام, Il Cairo - Governatorato del Cairo, Egitto"
+  },
+  {
+    "nome": "2009-04-03-14H44M23",
+    "viaggio": "cairo 2009",
+    "anno": "2009",
+    "data": "03/04/2009",
+    "lat": 30.123572,
+    "lon": 31.348232,
+    "foto": "foto/cairo 2009/2009-04-03-14h44m23.jpg",
+    "descrizione": "كونكورد السلام, Il Cairo - Governatorato del Cairo, Egitto"
+  },
+  {
+    "nome": "2009-04-03-19H26M12",
+    "viaggio": "cairo 2009",
+    "anno": "2009",
+    "data": "03/04/2009",
+    "lat": 30.123862,
+    "lon": 31.347838,
+    "foto": "foto/cairo 2009/2009-04-03-19h26m12.jpg",
+    "descrizione": "كونكورد السلام, Il Cairo - Governatorato del Cairo, Egitto"
+  },
+  {
+    "nome": "2009-04-04-08H29M08",
+    "viaggio": "cairo 2009",
+    "anno": "2009",
+    "data": "04/04/2009",
+    "lat": 30.02838,
+    "lon": 31.259494,
+    "foto": "foto/cairo 2009/2009-04-04-08h29m08.jpg",
+    "descrizione": "La Moschea di Muhammad Ali (Moschea di Alabastro), Cittadella del Cairo."
+  },
+  {
+    "nome": "2009-04-04-08H41M13",
+    "viaggio": "cairo 2009",
+    "anno": "2009",
+    "data": "04/04/2009",
+    "lat": 30.028417,
+    "lon": 31.259665,
+    "foto": "foto/cairo 2009/2009-04-04-08h41m13.jpg",
+    "descrizione": "Il Cairo - Governatorato del Cairo, Egitto"
+  },
+  {
+    "nome": "2009-04-04-08H41M28",
+    "viaggio": "cairo 2009",
+    "anno": "2009",
+    "data": "04/04/2009",
+    "lat": 30.028822,
+    "lon": 31.259934,
+    "foto": "foto/cairo 2009/2009-04-04-08h41m28.jpg",
+    "descrizione": "Torre dell'orologio, Il Cairo - Governatorato del Cairo, Egitto"
+  },
+  {
+    "nome": "2009-04-04-08H54M05",
+    "viaggio": "cairo 2009",
+    "anno": "2009",
+    "data": "04/04/2009",
+    "lat": 30.028594,
+    "lon": 31.259649,
+    "foto": "foto/cairo 2009/2009-04-04-08h54m05.jpg",
+    "descrizione": "Il Cairo - Governatorato del Cairo, Egitto"
+  },
+  {
+    "nome": "2009-04-04-08H58M50",
+    "viaggio": "cairo 2009",
+    "anno": "2009",
+    "data": "04/04/2009",
+    "lat": 30.028611,
+    "lon": 31.259722,
+    "foto": "foto/cairo 2009/2009-04-04-08h58m50.jpg",
+    "descrizione": "Porta d'ingresso della Cittadella di Saladino, Il Cairo."
+  },
+  {
+    "nome": "2009-04-04-09H39M17",
+    "viaggio": "cairo 2009",
+    "anno": "2009",
+    "data": "04/04/2009",
+    "lat": 30.028538,
+    "lon": 31.259706,
+    "foto": "foto/cairo 2009/2009-04-04-09h39m17.jpg",
+    "descrizione": "Il Cairo - Governatorato del Cairo, Egitto"
+  },
+  {
+    "nome": "2009-04-04-09H41M16",
+    "viaggio": "cairo 2009",
+    "anno": "2009",
+    "data": "04/04/2009",
+    "lat": 30.02865,
+    "lon": 31.260197,
+    "foto": "foto/cairo 2009/2009-04-04-09h41m16.jpg",
+    "descrizione": "Il Cairo - Governatorato del Cairo, Egitto"
+  },
+  {
+    "nome": "2009-04-04-10H22M02",
+    "viaggio": "cairo 2009",
+    "anno": "2009",
+    "data": "04/04/2009",
+    "lat": 30.0482,
+    "lon": 31.261405,
+    "foto": "foto/cairo 2009/2009-04-04-10h22m02.jpg",
+    "descrizione": "Il Cairo - Governatorato del Cairo, Egitto"
+  },
+  {
+    "nome": "2009-04-04-10H23M17",
+    "viaggio": "cairo 2009",
+    "anno": "2009",
+    "data": "04/04/2009",
+    "lat": 30.047906,
+    "lon": 31.261932,
+    "foto": "foto/cairo 2009/2009-04-04-10h23m17.jpg",
+    "descrizione": "Il Cairo - Governatorato del Cairo, Egitto"
+  },
+  {
+    "nome": "2009-04-04-10H25M46",
+    "viaggio": "cairo 2009",
+    "anno": "2009",
+    "data": "04/04/2009",
+    "lat": 30.047704,
+    "lon": 31.261473,
+    "foto": "foto/cairo 2009/2009-04-04-10h25m46.jpg",
+    "descrizione": "Khan Al Khalili, Il Cairo - Governatorato del Cairo, Egitto"
+  },
+  {
+    "nome": "2009-04-04-10H36M01",
+    "viaggio": "cairo 2009",
+    "anno": "2009",
+    "data": "04/04/2009",
+    "lat": 30.04808,
+    "lon": 31.260693,
+    "foto": "foto/cairo 2009/2009-04-04-10h36m01.jpg",
+    "descrizione": "Il Cairo - Governatorato del Cairo, Egitto"
+  },
+  {
+    "nome": "2009-04-04-13H27M34",
+    "viaggio": "cairo 2009",
+    "anno": "2009",
+    "data": "04/04/2009",
+    "lat": 30.048695,
+    "lon": 31.261031,
+    "foto": "foto/cairo 2009/2009-04-04-13h27m34.jpg",
+    "descrizione": "Il Cairo - Governatorato del Cairo, Egitto"
+  },
+  {
+    "nome": "2009-04-04-14H01M30",
+    "viaggio": "cairo 2009",
+    "anno": "2009",
+    "data": "04/04/2009",
+    "lat": 30.04817,
+    "lon": 31.260964,
+    "foto": "foto/cairo 2009/2009-04-04-14h01m30.jpg",
+    "descrizione": "Il Cairo - Governatorato del Cairo, Egitto"
+  },
+  {
+    "nome": "2009-04-04-21H32M56",
+    "viaggio": "cairo 2009",
+    "anno": "2009",
+    "data": "04/04/2009",
+    "lat": 30.073486,
+    "lon": 31.344606,
+    "foto": "foto/cairo 2009/2009-04-04-21h32m56.jpg",
+    "descrizione": "City Stars, مدينة نصر - Governatorato del Cairo, Egitto"
+  },
+  {
+    "nome": "2009-04-04-21H33M59",
+    "viaggio": "cairo 2009",
+    "anno": "2009",
+    "data": "04/04/2009",
+    "lat": 30.073244,
+    "lon": 31.345658,
+    "foto": "foto/cairo 2009/2009-04-04-21h33m59.jpg",
+    "descrizione": "Interno del City Stars Mall, Il Cairo."
+  },
+  {
+    "nome": "2009-04-04-22H24M27",
+    "viaggio": "cairo 2009",
+    "anno": "2009",
+    "data": "04/04/2009",
+    "lat": 30.123721,
+    "lon": 31.347953,
+    "foto": "foto/cairo 2009/2009-04-04-22h24m27.jpg",
+    "descrizione": "كونكورد السلام, Il Cairo - Governatorato del Cairo, Egitto"
+  },
+  {
+    "nome": "2009-04-05-10H42M36",
+    "viaggio": "cairo 2009",
+    "anno": "2009",
+    "data": "05/04/2009",
+    "lat": 30.005811,
+    "lon": 31.230969,
+    "foto": "foto/cairo 2009/2009-04-05-10h42m36.jpg",
+    "descrizione": "Il Cairo Copto, nei pressi della Sinagoga di Ben Ezra."
+  },
+  {
+    "nome": "2009-04-05-10H47M25",
+    "viaggio": "cairo 2009",
+    "anno": "2009",
+    "data": "05/04/2009",
+    "lat": 30.00582,
+    "lon": 31.230821,
+    "foto": "foto/cairo 2009/2009-04-05-10h47m25.jpg",
+    "descrizione": "Il Cairo - Governatorato del Cairo, Egitto"
+  },
+  {
+    "nome": "2009-04-05-11H04M51",
+    "viaggio": "cairo 2009",
+    "anno": "2009",
+    "data": "05/04/2009",
+    "lat": 30.006284,
+    "lon": 31.231757,
+    "foto": "foto/cairo 2009/2009-04-05-11h04m51.jpg",
+    "descrizione": "Il Cairo - Governatorato del Cairo, Egitto"
+  },
+  {
+    "nome": "2009-04-05-11H18M42",
+    "viaggio": "cairo 2009",
+    "anno": "2009",
+    "data": "05/04/2009",
+    "lat": 30.006281,
+    "lon": 31.231781,
+    "foto": "foto/cairo 2009/2009-04-05-11h18m42.jpg",
+    "descrizione": "La Chiesa di San Giorgio, Il Cairo Copto."
+  },
+  {
+    "nome": "2009-04-05-11H24M29",
+    "viaggio": "cairo 2009",
+    "anno": "2009",
+    "data": "05/04/2009",
+    "lat": 30.006322,
+    "lon": 31.231583,
+    "foto": "foto/cairo 2009/2009-04-05-11h24m29.jpg",
+    "descrizione": "Il Cairo - Governatorato del Cairo, Egitto"
+  },
+  {
+    "nome": "2009-04-06-09H13M06",
+    "viaggio": "cairo 2009",
+    "anno": "2009",
+    "data": "06/04/2009",
+    "lat": 29.865879,
+    "lon": 31.228466,
+    "foto": "foto/cairo 2009/2009-04-06-09h13m06.jpg",
+    "descrizione": "شارع مسقى الضباعين, سقارة - Governatorato di Giza, Egitto"
+  },
+  {
+    "nome": "2009-04-06-09H16M43",
+    "viaggio": "cairo 2009",
+    "anno": "2009",
+    "data": "06/04/2009",
+    "lat": 29.865,
+    "lon": 31.22,
+    "foto": "foto/cairo 2009/2009-04-06-09h16m43.jpg",
+    "descrizione": "Al Amal Carpet School, lungo la strada per Saqqara (posizione approssimata, non confermata)."
+  },
+  {
+    "nome": "2009-04-06-10H14M58",
+    "viaggio": "cairo 2009",
+    "anno": "2009",
+    "data": "06/04/2009",
+    "lat": 29.870876,
+    "lon": 31.217469,
+    "foto": "foto/cairo 2009/2009-04-06-10h14m58.jpg",
+    "descrizione": "مجمع هرم زوسر, سقارة - Governatorato di Giza, Egitto"
+  },
+  {
+    "nome": "2009-04-06-10H20M11",
+    "viaggio": "cairo 2009",
+    "anno": "2009",
+    "data": "06/04/2009",
+    "lat": 29.870964,
+    "lon": 31.215701,
+    "foto": "foto/cairo 2009/2009-04-06-10h20m11.jpg",
+    "descrizione": "La Piramide a Gradoni di Djoser, Saqqara."
+  },
+  {
+    "nome": "2009-04-06-11H38M49",
+    "viaggio": "cairo 2009",
+    "anno": "2009",
+    "data": "06/04/2009",
+    "lat": 29.870401,
+    "lon": 31.215484,
+    "foto": "foto/cairo 2009/2009-04-06-11h38m49.jpg",
+    "descrizione": "Ingresso a una tomba nel complesso di Saqqara."
+  },
+  {
+    "nome": "2009-04-06-12H13M40",
+    "viaggio": "cairo 2009",
+    "anno": "2009",
+    "data": "06/04/2009",
+    "lat": 29.85196,
+    "lon": 31.250267,
+    "foto": "foto/cairo 2009/2009-04-06-12h13m40.jpg",
+    "descrizione": "طريق مدينه البدرشين, قريه سقاره, ميت رهينة - Governatorato di Giza, Egitto"
+  },
+  {
+    "nome": "2009-04-06-12H16M33",
+    "viaggio": "cairo 2009",
+    "anno": "2009",
+    "data": "06/04/2009",
+    "lat": 29.848089,
+    "lon": 31.257477,
+    "foto": "foto/cairo 2009/2009-04-06-12h16m33.jpg",
+    "descrizione": "متحف ممفيس, ميت رهينة - Governatorato di Giza, Egitto"
+  },
+  {
+    "nome": "2009-04-06-12H22M15",
+    "viaggio": "cairo 2009",
+    "anno": "2009",
+    "data": "06/04/2009",
+    "lat": 29.849492,
+    "lon": 31.255061,
+    "foto": "foto/cairo 2009/2009-04-06-12h22m15.jpg",
+    "descrizione": "Il Colosso di Ramesse II, Museo a cielo aperto di Menfi (Mit Rahina)."
+  },
+  {
+    "nome": "2009-04-06-12H55M53",
+    "viaggio": "cairo 2009",
+    "anno": "2009",
+    "data": "06/04/2009",
+    "lat": 29.789223,
+    "lon": 31.208017,
+    "foto": "foto/cairo 2009/2009-04-06-12h55m53.jpg",
+    "descrizione": "Piramide Romboidale, Dahshur - Governatorato di Giza, Egitto"
+  },
+  {
+    "nome": "2009-04-06-13H01M10",
+    "viaggio": "cairo 2009",
+    "anno": "2009",
+    "data": "06/04/2009",
+    "lat": 29.790172,
+    "lon": 31.207395,
+    "foto": "foto/cairo 2009/2009-04-06-13h01m10.jpg",
+    "descrizione": "La Piramide Romboidale, Dahshur."
+  },
+  {
+    "nome": "2009-04-06-13H03M24",
+    "viaggio": "cairo 2009",
+    "anno": "2009",
+    "data": "06/04/2009",
+    "lat": 29.788813,
+    "lon": 31.210463,
+    "foto": "foto/cairo 2009/2009-04-06-13h03m24.jpg",
+    "descrizione": "Piramide Romboidale, Dahshur - Governatorato di Giza, Egitto"
+  },
+  {
+    "nome": "2009-04-06-13H57M42",
+    "viaggio": "cairo 2009",
+    "anno": "2009",
+    "data": "06/04/2009",
+    "lat": 29.789986,
+    "lon": 31.211783,
+    "foto": "foto/cairo 2009/2009-04-06-13h57m42.jpg",
+    "descrizione": "Tempel, Dahshur - Governatorato di Giza, Egitto"
+  },
+  {
+    "nome": "2009-04-06-21H29M05",
+    "viaggio": "cairo 2009",
+    "anno": "2009",
+    "data": "06/04/2009",
+    "lat": 30.123164,
+    "lon": 31.346977,
+    "foto": "foto/cairo 2009/2009-04-06-21h29m05.jpg",
+    "descrizione": "Il Cairo - Governatorato del Cairo, Egitto"
+  },
+  {
+    "nome": "2009-04-06-21H29M31",
+    "viaggio": "cairo 2009",
+    "anno": "2009",
+    "data": "06/04/2009",
+    "lat": 30.122872,
+    "lon": 31.347175,
+    "foto": "foto/cairo 2009/2009-04-06-21h29m31.jpg",
+    "descrizione": "Il Cairo - Governatorato del Cairo, Egitto"
+  },
+  {
+    "nome": "2009-04-06-21H45M44",
+    "viaggio": "cairo 2009",
+    "anno": "2009",
+    "data": "06/04/2009",
+    "lat": 30.123897,
+    "lon": 31.347513,
+    "foto": "foto/cairo 2009/2009-04-06-21h45m44.jpg",
+    "descrizione": "كونكورد السلام, Il Cairo - Governatorato del Cairo, Egitto"
+  },
+  {
     "nome": "2009-07-24-12H00M00-1",
     "viaggio": "dubai 2009",
     "anno": "2009",
