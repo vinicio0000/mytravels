@@ -3,7 +3,7 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta id="viewport-meta" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   
   <title>Mappa Interattiva Viaggi Fai da Te e in Camper | La Mappa dei Viaggi di Vinicio e Luisa</title>
   <meta name="description" content="Esplora oltre 30 anni di viaggi fai da te e avventure in camper con la nostra mappa dinamica a schermo diviso: foto geolocalizzate, itinerari in Spagna e Marocco e diari di viaggio.">
@@ -1187,6 +1187,32 @@
       });
     }
 
+    // Abilita lo zoom nativo (pinch-to-zoom) durante la slideshow, così il
+    // comportamento è identico su tablet e su cellulare.
+    function abilitaZoomTouch() {
+      const meta = document.getElementById('viewport-meta');
+      if (meta) meta.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes');
+    }
+
+    function disabilitaZoomTouch() {
+      const meta = document.getElementById('viewport-meta');
+      if (meta) meta.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no');
+    }
+
+    // Quando lo zoom touch modifica la vista (pinch), ricentra la mappa
+    // sulla puntina attualmente in evidenza.
+    function ricentraSuPuntinaAttiva() {
+      if (!isSlideshowActive) return;
+      const activeMarker = markersSlideshow[currentSlideIndex];
+      if (activeMarker) {
+        map.setView(activeMarker.getLatLng(), map.getZoom(), { animate: false });
+      }
+    }
+
+    if (window.visualViewport) {
+      window.visualViewport.addEventListener('resize', ricentraSuPuntinaAttiva);
+    }
+
     function avviaSlideshow() {
       if (markersSlideshow.length === 0) return;
       fermaPanIniziale();
@@ -1197,6 +1223,7 @@
       isSlideshowPaused = false;
       currentSlideIndex = 0;
 
+      abilitaZoomTouch();
       document.body.classList.add('slideshow-active');
 
       document.getElementById('filtro-container').style.display = 'none';
@@ -1273,7 +1300,8 @@
     function fermaSlideshow() {
       isSlideshowActive = false;
       clearInterval(slideshowTimer);
-      
+      disabilitaZoomTouch();
+
       document.body.classList.remove('slideshow-active');
       map.invalidateSize();
 
