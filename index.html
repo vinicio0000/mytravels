@@ -1,9 +1,9 @@
-<!-- VERSION: 2.91_DIARIO_FIX_SEO -->
+<!-- VERSION: 2.92_DIARIO_FIX_SEO -->
 <!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
   
   <title>Mappa Interattiva Viaggi Fai da Te e in Camper | La Mappa dei Viaggi di Vinicio e Luisa</title>
   <meta name="description" content="Esplora oltre 30 anni di viaggi fai da te e avventure in camper con la nostra mappa dinamica a schermo diviso: foto geolocalizzate, itinerari in Spagna e Marocco e diari di viaggio.">
@@ -468,7 +468,7 @@
       background-color: rgba(0, 0, 0, 0.92);
       align-items: center;
       justify-content: center;
-      touch-action: pan-y;
+      touch-action: pinch-zoom pan-x pan-y;
       box-sizing: border-box;
     }
 
@@ -514,6 +514,7 @@
       z-index: 100001;
     }
 
+    /* ESTENSIZIONE SEO - BOX IN EVIDENZA GUIDA */
     .box-seo-guida {
       background: #eef7f6;
       border-left: 4px solid #52b69a;
@@ -669,17 +670,19 @@
       border: 1px solid rgba(0,0,0,0.15);
     ">
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; border-bottom: 2px solid #007bff; padding-bottom: 6px;">
-        <h3 style="margin:0; font-size:16px; color:#2c3e50;">🌍 Guida e Informazioni (v2.91)</h3>
+        <h3 style="margin:0; font-size:16px; color:#2c3e50;">🌍 Guida e Informazioni (v2.92)</h3>
         <button onclick="chiudiModalAiuto()" style="background:none; border:none; font-size:20px; cursor:pointer; color:#666;">✖</button>
       </div>
       
       <div style="font-size: 13px; color: #2c3e50; max-height: 65vh; overflow-y: auto; padding-right: 5px; line-height: 1.5;">
 
+ 
+        <!-- BANNER PROMOZIONALE SEO VERSO IL DIARIO COMPLETO -->
         <div class="box-seo-guida">
           📖 <b>Guida In Evidenza:</b> Leggi il nostro resoconto di viaggio completo<br>
           <a href="diario_spagna_marocco_2023.html" target="_blank">Diario di Viaggio in Camper in Marocco e Spagna: Itinerario, Dogana e Consigli</a>
         </div>
-        <div class="box-seo-guida">
+   <div class="box-seo-guida">
           📖 <b>Guida In Evidenza:</b> Leggi il nostro resoconto di viaggio completo<br>
           <a href="Diario_Sudafrica_2009.html" target="_blank">Diario di Viaggio in Sudafrica: Itinerario, Dogana e Consigli</a>
         </div>
@@ -822,7 +825,8 @@
           splash.style.display = 'none';
           map.invalidateSize();
           avviaPanIniziale();
-        }, 850);
+		 
+        }, 800);
       }
     }
 
@@ -1135,6 +1139,7 @@
           const fotoThumb = p.thumb || p.foto.replace(/^foto[\/\\]/, 'thumbs/');
           const htmlDescrizione = p.descrizione ? `<div class="popup-descrizione">${p.descrizione}</div>` : '';
           
+          // Pulsante Diario nel Popup se p.diario è presente nel JSON
           const htmlBtnDiario = p.diario ? `<br><a href="${p.diario}" target="_blank" rel="noopener" class="btn-diario">📖 Diario di Viaggio</a>` : '';
 
           const popupContent = `
