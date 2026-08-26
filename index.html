@@ -32,7 +32,7 @@
     "url": "https://vinicio0000.github.io/mytravels/",
     "description": "Mappa interattiva con oltre 30 anni di viaggi fai da te e itinerari in camper in Marocco, Spagna e Portogallo con foto geolocalizzate.",
     "author": {
-      "@type": "People",
+      "@type": "Person",
       "name": "Vinicio e Luisa"
     }
   }
@@ -46,18 +46,6 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       overflow: hidden;
       background: #aad3df;
-    }
-
-    .seo-text-container {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
-      border: 0;
     }
 
     #splash-screen {
@@ -557,18 +545,6 @@
 </head>
 <body>
 
-  <!-- SEZIONE SEO PER GOOGLE -->
-  <header class="seo-text-container">
-    <h1>La Mappa dei Viaggi: 30 Anni di Viaggi Fai da Te e Avventure in Camper</h1>
-    <p>
-      Benvenuti su <strong>La Mappa dei Viaggi</strong> di Vinicio e Luisa. Attraverso la nostra <strong>mappa dinamica e interattiva</strong>, vi guidiamo alla scoperta di oltre 30 anni di viaggi fai da te condotti in totale autonomia.
-    </p>
-    <h2>Itinerari in Camper e Viaggi On The Road (Spagna e Marocco)</h2>
-    <p>Diario di viaggio completo in camper tra Spagna e Marocco con consigli pratici su dogana Tangeri Med, titolazione antirabica cane, autostrade e sosta campeggi ad Agadir e Marbella.</p>
-    <h2>30 Anni di Spedizioni Fai da Te nel Mondo: Asia, Africa e America</h2>
-    <h2>Mappa Interattiva e Foto Geolocalizzate nel Mondo</h2>
-  </header>
-
   <!-- SPLASH SCREEN -->
   <div id="splash-screen" onclick="chiudiSplash()">
     <div class="splash-card">
@@ -699,7 +675,14 @@
       </div>
       
       <div style="font-size: 13px; color: #2c3e50; max-height: 65vh; overflow-y: auto; padding-right: 5px; line-height: 1.5;">
-        
+
+        <p>
+          <strong>La Mappa dei Viaggi</strong> di Vinicio e Luisa raccoglie oltre 30 anni di viaggi fai da te
+          condotti in totale autonomia, in camper e in aereo. Ogni foto è geolocalizzata ed è posizionata
+          esattamente nel luogo in cui è stata scattata — dagli itinerari in camper tra Spagna e Marocco
+          alle spedizioni fai da te in Asia, Africa e America.
+        </p>
+
         <!-- BANNER PROMOZIONALE SEO VERSO IL DIARIO COMPLETO -->
         <div class="box-seo-guida">
           📖 <b>Guida In Evidenza:</b> Leggi il nostro resoconto di viaggio completo<br>
@@ -848,6 +831,7 @@
           splash.style.display = 'none';
           map.invalidateSize();
           avviaPanIniziale();
+		 
         }, 800);
       }
     }
@@ -1035,7 +1019,7 @@
         tuttiIDati = dati;
         popolaAnni();
         popolaViaggi();
-        document.getElementById('check-cluster').checked = false;
+        document.getElementById('check-cluster').checked = true;
         aggiornaMappa();
       })
       .catch(err => console.error("Errore nel caricamento di dati.json:", err));
