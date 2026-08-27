@@ -1,5 +1,1465 @@
 [
   {
+    "nome": "2012-07-27-10H40M54",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "27/07/2012",
+    "lat": 1.483943,
+    "lon": 110.349019,
+    "foto": "foto/borneo 2012/2012-07-27-10h40m54.jpg",
+    "descrizione": "Lapangan Terbang Antarabangsa Kuching, Kuching - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-27-11H35M22",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "27/07/2012",
+    "lat": 1.483782,
+    "lon": 110.348665,
+    "foto": "foto/borneo 2012/2012-07-27-11h35m22.jpg",
+    "descrizione": "Airport Perimeter Road, Kota Sentosa - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-27-14H59M33",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "27/07/2012",
+    "lat": 1.483954,
+    "lon": 110.348933,
+    "foto": "foto/borneo 2012/2012-07-27-14h59m33.jpg",
+    "descrizione": "Lapangan Terbang Antarabangsa Kuching, Kota Sentosa - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-27-14H59M47",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "27/07/2012",
+    "lat": 1.555621,
+    "lon": 110.350883,
+    "foto": "foto/borneo 2012/2012-07-27-14h59m47.jpg",
+    "descrizione": "Pullman Kuching, Kuching - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-27-15H20M44",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "27/07/2012",
+    "lat": 1.555715,
+    "lon": 110.351293,
+    "foto": "foto/borneo 2012/2012-07-27-15h20m44.jpg",
+    "descrizione": "OldTown White Coffee, Kuching - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-27-15H59M16",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "27/07/2012",
+    "lat": 1.555887,
+    "lon": 110.3511,
+    "foto": "foto/borneo 2012/2012-07-27-15h59m16.jpg",
+    "descrizione": "OldTown White Coffee, Kuching - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-27-16H02M22",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "27/07/2012",
+    "lat": 1.555592,
+    "lon": 110.350794,
+    "foto": "foto/borneo 2012/2012-07-27-16h02m22.jpg",
+    "descrizione": "The Hills, Kuching - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-27-17H11M19",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "27/07/2012",
+    "lat": 1.555748,
+    "lon": 110.351073,
+    "foto": "foto/borneo 2012/2012-07-27-17h11m19.jpg",
+    "descrizione": "Pullman Kuching, Kuching - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-27-17H48M51",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "27/07/2012",
+    "lat": 1.557764,
+    "lon": 110.352602,
+    "foto": "foto/borneo 2012/2012-07-27-17h48m51.jpg",
+    "descrizione": "Cat Statue, Kuching - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-27-17H54M03",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "27/07/2012",
+    "lat": 1.561786,
+    "lon": 110.347817,
+    "foto": "foto/borneo 2012/2012-07-27-17h54m03.jpg",
+    "descrizione": "Sarawak State Assembly, Kuching - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-27-18H03M14",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "27/07/2012",
+    "lat": 1.557678,
+    "lon": 110.349029,
+    "foto": "foto/borneo 2012/2012-07-27-18h03m14.jpg",
+    "descrizione": "Sungai Kuching Marker, Kuching - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-28-03H09M33",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "28/07/2012",
+    "lat": 1.560287,
+    "lon": 110.342651,
+    "foto": "foto/borneo 2012/2012-07-28-03h09m33.jpg",
+    "descrizione": "Kuching - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-28-04H07M53",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "28/07/2012",
+    "lat": 1.662822,
+    "lon": 110.43354,
+    "foto": "foto/borneo 2012/2012-07-28-04h07m53.jpg",
+    "descrizione": "Bako Bazaar - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-28-04H10M24",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "28/07/2012",
+    "lat": 1.66368,
+    "lon": 110.431223,
+    "foto": "foto/borneo 2012/2012-07-28-04h10m24.jpg",
+    "descrizione": "Bako Bazaar - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-28-04H14M47",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "28/07/2012",
+    "lat": 1.684485,
+    "lon": 110.421996,
+    "foto": "foto/borneo 2012/2012-07-28-04h14m47.jpg",
+    "descrizione": "Bako Bazaar - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-28-04H17M48",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "28/07/2012",
+    "lat": 1.713783,
+    "lon": 110.429764,
+    "foto": "foto/borneo 2012/2012-07-28-04h17m48.jpg",
+    "descrizione": "Sarawak - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-28-04H27M14",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "28/07/2012",
+    "lat": 1.702244,
+    "lon": 110.424743,
+    "foto": "foto/borneo 2012/2012-07-28-04h27m14.jpg",
+    "descrizione": "Bako Bazaar - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-28-04H34M19",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "28/07/2012",
+    "lat": 1.718845,
+    "lon": 110.446758,
+    "foto": "foto/borneo 2012/2012-07-28-04h34m19.jpg",
+    "descrizione": "Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-28-04H39M25",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "28/07/2012",
+    "lat": 1.719,
+    "lon": 110.446833,
+    "foto": "foto/borneo 2012/2012-07-28-04h39m25.jpg",
+    "descrizione": "Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-28-04H52M18",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "28/07/2012",
+    "lat": 1.718952,
+    "lon": 110.446871,
+    "foto": "foto/borneo 2012/2012-07-28-04h52m18.jpg",
+    "descrizione": "Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-28-05H08M15",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "28/07/2012",
+    "lat": 1.721076,
+    "lon": 110.446447,
+    "foto": "foto/borneo 2012/2012-07-28-05h08m15.jpg",
+    "descrizione": "Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-28-05H09M15",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "28/07/2012",
+    "lat": 1.722577,
+    "lon": 110.449977,
+    "foto": "foto/borneo 2012/2012-07-28-05h09m15.jpg",
+    "descrizione": "Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-28-05H11M32",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "28/07/2012",
+    "lat": 1.722212,
+    "lon": 110.451307,
+    "foto": "foto/borneo 2012/2012-07-28-05h11m32.jpg",
+    "descrizione": "Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-28-05H13M59",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "28/07/2012",
+    "lat": 1.722202,
+    "lon": 110.452573,
+    "foto": "foto/borneo 2012/2012-07-28-05h13m59.jpg",
+    "descrizione": "Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-28-05H23M01",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "28/07/2012",
+    "lat": 1.722899,
+    "lon": 110.453638,
+    "foto": "foto/borneo 2012/2012-07-28-05h23m01.jpg",
+    "descrizione": "Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-28-05H26M30",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "28/07/2012",
+    "lat": 1.72348,
+    "lon": 110.453957,
+    "foto": "foto/borneo 2012/2012-07-28-05h26m30.jpg",
+    "descrizione": "Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-28-05H26M39",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "28/07/2012",
+    "lat": 1.723405,
+    "lon": 110.454035,
+    "foto": "foto/borneo 2012/2012-07-28-05h26m39.jpg",
+    "descrizione": "Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-28-05H30M23",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "28/07/2012",
+    "lat": 1.723472,
+    "lon": 110.454011,
+    "foto": "foto/borneo 2012/2012-07-28-05h30m23.jpg",
+    "descrizione": "Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-28-05H30M38",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "28/07/2012",
+    "lat": 1.723459,
+    "lon": 110.453979,
+    "foto": "foto/borneo 2012/2012-07-28-05h30m38.jpg",
+    "descrizione": "Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-28-05H30M55",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "28/07/2012",
+    "lat": 1.723459,
+    "lon": 110.453979,
+    "foto": "foto/borneo 2012/2012-07-28-05h30m55.jpg",
+    "descrizione": "Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-28-05H32M46",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "28/07/2012",
+    "lat": 1.723459,
+    "lon": 110.453979,
+    "foto": "foto/borneo 2012/2012-07-28-05h32m46.jpg",
+    "descrizione": "Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-28-05H33M10",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "28/07/2012",
+    "lat": 1.723459,
+    "lon": 110.453979,
+    "foto": "foto/borneo 2012/2012-07-28-05h33m10.jpg",
+    "descrizione": "Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-28-05H46M28",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "28/07/2012",
+    "lat": 1.723478,
+    "lon": 110.454641,
+    "foto": "foto/borneo 2012/2012-07-28-05h46m28.jpg",
+    "descrizione": "Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-28-05H57M04",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "28/07/2012",
+    "lat": 1.73032,
+    "lon": 110.451769,
+    "foto": "foto/borneo 2012/2012-07-28-05h57m04.jpg",
+    "descrizione": "Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-28-05H59M05",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "28/07/2012",
+    "lat": 1.730647,
+    "lon": 110.45172,
+    "foto": "foto/borneo 2012/2012-07-28-05h59m05.jpg",
+    "descrizione": "Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-28-07H08M12",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "28/07/2012",
+    "lat": 1.730111,
+    "lon": 110.4526,
+    "foto": "foto/borneo 2012/2012-07-28-07h08m12.jpg",
+    "descrizione": "Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-28-07H18M26",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "28/07/2012",
+    "lat": 1.730065,
+    "lon": 110.45271,
+    "foto": "foto/borneo 2012/2012-07-28-07h18m26.jpg",
+    "descrizione": "Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-28-07H18M33",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "28/07/2012",
+    "lat": 1.730022,
+    "lon": 110.452884,
+    "foto": "foto/borneo 2012/2012-07-28-07h18m33.jpg",
+    "descrizione": "Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-28-07H19M56",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "28/07/2012",
+    "lat": 1.729995,
+    "lon": 110.452882,
+    "foto": "foto/borneo 2012/2012-07-28-07h19m56.jpg",
+    "descrizione": "Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-28-07H20M19",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "28/07/2012",
+    "lat": 1.729987,
+    "lon": 110.452871,
+    "foto": "foto/borneo 2012/2012-07-28-07h20m19.jpg",
+    "descrizione": "Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-28-07H24M11",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "28/07/2012",
+    "lat": 1.730014,
+    "lon": 110.452817,
+    "foto": "foto/borneo 2012/2012-07-28-07h24m11.jpg",
+    "descrizione": "Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-28-07H25M35",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "28/07/2012",
+    "lat": 1.729987,
+    "lon": 110.452825,
+    "foto": "foto/borneo 2012/2012-07-28-07h25m35.jpg",
+    "descrizione": "Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-28-07H26M18",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "28/07/2012",
+    "lat": 1.729987,
+    "lon": 110.452825,
+    "foto": "foto/borneo 2012/2012-07-28-07h26m18.jpg",
+    "descrizione": "Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-28-07H26M54",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "28/07/2012",
+    "lat": 1.729987,
+    "lon": 110.452825,
+    "foto": "foto/borneo 2012/2012-07-28-07h26m54.jpg",
+    "descrizione": "Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-28-07H28M58",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "28/07/2012",
+    "lat": 1.729971,
+    "lon": 110.452855,
+    "foto": "foto/borneo 2012/2012-07-28-07h28m58.jpg",
+    "descrizione": "Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-28-07H31M49",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "28/07/2012",
+    "lat": 1.729971,
+    "lon": 110.452855,
+    "foto": "foto/borneo 2012/2012-07-28-07h31m49.jpg",
+    "descrizione": "Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-28-08H14M59",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "28/07/2012",
+    "lat": 1.719601,
+    "lon": 110.446723,
+    "foto": "foto/borneo 2012/2012-07-28-08h14m59.jpg",
+    "descrizione": "Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-28-08H15M09",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "28/07/2012",
+    "lat": 1.719488,
+    "lon": 110.446731,
+    "foto": "foto/borneo 2012/2012-07-28-08h15m09.jpg",
+    "descrizione": "Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-28-08H16M11",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "28/07/2012",
+    "lat": 1.719574,
+    "lon": 110.446702,
+    "foto": "foto/borneo 2012/2012-07-28-08h16m11.jpg",
+    "descrizione": "Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-28-08H19M12",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "28/07/2012",
+    "lat": 1.718572,
+    "lon": 110.44671,
+    "foto": "foto/borneo 2012/2012-07-28-08h19m12.jpg",
+    "descrizione": "Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-28-08H19M41",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "28/07/2012",
+    "lat": 1.718598,
+    "lon": 110.446672,
+    "foto": "foto/borneo 2012/2012-07-28-08h19m41.jpg",
+    "descrizione": "Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-28-10H53M52",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "28/07/2012",
+    "lat": 1.557699,
+    "lon": 110.349598,
+    "foto": "foto/borneo 2012/2012-07-28-10h53m52.jpg",
+    "descrizione": "Tandas Awam Waterfront James Brooke, Kuching - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-28-11H13M40",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "28/07/2012",
+    "lat": 1.560091,
+    "lon": 110.34249,
+    "foto": "foto/borneo 2012/2012-07-28-11h13m40.jpg",
+    "descrizione": "Kuching - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-28-17H43M00",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "28/07/2012",
+    "lat": 1.558515,
+    "lon": 110.353568,
+    "foto": "foto/borneo 2012/2012-07-28-17h43m00.jpg",
+    "descrizione": "Grand Margherita Hotel, Kuching - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-28-17H54M07",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "28/07/2012",
+    "lat": 1.55845,
+    "lon": 110.353739,
+    "foto": "foto/borneo 2012/2012-07-28-17h54m07.jpg",
+    "descrizione": "Grand Margherita Hotel, Kuching - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-29-05H01M20",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "29/07/2012",
+    "lat": 1.165682,
+    "lon": 110.567397,
+    "foto": "foto/borneo 2012/2012-07-29-05h01m20.jpg",
+    "descrizione": "Tandas Awam MD Serian, Serian - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-29-05H01M43",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "29/07/2012",
+    "lat": 1.16572,
+    "lon": 110.56731,
+    "foto": "foto/borneo 2012/2012-07-29-05h01m43.jpg",
+    "descrizione": "Tandas Awam MD Serian, Serian - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-29-05H02M51",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "29/07/2012",
+    "lat": 1.16572,
+    "lon": 110.56731,
+    "foto": "foto/borneo 2012/2012-07-29-05h02m51.jpg",
+    "descrizione": "Tandas Awam MD Serian, Serian - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-29-05H03M23",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "29/07/2012",
+    "lat": 1.16572,
+    "lon": 110.56731,
+    "foto": "foto/borneo 2012/2012-07-29-05h03m23.jpg",
+    "descrizione": "Tandas Awam MD Serian, Serian - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-29-05H04M20",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "29/07/2012",
+    "lat": 1.16572,
+    "lon": 110.56731,
+    "foto": "foto/borneo 2012/2012-07-29-05h04m20.jpg",
+    "descrizione": "Tandas Awam MD Serian, Serian - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-29-05H05M59",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "29/07/2012",
+    "lat": 1.16572,
+    "lon": 110.56731,
+    "foto": "foto/borneo 2012/2012-07-29-05h05m59.jpg",
+    "descrizione": "Tandas Awam MD Serian, Serian - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-29-05H10M43",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "29/07/2012",
+    "lat": 1.16572,
+    "lon": 110.56731,
+    "foto": "foto/borneo 2012/2012-07-29-05h10m43.jpg",
+    "descrizione": "Tandas Awam MD Serian, Serian - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-29-05H13M06",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "29/07/2012",
+    "lat": 1.16572,
+    "lon": 110.56731,
+    "foto": "foto/borneo 2012/2012-07-29-05h13m06.jpg",
+    "descrizione": "Tandas Awam MD Serian, Serian - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-29-05H16M21",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "29/07/2012",
+    "lat": 1.16572,
+    "lon": 110.56731,
+    "foto": "foto/borneo 2012/2012-07-29-05h16m21.jpg",
+    "descrizione": "Tandas Awam MD Serian, Serian - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-29-07H22M39",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "29/07/2012",
+    "lat": 1.1472,
+    "lon": 111.8743,
+    "foto": "foto/borneo 2012/2012-07-29-07h22m39.jpg",
+    "descrizione": "Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-29-07H24M12",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "29/07/2012",
+    "lat": 1.147276,
+    "lon": 111.874348,
+    "foto": "foto/borneo 2012/2012-07-29-07h24m12.jpg",
+    "descrizione": "Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-29-07H47M17",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "29/07/2012",
+    "lat": 1.159322,
+    "lon": 111.923757,
+    "foto": "foto/borneo 2012/2012-07-29-07h47m17.jpg",
+    "descrizione": "Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-29-07H47M33",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "29/07/2012",
+    "lat": 1.159282,
+    "lon": 111.923663,
+    "foto": "foto/borneo 2012/2012-07-29-07h47m33.jpg",
+    "descrizione": "Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-29-07H49M38",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "29/07/2012",
+    "lat": 1.159193,
+    "lon": 111.92425,
+    "foto": "foto/borneo 2012/2012-07-29-07h49m38.jpg",
+    "descrizione": "Batang Ai Longhouse Resort, Managed by Hilton, Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-29-08H08M06",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "29/07/2012",
+    "lat": 1.159563,
+    "lon": 111.924344,
+    "foto": "foto/borneo 2012/2012-07-29-08h08m06.jpg",
+    "descrizione": "Batang Ai Longhouse Resort, Managed by Hilton, Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-29-08H08M19",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "29/07/2012",
+    "lat": 1.159566,
+    "lon": 111.924317,
+    "foto": "foto/borneo 2012/2012-07-29-08h08m19.jpg",
+    "descrizione": "Batang Ai Longhouse Resort, Managed by Hilton, Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-29-08H08M28",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "29/07/2012",
+    "lat": 1.159598,
+    "lon": 111.924272,
+    "foto": "foto/borneo 2012/2012-07-29-08h08m28.jpg",
+    "descrizione": "Batang Ai Longhouse Resort, Managed by Hilton, Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-29-08H36M28",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "29/07/2012",
+    "lat": 1.158901,
+    "lon": 111.923899,
+    "foto": "foto/borneo 2012/2012-07-29-08h36m28.jpg",
+    "descrizione": "Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-29-08H37M35",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "29/07/2012",
+    "lat": 1.159244,
+    "lon": 111.924122,
+    "foto": "foto/borneo 2012/2012-07-29-08h37m35.jpg",
+    "descrizione": "Batang Ai Longhouse Resort, Managed by Hilton, Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-29-08H38M28",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "29/07/2012",
+    "lat": 1.158566,
+    "lon": 111.923985,
+    "foto": "foto/borneo 2012/2012-07-29-08h38m28.jpg",
+    "descrizione": "Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-29-08H38M36",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "29/07/2012",
+    "lat": 1.158531,
+    "lon": 111.924017,
+    "foto": "foto/borneo 2012/2012-07-29-08h38m36.jpg",
+    "descrizione": "Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-29-08H42M51",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "29/07/2012",
+    "lat": 1.157732,
+    "lon": 111.924669,
+    "foto": "foto/borneo 2012/2012-07-29-08h42m51.jpg",
+    "descrizione": "Batang Ai Longhouse Resort, Managed by Hilton, Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-29-08H47M58",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "29/07/2012",
+    "lat": 1.158962,
+    "lon": 111.924084,
+    "foto": "foto/borneo 2012/2012-07-29-08h47m58.jpg",
+    "descrizione": "Batang Ai Longhouse Resort, Managed by Hilton, Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-29-09H19M25",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "29/07/2012",
+    "lat": 1.157697,
+    "lon": 111.92472,
+    "foto": "foto/borneo 2012/2012-07-29-09h19m25.jpg",
+    "descrizione": "Batang Ai Longhouse Resort, Managed by Hilton, Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-29-10H22M39",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "29/07/2012",
+    "lat": 1.157675,
+    "lon": 111.924548,
+    "foto": "foto/borneo 2012/2012-07-29-10h22m39.jpg",
+    "descrizione": "Batang Ai Longhouse Resort, Managed by Hilton, Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-29-10H24M28",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "29/07/2012",
+    "lat": 1.158592,
+    "lon": 111.92443,
+    "foto": "foto/borneo 2012/2012-07-29-10h24m28.jpg",
+    "descrizione": "Batang Ai Longhouse Resort, Managed by Hilton, Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-29-14H48M29",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "29/07/2012",
+    "lat": 1.158474,
+    "lon": 111.924071,
+    "foto": "foto/borneo 2012/2012-07-29-14h48m29.jpg",
+    "descrizione": "Batang Ai Longhouse Resort, Managed by Hilton, Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-30-03H56M55",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "30/07/2012",
+    "lat": 1.159019,
+    "lon": 111.923086,
+    "foto": "foto/borneo 2012/2012-07-30-03h56m55.jpg",
+    "descrizione": "Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-30-03H57M15",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "30/07/2012",
+    "lat": 1.159021,
+    "lon": 111.923137,
+    "foto": "foto/borneo 2012/2012-07-30-03h57m15.jpg",
+    "descrizione": "Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-30-03H57M50",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "30/07/2012",
+    "lat": 1.159008,
+    "lon": 111.923094,
+    "foto": "foto/borneo 2012/2012-07-30-03h57m50.jpg",
+    "descrizione": "Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-30-03H59M39",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "30/07/2012",
+    "lat": 1.159115,
+    "lon": 111.923129,
+    "foto": "foto/borneo 2012/2012-07-30-03h59m39.jpg",
+    "descrizione": "Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-30-04H00M04",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "30/07/2012",
+    "lat": 1.172022,
+    "lon": 111.926479,
+    "foto": "foto/borneo 2012/2012-07-30-04h00m04.jpg",
+    "descrizione": "Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-30-04H09M03",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "30/07/2012",
+    "lat": 1.179917,
+    "lon": 111.926479,
+    "foto": "foto/borneo 2012/2012-07-30-04h09m03.jpg",
+    "descrizione": "Iban longhouse, Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-30-04H14M30",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "30/07/2012",
+    "lat": 1.192445,
+    "lon": 111.927338,
+    "foto": "foto/borneo 2012/2012-07-30-04h14m30.jpg",
+    "descrizione": "Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-30-04H17M34",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "30/07/2012",
+    "lat": 1.203086,
+    "lon": 111.932573,
+    "foto": "foto/borneo 2012/2012-07-30-04h17m34.jpg",
+    "descrizione": "Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-30-04H21M04",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "30/07/2012",
+    "lat": 1.216301,
+    "lon": 111.924591,
+    "foto": "foto/borneo 2012/2012-07-30-04h21m04.jpg",
+    "descrizione": "Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-30-04H26M31",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "30/07/2012",
+    "lat": 1.22943,
+    "lon": 111.927853,
+    "foto": "foto/borneo 2012/2012-07-30-04h26m31.jpg",
+    "descrizione": "Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-30-04H26M55",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "30/07/2012",
+    "lat": 1.236724,
+    "lon": 111.933861,
+    "foto": "foto/borneo 2012/2012-07-30-04h26m55.jpg",
+    "descrizione": "Nanga Ukom, Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-30-04H27M03",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "30/07/2012",
+    "lat": 1.246464,
+    "lon": 111.934247,
+    "foto": "foto/borneo 2012/2012-07-30-04h27m03.jpg",
+    "descrizione": "Nanga Ukom, Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-30-04H28M37",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "30/07/2012",
+    "lat": 1.248759,
+    "lon": 111.937637,
+    "foto": "foto/borneo 2012/2012-07-30-04h28m37.jpg",
+    "descrizione": "Nanga Ukom, Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-30-04H28M46",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "30/07/2012",
+    "lat": 1.25217,
+    "lon": 111.93768,
+    "foto": "foto/borneo 2012/2012-07-30-04h28m46.jpg",
+    "descrizione": "Nanga Ukom, Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-30-04H29M06",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "30/07/2012",
+    "lat": 1.252447,
+    "lon": 111.939033,
+    "foto": "foto/borneo 2012/2012-07-30-04h29m06.jpg",
+    "descrizione": "Nanga Ukom, Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-30-04H29M22",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "30/07/2012",
+    "lat": 1.252621,
+    "lon": 111.938946,
+    "foto": "foto/borneo 2012/2012-07-30-04h29m22.jpg",
+    "descrizione": "Nanga Ukom, Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-30-04H30M07",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "30/07/2012",
+    "lat": 1.252095,
+    "lon": 111.938206,
+    "foto": "foto/borneo 2012/2012-07-30-04h30m07.jpg",
+    "descrizione": "Nanga Ukom, Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-30-04H30M16",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "30/07/2012",
+    "lat": 1.252143,
+    "lon": 111.938699,
+    "foto": "foto/borneo 2012/2012-07-30-04h30m16.jpg",
+    "descrizione": "Nanga Ukom, Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-30-04H32M46",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "30/07/2012",
+    "lat": 1.252213,
+    "lon": 111.939032,
+    "foto": "foto/borneo 2012/2012-07-30-04h32m46.jpg",
+    "descrizione": "Nanga Ukom, Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-30-04H33M02",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "30/07/2012",
+    "lat": 1.252213,
+    "lon": 111.939032,
+    "foto": "foto/borneo 2012/2012-07-30-04h33m02.jpg",
+    "descrizione": "Nanga Ukom, Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-30-04H33M11",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "30/07/2012",
+    "lat": 1.252213,
+    "lon": 111.939032,
+    "foto": "foto/borneo 2012/2012-07-30-04h33m11.jpg",
+    "descrizione": "Nanga Ukom, Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-30-04H33M35",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "30/07/2012",
+    "lat": 1.252213,
+    "lon": 111.939032,
+    "foto": "foto/borneo 2012/2012-07-30-04h33m35.jpg",
+    "descrizione": "Nanga Ukom, Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-30-04H34M15",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "30/07/2012",
+    "lat": 1.252213,
+    "lon": 111.939032,
+    "foto": "foto/borneo 2012/2012-07-30-04h34m15.jpg",
+    "descrizione": "Nanga Ukom, Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-30-04H36M29",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "30/07/2012",
+    "lat": 1.252213,
+    "lon": 111.939032,
+    "foto": "foto/borneo 2012/2012-07-30-04h36m29.jpg",
+    "descrizione": "Nanga Ukom, Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-30-04H39M10",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "30/07/2012",
+    "lat": 1.252213,
+    "lon": 111.939032,
+    "foto": "foto/borneo 2012/2012-07-30-04h39m10.jpg",
+    "descrizione": "Nanga Ukom, Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-30-04H39M37",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "30/07/2012",
+    "lat": 1.252213,
+    "lon": 111.939032,
+    "foto": "foto/borneo 2012/2012-07-30-04h39m37.jpg",
+    "descrizione": "Nanga Ukom, Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-30-04H42M38",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "30/07/2012",
+    "lat": 1.252213,
+    "lon": 111.939032,
+    "foto": "foto/borneo 2012/2012-07-30-04h42m38.jpg",
+    "descrizione": "Nanga Ukom, Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-30-04H43M00",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "30/07/2012",
+    "lat": 1.252213,
+    "lon": 111.939032,
+    "foto": "foto/borneo 2012/2012-07-30-04h43m00.jpg",
+    "descrizione": "Nanga Ukom, Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-30-04H43M19",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "30/07/2012",
+    "lat": 1.149882,
+    "lon": 111.90691,
+    "foto": "foto/borneo 2012/2012-07-30-04h43m19.jpg",
+    "descrizione": "Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-30-04H43M44",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "30/07/2012",
+    "lat": 1.252138,
+    "lon": 111.939048,
+    "foto": "foto/borneo 2012/2012-07-30-04h43m44.jpg",
+    "descrizione": "Nanga Ukom, Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-30-04H46M47",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "30/07/2012",
+    "lat": 1.252218,
+    "lon": 111.938986,
+    "foto": "foto/borneo 2012/2012-07-30-04h46m47.jpg",
+    "descrizione": "Nanga Ukom, Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-30-04H56M54",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "30/07/2012",
+    "lat": 1.252063,
+    "lon": 111.93886,
+    "foto": "foto/borneo 2012/2012-07-30-04h56m54.jpg",
+    "descrizione": "Nanga Ukom, Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-30-04H57M27",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "30/07/2012",
+    "lat": 1.252063,
+    "lon": 111.93886,
+    "foto": "foto/borneo 2012/2012-07-30-04h57m27.jpg",
+    "descrizione": "Nanga Ukom, Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-30-04H58M48",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "30/07/2012",
+    "lat": 1.252063,
+    "lon": 111.93886,
+    "foto": "foto/borneo 2012/2012-07-30-04h58m48.jpg",
+    "descrizione": "Nanga Ukom, Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-30-05H00M53",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "30/07/2012",
+    "lat": 1.252063,
+    "lon": 111.93886,
+    "foto": "foto/borneo 2012/2012-07-30-05h00m53.jpg",
+    "descrizione": "Nanga Ukom, Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-30-05H03M04",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "30/07/2012",
+    "lat": 1.252063,
+    "lon": 111.93886,
+    "foto": "foto/borneo 2012/2012-07-30-05h03m04.jpg",
+    "descrizione": "Nanga Ukom, Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-30-05H03M15",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "30/07/2012",
+    "lat": 1.252063,
+    "lon": 111.93886,
+    "foto": "foto/borneo 2012/2012-07-30-05h03m15.jpg",
+    "descrizione": "Nanga Ukom, Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-30-05H11M13",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "30/07/2012",
+    "lat": 1.252063,
+    "lon": 111.93886,
+    "foto": "foto/borneo 2012/2012-07-30-05h11m13.jpg",
+    "descrizione": "Nanga Ukom, Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-30-05H20M55",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "30/07/2012",
+    "lat": 1.252063,
+    "lon": 111.93886,
+    "foto": "foto/borneo 2012/2012-07-30-05h20m55.jpg",
+    "descrizione": "Nanga Ukom, Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-30-06H06M57",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "30/07/2012",
+    "lat": 1.252063,
+    "lon": 111.93886,
+    "foto": "foto/borneo 2012/2012-07-30-06h06m57.jpg",
+    "descrizione": "Nanga Ukom, Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-30-06H08M18",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "30/07/2012",
+    "lat": 1.252063,
+    "lon": 111.93886,
+    "foto": "foto/borneo 2012/2012-07-30-06h08m18.jpg",
+    "descrizione": "Nanga Ukom, Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-30-06H16M20",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "30/07/2012",
+    "lat": 1.252063,
+    "lon": 111.93886,
+    "foto": "foto/borneo 2012/2012-07-30-06h16m20.jpg",
+    "descrizione": "Nanga Ukom, Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-30-06H35M19",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "30/07/2012",
+    "lat": 1.252063,
+    "lon": 111.93886,
+    "foto": "foto/borneo 2012/2012-07-30-06h35m19.jpg",
+    "descrizione": "Nanga Ukom, Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-30-06H44M47",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "30/07/2012",
+    "lat": 1.252052,
+    "lon": 111.938378,
+    "foto": "foto/borneo 2012/2012-07-30-06h44m47.jpg",
+    "descrizione": "Nanga Ukom, Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-30-06H44M57",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "30/07/2012",
+    "lat": 1.252084,
+    "lon": 111.93827,
+    "foto": "foto/borneo 2012/2012-07-30-06h44m57.jpg",
+    "descrizione": "Nanga Ukom, Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-30-06H45M04",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "30/07/2012",
+    "lat": 1.251859,
+    "lon": 111.938437,
+    "foto": "foto/borneo 2012/2012-07-30-06h45m04.jpg",
+    "descrizione": "Nanga Ukom, Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-30-06H53M20",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "30/07/2012",
+    "lat": 1.242087,
+    "lon": 111.935534,
+    "foto": "foto/borneo 2012/2012-07-30-06h53m20.jpg",
+    "descrizione": "Nanga Ukom, Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-30-06H53M59",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "30/07/2012",
+    "lat": 1.242034,
+    "lon": 111.935674,
+    "foto": "foto/borneo 2012/2012-07-30-06h53m59.jpg",
+    "descrizione": "Nanga Ukom, Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-30-06H54M05",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "30/07/2012",
+    "lat": 1.241996,
+    "lon": 111.935771,
+    "foto": "foto/borneo 2012/2012-07-30-06h54m05.jpg",
+    "descrizione": "Nanga Ukom, Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-30-07H08M02",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "30/07/2012",
+    "lat": 1.238869,
+    "lon": 111.938195,
+    "foto": "foto/borneo 2012/2012-07-30-07h08m02.jpg",
+    "descrizione": "Nanga Ukom, Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-30-07H13M44",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "30/07/2012",
+    "lat": 1.238505,
+    "lon": 111.940963,
+    "foto": "foto/borneo 2012/2012-07-30-07h13m44.jpg",
+    "descrizione": "Nanga Ukom, Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-30-07H14M36",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "30/07/2012",
+    "lat": 1.238076,
+    "lon": 111.94313,
+    "foto": "foto/borneo 2012/2012-07-30-07h14m36.jpg",
+    "descrizione": "Nanga Ukom, Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-30-07H42M08",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "30/07/2012",
+    "lat": 1.237904,
+    "lon": 111.944536,
+    "foto": "foto/borneo 2012/2012-07-30-07h42m08.jpg",
+    "descrizione": "Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-30-07H44M49",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "30/07/2012",
+    "lat": 1.237936,
+    "lon": 111.944375,
+    "foto": "foto/borneo 2012/2012-07-30-07h44m49.jpg",
+    "descrizione": "Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-30-12H40M47",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "30/07/2012",
+    "lat": 1.158421,
+    "lon": 111.924047,
+    "foto": "foto/borneo 2012/2012-07-30-12h40m47.jpg",
+    "descrizione": "Batang Ai Longhouse Resort, Managed by Hilton, Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-31-04H11M48",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "31/07/2012",
+    "lat": 1.159075,
+    "lon": 111.924127,
+    "foto": "foto/borneo 2012/2012-07-31-04h11m48.jpg",
+    "descrizione": "Batang Ai Longhouse Resort, Managed by Hilton, Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-31-04H59M45",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "31/07/2012",
+    "lat": 1.157761,
+    "lon": 111.92436,
+    "foto": "foto/borneo 2012/2012-07-31-04h59m45.jpg",
+    "descrizione": "Batang Ai Longhouse Resort, Managed by Hilton, Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-31-05H17M25",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "31/07/2012",
+    "lat": 1.157388,
+    "lon": 111.924562,
+    "foto": "foto/borneo 2012/2012-07-31-05h17m25.jpg",
+    "descrizione": "Batang Ai Longhouse Resort, Managed by Hilton, Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-31-05H22M37",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "31/07/2012",
+    "lat": 1.157273,
+    "lon": 111.92454,
+    "foto": "foto/borneo 2012/2012-07-31-05h22m37.jpg",
+    "descrizione": "Batang Ai Longhouse Resort, Managed by Hilton, Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-31-05H29M15",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "31/07/2012",
+    "lat": 1.15727,
+    "lon": 111.924626,
+    "foto": "foto/borneo 2012/2012-07-31-05h29m15.jpg",
+    "descrizione": "Batang Ai Longhouse Resort, Managed by Hilton, Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-31-05H44M29",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "31/07/2012",
+    "lat": 1.157415,
+    "lon": 111.924773,
+    "foto": "foto/borneo 2012/2012-07-31-05h44m29.jpg",
+    "descrizione": "Batang Ai Longhouse Resort, Managed by Hilton, Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-31-05H51M27",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "31/07/2012",
+    "lat": 1.157581,
+    "lon": 111.924806,
+    "foto": "foto/borneo 2012/2012-07-31-05h51m27.jpg",
+    "descrizione": "Batang Ai Longhouse Resort, Managed by Hilton, Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-07-31-06H57M08",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "31/07/2012",
+    "lat": 1.158946,
+    "lon": 111.923003,
+    "foto": "foto/borneo 2012/2012-07-31-06h57m08.jpg",
+    "descrizione": "Lubok Antu - Sarawak, Malesia"
+  },
+  {
+    "nome": "2012-08-01-08H22M55",
+    "viaggio": "borneo 2012",
+    "anno": "2012",
+    "data": "01/08/2012",
+    "lat": 1.484715,
+    "lon": 110.348455,
+    "foto": "foto/borneo 2012/2012-08-01-08h22m55.jpg",
+    "descrizione": "Lapangan Terbang Antarabangsa Kuching, Kampung Sungai Tapang - Sarawak, Malesia"
+  },
+  {
     "nome": "2009-04-02-16H50M31",
     "viaggio": "cairo 2009",
     "anno": "2009",
