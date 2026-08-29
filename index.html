@@ -1,4 +1,4 @@
-<!-- VERSION: 2.99_LAYOUT_SLIDESHOW_RESIZE_FIX -->
+<!-- VERSION: 3.03_SLIDESHOW_CONTROLS_UNDER_MAP -->
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -11,17 +11,12 @@
   <meta name="author" content="Vinicio e Luisa">
   <meta name="robots" content="index, follow">
 
-  <meta property="og:title" content="Mappa Interattiva Viaggi Fai da Te e in Camper | La Mappa dei Viaggi">
-  <meta property="og:description" content="Oltre 30 anni di itinerari fai da te e viaggi in camper: scopri le nostre foto geolocalizzate in tempo reale sulla mappa e i diari di viaggio.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://vinicio0000.github.io/mytravels/">
-
-<!-- Tag per attivare la PWA e nascondere le barre del browser -->
-<link rel="manifest" href="manifest.json">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <!-- Tag per attivare la PWA e nascondere le barre del browser -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
   <link rel="canonical" href="https://vinicio0000.github.io/mytravels/">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><circle cx='32' cy='32' r='30' fill='%231e3c72'/><circle cx='32' cy='32' r='28' fill='none' stroke='%2352b69a' stroke-width='2'/><path fill='none' stroke='%23ffffff' stroke-width='1.5' opacity='0.5' d='M8 32h48M32 8a30 30 0 0 0 0 48M32 8a30 30 0 0 1 0 48'/><path fill='%23e6194b' stroke='%23ffffff' stroke-width='1.5' d='M32 10c-5.5 0-10 4.5-10 10 0 7.5 10 17 10 17s10-9.5 10-17c0-5.5-4.5-10-10-10zm0 13a3 3 0 1 1 0-6 3 3 0 0 1 0 6z'/><rect x='18' y='42' width='28' height='12' rx='2' fill='%23ffffff'/><rect x='38' y='44' width='6' height='5' rx='1' fill='%231e3c72'/><circle cx='24' cy='54' r='2.5' fill='%23333333'/><circle cx='40' cy='54' r='2.5' fill='%23333333'/></svg>">
@@ -150,7 +145,7 @@
       background: #007bff;
     }
 
-    /* --- SCHERMO ORIZZONTALE (PC, Tablet, Smart orizzontale) --- */
+    /* --- SCHERMO ORIZZONTALE --- */
     @media (orientation: landscape) {
       body.slideshow-active #slideshow-photo-panel {
         top: 0;
@@ -183,6 +178,13 @@
         height: 100dvh;
       }
 
+      /* POSIZIONAMENTO SOTTO LA MAPPA */
+      body.slideshow-active #slideshow-controls {
+        left: 85%;
+        bottom: 20px;
+        transform: translateX(-50%);
+      }
+
       #slideshow-img {
         max-width: 100%;
         max-height: calc(100% - 70px);
@@ -207,7 +209,7 @@
       }
     }
 
-    /* --- SCHERMO VERTICALE (Smartphone/Tablet in verticale) --- */
+    /* --- SCHERMO VERTICALE --- */
     @media (orientation: portrait) {
       body.slideshow-active #slideshow-photo-panel {
         top: 0;
@@ -239,6 +241,13 @@
         width: 100vw;
         height: 50vh;
         height: 50dvh;
+      }
+
+      /* POSIZIONAMENTO IN BASSO CENTRATO */
+      body.slideshow-active #slideshow-controls {
+        left: 50%;
+        bottom: 15px;
+        transform: translateX(-50%);
       }
 
       #slideshow-img {
@@ -386,9 +395,6 @@
     #slideshow-controls {
       display: none;
       position: absolute;
-      bottom: 15px;
-      left: 50%;
-      transform: translateX(-50%);
       z-index: 100000;
       background: rgba(44, 62, 80, 0.95);
       color: white;
@@ -397,6 +403,7 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.5);
       align-items: center;
       gap: 12px;
+      white-space: nowrap;
     }
 
     #slideshow-controls button {
@@ -635,7 +642,7 @@
       #menu-panel { top: calc(100% + 5px); right: 0; min-width: 180px; }
       .filtro-group label, select, .checkbox-label { font-size: 11px; }
       select { padding: 4px 6px; min-width: 110px; }
-      #slideshow-controls { bottom: 10px; padding: 6px 10px; gap: 4px; width: 92vw; justify-content: space-between; }
+      #slideshow-controls { padding: 6px 10px; gap: 4px; }
       #slideshow-controls button { padding: 6px 8px; font-size: 11px; }
       .slideshow-speed-container { font-size: 10px; }
       #select-speed { font-size: 10px; padding: 2px 4px; }
@@ -730,13 +737,13 @@
     <div id="slideshow-caption"></div>
   </div>
 
-  <!-- BARRA DI DIVISIONE TRASCINABILE (MOUSE E TOUCH) -->
+  <!-- BARRA DI DIVISIONE TRASCINABILE -->
   <div id="slideshow-resizer"></div>
 
   <div id="slideshow-controls">
-    <button onclick="prevSlide()">◀ Prec</button>
-    <button id="btn-play-pause" onclick="togglePlayPause()">⏸ Pausa</button>
-    <button onclick="nextSlide()">Succ ▶</button>
+    <button onclick="prevSlide()">◀</button>
+    <button id="btn-play-pause" onclick="togglePlayPause()">⏸</button>
+    <button onclick="nextSlide()">▶</button>
 
     <div class="slideshow-speed-container">
       <select id="select-speed" onchange="cambiaVelocita()">
@@ -748,7 +755,7 @@
     </div>
 
     <span id="slideshow-counter">1 / 1</span>
-    <button onclick="fermaSlideshow()" style="background: rgba(220, 53, 69, 0.9);">✖ Esci</button>
+    <button onclick="fermaSlideshow()" style="background: rgba(220, 53, 69, 0.9);">✖</button>
   </div>
 
   <div id="legenda-container">
@@ -773,7 +780,7 @@
       border: 1px solid rgba(0,0,0,0.15);
     ">
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; border-bottom: 2px solid #007bff; padding-bottom: 6px;">
-        <h3 style="margin:0; font-size:16px; color:#2c3e50;">🌍 Guida e Informazioni (v2.99)</h3>
+        <h3 style="margin:0; font-size:16px; color:#2c3e50;">🌍 Guida e Informazioni (v3.03)</h3>
         <button onclick="chiudiModalAiuto()" style="background:none; border:none; font-size:20px; cursor:pointer; color:#666;">✖</button>
       </div>
       
@@ -1280,7 +1287,7 @@
 
       document.getElementById('filtro-container').style.display = 'none';
       document.getElementById('slideshow-controls').style.display = 'flex';
-      document.getElementById('btn-play-pause').textContent = '⏸ Pausa';
+      document.getElementById('btn-play-pause').textContent = '⏸';
 
       tempoIntervallo = parseInt(document.getElementById('select-speed').value, 10) || 4000;
 
@@ -1355,10 +1362,10 @@
       
       document.body.classList.remove('slideshow-active');
 
-      // Resetta i layout inline modificati dal drag resizer
       const photoPanel = document.getElementById('slideshow-photo-panel');
       const mapElement = document.getElementById('map');
       const resizer = document.getElementById('slideshow-resizer');
+      const controls = document.getElementById('slideshow-controls');
       
       photoPanel.style.width = '';
       photoPanel.style.height = '';
@@ -1368,11 +1375,12 @@
       mapElement.style.top = '';
       mapElement.style.width = '';
       mapElement.style.height = '';
+      controls.style.left = '';
 
       map.invalidateSize();
 
       document.getElementById('filtro-container').style.display = 'flex';
-      document.getElementById('slideshow-controls').style.display = 'none';
+      controls.style.display = 'none';
       
       aggiornaMappa();
     }
@@ -1391,10 +1399,11 @@
       });
     }
 
-    // --- LOGICA TRASCINAMENTO / RESIZE DINAMICO (MOUSE E TOUCH) ---
+    // --- LOGICA TRASCINAMENTO / RESIZE DINAMICO ---
     const resizer = document.getElementById('slideshow-resizer');
     const photoPanel = document.getElementById('slideshow-photo-panel');
     const mapElement = document.getElementById('map');
+    const controlsElement = document.getElementById('slideshow-controls');
     let isResizing = false;
 
     function startResize(e) {
@@ -1421,19 +1430,21 @@
         if (newPhotoWidthPx < minPx) newPhotoWidthPx = minPx;
         if (newPhotoWidthPx > maxPx) newPhotoWidthPx = maxPx;
 
-        const photoWidthPercent = (newPhotoWidthPx / totalWidth) * 100;
-        const mapWidthPercent = 100 - photoWidthPercent;
+        const mapWidthPx = totalWidth - newPhotoWidthPx;
 
-        // Pulizia degli stili in altezza usati in portrait
         photoPanel.style.height = '';
         resizer.style.top = '';
         mapElement.style.top = '';
         mapElement.style.height = '';
 
-        photoPanel.style.width = photoWidthPercent + 'vw';
-        resizer.style.left = photoWidthPercent + 'vw';
-        mapElement.style.left = photoWidthPercent + 'vw';
-        mapElement.style.width = mapWidthPercent + 'vw';
+        photoPanel.style.width = newPhotoWidthPx + 'px';
+        resizer.style.left = newPhotoWidthPx + 'px';
+        mapElement.style.left = newPhotoWidthPx + 'px';
+        mapElement.style.width = mapWidthPx + 'px';
+
+        // Riposiziona dinamicamente i controlli al centro della mappa trascinata
+        const controlsCenterPx = newPhotoWidthPx + (mapWidthPx / 2);
+        controlsElement.style.left = controlsCenterPx + 'px';
       } else {
         const totalHeight = window.innerHeight;
         let newPhotoHeightPx = clientY;
@@ -1444,19 +1455,19 @@
         if (newPhotoHeightPx < minPx) newPhotoHeightPx = minPx;
         if (newPhotoHeightPx > maxPx) newPhotoHeightPx = maxPx;
 
-        const photoHeightPercent = (newPhotoHeightPx / totalHeight) * 100;
-        const mapHeightPercent = 100 - photoHeightPercent;
+        const mapHeightPx = totalHeight - newPhotoHeightPx;
 
-        // Pulizia degli stili in larghezza usati in landscape
         photoPanel.style.width = '';
         resizer.style.left = '';
         mapElement.style.left = '';
         mapElement.style.width = '';
 
-        photoPanel.style.height = photoHeightPercent + 'vh';
-        resizer.style.top = photoHeightPercent + 'vh';
-        mapElement.style.top = photoHeightPercent + 'vh';
-        mapElement.style.height = mapHeightPercent + 'vh';
+        photoPanel.style.height = newPhotoHeightPx + 'px';
+        resizer.style.top = newPhotoHeightPx + 'px';
+        mapElement.style.top = newPhotoHeightPx + 'px';
+        mapElement.style.height = mapHeightPx + 'px';
+
+        controlsElement.style.left = '50%';
       }
 
       map.invalidateSize({ pan: false });
@@ -1478,7 +1489,6 @@
     window.addEventListener('touchmove', doResize, { passive: true });
     window.addEventListener('touchend', stopResize);
 
-    // RESET AUTOMATICO DEGLI STILI SU ROTAZIONE SCHERMO / RESIZE
     window.addEventListener('resize', function() {
       if (isSlideshowActive) {
         photoPanel.style.width = '';
@@ -1489,6 +1499,7 @@
         mapElement.style.top = '';
         mapElement.style.width = '';
         mapElement.style.height = '';
+        controlsElement.style.left = '';
 
         map.invalidateSize();
       } else {
@@ -1579,7 +1590,6 @@
       }
     });
 
-    // TOUCH SWIPE SULLA FOTO FULLSCREEN
     const modalFotoElem = document.getElementById('imageModal');
     let modalTouchStartX = 0;
     let modalTouchStartY = 0;
@@ -1605,7 +1615,6 @@
       }
     }, false);
 
-    // TOUCH SWIPE IN SLIDESHOW
     photoPanel.addEventListener('touchstart', function(e) {
       touchStartX = e.changedTouches[0].screenX;
       touchStartY = e.changedTouches[0].screenY;
