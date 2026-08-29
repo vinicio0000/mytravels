@@ -1,4 +1,4 @@
-<!-- VERSION: 3.03_SLIDESHOW_CONTROLS_UNDER_MAP -->
+<!-- VERSION: 3.04_PROTECTION_ALL_IMAGES -->
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -40,6 +40,14 @@
   </script>
 
   <style>
+    /* PROTEZIONE GLOBALE IMMAGINI CONTRO SALVATAGGIO / TRASCINAMENTO */
+    img {
+      user-select: none !important;
+      -webkit-user-select: none !important;
+      -webkit-user-drag: none !important;
+      -webkit-touch-callout: none !important;
+    }
+
     html, body {
       height: 100%;
       margin: 0;
@@ -580,6 +588,7 @@
       box-sizing: border-box;
     }
 
+    /* PROTEZIONE IMMAGINE A SCHERMO INTERO */
     .modal-foto-content {
       max-width: 100vw;
       max-height: calc(100vh - 100px);
@@ -587,8 +596,6 @@
       width: auto;
       height: auto;
       object-fit: contain;
-      user-select: none;
-      -webkit-user-drag: none;
       margin: auto;
       display: block;
     }
@@ -733,7 +740,7 @@
   </div>
 
   <div id="slideshow-photo-panel">
-    <img id="slideshow-img" src="" alt="Foto slideshow">
+    <img id="slideshow-img" src="" alt="Foto slideshow" draggable="false">
     <div id="slideshow-caption"></div>
   </div>
 
@@ -768,9 +775,10 @@
   <!-- MODALE FOTO INGRANDITA -->
   <div id="imageModal" class="modal-foto" onclick="chiudiModalFoto(false)">
     <div id="modal-caption"></div>
-    <img class="modal-foto-content" id="imgModalSrc" onclick="event.stopPropagation()">
+    <img class="modal-foto-content" id="imgModalSrc" draggable="false" onclick="event.stopPropagation()">
   </div>
 
+  
   <!-- MODALE GUIDA / AIUTO COMPLETA -->
   <div id="modal-aiuto" class="modal-foto" onclick="chiudiModalAiuto()" style="z-index: 100002;">
     <div class="modal-aiuto-card" onclick="event.stopPropagation()" style="
@@ -780,7 +788,7 @@
       border: 1px solid rgba(0,0,0,0.15);
     ">
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; border-bottom: 2px solid #007bff; padding-bottom: 6px;">
-        <h3 style="margin:0; font-size:16px; color:#2c3e50;">🌍 Guida e Informazioni (v3.03)</h3>
+        <h3 style="margin:0; font-size:16px; color:#2c3e50;">🌍 Guida e Informazioni (v3.04)</h3>
         <button onclick="chiudiModalAiuto()" style="background:none; border:none; font-size:20px; cursor:pointer; color:#666;">✖</button>
       </div>
       
@@ -802,22 +810,43 @@
 
         <b style="color:#007bff;">📍 ESPLORAZIONE MAPPA E FOTO</b>
         <p style="margin: 4px 0 10px 0;">
-          Clicca su una puntina colorata per aprire la finestra con l'anteprima, la data e la descrizione del luogo. Cliccando sulla foto puoi ingrandirla a schermo intero. Quando la foto è a schermo intero puoi fare lo <b>swipe (scorrimento orizzontale)</b> per passare alle altre foto del viaggio.
+          Clicca su una puntina colorata per aprire la finestra con l'anteprima, la data e la descrizione del luogo. Cliccando sulla foto puoi ingrandirla a schermo intero.
         </p>
 
         <b style="color:#28a745;">📖 DIARIO DI VIAGGIO</b>
         <p style="margin: 4px 0 10px 0;">
-          Se per il viaggio o la tappa selezionata è disponibile il resoconto scritto, troverai il pulsante verde <b>📖 Diario di Viaggio</b> sia nel popup sia nella foto ingrandita.
+          Se per il viaggio o la tappa selezionata è disponibile il resoconto scritto, troverai il pulsante verde <b>📖 Diario di Viaggio</b> sia all'interno del fumetto/popup sulla mappa, sia nella parte superiore della foto ingrandita a schermo intero. Cliccandolo si aprirà il file del diario in una nuova scheda.
         </p>
 
-        <b style="color:#007bff;">▶ MODALITÀ SLIDESHOW E RIDIMENSIONAMENTO</b>
+        <b style="color:#007bff;">▶ MODALITÀ SLIDESHOW</b>
         <p style="margin: 4px 0 10px 0;">
-          Selezionando uno specifico <b>Viaggio</b> dal menu in alto comparirà il pulsante <b>▶ Avvia Slideshow</b> per scorrere automaticamente foto e mappa insieme. Puoi trascinare la linea di confine tra foto e mappa col mouse o col touch per regolare la dimensione.
+          Selezionando uno specifico <b>Viaggio</b> dal menu in alto comparirà il pulsante <b>▶ Avvia Slideshow</b>. Lo schermo si dividerà in due: la foto in alto e la mappa in basso con la puntina corrente evidenziata in giallo.
         </p>
+
+        <b style="color:#007bff;">📱 CONTROLLI E GESTI</b>
+        <p style="margin: 6px 0 4px 0;">
+          <span style="background:#2c3e50; color:white; padding:3px 8px; border-radius:12px; font-size:11px;">◀ Prec</span>
+          <span style="background:#2c3e50; color:white; padding:3px 8px; border-radius:12px; font-size:11px;">⏸ Pausa</span>
+          <span style="background:#2c3e50; color:white; padding:3px 8px; border-radius:12px; font-size:11px;">Succ ▶</span>
+          <span style="background:#2c3e50; color:white; padding:3px 8px; border-radius:12px; font-size:11px;">4s ▾ Velocità</span>
+          <span style="background:#dc3545; color:white; padding:3px 8px; border-radius:12px; font-size:11px;">✖ Esci</span>
+        </p>
+        <p style="margin: 4px 0 10px 0; font-style: italic; font-size: 11px; color: #555;">
+          Su dispositivi touch puoi fare uno scorrimento orizzontale (swipe) sulla foto per passare alla foto precedente o successiva.
+        </p>
+
+        <b style="color:#007bff;">⚙ OPZIONI MENU (☰)</b>
+        <ul style="margin: 4px 0 10px 0; padding-left: 18px; font-size: 12px;">
+          <li><b>Stile Mappa:</b> per scegliere tra mappa standard (OpenStreetMap), satellitare (Esri), ibrida, topografica o sfondi minimali CARTO.</li>
+          <li><b>Dimensione Puntine:</b> permette di ingrandire o rimpicciolire i pin (Piccole, Standard, Grandi) per adattarli al tuo schermo.</li>
+          <li><b>Raggruppa punti (Clustering):</b> unisce le puntine vicine in un unico cerchio numerato per non affollare la mappa.</li>
+          <li><b>Abilita selezione Anno:</b> attiva un menu aggiuntivo per mostrare solo le tappe di un anno specifico.</li>
+          <li><b>Legenda Anni:</b> mostra un box in basso a destra con la corrispondenza dei colori per ogni anno.</li>
+        </ul>
 
         <hr style="border:0; border-top:1px solid #ddd; margin:10px 0;">
         <small style="color:#666; display:block; text-align:center;">
-          Sito e codice sviluppati da Ing. Vinicio Barone con AI Gemini
+          Sito e codice sviluppati da Ing. Vinicio Barone con l'assistenza AI
         </small>
 
         <hr style="border:0; border-top:1px solid #ddd; margin:10px 0;">
@@ -828,11 +857,27 @@
       </div>
     </div>
   </div>
+  
+  
+  
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
 
   <script>
+    // PROTEZIONE GLOBALE CONTRO IL TASTO DESTRO E IL TRASCINAMENTO DI QUALSIASI IMMAGINE
+    document.addEventListener('contextmenu', function(e) {
+      if (e.target.tagName === 'IMG') {
+        e.preventDefault();
+      }
+    });
+
+    document.addEventListener('dragstart', function(e) {
+      if (e.target.tagName === 'IMG') {
+        e.preventDefault();
+      }
+    });
+
     function applicaImmagineSplash() {
       const isMobile = window.innerWidth <= 900 || window.innerHeight > window.innerWidth;
       const fileSplash = isMobile ? 'splash_vert.jpg' : 'splash_oriz.jpg';
@@ -1233,7 +1278,7 @@
               <b style="font-size: 13px;">${p.nome || p.viaggio}</b><br>
               <small style="color: #666;">📅 ${p.data}</small>
               ${htmlDescrizione}
-              <img src="${fotoThumb}" class="popup-foto" alt="${p.nome}" onclick="apriModalFoto('${p.foto}', ${indexAttuale})">
+              <img src="${fotoThumb}" class="popup-foto" alt="${p.nome}" draggable="false" onclick="apriModalFoto('${p.foto}', ${indexAttuale})">
               <a href="javascript:void(0)" onclick="apriModalFoto('${p.foto}', ${indexAttuale})" style="display:inline-block; margin-top:6px; color:#007bff; font-weight:bold; text-decoration:none; font-size:12px;">Ingrandisci foto 🔍</a>
               ${htmlBtnDiario}
             </div>

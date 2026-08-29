@@ -4530,6 +4530,24 @@
     "descrizione": "Big Pine Key - Florida, Stati Uniti d'America"
   },
   {
+    "nome": "2024-03-21-09H11M50",
+    "viaggio": "francia 2024",
+    "anno": "2024",
+    "data": "21/03/2024",
+    "lat": 43.550772,
+    "lon": 7.011831,
+    "foto": "foto/francia 2024/2024-03-21-09h11m50.jpg"
+  },
+  {
+    "nome": "2024-03-21-09H12M01",
+    "viaggio": "francia 2024",
+    "anno": "2024",
+    "data": "21/03/2024",
+    "lat": 43.550788,
+    "lon": 7.019239,
+    "foto": "foto/francia 2024/2024-03-21-09h12m01.jpg"
+  },
+  {
     "nome": "2024-03-21-09H12M16",
     "viaggio": "francia 2024",
     "anno": "2024",
@@ -4574,18 +4592,27 @@
     "viaggio": "francia 2024",
     "anno": "2024",
     "data": "28/03/2024",
-    "lat": 42.266464,
-    "lon": 2.955333,
+    "lat": 42.26805,
+    "lon": 2.959228,
     "foto": "foto/francia 2024/2024-03-28-10h31m08.jpg",
     "descrizione": "Passeig Nou, Figueres - Catalogna, Spagna"
+  },
+  {
+    "nome": "2024-03-28-10H31M35",
+    "viaggio": "francia 2024",
+    "anno": "2024",
+    "data": "28/03/2024",
+    "lat": 42.26806,
+    "lon": 2.95944,
+    "foto": "foto/francia 2024/2024-03-28-10h31m35.jpg"
   },
   {
     "nome": "2024-03-28-10H35M38",
     "viaggio": "francia 2024",
     "anno": "2024",
     "data": "28/03/2024",
-    "lat": 42.266718,
-    "lon": 2.95661,
+    "lat": 42.268016,
+    "lon": 2.959576,
     "foto": "foto/francia 2024/2024-03-28-10h35m38.jpg",
     "descrizione": "Passeig Nou, Figueres - Catalogna, Spagna"
   },
@@ -4594,10 +4621,19 @@
     "viaggio": "francia 2024",
     "anno": "2024",
     "data": "28/03/2024",
-    "lat": 42.265908,
-    "lon": 2.957983,
+    "lat": 42.267971,
+    "lon": 2.959616,
     "foto": "foto/francia 2024/2024-03-28-10h35m44.jpg",
     "descrizione": "N-IIa, Figueres - Catalogna, Spagna"
+  },
+  {
+    "nome": "2024-03-28-11H36M23",
+    "viaggio": "francia 2024",
+    "anno": "2024",
+    "data": "28/03/2024",
+    "lat": 42.2595,
+    "lon": 3.0763,
+    "foto": "foto/francia 2024/2024-03-28-11h36m23.jpg"
   },
   {
     "nome": "2025-04-25-09H23M32",
