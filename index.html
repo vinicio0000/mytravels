@@ -1,4 +1,4 @@
-<!-- VERSION: 2.95_FIX_TOUCH_AND_FULLSCREEN_SWIPE -->
+<!-- VERSION: 2.99_LAYOUT_SLIDESHOW_RESIZE_FIX -->
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -107,13 +107,6 @@
       background: #aad3df;
     }
 
-    body.slideshow-active #map {
-      height: 50vh;
-      height: 50dvh;
-      top: 50vh;
-      top: 50dvh;
-    }
-
     body.slideshow-active #header-container {
       display: none !important;
     }
@@ -121,17 +114,8 @@
     #slideshow-photo-panel {
       display: none;
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 50vh;
-      height: 50dvh;
       background: #111;
       z-index: 2000;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 6px;
       box-sizing: border-box;
       user-select: none;
     }
@@ -140,27 +124,138 @@
       display: flex;
     }
 
-    #slideshow-img {
-      max-width: 100%;
-      max-height: calc(100% - 40px);
-      object-fit: contain;
-      border-radius: 4px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    /* BARRA DI DIVISIONE TRASCINABILE */
+    #slideshow-resizer {
+      display: none;
+      position: absolute;
+      z-index: 2001;
+      background: #333;
+      transition: background 0.2s;
+      user-select: none;
+      touch-action: none;
     }
 
-    #slideshow-caption {
-      color: #ffffff;
-      font-size: 13px;
-      font-weight: 600;
-      background: rgba(0, 0, 0, 0.65);
-      padding: 4px 14px;
-      border-radius: 12px;
-      margin-bottom: 6px;
-      text-align: center;
-      max-width: 90vw;
-      max-height: 55px;
-      overflow-y: auto;
-      word-break: break-word;
+    body.slideshow-active #slideshow-resizer {
+      display: block;
+    }
+
+    #slideshow-resizer:hover, #slideshow-resizer:active {
+      background: #007bff;
+    }
+
+    /* --- SCHERMO ORIZZONTALE (PC, Tablet, Smart orizzontale) --- */
+    @media (orientation: landscape) {
+      body.slideshow-active #slideshow-photo-panel {
+        top: 0;
+        left: 0;
+        width: 70vw;
+        height: 100vh;
+        height: 100dvh;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 16px;
+        box-sizing: border-box;
+      }
+
+      body.slideshow-active #slideshow-resizer {
+        top: 0;
+        left: 70vw;
+        width: 10px;
+        height: 100vh;
+        height: 100dvh;
+        cursor: col-resize;
+        transform: translateX(-5px);
+      }
+
+      body.slideshow-active #map {
+        top: 0;
+        left: 70vw;
+        width: 30vw;
+        height: 100vh;
+        height: 100dvh;
+      }
+
+      #slideshow-img {
+        max-width: 100%;
+        max-height: calc(100% - 70px);
+        object-fit: contain;
+        border-radius: 6px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+      }
+
+      #slideshow-caption {
+        color: #ffffff;
+        font-size: 15px;
+        font-weight: 600;
+        background: rgba(0, 0, 0, 0.8);
+        padding: 8px 18px;
+        border-radius: 12px;
+        margin-top: 10px;
+        text-align: center;
+        max-width: 95%;
+        max-height: 60px;
+        overflow-y: auto;
+        word-break: break-word;
+      }
+    }
+
+    /* --- SCHERMO VERTICALE (Smartphone/Tablet in verticale) --- */
+    @media (orientation: portrait) {
+      body.slideshow-active #slideshow-photo-panel {
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 50vh;
+        height: 50dvh;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 6px;
+        box-sizing: border-box;
+      }
+
+      body.slideshow-active #slideshow-resizer {
+        top: 50vh;
+        top: 50dvh;
+        left: 0;
+        width: 100vw;
+        height: 10px;
+        cursor: row-resize;
+        transform: translateY(-5px);
+      }
+
+      body.slideshow-active #map {
+        top: 50vh;
+        top: 50dvh;
+        left: 0;
+        width: 100vw;
+        height: 50vh;
+        height: 50dvh;
+      }
+
+      #slideshow-img {
+        max-width: 100%;
+        max-height: calc(100% - 40px);
+        object-fit: contain;
+        border-radius: 4px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+      }
+
+      #slideshow-caption {
+        color: #ffffff;
+        font-size: 13px;
+        font-weight: 600;
+        background: rgba(0, 0, 0, 0.65);
+        padding: 4px 14px;
+        border-radius: 12px;
+        margin-bottom: 6px;
+        text-align: center;
+        max-width: 90vw;
+        max-height: 55px;
+        overflow-y: auto;
+        word-break: break-word;
+      }
     }
 
     #header-container {
@@ -624,9 +719,12 @@
   </div>
 
   <div id="slideshow-photo-panel">
-    <div id="slideshow-caption"></div>
     <img id="slideshow-img" src="" alt="Foto slideshow">
+    <div id="slideshow-caption"></div>
   </div>
+
+  <!-- BARRA DI DIVISIONE TRASCINABILE (MOUSE E TOUCH) -->
+  <div id="slideshow-resizer"></div>
 
   <div id="slideshow-controls">
     <button onclick="prevSlide()">◀ Prec</button>
@@ -668,7 +766,7 @@
       border: 1px solid rgba(0,0,0,0.15);
     ">
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; border-bottom: 2px solid #007bff; padding-bottom: 6px;">
-        <h3 style="margin:0; font-size:16px; color:#2c3e50;">🌍 Guida e Informazioni (v2.95)</h3>
+        <h3 style="margin:0; font-size:16px; color:#2c3e50;">🌍 Guida e Informazioni (v2.99)</h3>
         <button onclick="chiudiModalAiuto()" style="background:none; border:none; font-size:20px; cursor:pointer; color:#666;">✖</button>
       </div>
       
@@ -698,14 +796,14 @@
           Se per il viaggio o la tappa selezionata è disponibile il resoconto scritto, troverai il pulsante verde <b>📖 Diario di Viaggio</b> sia nel popup sia nella foto ingrandita.
         </p>
 
-        <b style="color:#007bff;">▶ MODALITÀ SLIDESHOW</b>
+        <b style="color:#007bff;">▶ MODALITÀ SLIDESHOW E RIDIMENSIONAMENTO</b>
         <p style="margin: 4px 0 10px 0;">
-          Selezionando uno specifico <b>Viaggio</b> dal menu in alto comparirà il pulsante <b>▶ Avvia Slideshow</b> per scorrere automaticamente foto e mappa insieme.
+          Selezionando uno specifico <b>Viaggio</b> dal menu in alto comparirà il pulsante <b>▶ Avvia Slideshow</b> per scorrere automaticamente foto e mappa insieme. Puoi trascinare la linea di confine tra foto e mappa col mouse o col touch per regolare la dimensione.
         </p>
 
         <hr style="border:0; border-top:1px solid #ddd; margin:10px 0;">
         <small style="color:#666; display:block; text-align:center;">
-          Sito e codice sviluppati da Ing. Vinicio Barone con  AI
+          Sito e codice sviluppati da Ing. Vinicio Barone con AI Gemini
         </small>
 
         <hr style="border:0; border-top:1px solid #ddd; margin:10px 0;">
@@ -1183,7 +1281,7 @@
         map.invalidateSize();
         mostraSlide(currentSlideIndex);
         avviaTimer();
-      }, 100);
+      }, 150);
     }
 
     function cambiaVelocita() {
@@ -1249,6 +1347,21 @@
       clearInterval(slideshowTimer);
       
       document.body.classList.remove('slideshow-active');
+
+      // Resetta i layout inline modificati dal drag resizer
+      const photoPanel = document.getElementById('slideshow-photo-panel');
+      const mapElement = document.getElementById('map');
+      const resizer = document.getElementById('slideshow-resizer');
+      
+      photoPanel.style.width = '';
+      photoPanel.style.height = '';
+      resizer.style.left = '';
+      resizer.style.top = '';
+      mapElement.style.left = '';
+      mapElement.style.top = '';
+      mapElement.style.width = '';
+      mapElement.style.height = '';
+
       map.invalidateSize();
 
       document.getElementById('filtro-container').style.display = 'flex';
@@ -1270,6 +1383,112 @@
         containerItems.appendChild(item);
       });
     }
+
+    // --- LOGICA TRASCINAMENTO / RESIZE DINAMICO (MOUSE E TOUCH) ---
+    const resizer = document.getElementById('slideshow-resizer');
+    const photoPanel = document.getElementById('slideshow-photo-panel');
+    const mapElement = document.getElementById('map');
+    let isResizing = false;
+
+    function startResize(e) {
+      if (!isSlideshowActive) return;
+      isResizing = true;
+      document.body.style.userSelect = 'none';
+    }
+
+    function doResize(e) {
+      if (!isResizing || !isSlideshowActive) return;
+
+      const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+      const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+
+      const isLandscape = window.matchMedia("(orientation: landscape)").matches;
+
+      if (isLandscape) {
+        const totalWidth = window.innerWidth;
+        let newPhotoWidthPx = clientX;
+
+        const minPx = totalWidth * 0.20;
+        const maxPx = totalWidth * 0.85;
+
+        if (newPhotoWidthPx < minPx) newPhotoWidthPx = minPx;
+        if (newPhotoWidthPx > maxPx) newPhotoWidthPx = maxPx;
+
+        const photoWidthPercent = (newPhotoWidthPx / totalWidth) * 100;
+        const mapWidthPercent = 100 - photoWidthPercent;
+
+        // Pulizia degli stili in altezza usati in portrait
+        photoPanel.style.height = '';
+        resizer.style.top = '';
+        mapElement.style.top = '';
+        mapElement.style.height = '';
+
+        photoPanel.style.width = photoWidthPercent + 'vw';
+        resizer.style.left = photoWidthPercent + 'vw';
+        mapElement.style.left = photoWidthPercent + 'vw';
+        mapElement.style.width = mapWidthPercent + 'vw';
+      } else {
+        const totalHeight = window.innerHeight;
+        let newPhotoHeightPx = clientY;
+
+        const minPx = totalHeight * 0.20;
+        const maxPx = totalHeight * 0.80;
+
+        if (newPhotoHeightPx < minPx) newPhotoHeightPx = minPx;
+        if (newPhotoHeightPx > maxPx) newPhotoHeightPx = maxPx;
+
+        const photoHeightPercent = (newPhotoHeightPx / totalHeight) * 100;
+        const mapHeightPercent = 100 - photoHeightPercent;
+
+        // Pulizia degli stili in larghezza usati in landscape
+        photoPanel.style.width = '';
+        resizer.style.left = '';
+        mapElement.style.left = '';
+        mapElement.style.width = '';
+
+        photoPanel.style.height = photoHeightPercent + 'vh';
+        resizer.style.top = photoHeightPercent + 'vh';
+        mapElement.style.top = photoHeightPercent + 'vh';
+        mapElement.style.height = mapHeightPercent + 'vh';
+      }
+
+      map.invalidateSize({ pan: false });
+    }
+
+    function stopResize() {
+      if (isResizing) {
+        isResizing = false;
+        document.body.style.userSelect = '';
+        map.invalidateSize();
+      }
+    }
+
+    resizer.addEventListener('mousedown', startResize);
+    window.addEventListener('mousemove', doResize);
+    window.addEventListener('mouseup', stopResize);
+
+    resizer.addEventListener('touchstart', startResize, { passive: true });
+    window.addEventListener('touchmove', doResize, { passive: true });
+    window.addEventListener('touchend', stopResize);
+
+    // RESET AUTOMATICO DEGLI STILI SU ROTAZIONE SCHERMO / RESIZE
+    window.addEventListener('resize', function() {
+      if (isSlideshowActive) {
+        photoPanel.style.width = '';
+        photoPanel.style.height = '';
+        resizer.style.left = '';
+        resizer.style.top = '';
+        mapElement.style.left = '';
+        mapElement.style.top = '';
+        mapElement.style.width = '';
+        mapElement.style.height = '';
+
+        map.invalidateSize();
+      } else {
+        map.invalidateSize();
+        applicaImmagineSplash();
+      }
+    });
 
     // --- GESTIONE FOTO INGRANDITA CON SWIPE ---
     let currentModalIndex = -1;
@@ -1380,8 +1599,6 @@
     }, false);
 
     // TOUCH SWIPE IN SLIDESHOW
-    const photoPanel = document.getElementById('slideshow-photo-panel');
-
     photoPanel.addEventListener('touchstart', function(e) {
       touchStartX = e.changedTouches[0].screenX;
       touchStartY = e.changedTouches[0].screenY;
@@ -1416,11 +1633,6 @@
       } else if (isModalOpen && e.key === "ArrowLeft") {
         modalFotoPrev();
       }
-    });
-
-    window.addEventListener('resize', function() {
-      map.invalidateSize();
-      applicaImmagineSplash();
     });
   </script>
 </body>
