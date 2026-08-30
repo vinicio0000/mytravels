@@ -1,4 +1,4 @@
-<!-- VERSION: 3.06_LANDSCAPE_CAPTION_FULLWIDTH -->
+<!-- VERSION: 3.07_LANDSCAPE_CAPTION_FULLWIDTH_WAKELOCK -->
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -216,7 +216,7 @@
         font-size: 12px;
         line-height: 1.3;
         font-weight: 500;
-        background: rgba(0, 0, 0, 0.5); /* 50% di trasparenza */
+        background: rgba(0, 0, 0, 0.3); /* 30% di opacità */
         backdrop-filter: blur(4px);
         -webkit-backdrop-filter: blur(4px);
         padding: 6px 12px;
@@ -799,7 +799,7 @@
       border: 1px solid rgba(0,0,0,0.15);
     ">
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; border-bottom: 2px solid #007bff; padding-bottom: 6px;">
-        <h3 style="margin:0; font-size:16px; color:#2c3e50;">🌍 Guida e Informazioni (v3.06)</h3>
+        <h3 style="margin:0; font-size:16px; color:#2c3e50;">🌍 Guida e Informazioni (v3.07)</h3>
         <button onclick="chiudiModalAiuto()" style="background:none; border:none; font-size:20px; cursor:pointer; color:#666;">✖</button>
       </div>
       
@@ -836,9 +836,9 @@
 
         <b style="color:#007bff;">📱 CONTROLLI E GESTI</b>
         <p style="margin: 6px 0 4px 0;">
-          <span style="background:#2c3e50; color:white; padding:3px 8px; border-radius:12px; font-size:11px;">◀ Prec</span>
-          <span style="background:#2c3e50; color:white; padding:3px 8px; border-radius:12px; font-size:11px;">⏸ Pausa</span>
-          <span style="background:#2c3e50; color:white; padding:3px 8px; border-radius:12px; font-size:11px;">Succ ▶</span>
+          <span style="background:#2c3e50; color:white; padding:3px 8px; border-radius:12px; font-size:11px;">◀</span>
+          <span style="background:#2c3e50; color:white; padding:3px 8px; border-radius:12px; font-size:11px;">⏸</span>
+          <span style="background:#2c3e50; color:white; padding:3px 8px; border-radius:12px; font-size:11px;">▶</span>
           <span style="background:#2c3e50; color:white; padding:3px 8px; border-radius:12px; font-size:11px;">4s ▾ Velocità</span>
           <span style="background:#dc3545; color:white; padding:3px 8px; border-radius:12px; font-size:11px;">✖ Esci</span>
         </p>
@@ -1063,9 +1063,29 @@
     let puntiSlideshow = [];
     let markersSlideshow = [];
     let immaginiPrecaricate = [];
+    let wakeLock = null;
 
     let touchStartX = 0;
     let touchStartY = 0;
+
+    // --- API SCREEN WAKE LOCK ---
+    async function attivaWakeLock() {
+      try {
+        if ('wakeLock' in navigator) {
+          wakeLock = await navigator.wakeLock.request('screen');
+        }
+      } catch (err) {
+        console.log("Wake Lock non supportato o bloccato:", err);
+      }
+    }
+
+    function disattivaWakeLock() {
+      if (wakeLock !== null) {
+        wakeLock.release().then(() => {
+          wakeLock = null;
+        });
+      }
+    }
 
     function avviaPanIniziale() {
       panInizialeAttivo = true;
@@ -1331,6 +1351,7 @@
     function avviaSlideshow() {
       if (markersSlideshow.length === 0) return;
       fermaPanIniziale();
+      attivaWakeLock();
 
       precaricaFotoSlideshow();
 
@@ -1384,8 +1405,15 @@
       activeMarker.setIcon(creaIconaColorata('#FFD700', true));
 
       const targetLatLng = activeMarker.getLatLng();
-      const zoomLivello = map.getZoom() < 12 ? 12 : map.getZoom();
-      map.setView(targetLatLng, zoomLivello, { animate: true });
+      
+      // Lo zoom automatico viene calcolato e impostato solo alla PRIMA FOTO (index === 0)
+      // Per tutte le foto successive viene mantenuto lo zoom scelto dall'utente
+      if (index === 0) {
+        const zoomLivello = map.getZoom() < 12 ? 12 : map.getZoom();
+        map.setView(targetLatLng, zoomLivello, { animate: true });
+      } else {
+        map.setView(targetLatLng, map.getZoom(), { animate: true });
+      }
 
       const p = puntiSlideshow[index];
       document.getElementById('slideshow-img').src = p.foto;
@@ -1408,12 +1436,13 @@
 
     function togglePlayPause() {
       isSlideshowPaused = !isSlideshowPaused;
-      document.getElementById('btn-play-pause').textContent = isSlideshowPaused ? '▶ Riprendi' : '⏸ Pausa';
+      document.getElementById('btn-play-pause').textContent = isSlideshowPaused ? '▶' : '⏸';
     }
 
     function fermaSlideshow() {
       isSlideshowActive = false;
       clearInterval(slideshowTimer);
+      disattivaWakeLock();
       
       document.body.classList.remove('slideshow-active');
 
