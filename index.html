@@ -1,4 +1,4 @@
-<!-- VERSION: 3.10_LANDSCAPE_MODAL_FULLSCREEN -->
+<!-- VERSION: 3.11_LANDSCAPE_MODAL_FULLSCREEN -->
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -665,6 +665,59 @@
       text-decoration: underline;
     }
 
+    /* STILE STAMPANTE E CARD DEL REPORT VIAGGI */
+    #report-modal {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.9);
+      width: 85vw;
+      max-width: 460px;
+      background: #ffffff;
+      z-index: 100005;
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.3s ease-in-out;
+    }
+    #report-modal.active {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translate(-50%, -50%) scale(1);
+    }
+    .report-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+      border-bottom: 2px solid #007bff;
+      padding-bottom: 8px;
+    }
+    .report-header h3 { margin: 0; color: #1e293b; font-size: 16px; }
+    .btn-chiudi-modal {
+      background: none;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      color: #64748b;
+    }
+    .report-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .report-card {
+      background: #f1f5f9;
+      padding: 14px 10px;
+      border-radius: 10px;
+      text-align: center;
+      border: 1px solid #e2e8f0;
+    }
+    .report-card h4 { margin: 0; color: #64748b; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .report-card p { margin: 6px 0 0 0; color: #0f172a; font-size: 20px; font-weight: bold; }
+
     @media (max-width: 900px) {
       #header-container { display: none !important; }
       #filtro-container { padding: 6px 10px; gap: 6px; top: 10px; right: 10px; }
@@ -686,7 +739,7 @@
     <div class="splash-card">
       <h1>🌍 La mappa dei viaggi<br>di Vinicio e Luisa</h1>
       <p>Ripercorri le nostre tappe: seleziona il viaggio e avvia la slideshow</p>
-<!-- BOTTONE DEMO NELLO SPLASH SCREEN -->
+      <!-- BOTTONE DEMO NELLO SPLASH SCREEN -->
       <div style="margin-top: 15px;">
         <a href="demo.html" onclick="event.stopPropagation()" style="background: #ffffff; color: #1e3c72; text-decoration: none; padding: 6px 14px; border-radius: 15px; font-size: 12px; font-weight: bold; display: inline-block; box-shadow: 0 2px 6px rgba(0,0,0,0.3);">
           🎬 Guarda la Demo Interattiva
@@ -760,7 +813,11 @@
       </label>
 
       <hr style="border:0; border-top:1px solid #eee; margin:2px 0;">
-	  <!-- NUOVA VOCE PER LA DEMO -->
+
+      <!-- PULSANTE REPORT INSERITO IN MENU -->
+      <a href="javascript:void(0)" onclick="apriReport()" style="text-decoration:none; color:#17a589; font-size:12px; font-weight:700; display:flex; align-items:center; gap:6px; margin-bottom: 6px;">
+        📊 Report / Statistiche Viaggi
+      </a>
       <a href="demo.html" style="text-decoration:none; color:#d9534f; font-size:12px; font-weight:700; display:flex; align-items:center; gap:6px; margin-bottom: 6px;">
         🎬 Avvia Demo Guidata
       </a>
@@ -803,13 +860,26 @@
 
   <div id="map"></div>
 
+  <!-- MODALE REPORT STATISTICHE -->
+  <div id="report-modal">
+    <div class="report-header">
+      <h3>📊 Statistiche Viaggi</h3>
+      <button class="btn-chiudi-modal" onclick="chiudiReport()">✖</button>
+    </div>
+    <div class="report-grid">
+      <div class="report-card"><h4>Tappe Totali</h4><p id="rep-tappe">0</p></div>
+      <div class="report-card"><h4>Foto Caricate</h4><p id="rep-foto">0</p></div>
+      <div class="report-card"><h4>Paesi Visitati</h4><p id="rep-paesi">0</p></div>
+      <div class="report-card"><h4>Km Percorsi</h4><p id="rep-km">0 km</p></div>
+    </div>
+  </div>
+
   <!-- MODALE FOTO INGRANDITA -->
   <div id="imageModal" class="modal-foto" onclick="chiudiModalFoto(false)">
     <div id="modal-caption"></div>
     <img class="modal-foto-content" id="imgModalSrc" draggable="false" onclick="event.stopPropagation()">
   </div>
 
-  
   <!-- MODALE GUIDA / AIUTO COMPLETA -->
   <div id="modal-aiuto" class="modal-foto" onclick="chiudiModalAiuto()" style="z-index: 100002;">
     <div class="modal-aiuto-card" onclick="event.stopPropagation()" style="
@@ -819,7 +889,7 @@
       border: 1px solid rgba(0,0,0,0.15);
     ">
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; border-bottom: 2px solid #007bff; padding-bottom: 6px;">
-        <h3 style="margin:0; font-size:16px; color:#2c3e50;">🌍 Guida e Informazioni (v3.10)</h3>
+        <h3 style="margin:0; font-size:16px; color:#2c3e50;">🌍 Guida e Informazioni (v3.11)</h3>
         <button onclick="chiudiModalAiuto()" style="background:none; border:none; font-size:20px; cursor:pointer; color:#666;">✖</button>
       </div>
       
@@ -888,8 +958,6 @@
       </div>
     </div>
   </div>
-  
-  
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
@@ -993,9 +1061,7 @@
       }
     }
 
-	
-
-	const map = L.map('map', { minZoom: 2, tap: false}).setView([40, -140], 3);
+    const map = L.map('map', { minZoom: 2, tap: false}).setView([40, -140], 3);
 
     const layerOSM = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 19,
@@ -1200,8 +1266,76 @@
         popolaViaggi();
         document.getElementById('check-cluster').checked = true;
         aggiornaMappa();
+        calcolaReport(dati);
       })
       .catch(err => console.error("Errore nel caricamento di dati.json:", err));
+
+    // --- FUNZIONI DI CALCOLO E GESTIONE DEL REPORT (AGGIORNATE) ---
+    function calcolaReport(dati) {
+      const tappe = dati.length;
+      const foto = dati.filter(p => p.foto && p.foto.trim() !== '').length;
+
+      // LISTA DI SUPPORTO PER ESTRARRE I PAESI SE NON ESPLICITI
+      const listaPaesiKnown = [
+        "Marocco", "Spagna", "Portogallo", "Sudafrica", "Italia", "Francia",
+        "Germania", "Grecia", "Turchia", "Egitto", "Tunisia", "Norvegia",
+        "Svezia", "Finlandia", "Islanda", "Regno Unito", "Irlanda", "Croazia"
+      ];
+
+      const paesiSet = new Set();
+
+      dati.forEach(p => {
+        if (p.paese || p.nazione) {
+          paesiSet.add((p.paese || p.nazione).trim());
+        } else {
+          // Analizza il campo 'viaggio' e 'nome'
+          const testo = ((p.viaggio || '') + ' ' + (p.nome || '')).toLowerCase();
+          listaPaesiKnown.forEach(paese => {
+            if (testo.includes(paese.toLowerCase())) {
+              paesiSet.add(paese);
+            }
+          });
+        }
+      });
+
+      let kmTotali = 0;
+      for (let i = 0; i < dati.length - 1; i++) {
+        const lat1 = parseFloat(dati[i].lat);
+        const lon1 = parseFloat(dati[i].lon);
+        const lat2 = parseFloat(dati[i + 1].lat);
+        const lon2 = parseFloat(dati[i + 1].lon);
+
+        if (!isNaN(lat1) && !isNaN(lon1) && !isNaN(lat2) && !isNaN(lon2)) {
+          kmTotali += calcolaDistanzaHaversine(lat1, lon1, lat2, lon2);
+        }
+      }
+
+      document.getElementById('rep-tappe').innerText = tappe;
+      document.getElementById('rep-foto').innerText = foto;
+      document.getElementById('rep-paesi').innerText = paesiSet.size > 0 ? paesiSet.size : 1;
+      document.getElementById('rep-km').innerText = Math.round(kmTotali).toLocaleString('it-IT') + ' km';
+    }
+
+    function calcolaDistanzaHaversine(lat1, lon1, lat2, lon2) {
+      const R = 6371;
+      const dLat = (lat2 - lat1) * Math.PI / 180;
+      const dLon = (lon2 - lon1) * Math.PI / 180;
+      const a = 
+        Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+        Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) * 
+        Math.sin(dLon / 2) * Math.sin(dLon / 2);
+      return R * (2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a)));
+    }
+
+    function apriReport() {
+      const menu = document.getElementById('menu-panel');
+      if (menu) menu.classList.remove('show');
+      document.getElementById('report-modal').classList.add('active');
+    }
+
+    function chiudiReport() {
+      document.getElementById('report-modal').classList.remove('active');
+    }
 
     function popolaAnni() {
       const selectAnno = document.getElementById('select-anno');
@@ -1296,6 +1430,9 @@
       if (viaggioSel !== 'tutti') {
         datiFiltrati = datiFiltrati.filter(p => p.viaggio === viaggioSel);
       }
+
+      // Aggiorna anche il report in base alla vista selezionata
+      calcolaReport(datiFiltrati);
 
       const puntiValidi = [];
 
@@ -1428,8 +1565,6 @@
 
       const targetLatLng = activeMarker.getLatLng();
       
-      // Lo zoom automatico viene calcolato e impostato solo alla PRIMA FOTO (index === 0)
-      // Per tutte le foto successive viene mantenuto lo zoom scelto dall'utente
       if (index === 0) {
         const zoomLivello = map.getZoom() < 12 ? 12 : map.getZoom();
         map.setView(targetLatLng, zoomLivello, { animate: true });
@@ -1548,7 +1683,6 @@
         mapElement.style.left = newPhotoWidthPx + 'px';
         mapElement.style.width = mapWidthPx + 'px';
 
-        // Riposiziona dinamicamente i controlli al centro della mappa trascinata
         const controlsCenterPx = newPhotoWidthPx + (mapWidthPx / 2);
         controlsElement.style.left = controlsCenterPx + 'px';
       } else {
@@ -1694,6 +1828,10 @@
       if (modalAiuto && modalAiuto.style.display !== 'none') {
         chiudiModalAiuto();
       }
+      const reportModal = document.getElementById('report-modal');
+      if (reportModal && reportModal.classList.contains('active')) {
+        chiudiReport();
+      }
     });
 
     const modalFotoElem = document.getElementById('imageModal');
@@ -1749,6 +1887,7 @@
       if (e.key === "Escape") {
         chiudiModalFoto(false);
         chiudiModalAiuto();
+        chiudiReport();
         if (isSlideshowActive) fermaSlideshow();
       } else if (isModalOpen && e.key === "ArrowRight") {
         modalFotoNext();
