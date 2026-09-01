@@ -17,6 +17,92 @@
     .popup-container { text-align: center; min-width: 180px; max-width: 230px; }
     .popup-foto { width: 180px; height: 130px; border-radius: 6px; margin-top: 6px; object-fit: cover; display: block; margin-left: auto; margin-right: auto; cursor: pointer; }
 
+    /* INDICATORE VERSIONE IN BASSO A SINISTRA */
+    #demo-version {
+      position: fixed;
+      bottom: 10px;
+      left: 10px;
+      z-index: 999990;
+      color: rgba(15, 23, 42, 0.6);
+      background: rgba(255, 255, 255, 0.5);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 10px;
+      font-family: monospace;
+      pointer-events: none;
+      backdrop-filter: blur(2px);
+    }
+
+    /* PANNELLO SELEZIONE VIAGGIO (In alto a destra per mobile) */
+    #slideshow-selector-panel {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      z-index: 999991;
+      background: rgba(15, 23, 42, 0.9);
+      color: white;
+      padding: 10px 12px;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      max-width: 160px;
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    #slideshow-selector-panel select {
+      padding: 6px 8px;
+      border-radius: 6px;
+      border: 1px solid #334155;
+      background: #0f172a;
+      color: white;
+      font-size: 12px;
+      outline: none;
+      cursor: pointer;
+    }
+    #btn-start-slideshow {
+      background: #10b981;
+      color: white;
+      border: none;
+      padding: 6px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    #btn-start-slideshow:hover { background: #059669; }
+
+    /* BARRA COMANDI DEMO (In basso al centro per non sovrapporsi) */
+    #demo-header {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 999990;
+      background: rgba(0, 0, 0, 0.85);
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 13px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      width: max-content;
+    }
+    #btn-esci-demo {
+      background: #dc3545;
+      color: white;
+      border: none;
+      padding: 5px 12px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 12px;
+    }
+
     /* MODALE FOTO A SCHERMO INTERO */
     #fullscreen-modal {
       position: fixed;
@@ -52,46 +138,6 @@
       text-align: center;
       max-width: 80vw;
     }
-
-    /* PANNELLO DI SELEZIONE SLIDESHOW */
-    #slideshow-selector-panel {
-      position: fixed;
-      top: 80px;
-      right: 20px;
-      z-index: 999991;
-      background: rgba(15, 23, 42, 0.9);
-      color: white;
-      padding: 16px;
-      border-radius: 12px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.4);
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      min-width: 220px;
-      backdrop-filter: blur(8px);
-      border: 1px solid rgba(255,255,255,0.1);
-    }
-    #slideshow-selector-panel select {
-      padding: 8px 12px;
-      border-radius: 6px;
-      border: 1px solid #334155;
-      background: #0f172a;
-      color: white;
-      font-size: 14px;
-      outline: none;
-      cursor: pointer;
-    }
-    #btn-start-slideshow {
-      background: #10b981;
-      color: white;
-      border: none;
-      padding: 8px 14px;
-      border-radius: 6px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-    #btn-start-slideshow:hover { background: #059669; }
 
     /* MODALE SLIDESHOW E COMANDI */
     #slideshow-modal {
@@ -212,45 +258,22 @@
       border: 1px solid rgba(255, 255, 255, 0.3);
       backdrop-filter: blur(4px);
     }
-
-    /* BARRA COMANDI SUPERIORE */
-    #demo-header {
-      position: fixed;
-      top: 15px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 999990;
-      background: rgba(0, 0, 0, 0.85);
-      color: #fff;
-      padding: 8px 20px;
-      border-radius: 20px;
-      font-size: 14px;
-      display: flex;
-      gap: 15px;
-      align-items: center;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    }
-    #btn-esci-demo {
-      background: #dc3545;
-      color: white;
-      border: none;
-      padding: 6px 14px;
-      border-radius: 12px;
-      cursor: pointer;
-      font-weight: bold;
-    }
   </style>
 </head>
 <body>
 
+  <!-- BARRA COMANDI SUPERIORE/IN BASSO -->
   <div id="demo-header">
-    <span>🎬 <b>Demo Interattiva Guidata</b></span>
-    <button id="btn-esci-demo" onclick="esciDallaDemo()">Esci dalla Demo ✖</button>
+    <span>🎬 <b>Demo Interattiva</b></span>
+    <button id="btn-esci-demo" onclick="esciDallaDemo()">Esci ✖</button>
   </div>
 
-  <!-- PANNELLO CONTROLLO SLIDESHOW -->
+  <!-- INDICATORE VERSIONE -->
+  <div id="demo-version">v1.2.0</div>
+
+  <!-- PANNELLO CONTROLLO SLIDESHOW (IN ALTO A DESTRA) -->
   <div id="slideshow-selector-panel">
-    <label style="font-size: 12px; font-weight: bold;">SELEZIONA VIAGGIO:</label>
+    <label style="font-size: 11px; font-weight: bold;">SELEZIONA VIAGGIO:</label>
     <select id="select-viaggio">
       <option value="">-- Scegli Viaggio --</option>
     </select>
@@ -324,10 +347,37 @@
     let timerProssimoPasso = null;
     let timerAnimazione = null;
     let demoAttiva = true;
+    let wakeLock = null;
 
-    // Gestione stato slideshow
     let fotoSlideshowCorrenti = [];
     let indiceSlideshowCorrente = 0;
+
+    // SPEGNIMENTO SCHERMO DISATTIVATO (Screen Wake Lock API)
+    async function attivaWakeLock() {
+      try {
+        if ('wakeLock' in navigator) {
+          wakeLock = await navigator.wakeLock.request('screen');
+        }
+      } catch (err) {
+        console.log('Wake Lock non disponibile o bloccato:', err);
+      }
+    }
+
+    function disattivaWakeLock() {
+      if (wakeLock !== null) {
+        wakeLock.release().then(() => {
+          wakeLock = null;
+        });
+      }
+    }
+
+    attivaWakeLock();
+
+    document.addEventListener('visibilitychange', async () => {
+      if (wakeLock !== null && document.visibilityState === 'visible') {
+        await attivaWakeLock();
+      }
+    });
 
     function ottieniUrlWebp(percorsoOriginale) {
       if (!percorsoOriginale) return '';
@@ -357,7 +407,6 @@
       .then(dati => {
         tuttiIDati = dati;
         
-        // Popola tendina viaggi
         const selectViaggio = document.getElementById('select-viaggio');
         const listaViaggi = [...new Set(dati.map(p => p.viaggio).filter(Boolean))];
         listaViaggi.forEach(v => {
@@ -621,7 +670,6 @@
           });
         });
       }
-      /* --- NUOVA SEQUENZA SLIDESHOW GUIDATA --- */
       else if (p.tipo === "seleziona_viaggio_slideshow") {
         const select = document.getElementById('select-viaggio');
         const rect = select.getBoundingClientRect();
@@ -681,7 +729,6 @@
           });
         });
       }
-      /* --------------------------------------- */
       else if (p.tipo === "apri_report") {
         muoviCursore(window.innerWidth / 2, window.innerHeight / 2, p.testo, () => {
           simulaClick(() => {
@@ -718,7 +765,10 @@
       demoAttiva = false;
       clearTimeout(timerProssimoPasso);
       clearTimeout(timerAnimazione);
-      window.location.href = 'index.html';
+      disattivaWakeLock();
+
+      // Sostituisce la cronologia in modo da non far riapparire la demo premendo indietro
+      window.location.replace('index.html');
     }
   </script>
 </body>
