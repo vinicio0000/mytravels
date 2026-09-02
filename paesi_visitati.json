@@ -1,0 +1,310 @@
+{
+  "totale_paesi_visitati": 27,
+  "totale_stati_usa_visitati": 13,
+  "lista_paesi": [
+    "Albania",
+    "Arabia Saudita",
+    "Bulgaria",
+    "Croazia",
+    "Egitto",
+    "Emirati Arabi Uniti",
+    "Francia",
+    "Germania",
+    "Giappone",
+    "Grecia",
+    "India",
+    "Indonesia",
+    "Italia",
+    "Malesia",
+    "Marocco",
+    "Oman",
+    "Portogallo",
+    "Regno Unito",
+    "Romania",
+    "Slovenia",
+    "Spagna",
+    "Stati Uniti d'America",
+    "Sudafrica",
+    "Thailandia",
+    "Tunisia",
+    "Turchia",
+    "Ungheria"
+  ],
+  "lista_stati_usa": [
+    "Arizona",
+    "California",
+    "Colorado",
+    "Dakota del Sud",
+    "Florida",
+    "Hawaii",
+    "Illinois",
+    "Nevada",
+    "New York",
+    "Nuovo Messico",
+    "Stato US Sconosciuto",
+    "Utah",
+    "Wyoming"
+  ],
+  "dettaglio_per_viaggio": {
+    "borneo 2012": {
+      "paesi": [
+        "Malesia"
+      ],
+      "stati_usa": []
+    },
+    "cairo 2009": {
+      "paesi": [
+        "Egitto"
+      ],
+      "stati_usa": []
+    },
+    "dubai 2009": {
+      "paesi": [
+        "Emirati Arabi Uniti",
+        "Germania"
+      ],
+      "stati_usa": []
+    },
+    "eau_oman 2013": {
+      "paesi": [
+        "Emirati Arabi Uniti",
+        "Oman"
+      ],
+      "stati_usa": []
+    },
+    "florida 2011": {
+      "paesi": [
+        "Stati Uniti d'America"
+      ],
+      "stati_usa": [
+        "Florida"
+      ]
+    },
+    "francia 2024": {
+      "paesi": [
+        "Francia",
+        "Spagna"
+      ],
+      "stati_usa": []
+    },
+    "garda 2025": {
+      "paesi": [
+        "Italia"
+      ],
+      "stati_usa": []
+    },
+    "gargano 2024": {
+      "paesi": [
+        "Italia"
+      ],
+      "stati_usa": []
+    },
+    "germania 2026": {
+      "paesi": [
+        "Germania",
+        "Italia"
+      ],
+      "stati_usa": []
+    },
+    "giappone 2006": {
+      "paesi": [
+        "Giappone"
+      ],
+      "stati_usa": []
+    },
+    "grecia 2026": {
+      "paesi": [
+        "Albania",
+        "Grecia",
+        "Italia"
+      ],
+      "stati_usa": []
+    },
+    "hawaii 2007": {
+      "paesi": [
+        "Italia",
+        "Regno Unito",
+        "Stati Uniti d'America"
+      ],
+      "stati_usa": [
+        "California",
+        "Hawaii",
+        "Stato US Sconosciuto"
+      ]
+    },
+    "india 2002": {
+      "paesi": [
+        "India"
+      ],
+      "stati_usa": []
+    },
+    "indonesia malesia 2011": {
+      "paesi": [
+        "Arabia Saudita",
+        "Indonesia",
+        "Malesia"
+      ],
+      "stati_usa": []
+    },
+    "irlanda 2007": {
+      "paesi": [
+        "Regno Unito"
+      ],
+      "stati_usa": []
+    },
+    "istanbul 2024": {
+      "paesi": [
+        "Turchia"
+      ],
+      "stati_usa": []
+    },
+    "istria 2025": {
+      "paesi": [
+        "Croazia",
+        "Slovenia"
+      ],
+      "stati_usa": []
+    },
+    "istria 2026": {
+      "paesi": [
+        "Croazia"
+      ],
+      "stati_usa": []
+    },
+    "madrid 2011": {
+      "paesi": [
+        "Spagna"
+      ],
+      "stati_usa": []
+    },
+    "portogallo 2006": {
+      "paesi": [
+        "Portogallo"
+      ],
+      "stati_usa": []
+    },
+    "portonovo 2026": {
+      "paesi": [
+        "Italia"
+      ],
+      "stati_usa": []
+    },
+    "sharm 2017": {
+      "paesi": [
+        "Egitto"
+      ],
+      "stati_usa": []
+    },
+    "sicilia 2025": {
+      "paesi": [
+        "Italia"
+      ],
+      "stati_usa": []
+    },
+    "sorrento 2024": {
+      "paesi": [
+        "Italia"
+      ],
+      "stati_usa": []
+    },
+    "spagna 2025": {
+      "paesi": [
+        "Italia",
+        "Spagna"
+      ],
+      "stati_usa": []
+    },
+    "spagna 2026": {
+      "paesi": [
+        "Italia",
+        "Spagna"
+      ],
+      "stati_usa": []
+    },
+    "spagna marocco 2023": {
+      "paesi": [
+        "Italia",
+        "Marocco",
+        "Spagna"
+      ],
+      "stati_usa": []
+    },
+    "spagna marocco 2025": {
+      "paesi": [
+        "Italia",
+        "Marocco",
+        "Portogallo",
+        "Spagna"
+      ],
+      "stati_usa": []
+    },
+    "stati uniti 2004": {
+      "paesi": [
+        "Stati Uniti d'America"
+      ],
+      "stati_usa": [
+        "Arizona",
+        "California",
+        "Nevada",
+        "New York",
+        "Utah"
+      ]
+    },
+    "stati uniti 2005": {
+      "paesi": [
+        "Stati Uniti d'America"
+      ],
+      "stati_usa": [
+        "Arizona",
+        "California",
+        "Colorado",
+        "Dakota del Sud",
+        "Illinois",
+        "Nuovo Messico",
+        "Utah",
+        "Wyoming"
+      ]
+    },
+    "sudafrica 2009": {
+      "paesi": [
+        "Sudafrica"
+      ],
+      "stati_usa": []
+    },
+    "thailandia 2003": {
+      "paesi": [
+        "Thailandia"
+      ],
+      "stati_usa": []
+    },
+    "thailandia 2012": {
+      "paesi": [
+        "Malesia",
+        "Thailandia"
+      ],
+      "stati_usa": []
+    },
+    "thailandia 2017": {
+      "paesi": [
+        "Thailandia"
+      ],
+      "stati_usa": []
+    },
+    "tunisia 2012": {
+      "paesi": [
+        "Tunisia"
+      ],
+      "stati_usa": []
+    },
+    "ungheria romania turchia 1996": {
+      "paesi": [
+        "Bulgaria",
+        "Grecia",
+        "Romania",
+        "Turchia",
+        "Ungheria"
+      ],
+      "stati_usa": []
+    }
+  }
+}
