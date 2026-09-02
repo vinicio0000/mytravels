@@ -1,4 +1,4 @@
-<!-- VERSION: 3.11_LANDSCAPE_MODAL_FULLSCREEN -->
+<!-- VERSION: 3.12_STATISTICHE_PAESI_USA -->
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -219,7 +219,7 @@
         font-size: 12px;
         line-height: 1.3;
         font-weight: 500;
-        background: rgba(0, 0, 0, 0.3); /* 30% di opacità */
+        background: rgba(0, 0, 0, 0.3);
         backdrop-filter: blur(4px);
         -webkit-backdrop-filter: blur(4px);
         padding: 6px 12px;
@@ -665,14 +665,16 @@
       text-decoration: underline;
     }
 
-    /* STILE STAMPANTE E CARD DEL REPORT VIAGGI */
+    /* STILE CARD DEL REPORT STATISTICHE PAESI/USA */
     #report-modal {
       position: fixed;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%) scale(0.9);
       width: 85vw;
-      max-width: 460px;
+      max-width: 500px;
+      max-height: 85vh;
+      overflow-y: auto;
       background: #ffffff;
       z-index: 100005;
       padding: 20px;
@@ -707,16 +709,41 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 12px;
+      margin-bottom: 12px;
     }
     .report-card {
       background: #f1f5f9;
-      padding: 14px 10px;
+      padding: 12px 10px;
       border-radius: 10px;
       text-align: center;
       border: 1px solid #e2e8f0;
     }
     .report-card h4 { margin: 0; color: #64748b; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; }
-    .report-card p { margin: 6px 0 0 0; color: #0f172a; font-size: 20px; font-weight: bold; }
+    .report-card p { margin: 4px 0 0 0; color: #0f172a; font-size: 22px; font-weight: bold; }
+    .report-card button {
+      margin-top: 6px;
+      background: #007bff;
+      color: #fff;
+      border: none;
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-size: 11px;
+      cursor: pointer;
+    }
+    .report-card button:hover { background: #0056b3; }
+    
+    .list-box {
+      background: #fafafa;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 10px;
+      margin-top: 10px;
+      font-size: 12px;
+      display: none;
+    }
+    .list-box h5 { margin: 0 0 6px 0; font-size: 12px; color: #1e3c72; }
+    .list-box ul { margin: 0; padding-left: 18px; max-height: 150px; overflow-y: auto; }
+    .list-box li { margin-bottom: 3px; color: #333; }
 
     @media (max-width: 900px) {
       #header-container { display: none !important; }
@@ -816,7 +843,7 @@
 
       <!-- PULSANTE REPORT INSERITO IN MENU -->
       <a href="javascript:void(0)" onclick="apriReport()" style="text-decoration:none; color:#17a589; font-size:12px; font-weight:700; display:flex; align-items:center; gap:6px; margin-bottom: 6px;">
-        📊 Report / Statistiche Viaggi
+        📊 Statistiche Paesi e Stati USA
       </a>
       <a href="demo.html" style="text-decoration:none; color:#d9534f; font-size:12px; font-weight:700; display:flex; align-items:center; gap:6px; margin-bottom: 6px;">
         🎬 Avvia Demo Guidata
@@ -860,17 +887,35 @@
 
   <div id="map"></div>
 
-  <!-- MODALE REPORT STATISTICHE -->
+  <!-- MODALE REPORT STATISTICHE PAESI E STATI USA -->
   <div id="report-modal">
     <div class="report-header">
-      <h3>📊 Statistiche Viaggi</h3>
+      <h3 id="report-title">📊 Statistiche Paesi e Stati USA</h3>
       <button class="btn-chiudi-modal" onclick="chiudiReport()">✖</button>
     </div>
     <div class="report-grid">
-      <div class="report-card"><h4>Tappe Totali</h4><p id="rep-tappe">0</p></div>
-      <div class="report-card"><h4>Foto Caricate</h4><p id="rep-foto">0</p></div>
-      <div class="report-card"><h4>Paesi Visitati</h4><p id="rep-paesi">0</p></div>
-      <div class="report-card"><h4>Km Percorsi</h4><p id="rep-km">0 km</p></div>
+      <div class="report-card">
+        <h4>Totale Paesi Visitati</h4>
+        <p id="rep-paesi">0</p>
+        <button onclick="toggleLista('box-lista-paesi')">Mostra / Nascondi Lista</button>
+      </div>
+      <div class="report-card">
+        <h4>Totale Stati USA</h4>
+        <p id="rep-stati-usa">0</p>
+        <button onclick="toggleLista('box-lista-stati-usa')">Mostra / Nascondi Lista</button>
+      </div>
+    </div>
+
+    <!-- LISTA COMPLETA O DETTAGLIATA PAESI -->
+    <div id="box-lista-paesi" class="list-box">
+      <h5 id="title-lista-paesi">🌍 Lista Paesi Visitati:</h5>
+      <ul id="ul-lista-paesi"></ul>
+    </div>
+
+    <!-- LISTA COMPLETA O DETTAGLIATA STATI USA -->
+    <div id="box-lista-stati-usa" class="list-box">
+      <h5 id="title-lista-stati-usa">🇺🇸 Lista Stati USA Visitati:</h5>
+      <ul id="ul-lista-stati-usa"></ul>
     </div>
   </div>
 
@@ -889,7 +934,7 @@
       border: 1px solid rgba(0,0,0,0.15);
     ">
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; border-bottom: 2px solid #007bff; padding-bottom: 6px;">
-        <h3 style="margin:0; font-size:16px; color:#2c3e50;">🌍 Guida e Informazioni (v3.11)</h3>
+        <h3 style="margin:0; font-size:16px; color:#2c3e50;">🌍 Guida e Informazioni (v3.12)</h3>
         <button onclick="chiudiModalAiuto()" style="background:none; border:none; font-size:20px; cursor:pointer; color:#666;">✖</button>
       </div>
       
@@ -1120,6 +1165,7 @@
     }
 
     let tuttiIDati = [];
+    let datiPaesiUsa = null;
     let panInizialeAttivo = false;
     let animazionePanId = null;
 
@@ -1258,83 +1304,114 @@
       });
     }
 
-    fetch('dati.json')
-      .then(response => response.json())
-      .then(dati => {
-        tuttiIDati = dati;
-        popolaAnni();
-        popolaViaggi();
-        document.getElementById('check-cluster').checked = true;
-        aggiornaMappa();
-        calcolaReport(dati);
+    // CARICAMENTO CONGIUNTO DI DATI.JSON E PAESI_VISITATI.JSON
+    Promise.all([
+      fetch('dati.json').then(r => r.json()),
+      fetch('paesi_visitati.json').then(r => r.json()).catch(err => {
+        console.warn("Impossibile caricare paesi_visitati.json, uso calcolo fallback.", err);
+        return null;
       })
-      .catch(err => console.error("Errore nel caricamento di dati.json:", err));
+    ]).then(([dati, datiPaesi]) => {
+      tuttiIDati = dati;
+      datiPaesiUsa = datiPaesi;
+      popolaAnni();
+      popolaViaggi();
+      document.getElementById('check-cluster').checked = true;
+      aggiornaMappa();
+      aggiornaReportStats();
+    }).catch(err => console.error("Errore durante il caricamento iniziale dei dati:", err));
 
-    // --- FUNZIONI DI CALCOLO E GESTIONE DEL REPORT (AGGIORNATE) ---
-    function calcolaReport(dati) {
-      const tappe = dati.length;
-      const foto = dati.filter(p => p.foto && p.foto.trim() !== '').length;
+    // --- FUNZIONI STATISTICHE PAESI E STATI USA ---
+    function aggiornaReportStats() {
+      const viaggioSel = document.getElementById('select-viaggio').value;
+      const annoSel = document.getElementById('select-anno').value;
 
-      // LISTA DI SUPPORTO PER ESTRARRE I PAESI SE NON ESPLICITI
-      const listaPaesiKnown = [
-        "Marocco", "Spagna", "Portogallo", "Sudafrica", "Italia", "Francia",
-        "Germania", "Grecia", "Turchia", "Egitto", "Tunisia", "Norvegia",
-        "Svezia", "Finlandia", "Islanda", "Regno Unito", "Irlanda", "Croazia"
-      ];
+      let paesiList = [];
+      let statiUsaList = [];
+      let titoloHeader = "📊 Statistiche Totali Viaggi";
 
-      const paesiSet = new Set();
+      if (datiPaesiUsa) {
+        if (viaggioSel !== 'tutti') {
+          // Ricerca viaggio specifico
+          const keyViaggio = viaggioSel.toLowerCase().trim();
+          const dett = datiPaesiUsa.dettaglio_per_viaggio[keyViaggio];
+          titoloHeader = `📊 Statistiche: ${viaggioSel}`;
 
-      dati.forEach(p => {
-        if (p.paese || p.nazione) {
-          paesiSet.add((p.paese || p.nazione).trim());
-        } else {
-          // Analizza il campo 'viaggio' e 'nome'
-          const testo = ((p.viaggio || '') + ' ' + (p.nome || '')).toLowerCase();
-          listaPaesiKnown.forEach(paese => {
-            if (testo.includes(paese.toLowerCase())) {
-              paesiSet.add(paese);
+          if (dett) {
+            paesiList = dett.paesi || [];
+            statiUsaList = dett.stati_usa || [];
+          }
+        } else if (annoSel !== 'tutti') {
+          // Filtro per Anno: uniamo tutti i viaggi dell'anno selezionato
+          titoloHeader = `📊 Statistiche Anno ${annoSel}`;
+          const paesiSet = new Set();
+          const statiSet = new Set();
+
+          tuttiIDati.forEach(p => {
+            if (p.anno === annoSel && p.viaggio) {
+              const k = p.viaggio.toLowerCase().trim();
+              const dett = datiPaesiUsa.dettaglio_per_viaggio[k];
+              if (dett) {
+                (dett.paesi || []).forEach(x => paesiSet.add(x));
+                (dett.stati_usa || []).forEach(x => statiSet.add(x));
+              }
             }
           });
-        }
-      });
-
-      let kmTotali = 0;
-      for (let i = 0; i < dati.length - 1; i++) {
-        const lat1 = parseFloat(dati[i].lat);
-        const lon1 = parseFloat(dati[i].lon);
-        const lat2 = parseFloat(dati[i + 1].lat);
-        const lon2 = parseFloat(dati[i + 1].lon);
-
-        if (!isNaN(lat1) && !isNaN(lon1) && !isNaN(lat2) && !isNaN(lon2)) {
-          kmTotali += calcolaDistanzaHaversine(lat1, lon1, lat2, lon2);
+          paesiList = Array.from(paesiSet).sort();
+          statiUsaList = Array.from(statiSet).sort();
+        } else {
+          // Vista globale
+          paesiList = datiPaesiUsa.lista_paesi || [];
+          statiUsaList = datiPaesiUsa.lista_stati_usa || [];
         }
       }
 
-      document.getElementById('rep-tappe').innerText = tappe;
-      document.getElementById('rep-foto').innerText = foto;
-      document.getElementById('rep-paesi').innerText = paesiSet.size > 0 ? paesiSet.size : 1;
-      document.getElementById('rep-km').innerText = Math.round(kmTotali).toLocaleString('it-IT') + ' km';
+      document.getElementById('report-title').innerText = titoloHeader;
+      document.getElementById('rep-paesi').innerText = paesiList.length;
+      document.getElementById('rep-stati-usa').innerText = statiUsaList.length;
+
+      popolaListaUl('ul-lista-paesi', paesiList, "Nessun Paese registrato");
+      popolaListaUl('ul-lista-stati-usa', statiUsaList, "Nessun Stato USA registrato");
     }
 
-    function calcolaDistanzaHaversine(lat1, lon1, lat2, lon2) {
-      const R = 6371;
-      const dLat = (lat2 - lat1) * Math.PI / 180;
-      const dLon = (lon2 - lon1) * Math.PI / 180;
-      const a = 
-        Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-        Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) * 
-        Math.sin(dLon / 2) * Math.sin(dLon / 2);
-      return R * (2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a)));
+    function popolaListaUl(ulId, lista, testoVuoto) {
+      const ul = document.getElementById(ulId);
+      ul.innerHTML = '';
+      if (lista.length === 0) {
+        const li = document.createElement('li');
+        li.style.fontStyle = 'italic';
+        li.style.color = '#777';
+        li.innerText = testoVuoto;
+        ul.appendChild(li);
+      } else {
+        lista.forEach(item => {
+          const li = document.createElement('li');
+          li.innerText = item;
+          ul.appendChild(li);
+        });
+      }
+    }
+
+    function toggleLista(boxId) {
+      const box = document.getElementById(boxId);
+      if (box.style.display === 'block') {
+        box.style.display = 'none';
+      } else {
+        box.style.display = 'block';
+      }
     }
 
     function apriReport() {
       const menu = document.getElementById('menu-panel');
       if (menu) menu.classList.remove('show');
+      aggiornaReportStats();
       document.getElementById('report-modal').classList.add('active');
     }
 
     function chiudiReport() {
       document.getElementById('report-modal').classList.remove('active');
+      document.getElementById('box-lista-paesi').style.display = 'none';
+      document.getElementById('box-lista-stati-usa').style.display = 'none';
     }
 
     function popolaAnni() {
@@ -1396,12 +1473,14 @@
       if (isSlideshowActive) fermaSlideshow();
       popolaViaggi();
       aggiornaMappa();
+      aggiornaReportStats();
     }
 
     function cambiaViaggio() {
       fermaPanIniziale();
       if (isSlideshowActive) fermaSlideshow();
       aggiornaMappa();
+      aggiornaReportStats();
     }
 
     function aggiornaMappa() {
@@ -1430,9 +1509,6 @@
       if (viaggioSel !== 'tutti') {
         datiFiltrati = datiFiltrati.filter(p => p.viaggio === viaggioSel);
       }
-
-      // Aggiorna anche il report in base alla vista selezionata
-      calcolaReport(datiFiltrati);
 
       const puntiValidi = [];
 
