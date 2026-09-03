@@ -1,5 +1,5 @@
 {
-  "totale_paesi_visitati": 27,
+  "totale_paesi_visitati": 29,
   "totale_stati_usa_visitati": 13,
   "lista_paesi": [
     "Albania",
@@ -8,6 +8,7 @@
     "Croazia",
     "Egitto",
     "Emirati Arabi Uniti",
+    "Eswatini",
     "Francia",
     "Germania",
     "Giappone",
@@ -20,6 +21,7 @@
     "Oman",
     "Portogallo",
     "Regno Unito",
+    "Repubblica Ceca",
     "Romania",
     "Slovenia",
     "Spagna",
@@ -96,6 +98,12 @@
     "gargano 2024": {
       "paesi": [
         "Italia"
+      ],
+      "stati_usa": []
+    },
+    "germania 2006": {
+      "paesi": [
+        "Germania"
       ],
       "stati_usa": []
     },
@@ -189,6 +197,12 @@
       ],
       "stati_usa": []
     },
+    "praga 2024": {
+      "paesi": [
+        "Repubblica Ceca"
+      ],
+      "stati_usa": []
+    },
     "sharm 2017": {
       "paesi": [
         "Egitto"
@@ -267,6 +281,7 @@
     },
     "sudafrica 2009": {
       "paesi": [
+        "Eswatini",
         "Sudafrica"
       ],
       "stati_usa": []
