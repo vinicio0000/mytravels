@@ -19,7 +19,7 @@
 <script>
   (function() {
     // Verifica se l'utente ha già espresso una preferenza in precedenza
-    if (!localStorage.getItem('preferred_language_choice')) {
+    //if (!localStorage.getItem('preferred_language_choice')) {
       var userLang = navigator.language || navigator.userLanguage;
       // Se la lingua del dispositivo non inizia per 'it' (Italiano)
       if (userLang && !userLang.toLowerCase().startsWith('it')) {
