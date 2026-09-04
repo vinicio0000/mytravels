@@ -1,4 +1,4 @@
-<!-- VERSION: 3.14_LANDSCAPE_MODAL_FULLSCREEN_LOCALSTORAGE_EN_FIXED -->
+<!-- VERSION: 3.20_LANDSCAPE_MODAL_FULLSCREEN_LOCALSTORAGE_EN -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,17 +11,17 @@
   <meta name="author" content="Vinicio and Luisa">
   <meta name="robots" content="index, follow">
 
-  <!-- Tag PWA -->
+  <!-- SEO REL ALTERNATE & CANONICAL -->
+  <link rel="canonical" href="https://vinicio0000.github.io/mytravels/index_en.html">
+  <link rel="alternate" hreflang="it" href="https://vinicio0000.github.io/mytravels/index.html" />
+  <link rel="alternate" hreflang="en" href="https://vinicio0000.github.io/mytravels/index_en.html" />
+
+  <!-- PWA Tags -->
   <link rel="manifest" href="manifest.json">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-
-  <!-- SEO REL ALTERNATE & CANONICAL -->
-  <link rel="canonical" href="https://vinicio0000.github.io/mytravels/index_en.html">
-  <link rel="alternate" hreflang="it" href="https://vinicio0000.github.io/mytravels/index.html" />
-  <link rel="alternate" hreflang="en" href="https://vinicio0000.github.io/mytravels/index_en.html" />
   
   <script data-goatcounter="https://vinicio0001.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 		
@@ -46,7 +46,7 @@
   </script>
 
   <style>
-    /* PROTEZIONE GLOBALE IMMAGINI CONTRO SALVATAGGIO / TRASCINAMENTO */
+    /* GLOBAL IMAGE PROTECTION AGAINST SAVING / DRAGGING */
     img {
       user-select: none !important;
       -webkit-user-select: none !important;
@@ -140,7 +140,7 @@
       display: flex;
     }
 
-    /* BARRA DI DIVISIONE TRASCINABILE */
+    /* DRAGGABLE RESIZER BAR */
     #slideshow-resizer {
       display: none;
       position: absolute;
@@ -159,7 +159,7 @@
       background: #007bff;
     }
 
-    /* --- SCHERMO ORIZZONTALE --- */
+    /* --- LANDSCAPE MODE --- */
     @media (orientation: landscape) {
       body.slideshow-active #slideshow-photo-panel {
         top: 0;
@@ -234,7 +234,7 @@
       }
     }
 
-    /* --- SCHERMO VERTICALE --- */
+    /* --- PORTRAIT MODE --- */
     @media (orientation: portrait) {
       body.slideshow-active #slideshow-photo-panel {
         top: 0;
@@ -549,7 +549,7 @@
       margin-right: auto;
     }
 
-    .btn-diario, .btn-diario-modal {
+    .btn-diario {
       display: inline-block;
       margin-top: 6px;
       background-color: #28a745;
@@ -560,10 +560,26 @@
       font-weight: bold;
       text-decoration: none;
       transition: background 0.2s;
-      cursor: pointer;
     }
 
-    .btn-diario:hover, .btn-diario-modal:hover {
+    .btn-diario:hover {
+      background-color: #218838;
+    }
+
+    .btn-diario-modal {
+      display: inline-block;
+      margin-top: 6px;
+      background-color: #28a745;
+      color: #ffffff !important;
+      padding: 6px 12px;
+      border-radius: 16px;
+      font-size: 12px;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+    }
+
+    .btn-diario-modal:hover {
       background-color: #218838;
     }
 
@@ -698,6 +714,14 @@
       text-align: center;
       border: 1px solid #e2e8f0;
     }
+    .report-card.clickable {
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+    }
+    .report-card.clickable:hover {
+      background: #e2e8f0;
+      transform: translateY(-2px);
+    }
     .report-card h4 { margin: 0; color: #64748b; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; }
     .report-card p { margin: 6px 0 0 0; color: #0f172a; font-size: 20px; font-weight: bold; }
 
@@ -761,8 +785,8 @@
           <option value="osm">OpenStreetMap (Standard)</option>
           <option value="satellite">Esri Satellite</option>
           <option value="ibrida">Esri Hybrid (Satellite + Roads)</option>
-          <option value="topo">Esri Topographic</option>
-          <option value="terrain">Esri Terrain</option>
+          <option value="topo">Esri Topographic (Terrain & Trails)</option>
+          <option value="terrain">Esri Physical (Terrain)</option>
           <option value="carto-light">CARTO Light (Minimal Light)</option>
           <option value="carto-dark">CARTO Dark (Minimal Dark)</option>
         </select>
@@ -786,7 +810,7 @@
 
       <label class="checkbox-label">
         <input type="checkbox" id="check-abilita-anno" onchange="toggleAbilitaAnno(); salvaImpostazioni();">
-        Enable Year Selector
+        Enable Year Filter
       </label>
 
       <label class="checkbox-label">
@@ -797,7 +821,7 @@
       <hr style="border:0; border-top:1px solid #eee; margin:2px 0;">
 
       <a href="javascript:void(0)" onclick="apriReport()" style="text-decoration:none; color:#17a589; font-size:12px; font-weight:700; display:flex; align-items:center; gap:6px; margin-bottom: 6px;">
-        📊 Travel Stats & Report
+        📊 Travel Report / Statistics
       </a>
       <a href="demo_en.html" style="text-decoration:none; color:#d9534f; font-size:12px; font-weight:700; display:flex; align-items:center; gap:6px; margin-bottom: 6px;">
         🎬 Start Guided Demo
@@ -813,6 +837,7 @@
     <div id="slideshow-caption"></div>
   </div>
 
+  <!-- DRAGGABLE RESIZER BAR -->
   <div id="slideshow-resizer"></div>
 
   <div id="slideshow-controls">
@@ -834,23 +859,43 @@
   </div>
 
   <div id="legenda-container">
-    <h4>Years Legend</h4>
+    <h4>Year Legend</h4>
     <div id="legenda-items"></div>
   </div>
 
   <div id="map"></div>
 
-  <!-- STATS REPORT MODAL -->
+  <!-- DETAILED LIST MODAL (COUNTRIES / US STATES) -->
+  <div id="lista-modal" class="modal-foto" onclick="chiudiListaModal()" style="z-index: 100010;">
+    <div class="modal-aiuto-card" onclick="event.stopPropagation()">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; border-bottom: 2px solid #007bff; padding-bottom: 6px;">
+        <h3 id="lista-modal-title" style="margin:0; font-size:16px; color:#2c3e50;">List</h3>
+        <button onclick="chiudiListaModal()" style="background:none; border:none; font-size:20px; cursor:pointer; color:#666;">✖</button>
+      </div>
+      <div id="lista-modal-content" style="font-size: 13px; color: #2c3e50; max-height: 60vh; overflow-y: auto; padding-right: 5px;">
+        <ul id="lista-modal-ul" style="margin:0; padding-left:20px; line-height: 1.6;"></ul>
+      </div>
+    </div>
+  </div>
+  
+  <!-- REPORT MODAL -->
   <div id="report-modal">
     <div class="report-header">
-      <h3>📊 Travel Statistics</h3>
+      <h3 id="report-modal-title">📊 Travel Statistics & Report</h3>
       <button class="btn-chiudi-modal" onclick="chiudiReport()">✖</button>
     </div>
-    <div class="report-grid">
-      <div class="report-card"><h4>Total Stops</h4><p id="rep-tappe">0</p></div>
-      <div class="report-card"><h4>Photos Uploaded</h4><p id="rep-foto">0</p></div>
-      <div class="report-card"><h4>Countries Visited</h4><p id="rep-paesi">0</p></div>
-      <div class="report-card"><h4>Distance Covered</h4><p id="rep-km">0 km</p></div>
+
+    <div id="report-view">
+      <div class="report-grid">
+        <div class="report-card clickable" onclick="mostraListaPaesi()" title="Click to view full list">
+          <h4>Countries Visited 🔍</h4>
+          <p id="rep-paesi">0</p>
+        </div>
+        <div class="report-card clickable" onclick="mostraListaStatiUsa()" title="Click to view full list">
+          <h4>US States Visited 🔍</h4>
+          <p id="rep-stati-usa">0</p>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -860,7 +905,7 @@
     <img class="modal-foto-content" id="imgModalSrc" draggable="false" onclick="event.stopPropagation()">
   </div>
 
-  <!-- HELP & GUIDE MODAL -->
+  <!-- FULL GUIDE / HELP MODAL -->
   <div id="modal-aiuto" class="modal-foto" onclick="chiudiModalAiuto()" style="z-index: 100002;">
     <div class="modal-aiuto-card" onclick="event.stopPropagation()" style="
       background: linear-gradient(rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.35)), url('mappamondo.jpg');
@@ -869,39 +914,39 @@
       border: 1px solid rgba(0,0,0,0.15);
     ">
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; border-bottom: 2px solid #007bff; padding-bottom: 6px;">
-        <h3 style="margin:0; font-size:16px; color:#2c3e50;">🌍 Guide & Info (v3.13)</h3>
+        <h3 style="margin:0; font-size:16px; color:#2c3e50;">🌍 Guide & Information (v3.20)</h3>
         <button onclick="chiudiModalAiuto()" style="background:none; border:none; font-size:20px; cursor:pointer; color:#666;">✖</button>
       </div>
       
       <div style="font-size: 13px; color: #2c3e50; max-height: 65vh; overflow-y: auto; padding-right: 5px; line-height: 1.5;">
         <div class="box-seo-guida">
-          📖 <b>Featured Guide:</b> Read our complete travel log<br>
-          <a href="javascript:void(0)" onclick="apriDiarioConFallback('diario_spagna_marocco_2023.html')">Motorhome Travel Diary in Morocco and Spain: Route, Customs & Tips</a>
+          📖 <b>Featured Travelogue:</b> Read our complete travel log<br>
+          <a href="diario_spagna_marocco_2023.html" target="_blank">Camper Travel Diary in Morocco & Spain: Itinerary, Customs & Advice</a>
         </div>
         <div class="box-seo-guida">
-          📖 <b>Featured Guide:</b> Read our complete travel log<br>
-          <a href="javascript:void(0)" onclick="apriDiarioConFallback('Diario_Sudafrica_2009.html')">South Africa Travel Diary: Itinerary, Customs & Advice</a>
+          📖 <b>Featured Travelogue:</b> Read our complete travel log<br>
+          <a href="Diario_Sudafrica_2009.html" target="_blank">South Africa Travel Diary: Itinerary, Customs & Advice</a>
         </div>
 
         <p style="margin-top:6px;">
-          This project brings together over 30 years of independent travel by campervan and plane. Every photo is geotagged and pinned to its exact original location.
+          This project gathers over 30 years of independent travel by campervan and self-planned flights. Every single photo is geotagged and pinned to its exact physical location.
         </p>
 
         <hr style="border:0; border-top:1px solid #ddd; margin:10px 0;">
 
-        <b style="color:#007bff;">📍 MAP & PHOTO EXPLORATION</b>
+        <b style="color:#007bff;">📍 EXPLORING THE MAP & PHOTOS</b>
         <p style="margin: 4px 0 10px 0;">
-          Click on a colored pin to view details, dates, and place descriptions. Click on the image preview to view full screen.
+          Click on any colored pin to open a preview window showing the location's name, date, and description. Click on the image preview to view it in full-screen mode.
         </p>
 
         <b style="color:#28a745;">📖 TRAVEL DIARY</b>
         <p style="margin: 4px 0 10px 0;">
-          When a written diary is available for a trip or location, click the green <b>📖 Travel Diary</b> button to open the log in a new tab.
+          If a written log is available for the selected trip or stop, you will see a green <b>📖 Travel Diary</b> button inside the map popup and on top of the fullscreen photo modal. Clicking it opens the diary file in a new tab.
         </p>
 
         <b style="color:#007bff;">▶ SLIDESHOW MODE</b>
         <p style="margin: 4px 0 10px 0;">
-          Select a specific <b>Trip</b> from the top menu and press <b>▶ Start Slideshow</b> for a split-screen presentation featuring synced map pin highlights.
+          When you select a specific <b>Trip</b> from the top menu, the <b>▶ Start Slideshow</b> button will appear. The screen splits into two: the current photo at the top (or left) and the map highlighting the active stop pin in gold.
         </p>
 
         <b style="color:#007bff;">📱 CONTROLS & GESTURES</b>
@@ -912,10 +957,22 @@
           <span style="background:#2c3e50; color:white; padding:3px 8px; border-radius:12px; font-size:11px;">4s ▾ Speed</span>
           <span style="background:#dc3545; color:white; padding:3px 8px; border-radius:12px; font-size:11px;">✖ Exit</span>
         </p>
+        <p style="margin: 4px 0 10px 0; font-style: italic; font-size: 11px; color: #555;">
+          On touch devices, swipe horizontally across the photo to navigate back and forth between slides.
+        </p>
+
+        <b style="color:#007bff;">⚙ MENU OPTIONS (☰)</b>
+        <ul style="margin: 4px 0 10px 0; padding-left: 18px; font-size: 12px;">
+          <li><b>Map Style:</b> switch between OpenStreetMap, Esri Satellite, Hybrid, Topographic, or CARTO minimal basemaps.</li>
+          <li><b>Pin Size:</b> resize pins (Small, Standard, Large) to fit your device display size.</li>
+          <li><b>Group Markers (Clustering):</b> clusters neighboring pins into a numbered circle to prevent cluttering.</li>
+          <li><b>Enable Year Filter:</b> adds a year selector to display stops from a specific year.</li>
+          <li><b>Year Legend:</b> displays a bottom-right box matching colors to respective travel years.</li>
+        </ul>
 
         <hr style="border:0; border-top:1px solid #ddd; margin:10px 0;">
         <small style="color:#666; display:block; text-align:center;">
-          Website and codebase developed by Eng. Vinicio Barone
+          Website & Code designed by Eng. Vinicio Barone
         </small>
 
         <hr style="border:0; border-top:1px solid #ddd; margin:10px 0;">
@@ -931,6 +988,7 @@
   <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
 
   <script>
+    // --- LOCALSTORAGE SETTINGS MANAGEMENT ---
     function salvaImpostazioni() {
       const impostazioni = {
         checkCluster: document.getElementById('check-cluster').checked,
@@ -947,14 +1005,22 @@
       if (salvate) {
         try {
           const impostazioni = JSON.parse(salvate);
-          if (impostazioni.checkCluster !== undefined) document.getElementById('check-cluster').checked = impostazioni.checkCluster;
-          if (impostazioni.checkAbilitaAnno !== undefined) document.getElementById('check-abilita-anno').checked = impostazioni.checkAbilitaAnno;
-          if (impostazioni.checkLegendaAnni !== undefined) document.getElementById('check-legenda-anni').checked = impostazioni.checkLegendaAnni;
+          if (impostazioni.checkCluster !== undefined) {
+            document.getElementById('check-cluster').checked = impostazioni.checkCluster;
+          }
+          if (impostazioni.checkAbilitaAnno !== undefined) {
+            document.getElementById('check-abilita-anno').checked = impostazioni.checkAbilitaAnno;
+          }
+          if (impostazioni.checkLegendaAnni !== undefined) {
+            document.getElementById('check-legenda-anni').checked = impostazioni.checkLegendaAnni;
+          }
           if (impostazioni.selectMappa !== undefined) {
             document.getElementById('select-mappa').value = impostazioni.selectMappa;
             cambiaStileMappa();
           }
-          if (impostazioni.selectDimensionePin !== undefined) document.getElementById('select-dimensione-pin').value = impostazioni.selectDimensionePin;
+          if (impostazioni.selectDimensionePin !== undefined) {
+            document.getElementById('select-dimensione-pin').value = impostazioni.selectDimensionePin;
+          }
         } catch(e) {
           console.error("Error restoring settings from localStorage:", e);
         }
@@ -963,12 +1029,17 @@
       }
     }
 
+    // GLOBAL PROTECTION AGAINST RIGHT CLICK & DRAGGING
     document.addEventListener('contextmenu', function(e) {
-      if (e.target.tagName === 'IMG') e.preventDefault();
+      if (e.target.tagName === 'IMG') {
+        e.preventDefault();
+      }
     });
 
     document.addEventListener('dragstart', function(e) {
-      if (e.target.tagName === 'IMG') e.preventDefault();
+      if (e.target.tagName === 'IMG') {
+        e.preventDefault();
+      }
     });
 
     function applicaImmagineSplash() {
@@ -1014,13 +1085,20 @@
     function toggleLegendaAnni() {
       const mostra = document.getElementById('check-legenda-anni').checked;
       const legendaBox = document.getElementById('legenda-container');
-      legendaBox.style.display = mostra ? 'block' : 'none';
+      
+      if (mostra) {
+        legendaBox.style.display = 'block';
+      } else {
+        legendaBox.style.display = 'none';
+      }
     }
 
     function mostraAiuto() {
       const menu = document.getElementById('menu-panel');
       if (menu) menu.classList.remove('show');
-      document.getElementById('modal-aiuto').style.display = 'flex';
+
+      const modal = document.getElementById('modal-aiuto');
+      modal.style.display = 'flex';
     }
 
     function chiudiModalAiuto() {
@@ -1030,7 +1108,9 @@
     let splashSeconds = 4;
     const splashTimer = setInterval(() => {
       splashSeconds--;
-      if (splashSeconds <= 0) chiudiSplash();
+      if (splashSeconds <= 0) {
+        chiudiSplash();
+      }
     }, 1000);
 
     function chiudiSplash() {
@@ -1049,16 +1129,42 @@
 
     const map = L.map('map', { minZoom: 2, tap: false}).setView([40, -140], 3);
 
-    const layerOSM = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '© OpenStreetMap' });
-    const layerSatellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', { maxZoom: 19, attribution: 'Tiles &copy; Esri' });
+    const layerOSM = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '© OpenStreetMap'
+    });
+
+    const layerSatellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+      maxZoom: 19,
+      attribution: 'Tiles &copy; Esri'
+    });
+
     const layerIbrido = L.layerGroup([
       L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', { maxZoom: 19 }),
       L.tileLayer('https://services.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}', { maxZoom: 19 })
     ]);
-    const layerTopo = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', { maxZoom: 19, attribution: 'Tiles &copy; Esri Topo' });
-    const layerTerrain = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Physical_Map/MapServer/tile/{z}/{y}/{x}', { maxZoom: 8, attribution: 'Tiles &copy; Esri Physical' });
-    const layerCartoLight = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', { maxZoom: 20, subdomains: 'abcd', attribution: '&copy; OpenStreetMap &copy; CARTO' });
-    const layerCartoDark = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', { maxZoom: 20, subdomains: 'abcd', attribution: '&copy; OpenStreetMap &copy; CARTO' });
+
+    const layerTopo = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
+      maxZoom: 19,
+      attribution: 'Tiles &copy; Esri Topo'
+    });
+
+    const layerTerrain = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Physical_Map/MapServer/tile/{z}/{y}/{x}', {
+      maxZoom: 8,
+      attribution: 'Tiles &copy; Esri Physical'
+    });
+
+    const layerCartoLight = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+      maxZoom: 20,
+      subdomains: 'abcd',
+      attribution: '&copy; OpenStreetMap &copy; CARTO'
+    });
+
+    const layerCartoDark = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+      maxZoom: 20,
+      subdomains: 'abcd',
+      attribution: '&copy; OpenStreetMap &copy; CARTO'
+    });
 
     let currentTileLayer = layerOSM.addTo(map);
 
@@ -1075,14 +1181,21 @@
         case 'carto-dark': currentTileLayer = layerCartoDark; break;
         default: currentTileLayer = layerOSM;
       }
+
       currentTileLayer.addTo(map);
     }
 
     let tuttiIDati = [];
+    let datiPaesiVisitati = null;
+    let paesiAttuali = [];
+    let statiUsaAttuali = [];
     let panInizialeAttivo = false;
     let animazionePanId = null;
 
-    const clusterGroup = L.markerClusterGroup({ disableClusteringAtZoom: 16, maxClusterRadius: 40 });
+    const clusterGroup = L.markerClusterGroup({ 
+      disableClusteringAtZoom: 16,
+      maxClusterRadius: 40 
+    });
     const singleGroup = L.layerGroup();
     
     map.addLayer(clusterGroup);
@@ -1109,26 +1222,39 @@
     let immaginiPrecaricate = [];
     let wakeLock = null;
 
+    let touchStartX = 0;
+    let touchStartY = 0;
+
+    // --- SCREEN WAKE LOCK API ---
     async function attivaWakeLock() {
       try {
-        if ('wakeLock' in navigator) wakeLock = await navigator.wakeLock.request('screen');
+        if ('wakeLock' in navigator) {
+          wakeLock = await navigator.wakeLock.request('screen');
+        }
       } catch (err) {
-        console.log("Wake Lock not supported:", err);
+        console.log("Wake Lock not supported or blocked:", err);
       }
     }
 
     function disattivaWakeLock() {
       if (wakeLock !== null) {
-        wakeLock.release().then(() => { wakeLock = null; });
+        wakeLock.release().then(() => {
+          wakeLock = null;
+        });
       }
     }
 
     function avviaPanIniziale() {
       panInizialeAttivo = true;
       map.setView([40, -140], 3, { animate: false });
+
       let startTime = null;
       const durataMs = 20000;
-      const startLat = 40, endLat = 30, startLon = -140, endLon = 140;
+
+      const startLat = 40;
+      const endLat = 30;
+      const startLon = -140;
+      const endLon = 140;
 
       function anima(timestamp) {
         if (!panInizialeAttivo) return;
@@ -1136,6 +1262,7 @@
 
         const trascorso = timestamp - startTime;
         const progresso = Math.min(trascorso / durataMs, 1);
+
         const currentLat = startLat + (endLat - startLat) * progresso;
         const currentLon = startLon + (endLon - startLon) * progresso;
 
@@ -1149,7 +1276,9 @@
       }
 
       setTimeout(() => {
-        if (panInizialeAttivo) animazionePanId = requestAnimationFrame(anima);
+        if (panInizialeAttivo) {
+          animazionePanId = requestAnimationFrame(anima);
+        }
       }, 400);
     }
 
@@ -1167,10 +1296,17 @@
 
     function creaIconaColorata(coloreHex, isBig = false) {
       const taglia = document.getElementById('select-dimensione-pin') ? document.getElementById('select-dimensione-pin').value : 'standard';
-      let baseW = 25, baseH = 41;
+      
+      let baseW = 25;
+      let baseH = 41;
 
-      if (taglia === 'piccole') { baseW = 18; baseH = 30; } 
-      else if (taglia === 'grandi') { baseW = 34; baseH = 56; }
+      if (taglia === 'piccole') {
+        baseW = 18;
+        baseH = 30;
+      } else if (taglia === 'grandi') {
+        baseW = 34;
+        baseH = 56;
+      }
 
       const scale = isBig ? 1.3 : 1.0;
       const w = Math.round(baseW * scale);
@@ -1193,81 +1329,92 @@
 
     caricaImpostazioni();
 
-    fetch('dati.json')
-      .then(response => response.json())
-      .then(dati => {
-        tuttiIDati = dati;
-        popolaAnni();
-        popolaViaggi();
-        aggiornaMappa();
-        calcolaReport(dati);
+    // FETCH BOTH DATI.JSON AND PAESI_VISITATI.JSON
+    Promise.all([
+      fetch('dati.json').then(r => r.json()),
+      fetch('paesi_visitati.json').then(r => r.json()).catch(err => {
+        console.warn("Unable to load paesi_visitati.json:", err);
+        return null;
       })
-      .catch(err => console.error("Error loading dati.json:", err));
+    ]).then(([dati, datiPaesi]) => {
+      tuttiIDati = dati;
+      datiPaesiVisitati = datiPaesi;
+      popolaAnni();
+      popolaViaggi();
+      aggiornaMappa();
+    }).catch(err => console.error("Error loading JSON data:", err));
 
     function calcolaReport(dati) {
-      const tappe = dati.length;
-      const foto = dati.filter(p => p.foto && p.foto.trim() !== '').length;
+      const viaggioSel = document.getElementById('select-viaggio') ? document.getElementById('select-viaggio').value : 'tutti';
 
-      const listaPaesiKnown = [
-        "Marocco", "Spagna", "Portogallo", "Sudafrica", "Italia", "Francia",
-        "Germania", "Grecia", "Turchia", "Egitto", "Tunisia", "Norvegia",
-        "Svezia", "Finlandia", "Islanda", "Regno Unito", "Irlanda", "Croazia"
-      ];
+      paesiAttuali = [];
+      statiUsaAttuali = [];
 
-      const paesiSet = new Set();
+      if (datiPaesiVisitati) {
+        if (viaggioSel !== 'tutti' && datiPaesiVisitati.dettaglio_per_viaggio) {
+          const vKey = viaggioSel.toLowerCase().trim();
+          const dett = datiPaesiVisitati.dettaglio_per_viaggio[vKey];
+          if (dett) {
+            paesiAttuali = dett.paesi || [];
+            statiUsaAttuali = dett.stati_usa || [];
+          } else {
+            estraiPaesiEStatiDaPunti(dati);
+          }
+        } else if (viaggioSel === 'tutti') {
+          paesiAttuali = datiPaesiVisitati.lista_paesi || [];
+          statiUsaAttuali = datiPaesiVisitati.lista_stati_usa || [];
+        } else {
+          estraiPaesiEStatiDaPunti(dati);
+        }
+      } else {
+        estraiPaesiEStatiDaPunti(dati);
+      }
+
+      document.getElementById('rep-paesi').innerText = paesiAttuali.length;
+      document.getElementById('rep-stati-usa').innerText = statiUsaAttuali.length;
+    }
+
+    function estraiPaesiEStatiDaPunti(dati) {
+      const pSet = new Set();
+      const sSet = new Set();
       dati.forEach(p => {
-        if (p.paese || p.nazione) {
-          paesiSet.add((p.paese || p.nazione).trim());
-        } else {
-          const testo = ((p.viaggio || '') + ' ' + (p.nome || '')).toLowerCase();
-          listaPaesiKnown.forEach(paese => {
-            if (testo.includes(paese.toLowerCase())) paesiSet.add(paese);
-          });
-        }
+        if (p.paese) pSet.add(p.paese.trim());
+        if (p.stato_usa) sSet.add(p.stato_usa.trim());
       });
-
-      let kmTotali = 0;
-      for (let i = 0; i < dati.length - 1; i++) {
-        const lat1 = parseFloat(dati[i].lat);
-        const lon1 = parseFloat(dati[i].lon);
-        const lat2 = parseFloat(dati[i + 1].lat);
-        const lon2 = parseFloat(dati[i + 1].lon);
-        if (!isNaN(lat1) && !isNaN(lon1) && !isNaN(lat2) && !isNaN(lon2)) {
-          kmTotali += calcolaDistanzaHaversine(lat1, lon1, lat2, lon2);
-        }
-      }
-
-      document.getElementById('rep-tappe').innerText = tappe;
-      document.getElementById('rep-foto').innerText = foto;
-      document.getElementById('rep-paesi').innerText = paesiSet.size > 0 ? paesiSet.size : 1;
-      document.getElementById('rep-km').innerText = Math.round(kmTotali).toLocaleString('en-US') + ' km';
+      paesiAttuali = Array.from(pSet).sort();
+      statiUsaAttuali = Array.from(sSet).sort();
     }
 
-    function calcolaDistanzaHaversine(lat1, lon1, lat2, lon2) {
-      const R = 6371;
-      const dLat = (lat2 - lat1) * Math.PI / 180;
-      const dLon = (lon2 - lon1) * Math.PI / 180;
-      const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) + Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) * Math.sin(dLon / 2) * Math.sin(dLon / 2);
-      return R * (2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a)));
+    function mostraListaPaesi() {
+      apriListaModal("🌐 Countries Visited (" + paesiAttuali.length + ")", paesiAttuali);
     }
 
-    // --- FUNZIONE PER APRIRE IL DIARIO CON FALLBACK INGLESE ---
-    async function apriDiarioConFallback(nomeFileDiario) {
-      if (!nomeFileDiario) return;
+    function mostraListaStatiUsa() {
+      apriListaModal("🇺🇸 US States Visited (" + statiUsaAttuali.length + ")", statiUsaAttuali);
+    }
 
-      // Trasforma es. "diario.html" in "diario_en.html"
-      const nomeFileEn = nomeFileDiario.replace(/\.html$/i, '_en.html');
+    function apriListaModal(titolo, elementi) {
+      document.getElementById('lista-modal-title').innerText = titolo;
+      const ul = document.getElementById('lista-modal-ul');
+      ul.innerHTML = '';
 
-      try {
-        const response = await fetch(nomeFileEn, { method: 'HEAD' });
-        if (response.ok) {
-          window.open(nomeFileEn, '_blank');
-        } else {
-          window.open(nomeFileDiario, '_blank');
-        }
-      } catch (error) {
-        window.open(nomeFileDiario, '_blank');
+      if (!elementi || elementi.length === 0) {
+        const li = document.createElement('li');
+        li.textContent = "No items available.";
+        ul.appendChild(li);
+      } else {
+        elementi.forEach(item => {
+          const li = document.createElement('li');
+          li.textContent = item;
+          ul.appendChild(li);
+        });
       }
+
+      document.getElementById('lista-modal').style.display = 'flex';
+    }
+
+    function chiudiListaModal() {
+      document.getElementById('lista-modal').style.display = 'none';
     }
 
     function apriReport() {
@@ -1283,11 +1430,13 @@
     function popolaAnni() {
       const selectAnno = document.getElementById('select-anno');
       const anni = new Set();
+
       tuttiIDati.forEach(p => {
-        if (p.anno && p.anno !== "Sconosciuto") anni.add(p.anno);
+        if (p.anno && p.anno !== "Unknown" && p.anno !== "Sconosciuto") anni.add(p.anno);
       });
 
       const anniOrdinati = Array.from(anni).sort((a, b) => Number(b) - Number(a));
+
       anniOrdinati.forEach((anno, index) => {
         mappaColoriAnni[anno] = tavolozzaColori[index % tavolozzaColori.length];
       });
@@ -1302,6 +1451,7 @@
 
       toggleAbilitaAnno();
       toggleLegendaAnni();
+
       aggiornaLegenda(anniOrdinati);
     }
 
@@ -1344,7 +1494,11 @@
       const btnSlideshow = document.getElementById('btn-slideshow');
       const usaClusterCheckbox = document.getElementById('check-cluster').checked;
 
-      btnSlideshow.style.display = (viaggioSel === 'tutti') ? 'none' : 'block';
+      if (viaggioSel === 'tutti') {
+        btnSlideshow.style.display = 'none';
+      } else {
+        btnSlideshow.style.display = 'block';
+      }
 
       clusterGroup.clearLayers();
       singleGroup.clearLayers();
@@ -1353,8 +1507,13 @@
 
       let datiFiltrati = tuttiIDati;
 
-      if (annoSel !== 'tutti') datiFiltrati = datiFiltrati.filter(p => p.anno === annoSel);
-      if (viaggioSel !== 'tutti') datiFiltrati = datiFiltrati.filter(p => p.viaggio === viaggioSel);
+      if (annoSel !== 'tutti') {
+        datiFiltrati = datiFiltrati.filter(p => p.anno === annoSel);
+      }
+
+      if (viaggioSel !== 'tutti') {
+        datiFiltrati = datiFiltrati.filter(p => p.viaggio === viaggioSel);
+      }
 
       calcolaReport(datiFiltrati);
 
@@ -1366,30 +1525,38 @@
 
         if (!isNaN(lat) && !isNaN(lon)) {
           let coloreHex = mappaColoriAnni[p.anno] || '#007bff';
-          let opzioniMarker = { icon: creaIconaColorata(coloreHex) };
+          let opzioniMarker = {
+            icon: creaIconaColorata(coloreHex)
+          };
 
           const marker = L.marker([lat, lon], opzioniMarker);
           marker.coloreOriginale = coloreHex;
 
           const tooltipContent = `<b>${p.nome || p.viaggio}</b><br>📅 ${p.data}`;
-          marker.bindTooltip(tooltipContent, { direction: 'top', offset: [0, -25], className: 'custom-tooltip' });
+          
+          marker.bindTooltip(tooltipContent, {
+            direction: 'top',
+            offset: [0, -25],
+            className: 'custom-tooltip'
+          });
 
           const indexAttuale = puntiSlideshow.length;
-          const fotoThumb = p.thumb || p.foto.replace(/^foto[\/\\]/, 'webp/').replace(/\.jpg$/i, '.webp');
+		  const fotoThumb = p.thumb || p.foto.replace(/^foto[\/\\]/, 'webp/').replace(/\.jpg$/i, '.webp');
           const htmlDescrizione = p.descrizione ? `<div class="popup-descrizione">${p.descrizione}</div>` : '';
-          const htmlBtnDiario = p.diario ? `<br><a href="javascript:void(0)" onclick="apriDiarioConFallback('${p.diario}')" class="btn-diario">📖 Travel Diary</a>` : '';
+          const htmlBtnDiario = p.diario ? `<br><a href="${p.diario}" target="_blank" rel="noopener" class="btn-diario">📖 Travel Diary</a>` : '';
+
           const popupContent = `
             <div class="popup-container">
               <b style="font-size: 13px;">${p.nome || p.viaggio}</b><br>
               <small style="color: #666;">📅 ${p.data}</small>
               ${htmlDescrizione}
               <img src="${fotoThumb}" class="popup-foto" alt="${p.nome}" draggable="false" onclick="apriModalFoto('${p.foto}', ${indexAttuale})">
-              <a href="javascript:void(0)" onclick="apriModalFoto('${p.foto}', ${indexAttuale})" style="display:inline-block; margin-top:6px; color:#007bff; font-weight:bold; text-decoration:none; font-size:12px;">Enlarge Photo 🔍</a>
+              <a href="javascript:void(0)" onclick="apriModalFoto('${p.foto}', ${indexAttuale})" style="display:inline-block; margin-top:6px; color:#007bff; font-weight:bold; text-decoration:none; font-size:12px;">Enlarge photo 🔍</a>
               ${htmlBtnDiario}
             </div>
           `;
 
-          marker.bindPopup(popupContent, { autoPan: false });
+		  marker.bindPopup(popupContent, { autoPan: false });
 
           if (viaggioSel === 'tutti' && usaClusterCheckbox) {
             clusterGroup.addLayer(marker);
@@ -1412,23 +1579,10 @@
       }
     }
 
-    function precaricaFotoSlideshow() {
-      immaginiPrecaricate = [];
-      puntiSlideshow.forEach(p => {
-        if (p.foto) {
-          const img = new Image();
-          img.src = p.foto;
-          immaginiPrecaricate.push(img);
-        }
-      });
-    }
-
     function avviaSlideshow() {
       if (markersSlideshow.length === 0) return;
       fermaPanIniziale();
       attivaWakeLock();
-
-      precaricaFotoSlideshow();
 
       isSlideshowActive = true;
       isSlideshowPaused = false;
@@ -1451,13 +1605,17 @@
 
     function cambiaVelocita() {
       tempoIntervallo = parseInt(document.getElementById('select-speed').value, 10) || 4000;
-      if (isSlideshowActive && !isSlideshowPaused) avviaTimer();
+      if (isSlideshowActive && !isSlideshowPaused) {
+        avviaTimer();
+      }
     }
 
     function avviaTimer() {
       clearInterval(slideshowTimer);
       slideshowTimer = setInterval(() => {
-        if (!isSlideshowPaused) nextSlide();
+        if (!isSlideshowPaused) {
+          nextSlide();
+        }
       }, tempoIntervallo);
     }
 
@@ -1552,6 +1710,7 @@
       });
     }
 
+    // --- RESIZER / DYNAMIC SPLIT CONTROL ---
     const resizer = document.getElementById('slideshow-resizer');
     const photoPanel = document.getElementById('slideshow-photo-panel');
     const mapElement = document.getElementById('map');
@@ -1617,9 +1776,11 @@
         resizer.style.top = newPhotoHeightPx + 'px';
         mapElement.style.top = newPhotoHeightPx + 'px';
         mapElement.style.height = mapHeightPx + 'px';
+
+        controlsElement.style.left = '50%';
       }
 
-      map.invalidateSize();
+      map.invalidateSize({ pan: false });
     }
 
     function stopResize() {
@@ -1631,36 +1792,184 @@
     }
 
     resizer.addEventListener('mousedown', startResize);
-    document.addEventListener('mousemove', doResize);
-    document.addEventListener('mouseup', stopResize);
+    window.addEventListener('mousemove', doResize);
+    window.addEventListener('mouseup', stopResize);
 
     resizer.addEventListener('touchstart', startResize, { passive: true });
-    document.addEventListener('touchmove', doResize, { passive: true });
-    document.addEventListener('touchend', stopResize);
+    window.addEventListener('touchmove', doResize, { passive: true });
+    window.addEventListener('touchend', stopResize);
 
-    function apriModalFoto(fotoPath, index) {
-      const modal = document.getElementById('imageModal');
-      const img = document.getElementById('imgModalSrc');
-      const caption = document.getElementById('modal-caption');
+    window.addEventListener('resize', function() {
+      if (isSlideshowActive) {
+        photoPanel.style.width = '';
+        photoPanel.style.height = '';
+        resizer.style.left = '';
+        resizer.style.top = '';
+        mapElement.style.left = '';
+        mapElement.style.top = '';
+        mapElement.style.width = '';
+        mapElement.style.height = '';
+        controlsElement.style.left = '';
 
-      const webpPath = fotoPath.replace(/^foto[\/\\]/, 'webp/').replace(/\.jpg$/i, '.webp');
-      img.src = webpPath;
-
-      if (index !== undefined && puntiSlideshow[index]) {
-        const p = puntiSlideshow[index];
-        const desc = p.descrizione ? ` — ${p.descrizione}` : '';
-        const diarioBtn = p.diario ? `<br><a href="javascript:void(0)" onclick="apriDiarioConFallback('${p.diario}')" class="btn-diario-modal">📖 Travel Diary</a>` : '';
-        caption.innerHTML = `<b>${p.nome || p.viaggio}</b> (${p.data})${desc}${diarioBtn}`;
+        map.invalidateSize();
       } else {
-        caption.innerHTML = '';
+        map.invalidateSize();
+        applicaImmagineSplash();
       }
+    });
 
+    // --- ENLARGED PHOTO MODAL WITH SWIPE ---
+    let currentModalIndex = -1;
+
+    function apriModalFoto(urlFoto, index = -1) {
+      fermaPanIniziale();
+      currentModalIndex = index;
+
+      const modal = document.getElementById('imageModal');
       modal.style.display = 'flex';
+      document.getElementById('imgModalSrc').src = urlFoto;
+
+      aggiornaModalCaption();
+
+      try {
+        history.pushState({ modalOpen: true }, "");
+      } catch(e) {
+        console.warn("No local history API support:", e);
+      }
     }
 
-    function chiudiModalFoto(e) {
-      document.getElementById('imageModal').style.display = 'none';
+    function aggiornaModalCaption() {
+      const captionElem = document.getElementById('modal-caption');
+
+      if (currentModalIndex !== -1 && puntiSlideshow[currentModalIndex]) {
+        const p = puntiSlideshow[currentModalIndex];
+        const descTesto = p.descrizione ? ` — ${p.descrizione}` : '';
+        let htmlCaption = `<div>${p.nome || p.viaggio} (${p.data})${descTesto}</div>`;
+
+        if (p.diario) {
+          htmlCaption += `<a href="${p.diario}" target="_blank" rel="noopener" class="btn-diario-modal" onclick="event.stopPropagation()">📖 Travel Diary</a>`;
+        }
+
+        captionElem.innerHTML = htmlCaption;
+      } else {
+        captionElem.innerHTML = '';
+      }
     }
+
+    function modalFotoNext() {
+      if (currentModalIndex === -1 || markersSlideshow.length === 0) return;
+      currentModalIndex = (currentModalIndex + 1) % markersSlideshow.length;
+      const p = puntiSlideshow[currentModalIndex];
+      document.getElementById('imgModalSrc').src = p.foto;
+      aggiornaModalCaption();
+    }
+
+    function modalFotoPrev() {
+      if (currentModalIndex === -1 || markersSlideshow.length === 0) return;
+      currentModalIndex = (currentModalIndex - 1 + markersSlideshow.length) % markersSlideshow.length;
+      const p = puntiSlideshow[currentModalIndex];
+      document.getElementById('imgModalSrc').src = p.foto;
+      aggiornaModalCaption();
+    }
+
+    function chiudiModalFoto(fromPopState = false) {
+      const modal = document.getElementById('imageModal');
+      if (modal.style.display !== 'none') {
+        modal.style.display = 'none';
+
+        if (!fromPopState) {
+          try {
+            if (history.state && history.state.modalOpen) {
+              history.back();
+            }
+          } catch(e) {
+            console.warn("History return error:", e);
+          }
+        }
+      }
+    }
+
+    window.addEventListener('popstate', function(e) {
+      const modal = document.getElementById('imageModal');
+      if (modal && modal.style.display !== 'none') {
+        chiudiModalFoto(true);
+      }
+      const modalAiuto = document.getElementById('modal-aiuto');
+      if (modalAiuto && modalAiuto.style.display !== 'none') {
+        chiudiModalAiuto();
+      }
+      const listaModal = document.getElementById('lista-modal');
+      if (listaModal && listaModal.style.display !== 'none') {
+        chiudiListaModal();
+      }
+      const reportModal = document.getElementById('report-modal');
+      if (reportModal && reportModal.classList.contains('active')) {
+        chiudiReport();
+      }
+    });
+
+    const modalFotoElem = document.getElementById('imageModal');
+    let modalTouchStartX = 0;
+    let modalTouchStartY = 0;
+
+    modalFotoElem.addEventListener('touchstart', function(e) {
+      modalTouchStartX = e.changedTouches[0].screenX;
+      modalTouchStartY = e.changedTouches[0].screenY;
+    }, false);
+
+    modalFotoElem.addEventListener('touchend', function(e) {
+      const modalTouchEndX = e.changedTouches[0].screenX;
+      const modalTouchEndY = e.changedTouches[0].screenY;
+      
+      const diffX = modalTouchEndX - modalTouchStartX;
+      const diffY = modalTouchEndY - modalTouchStartY;
+
+      if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 40) {
+        if (diffX < 0) {
+          modalFotoNext();
+        } else {
+          modalFotoPrev();
+        }
+      }
+    }, false);
+
+    photoPanel.addEventListener('touchstart', function(e) {
+      touchStartX = e.changedTouches[0].screenX;
+      touchStartY = e.changedTouches[0].screenY;
+    }, false);
+
+    photoPanel.addEventListener('touchend', function(e) {
+      const touchEndX = e.changedTouches[0].screenX;
+      const touchEndY = e.changedTouches[0].screenY;
+      
+      const diffX = touchEndX - touchStartX;
+      const diffY = touchEndY - touchStartY;
+
+      if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 40) {
+        if (diffX < 0) {
+          nextSlide();
+        } else {
+          prevSlide();
+        }
+      }
+    }, false);
+
+    document.addEventListener('keydown', function(e) {
+      const modal = document.getElementById('imageModal');
+      const isModalOpen = modal && modal.style.display !== 'none';
+
+      if (e.key === "Escape") {
+        chiudiModalFoto(false);
+        chiudiModalAiuto();
+        chiudiListaModal();
+        chiudiReport();
+        if (isSlideshowActive) fermaSlideshow();
+      } else if (isModalOpen && e.key === "ArrowRight") {
+        modalFotoNext();
+      } else if (isModalOpen && e.key === "ArrowLeft") {
+        modalFotoPrev();
+      }
+    });
   </script>
 </body>
 </html>

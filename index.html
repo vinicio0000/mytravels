@@ -1,4 +1,4 @@
-<!-- VERSION: 3.14_LANDSCAPE_MODAL_FULLSCREEN_LOCALSTORAGE -->
+<!-- VERSION: 3.20_LANDSCAPE_MODAL_FULLSCREEN_LOCALSTORAGE -->
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -36,37 +36,6 @@
     }
   })();
 </script>
-
-
-
-<!-- ======================================================== -->
-  <!-- INIZIO CODICE CONTROLLO LINGUA -->
-  <!-- ======================================================== -->
-  
-<!--
-  
-  <link rel="alternate" hreflang="it" href="https://vinicio0000.github.io/mytravels/index.html" />
-  <link rel="alternate" hreflang="en" href="https://vinicio0000.github.io/mytravels/index_en.html" />
-
-  <script>
-    (function() {
-      // Mostra sempre la richiesta dopo 1 secondo dall'apertura della pagina
-      setTimeout(function() {
-        var switchLang = confirm("Do you want to switch to the English version of the site?\n\nVuoi passare alla versione in inglese del sito?");
-        if (switchLang) {
-          window.location.href = 'index_en.html';
-        }
-      }, 1000);
-    })();
-  </script>
-  
-  -->
-  <!-- ======================================================== -->
-  <!-- FINE CODICE CONTROLLO LINGUA -->
-  <!-- ======================================================== -->
-
-
-
 
   <!-- Tag per attivare la PWA e nascondere le barre del browser -->
   <link rel="manifest" href="manifest.json">
@@ -772,6 +741,14 @@
       text-align: center;
       border: 1px solid #e2e8f0;
     }
+    .report-card.clickable {
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+    }
+    .report-card.clickable:hover {
+      background: #e2e8f0;
+      transform: translateY(-2px);
+    }
     .report-card h4 { margin: 0; color: #64748b; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; }
     .report-card p { margin: 6px 0 0 0; color: #0f172a; font-size: 20px; font-weight: bold; }
 
@@ -917,19 +894,57 @@
 
   <div id="map"></div>
 
-  <!-- MODALE REPORT STATISTICHE -->
-  <div id="report-modal">
-    <div class="report-header">
-      <h3>📊 Statistiche Viaggi</h3>
-      <button class="btn-chiudi-modal" onclick="chiudiReport()">✖</button>
-    </div>
-    <div class="report-grid">
-      <div class="report-card"><h4>Tappe Totali</h4><p id="rep-tappe">0</p></div>
-      <div class="report-card"><h4>Foto Caricate</h4><p id="rep-foto">0</p></div>
-      <div class="report-card"><h4>Paesi Visitati</h4><p id="rep-paesi">0</p></div>
-      <div class="report-card"><h4>Km Percorsi</h4><p id="rep-km">0 km</p></div>
+  <!-- MODALE LISTA DETTAGLIATA (PAESI / STATI USA) -->
+  <div id="lista-modal" class="modal-foto" onclick="chiudiListaModal()" style="z-index: 100010;">
+    <div class="modal-aiuto-card" onclick="event.stopPropagation()">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; border-bottom: 2px solid #007bff; padding-bottom: 6px;">
+        <h3 id="lista-modal-title" style="margin:0; font-size:16px; color:#2c3e50;">Lista</h3>
+        <button onclick="chiudiListaModal()" style="background:none; border:none; font-size:20px; cursor:pointer; color:#666;">✖</button>
+      </div>
+      <div id="lista-modal-content" style="font-size: 13px; color: #2c3e50; max-height: 60vh; overflow-y: auto; padding-right: 5px;">
+        <ul id="lista-modal-ul" style="margin:0; padding-left:20px; line-height: 1.6;"></ul>
+      </div>
     </div>
   </div>
+  
+  <!-- MODALE REPORT E MODIFICA -->
+  <div id="report-modal">
+    <div class="report-header">
+      <h3 id="report-modal-title">📊 Statistiche e Report Viaggio</h3>
+      <button class="btn-chiudi-modal" onclick="chiudiReport()">✖</button>
+    </div>
+
+    <!-- VISTA REPORT -->
+    <div id="report-view">
+      <div class="report-grid">
+        <!-- <div class="report-card"><h4>Tappe Totali</h4><p id="rep-tappe">0</p></div>
+        <div class="report-card"><h4>Foto Caricate</h4><p id="rep-foto">0</p></div>
+		-->
+        <div class="report-card clickable" onclick="mostraListaPaesi()" title="Clicca per la lista"><h4>Paesi Visitati 🔍</h4><p id="rep-paesi">0</p></div>
+        <div class="report-card clickable" onclick="mostraListaStatiUsa()" title="Clicca per la lista"><h4>Stati USA Visitati 🔍</h4><p id="rep-stati-usa">0</p></div>
+      </div>
+      <!-- 
+	  <div style="margin-top: 15px; text-align: center;">
+        <button onclick="mostraFormModificaReport()" style="background: #007bff; color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-weight: 600;">✏️ Modifica Report / Note</button>
+      </div>
+	  -->
+    </div>
+
+    <!-- FORM MODIFICA 
+    <div id="report-edit-form" style="display: none;">
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <label style="font-size: 12px; font-weight: bold; color: #333;">Note / Descrizione Viaggio:
+          <textarea id="edit-report-notes" rows="4" style="width: 100%; border: 1px solid #ccc; border-radius: 6px; padding: 6px; font-size: 12px; margin-top: 4px; box-sizing: border-box;"></textarea>
+        </label>
+        <div style="display: flex; justify-content: flex-end; gap: 8px; margin-top: 5px;">
+          <button onclick="nascondiFormModificaReport()" style="background: #6c757d; color: white; border: none; padding: 6px 12px; border-radius: 6px; cursor: pointer; font-size: 12px;">Annulla</button>
+          <button onclick="salvaModificaReport()" style="background: #28a745; color: white; border: none; padding: 6px 12px; border-radius: 6px; cursor: pointer; font-size: 12px; font-weight: bold;">💾 Salva Modifiche</button>
+        </div>
+      </div>
+    </div>
+	-->
+  </div>
+  
 
   <!-- MODALE FOTO INGRANDITA -->
   <div id="imageModal" class="modal-foto" onclick="chiudiModalFoto(false)">
@@ -946,7 +961,7 @@
       border: 1px solid rgba(0,0,0,0.15);
     ">
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; border-bottom: 2px solid #007bff; padding-bottom: 6px;">
-        <h3 style="margin:0; font-size:16px; color:#2c3e50;">🌍 Guida e Informazioni (v3.14)</h3>
+        <h3 style="margin:0; font-size:16px; color:#2c3e50;">🌍 Guida e Informazioni (v3.20)</h3>
         <button onclick="chiudiModalAiuto()" style="background:none; border:none; font-size:20px; cursor:pointer; color:#666;">✖</button>
       </div>
       
@@ -1219,6 +1234,9 @@
     }
 
     let tuttiIDati = [];
+    let datiPaesiVisitati = null;
+    let paesiAttuali = [];
+    let statiUsaAttuali = [];
     let panInizialeAttivo = false;
     let animazionePanId = null;
 
@@ -1360,72 +1378,99 @@
     // Caricamento preferenze all'avvio
     caricaImpostazioni();
 
-    fetch('dati.json')
-      .then(response => response.json())
-      .then(dati => {
-        tuttiIDati = dati;
-        popolaAnni();
-        popolaViaggi();
-        aggiornaMappa();
-        calcolaReport(dati);
+    // CARICAMENTO CONGIUNTO DI DATI.JSON E PAESI_VISITATI.JSON
+    Promise.all([
+      fetch('dati.json').then(r => r.json()),
+      fetch('paesi_visitati.json').then(r => r.json()).catch(err => {
+        console.warn("Impossibile caricare paesi_visitati.json:", err);
+        return null;
       })
-      .catch(err => console.error("Errore nel caricamento di dati.json:", err));
+    ]).then(([dati, datiPaesi]) => {
+      tuttiIDati = dati;
+      datiPaesiVisitati = datiPaesi;
+      popolaAnni();
+      popolaViaggi();
+      aggiornaMappa();
+    }).catch(err => console.error("Errore nel caricamento dei dati:", err));
 
-    // --- FUNZIONI DI CALCOLO E GESTIONE DEL REPORT (AGGIORNATE) ---
+    // --- FUNZIONI DI CALCOLO E GESTIONE DEL REPORT (CON PAESI_VISITATI) ---
     function calcolaReport(dati) {
       const tappe = dati.length;
       const foto = dati.filter(p => p.foto && p.foto.trim() !== '').length;
 
-      // LISTA DI SUPPORTO PER ESTRARRE I PAESI SE NON ESPLICITI
-      const listaPaesiKnown = [
-        "Marocco", "Spagna", "Portogallo", "Sudafrica", "Italia", "Francia",
-        "Germania", "Grecia", "Turchia", "Egitto", "Tunisia", "Norvegia",
-        "Svezia", "Finlandia", "Islanda", "Regno Unito", "Irlanda", "Croazia"
-      ];
+      const viaggioSel = document.getElementById('select-viaggio') ? document.getElementById('select-viaggio').value : 'tutti';
 
-      const paesiSet = new Set();
+      paesiAttuali = [];
+      statiUsaAttuali = [];
 
-      dati.forEach(p => {
-        if (p.paese || p.nazione) {
-          paesiSet.add((p.paese || p.nazione).trim());
+      if (datiPaesiVisitati) {
+        if (viaggioSel !== 'tutti' && datiPaesiVisitati.dettaglio_per_viaggio) {
+          const vKey = viaggioSel.toLowerCase().trim();
+          const dett = datiPaesiVisitati.dettaglio_per_viaggio[vKey];
+          if (dett) {
+            paesiAttuali = dett.paesi || [];
+            statiUsaAttuali = dett.stati_usa || [];
+          } else {
+            // Se non trovato in dettaglio per viaggio, fallback sui dati generali o dal json dei punti
+            estraiPaesiEStatiDaPunti(dati);
+          }
+        } else if (viaggioSel === 'tutti') {
+          paesiAttuali = datiPaesiVisitati.lista_paesi || [];
+          statiUsaAttuali = datiPaesiVisitati.lista_stati_usa || [];
         } else {
-          // Analizza il campo 'viaggio' e 'nome'
-          const testo = ((p.viaggio || '') + ' ' + (p.nome || '')).toLowerCase();
-          listaPaesiKnown.forEach(paese => {
-            if (testo.includes(paese.toLowerCase())) {
-              paesiSet.add(paese);
-            }
-          });
+          estraiPaesiEStatiDaPunti(dati);
         }
-      });
-
-      let kmTotali = 0;
-      for (let i = 0; i < dati.length - 1; i++) {
-        const lat1 = parseFloat(dati[i].lat);
-        const lon1 = parseFloat(dati[i].lon);
-        const lat2 = parseFloat(dati[i + 1].lat);
-        const lon2 = parseFloat(dati[i + 1].lon);
-
-        if (!isNaN(lat1) && !isNaN(lon1) && !isNaN(lat2) && !isNaN(lon2)) {
-          kmTotali += calcolaDistanzaHaversine(lat1, lon1, lat2, lon2);
-        }
+      } else {
+        estraiPaesiEStatiDaPunti(dati);
       }
 
-      document.getElementById('rep-tappe').innerText = tappe;
-      document.getElementById('rep-foto').innerText = foto;
-      document.getElementById('rep-paesi').innerText = paesiSet.size > 0 ? paesiSet.size : 1;
-      document.getElementById('rep-km').innerText = Math.round(kmTotali).toLocaleString('it-IT') + ' km';
+      //document.getElementById('rep-tappe').innerText = tappe;
+      //document.getElementById('rep-foto').innerText = foto;
+      document.getElementById('rep-paesi').innerText = paesiAttuali.length;
+      document.getElementById('rep-stati-usa').innerText = statiUsaAttuali.length;
     }
 
-    function calcolaDistanzaHaversine(lat1, lon1, lat2, lon2) {
-      const R = 6371;
-      const dLat = (lat2 - lat1) * Math.PI / 180;
-      const dLon = (lon2 - lon1) * Math.PI / 180;
-      const a = 
-        Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-        Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) * 
-        Math.sin(dLon / 2) * Math.sin(dLon / 2);
-      return R * (2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a)));
+    function estraiPaesiEStatiDaPunti(dati) {
+      const pSet = new Set();
+      const sSet = new Set();
+      dati.forEach(p => {
+        if (p.paese) pSet.add(p.paese.trim());
+        if (p.stato_usa) sSet.add(p.stato_usa.trim());
+      });
+      paesiAttuali = Array.from(pSet).sort();
+      statiUsaAttuali = Array.from(sSet).sort();
+    }
+
+    function mostraListaPaesi() {
+      apriListaModal("🌐 Paesi Visitati (" + paesiAttuali.length + ")", paesiAttuali);
+    }
+
+    function mostraListaStatiUsa() {
+      apriListaModal("🇺🇸 Stati USA Visitati (" + statiUsaAttuali.length + ")", statiUsaAttuali);
+    }
+
+    function apriListaModal(titolo, elementi) {
+      document.getElementById('lista-modal-title').innerText = titolo;
+      const ul = document.getElementById('lista-modal-ul');
+      ul.innerHTML = '';
+
+      if (!elementi || elementi.length === 0) {
+        const li = document.createElement('li');
+        li.textContent = "Nessun elemento presente.";
+        ul.appendChild(li);
+      } else {
+        elementi.forEach(item => {
+          const li = document.createElement('li');
+          li.textContent = item;
+          ul.appendChild(li);
+        });
+      }
+
+      document.getElementById('lista-modal').style.display = 'flex';
+    }
+
+    function chiudiListaModal() {
+      document.getElementById('lista-modal').style.display = 'none';
     }
 
     function apriReport() {
@@ -1436,8 +1481,36 @@
 
     function chiudiReport() {
       document.getElementById('report-modal').classList.remove('active');
+	  nascondiFormModificaReport();
     }
 
+	function mostraFormModificaReport() {
+      document.getElementById('report-view').style.display = 'none';
+      document.getElementById('report-edit-form').style.display = 'block';
+      document.getElementById('report-modal-title').innerText = '✏️ Modifica Report Viaggio';
+
+      // Recupera eventuali note salvate precedentemente per il viaggio corrente
+      const viaggioSel = document.getElementById('select-viaggio').value;
+      const noteSalvate = localStorage.getItem('note_report_' + viaggioSel) || '';
+      document.getElementById('edit-report-notes').value = noteSalvate;
+    }
+
+    function nascondiFormModificaReport() {
+      document.getElementById('report-edit-form').style.display = 'none';
+      document.getElementById('report-view').style.display = 'block';
+      document.getElementById('report-modal-title').innerText = '📊 Statistiche e Report Viaggio';
+    }
+
+    function salvaModificaReport() {
+      const viaggioSel = document.getElementById('select-viaggio').value;
+      const note = document.getElementById('edit-report-notes').value;
+      
+      // Salva le note nel localStorage associate al viaggio selezionato
+      localStorage.setItem('note_report_' + viaggioSel, note);
+      
+      alert('Modifiche al report salvate con successo!');
+      nascondiFormModificaReport();
+    }
     function popolaAnni() {
       const selectAnno = document.getElementById('select-anno');
       const anni = new Set();
@@ -1607,7 +1680,7 @@
       fermaPanIniziale();
       attivaWakeLock();
 
-      precaricaFotoSlideshow();
+      //precaricaFotoSlideshow();
 
       isSlideshowActive = true;
       isSlideshowPaused = false;
@@ -1923,6 +1996,10 @@
       if (modalAiuto && modalAiuto.style.display !== 'none') {
         chiudiModalAiuto();
       }
+      const listaModal = document.getElementById('lista-modal');
+      if (listaModal && listaModal.style.display !== 'none') {
+        chiudiListaModal();
+      }
       const reportModal = document.getElementById('report-modal');
       if (reportModal && reportModal.classList.contains('active')) {
         chiudiReport();
@@ -1982,6 +2059,7 @@
       if (e.key === "Escape") {
         chiudiModalFoto(false);
         chiudiModalAiuto();
+        chiudiListaModal();
         chiudiReport();
         if (isSlideshowActive) fermaSlideshow();
       } else if (isModalOpen && e.key === "ArrowRight") {
