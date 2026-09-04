@@ -1,0 +1,81 @@
+{
+  "passi": [
+    {
+      "tipo": "messaggio",
+      "testo": "Welcome to the Interactive Demo! We will show you how to explore the travel map.",
+      "durata": 3500
+    },
+    {
+      "tipo": "clicca_cluster",
+      "testo": "Nearby stops are grouped together. Let's click to zoom in on Hawaii!",
+      "nome": "2007-12-28-02H31M41",
+      "durata": 4000
+    },
+    {
+      "tipo": "apri_pin",
+      "testo": "Here is the pin for this stop! Let's click to open the popup.",
+      "nome": "2007-12-28-02H31M41",
+      "durata": 4000
+    },
+    {
+      "tipo": "apri_foto",
+      "testo": "Let's click on the thumbnail to open the photo in full screen!",
+      "nome": "2007-12-28-02H31M41",
+      "durata": 4500
+    },
+    {
+      "tipo": "chiudi_foto",
+      "testo": "Let's click on the screen to close the image and return to the map.",
+      "durata": 3000
+    },
+    {
+      "tipo": "clicca_cluster",
+      "testo": "Nearby stops are grouped together. Let's click to zoom in on Rajasthan, India!",
+      "nome": "2002-07-22-12H43M42",
+      "durata": 4000
+    },
+    {
+      "tipo": "apri_pin",
+      "testo": "Here is the pin for this stop! Let's click to open the popup.",
+      "nome": "2002-07-22-12H43M42",
+      "durata": 4000
+    },
+    {
+      "tipo": "apri_foto",
+      "testo": "Let's click on the thumbnail to open the photo in full screen!",
+      "nome": "2002-07-22-12H43M42",
+      "durata": 4500
+    },
+    {
+      "tipo": "chiudi_foto",
+      "testo": "Let's click on the screen to close the image and return to the map.",
+      "durata": 3000
+    },
+    {
+      "tipo": "seleziona_viaggio_slideshow",
+      "viaggio": "sudafrica 2009",
+      "testo": "Let's select a trip from the menu",
+      "durata": 1500
+    },
+    {
+      "tipo": "avvia_slideshow",
+      "testo": "Let's click on Start Slideshow",
+      "durata": 2000
+    },
+    {
+      "tipo": "prossima_slideshow",
+      "testo": "Let's move to the next photo",
+      "durata": 2000
+    },
+    {
+      "tipo": "chiudi_slideshow",
+      "testo": "Let's close the slideshow",
+      "durata": 1500
+    },
+    {
+      "tipo": "fine",
+      "testo": "Demo completed! Now you are ready to explore the map freely.",
+      "durata": 5000
+    }
+  ]
+}

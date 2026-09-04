@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>South Africa Travel Diary: From Pastures to Savannah | Vinicio & Luisa</title>
+  <meta name="description" content="Complete travel diary of Vinicio and Luisa's trip to South Africa.">
+  <meta name="author" content="Vinicio and Luisa">
+  <meta name="robots" content="index, follow">
+  
+  <link rel="canonical" href="https://vinicio0000.github.io/mytravels/Diario_Sudafrica_2009_en.html">
+
+  <style>
+    body {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      line-height: 1.8;
+      color: #2c3e50;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* TOP BAR TO RETURN TO MAP */
+    .top-bar {
+      background-color: #1e3c72;
+      color: white;
+      padding: 12px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    .top-bar a {
+      color: #ffffff;
+      text-decoration: none;
+      font-family: sans-serif;
+      font-weight: bold;
+      font-size: 14px;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 6px 14px;
+      border-radius: 20px;
+      transition: background 0.2s;
+    }
+
+    .top-bar a:hover {
+      background: rgba(255, 255, 255, 0.4);
+    }
+
+    /* CENTRAL TEXT CONTAINER */
+    .container {
+      max-width: 800px;
+      margin: 30px auto;
+      background: #ffffff;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      box-sizing: border-box;
+    }
+
+    h1 {
+      font-family: sans-serif;
+      font-size: 28px;
+      color: #1e3c72;
+      margin-top: 0;
+      line-height: 1.3;
+    }
+
+    h2 {
+      font-family: sans-serif;
+      font-size: 22px;
+      color: #2c3e50;
+      border-bottom: 2px solid #52b69a;
+      padding-bottom: 6px;
+      margin-top: 40px;
+    }
+
+    p {
+      font-size: 17px;
+      margin-bottom: 20px;
+      text-align: justify;
+    }
+
+    /* HIGHLIGHTED BOX FOR PRACTICAL TIPS */
+    .box-info {
+      background-color: #eef7f6;
+      border-left: 5px solid #52b69a;
+      padding: 15px 20px;
+      margin: 25px 0;
+      border-radius: 4px;
+      font-family: sans-serif;
+      font-size: 15px;
+    }
+
+    .box-info h3 {
+      margin-top: 0;
+      color: #1e3c72;
+    }
+
+    /* BOX HIGHLIGHT FOR TAMRAGHT / AGADIR */
+    .box-highlight {
+      background-color: #fff9e6;
+      border-left: 6px solid #f39c12;
+      padding: 20px;
+      margin: 30px 0;
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+
+    .box-highlight h3 {
+      margin-top: 0;
+      color: #d35400;
+      font-size: 18px;
+    }
+
+    ul {
+      font-size: 16px;
+      line-height: 1.8;
+      padding-left: 20px;
+    }
+
+    /* ACTION BUTTONS AT BOTTOM */
+    .action-buttons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      margin-top: 40px;
+    }
+
+    .btn-action {
+      display: inline-block;
+      width: 100%;
+      max-width: 350px;
+      padding: 14px 20px;
+      border-radius: 6px;
+      font-family: sans-serif;
+      font-weight: bold;
+      font-size: 16px;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: background 0.2s, transform 0.1s;
+    }
+
+    .btn-mappa {
+      background-color: #007bff;
+      color: white;
+    }
+
+    .btn-mappa:hover {
+      background-color: #0056b3;
+    }
+
+    .btn-feedback {
+      background-color: #27ae60;
+      color: white;
+    }
+
+    .btn-feedback:hover {
+      background-color: #219150;
+    }
+
+    /* CONTACT FORM MODAL */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.6);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 8px;
+      width: 90%;
+      max-width: 500px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      font-family: sans-serif;
+      position: relative;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 24px;
+      cursor: pointer;
+      color: #aaa;
+    }
+
+    .close-btn:hover {
+      color: #000;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .form-group input, .form-group textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-family: inherit;
+    }
+
+    .btn-submit {
+      background-color: #1e3c72;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      width: 100%;
+      font-size: 16px;
+    }
+
+    .btn-submit:hover {
+      background-color: #162d56;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 20px;
+        margin: 10px;
+      }
+      h1 { font-size: 22px; }
+      h2 { font-size: 18px; }
+      p { font-size: 15px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="top-bar">
+    <span style="font-weight: bold; font-family: sans-serif;">Travel Map</span>
+    <a href="index_en.html" onclick="if(window.opener){ window.close(); return false; }">🌍 Back to Interactive Map</a>
+  </div>
+
+  <div class="container">
+    <h1>South Africa Travel Diary: From Pastures to Savannah</h1>
+    <p><i>We are a couple who have been traveling independently for years, often in search of emotions tied to nature and wildlife. This is how our idea to visit South Africa was born; a long-cherished dream that we finally realized this summer.</i></p>
+    <p>It was not an easy decision due to worrying safety warnings on several websites, particularly from the Ministry of Foreign Affairs regarding crime; it is thanks to reports from other travelers that we matured our decision (in fact, we never felt in danger, although to suit our tastes we excluded visiting major cities).</p>
+    <p>As always, the trip was organized well in advance.</p>
+    <p>We bought our flight tickets in October through Emirates, both to plan a 4-day stopover in Dubai (an interesting city nonetheless) and because it proved to be the most affordable quality airline for this destination; furthermore, it charges no additional fee for stopovers or for multi-city itineraries (arriving in one city and departing from another). Estimating our budget, we decided to depart from Munich as it was far cheaper for both the flight ticket and covered airport parking (since we drove to Munich in our own car and needed to park for 31 days). Through a well-known flight booking website, we secured the internal flight from Port Elizabeth to Durban. We booked two car rentals directly on a major rental company's website for the two legs of the journey. Almost all Bed &amp; Breakfasts were booked via a specialized African accommodation portal; for Addo Elephant and Kruger National Park, bookings were made on the official South African National Parks website (by April, several Kruger camps were already sold out, so we chose whatever was available).</p>
+    <p>Through the same website, we purchased the Wild Card All Cluster (foreign tourist version), which arrived by mail shortly after (valid for entry to all South African National Parks for one year).</p>
+    <p>For navigation, we installed maps on a netbook, which was also useful for making Skype calls (remember this trip took place in 2009). After a few days, we bought a local SIM card, though we had to wait several days for activation.</p>
+    <p>Required travel documents included valid passports and an International Driving Permit (if renting a vehicle).</p>
+    <p>Regarding vaccinations, we were already up to date with Tetanus and Hepatitis A. Since we were traveling to Kruger near the Mozambique border (where several cases had been reported), our local travel health center advised us to get the Yellow Fever vaccine, which we did (valid for a lifetime with no boosters required).</p>
+    <p>We did not underestimate the risk of malaria (especially around the St. Lucia lake district and Kruger), so we followed a Lariam prophylaxis starting before entering these areas and used repellents; otherwise, we took no extra precautions (we ate everything with peace of mind) as hygiene standards across South Africa are comparable to European ones.</p>
+
+    <div class="box-info"><h3>📍 25/07/09</h3><p style="margin:0; font-size:14px;">– 29/07/09 DUBAI We skip its description in this report.</p></div>
+    <div class="box-info"><h3>📍 29/07/09</h3><p style="margin:0; font-size:14px;">DUBAI / CAPE TOWN / STELLENBOSCH 40 Km Stellenbosch. ORCHARD LANE B&amp;B *** (800 Rand / 2 nights)</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">At Dubai airport, we were informed of an overbooking and offered to depart the following day. With much insistence, we managed to board our planned flight.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">Upon arrival at Cape Town airport, another small hiccup occurred when trying to withdraw cash: our Maestro cards did not work, and that remained true throughout South Africa, despite our bank confirming by phone that there were no issues. (On the other hand, we used them in Dubai and on all previous trips with no problems... so we relied on our credit cards instead).</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">We picked up our rental car at the parking lot right in front of the airport; perhaps a larger car would have been better, as the trunk was too small and traveling with exposed luggage in South Africa can pose some safety risks.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">Driving on the left side proved to be very straightforward right away.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">We easily drove the 40 km separating us from Stellenbosch (the "City of Oaks," located in South Africa's premier wine region), where we arrived at night.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">We stayed at the ORCHARD LANE B&amp;B *** (800 Rand / 2 nights), run by a friendly Swiss host.</p></div>
+    
+    <div class="box-info"><h3>📍 30/07/09</h3><p style="margin:0; font-size:14px;">STELLENBOSCH - After an excellent and generous breakfast, we headed toward the destinations planned in our itinerary.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">TABLE MOUNTAIN: We reached the lower cableway station; in a misty, wintry setting, the glimpses of the city were fascinating despite the fog. Unfortunately, we found the cableway closed for maintenance. Before leaving Cape Town, we felt compassion and anger at the sight of the vast township on the city's outskirts.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">We then moved toward BOULDERS BEACH with some difficulty, as the M6 was closed near Hout Bay. Along the wooden boardwalk leading to the penguin-crowded beach, you can observe their burrows—some natural dug in the ground, others artificial and numbered.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">We then headed toward CAPE POINT; on a grassy clearing by the road, we got out to photograph a troop of baboons. A large male approached our locked car, tried to open the door, then climbed onto the roof and sat down regally.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">The trail leading from the parking lot to the Cape Point lighthouse offered us splendid views on a windy, sunny afternoon.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">We returned to Stellenbosch right at dark (remembering that one key safety tip is to avoid traveling or walking after sunset).</p></div>
+    
+    <div class="box-info"><h3>📍 31/07/09</h3><p style="margin:0; font-size:14px;">STELLENBOSCH - HERMANUS 93 Km (Hermanus BROWN JUG GUEST HOUSE ***, 550 R / 1 night)</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">We stopped for a walk in central Stellenbosch, but it was pouring rain.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">Heavy rain accompanied us throughout the drive, but upon arrival, a bright, sunny afternoon welcomed us.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">Dropping our luggage at the guest house, we realized we had been upgraded from a room to a full apartment (exquisitely furnished). We rushed immediately to Hermanus harbor hoping to spot whales (unfortunately we were unlucky or not patient enough; we settled for a group of rock hyraxes chasing each other in the bushes). The town is lovely, spotless, and the scenery spectacular—much closer to a Northern European landscape than an African one.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">The town center is quiet and inviting with many beautiful craft shops, which we explored with great curiosity.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">At dusk, all that was left was to return to our room, kept company by the many books we fortunately brought along.</p></div>
+    
+    <div class="box-info"><h3>📍 01/08/09</h3><p style="margin:0; font-size:14px;">HERMANUS - CAPE AGULHAS - ARNISTON - SWELLENDAM 227 Km (Swellendam AANHUIZEN GUEST HOUSE ***, 560 R / 1 night). We thought of stopping at Hermanus' daily market, but it seemed disappointing, so we headed toward our next destination. Though the guide defined it as "nothing more than a mussel and a seagull," we were drawn by the charm of being at the southernmost tip of the African continent. Along the drive, patches of fynbos (typical local flora) accompanied us.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">Just time for a few photos before heading toward ARNISTON (Waenhuiskrans); the GPS took us along a gravel road that offered views of lush, endless pastures and cultivated fields. Arniston, with its white beaches and crystal-clear waters, must be even more charming in summer; unfortunately, almost everything was closed this season, and the old fishermen's center felt like a sad picture of hardship.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">We then set off for Swellendam, enjoying infinite shades of green across fields and pastures framed by distant mountains. (This stop was chosen simply to break up a long drive).</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">After leaving our luggage at the guest house, we walked into town toward the Dutch Reformed Church; the building stands out in pure white brilliance. We realized that if it is rumored to be the most photographed building in the Southern Hemisphere (as read in Lonely Planet), it is probably because Swellendam has very little else to capture.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">We nevertheless enjoyed our walk, returning to our room at dusk.</p></div>
+    
+    <div class="box-info"><h3>📍 02/08/09</h3><p style="margin:0; font-size:14px;">SWELLENDAM - KNYSNA 270 Km (Knysna HYDE AWAY GUEST HOUSE ****, 940 R / 2 nights). While having breakfast in the room facing the pool, it was freezing; other tourists placidly sipped coffee in shorts and t-shirts.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">Today we have a long drive toward KNYSNA, so we left immediately. The cold was biting, and lower valley sections were blanketed in thick white fog.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">Across the many kilometers along the Garden Route, the landscape shifted and the greens became less intense.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">We dropped our bags at the beautiful, comfortable guest house overlooking the lagoon, then went straight downtown. At the waterfront, framed by sailboat masts, lined beautiful shops and restaurants. Once again, Africa felt far away. However, driving just a couple of kilometers revealed the vast township of Concordia, with locals walking roadside hitchhiking while holding cash clearly in view (paying for their ride).</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">We satisfied our hunger at a charming marina restaurant before driving to PLETTENBERG BAY: beautiful shops (closed for Sunday) and upscale hotels lined the main street, fitting for a fashionable seaside resort. At sunset, we returned to our room and went to bed early as usual.</p></div>
+    
+    <div class="box-info"><h3>📍 03/08/09</h3><p style="margin:0; font-size:14px;">KNYSNA - WILDERNESS NATIONAL PARK - TSITSIKAMMA NATIONAL PARK. Right after breakfast, we departed for our first park: Wilderness National Park.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">There is little I can say about this lake area, which guides claim hosts rich birdlife; we stayed no more than 30 minutes, just enough to drive the dirt road with a couple of quick photo stops.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">Feeling disappointed with the full day ahead, we decided to drive to TSITSIKAMMA NATIONAL PARK instead. En route, we stopped at BLOUKRANS RIVER BRIDGE BUNGEE to watch brave jumpers dive from a height of 216 meters.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">The park stretches along a coastline offering splendid views over a stormy ocean; we hiked a forest trail and paused, enchanted by a landscape that strikingly reminded us of Hawaii's Na Pali Coast (the only difference being two antelopes grazing peacefully nearby). We returned to Knysna after dark.</p></div>
+    
+    <div class="box-info"><h3>📍 04/08/09</h3><p style="margin:0; font-size:14px;">KNYSNA - ADDO ELEPHANT NATIONAL PARK 324 Km (Addo Elephant REST CAMP COTTAGE CO2, 1400 R / 2 nights). Breakfast and off to Addo Elephant N.P. An hour into the drive, temperatures rose; dressed in layers, we gradually shed clothing down to summer wear. It was a glorious, sunny day, and the landscape shifted completely en route. At the park entrance, two white elephant skulls welcomed us.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">First, we went to our cottage: delightful, with its traditional thatched roof (giving a true African feel), perfectly equipped with an indoor kitchen, porch, and barbecue area.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">After settling in, we rushed to the gates for our first safari; just a few hundred meters in, we encountered our first herd of elephants, followed by various antelopes, warthogs, and more elephants. Watching them walk with majestic slowness just steps from our car was thrilling. Finally, the Africa of our imagination! We made use of every minute until closing time (5:30 PM), and at dusk ate at the park's only restaurant, where meals were surprisingly exquisite: ostrich meat, kudu, desserts, and good wine (341 R).</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">Back at the cottage, we admired the southern starry sky from the porch before calling it a night.</p></div>
+    
+    <div class="box-info"><h3>📍 05/08/09</h3><p style="margin:0; font-size:14px;">ADDO ELEPHANT NATIONAL PARK. At first light, we passed through the gates and drove slowly (40 km/h limit) along almost all roads, including dirt tracks. The sightings felt modest: a barely discernible jackal at dawn, various birds, antelopes, warthogs, a tortoise, ostriches, meerkats...</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">At sunset, we hit the park roads again to enjoy the spectacle until seconds before closing: large herds of elephants appeared at this hour, just like the day before.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">Of the famous Big Five, we could say we had seen only one so far.</p></div>
+    
+    <div class="box-info"><h3>📍 06/08/09</h3><p style="margin:0; font-size:14px;">ADDO ELEPHANT N.P. - PORT ELIZABETH 73 km / PORT ELIZABETH - DURBAN (Flight) / DURBAN - ST. LUCIA 253 Km (St. Lucia ELEPHANT COAST GUEST HOUSE, 2560 R / 4 nights). Early morning, we left the park for Port Elizabeth to catch our flight to Durban.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">The road leading up to the city outskirts was somewhat rough.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">At the airport, we dropped off the rental car. Waiting for the flight, Vinicio purchased a mobile data SIM card (180 R for 500 MB); to our annoyance, activation required six days and numerous follow-up calls.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">Arriving in Durban, we picked up our new rental car and drove toward St. Lucia.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">The weather was cloudy with light rain; the scenery transitioned from green to warm yellow tones. Near the estuary, lush vegetation and wide wooded areas returned.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">Upon arrival, we went straight to our guest house: the room was lovely, with views of the park where hosts mentioned hippos were occasionally spotted at night.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">After a brief rest, we explored the small town: the center is compact, with a main street lined with restaurants. The evening was warm, so we chose one with an outdoor terrace while people strolled casually after dark (unusual for South Africa).</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">After dinner, we indulged in a nighttime walk, first on foot, then driving through quiet side streets (unsure whether to hope for a hippo encounter or not!).</p></div>
+    
+    <div class="box-info"><h3>📍 07/08/09</h3><p style="margin:0; font-size:14px;">ST. LUCIA - After breakfast, we parked near the SKI BOAT CLUB, where we spotted hippos submerged near the bank; they only emerged later as temperatures warmed up.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">At a shop downtown, we booked a guided walking tour (280 R / 2 hours / 2 people); our Zulu guide, Alpha, led us along beautiful nature trails by the lake shore, sharing insights: more hippos huddling together against the cold on a small island meters away, well-camouflaged crocodiles, killer ant mounds hanging overhead, and mongooses darting through bushes.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">We then drove around the rural countryside surrounding the town: humble homes, small huts, and farmland accompanied us throughout.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">Back in town, we visited the Crocodile Centre (entry 30 R / person); while descriptions might sound fancy, to us it just felt like a sad zoo.</p></div>
+    
+    <div class="box-info"><h3>📍 08/08/09</h3><p style="margin:0; font-size:14px;">ST. LUCIA - WETLAND PARK - CAPE VIDAL. After breakfast, we entered the WETLAND PARK (entry excluded from Wild Card, 85 R / person).</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">Right away, we encountered herds of zebras, antelopes, and spotted buffaloes. The most thrilling moment was meeting three white rhinos (two adults and a calf) grazing right at the roadside, creating quite a car crowd.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">We couldn't tell whether excitement or fear dominated being so close (they are said to be temperamentally unpredictable, though black rhinos are supposedly worse!).</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">We finally reached CAPE VIDAL; the day was splendid, with many beachgoers along the vast shore framed by vegetation-covered sand dunes.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">Leaving the park, after a pit stop at the guest house to recharge camera batteries, we left at 3 PM for a lake boat cruise (280 R / 2 people / 2 hours).</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">The tour offered a fantastic perspective from the water at sunset, alongside hippos (we learned to recognize their calls close up), crocodiles, fish eagles, and other bird species.</p></div>
+    
+    <div class="box-info"><h3>📍 09/08/09</h3><p style="margin:0; font-size:14px;">ST. LUCIA - HLUHLUWE IMFOLOZI PARK. We weren't entirely sure, but decided to go: after breakfast, we headed to IMFOLOZI PARK. It is a striking, hilly park with sweeping savannah stretches; spotting animals was challenging due to tall vegetation.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">Just past Nyalazi Gate, zebras greeted us grazing alongside various antelopes, followed by giraffes, more white rhinos, and a few buffaloes.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">We stopped at the CENTENARY CENTRE, hosting a large craft market displaying a wide variety of items.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">The finest view was from HILLTOP CAMP; the reception area is grand, and the restaurant features outdoor tables overlooking the entire valley. The weather was cool and breezy.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">Tired, we decided to take the road back.</p></div>
+    
+    <div class="box-info"><h3>📍 10/08/09</h3><p style="margin:0; font-size:14px;">ST. LUCIA - LOBAMBA (SWAZILAND) 320 Km. Lobamba MANDINGA LODGE (1140 R / 2 nights). After another hearty breakfast, we set off for Swaziland; the border control looked dilapidated, with a long line of people exiting under the sun.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">Crossing the barrier, everything appeared poorer: humble houses, cows and goats grazing everywhere on strikingly red soil. However, Southern Swaziland later presented fertile land with spacious rural homes, some newly built. Road signage was poor (our GPS lacked Swaziland maps), requiring us to ask for directions often.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">After passing through Manzini, we stopped in Lobamba, where finding accommodation (without reservations) took time; prices were higher than in South Africa. We eventually chose Mandinga Lodge in a wooded area off the main road: the room was basic, but the overall lodge was pleasant with nice hill views.</p></div>
+    
+    <div class="box-info"><h3>📍 11/08/09</h3><p style="margin:0; font-size:14px;">LOBAMBA (SWAZILAND) We had breakfast in the restaurant overlooking the pool while a vervet monkey happily rummaged through a trash bin. We then set off to explore Ezulwini Valley (Valley of Heaven); the countryside was lush, but woods and mountain views were somewhat obscured by valley haze; it was hot, humid, and traffic was aggressive with fast drivers hooting and overtaking on the left. We felt exhausted.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">In the afternoon, we took a long break to browse craft items at the well-stocked market along the M103 a few kilometers from Lobamba.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">At dusk, as usual, we retired to our room.</p></div>
+    
+    <div class="box-info"><h3>📍 12/08/09</h3><p style="margin:0; font-size:14px;">LOBAMBA (SWAZILAND) - NELSPRUIT 160 Km (Nelspruit AUBERGE LODGE ***, 550 R / 1 night). Leaving Swaziland, the strikingly red earth struck us once more.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">At Ngwenya border control, guards searched through our luggage, asking us to open everything (fortunately limiting their check to closed bags in the trunk). Back in South Africa, we put the map away and drove quiet roads winding through dry yellow fields up a mountain pass; even in the woods, the scorching sun gave no relief.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">Arriving in Nelspruit (chosen to experience life in a mid-sized, non-touristy provincial capital of Mpumalanga) without reservations, we searched for lodging: we chose AUBERGE LODGE, offering charming rooms opening onto a small garden with a pool.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">At Riverside Mall, we took advantage of the shop selection to make purchases and finally resolve our internet SIM card issue once and for all.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">We also stocked up on food and drinks to bring into Kruger Park.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">After lunch, we visited the National Lowveld Botanic Garden (2 km from town): very interesting and scenic.</p></div>
+    
+    <div class="box-info"><h3>📍 13/08/09</h3><p style="margin:0; font-size:14px;">NELSPRUIT - PRETORIUSKOP (KRUGER) 50 Km. Pretoriuskop Camp BUNGALOW BG2 (540 R / 1 night). It was a short drive to NUMBI GATE; we passed the camp gate at 10 AM. Before checking in, we immediately began roaming the park roads (main roads are paved, but dirt roads are easily navigable too) and slowly (max speed 50 km/h) enjoyed spotting elephants and antelopes blended into the yellow savannah. A 4x4 vehicle is completely unnecessary; we drove a small economy car.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">Returning to camp, which was literally overrun by vervet monkeys (warning notices posted everywhere), we checked into our bungalow.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">We took a few more drives along park roads before returning at gate closure (6:00 PM) to have dinner on our porch.</p></div>
+    
+    <div class="box-info"><h3>📍 14/08/09</h3><p style="margin:0; font-size:14px;">PRETORIUSKOP – OLIFANTS CAMP 197 Km (Olifants Camp BUNGALOW BG2, 1060 R / 2 nights). Rising at 5 AM, we crossed the camp gates right at 6 AM in the dawn light; as with previous early departures, a spotted hyena jogged short distance ahead of our car.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">We had 197 kilometers to cover to our next destination, but felt no rush; driving at slow speeds (averaging 25 km/h) with alert eyes, we took in everything Kruger had to offer (steenbok, oribi, impala, nyala, kudu, zebras, giraffes, and finally buffaloes).</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">A line of stopped cars caught our attention: a leopard had caught an impala and hauled it up a tree to eat in peace.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">On the Olifants River bridge (one of the few spots where stepping out of the vehicle is permitted; in case of breakdowns, rangers must be called for assistance), we stretched our legs and watched hippos lounging on the banks below.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">Nearly two kilometers from camp, we spotted a lioness hidden just behind bushes, and simultaneously a leopard lounging gracefully on a branch very close to the road.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">Olifants Camp was undergoing construction. On our bungalow porch, we were surrounded by birds and persistent vervet monkeys; following indoor posted advice, we turned our outdoor fridge to face the wall.</p></div>
+    
+    <div class="box-info"><h3>📍 15/08/09</h3><p style="margin:0; font-size:14px;">OLIFANTS CAMP. As usual, we crossed Olifants' gates at 6 AM while two armed rangers walked outside.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">Shortly after, a large spotted hyena lay right in the middle of the road: it raised its head toward us, then lay back down. Fearing it was injured, we approached cautiously, but it stood up, looked sleepily at us, and moved around the vehicle allowing photos from every angle. Our morning drive yielded little until LETABA CAMP, where we paused for breakfast on the porch overlooking the Letaba River.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">After several days in Kruger, we began taking long breaks at waterholes or wind-pump-fed reservoirs, waiting patiently to savor quintessential scenes of Africa: antelopes, zebras, giraffes, and hippos gathered together in complete harmony.</p></div>
+    
+    <div class="box-info"><h3>📍 16/08/09</h3><p style="margin:0; font-size:14px;">OLIFANTS CAMP - SATARA CAMP 52 Km (Satara Camp BUNGALOW BG2, 1150 R / 2 nights). After breakfast, we departed Olifants Camp.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">The sky was overcast, threatening rain. Dense herds of antelopes lined the route.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">Stopping at a waterhole to watch zebras, we caught sight of a lioness crossing the road; a second lioness launched an attack, running behind and then beneath our car windows, which we hastily rolled up! Amidst bumps and jolts, we filmed the hunt (rooting for the zebras!). Afterwards, the lions (joined by a third) settled in the shade by the waterhole.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">Less than a kilometer further, we spotted a white rhino approaching from the distant bush, crossing the road right in front of us; the traffic crowd was slightly nerve-wracking as it left no escape route.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">Near our destination, we saw lions in the distance competing with vultures over a kill on the ground.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">At Satara Camp, we dropped our bags at a bungalow identical to our previous ones, and immediately drove along the H6 route to the point closest to the Mozambique border.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">Returning, a vervet monkey was raiding our outdoor trash bin, fleeing with an orange (a reminder to turn the fridge!). After resting, we dined at the camp self-service; opposite outdoor seating beyond the fence, a spotlight illuminated a waterhole for nocturnal wildlife viewing (two hyenas were present).</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">In the dark (lacking a flashlight, using cell phone displays while watching for snakes as warned in camp notices), we walked back to sleep.</p></div>
+    
+    <div class="box-info"><h3>📍 17/08/09</h3><p style="margin:0; font-size:14px;">SATARA CAMP. Slightly later than usual, we drove the road toward Olifants, but sightings were sparse under cloudy skies.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">In the distance, two lionesses crouched over prey while a jackal circled at a safe distance; vultures perched on branches waited patiently.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">At a waterhole, a herd of gazelles waited (only a few taking quick sips) for two elephants to finish their lengthy bath.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">The Olifants River bridge greeted us as always with its spectacular views and two crocodiles basking in the sun. Then came more zebras, wildebeests, a lone elephant, and a large troop of baboons.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">Back at camp, equipped with a newly purchased flashlight, we walked to the restaurant to view animals beyond the fence: buffaloes stayed a long time, followed by two cautious hyenas.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">Light rain began falling, so we retreated to our bungalow.</p></div>
+    
+    <div class="box-info"><h3>📍 18/08/09</h3><p style="margin:0; font-size:14px;">SATARA CAMP - MOPANI CAMP 116 Km (Mopani Camp BUNGALOW BD4, 575 R / 1 night). Leaving at dawn was a good intention that slipped away.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">Loaded with luggage, we set off for Mopani: slowly soaking in the landscape (dark clouds promised rain), scanning tree branches for leopards. Following routine sightings, we followed a large elephant down a dirt loop track and briefly felt lost (we turned on the GPS and regained our route).</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">At Mopani Camp entrance, a herd of elephants with several calves blocked the main road.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">We were concerned about tomorrow's bushveld booking (involving 12 km of dirt road in rainy weather), so we asked reception if we could swap for lodging here at Mopani; everything was arranged—a bungalow tonight, a cottage tomorrow, and with the non-refundable 290 R price difference, they offered us a 3-hour guided safari departing at 4:30 PM. It turned out to be a great experience: a cheetah at dusk and several big cats whose eyes glowed in the spotlight deep within the bush after dark.</p></div>
+    
+    <div class="box-info"><h3>📍 19/08/09</h3><p style="margin:0; font-size:14px;">MOPANI CAMP (Mopani Camp 4-bed Cottage, 615 R / 1 night). We reloaded our bags as we were switching to a cottage tonight.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">After breakfast, we drove north toward SHINGWEDZI; aside from picturesque stretches of Mopani trees (the elephants' favorite food) and an ancient baobab standing at the foot of a hill after joining the H1-6, the route offered little unusual. By now, initial awe had waned—only a leopard or cheetah right by the road could truly amaze us.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">We crossed the Tropic of Capricorn, marked by a monument, under clear skies (despite rain forecasts!). The vegetation shifted, introducing palm trees. A few lush kilometers along the dry KANNIEDOOD DAM led to SHINGWEDZI CAMP. The camp was charming, so we stayed a while.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">On the drive back under scorching sun, feeling tired and hungry, we stopped for final photos of the baobab and a buffalo herd before returning to our cottage and dining at the restaurant.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">That evening, surrounding dark skies revealed the Milky Way as clearly as seen in astronomy atlases.</p></div>
+    
+    <div class="box-info"><h3>📍 20/08/09</h3><p style="margin:0; font-size:14px;">MOPANI CAMP - GRASKOP 250 Km (Graskop GRASKOP HOTEL ***, 700 R / 1 night). We drove toward PHALABORWA without focusing on passing wildlife, mentally transitioning out of Kruger and ignoring speed limits—until two rangers pulled us over (asking 500 Rand fine, settled at 200 Rand without a receipt).</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">In the charming mountain town of Graskop, surrounded by pine forests, we selected GRASKOP HOTEL (no booking), delightfully decorated with whimsical modern art sculptures.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">After resting, we visited craft shops, purchasing antique art items from across Africa right next to the hotel entrance.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">We enjoyed an exquisite dinner at the hotel restaurant.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">Meeting a group of Italian travelers, we chatted by the roaring fireplace until 10 PM!</p></div>
+    
+    <div class="box-info"><h3>📍 21/08/09</h3><p style="margin:0; font-size:14px;">GRASKOP - BLYDE RIVER CANYON – SABIE 20 Km (Sabie VALLEY VIEW LODGE ****, 2100 R / 3 nights). After a grand breakfast, we drove toward Sabie; our car was packed to capacity (including our large antique purchase).</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">Slowly driving through green valleys and pine forests, we reached Bourke's Luck Potholes at Blyde River Canyon (entry 55 R / 2 adults + car); we walked the short trail over the canyon to view black basalt potholes carved by water erosion.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">Arriving in Sabie, which appeared quite quiet, we checked into our pre-booked lodge; the room and adjoining sitting area were spacious and lovely, though chilly.</p></div>
+    
+    <div class="box-info"><h3>📍 22/08/09</h3><p style="margin:0; font-size:14px;">SABIE - GOD'S WINDOW - PINNACLE - PILGRIM'S REST - BERLIN FALLS - LISBON FALLS - MAC-MAC FALLS. On a crisp morning through mountain landscapes, we revisited the canyon route, stopping at GOD'S WINDOW and THE PINNACLE where trails led to scenic viewpoints over the escarpment. Local craft vendors lined the parking area; we purchased a few necklaces keeping within luggage weight limits.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">A narrow winding road brought us up to PILGRIM'S REST, where the historic town welcomed us with panoramic views, souvenir vendors, and youngsters offering parking assistance. After strolling through village streets, we drove down the R532 to BERLIN FALLS (entry 10 R / 2 people), the stunning LISBON FALLS (same fee), and the famous MAC-MAC FALLS (entry 15 R / 2 people).</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">Under hot afternoon sun, tired and sleepy, we returned to Sabie for dinner at a local pub-restaurant before returning to our room before dark.</p></div>
+    
+    <div class="box-info"><h3>📍 23/08/09</h3><p style="margin:0; font-size:14px;">SABIE - HAZYVIEW 42 Km. Driving toward HAZYVIEW along hilly pine forest roads, we reached banana plantations, citrus groves, luxury resorts, and golf courses miles before our destination. Sensing the area was less secure (perhaps influenced by reading prior warnings), we stopped for lunch and turned back.</p></div>
+    
+    <div class="box-info"><h3>📍 24/08/09</h3><p style="margin:0; font-size:14px;">SABIE - JOHANNESBURG 400 Km. We covered the distance to JOHANNESBURG, ascending a mountain pass over 2,000 meters elevation shrouded in thick fog. A flat tire was replaced at the nearest service station.</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">Arriving at the airport with plenty of time, we returned our rental car and bade farewell to South Africa at 7:00 PM.</p></div>
+    
+    <div class="box-info"><p style="margin:0; font-size:14px;">Luisa and Vinicio</p></div>
+    <div class="box-info"><p style="margin:0; font-size:14px;">South Africa: travel itineraries</p></div>
+
+    <div class="action-buttons">
+      <button class="btn-action btn-feedback" onclick="openModal()">💬 Tell us about your trip / Learn more</button>
+      <a href="index_en.html" class="btn-action btn-mappa">🌍 View Geolocated Photos on the Map</a>
+    </div>
+  </div>
+
+  <div id="feedbackModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <h3 style="margin-top:0; color:#1e3c72;">Send us a message</h3>
+      <p style="font-size:14px; color:#666; margin-bottom:20px;">Have questions about the route or want to share an experience? Leave your contact info!</p>
+      <form action="https://formspree.io/f/mqpzoyng" method="POST">
+        <div class="form-group">
+          <label for="email">Your Email:</label>
+          <input type="email" id="email" name="email" required placeholder="name@example.com">
+        </div>
+        <div class="form-group">
+          <label for="message">Message or Question:</label>
+          <textarea id="message" name="message" rows="4" required placeholder="Type your message here..."></textarea>
+        </div>
+        <button type="submit" class="btn-submit">Send Message</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function openModal() {
+      document.getElementById('feedbackModal').style.display = 'flex';
+    }
+
+    function closeModal() {
+      document.getElementById('feedbackModal').style.display = 'none';
+    }
+
+    // Close modal when clicking outside of it
+    window.onclick = function(event) {
+      var modal = document.getElementById('feedbackModal');
+      if (event.target == modal) {
+        modal.style.display = 'none';
+      }
+    }
+  </script>
+</body>
+</html>

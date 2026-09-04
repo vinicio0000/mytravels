@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo Guida Interattiva | La Mappa dei Viaggi</title>
+  
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
+
+  <style>
+    html, body { height: 100%; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; overflow: hidden; background: #aad3df; }
+    #map { width: 100vw; height: 100vh; position: absolute; top: 0; left: 0; z-index: 1; }
+
+    .custom-pin-icon { background: none; border: none; }
+    .popup-container { text-align: center; min-width: 180px; max-width: 230px; }
+    .popup-foto { width: 180px; height: 130px; border-radius: 6px; margin-top: 6px; object-fit: cover; display: block; margin-left: auto; margin-right: auto; cursor: pointer; }
+
+    /* INDICATORE VERSIONE IN BASSO A SINISTRA */
+    #demo-version {
+      position: fixed;
+      bottom: 10px;
+      left: 10px;
+      z-index: 999990;
+      color: rgba(15, 23, 42, 0.6);
+      background: rgba(255, 255, 255, 0.5);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 10px;
+      font-family: monospace;
+      pointer-events: none;
+      backdrop-filter: blur(2px);
+    }
+
+    /* PANNELLO SELEZIONE VIAGGIO (In alto a destra per mobile) */
+    #slideshow-selector-panel {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      z-index: 999991;
+      background: rgba(15, 23, 42, 0.9);
+      color: white;
+      padding: 10px 12px;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      max-width: 160px;
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    #slideshow-selector-panel select {
+      padding: 6px 8px;
+      border-radius: 6px;
+      border: 1px solid #334155;
+      background: #0f172a;
+      color: white;
+      font-size: 12px;
+      outline: none;
+      cursor: pointer;
+    }
+    #btn-start-slideshow {
+      background: #10b981;
+      color: white;
+      border: none;
+      padding: 6px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    #btn-start-slideshow:hover { background: #059669; }
+
+    /* BARRA COMANDI DEMO (In basso al centro per non sovrapporsi) */
+    #demo-header {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 999990;
+      background: rgba(0, 0, 0, 0.85);
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 13px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      width: max-content;
+    }
+    #btn-esci-demo {
+      background: #dc3545;
+      color: white;
+      border: none;
+      padding: 5px 12px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 12px;
+    }
+
+    /* MODALE FOTO A SCHERMO INTERO */
+    #fullscreen-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.9);
+      z-index: 999995;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease-in-out;
+    }
+    #fullscreen-modal.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    #fullscreen-image {
+      max-width: 90vw;
+      max-height: 80vh;
+      border-radius: 8px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+      object-fit: contain;
+    }
+    #fullscreen-caption {
+      color: #ffffff;
+      margin-top: 15px;
+      font-size: 15px;
+      text-align: center;
+      max-width: 80vw;
+    }
+
+    /* MODALE SLIDESHOW E COMANDI */
+    #slideshow-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(15, 23, 42, 0.95);
+      z-index: 999996;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease-in-out;
+    }
+    #slideshow-modal.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .slideshow-badge {
+      position: absolute;
+      top: 25px;
+      left: 30px;
+      background: #007bff;
+      color: white;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+    .slideshow-controls {
+      display: flex;
+      gap: 12px;
+      margin-top: 15px;
+    }
+    .slideshow-btn {
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: bold;
+      transition: background 0.2s;
+    }
+    .slideshow-btn:hover { background: rgba(255, 255, 255, 0.4); }
+    .slideshow-btn.close-btn { background: #ef4444; }
+
+    /* MODALE REPORT */
+    #report-modal {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.9);
+      width: 85vw;
+      max-width: 550px;
+      background: #ffffff;
+      z-index: 999997;
+      padding: 24px;
+      border-radius: 16px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.4s ease-in-out;
+    }
+    #report-modal.active {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translate(-50%, -50%) scale(1);
+    }
+    .report-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 15px;
+    }
+    .report-card {
+      background: #f1f5f9;
+      padding: 12px;
+      border-radius: 10px;
+      text-align: center;
+    }
+    .report-card h4 { margin: 0; color: #64748b; font-size: 12px; text-transform: uppercase; }
+    .report-card p { margin: 5px 0 0 0; color: #0f172a; font-size: 18px; font-weight: bold; }
+
+    /* MOUSE VIRTUALE ANIMATO */
+    #virtual-cursor {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      width: 28px;
+      height: 28px;
+      z-index: 999999;
+      pointer-events: none;
+      transition: all 1.5s cubic-bezier(0.25, 1, 0.5, 1);
+      transform: translate(0, 0);
+    }
+    #virtual-cursor.click-effect { transform: scale(0.7); }
+
+    /* FUMETTO TUTORIAL SEMITRASPARENTE */
+    #demo-tooltip {
+      position: fixed;
+      z-index: 999998;
+      background: rgba(30, 60, 114, 0.92);
+      color: #ffffff;
+      padding: 12px 16px;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+      max-width: 250px;
+      font-size: 13px;
+      line-height: 1.4;
+      pointer-events: none;
+      transition: all 0.6s ease-in-out;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(4px);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- BARRA COMANDI SUPERIORE/IN BASSO -->
+  <div id="demo-header">
+    <span>🎬 <b>Demo Interattiva</b></span>
+    <button id="btn-esci-demo" onclick="esciDallaDemo()">Esci ✖</button>
+  </div>
+
+  <!-- INDICATORE VERSIONE -->
+  <div id="demo-version">v1.2.0</div>
+
+  <!-- PANNELLO CONTROLLO SLIDESHOW (IN ALTO A DESTRA) -->
+  <div id="slideshow-selector-panel">
+    <label style="font-size: 11px; font-weight: bold;">SELEZIONA VIAGGIO:</label>
+    <select id="select-viaggio">
+      <option value="">-- Scegli Viaggio --</option>
+    </select>
+    <button id="btn-start-slideshow" onclick="avviaSlideshowDaMenu()">▶ Avvia Slideshow</button>
+  </div>
+
+  <div id="map"></div>
+  <div id="demo-tooltip" style="opacity: 0; top: 20%; left: 50%;">Inizializzazione mappa...</div>
+  
+  <div id="virtual-cursor">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M5.5 3.5L18.5 11.5L12 13.5L16 20.5L13.5 22L9.5 15L5.5 18.5V3.5Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" stroke-linejoin="round"/>
+    </svg>
+  </div>
+
+  <!-- CONTAINER PER FOTO A SCHERMO INTERO -->
+  <div id="fullscreen-modal" onclick="chiudiFotoSchermoIntero()">
+    <img id="fullscreen-image" src="" alt="Foto schermo intero">
+    <div id="fullscreen-caption"></div>
+  </div>
+
+  <!-- CONTAINER PER SLIDESHOW -->
+  <div id="slideshow-modal">
+    <div class="slideshow-badge" id="slideshow-title">▶ Slideshow Viaggi</div>
+    <img id="slideshow-image" src="" alt="Foto Slideshow" style="max-width: 85vw; max-height: 70vh; border-radius: 8px;">
+    <div id="slideshow-caption" style="color: white; margin-top: 15px; font-size: 16px;"></div>
+    
+    <div class="slideshow-controls">
+      <button class="slideshow-btn" id="btn-slide-prev" onclick="slideshowPrev()">◀ Indietro</button>
+      <button class="slideshow-btn" id="btn-slide-next" onclick="slideshowNext()">Avanti ▶</button>
+      <button class="slideshow-btn close-btn" id="btn-slide-close" onclick="chiudiSlideshow()">Chiudi ✖</button>
+    </div>
+  </div>
+
+  <!-- CONTAINER PER REPORT -->
+  <div id="report-modal">
+    <h3 style="margin: 0; color: #1e293b;">📊 Report & Statistiche Viaggio</h3>
+    <p style="color: #64748b; font-size: 13px; margin-top: 4px;">Riepilogo generale delle tappe esplorate</p>
+    <div class="report-grid">
+      <div class="report-card"><h4>Tappe Totali</h4><p id="rep-tappe">34</p></div>
+      <div class="report-card"><h4>Paesi Visitati</h4><p id="rep-paesi">12</p></div>
+      <div class="report-card"><h4>Foto Caricate</h4><p id="rep-foto">148</p></div>
+      <div class="report-card"><h4>Km Percorsi</h4><p id="rep-km">42.800 km</p></div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+
+  <script>
+    const map = L.map('map', { zoomControl: true, minZoom: 2 }).setView([20, 10], 3);
+    
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { 
+      maxZoom: 19, 
+      attribution: '© OpenStreetMap' 
+    }).addTo(map);
+
+    const clusterGroup = L.markerClusterGroup({ 
+      disableClusteringAtZoom: 16, 
+      maxClusterRadius: 40, 
+      animate: false 
+    });
+    map.addLayer(clusterGroup);
+
+    const cursor = document.getElementById('virtual-cursor');
+    const tooltip = document.getElementById('demo-tooltip');
+
+    let tuttiIDati = [];
+    let passiDemo = [];
+    let passoCorrente = 0;
+    let timerProssimoPasso = null;
+    let timerAnimazione = null;
+    let demoAttiva = true;
+    let wakeLock = null;
+
+    let fotoSlideshowCorrenti = [];
+    let indiceSlideshowCorrente = 0;
+
+    // SPEGNIMENTO SCHERMO DISATTIVATO (Screen Wake Lock API)
+    async function attivaWakeLock() {
+      try {
+        if ('wakeLock' in navigator) {
+          wakeLock = await navigator.wakeLock.request('screen');
+        }
+      } catch (err) {
+        console.log('Wake Lock non disponibile o bloccato:', err);
+      }
+    }
+
+    function disattivaWakeLock() {
+      if (wakeLock !== null) {
+        wakeLock.release().then(() => {
+          wakeLock = null;
+        });
+      }
+    }
+
+    attivaWakeLock();
+
+    document.addEventListener('visibilitychange', async () => {
+      if (wakeLock !== null && document.visibilityState === 'visible') {
+        await attivaWakeLock();
+      }
+    });
+
+    function ottieniUrlWebp(percorsoOriginale) {
+      if (!percorsoOriginale) return '';
+      return percorsoOriginale
+        .replace(/^foto[\/\\]/i, 'webp/')
+        .replace(/\.jpg$/i, '.webp');
+    }
+
+    function creaIconaColorata(coloreHex) {
+      const svgPin = '<svg width="25" height="41" viewBox="0 0 25 41" xmlns="http://www.w3.org/2000/svg">' +
+        '<path d="M12.5 0C5.6 0 0 5.6 0 12.5C0 21.9 12.5 41 12.5 41C12.5 41 25 21.9 25 12.5C25 5.6 19.4 0 12.5 0Z" fill="' + coloreHex + '" stroke="#FFFFFF" stroke-width="1.5"/>' +
+        '<circle cx="12.5" cy="12.5" r="5" fill="#FFFFFF"/>' +
+        '</svg>';
+      return L.divIcon({
+        className: 'custom-pin-icon',
+        html: svgPin,
+        iconSize: [25, 41],
+        iconAnchor: [12, 41],
+        popupAnchor: [1, -34]
+      });
+    }
+
+    setTimeout(() => { map.invalidateSize(); }, 200);
+
+    fetch('dati.json')
+      .then(res => res.json())
+      .then(dati => {
+        tuttiIDati = dati;
+        
+        const selectViaggio = document.getElementById('select-viaggio');
+        const listaViaggi = [...new Set(dati.map(p => p.viaggio).filter(Boolean))];
+        listaViaggi.forEach(v => {
+          const opt = document.createElement('option');
+          opt.value = v;
+          opt.innerText = v;
+          selectViaggio.appendChild(opt);
+        });
+
+        dati.forEach(p => {
+          const lat = parseFloat(p.lat);
+          const lon = parseFloat(p.lon);
+          if (!isNaN(lat) && !isNaN(lon)) {
+            const marker = L.marker([lat, lon], { icon: creaIconaColorata('#007bff') });
+            const fotoUrl = ottieniUrlWebp(p.foto);
+            const htmlFoto = fotoUrl ? `<img src="${fotoUrl}" class="popup-foto" data-foto-id="${p.nome || ''}">` : '';
+            marker.bindPopup(`<div class="popup-container"><b>${p.nome || p.viaggio}</b><br><small>${p.data}</small>${htmlFoto}</div>`);
+            clusterGroup.addLayer(marker);
+          }
+        });
+
+        map.invalidateSize();
+        caricaSequenzaDemo();
+      })
+      .catch(err => {
+        console.error("Errore caricamento dati.json:", err);
+        tooltip.innerText = "Errore nel caricamento dei dati di viaggio.";
+      });
+
+    function caricaSequenzaDemo() {
+      fetch('dati_demo.json')
+        .then(res => res.json())
+        .then(data => {
+          passiDemo = data.passi;
+          timerProssimoPasso = setTimeout(eseguiPasso, 1200);
+        })
+        .catch(err => {
+          console.error("Errore caricamento dati_demo.json:", err);
+          tooltip.innerText = "Impossibile caricare dati_demo.json.";
+        });
+    }
+
+    function trovaPuntoDaID(identificatore) {
+      if (!identificatore) return null;
+      const cerca = identificatore.toString().toLowerCase().trim();
+
+      let datoTrovato = tuttiIDati.find(p => (p.nome || '').toLowerCase().trim() === cerca);
+
+      if (!datoTrovato) {
+        datoTrovato = tuttiIDati.find(p => 
+          (p.nome || '').toLowerCase().includes(cerca) || 
+          (p.foto || '').toLowerCase().includes(cerca) ||
+          (p.viaggio || '').toLowerCase().includes(cerca)
+        );
+      }
+
+      if (!datoTrovato) return null;
+
+      let markerTrovato = null;
+      clusterGroup.eachLayer(layer => {
+        if (Math.abs(layer.getLatLng().lat - parseFloat(datoTrovato.lat)) < 0.0001 && 
+            Math.abs(layer.getLatLng().lng - parseFloat(datoTrovato.lon)) < 0.0001) {
+          markerTrovato = layer;
+        }
+      });
+
+      return { dato: datoTrovato, marker: markerTrovato };
+    }
+
+    function apriFotoSchermoIntero(url, descrizione) {
+      const modal = document.getElementById('fullscreen-modal');
+      const img = document.getElementById('fullscreen-image');
+      const caption = document.getElementById('fullscreen-caption');
+      img.src = url;
+      caption.innerText = descrizione || '';
+      modal.classList.add('active');
+    }
+
+    function chiudiFotoSchermoIntero() {
+      document.getElementById('fullscreen-modal').classList.remove('active');
+    }
+
+    function avviaSlideshowDaMenu() {
+      const nomeViaggio = document.getElementById('select-viaggio').value;
+      if (!nomeViaggio) return;
+      
+      fotoSlideshowCorrenti = tuttiIDati.filter(p => p.viaggio === nomeViaggio && p.foto);
+      if (fotoSlideshowCorrenti.length === 0) {
+        fotoSlideshowCorrenti = tuttiIDati.filter(p => p.foto).slice(0, 5);
+      }
+      
+      indiceSlideshowCorrente = 0;
+      mostraSlide(indiceSlideshowCorrente);
+      document.getElementById('slideshow-modal').classList.add('active');
+    }
+
+    function mostraSlide(index) {
+      if (!fotoSlideshowCorrenti[index]) return;
+      const item = fotoSlideshowCorrenti[index];
+      const img = document.getElementById('slideshow-image');
+      const caption = document.getElementById('slideshow-caption');
+      const title = document.getElementById('slideshow-title');
+
+      img.src = ottieniUrlWebp(item.foto);
+      caption.innerText = `${item.nome || item.viaggio} - (${index + 1}/${fotoSlideshowCorrenti.length})`;
+      title.innerText = `▶ ${item.viaggio || 'Slideshow'}`;
+    }
+
+    function slideshowNext() {
+      if (fotoSlideshowCorrenti.length === 0) return;
+      indiceSlideshowCorrente = (indiceSlideshowCorrente + 1) % fotoSlideshowCorrenti.length;
+      mostraSlide(indiceSlideshowCorrente);
+    }
+
+    function slideshowPrev() {
+      if (fotoSlideshowCorrenti.length === 0) return;
+      indiceSlideshowCorrente = (indiceSlideshowCorrente - 1 + fotoSlideshowCorrenti.length) % fotoSlideshowCorrenti.length;
+      mostraSlide(indiceSlideshowCorrente);
+    }
+
+    function chiudiSlideshow() {
+      document.getElementById('slideshow-modal').classList.remove('active');
+    }
+
+    function apriReportModal() {
+      document.getElementById('report-modal').classList.add('active');
+    }
+
+    function chiudiReportModal() {
+      document.getElementById('report-modal').classList.remove('active');
+    }
+
+    function muoviCursore(x, y, testoFumetto, callback) {
+      if (!demoAttiva) return;
+
+      cursor.style.left = x + 'px';
+      cursor.style.top = y + 'px';
+
+      tooltip.style.opacity = '1';
+
+      let leftPos = x + 15;
+      let topPos = y + 15;
+
+      const activeFoto = document.querySelector('.leaflet-popup-content .popup-foto');
+      if (activeFoto) {
+        const rect = activeFoto.getBoundingClientRect();
+        const sovrappone = (
+          leftPos < rect.right &&
+          (leftPos + 260) > rect.left &&
+          topPos < rect.bottom &&
+          (topPos + 100) > rect.top
+        );
+
+        if (sovrappone) {
+          topPos = y - 110;
+        }
+      }
+
+      if (leftPos + 270 > window.innerWidth) leftPos = window.innerWidth - 280;
+      if (leftPos < 10) leftPos = 10;
+      if (topPos + 120 > window.innerHeight) topPos = window.innerHeight - 130;
+      if (topPos < 70) topPos = 70;
+
+      tooltip.style.left = leftPos + 'px';
+      tooltip.style.top = topPos + 'px';
+      tooltip.innerText = testoFumetto;
+
+      timerAnimazione = setTimeout(() => { 
+        if (callback && demoAttiva) callback(); 
+      }, 1600);
+    }
+
+    function simulaClick(callback) {
+      if (!demoAttiva) return;
+      cursor.classList.add('click-effect');
+      setTimeout(() => {
+        cursor.classList.remove('click-effect');
+        if (callback && demoAttiva) callback();
+      }, 400);
+    }
+
+    function eseguiPasso() {
+      if (!demoAttiva || passoCorrente >= passiDemo.length) return;
+      const p = passiDemo[passoCorrente];
+
+      if (p.tipo === "messaggio") {
+        muoviCursore(window.innerWidth / 2, window.innerHeight / 2, p.testo, () => prossimoPasso(p.durata));
+      } 
+      else if (p.tipo === "clicca_cluster" || p.tipo === "apri_pin") {
+        const idCercato = p.nome || p.foto_id;
+        const item = trovaPuntoDaID(idCercato);
+
+        if (!item) {
+          prossimoPasso(100);
+          return;
+        }
+
+        const lat = parseFloat(item.dato.lat);
+        const lon = parseFloat(item.dato.lon);
+
+        if (p.tipo === "clicca_cluster") {
+          map.flyTo([lat, lon], 8, { duration: 2.0 });
+          timerAnimazione = setTimeout(() => {
+            const point = map.latLngToContainerPoint([lat, lon]);
+            muoviCursore(point.x, point.y, p.testo, () => {
+              simulaClick(() => {
+                map.flyTo([lat, lon], 15, { duration: 2.0 });
+                prossimoPasso(p.durata);
+              });
+            });
+          }, 2200);
+        } 
+        else if (p.tipo === "apri_pin") {
+          map.flyTo([lat, lon], 16, { duration: 1.8 });
+          timerAnimazione = setTimeout(() => {
+            const point = map.latLngToContainerPoint([lat, lon]);
+            muoviCursore(point.x, point.y, p.testo, () => {
+              simulaClick(() => {
+                const itemAggiornato = trovaPuntoDaID(idCercato);
+                if (itemAggiornato && itemAggiornato.marker) {
+                  itemAggiornato.marker.openPopup();
+                }
+                prossimoPasso(p.durata);
+              });
+            });
+          }, 2000);
+        }
+      }
+      else if (p.tipo === "apri_foto") {
+        const idCercato = p.nome || p.foto_id;
+        const item = trovaPuntoDaID(idCercato);
+
+        if (!item) {
+          prossimoPasso(100);
+          return;
+        }
+
+        const imgElement = document.querySelector(`.popup-foto[data-foto-id="${item.dato.nome}"]`) || document.querySelector('.popup-foto');
+        let targetX = window.innerWidth / 2;
+        let targetY = window.innerHeight / 2;
+
+        if (imgElement) {
+          const rect = imgElement.getBoundingClientRect();
+          targetX = rect.left + rect.width / 2;
+          targetY = rect.top + rect.height / 2;
+        }
+
+        muoviCursore(targetX, targetY, p.testo, () => {
+          simulaClick(() => {
+            const fotoUrl = ottieniUrlWebp(item.dato.foto);
+            apriFotoSchermoIntero(fotoUrl, item.dato.descrizione || item.dato.nome);
+            prossimoPasso(p.durata);
+          });
+        });
+      }
+      else if (p.tipo === "chiudi_foto") {
+        muoviCursore(window.innerWidth / 2, window.innerHeight * 0.8, p.testo, () => {
+          simulaClick(() => {
+            chiudiFotoSchermoIntero();
+            prossimoPasso(p.durata);
+          });
+        });
+      }
+      else if (p.tipo === "seleziona_viaggio_slideshow") {
+        const select = document.getElementById('select-viaggio');
+        const rect = select.getBoundingClientRect();
+        
+        muoviCursore(rect.left + rect.width / 2, rect.top + rect.height / 2, p.testo, () => {
+          simulaClick(() => {
+            if (p.viaggio && select.querySelector(`option[value="${p.viaggio}"]`)) {
+              select.value = p.viaggio;
+            } else if (select.options.length > 1) {
+              select.selectedIndex = 1;
+            }
+            prossimoPasso(p.durata);
+          });
+        });
+      }
+      else if (p.tipo === "avvia_slideshow") {
+        const btn = document.getElementById('btn-start-slideshow');
+        const rect = btn.getBoundingClientRect();
+        
+        muoviCursore(rect.left + rect.width / 2, rect.top + rect.height / 2, p.testo, () => {
+          simulaClick(() => {
+            avviaSlideshowDaMenu();
+            prossimoPasso(p.durata);
+          });
+        });
+      }
+      else if (p.tipo === "prossima_slideshow") {
+        const btn = document.getElementById('btn-slide-next');
+        const rect = btn.getBoundingClientRect();
+        
+        muoviCursore(rect.left + rect.width / 2, rect.top + rect.height / 2, p.testo, () => {
+          simulaClick(() => {
+            slideshowNext();
+            prossimoPasso(p.durata);
+          });
+        });
+      }
+      else if (p.tipo === "precedente_slideshow") {
+        const btn = document.getElementById('btn-slide-prev');
+        const rect = btn.getBoundingClientRect();
+        
+        muoviCursore(rect.left + rect.width / 2, rect.top + rect.height / 2, p.testo, () => {
+          simulaClick(() => {
+            slideshowPrev();
+            prossimoPasso(p.durata);
+          });
+        });
+      }
+      else if (p.tipo === "chiudi_slideshow") {
+        const btn = document.getElementById('btn-slide-close');
+        const rect = btn.getBoundingClientRect();
+        
+        muoviCursore(rect.left + rect.width / 2, rect.top + rect.height / 2, p.testo, () => {
+          simulaClick(() => {
+            chiudiSlideshow();
+            prossimoPasso(p.durata);
+          });
+        });
+      }
+      else if (p.tipo === "apri_report") {
+        muoviCursore(window.innerWidth / 2, window.innerHeight / 2, p.testo, () => {
+          simulaClick(() => {
+            apriReportModal();
+            prossimoPasso(p.durata);
+          });
+        });
+      }
+      else if (p.tipo === "chiudi_report") {
+        muoviCursore(window.innerWidth / 2, window.innerHeight * 0.75, p.testo, () => {
+          simulaClick(() => {
+            chiudiReportModal();
+            prossimoPasso(p.durata);
+          });
+        });
+      }
+      else if (p.tipo === "fine") {
+        muoviCursore(window.innerWidth / 2, window.innerHeight / 2, p.testo, null);
+      }
+      else {
+        prossimoPasso(2000);
+      }
+    }
+
+    function prossimoPasso(ritardo) {
+      if (!demoAttiva) return;
+      timerProssimoPasso = setTimeout(() => {
+        passoCorrente++;
+        eseguiPasso();
+      }, ritardo);
+    }
+
+    function esciDallaDemo() {
+      demoAttiva = false;
+      clearTimeout(timerProssimoPasso);
+      clearTimeout(timerAnimazione);
+      disattivaWakeLock();
+
+      // Sostituisce la cronologia in modo da non far riapparire la demo premendo indietro
+      window.location.replace('index.html');
+    }
+  </script>
+</body>
+</html>

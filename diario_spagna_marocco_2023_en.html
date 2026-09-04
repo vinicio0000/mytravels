@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO TITLE AND DESCRIPTION -->
+  <title>Motorhome Travel Diary in Morocco and Spain: Itinerary, Customs, and Tips | Vinicio & Luisa</title>
+  <meta name="description" content="Complete motorhome travel story through Spain and Morocco by Vinicio and Luisa with their cocker spaniel Leo. Practical information, full itinerary, campsites, customs, and advice.">
+  <meta name="author" content="Vinicio and Luisa">
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="https://vinicio0000.github.io/mytravels/diario_spagna_marocco_2023.html">
+
+  <style>
+    body {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      line-height: 1.8;
+      color: #2c3e50;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* TOP BAR TO RETURN TO MAP */
+    .top-bar {
+      background-color: #1e3c72;
+      color: white;
+      padding: 12px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    .top-bar a {
+      color: #ffffff;
+      text-decoration: none;
+      font-family: sans-serif;
+      font-weight: bold;
+      font-size: 14px;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 6px 14px;
+      border-radius: 20px;
+      transition: background 0.2s;
+    }
+
+    .top-bar a:hover {
+      background: rgba(255, 255, 255, 0.4);
+    }
+
+    /* CENTRAL TEXT CONTAINER */
+    .container {
+      max-width: 800px;
+      margin: 30px auto;
+      background: #ffffff;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      box-sizing: border-box;
+    }
+
+    h1 {
+      font-family: sans-serif;
+      font-size: 28px;
+      color: #1e3c72;
+      margin-top: 0;
+      line-height: 1.3;
+    }
+
+    h2 {
+      font-family: sans-serif;
+      font-size: 22px;
+      color: #2c3e50;
+      border-bottom: 2px solid #52b69a;
+      padding-bottom: 6px;
+      margin-top: 40px;
+    }
+
+    p {
+      font-size: 17px;
+      margin-bottom: 20px;
+      text-align: justify;
+    }
+
+    /* HIGHLIGHTED BOX FOR PRACTICAL TIPS */
+    .box-info {
+      background-color: #eef7f6;
+      border-left: 5px solid #52b69a;
+      padding: 15px 20px;
+      margin: 25px 0;
+      border-radius: 4px;
+      font-family: sans-serif;
+      font-size: 15px;
+    }
+
+    .box-info h3 {
+      margin-top: 0;
+      color: #1e3c72;
+    }
+
+    /* HIGHLIGHT BOX FOR TAMRAGHT / AGADIR */
+    .box-highlight {
+      background-color: #fff9e6;
+      border-left: 6px solid #f39c12;
+      padding: 20px;
+      margin: 30px 0;
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+
+    .box-highlight h3 {
+      margin-top: 0;
+      color: #d35400;
+      font-size: 18px;
+    }
+
+    ul {
+      font-size: 16px;
+      line-height: 1.8;
+      padding-left: 20px;
+    }
+
+    /* BUTTONS AT THE BOTTOM OF THE PAGE */
+    .action-buttons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      margin-top: 40px;
+    }
+
+    .btn-action {
+      display: inline-block;
+      width: 100%;
+      max-width: 350px;
+      padding: 14px 20px;
+      border-radius: 6px;
+      font-family: sans-serif;
+      font-weight: bold;
+      font-size: 16px;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: background 0.2s, transform 0.1s;
+    }
+
+    .btn-mappa {
+      background-color: #007bff;
+      color: white;
+    }
+
+    .btn-mappa:hover {
+      background-color: #0056b3;
+    }
+
+    .btn-feedback {
+      background-color: #27ae60;
+      color: white;
+    }
+
+    .btn-feedback:hover {
+      background-color: #219150;
+    }
+
+    /* MODAL FOR CONTACT FORM */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.6);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 8px;
+      width: 90%;
+      max-width: 500px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      font-family: sans-serif;
+      position: relative;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 24px;
+      cursor: pointer;
+      color: #aaa;
+    }
+
+    .close-btn:hover {
+      color: #000;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .form-group input, .form-group textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-family: inherit;
+    }
+
+    .btn-submit {
+      background-color: #1e3c72;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      width: 100%;
+      font-size: 16px;
+    }
+
+    .btn-submit:hover {
+      background-color: #162d56;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 20px;
+        margin: 10px;
+      }
+      h1 { font-size: 22px; }
+      h2 { font-size: 18px; }
+      p { font-size: 15px; }
+    }
+  </style>
+</head>
+<body>
+
+  
+  <!-- TOP NAVIGATION BAR -->
+  <div class="top-bar">
+    <span style="font-weight: bold; font-family: sans-serif;">The Travel Map</span>
+    <a href="index.html" onclick="if(window.opener){ window.close(); return false; }">🌍 Back to Interactive Map</a>
+  </div>
+
+  <!-- DIARY CONTENT -->
+  <div class="container">
+    
+    <h1>Motorhome Travel Diary in Morocco and Spain: Itinerary, Customs, and Tips</h1>
+    
+    <p><i>The travel story of the two of us (Vinicio and Luisa) together with our beautiful black English Cocker Spaniel Leo, aboard our motorhome, exploring Spain and Morocco.</i></p>
+
+    <!-- BOX WITH GENERAL INFORMATION -->
+    <div class="box-info">
+      <h3>📌 Trip Notes and Details</h3>
+      <p style="margin:0; font-size: 14px;">
+        This trip lasted about three months: one month in Spain on the way out, one in Morocco, and another month in Spain for the return journey.<br>
+        <b>Approximate distances:</b> between Ancona and Civitavecchia it is about 300 km, between Civitavecchia and Algeciras about 1,100 km, while between Tangier and Agadir (for those heading directly south) it is about 700 km.<br>
+        The circuit covered in Morocco during this trip was 3,400 km, making a total road distance of around 6,200 km. Over three months, this averages less than 70 km per day: a very relaxed journey.<br>
+        Moroccan motorways are excellent, and they are also renovating and modernizing the other main roads.
+      </p>
+    </div>
+
+    <h2>1. Travel Philosophy, Preparation, and Transportation</h2>
+    <p>
+      All our motorhome trips have been taken completely independently, without organized groups: just the two of us (Vinicio and Luisa) and Leo, a beautiful black English Cocker Spaniel[cite: 10]. Consequently, all our choices—from campsites to the shipping company—are heavily influenced by this approach[cite: 10].
+    </p>
+    <p>
+      We have visited Spain many times, both on its own and combined with Morocco and/or Portugal[cite: 10]. We always prefer taking the ferry because, traveling from central Italy, the ferry cost to Barcelona is fully comparable to road travel expenses, considering that French motorways are very expensive for a vehicle over three meters high[cite: 10].
+    </p>
+    <p>
+      In Morocco, we met many other Italians, mostly from Northern Italy: some choose to drive across France avoiding toll roads, others board the ferry in Genoa... everyone does as they prefer[cite: 10]. In Europe, we usually travel using the <b>ACSI</b> card for campsites[cite: 10].
+    </p>
+    <p>
+      In Spain, fuel (diesel and petrol) is slightly cheaper than in Italy, and in Morocco, it is even cheaper[cite: 10]. Spanish motorways are almost all toll-free; where tolls apply, it is clearly marked, motorhomes pay the same rate as a car (<i>coche</i>), and you can easily pay with a contactless card[cite: 10]. In Morocco, on the other hand, toll highways are paid directly at the booth to an operator in dirhams (MAD)[cite: 10].
+    </p>
+    <p>
+      <b>Note on local transit:</b> In this guide, you will not find information on public transport (buses or trams) because dogs are not allowed on them in Spain[cite: 10]. We get around very easily and independently with our onboard scooter (or occasionally, in December, by renting a car)[cite: 10].
+    </p>
+
+    <h2>2. The OUTBOUND Journey Through Spain</h2>
+
+    <div class="box-info">
+      <h3>🚢 September 28: Start of the Trip – Civitavecchia / Barcelona Ferry</h3>
+      <p style="margin:0; font-size: 14px;">
+        We board the <b>Grimaldi</b> ferry from Civitavecchia to Barcelona[cite: 10]. For us, Grimaldi is the best choice when traveling with a dog because there are no movement restrictions: you can go to the restaurant or self-service buffet accompanied by your four-legged friend, and you can book any type of cabin, including suites[cite: 10]. By paying a small supplement (€10 at booking), you receive a dedicated kit at reception containing a blanket, a bowl, and waste bags[cite: 10]. The journey takes about 24 hours, and arrival in Barcelona is usually around 8 PM[cite: 10].
+      </p>
+    </div>
+
+    <div class="box-info">
+      <h3>🚗 September 29: Arrival in Barcelona and ZBE Transit</h3>
+      <p style="margin:0; font-size: 14px;">
+        Arrival in Barcelona[cite: 10]. Attention: the city of Barcelona is regulated by a Low Emission Zone (ZBE - Zona a Basso Inquinamento, also valid for scooters)[cite: 10]. Even if you own an Euro 6 motorhome, you must register before entering; however, leaving the port and taking the <i>"Ronda Litoral"</i> southwards avoids crossing the ZBE[cite: 10].<br>
+        From Barcelona, we continue south for about 100 km: past Tarragona, there is the exit for Cambrils[cite: 10]. In 2023, we saw many motorhomes wild camping between Cambrils and Salou, near Camping Platja Cambrils[cite: 10]. We do not like wild camping for various reasons, but on the night of arrival, it was a necessary choice[cite: 10].
+      </p>
+    </div>
+
+    <div class="box-info">
+      <h3>🏕️ September 30 – October 7: Salou (Camping Sangulí)</h3>
+      <p style="margin:0; font-size: 14px;">
+        We stop in Salou at <b>Camping Sangulí</b>[cite: 10]. It is a beautiful campsite with 12 swimming pools divided into 4 complexes (2 of which are dog-friendly)[cite: 10]. The pitches are not separated by hedges, but it is one of the closest campsites to the center of Salou[cite: 10]. It does not participate in the ACSI network and is somewhat expensive[cite: 10]. Over the years, we have used four different campsites between Salou and Cambrils: you can view them on our <a href="index.html" style="color:#1e3c72; font-weight:bold;">Interactive Travel Map of Vinicio and Luisa</a>[cite: 10].
+      </p>
+    </div>
+
+    <div class="box-info">
+      <h3>🏖️ October 7 – October 9: El Campello</h3>
+      <p style="margin:0; font-size: 14px;">
+        We stay at a motorhome stopover in El Campello, not very close to the sea[cite: 10]. We have the scooter with us, but when we go out with the dog, we walk (since dogs cannot board buses and trams in Spain, which is a major limitation)[cite: 10]. El Campello is a great base for visiting Alicante, a city we really enjoy[cite: 10].
+      </p>
+    </div>
+
+    <div class="box-info">
+      <h3>🏊‍♂️ October 9 – October 11: Guardamar del Segura (Camping Alannia Guardamar)</h3>
+      <p style="margin:0; font-size: 14px;">
+        We stay at <b>Camping Alannia Guardamar</b>, a very nice resort with a fantastic pool[cite: 10]. We only stayed for two days because it was completely fully booked[cite: 10]. You cannot walk anywhere on foot, but with the scooter, we easily visited Torrevieja and San Pedro del Pinatar[cite: 10].
+      </p>
+    </div>
+
+    <div class="box-info">
+      <h3>🌴 October 11 – October 16: Santa Pola (Camping Bahia de Santa Pola)</h3>
+      <p style="margin:0; font-size: 14px;">
+        We stay at Camping Bahia de Santa Pola, a residential campsite popular with Northern European tourists spending the winter, creating a pleasant social environment[cite: 10]. It features a heated pool, and the town center with its traditional seaport is within walking distance[cite: 10]. On the scooter, we rode to <b>Elche (Elx)</b>, the city with the most palm trees in Europe (a UNESCO World Heritage site) and home to the famous Lady of Elche: a truly interesting city worth seeing[cite: 10].
+      </p>
+    </div>
+
+    <div class="box-info">
+      <h3>🌊 October 16 – October 18: Nerja</h3>
+      <p style="margin:0; font-size: 14px;">
+        We reach Nerja, a beautiful resort town on the Costa del Sol overlooking the sea[cite: 10]. The center is full of narrow alleyways, arches, and is dominated by the <i>Balcón de Europa</i>, a promontory jutting over the sea with beaches to the south[cite: 10]. Unfortunately for motorhomes, there are only very basic parking areas scattered between Nerja and Torrox[cite: 10].
+      </p>
+    </div>
+
+    <div class="box-info">
+      <h3>🏖️ October 18 – October 24: Cabopino (Marbella)</h3>
+      <p style="margin:0; font-size: 14px;">
+        We stay at Cabopino, 13 km from Marbella[cite: 10]. Crossing the road (via a pedestrian bridge), you reach the splendid <b>Artola Dunes</b> by the shore, featuring an elevated wooden boardwalk network designed to protect the dunes within the Artola Dunes and Cabopino Natural Monument[cite: 10].<br>
+        Marbella needs no introduction: close by and stunning, we spent almost every evening there[cite: 10]. Nearby, <b>Puerto Banús</b> (a marina with ship-sized superyachts and Ferraris parked outside) and <b>Estepona</b>, a flower-filled town further south, are well worth a visit[cite: 10]. We also highly recommend visiting <b>Ronda</b>, famous for its iconic and breathtaking bridge[cite: 10].
+      </p>
+    </div>
+
+    <h2>3. Entering Morocco and Practical Information</h2>
+
+    <p>
+      <b>October 24 – October 25: Start of the crossing and entry into Morocco</b><br>
+      From Marbella to Algeciras (the ferry port for Morocco) is less than 100 km[cite: 10]. Along the road, you will encounter petrol stations selling tickets and touts in yellow jackets trying to trick you: don't get fooled, simply drive directly to the Maritime Terminal, park in the large plaza in front, and buy your ticket at the official counters (we traveled with FRS and Balearia)[cite: 10].
+    </p>
+
+    <div class="box-info">
+      <h3>📌 Entry Formalities, Customs, and Documents</h3>
+      <ul>
+        <li><b>Choosing the Port (Tangier Med vs Ceuta):</b> At the Algeciras maritime terminal, the main destinations are Ceuta and Tangier Med[cite: 10]. We have always entered via <b>Tangier Med</b>[cite: 10]. A ticket agent in Motril explained that when entering through Ceuta (Spanish territory), the border with Morocco is a land border, and customs officers might cause issues regarding food supplies on board[cite: 10]. Therefore, we strongly recommend Tangier Med[cite: 10].</li>
+        <li><b>Identity Documents:</b> We have always entered using valid passports (including on our latest trip in 2025)[cite: 10]. We believe entry with an Italian electronic ID card (CIE) is also possible[cite: 10].</li>
+        <li><b>Language:</b> Morocco is Francophone: everyone speaks Arabic and French, while younger people also speak English[cite: 10].</li>
+        <li><b>Driving License:</b> An international driving permit is not required; we always traveled using our standard Italian driving license[cite: 10].</li>
+        <li><b>Checkpoints and Traffic Rules:</b> Moroccan police are very helpful towards tourists, and the local population poses no danger[cite: 10]. At the numerous police checkpoints, they rarely stop motorhomes[cite: 10]. However, pay attention to road signs: if there is a <i>"Rallentir"</i> (Slow Down) sign on the road, you must reduce speed; if there is a <i>"Halte"</i> (Stop) sign, you must come to a complete stop and wait for the officer's gesture before proceeding[cite: 10].<br>
+        Along national roads, police officers set up speed traps with radar guns and transmit the photo via the internet to a patrol stationed one kilometer ahead[cite: 10]. They will stop you, sometimes showing the motorhome photo with the recorded speed on a smartphone, and you must pay the fine; they always issued us an official receipt for 400 MAD (about €40)[cite: 10]. On motorways, there are Telelaser cameras (black boxes mounted on poles); although feared by locals, we never received any fines at home[cite: 10].</li>
+        <li><b>Motorhome and Scooter Insurance:</b> Many insurance companies do not include Morocco in their Green Card coverage[cite: 10]. In our case, the motorhome was covered, but the scooter was not: at Tangier Med, we had to purchase supplemental insurance (€100 for one month, €200 for three months)[cite: 10].</li>
+        <li><b>Registering Accompanying Vehicles:</b> At customs, they register the license plate of the motorhome, and if you have a scooter in the garage, you **must strictly declare it**[cite: 10]. They will issue a small slip of paper that you must **keep with extreme care**: when exiting, they will request it and verify that all vehicles that entered leave with you[cite: 10]. If you do not exit with the same vehicles you brought in, fines start from the market value of the vehicle itself[cite: 10].</li>
+        <li><b>Group Tours vs Independent Travel:</b> At some campsites (like in Marrakech), you might cross paths with organized group tours[cite: 10]. We have been to Morocco 8 times (1997, 2010, and 2011 by plane; 2022 by plane and another motorhome trip; then 2023, 2024, and 2025 in our motorhome) and we have never had any issues traveling completely independently[cite: 10].</li>
+      </ul>
+    </div>
+
+    <div class="box-info">
+      <h3>🐕 Traveling with a Dog in Morocco (Hygiene and Health)</h3>
+      <ul>
+        <li><b>Personal Vaccinations and Stray Animals:</b> In addition to basic vaccinations (tetanus is essential), we suggest considering human rabies vaccination[cite: 10]. There are medium-sized stray dogs everywhere, which are generally non-aggressive (those with an ear tag are already vaccinated)[cite: 10]. Traveling with a dog requires extra vigilance, but we have always managed every situation smoothly[cite: 10].<br>
+        In case of bites or scratches from stray animals, even the smallest village has a <i>Maison de Santé</i> (Health Center), where they administer free rabies serum and/or vaccination (given across 5 injections over a month)[cite: 10].</li>
+        <li><b>Pet Health Requirements:</b> To bring a dog, you need an EU Pet Passport, up-to-date rabies vaccination (annual, not triennial), and a health certificate issued by an official public veterinarian (AUSL)[cite: 10].<br>
+        <b>ESSENTIAL:</b> A <b>rabies antibody titration test</b> is mandatory (the procedure takes about two months, but it only needs to be done once in the dog's lifetime)[cite: 10]. Remember that titration **is not needed to enter Morocco, but to RE-ENTER Europe**[cite: 10].</li>
+        <li><b>Border Checks:</b> At customs, they checked our storage lockers without major hassle[cite: 10]. Sometimes the motorhome is directed through a vehicle scanner (usually used primarily when exiting)[cite: 10].</li>
+      </ul>
+    </div>
+
+    <div class="box-info">
+      <h3>💳 Services Available Immediately After Customs at Tangier Med</h3>
+      <p style="margin:0; font-size: 14px;">
+        Once past the motorhome inspection area, you enter a large yard served by three or four low buildings[cite: 10]. You should stop here to:
+      </p>
+      <ul style="margin-top: 8px; margin-bottom: 0;">
+        <li>Exchange euros or withdraw cash in dirhams (MAD) at the ATM[cite: 10];</li>
+        <li>Purchase temporary supplemental insurance for your motorhome or scooter[cite: 10];</li>
+        <li>Buy a local data SIM card for internet browsing (providers like <i>Inwi</i> work very well)[cite: 10].</li>
+      </ul>
+    </div>
+
+    <h2>4. The Morocco Itinerary: From Asilah to Agadir, the Desert, and Imperial Cities</h2>
+
+    <div class="box-info">
+      <h3>🌊 October 24 – October 25: Asilah</h3>
+      <p style="margin:0; font-size: 14px;">
+        Right after disembarking from the ferry, we stopped in Asilah[cite: 10]. You can stay at one of the campsites near the center or park right in front of the port for 50 MAD (it is semi-guarded and fairly safe due to the presence of many motorhomes)[cite: 10]. It is a charming coastal town with a typical historic center surrounded by ramparts and ancient walls[cite: 10]. The souk is very interesting, and there are great restaurants[cite: 10].
+      </p>
+    </div>
+
+    <div class="box-info">
+      <h3>🏙️ October 25 – October 27: Chefchaouen (The Blue City)</h3>
+      <p style="margin:0; font-size: 14px;">
+        We head to Chefchaouen, famous for its medina of narrow streets lined with houses painted entirely in blue and characteristic flower-adorned staircases[cite: 10]. It is a unique place in Morocco that is absolute must-see[cite: 10]. Camping Azilan is located right above the center and is very basic[cite: 10].
+      </p>
+    </div>
+
+    <div class="box-info">
+      <h3>🕌 October 27 – October 29: Fes</h3>
+      <p style="margin:0; font-size: 14px;">
+        Fes is the oldest of the imperial cities, and its medina is a UNESCO World Heritage site[cite: 10]. We stayed at <b>Camping Le Diamant Vert</b>, a lovely site located inside a resort complex (a bit far from the center if you don't have transport)[cite: 10].<br><br>
+        The medieval medina is an unmissable sight: an intricate maze of narrow alleys where everything passes through (mule-drawn carts, scooters, bicycles, and pedestrians)[cite: 10]. Another essential stop within the medina is the <b>tanneries</b>, characterized by iconic stone vats of colorful dye mixtures and hides laid out to dry, where back in 1997 we even saw the remains of dead animal carcasses[cite: 10]. It is a multicolored feast for the eyes but quite intense on the sense of smell: organized tour groups are often given a fresh mint sprig to hold under their noses during the visit[cite: 10]! We wandered and explored the medina on our scooter with total peace of mind[cite: 10].
+      </p>
+    </div>
+
+    <div class="box-info">
+      <h3>🏔️ October 29 – October 30: Midelt</h3>
+      <p style="margin:0; font-size: 14px;">
+        An intermediate stop in Midelt to rest after driving, where we enjoyed a pleasant walk around the town streets[cite: 10].
+      </p>
+    </div>
+
+    <div class="box-info">
+      <h3>🏜️ October 30 – October 31: Merzouga and the Erg Chebbi Desert</h3>
+      <p style="margin:0; font-size: 14px;">
+        Merzouga is the orange sand desert, an essential stop[cite: 10]. It is a sand sea (<i>erg</i>) about 30 km long and 10 km wide, surrounded by stony desert short distance from the Algerian border[cite: 10]. In the desert, there are fresh water wells and an oasis with a traditional irrigation system of channels and sluice gates[cite: 10].<br><br>
+        Passing through the desert gateway (an arch over the road), after a hundred meters the tarmac ends, leading to <b>Camping La Gazelle Bleue</b>, where we stayed[cite: 10]. We easily navigated the stony desert tracks on our scooter: a 4x4 motorhome is not required[cite: 10]. To venture deep into the sand dunes, 4WD drivers offer fantastic tours with all desired stops for about €50[cite: 10]. You can also rent quads and dune buggies, although their engine noise can be somewhat annoying[cite: 10].<br><br>
+        Compared to 1997, when reaching the area required driving 40 km along dirt tracks from Rissani, access today is much simpler, even if some of the romance has been lost—hotels with neon signs have been built right at the edge of the dunes[cite: 10]! Still, it remains a bucket-list destination[cite: 10].
+      </p>
+    </div>
+
+    <div class="box-info">
+      <h3>🏞️ October 31 – November 1: Tinghir and the Todra Gorge</h3>
+      <p style="margin:0; font-size: 14px;">
+        Famous for the impressive <b>Todra Gorge</b> and its vast palm groves[cite: 10]. It is still beautiful: in the past, motorhomes had to ford through 10 cm of water directly inside the gorge, whereas today there is a convenient paved road[cite: 10].
+      </p>
+    </div>
+
+    <div class="box-info">
+      <h3>🎬 November 1 – November 2: Aït-Ben-Haddou and Ouarzazate</h3>
+      <p style="margin:0; font-size: 14px;">
+        Aït-Ben-Haddou is the most famous <i>ksar</i> (fortified village) in Morocco, a UNESCO World Heritage site and filming location for renowned movies (including <i>Gladiator</i>)[cite: 10]. Inside, you can admire beautiful <i>kasbahs</i> and a photo exhibition on film productions[cite: 10]. Nearby lies Ouarzazate, the capital of Moroccan cinema[cite: 10]. We spent the night at a simple parking area near a hotel; we recommend looking for a proper campsite directly in Ouarzazate[cite: 10]. This city is situated along the road to Marrakech via the spectacular <b>Tizi n'Tichka</b> pass, at an altitude of around 2,200 meters[cite: 10].
+      </p>
+    </div>
+
+    <!-- HIGHLIGHT BOX FOR TAMRAGHT / AGADIR -->
+    <div class="box-highlight">
+      <h3>🌟 November 2 – November 28: Residential Stay in Tamraght / Agadir and Southern Excursions</h3>
+      <p style="margin:0; font-size: 15px; line-height: 1.8;">
+        After our long journey across the country, we reached the primary <b>residential destination of our trip</b>: Tamraght, located 13 km north of Agadir[cite: 10].<br><br>
+        Here, we made our base for nearly a month at <b>Camping Atlantica d'Imourane (Atlantica Park)</b>[cite: 10]. It is a fantastic facility: step through the gate, and you walk directly onto the Atlantic Ocean beach[cite: 10]. On the beach, there is an excellent restaurant frequented also by Moroccan locals coming from Agadir[cite: 10]. A lovely 5 km pedestrian <i>corniche</i> passes in front of luxury hotels, connecting the beach to Taghazout, a famous surf hub popular with young people (surfing is practiced all along the coast)[cite: 10].<br><br>
+        You can find everything on the beach: horses, camels (which are everywhere in Morocco), sunbeds, and umbrellas set up by locals, although 99% of the beach is completely open and free[cite: 10]. As mentioned, small packs of stray dogs roam around, but no one minds them: simply wave them off, and after a few days, they won't approach you[cite: 10]. Behind the campsite lies the village of Tamraght, filled with small supermarkets, restaurants, and local homes often rented to surfers[cite: 10]. Just 1 km south is Aourir, a typical Moroccan town where, if you know where to look, you can find everything needed for daily life[cite: 10].<br><br>
+        <b>Agadir (13 km south):</b> Reached along a beautiful, scenic coastal road (located at the 30th parallel, making scooter rides pleasant even in December), Agadir is a city of one million inhabitants, organized and far less chaotic than Marrakech[cite: 10]. You can find anything here: from the traditional <b>Souk El Had</b> (one of the largest in Morocco, with over 6,000 shops spanning 13 hectares) to Western supermarkets (Carrefour, Marjane), and hardware or electronics megastores like Bricoma[cite: 10]. There are numerous hospitals—worth noting, as many European retirees spend up to 6 consecutive months here during winter[cite: 10].<br><br>
+        <b>Excursions and day trips from the campsite:</b><br>
+        • <i>Aglou Beach and Sidi Ifni (November 10 - 13):</i> Venturing further south, Aglou offers an interesting campsite on a somewhat quiet beach[cite: 10]. Sidi Ifni was our southernmost point on this trip: compared to Agadir, it feels like entering deep Africa, featuring a large central market square with stalls laid out on blankets on the ground[cite: 10]. We want to emphasize that in these places, we actually buy our food groceries, not just take pictures[cite: 10]!<br>
+        • <i>Tiznit (November 13 - 15):</i> The silver city, featuring a charming historic center packed with Berber jewelry shops and an excellent local butcher shop[cite: 10].<br>
+        • <i>Day Trip to Essaouira:</i> During our second stay in Tamraght (November 15 - 28), we hired a taxi driver for a full day for €100, visiting magnificent Essaouira (a UNESCO World Heritage site) without moving the motorhome[cite: 10]. Famous for its seaside medina and handcrafted woodwork made of thuya root inlaid with mother-of-pearl[cite: 10].
+      </p>
+    </div>
+
+    <div class="box-info">
+      <h3>🎪 November 28 – November 30: Marrakech</h3>
+      <p style="margin:0; font-size: 14px;">
+        Vibrant and bustling, the first destination is always the famous <b>Jemaa el-Fnaa Square</b>, bustling with orange juice vendors, false-teeth sellers, and street stalls[cite: 10]. We bought our best artisan handicrafts here[cite: 10]. We took a fantastic scooter ride inside the medina: riding through narrow alleyways, you encounter everything (scooters, donkeys, handcarts, and pedestrians), but everyone stays patient and moves respectfully[cite: 10]. We strongly advise against driving a car into the medina[cite: 10]!
+      </p>
+
+    </div>
+
+    <div class="box-info">
+      <h3>🏖️ November 30 – December 2: Kénitra and Mohammedia</h3>
+      <p style="margin:0; font-size: 14px;">
+        Heading back north, we stopped at Kénitra (Camping Mehdia, featuring an oceanfront pool; watch out for a large pack of wild dogs in the area) and then at Mohammedia (Camping Mimosa, convenient for supermarkets)[cite: 10].
+      </p>
+    </div>
+
+    <h2>5. The RETURN Journey Through Spain</h2>
+
+    <div class="box-info">
+      <h3>🌴 December 4 – December 16: Marbella (Camping Cabopino)</h3>
+      <p style="margin:0; font-size: 14px;">
+        Back in Spain, we enjoyed a long stay at Camping Cabopino in Marbella[cite: 10]. In December in Spain, riding a scooter gets a bit too chilly, so we rented a car to comfortably explore the whole area: Mijas, Fuengirola, Málaga, Marbella, Puerto Banús, and Estepona[cite: 10].
+      </p>
+    </div>
+
+    <div class="box-info">
+      <h3>💨 December 16 – December 17: Tarifa (Camping Valdevaqueros)</h3>
+      <p style="margin:0; font-size: 14px;">
+        We moved to Tarifa, staying at Camping Valdevaqueros[cite: 10]. Tarifa features a charming historic center with distinct Moorish influences[cite: 10]. The most spectacular attraction is the <b>Valdevaqueros Sand Dune</b>, a mini desert overlooking Europe, sitting right above a world-famous kitesurfing beach[cite: 10].
+      </p>
+    </div>
+
+    <div class="box-info">
+      <h3>🏰 December 17 – December 20: El Puerto de Santa María</h3>
+      <p style="margin:0; font-size: 14px;">
+        We stayed at Camping El Puerto de Santa María, located right opposite a beautiful beach[cite: 10]. The town is very interesting and serves as an ideal base for visiting Cádiz, reachable by either ferry or road[cite: 10].
+      </p>
+    </div>
+
+    <div class="box-info">
+      <h3>🌊 December 20 – December 27: Motril and Cambrils</h3>
+      <p style="margin:0; font-size: 14px;">
+        From December 20 to 26, we stayed at a great campsite in Motril facing a beautiful beach to enjoy a few relaxing Christmas days by the sea[cite: 10]. On December 26, we moved to Cambrils for our final stopover while waiting for our return ferry[cite: 10].
+      </p>
+    </div>
+
+    <div class="box-info">
+      <h3>🚢 December 28: Return to Italy</h3>
+      <p style="margin:0; font-size: 14px;">
+        Boarding in Barcelona on the Grimaldi ferry bound for Civitavecchia[cite: 10]. This concludes a fantastic three-month adventure[cite: 10]!
+      </p>
+    </div>
+
+    <!-- ACTION AND FINAL BUTTONS -->
+    <div class="action-buttons">
+      <button class="btn-action btn-feedback" onclick="openModal()">💬 Tell us about your trip / Learn more</button>
+      <a href="index.html" class="btn-action btn-mappa">🌍 View Geolocated Photos on the Map</a>
+    </div>
+
+  </div>
+
+  <!-- MODAL FORM FOR FEEDBACK / CONTACT -->
+  <div id="feedbackModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <h3 style="margin-top:0; color:#1e3c72;">Send us a message</h3>
+      <p style="font-size:14px; color:#666; margin-bottom:20px;">Have questions about the route or want to share an experience? Send us your message!</p>
+      
+      <!-- CONTACT FORM (Points to Formspree to protect email from visible HTML) -->
+      <form action="https://formspree.io/f/mqpzoyng" method="POST">
+        <div class="form-group">
+          <label for="email">Your Email:</label>
+          <input type="email" id="email" name="email" required placeholder="name@example.com">
+        </div>
+        <div class="form-group">
+          <label for="message">Message or Question:</label>
+          <textarea id="message" name="message" rows="4" required placeholder="Write your message here..."></textarea>
+        </div>
+        <!-- Recipient email configured server-side on Formspree to baronevinicio@libero.it -->
+    
+        <button type="submit" class="btn-submit">Send Message</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function openModal() {
+      document.getElementById('feedbackModal').style.display = 'flex';
+    }
+
+    function closeModal() {
+      document.getElementById('feedbackModal').style.display = 'none';
+    }
+
+    // Close the modal if the user clicks outside the content box
+    window.onclick = function(event) {
+      var modal = document.getElementById('feedbackModal');
+      if (event.target == modal) {
+        modal.style.display = 'none';
+      }
+    }
+  </script>
+
+</body>
+</html>

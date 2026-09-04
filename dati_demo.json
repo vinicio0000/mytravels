@@ -1,0 +1,81 @@
+{
+  "passi": [
+    {
+      "tipo": "messaggio",
+      "testo": "Benvenuto nella Demo Interattiva! Ti mostreremo come esplorare la mappa dei viaggi.",
+      "durata": 3500
+    },
+    {
+      "tipo": "clicca_cluster",
+      "testo": "Le tappe vicine sono raggruppate. Clicchiamo per ingrandire la zona delle Hawaii!",
+      "nome": "2007-12-28-02H31M41",
+      "durata": 4000
+    },
+    {
+      "tipo": "apri_pin",
+      "testo": "Ecco la puntina della tappa! Clicchiamo per aprire il fumetto.",
+      "nome": "2007-12-28-02H31M41",
+      "durata": 4000
+    },
+    {
+      "tipo": "apri_foto",
+      "testo": "Clicchiamo sulla miniatura per aprire la foto a schermo intero!",
+      "nome": "2007-12-28-02H31M41",
+      "durata": 4500
+    },
+    {
+      "tipo": "chiudi_foto",
+      "testo": "Clicchiamo sullo schermo per chiudere l'immagine e tornare alla mappa.",
+      "durata": 3000
+    },
+    {
+      "tipo": "clicca_cluster",
+      "testo": "Le tappe vicine sono raggruppate. Clicchiamo per ingrandire la zona del Rajasthan, India!",
+      "nome": "2002-07-22-12H43M42",
+      "durata": 4000
+    },
+    {
+      "tipo": "apri_pin",
+      "testo": "Ecco la puntina della tappa! Clicchiamo per aprire il fumetto.",
+      "nome": "2002-07-22-12H43M42",
+      "durata": 4000
+    },
+    {
+      "tipo": "apri_foto",
+      "testo": "Clicchiamo sulla miniatura per aprire la foto a schermo intero!",
+      "nome": "2002-07-22-12H43M42",
+      "durata": 4500
+    },
+    {
+      "tipo": "chiudi_foto",
+      "testo": "Clicchiamo sullo schermo per chiudere l'immagine e tornare alla mappa.",
+      "durata": 3000
+    },
+    {
+      "tipo": "seleziona_viaggio_slideshow",
+      "viaggio": "sudafrica 2009",
+      "testo": "Selezioniamo un viaggio dal menu",
+      "durata": 1500
+    },
+    {
+      "tipo": "avvia_slideshow",
+      "testo": "Clicchiamo su Avvia Slideshow",
+      "durata": 2000
+    },
+    {
+      "tipo": "prossima_slideshow",
+      "testo": "Passiamo alla foto successiva",
+      "durata": 2000
+    },
+    {
+      "tipo": "chiudi_slideshow",
+      "testo": "Chiudiamo lo slideshow",
+      "durata": 1500
+    },
+    {
+      "tipo": "fine",
+      "testo": "Demo completata! Ora sei pronto per esplorare la mappa liberamente.",
+      "durata": 5000
+    }
+  ]
+}
