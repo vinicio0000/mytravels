@@ -11,31 +11,31 @@
   <meta name="author" content="Vinicio e Luisa">
   <meta name="robots" content="index, follow">
 
+<
+
+
+
 <!-- CONTROLLO LINGUA BROWSER ED EVENTUALE DIALOGO PER INGLESE -->
 <link rel="alternate" hreflang="it" href="https://vinicio0000.github.io/mytravels/index.html" />
 <link rel="alternate" hreflang="en" href="https://vinicio0000.github.io/mytravels/index_en.html" />
 
-
 <script>
   (function() {
-    // Verifica se l'utente ha già espresso una preferenza in precedenza
-    //if (!localStorage.getItem('preferred_language_choice')) {
-      var userLang = navigator.language || navigator.userLanguage;
-      // Se la lingua del dispositivo non inizia per 'it' (Italiano)
-      if (userLang && !userLang.toLowerCase().startsWith('it')) {
-        setTimeout(function() {
-          var switchLang = confirm("It looks like your device language is not Italian. Would you like to switch to the English version of the site?");
-          if (switchLang) {
-            localStorage.setItem('preferred_language_choice', 'en');
-            window.location.href = 'index_en.html';
-          } else {
-            localStorage.setItem('preferred_language_choice', 'it');
-          }
-        }, 1000);
-      }
-   
+    var userLang = navigator.language || navigator.userLanguage;
+    
+    // Se la lingua del dispositivo non inizia per 'it' (Italiano)
+    if (userLang && !userLang.toLowerCase().startsWith('it')) {
+      setTimeout(function() {
+        var switchLang = confirm("It looks like your device language is not Italian. Would you like to switch to the English version of the site?");
+        if (switchLang) {
+          window.location.href = 'index_en.html';
+        }
+      }, 1000);
+    }
   })();
 </script>
+
+
 
   <!-- Tag per attivare la PWA e nascondere le barre del browser -->
   <link rel="manifest" href="manifest.json">
