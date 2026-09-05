@@ -1,5 +1,5 @@
 {
-  "totale_paesi_visitati": 29,
+  "totale_paesi_visitati": 30,
   "totale_stati_usa_visitati": 13,
   "lista_paesi": [
     "Albania",
@@ -12,6 +12,7 @@
     "Francia",
     "Germania",
     "Giappone",
+    "Giordania",
     "Grecia",
     "India",
     "Indonesia",
@@ -120,6 +121,12 @@
       ],
       "stati_usa": []
     },
+    "giordania 2023": {
+      "paesi": [
+        "Giordania"
+      ],
+      "stati_usa": []
+    },
     "grecia 2026": {
       "paesi": [
         "Albania",
@@ -168,8 +175,7 @@
     },
     "istria 2025": {
       "paesi": [
-        "Croazia",
-        "Slovenia"
+        "Croazia"
       ],
       "stati_usa": []
     },
@@ -180,6 +186,12 @@
       "stati_usa": []
     },
     "madrid 2011": {
+      "paesi": [
+        "Spagna"
+      ],
+      "stati_usa": []
+    },
+    "marocco 1997": {
       "paesi": [
         "Spagna"
       ],
@@ -203,6 +215,12 @@
       ],
       "stati_usa": []
     },
+    "scozia 2010": {
+      "paesi": [
+        "Regno Unito"
+      ],
+      "stati_usa": []
+    },
     "sharm 2017": {
       "paesi": [
         "Egitto"
@@ -212,6 +230,12 @@
     "sicilia 2025": {
       "paesi": [
         "Italia"
+      ],
+      "stati_usa": []
+    },
+    "slovenia 2006": {
+      "paesi": [
+        "Slovenia"
       ],
       "stati_usa": []
     },
@@ -314,6 +338,7 @@
     "ungheria romania turchia 1996": {
       "paesi": [
         "Bulgaria",
+        "Croazia",
         "Grecia",
         "Romania",
         "Turchia",
