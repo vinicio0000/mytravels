@@ -1,5 +1,5 @@
 {
-  "totale_paesi_visitati": 31,
+  "totale_paesi_visitati": 32,
   "totale_stati_usa_visitati": 13,
   "lista_paesi": [
     "Albania",
@@ -17,6 +17,7 @@
     "Grecia",
     "India",
     "Indonesia",
+    "Irlanda",
     "Italia",
     "Malesia",
     "Marocco",
@@ -179,6 +180,13 @@
     "irlanda 2007": {
       "paesi": [
         "Regno Unito"
+      ],
+      "stati_usa": []
+    },
+    "irlanda tenerife 2014": {
+      "paesi": [
+        "Irlanda",
+        "Spagna"
       ],
       "stati_usa": []
     },
