@@ -1,4 +1,4 @@
-<!-- VERSION: 3.21_LANDSCAPE_MODAL_FULLSCREEN_LOCALSTORAGE -->
+<!-- VERSION: 3.22_LANDSCAPE_MODAL_FULLSCREEN_LOCALSTORAGE_WEBP -->
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -10,10 +10,6 @@
   <meta name="keywords" content="mappa viaggi interattiva, foto geolocalizzate viaggi, viaggi in camper, viaggi fai da te, itinerari camper marocco, sosta camper spagna marocco, diari di viaggio camper">
   <meta name="author" content="Vinicio e Luisa">
   <meta name="robots" content="index, follow">
-
-<
-
-
 
 <!-- CONTROLLO LINGUA BROWSER ED EVENTUALE DIALOGO PER INGLESE -->
 <link rel="alternate" hreflang="it" href="https://vinicio0000.github.io/mytravels/index.html" />
@@ -34,7 +30,6 @@
     }
   })();
   
-  
 function selezionaViaggioEChiudi(nomeViaggio) {
   // 1. Chiude la modale/popup della foto ingrandita
   chiudiModalFoto(false);
@@ -47,12 +42,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
     cambiaViaggio();
   }
 }  
-  
-  
-  
 </script>
-
-
 
   <!-- Tag per attivare la PWA e nascondere le barre del browser -->
   <link rel="manifest" href="manifest.json">
@@ -824,6 +814,20 @@ function selezionaViaggioEChiudi(nomeViaggio) {
 
     <!-- MENU HAMBURGER -->
     <div id="menu-panel">
+	
+	<!-- SELETTORE LINGUA -->
+  <div class="filtro-group" style="flex-direction: column; align-items: flex-start; gap: 4px; margin-bottom: 4px;">
+    <label for="select-lingua"><b>🌐 Lingua / Language:</b></label>
+    <select id="select-lingua" onchange="location = this.value;" style="width: 100%;">
+      <option value="index.html" selected>🇮🇹 Italiano</option>
+      <option value="index_en.html">🇬🇧 English</option>
+    </select>
+  </div>
+
+  <hr style="border:0; border-top:1px solid #eee; margin:2px 0;">
+
+  
+	
       <div class="filtro-group" style="flex-direction: column; align-items: flex-start; gap: 4px; margin-bottom: 4px;">
         <label for="select-mappa"><b>Stile Mappa:</b></label>
         <select id="select-mappa" onchange="cambiaStileMappa(); salvaImpostazioni();" style="width: 100%;">
@@ -934,32 +938,10 @@ function selezionaViaggioEChiudi(nomeViaggio) {
     <!-- VISTA REPORT -->
     <div id="report-view">
       <div class="report-grid">
-        <!-- <div class="report-card"><h4>Tappe Totali</h4><p id="rep-tappe">0</p></div>
-        <div class="report-card"><h4>Foto Caricate</h4><p id="rep-foto">0</p></div>
-		-->
         <div class="report-card clickable" onclick="mostraListaPaesi()" title="Clicca per la lista"><h4>Paesi Visitati 🔍</h4><p id="rep-paesi">0</p></div>
         <div class="report-card clickable" onclick="mostraListaStatiUsa()" title="Clicca per la lista"><h4>Stati USA Visitati 🔍</h4><p id="rep-stati-usa">0</p></div>
       </div>
-      <!-- 
-	  <div style="margin-top: 15px; text-align: center;">
-        <button onclick="mostraFormModificaReport()" style="background: #007bff; color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-weight: 600;">✏️ Modifica Report / Note</button>
-      </div>
-	  -->
     </div>
-
-    <!-- FORM MODIFICA 
-    <div id="report-edit-form" style="display: none;">
-      <div style="display: flex; flex-direction: column; gap: 10px;">
-        <label style="font-size: 12px; font-weight: bold; color: #333;">Note / Descrizione Viaggio:
-          <textarea id="edit-report-notes" rows="4" style="width: 100%; border: 1px solid #ccc; border-radius: 6px; padding: 6px; font-size: 12px; margin-top: 4px; box-sizing: border-box;"></textarea>
-        </label>
-        <div style="display: flex; justify-content: flex-end; gap: 8px; margin-top: 5px;">
-          <button onclick="nascondiFormModificaReport()" style="background: #6c757d; color: white; border: none; padding: 6px 12px; border-radius: 6px; cursor: pointer; font-size: 12px;">Annulla</button>
-          <button onclick="salvaModificaReport()" style="background: #28a745; color: white; border: none; padding: 6px 12px; border-radius: 6px; cursor: pointer; font-size: 12px; font-weight: bold;">💾 Salva Modifiche</button>
-        </div>
-      </div>
-    </div>
-	-->
   </div>
   
 
@@ -978,7 +960,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       border: 1px solid rgba(0,0,0,0.15);
     ">
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; border-bottom: 2px solid #007bff; padding-bottom: 6px;">
-        <h3 style="margin:0; font-size:16px; color:#2c3e50;">🌍 Guida e Informazioni (v3.21)</h3>
+        <h3 style="margin:0; font-size:16px; color:#2c3e50;">🌍 Guida e Informazioni (v3.22)</h3>
         <button onclick="chiudiModalAiuto()" style="background:none; border:none; font-size:20px; cursor:pointer; color:#666;">✖</button>
       </div>
       
@@ -1428,7 +1410,6 @@ function selezionaViaggioEChiudi(nomeViaggio) {
             paesiAttuali = dett.paesi || [];
             statiUsaAttuali = dett.stati_usa || [];
           } else {
-            // Se non trovato in dettaglio per viaggio, fallback sui dati generali o dal json dei punti
             estraiPaesiEStatiDaPunti(dati);
           }
         } else if (viaggioSel === 'tutti') {
@@ -1441,8 +1422,6 @@ function selezionaViaggioEChiudi(nomeViaggio) {
         estraiPaesiEStatiDaPunti(dati);
       }
 
-      //document.getElementById('rep-tappe').innerText = tappe;
-      //document.getElementById('rep-foto').innerText = foto;
       document.getElementById('rep-paesi').innerText = paesiAttuali.length;
       document.getElementById('rep-stati-usa').innerText = statiUsaAttuali.length;
     }
@@ -1498,36 +1477,29 @@ function selezionaViaggioEChiudi(nomeViaggio) {
 
     function chiudiReport() {
       document.getElementById('report-modal').classList.remove('active');
-	  nascondiFormModificaReport();
+      nascondiFormModificaReport();
     }
 
-	function mostraFormModificaReport() {
+    function mostraFormModificaReport() {
       document.getElementById('report-view').style.display = 'none';
       document.getElementById('report-edit-form').style.display = 'block';
       document.getElementById('report-modal-title').innerText = '✏️ Modifica Report Viaggio';
 
-      // Recupera eventuali note salvate precedentemente per il viaggio corrente
       const viaggioSel = document.getElementById('select-viaggio').value;
       const noteSalvate = localStorage.getItem('note_report_' + viaggioSel) || '';
       document.getElementById('edit-report-notes').value = noteSalvate;
     }
 
     function nascondiFormModificaReport() {
-      document.getElementById('report-edit-form').style.display = 'none';
-      document.getElementById('report-view').style.display = 'block';
+      if (document.getElementById('report-edit-form')) {
+        document.getElementById('report-edit-form').style.display = 'none';
+      }
+      if (document.getElementById('report-view')) {
+        document.getElementById('report-view').style.display = 'block';
+      }
       document.getElementById('report-modal-title').innerText = '📊 Statistiche e Report Viaggio';
     }
 
-    function salvaModificaReport() {
-      const viaggioSel = document.getElementById('select-viaggio').value;
-      const note = document.getElementById('edit-report-notes').value;
-      
-      // Salva le note nel localStorage associate al viaggio selezionato
-      localStorage.setItem('note_report_' + viaggioSel, note);
-      
-      alert('Modifiche al report salvate con successo!');
-      nascondiFormModificaReport();
-    }
     function popolaAnni() {
       const selectAnno = document.getElementById('select-anno');
       const anni = new Set();
@@ -1616,7 +1588,6 @@ function selezionaViaggioEChiudi(nomeViaggio) {
         datiFiltrati = datiFiltrati.filter(p => p.viaggio === viaggioSel);
       }
 
-      // Aggiorna anche il report in base alla vista selezionata
       calcolaReport(datiFiltrati);
 
       const puntiValidi = [];
@@ -1643,26 +1614,26 @@ function selezionaViaggioEChiudi(nomeViaggio) {
           });
 
           const indexAttuale = puntiSlideshow.length;
-		  const fotoThumb = p.thumb || p.foto.replace(/^foto[\/\\]/, 'webp/').replace(/\.jpg$/i, '.webp');
+          const fotoThumb = p.thumb || p.foto.replace(/^foto[\/\\]/, 'webp/').replace(/\.jpg$/i, '.webp');
+          const fotoWebp = p.foto.replace(/^foto[\/\\]/, 'webp/').replace(/\.jpg$/i, '.webp');
           const htmlDescrizione = p.descrizione ? `<div class="popup-descrizione">${p.descrizione}</div>` : '';
           const htmlBtnDiario = p.diario ? `<br><a href="${p.diario}" target="_blank" rel="noopener" class="btn-diario">📖 Diario di Viaggio</a>` : '';
 
- 		
-			const htmlBtnViaggio = p.viaggio ? `<br><a href="javascript:void(0)" onclick="selezionaViaggioEChiudi('${p.viaggio.replace(/'/g, "\\'")}')" style="display:inline-block; margin-top:6px; color:#17a589; font-weight:bold; text-decoration:none; font-size:11px;">✈️ Vai al viaggio: ${p.viaggio}</a>` : '';
+          const htmlBtnViaggio = p.viaggio ? `<br><a href="javascript:void(0)" onclick="selezionaViaggioEChiudi('${p.viaggio.replace(/'/g, "\\'")}')" style="display:inline-block; margin-top:6px; color:#17a589; font-weight:bold; text-decoration:none; font-size:11px;">✈️ Vai al viaggio: ${p.viaggio}</a>` : '';
 
-			const popupContent = `
-			  <div class="popup-container">
-				<b style="font-size: 13px;">${p.nome || p.viaggio}</b><br>
-				<small style="color: #666;">📅 ${p.data}</small>
-				${htmlDescrizione}
-				<img src="${fotoThumb}" class="popup-foto" alt="${p.nome}" draggable="false" onclick="apriModalFoto('${p.foto}', ${indexAttuale})">
-				<a href="javascript:void(0)" onclick="apriModalFoto('${p.foto}', ${indexAttuale})" style="display:inline-block; margin-top:6px; color:#007bff; font-weight:bold; text-decoration:none; font-size:12px;">Ingrandisci foto 🔍</a>
-				${htmlBtnViaggio}
-				${htmlBtnDiario}
-			  </div>
+          const popupContent = `
+            <div class="popup-container">
+              <b style="font-size: 13px;">${p.nome || p.viaggio}</b><br>
+              <small style="color: #666;">📅 ${p.data}</small>
+              ${htmlDescrizione}
+              <img src="${fotoThumb}" class="popup-foto" alt="${p.nome}" draggable="false" onclick="apriModalFoto('${fotoWebp}', ${indexAttuale})">
+              <a href="javascript:void(0)" onclick="apriModalFoto('${fotoWebp}', ${indexAttuale})" style="display:inline-block; margin-top:6px; color:#007bff; font-weight:bold; text-decoration:none; font-size:12px;">Ingrandisci foto 🔍</a>
+              ${htmlBtnViaggio}
+              ${htmlBtnDiario}
+            </div>
           `;
 
-		  marker.bindPopup(popupContent, { autoPan: false });
+          marker.bindPopup(popupContent, { autoPan: false });
 
           if (viaggioSel === 'tutti' && usaClusterCheckbox) {
             clusterGroup.addLayer(marker);
@@ -1685,23 +1656,10 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       }
     }
 
-    function precaricaFotoSlideshow() {
-      immaginiPrecaricate = [];
-      puntiSlideshow.forEach(p => {
-        if (p.foto) {
-          const img = new Image();
-          img.src = p.foto;
-          immaginiPrecaricate.push(img);
-        }
-      });
-    }
-
     function avviaSlideshow() {
       if (markersSlideshow.length === 0) return;
       fermaPanIniziale();
       attivaWakeLock();
-
-      //precaricaFotoSlideshow();
 
       isSlideshowActive = true;
       isSlideshowPaused = false;
@@ -1979,7 +1937,8 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       if (currentModalIndex === -1 || markersSlideshow.length === 0) return;
       currentModalIndex = (currentModalIndex + 1) % markersSlideshow.length;
       const p = puntiSlideshow[currentModalIndex];
-      document.getElementById('imgModalSrc').src = p.foto;
+      const fotoWebp = p.foto.replace(/^foto[\/\\]/, 'webp/').replace(/\.jpg$/i, '.webp');
+      document.getElementById('imgModalSrc').src = fotoWebp;
       aggiornaModalCaption();
     }
 
@@ -1987,7 +1946,8 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       if (currentModalIndex === -1 || markersSlideshow.length === 0) return;
       currentModalIndex = (currentModalIndex - 1 + markersSlideshow.length) % markersSlideshow.length;
       const p = puntiSlideshow[currentModalIndex];
-      document.getElementById('imgModalSrc').src = p.foto;
+      const fotoWebp = p.foto.replace(/^foto[\/\\]/, 'webp/').replace(/\.jpg$/i, '.webp');
+      document.getElementById('imgModalSrc').src = fotoWebp;
       aggiornaModalCaption();
     }
 
