@@ -249,6 +249,12 @@
       ],
       "stati_usa": []
     },
+    "sardegna 1996": {
+      "paesi": [
+        "Italia"
+      ],
+      "stati_usa": []
+    },
     "scozia 2010": {
       "paesi": [
         "Regno Unito"
@@ -306,6 +312,13 @@
         "Italia",
         "Marocco",
         "Portogallo",
+        "Spagna"
+      ],
+      "stati_usa": []
+    },
+    "spagna settembre 2026": {
+      "paesi": [
+        "Italia",
         "Spagna"
       ],
       "stati_usa": []

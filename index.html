@@ -1,4 +1,4 @@
-<!-- VERSION: 3.22_LANDSCAPE_MODAL_FULLSCREEN_LOCALSTORAGE_WEBP -->
+<!-- VERSION: 3.23_LANDSCAPE_MODAL_FULLSCREEN_LOCALSTORAGE_WEBP -->
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -153,7 +153,40 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       background: #aad3df;
     }
 
+    /* STILE FUMETTO DI ISTRUZIONI MAPPA */
+    #tooltip-istruzioni {
+      display: none;
+      position: absolute;
+      bottom: 80px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2000;
+      background: rgba(30, 60, 114, 0.92);
+      color: #ffffff;
+      padding: 10px 18px;
+      border-radius: 25px;
+      font-size: 13px;
+      font-weight: 600;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.35);
+      align-items: center;
+      gap: 10px;
+      pointer-events: auto;
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      animation: fadeInTooltip 0.5s ease-in-out;
+    }
+
+    @keyframes fadeInTooltip {
+      from { opacity: 0; transform: translate(-50%, 10px); }
+      to { opacity: 1; transform: translate(-50%, 0); }
+    }
+
     body.slideshow-active #header-container {
+      display: none !important;
+    }
+
+    body.slideshow-active #tooltip-istruzioni {
       display: none !important;
     }
 
@@ -770,6 +803,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       .slideshow-speed-container { font-size: 10px; }
       #select-speed { font-size: 10px; padding: 2px 4px; }
       #modal-caption { font-size: 11px; padding: 6px 10px; }
+      #tooltip-istruzioni { font-size: 11px; padding: 8px 12px; bottom: 60px; width: 80vw; }
     }
   </style>
 </head>
@@ -826,8 +860,6 @@ function selezionaViaggioEChiudi(nomeViaggio) {
 
   <hr style="border:0; border-top:1px solid #eee; margin:2px 0;">
 
-  
-	
       <div class="filtro-group" style="flex-direction: column; align-items: flex-start; gap: 4px; margin-bottom: 4px;">
         <label for="select-mappa"><b>Stile Mappa:</b></label>
         <select id="select-mappa" onchange="cambiaStileMappa(); salvaImpostazioni();" style="width: 100%;">
@@ -915,6 +947,14 @@ function selezionaViaggioEChiudi(nomeViaggio) {
 
   <div id="map"></div>
 
+  <!-- FUMETTO DI ISTRUZIONI MOSTRATO ALL'AVVIO A MAPPA PRONTA -->
+  <div id="tooltip-istruzioni">
+   <!-- <span>👉 Clicca su un marcatore colorato sulla mappa e successivamente sugli altri marcatori che appaiono fino ad arrivare a vedere le foto e i dettagli del viaggio!</span>
+-->   
+<span>👉 Clicca su un marcatore colorato <span style="display:inline-block; background-color:rgba(181, 226, 140, 0.6); padding:2px;"><span style="display:inline-block; width:22px; height:22px; line-height:22px; background-color:rgba(110, 204, 57, 0.9); color:#000; border-radius:50%; text-align:center; font-weight:bold; font-size:12px;">10</span></span> sulla mappa e successivamente sugli altri marcatori 📍 che appaiono fino ad arrivare a vedere le foto e i dettagli del viaggio. Cliccare sulle foto in miniatura per vedere a schermo intero.</span>
+   <button onclick="document.getElementById('tooltip-istruzioni').style.display='none'" style="background:transparent; border:none; color:#ffffff; font-size:16px; cursor:pointer; margin-left:6px; line-height:1;">✖</button>
+  </div>
+
   <!-- MODALE LISTA DETTAGLIATA (PAESI / STATI USA) -->
   <div id="lista-modal" class="modal-foto" onclick="chiudiListaModal()" style="z-index: 100010;">
     <div class="modal-aiuto-card" onclick="event.stopPropagation()">
@@ -960,7 +1000,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       border: 1px solid rgba(0,0,0,0.15);
     ">
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; border-bottom: 2px solid #007bff; padding-bottom: 6px;">
-        <h3 style="margin:0; font-size:16px; color:#2c3e50;">🌍 Guida e Informazioni (v3.22)</h3>
+        <h3 style="margin:0; font-size:16px; color:#2c3e50;">🌍 Guida e Informazioni (v3.23)</h3>
         <button onclick="chiudiModalAiuto()" style="background:none; border:none; font-size:20px; cursor:pointer; color:#666;">✖</button>
       </div>
       
@@ -1160,6 +1200,23 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       }
     }, 1000);
 
+    // FUNZIONE PER MOSTRARE IL FUMETTO GUIDA SOLO A MAPPA E DATI PRONTI
+    function mostraGuidaFumetto() {
+      if (typeof map !== 'undefined' && map) {
+        map.whenReady(() => {
+          const tooltip = document.getElementById('tooltip-istruzioni');
+          if (tooltip && markersSlideshow && markersSlideshow.length > 0) {
+            tooltip.style.display = 'flex';
+
+            // Chiusura automatica dopo 12 secondi
+            setTimeout(() => {
+              if (tooltip) tooltip.style.display = 'none';
+            }, 12000);
+          }
+        });
+      }
+    }
+
     function chiudiSplash() {
       clearInterval(splashTimer);
       const splash = document.getElementById('splash-screen');
@@ -1170,6 +1227,9 @@ function selezionaViaggioEChiudi(nomeViaggio) {
           splash.style.display = 'none';
           map.invalidateSize();
           avviaPanIniziale();
+
+          // MOSTRA IL FUMETTO DI GUIDA SOLO QUANDO LO SPLASH SCREEN È SCOMPARSO
+          mostraGuidaFumetto();
         }, 800);
       }
     }
@@ -1604,6 +1664,12 @@ function selezionaViaggioEChiudi(nomeViaggio) {
 
           const marker = L.marker([lat, lon], opzioniMarker);
           marker.coloreOriginale = coloreHex;
+
+          // NASCONDE IL FUMETTO DI ISTRUZIONI AL CLICK SU QUALSIASI MARCATORE
+          marker.on('click', function() {
+            const tooltip = document.getElementById('tooltip-istruzioni');
+            if (tooltip) tooltip.style.display = 'none';
+          });
 
           const tooltipContent = `<b>${p.nome || p.viaggio}</b><br>📅 ${p.data}`;
           
