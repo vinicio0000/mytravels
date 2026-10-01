@@ -93,76 +93,6 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       background: #aad3df;
     }
 
-    /* OVERLAY ACCESSO CON PASSWORD */
-    #login-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      height: 100dvh;
-      background-color: #111827;
-      color: #ffffff;
-      z-index: 9999999;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      box-sizing: border-box;
-    }
-
-    .login-card {
-      background: #1f2937;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-      width: 100%;
-      max-width: 320px;
-      text-align: center;
-    }
-
-    .login-card h2 {
-      margin-top: 0;
-      font-size: 20px;
-      margin-bottom: 20px;
-    }
-
-    .login-card input {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 12px;
-      border-radius: 6px;
-      border: 1px solid #374151;
-      background: #374151;
-      color: white;
-      box-sizing: border-box;
-      font-size: 14px;
-    }
-
-    .login-card button {
-      width: 100%;
-      padding: 10px;
-      border-radius: 6px;
-      border: none;
-      background: #2563eb;
-      color: white;
-      font-weight: bold;
-      cursor: pointer;
-      font-size: 14px;
-    }
-
-    .login-card button:hover {
-      background: #1d4ed8;
-    }
-
-    #login-error {
-      color: #ef4444;
-      font-size: 12px;
-      margin-top: 10px;
-      display: none;
-    }
-
     #splash-screen {
       position: fixed;
       top: 0;
@@ -879,23 +809,12 @@ function selezionaViaggioEChiudi(nomeViaggio) {
 </head>
 <body>
 
-  <!-- OVERLAY LOGIN ACCESSO CON PASSWORD -->
-  <div id="login-overlay">
-    <div class="login-card">
-      <h2>🔒 Area Riservata</h2>
-      <input type="text" id="login-username" placeholder="username">
-      <input type="password" id="login-password" placeholder="password">
-      <button onclick="verificaAccesso()">Accedi</button>
-      <div id="login-error">Credenziali non valide</div>
-    </div>
-  </div>
-
   <!-- SPLASH SCREEN -->
   <div id="splash-screen" onclick="chiudiSplash()">
     <div class="splash-card">
       <h1>🌍 La mappa dei viaggi<br>di Vinicio e Luisa</h1>
       <p>Ripercorri le nostre tappe: seleziona il viaggio e avvia la slideshow</p>
-
+      <!-- BOTTONE DEMO NELLO SPLASH SCREEN -->
       <div style="margin-top: 15px;">
         <a href="demo.html" onclick="event.stopPropagation()" style="background: #ffffff; color: #1e3c72; text-decoration: none; padding: 6px 14px; border-radius: 15px; font-size: 12px; font-weight: bold; display: inline-block; box-shadow: 0 2px 6px rgba(0,0,0,0.3);">
           🎬 Guarda la Demo Interattiva
@@ -930,6 +849,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
     <!-- MENU HAMBURGER -->
     <div id="menu-panel">
 	
+	<!-- SELETTORE LINGUA -->
   <div class="filtro-group" style="flex-direction: column; align-items: flex-start; gap: 4px; margin-bottom: 4px;">
     <label for="select-lingua"><b>🌐 Lingua / Language:</b></label>
     <select id="select-lingua" onchange="location = this.value;" style="width: 100%;">
@@ -981,6 +901,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
 
       <hr style="border:0; border-top:1px solid #eee; margin:2px 0;">
 
+      <!-- PULSANTE REPORT INSERITO IN MENU -->
       <a href="javascript:void(0)" onclick="apriReport()" style="text-decoration:none; color:#17a589; font-size:12px; font-weight:700; display:flex; align-items:center; gap:6px; margin-bottom: 6px;">
         📊 Report / Statistiche Viaggi
       </a>
@@ -998,6 +919,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
     <div id="slideshow-caption"></div>
   </div>
 
+  <!-- BARRA DI DIVISIONE TRASCINABILE -->
   <div id="slideshow-resizer"></div>
 
   <div id="slideshow-controls">
@@ -1025,11 +947,15 @@ function selezionaViaggioEChiudi(nomeViaggio) {
 
   <div id="map"></div>
 
+  <!-- FUMETTO DI ISTRUZIONI MOSTRATO ALL'AVVIO A MAPPA PRONTA -->
   <div id="tooltip-istruzioni">
-    <span>👉 Clicca su un marcatore colorato <span style="display:inline-block; background-color:rgba(181, 226, 140, 0.6); padding:2px;"><span style="display:inline-block; width:22px; height:22px; line-height:22px; background-color:rgba(110, 204, 57, 0.9); color:#000; border-radius:50%; text-align:center; font-weight:bold; font-size:12px;">10</span></span> sulla mappa e successivamente sugli altri marcatori 📍 che appaiono fino ad arrivare a vedere le foto e i dettagli del viaggio. Cliccare sulle foto in miniatura per vedere a schermo intero.</span>
-    <button onclick="document.getElementById('tooltip-istruzioni').style.display='none'" style="background:transparent; border:none; color:#ffffff; font-size:16px; cursor:pointer; margin-left:6px; line-height:1;">✖</button>
+   <!-- <span>👉 Clicca su un marcatore colorato sulla mappa e successivamente sugli altri marcatori che appaiono fino ad arrivare a vedere le foto e i dettagli del viaggio!</span>
+-->   
+<span>👉 Clicca su un marcatore colorato <span style="display:inline-block; background-color:rgba(181, 226, 140, 0.6); padding:2px;"><span style="display:inline-block; width:22px; height:22px; line-height:22px; background-color:rgba(110, 204, 57, 0.9); color:#000; border-radius:50%; text-align:center; font-weight:bold; font-size:12px;">10</span></span> sulla mappa e successivamente sugli altri marcatori 📍 che appaiono fino ad arrivare a vedere le foto e i dettagli del viaggio. Cliccare sulle foto in miniatura per vedere a schermo intero.</span>
+   <button onclick="document.getElementById('tooltip-istruzioni').style.display='none'" style="background:transparent; border:none; color:#ffffff; font-size:16px; cursor:pointer; margin-left:6px; line-height:1;">✖</button>
   </div>
 
+  <!-- MODALE LISTA DETTAGLIATA (PAESI / STATI USA) -->
   <div id="lista-modal" class="modal-foto" onclick="chiudiListaModal()" style="z-index: 100010;">
     <div class="modal-aiuto-card" onclick="event.stopPropagation()">
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; border-bottom: 2px solid #007bff; padding-bottom: 6px;">
@@ -1042,12 +968,14 @@ function selezionaViaggioEChiudi(nomeViaggio) {
     </div>
   </div>
   
+  <!-- MODALE REPORT E MODIFICA -->
   <div id="report-modal">
     <div class="report-header">
       <h3 id="report-modal-title">📊 Statistiche e Report Viaggio</h3>
       <button class="btn-chiudi-modal" onclick="chiudiReport()">✖</button>
     </div>
 
+    <!-- VISTA REPORT -->
     <div id="report-view">
       <div class="report-grid">
         <div class="report-card clickable" onclick="mostraListaPaesi()" title="Clicca per la lista"><h4>Paesi Visitati 🔍</h4><p id="rep-paesi">0</p></div>
@@ -1055,12 +983,15 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       </div>
     </div>
   </div>
+  
 
+  <!-- MODALE FOTO INGRANDITA -->
   <div id="imageModal" class="modal-foto" onclick="chiudiModalFoto(false)">
     <div id="modal-caption"></div>
     <img class="modal-foto-content" id="imgModalSrc" draggable="false" onclick="event.stopPropagation()">
   </div>
 
+  <!-- MODALE GUIDA / AIUTO COMPLETA -->
   <div id="modal-aiuto" class="modal-foto" onclick="chiudiModalAiuto()" style="z-index: 100002;">
     <div class="modal-aiuto-card" onclick="event.stopPropagation()" style="
       background: linear-gradient(rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.35)), url('mappamondo.jpg');
@@ -1143,43 +1074,6 @@ function selezionaViaggioEChiudi(nomeViaggio) {
   <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
 
   <script>
-    // --- GESTIONE AUTENTICAZIONE CLIENT-SIDE ---
-    const CREDENZIALI_VALIDE = {
-      user: "admin",
-      pass: "lucryae340bf"
-    };
-
-    function verificaAccesso() {
-      const u = document.getElementById('login-username').value;
-      const p = document.getElementById('login-password').value;
-      const err = document.getElementById('login-error');
-
-      if (u === CREDENZIALI_VALIDE.user && p === CREDENZIALI_VALIDE.pass) {
-        document.getElementById('login-overlay').style.display = 'none';
-        sessionStorage.setItem('autenticato', 'true');
-      } else {
-        err.style.display = 'block';
-      }
-    }
-
-    // Controlla se l'utente si è già autenticato nella sessione corrente
-    if (sessionStorage.getItem('autenticato') === 'true') {
-      document.addEventListener('DOMContentLoaded', () => {
-        const overlay = document.getElementById('login-overlay');
-        if (overlay) overlay.style.display = 'none';
-      });
-    }
-
-    // Permette di inviare le credenziali premendo il tasto "Invio"
-    document.addEventListener('keypress', function(e) {
-      if (e.key === 'Enter') {
-        const overlay = document.getElementById('login-overlay');
-        if (overlay && overlay.style.display !== 'none') {
-          verificaAccesso();
-        }
-      }
-    });
-
     // --- GESTIONE LOCALSTORAGE PER SALVATAGGIO PREFERENZE ---
     function salvaImpostazioni() {
       const impostazioni = {
@@ -1217,10 +1111,12 @@ function selezionaViaggioEChiudi(nomeViaggio) {
           console.error("Errore nel ripristino delle impostazioni da localStorage:", e);
         }
       } else {
+        // Valori di default se il localStorage è vuoto
         document.getElementById('check-cluster').checked = true;
       }
     }
 
+    // PROTEZIONE GLOBALE CONTRO IL TASTO DESTRO E IL TRASCINAMENTO DI QUALSIASI IMMAGINE
     document.addEventListener('contextmenu', function(e) {
       if (e.target.tagName === 'IMG') {
         e.preventDefault();
@@ -1304,6 +1200,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       }
     }, 1000);
 
+    // FUNZIONE PER MOSTRARE IL FUMETTO GUIDA SOLO A MAPPA E DATI PRONTI
     function mostraGuidaFumetto() {
       if (typeof map !== 'undefined' && map) {
         map.whenReady(() => {
@@ -1311,6 +1208,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
           if (tooltip && markersSlideshow && markersSlideshow.length > 0) {
             tooltip.style.display = 'flex';
 
+            // Chiusura automatica dopo 12 secondi
             setTimeout(() => {
               if (tooltip) tooltip.style.display = 'none';
             }, 12000);
@@ -1330,6 +1228,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
           map.invalidateSize();
           avviaPanIniziale();
 
+          // MOSTRA IL FUMETTO DI GUIDA SOLO QUANDO LO SPLASH SCREEN È SCOMPARSO
           mostraGuidaFumetto();
         }, 800);
       }
@@ -1433,6 +1332,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
     let touchStartX = 0;
     let touchStartY = 0;
 
+    // --- API SCREEN WAKE LOCK ---
     async function attivaWakeLock() {
       try {
         if ('wakeLock' in navigator) {
@@ -1534,8 +1434,10 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       });
     }
 
+    // Caricamento preferenze all'avvio
     caricaImpostazioni();
 
+    // CARICAMENTO CONGIUNTO DI DATI.JSON E PAESI_VISITATI.JSON
     Promise.all([
       fetch('dati.json').then(r => r.json()),
       fetch('paesi_visitati.json').then(r => r.json()).catch(err => {
@@ -1550,6 +1452,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       aggiornaMappa();
     }).catch(err => console.error("Errore nel caricamento dei dati:", err));
 
+    // --- FUNZIONI DI CALCOLO E GESTIONE DEL REPORT (CON PAESI_VISITATI) ---
     function calcolaReport(dati) {
       const tappe = dati.length;
       const foto = dati.filter(p => p.foto && p.foto.trim() !== '').length;
@@ -1762,6 +1665,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
           const marker = L.marker([lat, lon], opzioniMarker);
           marker.coloreOriginale = coloreHex;
 
+          // NASCONDE IL FUMETTO DI ISTRUZIONI AL CLICK SU QUALSIASI MARCATORE
           marker.on('click', function() {
             const tooltip = document.getElementById('tooltip-istruzioni');
             if (tooltip) tooltip.style.display = 'none';
@@ -1949,6 +1853,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       });
     }
 
+    // --- LOGICA TRASCINAMENTO / RESIZE DINAMICO ---
     const resizer = document.getElementById('slideshow-resizer');
     const photoPanel = document.getElementById('slideshow-photo-panel');
     const mapElement = document.getElementById('map');
@@ -2056,6 +1961,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       }
     });
 
+    // --- GESTIONE FOTO INGRANDITA CON SWIPE ---
     let currentModalIndex = -1;
 
     function apriModalFoto(urlFoto, index = -1) {
