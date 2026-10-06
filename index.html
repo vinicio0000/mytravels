@@ -1,4 +1,4 @@
-<!-- VERSION: 3.23_LANDSCAPE_MODAL_FULLSCREEN_LOCALSTORAGE_WEBP -->
+<!-- VERSION: 3.24_LANDSCAPE_MODAL_FULLSCREEN_LOCALSTORAGE_WEBP -->
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -862,6 +862,16 @@ function selezionaViaggioEChiudi(nomeViaggio) {
 
   <hr style="border:0; border-top:1px solid #eee; margin:2px 0;">
 
+      <!-- ORDINAMENTO VIAGGI -->
+      <div class="filtro-group" style="flex-direction: column; align-items: flex-start; gap: 4px; margin-bottom: 4px;">
+        <label for="select-ordinamento-viaggi"><b>Ordinamento Viaggi:</b></label>
+        <select id="select-ordinamento-viaggi" onchange="popolaViaggi(); salvaImpostazioni();" style="width: 100%;">
+          <option value="alfabetico" selected>Alfabetico (Predefinito)</option>
+          <option value="anno_desc">Per Anno (dal più recente)</option>
+          <option value="anno_asc">Per Anno (dal meno recente)</option>
+        </select>
+      </div>
+
       <div class="filtro-group" style="flex-direction: column; align-items: flex-start; gap: 4px; margin-bottom: 4px;">
         <label for="select-mappa"><b>Stile Mappa:</b></label>
         <select id="select-mappa" onchange="cambiaStileMappa(); salvaImpostazioni();" style="width: 100%;">
@@ -1085,7 +1095,8 @@ function selezionaViaggioEChiudi(nomeViaggio) {
         checkAbilitaAnno: document.getElementById('check-abilita-anno').checked,
         checkLegendaAnni: document.getElementById('check-legenda-anni').checked,
         selectMappa: document.getElementById('select-mappa').value,
-        selectDimensionePin: document.getElementById('select-dimensione-pin').value
+        selectDimensionePin: document.getElementById('select-dimensione-pin').value,
+        selectOrdinamentoViaggi: document.getElementById('select-ordinamento-viaggi') ? document.getElementById('select-ordinamento-viaggi').value : 'alfabetico'
       };
       localStorage.setItem('mappaViaggiSettings', JSON.stringify(impostazioni));
     }
@@ -1110,6 +1121,9 @@ function selezionaViaggioEChiudi(nomeViaggio) {
           }
           if (impostazioni.selectDimensionePin !== undefined) {
             document.getElementById('select-dimensione-pin').value = impostazioni.selectDimensionePin;
+          }
+          if (impostazioni.selectOrdinamentoViaggi !== undefined && document.getElementById('select-ordinamento-viaggi')) {
+            document.getElementById('select-ordinamento-viaggi').value = impostazioni.selectOrdinamentoViaggi;
           }
         } catch(e) {
           console.error("Errore nel ripristino delle impostazioni da localStorage:", e);
@@ -1595,21 +1609,62 @@ function selezionaViaggioEChiudi(nomeViaggio) {
     function popolaViaggi() {
       const selectAnno = document.getElementById('select-anno').value;
       const selectViaggio = document.getElementById('select-viaggio');
-      const viaggiSet = new Set();
+      const ordinamento = document.getElementById('select-ordinamento-viaggi') ? document.getElementById('select-ordinamento-viaggi').value : 'alfabetico';
+      
+      const viaggiMap = new Map();
 
       tuttiIDati.forEach(p => {
         if (selectAnno === 'tutti' || p.anno === selectAnno) {
-          if (p.viaggio) viaggiSet.add(p.viaggio);
+          if (p.viaggio) {
+             const annoVal = p.anno && p.anno !== "Sconosciuto" ? Number(p.anno) : 0;
+             if (!viaggiMap.has(p.viaggio)) {
+               viaggiMap.set(p.viaggio, annoVal);
+             } else {
+               if (annoVal > viaggiMap.get(p.viaggio)) {
+                 viaggiMap.set(p.viaggio, annoVal);
+               }
+             }
+          }
         }
       });
 
+      let viaggiArray = Array.from(viaggiMap.keys()).map(v => ({
+        nome: v,
+        anno: viaggiMap.get(v)
+      }));
+
+      // Ordinamento in base alla scelta dell'utente
+      if (ordinamento === 'alfabetico') {
+        viaggiArray.sort((a, b) => a.nome.localeCompare(b.nome));
+      } else if (ordinamento === 'anno_desc') {
+        viaggiArray.sort((a, b) => {
+          if (b.anno === a.anno) return a.nome.localeCompare(b.nome);
+          return b.anno - a.anno; // Dal più recente al meno recente
+        });
+      } else if (ordinamento === 'anno_asc') {
+        viaggiArray.sort((a, b) => {
+          if (a.anno === b.anno) return a.nome.localeCompare(b.nome);
+          return a.anno - b.anno; // Dal meno recente al più recente
+        });
+      }
+
+      const currentSelection = selectViaggio.value;
+
       selectViaggio.innerHTML = '<option value="tutti">Tutti i viaggi</option>';
-      Array.from(viaggiSet).sort().forEach(v => {
+      
+      viaggiArray.forEach(v => {
         const option = document.createElement('option');
-        option.value = v;
-        option.textContent = v;
+        option.value = v.nome;
+        option.textContent = v.nome; // Inseriamo solo il nome come richiesto (senza anno tra parentesi)
         selectViaggio.appendChild(option);
       });
+
+      // Ripristina il viaggio selezionato se è ancora nella lista
+      if (Array.from(selectViaggio.options).some(opt => opt.value === currentSelection)) {
+         selectViaggio.value = currentSelection;
+      } else {
+         selectViaggio.value = 'tutti';
+      }
     }
 
     function cambiaAnno() {
@@ -1680,8 +1735,6 @@ function selezionaViaggioEChiudi(nomeViaggio) {
           marker.coloreOriginale = coloreHex;
 
          
-		 
-		  
 		  // GESTIONE CLICK SUL MARCATORE
           marker.on('click', function(e) {
             const tooltip = document.getElementById('tooltip-istruzioni');

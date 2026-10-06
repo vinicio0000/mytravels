@@ -147,6 +147,13 @@
       ],
       "stati_usa": []
     },
+    "germania 2022": {
+      "paesi": [
+        "Germania",
+        "Italia"
+      ],
+      "stati_usa": []
+    },
     "germania 2026": {
       "paesi": [
         "Germania",
@@ -169,6 +176,13 @@
     "grecia 2026": {
       "paesi": [
         "Albania",
+        "Grecia",
+        "Italia"
+      ],
+      "stati_usa": []
+    },
+    "grecia pasqua 2022": {
+      "paesi": [
         "Grecia",
         "Italia"
       ],
@@ -323,6 +337,13 @@
       "paesi": [
         "Italia",
         "Marocco",
+        "Portogallo",
+        "Spagna"
+      ],
+      "stati_usa": []
+    },
+    "spagna portogallo 2022": {
+      "paesi": [
         "Portogallo",
         "Spagna"
       ],
