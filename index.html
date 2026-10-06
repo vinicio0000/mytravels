@@ -11,22 +11,24 @@
   <meta name="author" content="Vinicio e Luisa">
   <meta name="robots" content="index, follow">
 
-<!-- CONTROLLO LINGUA BROWSER ED EVENTUALE DIALOGO PER INGLESE -->
-<link rel="alternate" hreflang="it" href="https://vinicio0000.github.io/mytravels/index.html" />
-<link rel="alternate" hreflang="en" href="https://vinicio0000.github.io/mytravels/index_en.html" />
+<!-- CONTROLLO LINGUA BROWSER ED EVENTUALE DIALOGO PER INGLESE (SISTEMATO LINK RELATIVO) -->
+<link rel="alternate" hreflang="it" href="index.html" />
+<link rel="alternate" hreflang="en" href="index_en.html" />
 
 <script>
   (function() {
     var userLang = navigator.language || navigator.userLanguage;
     
-    // Se la lingua del dispositivo non inizia per 'it' (Italiano)
+    // Se la lingua del dispositivo non inizia per 'it' (Italiano) e non siamo già sulla pagina inglese
     if (userLang && !userLang.toLowerCase().startsWith('it')) {
-      setTimeout(function() {
-        var switchLang = confirm("It looks like your device language is not Italian. Would you like to switch to the English version of the site?");
-        if (switchLang) {
-          window.location.href = 'index_en.html';
-        }
-      }, 1000);
+      if (!window.location.pathname.endsWith('index_en.html')) {
+        setTimeout(function() {
+          var switchLang = confirm("It looks like your device language is not Italian. Would you like to switch to the English version of the site?");
+          if (switchLang) {
+            window.location.href = 'index_en.html';
+          }
+        }, 1000);
+      }
     }
   })();
   
@@ -51,7 +53,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
-  <link rel="canonical" href="https://vinicio0000.github.io/mytravels/">
+  <link rel="canonical" href="./">
   
   <script data-goatcounter="https://vinicio0001.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 		
@@ -66,7 +68,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "La Mappa dei Viaggi di Vinicio e Luisa",
-    "url": "https://vinicio0000.github.io/mytravels/",
+    "url": "./",
     "description": "Mappa interattiva con oltre 30 anni di viaggi fai da te e itinerari in camper in Marocco, Spagna e Portogallo con foto geolocalizzate.",
     "author": {
       "@type": "Person",
@@ -849,10 +851,10 @@ function selezionaViaggioEChiudi(nomeViaggio) {
     <!-- MENU HAMBURGER -->
     <div id="menu-panel">
 	
-	<!-- SELETTORE LINGUA -->
+	<!-- SELETTORE LINGUA INDIPENDENTE DAL DOMINIO -->
   <div class="filtro-group" style="flex-direction: column; align-items: flex-start; gap: 4px; margin-bottom: 4px;">
     <label for="select-lingua"><b>🌐 Lingua / Language:</b></label>
-    <select id="select-lingua" onchange="location = this.value;" style="width: 100%;">
+    <select id="select-lingua" onchange="window.location.href = this.value;" style="width: 100%;">
       <option value="index.html" selected>🇮🇹 Italiano</option>
       <option value="index_en.html">🇬🇧 English</option>
     </select>
@@ -949,8 +951,6 @@ function selezionaViaggioEChiudi(nomeViaggio) {
 
   <!-- FUMETTO DI ISTRUZIONI MOSTRATO ALL'AVVIO A MAPPA PRONTA -->
   <div id="tooltip-istruzioni">
-   <!-- <span>👉 Clicca su un marcatore colorato sulla mappa e successivamente sugli altri marcatori che appaiono fino ad arrivare a vedere le foto e i dettagli del viaggio!</span>
--->   
 <span>👉 Clicca su un marcatore colorato <span style="display:inline-block; background-color:rgba(181, 226, 140, 0.6); padding:2px;"><span style="display:inline-block; width:22px; height:22px; line-height:22px; background-color:rgba(110, 204, 57, 0.9); color:#000; border-radius:50%; text-align:center; font-weight:bold; font-size:12px;">10</span></span> sulla mappa e successivamente sugli altri marcatori 📍 che appaiono fino ad arrivare a vedere le foto e i dettagli del viaggio. Cliccare sulle foto in miniatura per vedere a schermo intero.</span>
    <button onclick="document.getElementById('tooltip-istruzioni').style.display='none'" style="background:transparent; border:none; color:#ffffff; font-size:16px; cursor:pointer; margin-left:6px; line-height:1;">✖</button>
   </div>
@@ -1012,6 +1012,10 @@ function selezionaViaggioEChiudi(nomeViaggio) {
         <div class="box-seo-guida">
           📖 <b>Guida In Evidenza:</b> Leggi il nostro resoconto di viaggio completo<br>
           <a href="Diario_Sudafrica_2009.html" target="_blank">Diario di Viaggio in Sudafrica: Itinerario, Dogana e Consigli</a>
+        </div>
+        <div class="box-seo-guida">
+          📖 <b>Guida In Evidenza:</b> Leggi il nostro resoconto di viaggio completo<br>
+          <a href="firenzevenezia2023.html" target="_blank">Diario di Viaggio in Camper: Il Fascino di Firenze e la Magia di Venezia</a>
         </div>
 
         <p style="margin-top:6px;">
@@ -1620,7 +1624,17 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       if (isSlideshowActive) fermaSlideshow();
       aggiornaMappa();
     }
+	
+	function saltaASlide(index) {
+      if (!isSlideshowActive) return;
+      currentSlideIndex = index;
+      mostraSlide(currentSlideIndex);
 
+      // Se la riproduzione automatica è attiva, resetta il timer per dare il tempo di guardare la nuova foto
+      if (!isSlideshowPaused) {
+        avviaTimer();
+      }
+    }
     function aggiornaMappa() {
       const annoSel = document.getElementById('select-anno').value;
       const viaggioSel = document.getElementById('select-viaggio').value;
@@ -1665,10 +1679,21 @@ function selezionaViaggioEChiudi(nomeViaggio) {
           const marker = L.marker([lat, lon], opzioniMarker);
           marker.coloreOriginale = coloreHex;
 
-          // NASCONDE IL FUMETTO DI ISTRUZIONI AL CLICK SU QUALSIASI MARCATORE
-          marker.on('click', function() {
+         
+		 
+		  
+		  // GESTIONE CLICK SUL MARCATORE
+          marker.on('click', function(e) {
             const tooltip = document.getElementById('tooltip-istruzioni');
             if (tooltip) tooltip.style.display = 'none';
+
+            // Se la slideshow è attiva, salta a questa slide ed evita l'apertura del popup
+            if (isSlideshowActive) {
+              if (marker.isPopupOpen()) {
+                marker.closePopup();
+              }
+              saltaASlide(indexAttuale);
+            }
           });
 
           const tooltipContent = `<b>${p.nome || p.viaggio}</b><br>📅 ${p.data}`;
@@ -1685,7 +1710,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
           const htmlDescrizione = p.descrizione ? `<div class="popup-descrizione">${p.descrizione}</div>` : '';
           const htmlBtnDiario = p.diario ? `<br><a href="${p.diario}" target="_blank" rel="noopener" class="btn-diario">📖 Diario di Viaggio</a>` : '';
 
-          const htmlBtnViaggio = p.viaggio ? `<br><a href="javascript:void(0)" onclick="selezionaViaggioEChiudi('${p.viaggio.replace(/'/g, "\\'")}')" style="display:inline-block; margin-top:6px; color:#17a589; font-weight:bold; text-decoration:none; font-size:11px;">✈️ Vai al viaggio: ${p.viaggio}</a>` : '';
+          const htmlBtnViaggio = p.viaggio ? `<br><a href="javascript:void(0)" onclick="selezionaViaggioEChiudi('${p.viaggio.replace(/'/g, "\\'")}')" style="display:inline-block; margin-top:6px; color:#17a589; font-weight:bold; text-decoration:none; font-size:11px;">✈ Vai al viaggio: ${p.viaggio}</a>` : '';
 
           const popupContent = `
             <div class="popup-container">

@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- TITOLO E DESCRIZIONE SEO -->
+  <title>Diario di Viaggio in Camper: Firenze e Venezia | Vinicio e Luisa</title>
+  <meta name="description" content="Racconto di viaggio in camper a Firenze e Venezia di Vinicio e Luisa con il loro cocker Leo. Itinerario completo, passeggiate e consigli pratici.">
+  <meta name="author" content="Vinicio e Luisa">
+  <meta name="robots" content="index, follow">
+
+  <style>
+    body {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      line-height: 1.8;
+      color: #2c3e50;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* BARRA IN ALTO PER TORNARE ALLA MAPPA */
+    .top-bar {
+      background-color: #1e3c72;
+      color: white;
+      padding: 12px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    .top-bar a {
+      color: #ffffff;
+      text-decoration: none;
+      font-family: sans-serif;
+      font-weight: bold;
+      font-size: 14px;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 6px 14px;
+      border-radius: 20px;
+      transition: background 0.2s;
+    }
+
+    .top-bar a:hover {
+      background: rgba(255, 255, 255, 0.4);
+    }
+
+    /* CONTENITORE CENTRALE DEL TESTO */
+    .container {
+      max-width: 800px;
+      margin: 30px auto;
+      background: #ffffff;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      box-sizing: border-box;
+    }
+
+    h1 {
+      font-family: sans-serif;
+      font-size: 28px;
+      color: #1e3c72;
+      margin-top: 0;
+      line-height: 1.3;
+    }
+
+    h2 {
+      font-family: sans-serif;
+      font-size: 22px;
+      color: #2c3e50;
+      border-bottom: 2px solid #52b69a;
+      padding-bottom: 6px;
+      margin-top: 40px;
+    }
+
+    p {
+      font-size: 17px;
+      margin-bottom: 20px;
+      text-align: justify;
+    }
+
+    /* BOX EVIDENZIATO PER I CONSIGLI PRATICI */
+    .box-info {
+      background-color: #eef7f6;
+      border-left: 5px solid #52b69a;
+      padding: 15px 20px;
+      margin: 25px 0;
+      border-radius: 4px;
+      font-family: sans-serif;
+      font-size: 15px;
+    }
+
+    .box-info h3 {
+      margin-top: 0;
+      color: #1e3c72;
+    }
+
+    /* BOX HIGHLIGHT PER I LUOGHI PRINCIPALI */
+    .box-highlight {
+      background-color: #fff9e6;
+      border-left: 6px solid #f39c12;
+      padding: 20px;
+      margin: 30px 0;
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+
+    .box-highlight h3 {
+      margin-top: 0;
+      color: #d35400;
+      font-size: 18px;
+    }
+
+    ul {
+      font-size: 16px;
+      line-height: 1.8;
+      padding-left: 20px;
+    }
+
+    /* BOTTONI IN FONDO ALLA PAGINA */
+    .action-buttons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      margin-top: 40px;
+    }
+
+    .btn-action {
+      display: inline-block;
+      width: 100%;
+      max-width: 350px;
+      padding: 14px 20px;
+      border-radius: 6px;
+      font-family: sans-serif;
+      font-weight: bold;
+      font-size: 16px;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: background 0.2s, transform 0.1s;
+    }
+
+    .btn-mappa {
+      background-color: #007bff;
+      color: white;
+    }
+
+    .btn-mappa:hover {
+      background-color: #0056b3;
+    }
+
+    .btn-feedback {
+      background-color: #27ae60;
+      color: white;
+    }
+
+    .btn-feedback:hover {
+      background-color: #219150;
+    }
+
+    /* MODAL PER FORM CONTATTI */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.6);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 8px;
+      width: 90%;
+      max-width: 500px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      font-family: sans-serif;
+      position: relative;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 24px;
+      cursor: pointer;
+      color: #aaa;
+    }
+
+    .close-btn:hover {
+      color: #000;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .form-group input, .form-group textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-family: inherit;
+    }
+
+    .btn-submit {
+      background-color: #1e3c72;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      width: 100%;
+      font-size: 16px;
+    }
+
+    .btn-submit:hover {
+      background-color: #162d56;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 20px;
+        margin: 10px;
+      }
+      h1 { font-size: 22px; }
+      h2 { font-size: 18px; }
+      p { font-size: 15px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- BARRA DI NAVIGAZIONE IN ALTO -->
+  <div class="top-bar">
+    <span style="font-weight: bold; font-family: sans-serif;">La Mappa dei Viaggi</span>
+    <a href="index.html" onclick="if(window.opener){ window.close(); return false; }">🌍 Torna alla Mappa Interattiva</a>
+  </div>
+
+  <!-- CONTENUTO DEL DIARIO -->
+  <div class="container">
+    
+    <h1>Diario di Viaggio in Camper: Il Fascino di Firenze e la Magia di Venezia</h1>
+    
+    <p><i>Racconto del viaggio effettuato da noi due (Vinicio e Luisa) insieme al nostro bellissimo cocker spaniel inglese nero Leo, a bordo del nostro camper. Questa volta vi portiamo alla scoperta delle meraviglie rinascimentali di Firenze e tra gli incantevoli canali di Venezia nell'aprile 2023.</i></p>
+
+    <!-- BOX CON INFORMAZIONI GENERALI -->
+    <div class="box-info">
+      <h3>📌 Note e Dettagli del Viaggio</h3>
+      <p style="margin:0; font-size: 14px;">
+        Questo viaggio si è svolto ad aprile 2023, suddividendo le giornate tra la Toscana e il Veneto.<br>
+        <b>La nostra filosofia:</b> Tutti i nostri viaggi in camper sono stati fatti in totale autonomia, senza gruppi organizzati. Ci siamo mossi facendo base in campeggi comodi per raggiungere il centro e ci siamo spostati sempre a piedi accompagnati dal nostro fedele Leo o utilizzando il nostro scooter al seguito.
+      </p>
+    </div>
+
+    <h2>1. Firenze: Dal Lungarno al Cuore del Rinascimento</h2>
+
+    <div class="box-info">
+      <h3>🏕️ 2 Aprile (Mattina): L'Arrivo e la Passeggiata verso il Centro</h3>
+      <p style="margin:0; font-size: 14px;">
+        Appena arrivati ci siamo sistemati allo <b>hu Firenze camping in town</b>, una struttura perfetta con piscina e tutti i servizi. Da lì abbiamo iniziato la nostra passeggiata verso il centro costeggiando l'Arno. La vista dei canottieri sul fiume con il Ponte Vecchio sullo sfondo ci ha dato il benvenuto. Dopo aver oltrepassato la Pescaia di San Niccolò e ammirato la Torre di Arnolfo in lontananza, ci siamo addentrati verso il centro. La prima grande tappa è stata <b>Piazza Santa Croce</b>, dove abbiamo passeggiato sotto il loggiato monumentale ammirando i dettagli del portale della Basilica.
+      </p>
+    </div>
+
+    <div class="box-info">
+      <h3>🏛️ 2 Aprile (Metà Mattinata): Piazza della Signoria e il Duomo</h3>
+      <p style="margin:0; font-size: 14px;">
+        Percorrendo Borgo de' Greci e lasciandoci alle spalle i tetti della Badia Fiorentina e del Bargello, siamo sbucati in <b>Piazza della Signoria</b>. Lo spettacolo qui è unico: l'imponente facciata in pietra di Palazzo Vecchio, il Cortile di Michelozzo meravigliosamente affrescato e la possente Fontana del Nettuno. Proseguendo lungo Via Vacchereccia e ammirando le antiche case torri e le bifore gotiche di Orsanmichele, siamo giunti in Piazza del Duomo. Qui la maestosità della Cupola del Brunelleschi, del Campanile di Giotto e dei mosaici a lunetta sulla ricca facciata marmorea di <b>Santa Maria del Fiore</b> ci ha lasciati senza parole.
+      </p>
+    </div>
+
+    <div class="box-info">
+      <h3>🌉 2 Aprile (Pomeriggio): Il Ponte Vecchio e il Tramonto</h3>
+      <p style="margin:0; font-size: 14px;">
+        Nel tardo pomeriggio siamo tornati verso l'Arno. Ci siamo rilassati ammirando il panorama dal Ponte Santa Trinita e dal Ponte alle Grazie, dove la bandiera con il Giglio fiorentino sventolava nel vento. Abbiamo poi percorso il <b>Ponte Vecchio</b> curiosando tra le sue storiche vetrine di gioiellerie, per poi ripassare da Piazza della Signoria, affascinati dalla Loggia dei Lanzi e dal Ratto delle Sabine. La giornata si è chiusa in Piazza della Repubblica, tra carrozze e un'antica giostra d'epoca.
+      </p>
+    </div>
+
+    <!-- BOX HIGHLIGHT PER PIAZZALE MICHELANGELO E FINE FIRENZE -->
+    <div class="box-highlight">
+      <h3>🌟 3 Aprile: Il Mercato del Porcellino e il Piazzale Michelangelo</h3>
+      <p style="margin:0; font-size: 15px; line-height: 1.8;">
+        La mattina seguente è iniziata sotto la Loggia del Mercato Nuovo, ammirando le storiche bancarelle e la celebre statua bronzea del <b>Porcellino</b>.<br><br>
+        Dopo una veloce pausa relax al nostro camper, nel primo pomeriggio ci siamo spostati con il nostro scooter verso il punto più panoramico della città: il <b>Piazzale Michelangelo</b>. Da lassù la vista è da togliere il fiato, lo sguardo abbraccia l'intera città dominata dalla Cupola, la torre di Palazzo Vecchio, Santa Croce e la caratteristica cupola verde della Sinagoga (Tempio Maggiore). Prima di salutare la città, siamo tornati in centro per goderci l'elegante architettura marmorea della <b>Basilica di Santa Maria Novella</b> e un ultimo romantico scorcio del Corridoio Vasariano dal Ponte Santa Trinita.
+      </p>
+    </div>
+
+    <h2>2. Venezia: Tra Canali, Ponti e Mosaici Bizantini</h2>
+
+    <div class="box-info">
+      <h3>🚤 6 Aprile (Prima Mattinata): Rio dei Tolentini e le Calli</h3>
+      <p style="margin:0; font-size: 14px;">
+        La mattina del 6 aprile ci siamo svegliati immersi nella magia di <b>Venezia</b>. Abbiamo iniziato l'esplorazione nei pressi dei Giardini Papadopoli, incrociando barche da trasporto merci e colorati mercati galleggianti di frutta e verdura. Camminare lungo le fondamenta del Rio dei Tolentini con Leo tra i ponticelli in pietra e i palazzi gotici in mattoni rossi è un'esperienza unica. Ad ogni angolo si scoprono vetrine ricche di dettagli, dalle uova di Pasqua in cioccolato alle inconfondibili e colorate maschere del Carnevale veneziano.
+      </p>
+    </div>
+
+    <div class="box-info">
+      <h3>🎨 6 Aprile (Metà Mattinata): Il Ponte dell'Accademia e San Marco</h3>
+      <p style="margin:0; font-size: 14px;">
+        Il momento più scenografico della passeggiata è stato salire i gradini in legno del <b>Ponte dell'Accademia</b>. Da lassù si gode della cartolina più celebre sul Canal Grande, con Palazzo Cavalli-Franchetti da un lato e la cupola della Basilica di Santa Maria della Salute dall'altro, mentre i gondolieri scivolano silenziosi sulle acque.<br><br>
+        Seguendo il flusso delle calle siamo approdati nell'immensa <b>Piazza San Marco</b>. Abbiamo ammirato l'inconfondibile Campanile, l'imponente loggiato in pietra d'Istria e marmo rosa del Palazzo Ducale, e ci siamo persi nei dettagli della <b>Basilica di San Marco</b>. Impossibile non restare affascinati dai suoi mosaici dorati brillanti al sole (tra cui la splendida Deposizione) e dall'iconica statua del Leone alato dorato incorniciato da un cielo stellato.
+      </p>
+    </div>
+
+    <div class="box-info">
+      <h3>🎭 7 Aprile: Canali, Ponti e Dettagli Nascosti</h3>
+      <p style="margin:0; font-size: 14px;">
+        L'ultima giornata veneziana è stata dedicata ai ritmi lenti. Siamo partiti dalla bianca e imponente facciata della <b>Chiesa di San Moisè</b> e dal suo molo. Ci siamo addentrati in tranquilli campielli che custodiscono antiche vere da pozzo in pietra, perfette per qualche foto ricordo. Abbiamo passeggiato lungo i canali e le caratteristiche Rive veneziane (come Riva degli Schiavoni), osservando le gondole coperte dai tipici teli blu ormeggiate ai pali, salutando questa splendida città da un ultimo pontile in legno sul Canal Grande.
+      </p>
+    </div>
+
+    <!-- AZIONI E PULSANTI FINALI -->
+    <div class="action-buttons">
+      <button class="btn-action btn-feedback" onclick="openModal()">💬 Parlaci del tuo viaggio / Per approfondire</button>
+      <a href="index.html" class="btn-action btn-mappa">🌍 Guarda le Foto Geolocalizzate sulla Mappa</a>
+    </div>
+
+  </div>
+
+  <!-- MODAL FORM PER FEEDBACK / CONTATTO -->
+  <div id="feedbackModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <h3 style="margin-top:0; color:#1e3c72;">Scrivici un messaggio</h3>
+      <p style="font-size:14px; color:#666; margin-bottom:20px;">Hai domande sul percorso o vuoi condividere un'esperienza? Lasciaci i tuoi contatti!</p>
+      
+      <!-- FORM DI CONTATTO -->
+      <form action="https://formspree.io/f/mqpzoyng" method="POST">
+        <div class="form-group">
+          <label for="email">La tua Email:</label>
+          <input type="email" id="email" name="email" required placeholder="nome@esempio.it">
+        </div>
+        <div class="form-group">
+          <label for="message">Messaggio o Domanda:</label>
+          <textarea id="message" name="message" rows="4" required placeholder="Scrivi qui il tuo messaggio..."></textarea>
+        </div>
+        <button type="submit" class="btn-submit">Invia Messaggio</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function openModal() {
+      document.getElementById('feedbackModal').style.display = 'flex';
+    }
+
+    function closeModal() {
+      document.getElementById('feedbackModal').style.display = 'none';
+    }
+
+    // Chiudi la modal se si clicca fuori dal riquadro
+    window.onclick = function(event) {
+      var modal = document.getElementById('feedbackModal');
+      if (event.target == modal) {
+        modal.style.display = 'none';
+      }
+    }
+  </script>
+
+</body>
+</html>

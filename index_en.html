@@ -1,43 +1,39 @@
-<!-- VERSION: 3.23_LANDSCAPE_MODAL_FULLSCREEN_LOCALSTORAGE_WEBP_EN -->
+<!-- VERSION: 3.23_LANDSCAPE_MODAL_FULLSCREEN_LOCALSTORAGE_WEBP (ENGLISH) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
   
-  <title>Interactive DIY and Camper Travel Map | Vinicio and Luisa's Travel Map</title>
-  <meta name="description" content="Explore over 30 years of DIY travel and motorhome adventures with our dynamic split-screen map: geotagged photos, itineraries in Spain, Morocco, and South Africa, and travel diaries.">
-  <meta name="keywords" content="interactive travel map, geotagged travel photos, camper travel, DIY travel, morocco camper itineraries, south africa travel diary, travel diaries">
+  <title>Interactive DIY and Camper Travel Map | Vinicio and Luisa's Travels</title>
+  <meta name="description" content="Explore over 30 years of independent travel and motorhome adventures with our split-screen interactive map: geolocated photos, itineraries, and travel diaries.">
+  <meta name="keywords" content="interactive travel map, geolocated travel photos, camper travels, independent travels, motorhome routes, travel diaries">
   <meta name="author" content="Vinicio and Luisa">
   <meta name="robots" content="index, follow">
 
-<!-- BROWSER LANGUAGE CONTROL AND ALTERNATE LINKS -->
-<link rel="alternate" hreflang="it" href="https://vinicio0000.github.io/mytravels/index.html" />
-<link rel="alternate" hreflang="en" href="https://vinicio0000.github.io/mytravels/index_en.html" />
+  <!-- HREFLANG ALTERNATE TAGS -->
+  <link rel="alternate" hreflang="it" href="index.html" />
+  <link rel="alternate" hreflang="en" href="index_en.html" />
 
 <script>
 function selezionaViaggioEChiudi(nomeViaggio) {
-  // 1. Close modal/popup of expanded photo
   chiudiModalFoto(false);
-  
-  // 2. Select trip from the dropdown menu at top
   const selectViaggio = document.getElementById('select-viaggio');
   if (selectViaggio) {
     selectViaggio.value = nomeViaggio;
-    // Execute trip change updating map and displaying Slideshow button
     cambiaViaggio();
   }
 }  
 </script>
 
-  <!-- PWA Tags -->
+  <!-- PWA TAGS -->
   <link rel="manifest" href="manifest.json">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
-  <link rel="canonical" href="https://vinicio0000.github.io/mytravels/index_en.html">
+  <link rel="canonical" href="./index_en.html">
   
   <script data-goatcounter="https://vinicio0001.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 		
@@ -52,8 +48,8 @@ function selezionaViaggioEChiudi(nomeViaggio) {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "Vinicio and Luisa's Travel Map",
-    "url": "https://vinicio0000.github.io/mytravels/index_en.html",
-    "description": "Interactive map featuring over 30 years of DIY travel and camper itineraries in Morocco, Spain, South Africa, and Portugal with geotagged photos.",
+    "url": "./index_en.html",
+    "description": "Interactive map with over 30 years of independent and camper travels across the world with geolocated photos.",
     "author": {
       "@type": "Person",
       "name": "Vinicio and Luisa"
@@ -62,7 +58,6 @@ function selezionaViaggioEChiudi(nomeViaggio) {
   </script>
 
   <style>
-    /* GLOBAL IMAGE PROTECTION AGAINST SAVING / DRAGGING */
     img {
       user-select: none !important;
       -webkit-user-select: none !important;
@@ -139,7 +134,39 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       background: #aad3df;
     }
 
+    #tooltip-istruzioni {
+      display: none;
+      position: absolute;
+      bottom: 80px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2000;
+      background: rgba(30, 60, 114, 0.92);
+      color: #ffffff;
+      padding: 10px 18px;
+      border-radius: 25px;
+      font-size: 13px;
+      font-weight: 600;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.35);
+      align-items: center;
+      gap: 10px;
+      pointer-events: auto;
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      animation: fadeInTooltip 0.5s ease-in-out;
+    }
+
+    @keyframes fadeInTooltip {
+      from { opacity: 0; transform: translate(-50%, 10px); }
+      to { opacity: 1; transform: translate(-50%, 0); }
+    }
+
     body.slideshow-active #header-container {
+      display: none !important;
+    }
+
+    body.slideshow-active #tooltip-istruzioni {
       display: none !important;
     }
 
@@ -156,7 +183,6 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       display: flex;
     }
 
-    /* DRAGGABLE RESIZER BAR */
     #slideshow-resizer {
       display: none;
       position: absolute;
@@ -175,7 +201,6 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       background: #007bff;
     }
 
-    /* --- LANDSCAPE MODE --- */
     @media (orientation: landscape) {
       body.slideshow-active #slideshow-photo-panel {
         top: 0;
@@ -250,7 +275,6 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       }
     }
 
-    /* --- PORTRAIT MODE --- */
     @media (orientation: portrait) {
       body.slideshow-active #slideshow-photo-panel {
         top: 0;
@@ -604,7 +628,6 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       border: none;
     }
 
-    /* EXPANDED PHOTO MODAL */
     .modal-foto {
       display: none;
       position: fixed;
@@ -682,7 +705,6 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       text-decoration: underline;
     }
 
-    /* REPORT MODAL STYLES */
     #report-modal {
       position: fixed;
       top: 50%;
@@ -754,6 +776,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       .slideshow-speed-container { font-size: 10px; }
       #select-speed { font-size: 10px; padding: 2px 4px; }
       #modal-caption { font-size: 11px; padding: 6px 10px; }
+      #tooltip-istruzioni { font-size: 11px; padding: 8px 12px; bottom: 60px; width: 80vw; }
     }
   </style>
 </head>
@@ -762,11 +785,10 @@ function selezionaViaggioEChiudi(nomeViaggio) {
   <!-- SPLASH SCREEN -->
   <div id="splash-screen" onclick="chiudiSplash()">
     <div class="splash-card">
-      <h1>🌍 Vinicio and Luisa's<br>Travel Map</h1>
-      <p>Follow our footsteps: select a trip and start the slideshow</p>
-      <!-- DEMO BUTTON IN SPLASH SCREEN -->
+      <h1>🌍 Vinicio & Luisa's<br>Travel Map</h1>
+      <p>Retrace our journeys: choose a trip and start the slideshow</p>
       <div style="margin-top: 15px;">
-        <a href="demo_en.html" onclick="event.stopPropagation()" style="background: #ffffff; color: #1e3c72; text-decoration: none; padding: 6px 14px; border-radius: 15px; font-size: 12px; font-weight: bold; display: inline-block; box-shadow: 0 2px 6px rgba(0,0,0,0.3);">
+        <a href="demo.html" onclick="event.stopPropagation()" style="background: #ffffff; color: #1e3c72; text-decoration: none; padding: 6px 14px; border-radius: 15px; font-size: 12px; font-weight: bold; display: inline-block; box-shadow: 0 2px 6px rgba(0,0,0,0.3);">
           🎬 Watch Interactive Demo
         </a>
       </div>
@@ -782,14 +804,14 @@ function selezionaViaggioEChiudi(nomeViaggio) {
     <div id="group-anno" class="filtro-group" style="display: none;">
       <label for="select-anno"><b>Year:</b></label>
       <select id="select-anno" onchange="cambiaAnno()">
-        <option value="tutti">All Years</option>
+        <option value="tutti">All years</option>
       </select>
     </div>
     
     <div class="filtro-group">
       <label for="select-viaggio"><b>Trip:</b></label>
       <select id="select-viaggio" onchange="cambiaViaggio()">
-        <option value="tutti">All Trips</option>
+        <option value="tutti">All trips</option>
       </select>
       <button id="btn-hamburger" onclick="toggleMenu()" title="Options Menu">☰</button>
     </div>
@@ -798,23 +820,25 @@ function selezionaViaggioEChiudi(nomeViaggio) {
 
     <!-- HAMBURGER MENU -->
     <div id="menu-panel">
-	<!-- LANGUAGE SELECTOR -->
-  <div class="filtro-group" style="flex-direction: column; align-items: flex-start; gap: 4px; margin-bottom: 4px;">
-    <label for="select-lingua"><b>🌐 Language / Lingua:</b></label>
-    <select id="select-lingua" onchange="location = this.value;" style="width: 100%;">
-      <option value="index.html">🇮🇹 Italiano</option>
-      <option value="index_en.html" selected>🇬🇧 English</option>
-    </select>
-  </div>
-  <hr style="border:0; border-top:1px solid #eee; margin:2px 0;">
-  
+	
+      <!-- LANGUAGE SELECTOR -->
+      <div class="filtro-group" style="flex-direction: column; align-items: flex-start; gap: 4px; margin-bottom: 4px;">
+        <label for="select-lingua"><b>🌐 Language / Lingua:</b></label>
+        <select id="select-lingua" onchange="window.location.href = this.value;" style="width: 100%;">
+          <option value="index.html">🇮🇹 Italiano</option>
+          <option value="index_en.html" selected>🇬🇧 English</option>
+        </select>
+      </div>
+
+      <hr style="border:0; border-top:1px solid #eee; margin:2px 0;">
+
       <div class="filtro-group" style="flex-direction: column; align-items: flex-start; gap: 4px; margin-bottom: 4px;">
         <label for="select-mappa"><b>Map Style:</b></label>
         <select id="select-mappa" onchange="cambiaStileMappa(); salvaImpostazioni();" style="width: 100%;">
           <option value="osm">OpenStreetMap (Standard)</option>
           <option value="satellite">Esri Satellite (Satellite)</option>
           <option value="ibrida">Esri Hybrid (Satellite + Roads)</option>
-          <option value="topo">Esri Topographic (Terrain & Trails)</option>
+          <option value="topo">Esri Topographic (Relief & Trails)</option>
           <option value="terrain">Esri Terrain (Physical)</option>
           <option value="carto-light">CARTO Light (Minimal Light)</option>
           <option value="carto-dark">CARTO Dark (Minimal Dark)</option>
@@ -844,16 +868,15 @@ function selezionaViaggioEChiudi(nomeViaggio) {
 
       <label class="checkbox-label">
         <input type="checkbox" id="check-legenda-anni" onchange="toggleLegendaAnni(); salvaImpostazioni();">
-        Enable year legend
+        Enable years legend
       </label>
 
       <hr style="border:0; border-top:1px solid #eee; margin:2px 0;">
 
-      <!-- REPORT BUTTON IN MENU -->
       <a href="javascript:void(0)" onclick="apriReport()" style="text-decoration:none; color:#17a589; font-size:12px; font-weight:700; display:flex; align-items:center; gap:6px; margin-bottom: 6px;">
-        📊 Travel Report / Statistics
+        📊 Travel Stats / Report
       </a>
-      <a href="demo_en.html" style="text-decoration:none; color:#d9534f; font-size:12px; font-weight:700; display:flex; align-items:center; gap:6px; margin-bottom: 6px;">
+      <a href="demo.html" style="text-decoration:none; color:#d9534f; font-size:12px; font-weight:700; display:flex; align-items:center; gap:6px; margin-bottom: 6px;">
         🎬 Start Guided Demo
       </a>
       <a href="javascript:void(0)" onclick="mostraAiuto()" style="text-decoration:none; color:#007bff; font-size:12px; font-weight:600; display:flex; align-items:center; gap:6px;">
@@ -867,7 +890,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
     <div id="slideshow-caption"></div>
   </div>
 
-  <!-- DRAGGABLE RESIZER BAR -->
+  <!-- SLIDESHOW SPLIT RESIZER -->
   <div id="slideshow-resizer"></div>
 
   <div id="slideshow-controls">
@@ -889,13 +912,19 @@ function selezionaViaggioEChiudi(nomeViaggio) {
   </div>
 
   <div id="legenda-container">
-    <h4>Year Legend</h4>
+    <h4>Years Legend</h4>
     <div id="legenda-items"></div>
   </div>
 
   <div id="map"></div>
 
-  <!-- DETAILED LIST MODAL (COUNTRIES / US STATES) -->
+  <!-- INSTRUCTIONS TOOLTIP -->
+  <div id="tooltip-istruzioni">
+    <span>👉 Click on a colored cluster <span style="display:inline-block; background-color:rgba(181, 226, 140, 0.6); padding:2px;"><span style="display:inline-block; width:22px; height:22px; line-height:22px; background-color:rgba(110, 204, 57, 0.9); color:#000; border-radius:50%; text-align:center; font-weight:bold; font-size:12px;">10</span></span> on the map, then on the location pins 📍 to see photos and trip details. Click thumbnails to enlarge to full screen.</span>
+    <button onclick="document.getElementById('tooltip-istruzioni').style.display='none'" style="background:transparent; border:none; color:#ffffff; font-size:16px; cursor:pointer; margin-left:6px; line-height:1;">✖</button>
+  </div>
+
+  <!-- LIST MODAL -->
   <div id="lista-modal" class="modal-foto" onclick="chiudiListaModal()" style="z-index: 100010;">
     <div class="modal-aiuto-card" onclick="event.stopPropagation()">
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; border-bottom: 2px solid #007bff; padding-bottom: 6px;">
@@ -908,14 +937,13 @@ function selezionaViaggioEChiudi(nomeViaggio) {
     </div>
   </div>
   
-  <!-- REPORT AND EDIT MODAL -->
+  <!-- REPORT MODAL -->
   <div id="report-modal">
     <div class="report-header">
-      <h3 id="report-modal-title">📊 Travel Statistics & Report</h3>
+      <h3 id="report-modal-title">📊 Travel Statistics and Report</h3>
       <button class="btn-chiudi-modal" onclick="chiudiReport()">✖</button>
     </div>
 
-    <!-- REPORT VIEW -->
     <div id="report-view">
       <div class="report-grid">
         <div class="report-card clickable" onclick="mostraListaPaesi()" title="Click for list"><h4>Countries Visited 🔍</h4><p id="rep-paesi">0</p></div>
@@ -923,15 +951,14 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       </div>
     </div>
   </div>
-  
 
-  <!-- EXPANDED PHOTO MODAL -->
+  <!-- FULLSCREEN PHOTO MODAL -->
   <div id="imageModal" class="modal-foto" onclick="chiudiModalFoto(false)">
     <div id="modal-caption"></div>
     <img class="modal-foto-content" id="imgModalSrc" draggable="false" onclick="event.stopPropagation()">
   </div>
 
-  <!-- COMPLETE GUIDE / HELP MODAL -->
+  <!-- HELP & GUIDE MODAL -->
   <div id="modal-aiuto" class="modal-foto" onclick="chiudiModalAiuto()" style="z-index: 100002;">
     <div class="modal-aiuto-card" onclick="event.stopPropagation()" style="
       background: linear-gradient(rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.35)), url('mappamondo.jpg');
@@ -940,39 +967,43 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       border: 1px solid rgba(0,0,0,0.15);
     ">
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; border-bottom: 2px solid #007bff; padding-bottom: 6px;">
-        <h3 style="margin:0; font-size:16px; color:#2c3e50;">🌍 Guide & Information (v3.22)</h3>
+        <h3 style="margin:0; font-size:16px; color:#2c3e50;">🌍 Guide & Information (v3.23)</h3>
         <button onclick="chiudiModalAiuto()" style="background:none; border:none; font-size:20px; cursor:pointer; color:#666;">✖</button>
       </div>
       
       <div style="font-size: 13px; color: #2c3e50; max-height: 65vh; overflow-y: auto; padding-right: 5px; line-height: 1.5;">
         <div class="box-seo-guida">
-          📖 <b>Featured Guide:</b> Read our complete travel log<br>
-          <a href="diario_spagna_marocco_2023.html" target="_blank">Camper Travel Diary in Morocco and Spain: Itinerary, Customs and Tips</a>
+          📖 <b>Featured Guide:</b> Read our full travel log<br>
+          <a href="diario_spagna_marocco_2023.html" target="_blank">Camper Travel Diary in Morocco and Spain: Route, Customs & Advice</a>
         </div>
         <div class="box-seo-guida">
-          📖 <b>Featured Guide:</b> Read our complete travel log<br>
-          <a href="Diario_Sudafrica_2009_en.html" target="_blank">South Africa Travel Diary: Itinerary, Safaris and Practical Tips</a>
+          📖 <b>Featured Guide:</b> Read our full travel log<br>
+          <a href="Diario_Sudafrica_2009.html" target="_blank">Travel Diary in South Africa: Itinerary & Tips</a>
+        </div>
+        <div class="box-seo-guida">
+          📖 <b>Featured Guide:</b> Read our full travel log<br>
+          <a href="firenzevenezia2023_en.html" target="_blank">Camper Travel Diary: The Charm of Florence and the Magic of Venice</a>
         </div>
 
         <p style="margin-top:6px;">
-          This project gathers over 30 years of independent travel, by motorhome and self-organized flights. Every photo is geotagged and positioned exactly where it was taken.
+          This project gathers over 30 years of independent travel, conducted entirely on our own by camper and flights. Every picture is geolocated and mapped right where it was taken.
         </p>
 
         <hr style="border:0; border-top:1px solid #ddd; margin:10px 0;">
 
         <b style="color:#007bff;">📍 MAP EXPLORATION & PHOTOS</b>
         <p style="margin: 4px 0 10px 0;">
-          Click on a colored pin to open the preview window with date and location description. Click on the photo to enlarge it to full screen.
+          Click on a colored pin to open the preview popup with date and location details. Click on the thumbnail to view the photo in full screen.
         </p>
 
         <b style="color:#28a745;">📖 TRAVEL DIARY</b>
         <p style="margin: 4px 0 10px 0;">
-          If a written report is available for the selected trip or stop, you will see the green <b>📖 Travel Diary</b> button both inside the map popup and at the top of the full-screen enlarged photo. Clicking it opens the diary file in a new tab.
+          If a written report is available for the selected trip or stage, you will see a green <b>📖 Travel Diary</b> button both inside the map popup and at the top of the enlarged full-screen picture. Clicking it opens the diary in a new tab.
         </p>
 
         <b style="color:#007bff;">▶ SLIDESHOW MODE</b>
         <p style="margin: 4px 0 10px 0;">
-          Selecting a specific <b>Trip</b> from the top menu reveals the <b>▶ Start Slideshow</b> button. The screen splits in two: the photo above and the map below with the active location pin highlighted in yellow.
+          Selecting a specific <b>Trip</b> from the dropdown reveals the <b>▶ Start Slideshow</b> button. The screen splits: photos on one side, and the map on the other highlighting each stop in yellow sequentially.
         </p>
 
         <b style="color:#007bff;">📱 CONTROLS & GESTURES</b>
@@ -984,21 +1015,21 @@ function selezionaViaggioEChiudi(nomeViaggio) {
           <span style="background:#dc3545; color:white; padding:3px 8px; border-radius:12px; font-size:11px;">✖ Exit</span>
         </p>
         <p style="margin: 4px 0 10px 0; font-style: italic; font-size: 11px; color: #555;">
-          On touch devices, you can swipe horizontally on the photo to navigate to the previous or next picture.
+          On touch devices you can swipe horizontally across the picture to move to the previous or next slide.
         </p>
 
         <b style="color:#007bff;">⚙ MENU OPTIONS (☰)</b>
         <ul style="margin: 4px 0 10px 0; padding-left: 18px; font-size: 12px;">
-          <li><b>Map Style:</b> choose between standard map (OpenStreetMap), satellite (Esri), hybrid, topographic, or minimal CARTO basemaps.</li>
-          <li><b>Pin Size:</b> resize pins (Small, Standard, Large) to best fit your display screen.</li>
-          <li><b>Group points (Clustering):</b> aggregates nearby pins into a single numbered cluster to reduce clutter.</li>
-          <li><b>Enable Year selection:</b> toggles an additional dropdown filter to display stops from a specific year.</li>
-          <li><b>Year Legend:</b> displays a bottom-right box showing color codes assigned to each year.</li>
+          <li><b>Map Style:</b> choose between OpenStreetMap, Satellite (Esri), Hybrid, Topographic, or clean CARTO basemaps.</li>
+          <li><b>Pin Size:</b> resize pins (Small, Standard, Large) to suit your display.</li>
+          <li><b>Group points (Clustering):</b> clusters nearby locations into numbered bubbles to declutter the view.</li>
+          <li><b>Enable Year selection:</b> filters markers by a chosen year.</li>
+          <li><b>Years Legend:</b> displays a color-coded legend of years at the bottom right.</li>
         </ul>
 
         <hr style="border:0; border-top:1px solid #ddd; margin:10px 0;">
         <small style="color:#666; display:block; text-align:center;">
-          Website and code developed by Eng. Vinicio Barone
+          Website and code developed by Ing. Vinicio Barone
         </small>
 
         <hr style="border:0; border-top:1px solid #ddd; margin:10px 0;">
@@ -1014,7 +1045,6 @@ function selezionaViaggioEChiudi(nomeViaggio) {
   <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
 
   <script>
-    // --- LOCALSTORAGE SETTINGS MANAGEMENT ---
     function salvaImpostazioni() {
       const impostazioni = {
         checkCluster: document.getElementById('check-cluster').checked,
@@ -1051,12 +1081,10 @@ function selezionaViaggioEChiudi(nomeViaggio) {
           console.error("Error restoring settings from localStorage:", e);
         }
       } else {
-        // Default values if localStorage is empty
         document.getElementById('check-cluster').checked = true;
       }
     }
 
-    // GLOBAL PROTECTION AGAINST RIGHT CLICK AND IMAGE DRAGGING
     document.addEventListener('contextmenu', function(e) {
       if (e.target.tagName === 'IMG') {
         e.preventDefault();
@@ -1140,6 +1168,20 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       }
     }, 1000);
 
+    function mostraGuidaFumetto() {
+      if (typeof map !== 'undefined' && map) {
+        map.whenReady(() => {
+          const tooltip = document.getElementById('tooltip-istruzioni');
+          if (tooltip && markersSlideshow && markersSlideshow.length > 0) {
+            tooltip.style.display = 'flex';
+            setTimeout(() => {
+              if (tooltip) tooltip.style.display = 'none';
+            }, 12000);
+          }
+        });
+      }
+    }
+
     function chiudiSplash() {
       clearInterval(splashTimer);
       const splash = document.getElementById('splash-screen');
@@ -1150,6 +1192,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
           splash.style.display = 'none';
           map.invalidateSize();
           avviaPanIniziale();
+          mostraGuidaFumetto();
         }, 800);
       }
     }
@@ -1246,20 +1289,15 @@ function selezionaViaggioEChiudi(nomeViaggio) {
     let tempoIntervallo = 4000;
     let puntiSlideshow = [];
     let markersSlideshow = [];
-    let immaginiPrecaricate = [];
     let wakeLock = null;
 
-    let touchStartX = 0;
-    let touchStartY = 0;
-
-    // --- SCREEN WAKE LOCK API ---
     async function attivaWakeLock() {
       try {
         if ('wakeLock' in navigator) {
           wakeLock = await navigator.wakeLock.request('screen');
         }
       } catch (err) {
-        console.log("Wake Lock not supported or blocked:", err);
+        console.log("Wake Lock unsupported or blocked:", err);
       }
     }
 
@@ -1354,10 +1392,8 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       });
     }
 
-    // Load stored settings at startup
     caricaImpostazioni();
 
-    // JOINT LOADING OF DATI.JSON AND PAESI_VISITATI.JSON
     Promise.all([
       fetch('dati.json').then(r => r.json()),
       fetch('paesi_visitati.json').then(r => r.json()).catch(err => {
@@ -1372,11 +1408,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       aggiornaMappa();
     }).catch(err => console.error("Error loading data:", err));
 
-    // --- REPORT CALCULATION & MANAGEMENT FUNCTIONS ---
     function calcolaReport(dati) {
-      const tappe = dati.length;
-      const foto = dati.filter(p => p.foto && p.foto.trim() !== '').length;
-
       const viaggioSel = document.getElementById('select-viaggio') ? document.getElementById('select-viaggio').value : 'tutti';
 
       paesiAttuali = [];
@@ -1432,7 +1464,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
 
       if (!elementi || elementi.length === 0) {
         const li = document.createElement('li');
-        li.textContent = "No items available.";
+        li.textContent = "No entries found.";
         ul.appendChild(li);
       } else {
         elementi.forEach(item => {
@@ -1457,27 +1489,6 @@ function selezionaViaggioEChiudi(nomeViaggio) {
 
     function chiudiReport() {
       document.getElementById('report-modal').classList.remove('active');
-      nascondiFormModificaReport();
-    }
-
-    function mostraFormModificaReport() {
-      document.getElementById('report-view').style.display = 'none';
-      document.getElementById('report-edit-form').style.display = 'block';
-      document.getElementById('report-modal-title').innerText = '✏️ Edit Travel Report';
-
-      const viaggioSel = document.getElementById('select-viaggio').value;
-      const noteSalvate = localStorage.getItem('note_report_' + viaggioSel) || '';
-      document.getElementById('edit-report-notes').value = noteSalvate;
-    }
-
-    function nascondiFormModificaReport() {
-      if (document.getElementById('report-edit-form')) {
-        document.getElementById('report-edit-form').style.display = 'none';
-      }
-      if (document.getElementById('report-view')) {
-        document.getElementById('report-view').style.display = 'block';
-      }
-      document.getElementById('report-modal-title').innerText = '📊 Travel Statistics & Report';
     }
 
     function popolaAnni() {
@@ -1494,7 +1505,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
         mappaColoriAnni[anno] = tavolozzaColori[index % tavolozzaColori.length];
       });
 
-      selectAnno.innerHTML = '<option value="tutti">All Years</option>';
+      selectAnno.innerHTML = '<option value="tutti">All years</option>';
       anniOrdinati.forEach(anno => {
         const option = document.createElement('option');
         option.value = anno;
@@ -1504,7 +1515,6 @@ function selezionaViaggioEChiudi(nomeViaggio) {
 
       toggleAbilitaAnno();
       toggleLegendaAnni();
-
       aggiornaLegenda(anniOrdinati);
     }
 
@@ -1519,7 +1529,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
         }
       });
 
-      selectViaggio.innerHTML = '<option value="tutti">All Trips</option>';
+      selectViaggio.innerHTML = '<option value="tutti">All trips</option>';
       Array.from(viaggiSet).sort().forEach(v => {
         const option = document.createElement('option');
         option.value = v;
@@ -1539,15 +1549,6 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       fermaPanIniziale();
       if (isSlideshowActive) fermaSlideshow();
       aggiornaMappa();
-    }
-
-    function ottieniPercorsoDiario(p) {
-      if (!p.diario) return '';
-      // Map Italian diary files to English counterparts when viewing English interface
-      if (p.diario.includes('Diario_Sudafrica_2009.html')) {
-        return 'Diario_Sudafrica_2009_en.html';
-      }
-      return p.diario;
     }
 
     function aggiornaMappa() {
@@ -1594,6 +1595,11 @@ function selezionaViaggioEChiudi(nomeViaggio) {
           const marker = L.marker([lat, lon], opzioniMarker);
           marker.coloreOriginale = coloreHex;
 
+          marker.on('click', function() {
+            const tooltip = document.getElementById('tooltip-istruzioni');
+            if (tooltip) tooltip.style.display = 'none';
+          });
+
           const tooltipContent = `<b>${p.nome || p.viaggio}</b><br>📅 ${p.data}`;
           
           marker.bindTooltip(tooltipContent, {
@@ -1607,10 +1613,13 @@ function selezionaViaggioEChiudi(nomeViaggio) {
           const fotoWebp = p.foto.replace(/^foto[\/\\]/, 'webp/').replace(/\.jpg$/i, '.webp');
           const htmlDescrizione = p.descrizione ? `<div class="popup-descrizione">${p.descrizione}</div>` : '';
           
-          const percorsoDiario = ottieniPercorsoDiario(p);
-          const htmlBtnDiario = percorsoDiario ? `<br><a href="${percorsoDiario}" target="_blank" rel="noopener" class="btn-diario">📖 Travel Diary</a>` : '';
+          let diaryLink = p.diario;
+          if (diaryLink && diaryLink.includes('firenzevenezia2023.html')) {
+            diaryLink = 'firenzevenezia2023_en.html';
+          }
+          const htmlBtnDiario = diaryLink ? `<br><a href="${diaryLink}" target="_blank" rel="noopener" class="btn-diario">📖 Travel Diary</a>` : '';
 
-          const htmlBtnViaggio = p.viaggio ? `<br><a href="javascript:void(0)" onclick="selezionaViaggioEChiudi('${p.viaggio.replace(/'/g, "\\'")}')" style="display:inline-block; margin-top:6px; color:#17a589; font-weight:bold; text-decoration:none; font-size:11px;">✈️ Go to trip: ${p.viaggio}</a>` : '';
+          const htmlBtnViaggio = p.viaggio ? `<br><a href="javascript:void(0)" onclick="selezionaViaggioEChiudi('${p.viaggio.replace(/'/g, "\\'")}')" style="display:inline-block; margin-top:6px; color:#17a589; font-weight:bold; text-decoration:none; font-size:11px;">✈ Go to trip: ${p.viaggio}</a>` : '';
 
           const popupContent = `
             <div class="popup-container">
@@ -1715,7 +1724,6 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       document.getElementById('slideshow-img').src = p.foto.replace(/^foto[\/\\]/, 'webp/').replace(/\.jpg$/i, '.webp');
       const descTesto = p.descrizione ? ` — ${p.descrizione}` : '';
       document.getElementById('slideshow-caption').textContent = `${p.nome || p.viaggio} (${p.data})${descTesto}`;
-
       document.getElementById('slideshow-counter').textContent = `${index + 1} / ${markersSlideshow.length}`;
     }
 
@@ -1778,7 +1786,6 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       });
     }
 
-    // --- DRAG / DYNAMIC RESIZE LOGIC ---
     const resizer = document.getElementById('slideshow-resizer');
     const photoPanel = document.getElementById('slideshow-photo-panel');
     const mapElement = document.getElementById('map');
@@ -1886,7 +1893,6 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       }
     });
 
-    // --- FULLSCREEN PHOTO MODAL WITH SWIPE ---
     let currentModalIndex = -1;
 
     function apriModalFoto(urlFoto, index = -1) {
@@ -1914,9 +1920,13 @@ function selezionaViaggioEChiudi(nomeViaggio) {
         const descTesto = p.descrizione ? ` — ${p.descrizione}` : '';
         let htmlCaption = `<div>${p.nome || p.viaggio} (${p.data})${descTesto}</div>`;
 
-        const percorsoDiario = ottieniPercorsoDiario(p);
-        if (percorsoDiario) {
-          htmlCaption += `<a href="${percorsoDiario}" target="_blank" rel="noopener" class="btn-diario-modal" onclick="event.stopPropagation()">📖 Travel Diary</a>`;
+        let diaryLink = p.diario;
+        if (diaryLink && diaryLink.includes('firenzevenezia2023.html')) {
+          diaryLink = 'firenzevenezia2023_en.html';
+        }
+
+        if (diaryLink) {
+          htmlCaption += `<a href="${diaryLink}" target="_blank" rel="noopener" class="btn-diario-modal" onclick="event.stopPropagation()">📖 Travel Diary</a>`;
         }
 
         captionElem.innerHTML = htmlCaption;
