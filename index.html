@@ -165,18 +165,43 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       z-index: 2000;
       background: rgba(30, 60, 114, 0.92);
       color: #ffffff;
-      padding: 10px 18px;
-      border-radius: 25px;
+      padding: 12px 20px;
+      border-radius: 20px;
       font-size: 13px;
-      font-weight: 600;
+      font-weight: 500;
       box-shadow: 0 4px 15px rgba(0,0,0,0.35);
+      flex-direction: column;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
       pointer-events: auto;
       backdrop-filter: blur(4px);
       -webkit-backdrop-filter: blur(4px);
       border: 1px solid rgba(255, 255, 255, 0.3);
       animation: fadeInTooltip 0.5s ease-in-out;
+      text-align: center;
+      max-width: 85vw;
+      width: max-content;
+    }
+
+    #tooltip-istruzioni div.btn-container {
+      display: flex;
+      gap: 15px;
+      margin-top: 5px;
+    }
+
+    #tooltip-istruzioni button {
+      background: rgba(255,255,255,0.2);
+      border: 1px solid rgba(255,255,255,0.4);
+      color: #ffffff;
+      font-size: 12px;
+      cursor: pointer;
+      padding: 5px 12px;
+      border-radius: 12px;
+      transition: background 0.2s;
+    }
+
+    #tooltip-istruzioni button:hover {
+      background: rgba(255,255,255,0.4);
     }
 
     @keyframes fadeInTooltip {
@@ -961,8 +986,11 @@ function selezionaViaggioEChiudi(nomeViaggio) {
 
   <!-- FUMETTO DI ISTRUZIONI MOSTRATO ALL'AVVIO A MAPPA PRONTA -->
   <div id="tooltip-istruzioni">
-<span>👉 Clicca su un marcatore colorato <span style="display:inline-block; background-color:rgba(181, 226, 140, 0.6); padding:2px;"><span style="display:inline-block; width:22px; height:22px; line-height:22px; background-color:rgba(110, 204, 57, 0.9); color:#000; border-radius:50%; text-align:center; font-weight:bold; font-size:12px;">10</span></span> sulla mappa e successivamente sugli altri marcatori 📍 che appaiono fino ad arrivare a vedere le foto e i dettagli del viaggio. Cliccare sulle foto in miniatura per vedere a schermo intero.</span>
-   <button onclick="document.getElementById('tooltip-istruzioni').style.display='none'" style="background:transparent; border:none; color:#ffffff; font-size:16px; cursor:pointer; margin-left:6px; line-height:1;">✖</button>
+    <span>👉 Clicca su un marcatore colorato <span style="display:inline-block; background-color:rgba(181, 226, 140, 0.6); padding:2px;"><span style="display:inline-block; width:22px; height:22px; line-height:22px; background-color:rgba(110, 204, 57, 0.9); color:#000; border-radius:50%; text-align:center; font-weight:bold; font-size:12px;">10</span></span> sulla mappa e successivamente sugli altri marcatori 📍 che appaiono fino ad arrivare a vedere le foto e i dettagli del viaggio. Cliccare sulle foto in miniatura per vedere a schermo intero.</span>
+    <div class="btn-container">
+      <button onclick="chiudiTooltip(false)">OK, Chiudi</button>
+      <button onclick="chiudiTooltip(true)" style="background:rgba(220, 53, 69, 0.6); border:none;">✖ Non mostrare più</button>
+    </div>
   </div>
 
   <!-- MODALE LISTA DETTAGLIATA (PAESI / STATI USA) -->
@@ -1218,20 +1246,43 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       }
     }, 1000);
 
-    // FUNZIONE PER MOSTRARE IL FUMETTO GUIDA SOLO A MAPPA E DATI PRONTI
+    // FUNZIONI FUMETTO ISTRUZIONI
+    let tooltipTimeout = null;
+
     function mostraGuidaFumetto() {
+      const nascondiFumetto = localStorage.getItem('nascondiFumetto');
+      // Se l'utente ha scelto di non mostrarlo più, ci fermiamo qui
+      if (nascondiFumetto === 'true') {
+        return;
+      }
+
       if (typeof map !== 'undefined' && map) {
         map.whenReady(() => {
           const tooltip = document.getElementById('tooltip-istruzioni');
           if (tooltip && markersSlideshow && markersSlideshow.length > 0) {
             tooltip.style.display = 'flex';
 
-            // Chiusura automatica dopo 12 secondi
-            setTimeout(() => {
-              if (tooltip) tooltip.style.display = 'none';
-            }, 12000);
+            // Timer automatico per chiudere dopo 15 secondi (se l'utente non lo fa prima)
+            tooltipTimeout = setTimeout(() => {
+              chiudiTooltip(false);
+            }, 15000);
           }
         });
+      }
+    }
+
+    function chiudiTooltip(nonMostrarePiu) {
+      const tooltip = document.getElementById('tooltip-istruzioni');
+      if (tooltip) {
+        tooltip.style.display = 'none';
+      }
+      if (tooltipTimeout) {
+        clearTimeout(tooltipTimeout);
+      }
+      
+      // Se l'utente ha premuto "Non mostrare più", salviamo la preferenza
+      if (nonMostrarePiu) {
+        localStorage.setItem('nascondiFumetto', 'true');
       }
     }
 
@@ -1246,7 +1297,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
           map.invalidateSize();
           avviaPanIniziale();
 
-          // MOSTRA IL FUMETTO DI GUIDA SOLO QUANDO LO SPLASH SCREEN È SCOMPARSO
+          // MOSTRA IL FUMETTO DI GUIDA SOLO QUANDO LO SPLASH SCREEN È SCOMPARSO E SE NON NASCOSTO
           mostraGuidaFumetto();
         }, 800);
       }
@@ -1735,10 +1786,9 @@ function selezionaViaggioEChiudi(nomeViaggio) {
           marker.coloreOriginale = coloreHex;
 
          
-		  // GESTIONE CLICK SUL MARCATORE
+		  // GESTIONE CLICK SUL MARCATORE E CHIUSURA TOOLTIP
           marker.on('click', function(e) {
-            const tooltip = document.getElementById('tooltip-istruzioni');
-            if (tooltip) tooltip.style.display = 'none';
+            chiudiTooltip(false); // Nascondiamo il tooltip non appena interagiscono con la mappa
 
             // Se la slideshow è attiva, salta a questa slide ed evita l'apertura del popup
             if (isSlideshowActive) {
