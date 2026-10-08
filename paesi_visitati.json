@@ -305,6 +305,12 @@
       ],
       "stati_usa": []
     },
+    "sicilia 2021": {
+      "paesi": [
+        "Italia"
+      ],
+      "stati_usa": []
+    },
     "sicilia 2025": {
       "paesi": [
         "Italia"
@@ -435,6 +441,12 @@
         "Romania",
         "Turchia",
         "Ungheria"
+      ],
+      "stati_usa": []
+    },
+    "vieste 2021": {
+      "paesi": [
+        "Italia"
       ],
       "stati_usa": []
     }

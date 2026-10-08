@@ -832,6 +832,16 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       #modal-caption { font-size: 11px; padding: 6px 10px; }
       #tooltip-istruzioni { font-size: 11px; padding: 8px 12px; bottom: 60px; width: 80vw; }
     }
+    
+    /* --- NUOVA REGOLA: INGRANDISCE IL TESTO SOLO SU PC (> 768px) --- */
+    @media (min-width: 768px) {
+      #slideshow-caption,
+      #modal-caption {
+        font-size: 22px !important;
+        line-height: 1.4 !important;
+        max-height: 30vh !important; /* Dà più spazio al testo ingrandito evitando che venga tagliato */
+      }
+    }
   </style>
 </head>
 <body>
@@ -1785,7 +1795,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
           const marker = L.marker([lat, lon], opzioniMarker);
           marker.coloreOriginale = coloreHex;
 
-         
+          
 		  // GESTIONE CLICK SUL MARCATORE E CHIUSURA TOOLTIP
           marker.on('click', function(e) {
             chiudiTooltip(false); // Nascondiamo il tooltip non appena interagiscono con la mappa
