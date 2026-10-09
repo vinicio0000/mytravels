@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO TITLE AND DESCRIPTION -->
+  <title>Camper Travel Diary: New Year's Eve in Sicily | Vinicio & Luisa</title>
+  <meta name="description" content="Camper travel story in Sicily by Vinicio and Luisa with their cocker spaniel Leo. Itinerary through Syracuse, Val di Noto, Valley of the Temples, and Palermo.">
+  <meta name="author" content="Vinicio and Luisa">
+  <meta name="robots" content="index, follow">
+
+  <style>
+    body {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      line-height: 1.8;
+      color: #2c3e50;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* TOP BAR TO RETURN TO THE MAP */
+    .top-bar {
+      background-color: #1e3c72;
+      color: white;
+      padding: 12px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    .top-bar a {
+      color: #ffffff;
+      text-decoration: none;
+      font-family: sans-serif;
+      font-weight: bold;
+      font-size: 14px;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 6px 14px;
+      border-radius: 20px;
+      transition: background 0.2s;
+    }
+
+    .top-bar a:hover {
+      background: rgba(255, 255, 255, 0.4);
+    }
+
+    /* CENTRAL TEXT CONTAINER */
+    .container {
+      max-width: 800px;
+      margin: 30px auto;
+      background: #ffffff;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      box-sizing: border-box;
+    }
+
+    h1 {
+      font-family: sans-serif;
+      font-size: 28px;
+      color: #1e3c72;
+      margin-top: 0;
+      line-height: 1.3;
+    }
+
+    h2 {
+      font-family: sans-serif;
+      font-size: 22px;
+      color: #2c3e50;
+      border-bottom: 2px solid #52b69a;
+      padding-bottom: 6px;
+      margin-top: 40px;
+    }
+
+    p {
+      font-size: 17px;
+      margin-bottom: 20px;
+      text-align: justify;
+    }
+
+    /* HIGHLIGHTED BOX FOR PRACTICAL TIPS */
+    .box-info {
+      background-color: #eef7f6;
+      border-left: 5px solid #52b69a;
+      padding: 15px 20px;
+      margin: 25px 0;
+      border-radius: 4px;
+      font-family: sans-serif;
+      font-size: 15px;
+    }
+
+    .box-info h3 {
+      margin-top: 0;
+      color: #1e3c72;
+    }
+
+    /* HIGHLIGHT BOX FOR MAIN LOCATIONS */
+    .box-highlight {
+      background-color: #fff9e6;
+      border-left: 6px solid #f39c12;
+      padding: 20px;
+      margin: 30px 0;
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+
+    .box-highlight h3 {
+      margin-top: 0;
+      color: #d35400;
+      font-size: 18px;
+    }
+
+    ul {
+      font-size: 16px;
+      line-height: 1.8;
+      padding-left: 20px;
+    }
+
+    /* BUTTONS AT THE BOTTOM OF THE PAGE */
+    .action-buttons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      margin-top: 40px;
+    }
+
+    .btn-action {
+      display: inline-block;
+      width: 100%;
+      max-width: 350px;
+      padding: 14px 20px;
+      border-radius: 6px;
+      font-family: sans-serif;
+      font-weight: bold;
+      font-size: 16px;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: background 0.2s, transform 0.1s;
+    }
+
+    .btn-mappa {
+      background-color: #007bff;
+      color: white;
+    }
+
+    .btn-mappa:hover {
+      background-color: #0056b3;
+    }
+
+    .btn-feedback {
+      background-color: #27ae60;
+      color: white;
+    }
+
+    .btn-feedback:hover {
+      background-color: #219150;
+    }
+
+    /* MODAL FOR CONTACT FORM */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.6);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 8px;
+      width: 90%;
+      max-width: 500px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      font-family: sans-serif;
+      position: relative;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 24px;
+      cursor: pointer;
+      color: #aaa;
+    }
+
+    .close-btn:hover {
+      color: #000;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .form-group input, .form-group textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-family: inherit;
+    }
+
+    .btn-submit {
+      background-color: #1e3c72;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      width: 100%;
+      font-size: 16px;
+    }
+
+    .btn-submit:hover {
+      background-color: #162d56;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 20px;
+        margin: 10px;
+      }
+      h1 { font-size: 22px; }
+      h2 { font-size: 18px; }
+      p { font-size: 15px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP NAVIGATION BAR -->
+  <div class="top-bar">
+    <span style="font-weight: bold; font-family: sans-serif;">The Travel Map</span>
+    <a href="index.html" onclick="if(window.opener){ window.close(); return false; }">🌍 Back to Interactive Map</a>
+  </div>
+
+  <!-- DIARY CONTENT -->
+  <div class="container">
+    
+    <h1>Camper Travel Diary: New Year's Eve in Sicily between Baroque and Magna Graecia</h1>
+    
+    <p><i>The story of the trip taken by the two of us (Vinicio and Luisa) together with our inseparable black cocker spaniel Leo, aboard our camper. A winter adventure from December 26, 2021, to January 5, 2022, to discover the magic of Sicily illuminated for the holidays, among Baroque masterpieces, ancient temples, and unforgettable flavors.</i></p>
+
+    <!-- BOX WITH GENERAL INFORMATION -->
+    <div class="box-info">
+      <h3>📌 Trip Notes and Details</h3>
+      <p style="margin:0; font-size: 14px;">
+        This trip took place between the end of 2021 and the beginning of 2022, touching the eastern, southern, and north-western coast of Sicily.<br>
+        <b>Our philosophy:</b> Aboard our trusty T-Loft 450 camper, we moved in total autonomy exploring the historic centers on foot with Leo, enjoying the mild winter climate and stopping in the most strategic rest areas to savor every corner of the coast.
+      </p>
+    </div>
+
+    <h2>1. The East Coast: Syracuse and the Heart of Val di Noto</h2>
+
+    <div class="box-info">
+      <h3>🏛️ December 26-27: Ortigia and Maniace Castle</h3>
+      <p style="margin:0; font-size: 14px;">
+        Our trip began in the beautiful <b>Syracuse</b>. On the evening of Boxing Day we crossed the bridge to the island of <b>Ortigia</b>, getting lost among the Christmas lights of Piazza del Duomo and the evocative remains of the Temple of Apollo. The next morning, under a warm sun, Vinicio walked with Leo among the ancient walls of <b>Maniace Castle</b>, exploring the fascinating Hypostyle Hall embellished with mirrored floors, and then enjoyed a panoramic selfie from the Alfeo Seafront.
+      </p>
+    </div>
+
+    <div class="box-info">
+      <h3>🎬 December 28: Scicli, between Baroque and "Inspector Montalbano"</h3>
+      <p style="margin:0; font-size: 14px;">
+        Moving to the Val di Noto, we reached <b>Scicli</b>. The facades of the noble palaces, like Palazzo Beneventano with its grotesque masks, left us speechless. An unmissable gem was the visit to the Town Hall, where we browsed the original set of the <b>Vigata</b> police station made famous by the TV fiction. In the evening, the illuminations between the Santa Maria La Nova stream and the Church of San Bartolomeo made the atmosphere magical.
+      </p>
+    </div>
+
+    <div class="box-info">
+      <h3>🍫 December 29: The roofs of Modica and the ascent to Ragusa Ibla</h3>
+      <p style="margin:0; font-size: 14px;">
+        The day continued in <b>Modica</b>, dominated by the spectacular staircases of the Duomo of San Giorgio and San Pietro. A stop at the Antica Dolceria Bonajuto to taste the famous chocolate was a must. In the late afternoon, leaving the camper in the rest area, we went up to <b>Ragusa Ibla</b>. Walking at dusk towards the Duomo of San Giorgio, admiring the carved "goose-breast" balconies and enjoying the illuminated Iblei Gardens, was one of the most romantic moments of the trip.
+      </p>
+    </div>
+
+    <h2>2. The Charm of Antiquity: Valley of the Temples and Selinunte</h2>
+
+    <div class="box-highlight">
+      <h3>🏺 December 30-31: From Agrigento to the Scala dei Turchi</h3>
+      <p style="margin:0; font-size: 15px; line-height: 1.8;">
+        We dedicated December 30 to the wonder of the <b>Valley of the Temples</b> in Agrigento. Walking with Leo along the Sacred Way, feeling very small in front of the Temple of Concordia and the Temple of Heracles, is an indescribable emotion. In the evening we relaxed in Porto Empedocle, where Luisa "had a coffee" with the famous bronze statue dedicated to Andrea Camilleri.<br><br>
+        For the last day of the year, nature treated us to the spectacle of the <b>Scala dei Turchi</b> in the morning. Subsequently, we moved to the Trapani area to literally walk through history in the <b>Selinunte Archaeological Park</b>, admiring the colossal Temple E surrounded by flowery meadows before reaching Marsala to celebrate New Year's Eve.
+      </p>
+    </div>
+
+    <h2>3. The Beginning of the New Year: From Erice to the Streets of Palermo</h2>
+
+    <div class="box-info">
+      <h3>🌫️ January 1: Trapani and the Misty Magic of Erice</h3>
+      <p style="margin:0; font-size: 14px;">
+        2022 began with an evocative winter walk on the Tramontana Walls in Trapani. But the real surprise was <b>Erice</b>: the medieval village welcomed us wrapped in a very thick fog. The silhouettes of the Duomo dell'Assunta and the Tower of King Frederick emerged from the mist illuminated by Christmas lights, giving us an unforgettable muffled and fairy-tale atmosphere.
+      </p>
+    </div>
+
+    <div class="box-info">
+      <h3>🌊 January 2-4: Relaxing in Mondello and Palermitan Street Food</h3>
+      <p style="margin:0; font-size: 14px;">
+        We spent the last few days in the capital. We had a relaxed lunch at the outdoor tables in <b>Mondello</b>, walking with Leo on the beach dominated by the elegant Liberty-

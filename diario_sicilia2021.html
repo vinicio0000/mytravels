@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- TITOLO E DESCRIZIONE SEO -->
+  <title>Diario di Viaggio in Camper: Capodanno in Sicilia | Vinicio e Luisa</title>
+  <meta name="description" content="Racconto di viaggio in camper in Sicilia di Vinicio e Luisa con il loro cocker Leo. Itinerario tra Siracusa, Val di Noto, Valle dei Templi e Palermo.">
+  <meta name="author" content="Vinicio e Luisa">
+  <meta name="robots" content="index, follow">
+
+  <style>
+    body {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      line-height: 1.8;
+      color: #2c3e50;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* BARRA IN ALTO PER TORNARE ALLA MAPPA */
+    .top-bar {
+      background-color: #1e3c72;
+      color: white;
+      padding: 12px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    .top-bar a {
+      color: #ffffff;
+      text-decoration: none;
+      font-family: sans-serif;
+      font-weight: bold;
+      font-size: 14px;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 6px 14px;
+      border-radius: 20px;
+      transition: background 0.2s;
+    }
+
+    .top-bar a:hover {
+      background: rgba(255, 255, 255, 0.4);
+    }
+
+    /* CONTENITORE CENTRALE DEL TESTO */
+    .container {
+      max-width: 800px;
+      margin: 30px auto;
+      background: #ffffff;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      box-sizing: border-box;
+    }
+
+    h1 {
+      font-family: sans-serif;
+      font-size: 28px;
+      color: #1e3c72;
+      margin-top: 0;
+      line-height: 1.3;
+    }
+
+    h2 {
+      font-family: sans-serif;
+      font-size: 22px;
+      color: #2c3e50;
+      border-bottom: 2px solid #52b69a;
+      padding-bottom: 6px;
+      margin-top: 40px;
+    }
+
+    p {
+      font-size: 17px;
+      margin-bottom: 20px;
+      text-align: justify;
+    }
+
+    /* BOX EVIDENZIATO PER I CONSIGLI PRATICI */
+    .box-info {
+      background-color: #eef7f6;
+      border-left: 5px solid #52b69a;
+      padding: 15px 20px;
+      margin: 25px 0;
+      border-radius: 4px;
+      font-family: sans-serif;
+      font-size: 15px;
+    }
+
+    .box-info h3 {
+      margin-top: 0;
+      color: #1e3c72;
+    }
+
+    /* BOX HIGHLIGHT PER I LUOGHI PRINCIPALI */
+    .box-highlight {
+      background-color: #fff9e6;
+      border-left: 6px solid #f39c12;
+      padding: 20px;
+      margin: 30px 0;
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+
+    .box-highlight h3 {
+      margin-top: 0;
+      color: #d35400;
+      font-size: 18px;
+    }
+
+    ul {
+      font-size: 16px;
+      line-height: 1.8;
+      padding-left: 20px;
+    }
+
+    /* BOTTONI IN FONDO ALLA PAGINA */
+    .action-buttons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      margin-top: 40px;
+    }
+
+    .btn-action {
+      display: inline-block;
+      width: 100%;
+      max-width: 350px;
+      padding: 14px 20px;
+      border-radius: 6px;
+      font-family: sans-serif;
+      font-weight: bold;
+      font-size: 16px;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: background 0.2s, transform 0.1s;
+    }
+
+    .btn-mappa {
+      background-color: #007bff;
+      color: white;
+    }
+
+    .btn-mappa:hover {
+      background-color: #0056b3;
+    }
+
+    .btn-feedback {
+      background-color: #27ae60;
+      color: white;
+    }
+
+    .btn-feedback:hover {
+      background-color: #219150;
+    }
+
+    /* MODAL PER FORM CONTATTI */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.6);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 8px;
+      width: 90%;
+      max-width: 500px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      font-family: sans-serif;
+      position: relative;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 24px;
+      cursor: pointer;
+      color: #aaa;
+    }
+
+    .close-btn:hover {
+      color: #000;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .form-group input, .form-group textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-family: inherit;
+    }
+
+    .btn-submit {
+      background-color: #1e3c72;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      width: 100%;
+      font-size: 16px;
+    }
+
+    .btn-submit:hover {
+      background-color: #162d56;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 20px;
+        margin: 10px;
+      }
+      h1 { font-size: 22px; }
+      h2 { font-size: 18px; }
+      p { font-size: 15px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- BARRA DI NAVIGAZIONE IN ALTO -->
+  <div class="top-bar">
+    <span style="font-weight: bold; font-family: sans-serif;">La Mappa dei Viaggi</span>
+    <a href="index.html" onclick="if(window.opener){ window.close(); return false; }">🌍 Torna alla Mappa Interattiva</a>
+  </div>
+
+  <!-- CONTENUTO DEL DIARIO -->
+  <div class="container">
+    
+    <h1>Diario di Viaggio in Camper: Capodanno in Sicilia tra Barocco e Magna Grecia</h1>
+    
+    <p><i>Racconto del viaggio effettuato da noi due (Vinicio e Luisa) insieme al nostro inseparabile cocker spaniel nero Leo, a bordo del nostro camper. Un'avventura invernale dal 26 dicembre 2021 al 5 gennaio 2022, per scoprire la magia della Sicilia illuminata a festa, tra capolavori barocchi, templi antichi e sapori indimenticabili.</i></p>
+
+    <!-- BOX CON INFORMAZIONI GENERALI -->
+    <div class="box-info">
+      <h3>📌 Note e Dettagli del Viaggio</h3>
+      <p style="margin:0; font-size: 14px;">
+        Questo viaggio si è svolto a cavallo tra la fine del 2021 e l'inizio del 2022, toccando la costa orientale, meridionale e nord-occidentale della Sicilia.<br>
+        <b>La nostra filosofia:</b> A bordo del nostro fido camper T-Loft 450, ci siamo mossi in totale autonomia esplorando i centri storici a piedi con Leo, godendoci il clima mite invernale e fermandoci nelle aree di sosta più strategiche per assaporare ogni angolo della costa.
+      </p>
+    </div>
+
+    <h2>1. La Costa Orientale: Siracusa e il Cuore del Val di Noto</h2>
+
+    <div class="box-info">
+      <h3>🏛️ 26-27 Dicembre: Ortigia e il Castello Maniace</h3>
+      <p style="margin:0; font-size: 14px;">
+        Il nostro viaggio è iniziato nella splendida <b>Siracusa</b>. La sera di Santo Stefano abbiamo varcato il ponte per l'isola di <b>Ortigia</b>, perdendoci tra le luminarie natalizie di Piazza del Duomo e i resti suggestivi del Tempio di Apollo. La mattina successiva, sotto un sole tiepido, Vinicio ha passeggiato con Leo tra le antiche mura del <b>Castello Maniace</b>, esplorando l'affascinante Sala Ipostila impreziosita da pavimenti a specchio, per poi goderci un selfie panoramico dal Lungomare Alfeo.
+      </p>
+    </div>
+
+    <div class="box-info">
+      <h3>🎬 28 Dicembre: Scicli, tra Barocco e "Il Commissario Montalbano"</h3>
+      <p style="margin:0; font-size: 14px;">
+        Spostandoci nel Val di Noto, siamo giunti a <b>Scicli</b>. Le facciate dei palazzi nobiliari, come Palazzo Beneventano con i suoi mascheroni grotteschi, ci hanno lasciati a bocca aperta. Una chicca imperdibile è stata la visita al Municipio, dove abbiamo curiosato nel set originale del commissariato di <b>Vigata</b> reso celebre dalla fiction TV. La sera, le luminarie tra il torrente Santa Maria La Nova e la Chiesa di San Bartolomeo hanno reso l'atmosfera magica.
+      </p>
+    </div>
+
+    <div class="box-info">
+      <h3>🍫 29 Dicembre: I tetti di Modica e la salita a Ragusa Ibla</h3>
+      <p style="margin:0; font-size: 14px;">
+        La giornata è proseguita a <b>Modica</b>, dominata dalle spettacolari scalinate del Duomo di San Giorgio e di San Pietro. Non poteva mancare una sosta all'Antica Dolceria Bonajuto per assaggiare il celebre cioccolato. Nel tardo pomeriggio, lasciato il camper nell'area di sosta, siamo saliti a <b>Ragusa Ibla</b>. Camminare al crepuscolo verso il Duomo di San Giorgio, ammirando i balconi "a petto d'oca" scolpiti e gustandoci i Giardini Iblei illuminati, è stato uno dei momenti più romantici del viaggio.
+      </p>
+    </div>
+
+    <h2>2. Il Fascino dell'Antichità: Valle dei Templi e Selinunte</h2>
+
+    <div class="box-highlight">
+      <h3>🏺 30-31 Dicembre: Da Agrigento alla Scala dei Turchi</h3>
+      <p style="margin:0; font-size: 15px; line-height: 1.8;">
+        Il 30 dicembre lo abbiamo dedicato alla meraviglia della <b>Valle dei Templi</b> ad Agrigento. Passeggiare con Leo lungo la Via Sacra, sentendoci piccolissimi di fronte al Tempio della Concordia e al Tempio di Eracle, è un'emozione indescrivibile. La sera ci siamo rilassati a Porto Empedocle, dove Luisa ha "preso un caffè" con la celebre statua di bronzo dedicata ad Andrea Camilleri.<br><br>
+        Per l'ultimo giorno dell'anno, la natura ci ha regalato lo spettacolo della <b>Scala dei Turchi</b> al mattino. Successivamente, ci siamo spostati nel trapanese per camminare letteralmente dentro la storia nel <b>Parco Archeologico di Selinunte</b>, ammirando il colossale Tempio E circondato dai prati fioriti prima di raggiungere Marsala per festeggiare il Capodanno.
+      </p>
+    </div>
+
+    <h2>3. L'Inizio del Nuovo Anno: Da Erice alle Vie di Palermo</h2>
+
+    <div class="box-info">
+      <h3>🌫️ 1 Gennaio: Trapani e la Magia Nebbiosa di Erice</h3>
+      <p style="margin:0; font-size: 14px;">
+        Il 2022 è iniziato con una suggestiva passeggiata invernale sulle Mura di Tramontana a Trapani. Ma la vera sorpresa è stata <b>Erice</b>: il borgo medievale ci ha accolti avvolto in una nebbia fittissima. Le sagome del Duomo dell'Assunta e della Torre di Re Federico emergevano dalla foschia illuminate dalle luci di Natale, regalandoci un'atmosfera ovattata e fiabesca indimenticabile.
+      </p>
+    </div>
+
+    <div class="box-info">
+      <h3>🌊 2-4 Gennaio: Relax a Mondello e lo Street Food Palermitano</h3>
+      <p style="margin:0; font-size: 14px;">
+        Gli ultimi giorni li abbiamo trascorsi nel capoluogo. Abbiamo pranzato rilassati ai tavolini all'aperto di <b>Mondello</b>, passeggiando con Leo sulla spiaggia dominata dall'elegante Antico Stabilimento Balneare Liberty.<br>
+        Il 3 gennaio ci siamo immersi nei colori di <b>Palermo</b>: dai capolavori arabo-normanni della Chiesa della Martorana e San Cataldo (con le sue tre cupole rosse), all'incrocio monumentale dei Quattro Canti. E per vivere la vera essenza della città, ci siamo tuffati in un mercato storico, tra i profumi dei pomodori secchi e il tradizionale "purpu vugghiutu" (polpo bollito) preparato al momento sui banchi.
+      </p>
+    </div>
+
+    <div class="box-info">
+      <h3>🚢 4-5 Gennaio: L'Imbarco e il Ritorno</h3>
+      <p style="margin:0; font-size: 14px;">
+        Dopo un'ultima dissetata per Leo a una fontanella in ghisa di Mondello, la sera del 4 gennaio ci siamo diretti al Porto di Palermo. Il traghetto <b>GNV Aries</b> ci attendeva illuminato in banchina. Il viaggio si è concluso la mattina del 5 gennaio, quando dal ponte della nave abbiamo ammirato le prime luci dell'alba illuminare la Stazione Marittima del Golfo di Napoli.
+      </p>
+    </div>
+
+    <!-- AZIONI E PULSANTI FINALI -->
+    <div class="action-buttons">
+      <button class="btn-action btn-feedback" onclick="openModal()">💬 Parlaci del tuo viaggio / Per approfondire</button>
+      <a href="index.html" class="btn-action btn-mappa">🌍 Guarda le Foto Geolocalizzate sulla Mappa</a>
+    </div>
+
+  </div>
+
+  <!-- MODAL FORM PER FEEDBACK / CONTATTO -->
+  <div id="feedbackModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <h3 style="margin-top:0; color:#1e3c72;">Scrivici un messaggio</h3>
+      <p style="font-size:14px; color:#666; margin-bottom:20px;">Hai domande sul percorso o vuoi condividere un'esperienza? Lasciaci i tuoi contatti!</p>
+      
+      <!-- FORM DI CONTATTO -->
+      <form action="https://formspree.io/f/mqpzoyng" method="POST">
+        <div class="form-group">
+          <label for="email">La tua Email:</label>
+          <input type="email" id="email" name="email" required placeholder="nome@esempio.it">
+        </div>
+        <div class="form-group">
+          <label for="message">Messaggio o Domanda:</label>
+          <textarea id="message" name="message" rows="4" required placeholder="Scrivi qui il tuo messaggio..."></textarea>
+        </div>
+        <button type="submit" class="btn-submit">Invia Messaggio</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function openModal() {
+      document.getElementById('feedbackModal').style.display = 'flex';
+    }
+
+    function closeModal() {
+      document.getElementById('feedbackModal').style.display = 'none';
+    }
+
+    // Chiudi la modal se si clicca fuori dal riquadro
+    window.onclick = function(event) {
+      var modal = document.getElementById('feedbackModal');
+      if (event.target == modal) {
+        modal.style.display = 'none';
+      }
+    }
+  </script>
+
+</body>
+</html>
