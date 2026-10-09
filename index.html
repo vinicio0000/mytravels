@@ -1,4 +1,4 @@
-<!-- VERSION: 3.24_LANDSCAPE_MODAL_FULLSCREEN_LOCALSTORAGE_WEBP -->
+<!-- VERSION: 3.26_GUIDA_PULITA -->
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -312,7 +312,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
         font-size: 12px;
         line-height: 1.3;
         font-weight: 500;
-        background: rgba(0, 0, 0, 0.3); /* 30% di opacità */
+        background: rgba(0, 0, 0, 0.3);
         backdrop-filter: blur(4px);
         -webkit-backdrop-filter: blur(4px);
         padding: 6px 12px;
@@ -450,7 +450,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       box-shadow: 0 4px 12px rgba(0,0,0,0.25);
       flex-direction: column;
       gap: 10px;
-      min-width: 220px;
+      min-width: 230px;
     }
 
     #menu-panel.show {
@@ -744,20 +744,6 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       box-sizing: border-box;
     }
 
-    .box-seo-guida {
-      background: #eef7f6;
-      border-left: 4px solid #52b69a;
-      padding: 10px 12px;
-      border-radius: 6px;
-      margin: 10px 0;
-      font-size: 12px;
-    }
-    .box-seo-guida a {
-      color: #1e3c72;
-      font-weight: bold;
-      text-decoration: underline;
-    }
-
     /* STILE STAMPANTE E CARD DEL REPORT VIAGGI */
     #report-modal {
       position: fixed;
@@ -822,7 +808,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
     @media (max-width: 900px) {
       #header-container { display: none !important; }
       #filtro-container { padding: 6px 10px; gap: 6px; top: 10px; right: 10px; }
-      #menu-panel { top: calc(100% + 5px); right: 0; min-width: 180px; }
+      #menu-panel { top: calc(100% + 5px); right: 0; min-width: 200px; }
       .filtro-group label, select, .checkbox-label { font-size: 11px; }
       select { padding: 4px 6px; min-width: 110px; }
       #slideshow-controls { padding: 6px 10px; gap: 4px; }
@@ -833,13 +819,13 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       #tooltip-istruzioni { font-size: 11px; padding: 8px 12px; bottom: 60px; width: 80vw; }
     }
     
-    /* --- NUOVA REGOLA: INGRANDISCE IL TESTO SOLO SU PC (> 768px) --- */
+    /* INGRANDISCE IL TESTO SOLO SU PC (> 768px) */
     @media (min-width: 768px) {
       #slideshow-caption,
       #modal-caption {
         font-size: 22px !important;
         line-height: 1.4 !important;
-        max-height: 30vh !important; /* Dà più spazio al testo ingrandito evitando che venga tagliato */
+        max-height: 30vh !important;
       }
     }
   </style>
@@ -851,7 +837,6 @@ function selezionaViaggioEChiudi(nomeViaggio) {
     <div class="splash-card">
       <h1>🌍 La mappa dei viaggi<br>di Vinicio e Luisa</h1>
       <p>Ripercorri le nostre tappe: seleziona il viaggio e avvia la slideshow</p>
-      <!-- BOTTONE DEMO NELLO SPLASH SCREEN -->
       <div style="margin-top: 15px;">
         <a href="demo.html" onclick="event.stopPropagation()" style="background: #ffffff; color: #1e3c72; text-decoration: none; padding: 6px 14px; border-radius: 15px; font-size: 12px; font-weight: bold; display: inline-block; box-shadow: 0 2px 6px rgba(0,0,0,0.3);">
           🎬 Guarda la Demo Interattiva
@@ -886,16 +871,16 @@ function selezionaViaggioEChiudi(nomeViaggio) {
     <!-- MENU HAMBURGER -->
     <div id="menu-panel">
 	
-	<!-- SELETTORE LINGUA INDIPENDENTE DAL DOMINIO -->
-  <div class="filtro-group" style="flex-direction: column; align-items: flex-start; gap: 4px; margin-bottom: 4px;">
-    <label for="select-lingua"><b>🌐 Lingua / Language:</b></label>
-    <select id="select-lingua" onchange="window.location.href = this.value;" style="width: 100%;">
-      <option value="index.html" selected>🇮🇹 Italiano</option>
-      <option value="index_en.html">🇬🇧 English</option>
-    </select>
-  </div>
+      <!-- SELETTORE LINGUA INDIPENDENTE DAL DOMINIO -->
+      <div class="filtro-group" style="flex-direction: column; align-items: flex-start; gap: 4px; margin-bottom: 4px;">
+        <label for="select-lingua"><b>🌐 Lingua / Language:</b></label>
+        <select id="select-lingua" onchange="window.location.href = this.value;" style="width: 100%;">
+          <option value="index.html" selected>🇮🇹 Italiano</option>
+          <option value="index_en.html">🇬🇧 English</option>
+        </select>
+      </div>
 
-  <hr style="border:0; border-top:1px solid #eee; margin:2px 0;">
+      <hr style="border:0; border-top:1px solid #eee; margin:2px 0;">
 
       <!-- ORDINAMENTO VIAGGI -->
       <div class="filtro-group" style="flex-direction: column; align-items: flex-start; gap: 4px; margin-bottom: 4px;">
@@ -904,6 +889,14 @@ function selezionaViaggioEChiudi(nomeViaggio) {
           <option value="alfabetico" selected>Alfabetico (Predefinito)</option>
           <option value="anno_desc">Per Anno (dal più recente)</option>
           <option value="anno_asc">Per Anno (dal meno recente)</option>
+        </select>
+      </div>
+
+      <!-- VOCE ALGORITMICA DIARI DI VIAGGIO -->
+      <div class="filtro-group" style="flex-direction: column; align-items: flex-start; gap: 4px; margin-bottom: 4px;">
+        <label for="select-diario"><b>📖 Diari di Viaggio:</b></label>
+        <select id="select-diario" onchange="apriDiarioDaSelect(this)" style="width: 100%;">
+          <option value="">Seleziona un diario...</option>
         </select>
       </div>
 
@@ -956,7 +949,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
         🎬 Avvia Demo Guidata
       </a>
       <a href="javascript:void(0)" onclick="mostraAiuto()" style="text-decoration:none; color:#007bff; font-size:12px; font-weight:600; display:flex; align-items:center; gap:6px;">
-        ❓ Guida / Aiuto / Diari
+        ❓ Guida
       </a>
     </div>
   </div>
@@ -1016,7 +1009,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
     </div>
   </div>
   
-  <!-- MODALE REPORT E MODIFICA -->
+  <!-- MODALE REPORT E STATISTICHE -->
   <div id="report-modal">
     <div class="report-header">
       <h3 id="report-modal-title">📊 Statistiche e Report Viaggio</h3>
@@ -1031,7 +1024,6 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       </div>
     </div>
   </div>
-  
 
   <!-- MODALE FOTO INGRANDITA -->
   <div id="imageModal" class="modal-foto" onclick="chiudiModalFoto(false)">
@@ -1048,43 +1040,31 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       border: 1px solid rgba(0,0,0,0.15);
     ">
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; border-bottom: 2px solid #007bff; padding-bottom: 6px;">
-        <h3 style="margin:0; font-size:16px; color:#2c3e50;">🌍 Guida e Informazioni (v3.23)</h3>
+        <h3 style="margin:0; font-size:16px; color:#2c3e50;">🌍 Guida e Informazioni</h3>
         <button onclick="chiudiModalAiuto()" style="background:none; border:none; font-size:20px; cursor:pointer; color:#666;">✖</button>
       </div>
       
       <div style="font-size: 13px; color: #2c3e50; max-height: 65vh; overflow-y: auto; padding-right: 5px; line-height: 1.5;">
-        <div class="box-seo-guida">
-          📖 <b>Guida In Evidenza:</b> Leggi il nostro resoconto di viaggio completo<br>
-          <a href="diario_spagna_marocco_2023.html" target="_blank">Diario di Viaggio in Camper in Marocco e Spagna: Itinerario, Dogana e Consigli</a>
-        </div>
-        <div class="box-seo-guida">
-          📖 <b>Guida In Evidenza:</b> Leggi il nostro resoconto di viaggio completo<br>
-          <a href="Diario_Sudafrica_2009.html" target="_blank">Diario di Viaggio in Sudafrica: Itinerario, Dogana e Consigli</a>
-        </div>
-        <div class="box-seo-guida">
-          📖 <b>Guida In Evidenza:</b> Leggi il nostro resoconto di viaggio completo<br>
-          <a href="firenzevenezia2023.html" target="_blank">Diario di Viaggio in Camper: Il Fascino di Firenze e la Magia di Venezia</a>
-        </div>
 
         <p style="margin-top:6px;">
-          Questo progetto raccoglie oltre 30 anni di viaggi condotti in totale autonomia, in camper e in aereo fai da te. Ogni foto è geolocalizzata ed è posizionata esattamente nel luogo in cui è stata scattata.
+          Questo progetto raccoglie oltre 30 anni di viaggi condotti in totale autonomia, in camper e in aereo fai da te[cite: 1]. Ogni foto è geolocalizzata ed è posizionata esattamente nel luogo in cui è stata scattata[cite: 1].
         </p>
 
         <hr style="border:0; border-top:1px solid #ddd; margin:10px 0;">
 
         <b style="color:#007bff;">📍 ESPLORAZIONE MAPPA E FOTO</b>
         <p style="margin: 4px 0 10px 0;">
-          Clicca su una puntina colorata per aprire la finestra con l'anteprima, la data e la descrizione del luogo. Cliccando sulla foto puoi ingrandirla a schermo intero.
+          Clicca su una puntina colorata per aprire la finestra con l'anteprima, la data e la descrizione del luogo[cite: 1]. Cliccando sulla foto puoi ingrandirla a schermo intero[cite: 1].
         </p>
 
         <b style="color:#28a745;">📖 DIARIO DI VIAGGIO</b>
         <p style="margin: 4px 0 10px 0;">
-          Se per il viaggio o la tappa selezionata è disponibile il resoconto scritto, troverai il pulsante verde <b>📖 Diario di Viaggio</b> sia all'interno del fumetto/popup sulla mappa, sia nella parte superiore della foto ingrandita a schermo intero. Cliccandolo si aprirà il file del diario in una nuova scheda.
+          Se per il viaggio o la tappa selezionata è disponibile il resoconto scritto, troverai il pulsante verde <b>📖 Diario di Viaggio</b> sia all'interno del fumetto/popup sulla mappa, sia nella parte superiore della foto ingrandita a schermo intero[cite: 1]. I diari completi sono consultabili anche direttamente dalla voce dedicata nel menu delle opzioni.
         </p>
 
         <b style="color:#007bff;">▶ MODALITÀ SLIDESHOW</b>
         <p style="margin: 4px 0 10px 0;">
-          Selezionando uno specifico <b>Viaggio</b> dal menu in alto comparirà il pulsante <b>▶ Avvia Slideshow</b>. Lo schermo si dividerà in due: la foto in alto e la mappa in basso con la puntina corrente evidenziata in giallo.
+          Selezionando uno specifico <b>Viaggio</b> dal menu in alto comparirà il pulsante <b>▶ Avvia Slideshow</b>[cite: 1]. Lo schermo si dividerà in due: la foto in alto e la mappa in basso con la puntina corrente evidenziata in giallo[cite: 1].
         </p>
 
         <b style="color:#007bff;">📱 CONTROLLI E GESTI</b>
@@ -1096,26 +1076,27 @@ function selezionaViaggioEChiudi(nomeViaggio) {
           <span style="background:#dc3545; color:white; padding:3px 8px; border-radius:12px; font-size:11px;">✖ Esci</span>
         </p>
         <p style="margin: 4px 0 10px 0; font-style: italic; font-size: 11px; color: #555;">
-          Su dispositivi touch puoi fare uno scorrimento orizzontale (swipe) sulla foto per passare alla foto precedente o successiva.
+          Su dispositivi touch puoi fare uno scorrimento orizzontale (swipe) sulla foto per passare alla foto precedente o successiva[cite: 1].
         </p>
 
         <b style="color:#007bff;">⚙ OPZIONI MENU (☰)</b>
         <ul style="margin: 4px 0 10px 0; padding-left: 18px; font-size: 12px;">
-          <li><b>Stile Mappa:</b> per scegliere tra mappa standard (OpenStreetMap), satellitare (Esri), ibrida, topografica o sfondi minimali CARTO.</li>
-          <li><b>Dimensione Puntine:</b> permette di ingrandire o rimpicciolire i pin (Piccole, Standard, Grandi) per adattarli al tuo schermo.</li>
-          <li><b>Raggruppa punti (Clustering):</b> unisce le puntine vicine in un unico cerchio numerato per non affollare la mappa.</li>
-          <li><b>Abilita selezione Anno:</b> attiva un menu aggiuntivo per mostrare solo le tappe di un anno specifico.</li>
-          <li><b>Legenda Anni:</b> mostra un box in basso a destra con la corrispondenza dei colori per ogni anno.</li>
+          <li><b>Diari di Viaggio:</b> elenco automatico e aggiornato dei diari consultabili.</li>
+          <li><b>Stile Mappa:</b> per scegliere tra mappa standard (OpenStreetMap), satellitare (Esri), ibrida, topografica o sfondi minimali CARTO[cite: 1].</li>
+          <li><b>Dimensione Puntine:</b> permette di ingrandire o rimpicciolire i pin (Piccole, Standard, Grandi) per adattarli al tuo schermo[cite: 1].</li>
+          <li><b>Raggruppa punti (Clustering):</b> unisce le puntine vicine in un unico cerchio numerato per non affollare la mappa[cite: 1].</li>
+          <li><b>Abilita selezione Anno:</b> attiva un menu aggiuntivo per mostrare solo le tappe di un anno specifico[cite: 1].</li>
+          <li><b>Legenda Anni:</b> mostra un box in basso a destra con la corrispondenza dei colori per ogni anno[cite: 1].</li>
         </ul>
 
         <hr style="border:0; border-top:1px solid #ddd; margin:10px 0;">
         <small style="color:#666; display:block; text-align:center;">
-          Sito e codice sviluppati da Ing. Vinicio Barone
+          Sito e codice sviluppati da Ing. Vinicio Barone[cite: 1]
         </small>
 
         <hr style="border:0; border-top:1px solid #ddd; margin:10px 0;">
         <small style="color:#666; display:block; text-align:center;">
-          © 2026 [I Viaggi di Vinicio e Luisa]. Tutti i diritti riservati.
+          © 2026 [I Viaggi di Vinicio e Luisa]. Tutti i diritti riservati.[cite: 1]
         </small>
 
       </div>
@@ -1167,7 +1148,6 @@ function selezionaViaggioEChiudi(nomeViaggio) {
           console.error("Errore nel ripristino delle impostazioni da localStorage:", e);
         }
       } else {
-        // Valori di default se il localStorage è vuoto
         document.getElementById('check-cluster').checked = true;
       }
     }
@@ -1261,7 +1241,6 @@ function selezionaViaggioEChiudi(nomeViaggio) {
 
     function mostraGuidaFumetto() {
       const nascondiFumetto = localStorage.getItem('nascondiFumetto');
-      // Se l'utente ha scelto di non mostrarlo più, ci fermiamo qui
       if (nascondiFumetto === 'true') {
         return;
       }
@@ -1272,7 +1251,6 @@ function selezionaViaggioEChiudi(nomeViaggio) {
           if (tooltip && markersSlideshow && markersSlideshow.length > 0) {
             tooltip.style.display = 'flex';
 
-            // Timer automatico per chiudere dopo 15 secondi (se l'utente non lo fa prima)
             tooltipTimeout = setTimeout(() => {
               chiudiTooltip(false);
             }, 15000);
@@ -1290,7 +1268,6 @@ function selezionaViaggioEChiudi(nomeViaggio) {
         clearTimeout(tooltipTimeout);
       }
       
-      // Se l'utente ha premuto "Non mostrare più", salviamo la preferenza
       if (nonMostrarePiu) {
         localStorage.setItem('nascondiFumetto', 'true');
       }
@@ -1306,8 +1283,6 @@ function selezionaViaggioEChiudi(nomeViaggio) {
           splash.style.display = 'none';
           map.invalidateSize();
           avviaPanIniziale();
-
-          // MOSTRA IL FUMETTO DI GUIDA SOLO QUANDO LO SPLASH SCREEN È SCOMPARSO E SE NON NASCOSTO
           mostraGuidaFumetto();
         }, 800);
       }
@@ -1405,7 +1380,6 @@ function selezionaViaggioEChiudi(nomeViaggio) {
     let tempoIntervallo = 4000;
     let puntiSlideshow = [];
     let markersSlideshow = [];
-    let immaginiPrecaricate = [];
     let wakeLock = null;
 
     let touchStartX = 0;
@@ -1513,7 +1487,6 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       });
     }
 
-    // Caricamento preferenze all'avvio
     caricaImpostazioni();
 
     // CARICAMENTO CONGIUNTO DI DATI.JSON E PAESI_VISITATI.JSON
@@ -1528,14 +1501,12 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       datiPaesiVisitati = datiPaesi;
       popolaAnni();
       popolaViaggi();
+      popolaDiari();
       aggiornaMappa();
     }).catch(err => console.error("Errore nel caricamento dei dati:", err));
 
-    // --- FUNZIONI DI CALCOLO E GESTIONE DEL REPORT (CON PAESI_VISITATI) ---
+    // --- FUNZIONI DI CALCOLO E GESTIONE DEL REPORT ---
     function calcolaReport(dati) {
-      const tappe = dati.length;
-      const foto = dati.filter(p => p.foto && p.foto.trim() !== '').length;
-
       const viaggioSel = document.getElementById('select-viaggio') ? document.getElementById('select-viaggio').value : 'tutti';
 
       paesiAttuali = [];
@@ -1616,27 +1587,6 @@ function selezionaViaggioEChiudi(nomeViaggio) {
 
     function chiudiReport() {
       document.getElementById('report-modal').classList.remove('active');
-      nascondiFormModificaReport();
-    }
-
-    function mostraFormModificaReport() {
-      document.getElementById('report-view').style.display = 'none';
-      document.getElementById('report-edit-form').style.display = 'block';
-      document.getElementById('report-modal-title').innerText = '✏️ Modifica Report Viaggio';
-
-      const viaggioSel = document.getElementById('select-viaggio').value;
-      const noteSalvate = localStorage.getItem('note_report_' + viaggioSel) || '';
-      document.getElementById('edit-report-notes').value = noteSalvate;
-    }
-
-    function nascondiFormModificaReport() {
-      if (document.getElementById('report-edit-form')) {
-        document.getElementById('report-edit-form').style.display = 'none';
-      }
-      if (document.getElementById('report-view')) {
-        document.getElementById('report-view').style.display = 'block';
-      }
-      document.getElementById('report-modal-title').innerText = '📊 Statistiche e Report Viaggio';
     }
 
     function popolaAnni() {
@@ -1694,18 +1644,17 @@ function selezionaViaggioEChiudi(nomeViaggio) {
         anno: viaggiMap.get(v)
       }));
 
-      // Ordinamento in base alla scelta dell'utente
       if (ordinamento === 'alfabetico') {
         viaggiArray.sort((a, b) => a.nome.localeCompare(b.nome));
       } else if (ordinamento === 'anno_desc') {
         viaggiArray.sort((a, b) => {
           if (b.anno === a.anno) return a.nome.localeCompare(b.nome);
-          return b.anno - a.anno; // Dal più recente al meno recente
+          return b.anno - a.anno;
         });
       } else if (ordinamento === 'anno_asc') {
         viaggiArray.sort((a, b) => {
           if (a.anno === b.anno) return a.nome.localeCompare(b.nome);
-          return a.anno - b.anno; // Dal meno recente al più recente
+          return a.anno - b.anno;
         });
       }
 
@@ -1716,16 +1665,86 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       viaggiArray.forEach(v => {
         const option = document.createElement('option');
         option.value = v.nome;
-        option.textContent = v.nome; // Inseriamo solo il nome come richiesto (senza anno tra parentesi)
+        option.textContent = v.nome;
         selectViaggio.appendChild(option);
       });
 
-      // Ripristina il viaggio selezionato se è ancora nella lista
       if (Array.from(selectViaggio.options).some(opt => opt.value === currentSelection)) {
          selectViaggio.value = currentSelection;
       } else {
          selectViaggio.value = 'tutti';
       }
+    }
+
+    // --- LOGICA ALGORITMICA ESTRAZIONE DIARI DI VIAGGIO ---
+    function popolaDiari() {
+      const selectDiario = document.getElementById('select-diario');
+      if (!selectDiario) return;
+
+      const diariMap = new Map();
+
+      tuttiIDati.forEach(p => {
+        if (p.diario && typeof p.diario === 'string' && p.diario.trim() !== '') {
+          const url = p.diario.trim();
+          if (!diariMap.has(url)) {
+            const annoVal = p.anno && p.anno !== "Sconosciuto" ? p.anno : "";
+            const nomeViaggio = p.viaggio || p.nome || "Diario di Viaggio";
+            let etichetta = nomeViaggio;
+            if (annoVal && !etichetta.includes(annoVal)) {
+              etichetta += ` (${annoVal})`;
+            }
+
+            diariMap.set(url, {
+              url: url,
+              titolo: etichetta,
+              viaggio: p.viaggio || "",
+              anno: annoVal ? Number(annoVal) : 0
+            });
+          }
+        }
+      });
+
+      const diariArray = Array.from(diariMap.values()).sort((a, b) => {
+        if (b.anno !== a.anno) return b.anno - a.anno;
+        return a.titolo.localeCompare(b.titolo);
+      });
+
+      // Popola il selettore nel menu hamburger
+      selectDiario.innerHTML = '<option value="">Seleziona un diario...</option>';
+      diariArray.forEach(d => {
+        const option = document.createElement('option');
+        option.value = d.url;
+        option.dataset.viaggio = d.viaggio;
+        option.textContent = `📖 ${d.titolo}`;
+        selectDiario.appendChild(option);
+      });
+    }
+
+    function apriDiarioDaSelect(selectElem) {
+      const url = selectElem.value;
+      if (!url) return;
+
+      const optSelezionata = selectElem.options[selectElem.selectedIndex];
+      const nomeViaggio = optSelezionata ? optSelezionata.dataset.viaggio : '';
+
+      // Se associato a un viaggio specifico, aggiorna anche la selezione e la mappa
+      if (nomeViaggio) {
+        const selectViaggio = document.getElementById('select-viaggio');
+        if (selectViaggio && selectViaggio.value !== nomeViaggio) {
+          selectViaggio.value = nomeViaggio;
+          cambiaViaggio();
+        }
+      }
+
+      // Chiude il menu a comparsa
+      const menu = document.getElementById('menu-panel');
+      if (menu) menu.classList.remove('show');
+
+      // Apre il diario in una nuova scheda
+      window.open(url, '_blank', 'noopener');
+
+      // Resetta il selettore alla prima opzione
+      selectElem.value = "";
     }
 
     function cambiaAnno() {
@@ -1741,16 +1760,16 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       aggiornaMappa();
     }
 	
-	function saltaASlide(index) {
+    function saltaASlide(index) {
       if (!isSlideshowActive) return;
       currentSlideIndex = index;
       mostraSlide(currentSlideIndex);
 
-      // Se la riproduzione automatica è attiva, resetta il timer per dare il tempo di guardare la nuova foto
       if (!isSlideshowPaused) {
         avviaTimer();
       }
     }
+
     function aggiornaMappa() {
       const annoSel = document.getElementById('select-anno').value;
       const viaggioSel = document.getElementById('select-viaggio').value;
@@ -1795,12 +1814,9 @@ function selezionaViaggioEChiudi(nomeViaggio) {
           const marker = L.marker([lat, lon], opzioniMarker);
           marker.coloreOriginale = coloreHex;
 
-          
-		  // GESTIONE CLICK SUL MARCATORE E CHIUSURA TOOLTIP
           marker.on('click', function(e) {
-            chiudiTooltip(false); // Nascondiamo il tooltip non appena interagiscono con la mappa
+            chiudiTooltip(false);
 
-            // Se la slideshow è attiva, salta a questa slide ed evita l'apertura del popup
             if (isSlideshowActive) {
               if (marker.isPopupOpen()) {
                 marker.closePopup();
@@ -2223,7 +2239,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
 
     photoPanel.addEventListener('touchend', function(e) {
       const touchEndX = e.changedTouches[0].screenX;
-      const touchEndY = e.changedTouches[0].screenY;
+      touchEndY = e.changedTouches[0].screenY;
       
       const diffX = touchEndX - touchStartX;
       const diffY = touchEndY - touchStartY;
