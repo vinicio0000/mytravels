@@ -1282,7 +1282,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
         setTimeout(() => {
           splash.style.display = 'none';
           map.invalidateSize();
-          avviaPanIniziale();
+          avviaAnimazioneApertura();
           mostraGuidaFumetto();
         }, 800);
       }
@@ -1350,12 +1350,11 @@ function selezionaViaggioEChiudi(nomeViaggio) {
     let datiPaesiVisitati = null;
     let paesiAttuali = [];
     let statiUsaAttuali = [];
-    let panInizialeAttivo = false;
-    let animazionePanId = null;
+    let animazioneInCorso = false;
 
     const clusterGroup = L.markerClusterGroup({ 
-      disableClusteringAtZoom: 16,
-      maxClusterRadius: 40 
+      disableClusteringAtZoom: 11,
+      maxClusterRadius: 30 
     });
     const singleGroup = L.layerGroup();
     
@@ -1404,55 +1403,55 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       }
     }
 
-    function avviaPanIniziale() {
-      panInizialeAttivo = true;
-      map.setView([40, -140], 3, { animate: false });
+    function avviaAnimazioneApertura() {
+      animazioneInCorso = true;
+      fetch('apertura.json')
+        .then(response => response.json())
+        .then(config => {
+          if (!animazioneInCorso) return;
+          
+          // Imposta una vista larghissima e lontana per dare slancio al primo volo
+          map.setView([15, -160], 2, { animate: false }); 
 
-      let startTime = null;
-      const durataMs = 20000;
+          eseguiStepAnimazione(config, 0);
+        })
+        .catch(err => {
+          console.warn("File apertura.json non trovato, uso vista statica.", err);
+          map.setView([40, 10], 4); // Fallback se il file manca
+        });
+    }
 
-      const startLat = 40;
-      const endLat = 30;
-      const startLon = -140;
-      const endLon = 140;
-
-      function anima(timestamp) {
-        if (!panInizialeAttivo) return;
-        if (!startTime) startTime = timestamp;
-
-        const trascorso = timestamp - startTime;
-        const progresso = Math.min(trascorso / durataMs, 1);
-
-        const currentLat = startLat + (endLat - startLat) * progresso;
-        const currentLon = startLon + (endLon - startLon) * progresso;
-
-        map.setView([currentLat, currentLon], 3, { animate: false });
-
-        if (progresso < 1 && panInizialeAttivo) {
-          animazionePanId = requestAnimationFrame(anima);
-        } else {
-          panInizialeAttivo = false;
-        }
+    function eseguiStepAnimazione(config, index) {
+      if (!animazioneInCorso || index >= config.destinazioni.length) {
+        animazioneInCorso = false;
+        return; // Sequenza terminata
       }
 
+      const step = config.destinazioni[index];
+      
+      // Il metodo map.flyTo() crea esattamente l'effetto "a volo d'uccello" di Google Earth
+      map.flyTo([step.lat, step.lon], step.zoom, {
+        animate: true,
+        duration: config.durata_volo_secondi, // La lentezza del volo (es. 6 secondi)
+        easeLinearity: 0.15 // Più basso è, più fa la curva (sale, si sposta in aria, scende)
+      });
+
+      // Calcola quando partirà il volo per la tappa successiva
+      const tempoTotaleStep = (config.durata_volo_secondi * 1000) + config.pausa_tra_zoom_ms;
+      
       setTimeout(() => {
-        if (panInizialeAttivo) {
-          animazionePanId = requestAnimationFrame(anima);
-        }
-      }, 400);
+        eseguiStepAnimazione(config, index + 1);
+      }, tempoTotaleStep);
     }
 
-    function fermaPanIniziale() {
-      if (panInizialeAttivo) {
-        panInizialeAttivo = false;
-        if (animazionePanId) {
-          cancelAnimationFrame(animazionePanId);
-          animazionePanId = null;
-        }
+    function fermaAnimazioneIniziale() {
+      if (animazioneInCorso) {
+        animazioneInCorso = false;
+        map.stop(); // Blocca il volo immediatamente se l'utente tocca la mappa
       }
     }
 
-    map.on('dragstart zoomstart mousedown touchstart', fermaPanIniziale);
+    map.on('dragstart mousedown touchstart wheel', fermaAnimazioneIniziale);
 
     function creaIconaColorata(coloreHex, isBig = false) {
       const taglia = document.getElementById('select-dimensione-pin') ? document.getElementById('select-dimensione-pin').value : 'standard';
@@ -1748,14 +1747,14 @@ function selezionaViaggioEChiudi(nomeViaggio) {
     }
 
     function cambiaAnno() {
-      fermaPanIniziale();
+      fermaAnimazioneIniziale();
       if (isSlideshowActive) fermaSlideshow();
       popolaViaggi();
       aggiornaMappa();
     }
 
     function cambiaViaggio() {
-      fermaPanIniziale();
+      fermaAnimazioneIniziale();
       if (isSlideshowActive) fermaSlideshow();
       aggiornaMappa();
     }
@@ -1869,7 +1868,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
 
       if (puntiValidi.length > 0 && !isSlideshowActive) {
         if (viaggioSel !== 'tutti') {
-          fermaPanIniziale();
+          fermaAnimazioneIniziale();
           const bounds = L.latLngBounds(puntiValidi);
           map.fitBounds(bounds, { padding: [50, 50], maxZoom: 15 });
         }
@@ -1878,7 +1877,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
 
     function avviaSlideshow() {
       if (markersSlideshow.length === 0) return;
-      fermaPanIniziale();
+      fermaAnimazioneIniziale();
       attivaWakeLock();
 
       isSlideshowActive = true;
@@ -2119,7 +2118,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
     let currentModalIndex = -1;
 
     function apriModalFoto(urlFoto, index = -1) {
-      fermaPanIniziale();
+      fermaAnimazioneIniziale();
       currentModalIndex = index;
 
       const modal = document.getElementById('imageModal');
