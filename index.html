@@ -208,6 +208,35 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       from { opacity: 0; transform: translate(-50%, 10px); }
       to { opacity: 1; transform: translate(-50%, 0); }
     }
+    
+    /* FUMETTO DURANTE L'ANIMAZIONE DI VOLO */
+    #tooltip-animazione {
+      display: none;
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2001;
+      background: rgba(220, 53, 69, 0.95); /* Rosso scuro per spiccare molto */
+      color: #ffffff;
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-size: 14px;
+      font-weight: bold;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+      text-align: center;
+      pointer-events: none; /* Lascia passare i click alla mappa sottostante */
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      width: 85vw;
+      max-width: 350px;
+      animation: pulseAnim 2s infinite;
+    }
+
+    @keyframes pulseAnim {
+      0% { box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.7); }
+      70% { box-shadow: 0 0 0 12px rgba(220, 53, 69, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(220, 53, 69, 0); }
+    }
 
     body.slideshow-active #header-container {
       display: none !important;
@@ -995,6 +1024,12 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       <button onclick="chiudiTooltip(true)" style="background:rgba(220, 53, 69, 0.6); border:none;">✖ Non mostrare più</button>
     </div>
   </div>
+  
+  <!-- FUMETTO MOSTRATO DURANTE IL VOLO AUTOMATICO INIZIALE -->
+  <div id="tooltip-animazione">
+    ✈️ Volo in corso...<br>
+    <span style="font-size: 12px; font-weight: normal;">Tocca la mappa per prendere i comandi ed esplorare</span>
+  </div>
 
   <!-- MODALE LISTA DETTAGLIATA (PAESI / STATI USA) -->
   <div id="lista-modal" class="modal-foto" onclick="chiudiListaModal()" style="z-index: 100010;">
@@ -1405,50 +1440,98 @@ function selezionaViaggioEChiudi(nomeViaggio) {
 
     function avviaAnimazioneApertura() {
       animazioneInCorso = true;
+      
+      // Mostra il fumetto di avviso
+      const tooltipAnim = document.getElementById('tooltip-animazione');
+      if (tooltipAnim) tooltipAnim.style.display = 'block';
+
       fetch('apertura.json')
         .then(response => response.json())
         .then(config => {
           if (!animazioneInCorso) return;
-          
-          // Imposta una vista larghissima e lontana per dare slancio al primo volo
           map.setView([15, -160], 2, { animate: false }); 
-
           eseguiStepAnimazione(config, 0);
         })
         .catch(err => {
           console.warn("File apertura.json non trovato, uso vista statica.", err);
-          map.setView([40, 10], 4); // Fallback se il file manca
+          map.setView([40, 10], 4); 
+          if (tooltipAnim) tooltipAnim.style.display = 'none';
         });
     }
 
-    function eseguiStepAnimazione(config, index) {
+    
+	function eseguiStepAnimazione(config, index) {
       if (!animazioneInCorso || index >= config.destinazioni.length) {
         animazioneInCorso = false;
+        
+        // Se il volo finisce il suo giro da solo, nascondiamo il fumetto
+        const tooltipAnim = document.getElementById('tooltip-animazione');
+        if (tooltipAnim) tooltipAnim.style.display = 'none';
+        
         return; // Sequenza terminata
       }
 
       const step = config.destinazioni[index];
+
+      // Chiude la foto precedente all'inizio di un nuovo avvicinamento
+      if (step.nome.startsWith("Avvicinamento")) {
+        map.closePopup();
+      }
       
-      // Il metodo map.flyTo() crea esattamente l'effetto "a volo d'uccello" di Google Earth
+      // Il metodo map.flyTo() avvia il volo
       map.flyTo([step.lat, step.lon], step.zoom, {
         animate: true,
-        duration: config.durata_volo_secondi, // La lentezza del volo (es. 6 secondi)
-        easeLinearity: 0.15 // Più basso è, più fa la curva (sale, si sposta in aria, scende)
+        duration: config.durata_volo_secondi,
+        easeLinearity: 0.15 
       });
 
-      // Calcola quando partirà il volo per la tappa successiva
-      const tempoTotaleStep = (config.durata_volo_secondi * 1000) + config.pausa_tra_zoom_ms;
-      
-      setTimeout(() => {
-        eseguiStepAnimazione(config, index + 1);
-      }, tempoTotaleStep);
+      // map.once('moveend') aspetta che la mappa si sia fermata del tutto
+      map.once('moveend', function() {
+        if (!animazioneInCorso) return;
+
+        let tempoDiAttesa = config.pausa_tra_zoom_ms;
+
+        // Se siamo atterrati su una Vetta, gestiamo l'apertura e aumentiamo il tempo
+        if (step.nome.startsWith("Vetta")) {
+          
+          // Ritardo di 400ms per permettere all'animazione dei cluster di scompattare le puntine
+          setTimeout(() => {
+            if (!animazioneInCorso) return;
+
+            const markerTrovato = markersSlideshow.find(m => {
+              const ll = m.getLatLng();
+              return Math.abs(ll.lat - step.lat) < 0.005 && Math.abs(ll.lng - step.lon) < 0.005;
+            });
+            
+            if (markerTrovato) {
+              markerTrovato.openPopup();
+            }
+          }, 400);
+
+          // Aumentiamo dinamicamente il tempo di lettura della foto:
+          // Invece di 1 secondo (scritto nel JSON), lo forziamo a 4 secondi (4000 ms)
+          tempoDiAttesa = 4000; 
+        }
+
+        // Timer per far partire il volo verso la tappa successiva
+        setTimeout(() => {
+          eseguiStepAnimazione(config, index + 1);
+        }, tempoDiAttesa);
+      });
     }
+	
+	
+	
 
     function fermaAnimazioneIniziale() {
       if (animazioneInCorso) {
         animazioneInCorso = false;
-        map.stop(); // Blocca il volo immediatamente se l'utente tocca la mappa
+        map.stop(); // Blocca il volo immediatamente
       }
+      
+      // Nasconde il fumetto dell'animazione al primo tocco
+      const tooltipAnim = document.getElementById('tooltip-animazione');
+      if (tooltipAnim) tooltipAnim.style.display = 'none';
     }
 
     map.on('dragstart mousedown touchstart wheel', fermaAnimazioneIniziale);
