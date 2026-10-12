@@ -1,0 +1,366 @@
+{
+  "durata_volo_secondi": 5,
+  "pausa_tra_zoom_ms": 1000,
+  "destinazioni": [
+    {
+      "nome": "Avvicinamento zona 2025-05-15-12H14M38",
+      "lat": 41.0649,
+      "lon": 1.0596,
+      "zoom": 5
+    },
+    {
+      "nome": "Vetta: 2025-05-15-12H14M38",
+      "lat": 41.0649,
+      "lon": 1.0596,
+      "zoom": 12
+    },
+    {
+      "nome": "Avvicinamento zona 2024-09-03-17H50M17",
+      "lat": 41.0368,
+      "lon": 28.9866,
+      "zoom": 5
+    },
+    {
+      "nome": "Vetta: 2024-09-03-17H50M17",
+      "lat": 41.0368,
+      "lon": 28.9866,
+      "zoom": 12
+    },
+    {
+      "nome": "Avvicinamento zona 2023-11-04-10H50M01",
+      "lat": 30.5098,
+      "lon": -9.6871,
+      "zoom": 5
+    },
+    {
+      "nome": "Vetta: 2023-11-04-10H50M01",
+      "lat": 30.5098,
+      "lon": -9.6871,
+      "zoom": 12
+    },
+    {
+      "nome": "Avvicinamento zona 2009-07-26-12H00M00-1",
+      "lat": 25.2339,
+      "lon": 55.2655,
+      "zoom": 5
+    },
+    {
+      "nome": "Vetta: 2009-07-26-12H00M00-1",
+      "lat": 25.2339,
+      "lon": 55.2655,
+      "zoom": 12
+    },
+    {
+      "nome": "Avvicinamento zona 2009-08-14-10H52M00",
+      "lat": -25.1043,
+      "lon": 31.4326,
+      "zoom": 5
+    },
+    {
+      "nome": "Vetta: 2009-08-14-10H52M00",
+      "lat": -25.1043,
+      "lon": 31.4326,
+      "zoom": 12
+    },
+    {
+      "nome": "Avvicinamento zona 2012-07-29-07H22M39",
+      "lat": 1.1472,
+      "lon": 111.8743,
+      "zoom": 5
+    },
+    {
+      "nome": "Vetta: 2012-07-29-07H22M39",
+      "lat": 1.1472,
+      "lon": 111.8743,
+      "zoom": 12
+    },
+    {
+      "nome": "Avvicinamento zona 2025-10-26-19H39M35",
+      "lat": 37.0921,
+      "lon": -8.2277,
+      "zoom": 5
+    },
+    {
+      "nome": "Vetta: 2025-10-26-19H39M35",
+      "lat": 37.0921,
+      "lon": -8.2277,
+      "zoom": 12
+    },
+    {
+      "nome": "Avvicinamento zona 2021-12-28-13H08M46",
+      "lat": 36.792,
+      "lon": 14.704,
+      "zoom": 5
+    },
+    {
+      "nome": "Vetta: 2021-12-28-13H08M46",
+      "lat": 36.792,
+      "lon": 14.704,
+      "zoom": 12
+    },
+    {
+      "nome": "Avvicinamento zona 2017-12-04-07H41M40",
+      "lat": 7.9001,
+      "lon": 98.2988,
+      "zoom": 5
+    },
+    {
+      "nome": "Vetta: 2017-12-04-07H41M40",
+      "lat": 7.9001,
+      "lon": 98.2988,
+      "zoom": 12
+    },
+    {
+      "nome": "Avvicinamento zona 2023-10-19-09H25M57",
+      "lat": 36.4868,
+      "lon": -4.7459,
+      "zoom": 5
+    },
+    {
+      "nome": "Vetta: 2023-10-19-09H25M57",
+      "lat": 36.4868,
+      "lon": -4.7459,
+      "zoom": 12
+    },
+    {
+      "nome": "Avvicinamento zona 2018-07-30-10H14M46",
+      "lat": -24.1068,
+      "lon": 31.6914,
+      "zoom": 5
+    },
+    {
+      "nome": "Vetta: 2018-07-30-10H14M46",
+      "lat": -24.1068,
+      "lon": 31.6914,
+      "zoom": 12
+    },
+    {
+      "nome": "Avvicinamento zona 2025-05-25-21H30M37",
+      "lat": 38.5767,
+      "lon": -0.0647,
+      "zoom": 5
+    },
+    {
+      "nome": "Vetta: 2025-05-25-21H30M37",
+      "lat": 38.5767,
+      "lon": -0.0647,
+      "zoom": 12
+    },
+    {
+      "nome": "Avvicinamento zona 2023-04-02-07H08M26",
+      "lat": 43.7645,
+      "lon": 11.3141,
+      "zoom": 5
+    },
+    {
+      "nome": "Vetta: 2023-04-02-07H08M26",
+      "lat": 43.7645,
+      "lon": 11.3141,
+      "zoom": 12
+    },
+    {
+      "nome": "Avvicinamento zona 2012-07-28-04H07M53",
+      "lat": 1.6628,
+      "lon": 110.4335,
+      "zoom": 5
+    },
+    {
+      "nome": "Vetta: 2012-07-28-04H07M53",
+      "lat": 1.6628,
+      "lon": 110.4335,
+      "zoom": 12
+    },
+    {
+      "nome": "Avvicinamento zona 2012-08-03-04H33M59",
+      "lat": 9.5599,
+      "lon": 100.0329,
+      "zoom": 5
+    },
+    {
+      "nome": "Vetta: 2012-08-03-04H33M59",
+      "lat": 9.5599,
+      "lon": 100.0329,
+      "zoom": 12
+    },
+    {
+      "nome": "Avvicinamento zona 20250622 203612",
+      "lat": 45.3167,
+      "lon": 13.5624,
+      "zoom": 5
+    },
+    {
+      "nome": "Vetta: 20250622 203612",
+      "lat": 45.3167,
+      "lon": 13.5624,
+      "zoom": 12
+    },
+    {
+      "nome": "Avvicinamento zona 2011-12-30-23H21M26",
+      "lat": 25.7923,
+      "lon": -80.2891,
+      "zoom": 5
+    },
+    {
+      "nome": "Vetta: 2011-12-30-23H21M26",
+      "lat": 25.7923,
+      "lon": -80.2891,
+      "zoom": 12
+    },
+    {
+      "nome": "Avvicinamento zona 2018-07-21-16H16M59",
+      "lat": -17.9288,
+      "lon": 25.8427,
+      "zoom": 5
+    },
+    {
+      "nome": "Vetta: 2018-07-21-16H16M59",
+      "lat": -17.9288,
+      "lon": 25.8427,
+      "zoom": 12
+    },
+    {
+      "nome": "Avvicinamento zona 2022-04-10-18H20M23",
+      "lat": 39.7135,
+      "lon": 21.63,
+      "zoom": 5
+    },
+    {
+      "nome": "Vetta: 2022-04-10-18H20M23",
+      "lat": 39.7135,
+      "lon": 21.63,
+      "zoom": 12
+    },
+    {
+      "nome": "Avvicinamento zona 2023-02-25-09H12M07",
+      "lat": 29.6385,
+      "lon": 35.4345,
+      "zoom": 5
+    },
+    {
+      "nome": "Vetta: 2023-02-25-09H12M07",
+      "lat": 29.6385,
+      "lon": 35.4345,
+      "zoom": 12
+    },
+    {
+      "nome": "Avvicinamento zona 2009-04-04-08H29M08",
+      "lat": 30.0284,
+      "lon": 31.2595,
+      "zoom": 5
+    },
+    {
+      "nome": "Vetta: 2009-04-04-08H29M08",
+      "lat": 30.0284,
+      "lon": 31.2595,
+      "zoom": 12
+    },
+    {
+      "nome": "Avvicinamento zona 2013-04-02-11H31M58",
+      "lat": 23.6237,
+      "lon": 58.5795,
+      "zoom": 5
+    },
+    {
+      "nome": "Vetta: 2013-04-02-11H31M58",
+      "lat": 23.6237,
+      "lon": 58.5795,
+      "zoom": 12
+    },
+    {
+      "nome": "Avvicinamento zona 2012-12-30-15H03M56",
+      "lat": 33.4377,
+      "lon": 9.0339,
+      "zoom": 5
+    },
+    {
+      "nome": "Vetta: 2012-12-30-15H03M56",
+      "lat": 33.4377,
+      "lon": 9.0339,
+      "zoom": 12
+    },
+    {
+      "nome": "Avvicinamento zona 2008-07-30-11H30M08",
+      "lat": 42.9562,
+      "lon": 17.1556,
+      "zoom": 5
+    },
+    {
+      "nome": "Vetta: 2008-07-30-11H30M08",
+      "lat": 42.9562,
+      "lon": 17.1556,
+      "zoom": 12
+    },
+    {
+      "nome": "Avvicinamento zona 2026-03-03-09H20M13",
+      "lat": 45.4196,
+      "lon": 12.2564,
+      "zoom": 5
+    },
+    {
+      "nome": "Vetta: 2026-03-03-09H20M13",
+      "lat": 45.4196,
+      "lon": 12.2564,
+      "zoom": 12
+    },
+    {
+      "nome": "Avvicinamento zona 2022-07-26-19H55M58",
+      "lat": 41.127,
+      "lon": 9.055,
+      "zoom": 5
+    },
+    {
+      "nome": "Vetta: 2022-07-26-19H55M58",
+      "lat": 41.127,
+      "lon": 9.055,
+      "zoom": 12
+    },
+    {
+      "nome": "Avvicinamento zona 2021-06-19-10H42M37",
+      "lat": 46.1412,
+      "lon": 10.9655,
+      "zoom": 5
+    },
+    {
+      "nome": "Vetta: 2021-06-19-10H42M37",
+      "lat": 46.1412,
+      "lon": 10.9655,
+      "zoom": 12
+    },
+    {
+      "nome": "Avvicinamento zona 2017-07-27-07H43M14",
+      "lat": 27.9774,
+      "lon": 34.3915,
+      "zoom": 5
+    },
+    {
+      "nome": "Vetta: 2017-07-27-07H43M14",
+      "lat": 27.9774,
+      "lon": 34.3915,
+      "zoom": 12
+    },
+    {
+      "nome": "Avvicinamento zona 2013-03-29-10H14M15",
+      "lat": 24.4132,
+      "lon": 54.4731,
+      "zoom": 5
+    },
+    {
+      "nome": "Vetta: 2013-03-29-10H14M15",
+      "lat": 24.4132,
+      "lon": 54.4731,
+      "zoom": 12
+    },
+    {
+      "nome": "Avvicinamento zona 2024-09-21-08H14M26",
+      "lat": 41.8826,
+      "lon": 16.1779,
+      "zoom": 5
+    },
+    {
+      "nome": "Vetta: 2024-09-21-08H14M26",
+      "lat": 41.8826,
+      "lon": 16.1779,
+      "zoom": 12
+    }
+  ]
+}
