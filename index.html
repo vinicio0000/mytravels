@@ -1451,13 +1451,31 @@ function selezionaViaggioEChiudi(nomeViaggio) {
           if (!animazioneInCorso) return;
           map.setView([15, -160], 2, { animate: false }); 
           
-          // NUOVA MODIFICA: Mescola in modo casuale l'array delle destinazioni
+
+		  // MODIFICA: Mescola in modo casuale a blocchi di 2 (Avvicinamento + Vetta)
           if (config.destinazioni && config.destinazioni.length > 0) {
-            for (let i = config.destinazioni.length - 1; i > 0; i--) {
-              const j = Math.floor(Math.random() * (i + 1));
-              // Scambia gli elementi
-              [config.destinazioni[i], config.destinazioni[j]] = [config.destinazioni[j], config.destinazioni[i]];
+            let blocchi = [];
+            
+            // 1. Raggruppa le destinazioni a due a due
+            for (let i = 0; i < config.destinazioni.length; i += 2) {
+              if (i + 1 < config.destinazioni.length) {
+                blocchi.push([config.destinazioni[i], config.destinazioni[i + 1]]);
+              } else {
+                blocchi.push([config.destinazioni[i]]); // Salva l'ultimo se dispari
+              }
             }
+
+            // 2. Rimescola l'ordine dei blocchi (Fisher-Yates)
+            for (let i = blocchi.length - 1; i > 0; i--) {
+              const j = Math.floor(Math.random() * (i + 1));
+              [blocchi[i], blocchi[j]] = [blocchi[j], blocchi[i]];
+            }
+
+            // 3. Ricostruisci l'array finale appiattendo i blocchi
+            config.destinazioni = [];
+            blocchi.forEach(blocco => {
+              config.destinazioni.push(...blocco);
+            });
           }
 
           eseguiStepAnimazione(config, 0);
