@@ -1,5 +1,5 @@
 {
-  "totale_paesi_visitati": 34,
+  "totale_paesi_visitati": 36,
   "totale_stati_usa_visitati": 13,
   "lista_paesi": [
     "Albania",
@@ -11,6 +11,7 @@
     "Emirati Arabi Uniti",
     "Eswatini",
     "Etiopia",
+    "Finlandia",
     "Francia",
     "Germania",
     "Giappone",
@@ -22,6 +23,7 @@
     "Italia",
     "Malesia",
     "Marocco",
+    "Norvegia",
     "Oman",
     "Portogallo",
     "Regno Unito",
@@ -260,6 +262,13 @@
     "marocco 1997": {
       "paesi": [
         "Spagna"
+      ],
+      "stati_usa": []
+    },
+    "norvegia 1995": {
+      "paesi": [
+        "Finlandia",
+        "Norvegia"
       ],
       "stati_usa": []
     },
