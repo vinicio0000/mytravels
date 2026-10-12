@@ -1438,7 +1438,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       }
     }
 
-    function avviaAnimazioneApertura() {
+ function avviaAnimazioneApertura() {
       animazioneInCorso = true;
       
       // Mostra il fumetto di avviso
@@ -1450,6 +1450,16 @@ function selezionaViaggioEChiudi(nomeViaggio) {
         .then(config => {
           if (!animazioneInCorso) return;
           map.setView([15, -160], 2, { animate: false }); 
+          
+          // NUOVA MODIFICA: Mescola in modo casuale l'array delle destinazioni
+          if (config.destinazioni && config.destinazioni.length > 0) {
+            for (let i = config.destinazioni.length - 1; i > 0; i--) {
+              const j = Math.floor(Math.random() * (i + 1));
+              // Scambia gli elementi
+              [config.destinazioni[i], config.destinazioni[j]] = [config.destinazioni[j], config.destinazioni[i]];
+            }
+          }
+
           eseguiStepAnimazione(config, 0);
         })
         .catch(err => {
@@ -2045,7 +2055,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       document.getElementById('btn-play-pause').textContent = isSlideshowPaused ? '▶' : '⏸';
     }
 
-    function fermaSlideshow() {
+ function fermaSlideshow() {
       isSlideshowActive = false;
       clearInterval(slideshowTimer);
       disattivaWakeLock();
@@ -2071,6 +2081,12 @@ function selezionaViaggioEChiudi(nomeViaggio) {
 
       document.getElementById('filtro-container').style.display = 'flex';
       controls.style.display = 'none';
+      
+      // NUOVA MODIFICA: Ripristina la select su "Tutti i viaggi"
+      const selectViaggio = document.getElementById('select-viaggio');
+      if (selectViaggio) {
+        selectViaggio.value = 'tutti';
+      }
       
       aggiornaMappa();
     }
