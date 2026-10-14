@@ -1,4 +1,4 @@
-<!-- VERSION: 3.26_GUIDA_PULITA -->
+<!-- VERSION: 3.28_PAN_GIAPPONE_EUROPA_STESSA_SCHEDA -->
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -159,7 +159,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
     #tooltip-istruzioni {
       display: none;
       position: absolute;
-      bottom: 80px;
+      bottom: 125px;
       left: 50%;
       transform: translateX(-50%);
       z-index: 2000;
@@ -816,7 +816,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       .slideshow-speed-container { font-size: 10px; }
       #select-speed { font-size: 10px; padding: 2px 4px; }
       #modal-caption { font-size: 11px; padding: 6px 10px; }
-      #tooltip-istruzioni { font-size: 11px; padding: 8px 12px; bottom: 60px; width: 80vw; }
+      #tooltip-istruzioni { font-size: 11px; padding: 8px 12px; bottom: 115px; width: 80vw; }
     }
     
     /* INGRANDISCE IL TESTO SOLO SU PC (> 768px) */
@@ -842,7 +842,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
           🎬 Guarda la Demo Interattiva
         </a>
       </div>
-	  </div>
+    </div>
   </div>
 
   <div id="header-container">
@@ -903,13 +903,12 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       <div class="filtro-group" style="flex-direction: column; align-items: flex-start; gap: 4px; margin-bottom: 4px;">
         <label for="select-mappa"><b>Stile Mappa:</b></label>
         <select id="select-mappa" onchange="cambiaStileMappa(); salvaImpostazioni();" style="width: 100%;">
-          <option value="osm">OpenStreetMap (Standard)</option>
+          <option value="osm" selected>OpenStreetMap (Standard)</option>
+          <option value="esri-street">Esri Streets</option>
           <option value="satellite">Esri Satellite (Satellitare)</option>
           <option value="ibrida">Esri Hybrid (Satellite + Strade)</option>
           <option value="topo">Esri Topografica (Rilievi e Sentieri)</option>
           <option value="terrain">Esri Terreno (Fisica)</option>
-          <option value="carto-light">CARTO Light (Minimal Chiara)</option>
-          <option value="carto-dark">CARTO Dark (Minimal Scura)</option>
         </select>
       </div>
 
@@ -973,6 +972,8 @@ function selezionaViaggioEChiudi(nomeViaggio) {
         <option value="4000" selected>4s</option>
         <option value="6000">6s</option>
         <option value="8000">8s</option>
+        <option value="10000">10s</option>
+        <option value="12000">12s</option>
       </select>
     </div>
 
@@ -1040,7 +1041,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       border: 1px solid rgba(0,0,0,0.15);
     ">
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; border-bottom: 2px solid #007bff; padding-bottom: 6px;">
-        <h3 style="margin:0; font-size:16px; color:#2c3e50;">🌍 Guida e Informazioni</h3>
+        <h3 style="margin:0; font-size:16px; color:#2c3e50;">🌍 Guida e Informazioni (v3.28)</h3>
         <button onclick="chiudiModalAiuto()" style="background:none; border:none; font-size:20px; cursor:pointer; color:#666;">✖</button>
       </div>
       
@@ -1082,7 +1083,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
         <b style="color:#007bff;">⚙ OPZIONI MENU (☰)</b>
         <ul style="margin: 4px 0 10px 0; padding-left: 18px; font-size: 12px;">
           <li><b>Diari di Viaggio:</b> elenco automatico e aggiornato dei diari consultabili.</li>
-          <li><b>Stile Mappa:</b> per scegliere tra mappa standard (OpenStreetMap), satellitare (Esri), ibrida, topografica o sfondi minimali CARTO.</li>
+          <li><b>Stile Mappa:</b> per scegliere tra mappa standard (OpenStreetMap), Esri Streets, satellitare (Esri), ibrida, topografica o terreno.</li>
           <li><b>Dimensione Puntine:</b> permette di ingrandire o rimpicciolire i pin (Piccole, Standard, Grandi) per adattarli al tuo schermo.</li>
           <li><b>Raggruppa punti (Clustering):</b> unisce le puntine vicine in un unico cerchio numerato per non affollare la mappa.</li>
           <li><b>Abilita selezione Anno:</b> attiva un menu aggiuntivo per mostrare solo le tappe di un anno specifico.</li>
@@ -1107,6 +1108,19 @@ function selezionaViaggioEChiudi(nomeViaggio) {
   <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
 
   <script>
+    // --- CONTROLLO RITORNO DA DIARIO O PAGINA GIA' APERTA NELLA SESSIONE ---
+    const provieneDaPaginaInterna = document.referrer && (
+      document.referrer.indexOf(window.location.hostname) !== -1 ||
+      document.referrer.toLowerCase().indexOf('diario') !== -1 ||
+      document.referrer.toLowerCase().indexOf('.html') !== -1
+    );
+    const saltaIntro = sessionStorage.getItem('mappaGiaVista') === 'true' || provieneDaPaginaInterna;
+
+    if (saltaIntro) {
+      const splashEl = document.getElementById('splash-screen');
+      if (splashEl) splashEl.style.display = 'none';
+    }
+
     // --- GESTIONE LOCALSTORAGE PER SALVATAGGIO PREFERENZE ---
     function salvaImpostazioni() {
       const impostazioni = {
@@ -1176,7 +1190,9 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       }
     }
 
-    applicaImmagineSplash();
+    if (!saltaIntro) {
+      applicaImmagineSplash();
+    }
 
     function toggleMenu() {
       const menu = document.getElementById('menu-panel');
@@ -1229,12 +1245,15 @@ function selezionaViaggioEChiudi(nomeViaggio) {
     }
 
     let splashSeconds = 4;
-    const splashTimer = setInterval(() => {
-      splashSeconds--;
-      if (splashSeconds <= 0) {
-        chiudiSplash();
-      }
-    }, 1000);
+    let splashTimer = null;
+    if (!saltaIntro) {
+      splashTimer = setInterval(() => {
+        splashSeconds--;
+        if (splashSeconds <= 0) {
+          chiudiSplash();
+        }
+      }, 1000);
+    }
 
     // FUNZIONI FUMETTO ISTRUZIONI
     let tooltipTimeout = null;
@@ -1273,8 +1292,51 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       }
     }
 
+    // Gestione del pan iniziale in 2 fasi: dalle Hawaii -> Giappone -> discesa sull'Europa
+    let panInizialeAttivo = false;
+    let panFaseDueTimeout = null;
+
+    function fermaPanIniziale() {
+      if (panInizialeAttivo) {
+        panInizialeAttivo = false;
+        if (panFaseDueTimeout) {
+          clearTimeout(panFaseDueTimeout);
+          panFaseDueTimeout = null;
+        }
+        map.stop();
+      }
+    }
+
+    function avviaPanHawaiiGiapponeEuropa() {
+      panInizialeAttivo = true;
+
+      // FASE 1: Pan orizzontale dalle Hawaii ([20, -155]) fino a mostrare il Giappone ([35, 115]) a zoom 2
+      map.flyTo([35, 115], 2, {
+        animate: true,
+        duration: 4.0,
+        easeLinearity: 0.25
+      });
+
+      // FASE 2: Arrivato sul Giappone, si abbassa sull'Europa ([38, 12], zoom 4)
+      map.once('moveend', function() {
+        if (!panInizialeAttivo) return;
+        panFaseDueTimeout = setTimeout(() => {
+          if (!panInizialeAttivo) return;
+          map.flyTo([38, 12], 4, {
+            animate: true,
+            duration: 3.2,
+            easeLinearity: 0.2
+          });
+          map.once('moveend', function() {
+            panInizialeAttivo = false;
+          });
+        }, 300);
+      });
+    }
+
     function chiudiSplash() {
-      clearInterval(splashTimer);
+      if (splashTimer) clearInterval(splashTimer);
+      sessionStorage.setItem('mappaGiaVista', 'true');
       const splash = document.getElementById('splash-screen');
       if (splash && splash.style.display !== 'none') {
         splash.style.opacity = '0';
@@ -1282,17 +1344,26 @@ function selezionaViaggioEChiudi(nomeViaggio) {
         setTimeout(() => {
           splash.style.display = 'none';
           map.invalidateSize();
-          avviaAnimazioneApertura();
+          avviaPanHawaiiGiapponeEuropa();
           mostraGuidaFumetto();
         }, 800);
       }
     }
 
-    const map = L.map('map', { minZoom: 2, tap: false}).setView([40, -140], 3);
+    // Se non si salta l'intro, parte dalle Hawaii ([20, -155], zoom 2); se si torna da un diario, parte sull'Europa ([38, 12], zoom 4)
+    const map = L.map('map', { minZoom: 2, tap: false }).setView(saltaIntro ? [38, 12] : [20, -155], saltaIntro ? 4 : 2);
+
+    // Se l'utente tocca o trascina la mappa durante il pan iniziale, ferma subito lo scorrimento automatico
+    map.on('dragstart mousedown touchstart wheel', fermaPanIniziale);
 
     const layerOSM = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 19,
       attribution: '© OpenStreetMap'
+    });
+
+    const layerEsriStreet = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
+      maxZoom: 19,
+      attribution: 'Tiles &copy; Esri'
     });
 
     const layerSatellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
@@ -1315,31 +1386,19 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       attribution: 'Tiles &copy; Esri Physical'
     });
 
-    const layerCartoLight = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-      maxZoom: 20,
-      subdomains: 'abcd',
-      attribution: '&copy; OpenStreetMap &copy; CARTO'
-    });
-
-    const layerCartoDark = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-      maxZoom: 20,
-      subdomains: 'abcd',
-      attribution: '&copy; OpenStreetMap &copy; CARTO'
-    });
-
     let currentTileLayer = layerOSM.addTo(map);
-
+    
     function cambiaStileMappa() {
       const scelta = document.getElementById('select-mappa').value;
       map.removeLayer(currentTileLayer);
 
       switch(scelta) {
+        case 'esri-street': currentTileLayer = layerEsriStreet; break;
+        case 'osm': currentTileLayer = layerOSM; break;
         case 'satellite': currentTileLayer = layerSatellite; break;
         case 'ibrida': currentTileLayer = layerIbrido; break;
         case 'topo': currentTileLayer = layerTopo; break;
         case 'terrain': currentTileLayer = layerTerrain; break;
-        case 'carto-light': currentTileLayer = layerCartoLight; break;
-        case 'carto-dark': currentTileLayer = layerCartoDark; break;
         default: currentTileLayer = layerOSM;
       }
 
@@ -1350,7 +1409,6 @@ function selezionaViaggioEChiudi(nomeViaggio) {
     let datiPaesiVisitati = null;
     let paesiAttuali = [];
     let statiUsaAttuali = [];
-    let animazioneInCorso = false;
 
     const clusterGroup = L.markerClusterGroup({ 
       disableClusteringAtZoom: 11,
@@ -1403,56 +1461,6 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       }
     }
 
-    function avviaAnimazioneApertura() {
-      animazioneInCorso = true;
-      fetch('apertura.json')
-        .then(response => response.json())
-        .then(config => {
-          if (!animazioneInCorso) return;
-          
-          // Imposta una vista larghissima e lontana per dare slancio al primo volo
-          map.setView([15, -160], 2, { animate: false }); 
-
-          eseguiStepAnimazione(config, 0);
-        })
-        .catch(err => {
-          console.warn("File apertura.json non trovato, uso vista statica.", err);
-          map.setView([40, 10], 4); // Fallback se il file manca
-        });
-    }
-
-    function eseguiStepAnimazione(config, index) {
-      if (!animazioneInCorso || index >= config.destinazioni.length) {
-        animazioneInCorso = false;
-        return; // Sequenza terminata
-      }
-
-      const step = config.destinazioni[index];
-      
-      // Il metodo map.flyTo() crea esattamente l'effetto "a volo d'uccello" di Google Earth
-      map.flyTo([step.lat, step.lon], step.zoom, {
-        animate: true,
-        duration: config.durata_volo_secondi, // La lentezza del volo (es. 6 secondi)
-        easeLinearity: 0.15 // Più basso è, più fa la curva (sale, si sposta in aria, scende)
-      });
-
-      // Calcola quando partirà il volo per la tappa successiva
-      const tempoTotaleStep = (config.durata_volo_secondi * 1000) + config.pausa_tra_zoom_ms;
-      
-      setTimeout(() => {
-        eseguiStepAnimazione(config, index + 1);
-      }, tempoTotaleStep);
-    }
-
-    function fermaAnimazioneIniziale() {
-      if (animazioneInCorso) {
-        animazioneInCorso = false;
-        map.stop(); // Blocca il volo immediatamente se l'utente tocca la mappa
-      }
-    }
-
-    map.on('dragstart mousedown touchstart wheel', fermaAnimazioneIniziale);
-
     function creaIconaColorata(coloreHex, isBig = false) {
       const taglia = document.getElementById('select-dimensione-pin') ? document.getElementById('select-dimensione-pin').value : 'standard';
       
@@ -1501,6 +1509,16 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       popolaAnni();
       popolaViaggi();
       popolaDiari();
+
+      // Se stiamo tornando da un diario, ripristina l'ultimo viaggio selezionato
+      const ultimoViaggio = sessionStorage.getItem('ultimoViaggio');
+      if (saltaIntro && ultimoViaggio) {
+        const selectViaggio = document.getElementById('select-viaggio');
+        if (selectViaggio && Array.from(selectViaggio.options).some(opt => opt.value === ultimoViaggio)) {
+          selectViaggio.value = ultimoViaggio;
+        }
+      }
+
       aggiornaMappa();
     }).catch(err => console.error("Errore nel caricamento dei dati:", err));
 
@@ -1708,7 +1726,6 @@ function selezionaViaggioEChiudi(nomeViaggio) {
         return a.titolo.localeCompare(b.titolo);
       });
 
-      // Popola il selettore nel menu hamburger
       selectDiario.innerHTML = '<option value="">Seleziona un diario...</option>';
       diariArray.forEach(d => {
         const option = document.createElement('option');
@@ -1726,36 +1743,30 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       const optSelezionata = selectElem.options[selectElem.selectedIndex];
       const nomeViaggio = optSelezionata ? optSelezionata.dataset.viaggio : '';
 
-      // Se associato a un viaggio specifico, aggiorna anche la selezione e la mappa
+      sessionStorage.setItem('mappaGiaVista', 'true');
       if (nomeViaggio) {
-        const selectViaggio = document.getElementById('select-viaggio');
-        if (selectViaggio && selectViaggio.value !== nomeViaggio) {
-          selectViaggio.value = nomeViaggio;
-          cambiaViaggio();
-        }
+        sessionStorage.setItem('ultimoViaggio', nomeViaggio);
       }
 
-      // Chiude il menu a comparsa
       const menu = document.getElementById('menu-panel');
       if (menu) menu.classList.remove('show');
 
-      // Apre il diario in una nuova scheda
-      window.open(url, '_blank', 'noopener');
-
-      // Resetta il selettore alla prima opzione
-      selectElem.value = "";
+      // Naviga nella stessa scheda così all'uscita dal diario ritrova esattamente il viaggio selezionato
+      window.location.href = url;
     }
 
     function cambiaAnno() {
-      fermaAnimazioneIniziale();
+      fermaPanIniziale();
       if (isSlideshowActive) fermaSlideshow();
       popolaViaggi();
       aggiornaMappa();
     }
 
     function cambiaViaggio() {
-      fermaAnimazioneIniziale();
+      fermaPanIniziale();
       if (isSlideshowActive) fermaSlideshow();
+      const viaggioSel = document.getElementById('select-viaggio').value;
+      sessionStorage.setItem('ultimoViaggio', viaggioSel);
       aggiornaMappa();
     }
 	
@@ -1763,10 +1774,6 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       if (!isSlideshowActive) return;
       currentSlideIndex = index;
       mostraSlide(currentSlideIndex);
-
-      if (!isSlideshowPaused) {
-        avviaTimer();
-      }
     }
 
     function aggiornaMappa() {
@@ -1836,9 +1843,10 @@ function selezionaViaggioEChiudi(nomeViaggio) {
           const fotoThumb = p.thumb || p.foto.replace(/^foto[\/\\]/, 'webp/').replace(/\.jpg$/i, '.webp');
           const fotoWebp = p.foto.replace(/^foto[\/\\]/, 'webp/').replace(/\.jpg$/i, '.webp');
           const htmlDescrizione = p.descrizione ? `<div class="popup-descrizione">${p.descrizione}</div>` : '';
-          const htmlBtnDiario = p.diario ? `<br><a href="${p.diario}" target="_blank" rel="noopener" class="btn-diario">📖 Diario di Viaggio</a>` : '';
+          const viagemSafe = (p.viaggio || '').replace(/'/g, "\\'");
+          const htmlBtnDiario = p.diario ? `<br><a href="${p.diario}" class="btn-diario" onclick="sessionStorage.setItem('mappaGiaVista','true'); if('${viagemSafe}') sessionStorage.setItem('ultimoViaggio','${viagemSafe}');">📖 Diario di Viaggio</a>` : '';
 
-          const htmlBtnViaggio = p.viaggio ? `<br><a href="javascript:void(0)" onclick="selezionaViaggioEChiudi('${p.viaggio.replace(/'/g, "\\'")}')" style="display:inline-block; margin-top:6px; color:#17a589; font-weight:bold; text-decoration:none; font-size:11px;">✈ Vai al viaggio: ${p.viaggio}</a>` : '';
+          const htmlBtnViaggio = p.viaggio ? `<br><a href="javascript:void(0)" onclick="selezionaViaggioEChiudi('${viagemSafe}')" style="display:inline-block; margin-top:6px; color:#17a589; font-weight:bold; text-decoration:none; font-size:11px;">✈ Vai al viaggio: ${p.viaggio}</a>` : '';
 
           const popupContent = `
             <div class="popup-container">
@@ -1868,7 +1876,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
 
       if (puntiValidi.length > 0 && !isSlideshowActive) {
         if (viaggioSel !== 'tutti') {
-          fermaAnimazioneIniziale();
+          fermaPanIniziale();
           const bounds = L.latLngBounds(puntiValidi);
           map.fitBounds(bounds, { padding: [50, 50], maxZoom: 15 });
         }
@@ -1877,7 +1885,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
 
     function avviaSlideshow() {
       if (markersSlideshow.length === 0) return;
-      fermaAnimazioneIniziale();
+      fermaPanIniziale();
       attivaWakeLock();
 
       isSlideshowActive = true;
@@ -1895,7 +1903,6 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       setTimeout(() => {
         map.invalidateSize();
         mostraSlide(currentSlideIndex);
-        avviaTimer();
       }, 150);
     }
 
@@ -1907,9 +1914,15 @@ function selezionaViaggioEChiudi(nomeViaggio) {
     }
 
     function avviaTimer() {
-      clearInterval(slideshowTimer);
-      slideshowTimer = setInterval(() => {
-        if (!isSlideshowPaused) {
+      clearTimeout(slideshowTimer);
+      slideshowTimer = null;
+
+      if (!isSlideshowActive || isSlideshowPaused) return;
+
+      tempoIntervallo = parseInt(document.getElementById('select-speed').value, 10) || 4000;
+
+      slideshowTimer = setTimeout(() => {
+        if (isSlideshowActive && !isSlideshowPaused) {
           nextSlide();
         }
       }, tempoIntervallo);
@@ -1917,6 +1930,9 @@ function selezionaViaggioEChiudi(nomeViaggio) {
 
     function mostraSlide(index) {
       if (index < 0 || index >= markersSlideshow.length) return;
+
+      clearTimeout(slideshowTimer);
+      slideshowTimer = null;
 
       map.invalidateSize({ pan: false });
 
@@ -1939,20 +1955,40 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       }
 
       const p = puntiSlideshow[index];
+      const imgElem = document.getElementById('slideshow-img');
+      const nuovoSrc = p.foto.replace(/^foto[\/\\]/, 'webp/').replace(/\.jpg$/i, '.webp');
 
-      document.getElementById('slideshow-img').src = p.foto.replace(/^foto[\/\\]/, 'webp/').replace(/\.jpg$/i, '.webp');
+      imgElem.onload = function() {
+        if (isSlideshowActive && !isSlideshowPaused) {
+          avviaTimer();
+        }
+      };
+      imgElem.onerror = function() {
+        if (isSlideshowActive && !isSlideshowPaused) {
+          avviaTimer();
+        }
+      };
+
+      imgElem.src = nuovoSrc;
+
       const descTesto = p.descrizione ? ` — ${p.descrizione}` : '';
       document.getElementById('slideshow-caption').textContent = `${p.nome || p.viaggio} (${p.data})${descTesto}`;
 
       document.getElementById('slideshow-counter').textContent = `${index + 1} / ${markersSlideshow.length}`;
+
+      if (imgElem.complete && isSlideshowActive && !isSlideshowPaused) {
+        avviaTimer();
+      }
     }
 
     function nextSlide() {
+      if (markersSlideshow.length === 0) return;
       currentSlideIndex = (currentSlideIndex + 1) % markersSlideshow.length;
       mostraSlide(currentSlideIndex);
     }
 
     function prevSlide() {
+      if (markersSlideshow.length === 0) return;
       currentSlideIndex = (currentSlideIndex - 1 + markersSlideshow.length) % markersSlideshow.length;
       mostraSlide(currentSlideIndex);
     }
@@ -1960,11 +1996,19 @@ function selezionaViaggioEChiudi(nomeViaggio) {
     function togglePlayPause() {
       isSlideshowPaused = !isSlideshowPaused;
       document.getElementById('btn-play-pause').textContent = isSlideshowPaused ? '▶' : '⏸';
+
+      if (isSlideshowPaused) {
+        clearTimeout(slideshowTimer);
+        slideshowTimer = null;
+      } else {
+        avviaTimer();
+      }
     }
 
     function fermaSlideshow() {
       isSlideshowActive = false;
-      clearInterval(slideshowTimer);
+      clearTimeout(slideshowTimer);
+      slideshowTimer = null;
       disattivaWakeLock();
       
       document.body.classList.remove('slideshow-active');
@@ -1988,6 +2032,12 @@ function selezionaViaggioEChiudi(nomeViaggio) {
 
       document.getElementById('filtro-container').style.display = 'flex';
       controls.style.display = 'none';
+      
+      const selectViaggio = document.getElementById('select-viaggio');
+      if (selectViaggio) {
+        selectViaggio.value = 'tutti';
+      }
+      sessionStorage.setItem('ultimoViaggio', 'tutti');
       
       aggiornaMappa();
     }
@@ -2118,7 +2168,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
     let currentModalIndex = -1;
 
     function apriModalFoto(urlFoto, index = -1) {
-      fermaAnimazioneIniziale();
+      fermaPanIniziale();
       currentModalIndex = index;
 
       const modal = document.getElementById('imageModal');
@@ -2143,7 +2193,8 @@ function selezionaViaggioEChiudi(nomeViaggio) {
         let htmlCaption = `<div>${p.nome || p.viaggio} (${p.data})${descTesto}</div>`;
 
         if (p.diario) {
-          htmlCaption += `<a href="${p.diario}" target="_blank" rel="noopener" class="btn-diario-modal" onclick="event.stopPropagation()">📖 Diario di Viaggio</a>`;
+          const viagemSafe = (p.viaggio || '').replace(/'/g, "\\'");
+          htmlCaption += `<a href="${p.diario}" class="btn-diario-modal" onclick="event.stopPropagation(); sessionStorage.setItem('mappaGiaVista','true'); if('${viagemSafe}') sessionStorage.setItem('ultimoViaggio','${viagemSafe}');">📖 Diario di Viaggio</a>`;
         }
 
         captionElem.innerHTML = htmlCaption;
@@ -2262,10 +2313,12 @@ function selezionaViaggioEChiudi(nomeViaggio) {
         chiudiListaModal();
         chiudiReport();
         if (isSlideshowActive) fermaSlideshow();
-      } else if (isModalOpen && e.key === "ArrowRight") {
-        modalFotoNext();
-      } else if (isModalOpen && e.key === "ArrowLeft") {
-        modalFotoPrev();
+      } else if (e.key === "ArrowRight") {
+        if (isModalOpen) modalFotoNext();
+        else if (isSlideshowActive) nextSlide();
+      } else if (e.key === "ArrowLeft") {
+        if (isModalOpen) modalFotoPrev();
+        else if (isSlideshowActive) prevSlide();
       }
     });
   </script>
