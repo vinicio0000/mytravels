@@ -903,7 +903,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       <!-- SELETTORE LINGUA INDIPENDENTE DAL DOMINIO -->
       <div class="filtro-group" style="flex-direction: column; align-items: flex-start; gap: 4px; margin-bottom: 4px;">
         <label for="select-lingua"><b>🌐 Lingua / Language:</b></label>
-        <select id="select-lingua" onchange="window.location.href = this.value;" style="width: 100%;">
+        <select id="select-lingua" onchange="window.location.href = this.value + ?t;" style="width: 100%;">
           <option value="index.html" selected>🇮🇹 Italiano</option>
           <option value="index_en.html">🇬🇧 English</option>
         </select>

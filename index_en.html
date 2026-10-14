@@ -885,7 +885,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       <!-- DOMAIN-INDEPENDENT LANGUAGE SELECTOR -->
       <div class="filtro-group" style="flex-direction: column; align-items: flex-start; gap: 4px; margin-bottom: 4px;">
         <label for="select-lingua"><b>🌐 Language / Lingua:</b></label>
-        <select id="select-lingua" onchange="window.location.href = this.value;" style="width: 100%;">
+        <select id="select-lingua" onchange="window.location.href = this.value + '?t=' + Date.now();" style="width: 100%;">
           <option value="index.html">🇮🇹 Italiano</option>
           <option value="index_en.html" selected>🇬🇧 English</option>
         </select>
@@ -1851,6 +1851,17 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       }
     }
 
+    // --- HELPER FOR ENGLISH DIARY URLS (_en.html) ---
+    function getDiaryUrlEn(url) {
+      if (!url || typeof url !== 'string') return '';
+      let cleanUrl = url.trim();
+      if (!cleanUrl) return '';
+      if (!cleanUrl.toLowerCase().endsWith('_en.html') && cleanUrl.toLowerCase().endsWith('.html')) {
+        return cleanUrl.replace(/\.html$/i, '_en.html');
+      }
+      return cleanUrl;
+    }
+
     // --- ALGORITHMIC EXTRACTION OF TRAVEL DIARIES ---
     function popolaDiari() {
       const selectDiario = document.getElementById('select-diario');
@@ -1860,10 +1871,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
 
       tuttiIDati.forEach(p => {
         if (p.diario && typeof p.diario === 'string' && p.diario.trim() !== '') {
-          let url = p.diario.trim();
-          if (url.includes('firenzevenezia2023.html')) {
-            url = 'firenzevenezia2023_en.html';
-          }
+          let url = getDiaryUrlEn(p.diario);
           if (!diariMap.has(url)) {
             const annoVal = p.anno && p.anno !== "Sconosciuto" ? p.anno : "";
             const nomeViaggio = p.viaggio || p.nome || "Travel Diary";
@@ -2007,10 +2015,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
           const fotoWebp = p.foto.replace(/^foto[\/\\]/, 'webp/').replace(/\.jpg$/i, '.webp');
           const htmlDescrizione = p.descrizione ? `<div class="popup-descrizione">${p.descrizione}</div>` : '';
 
-          let diaryLink = p.diario;
-          if (diaryLink && diaryLink.includes('firenzevenezia2023.html')) {
-            diaryLink = 'firenzevenezia2023_en.html';
-          }
+          let diaryLink = getDiaryUrlEn(p.diario);
           const htmlBtnDiario = diaryLink ? `<br><a href="${diaryLink}" target="_blank" rel="noopener" class="btn-diario">📖 Travel Diary</a>` : '';
 
           const htmlBtnViaggio = p.viaggio ? `<br><a href="javascript:void(0)" onclick="selezionaViaggioEChiudi('${p.viaggio.replace(/'/g, "\\'")}')" style="display:inline-block; margin-top:6px; color:#17a589; font-weight:bold; text-decoration:none; font-size:11px;">✈ Go to trip: ${p.viaggio}</a>` : '';
@@ -2359,10 +2364,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
         const descTesto = p.descrizione ? ` — ${p.descrizione}` : '';
         let htmlCaption = `<div>${p.nome || p.viaggio} (${p.data})${descTesto}</div>`;
 
-        let diaryLink = p.diario;
-        if (diaryLink && diaryLink.includes('firenzevenezia2023.html')) {
-          diaryLink = 'firenzevenezia2023_en.html';
-        }
+        let diaryLink = getDiaryUrlEn(p.diario);
 
         if (diaryLink) {
           htmlCaption += `<a href="${diaryLink}" target="_blank" rel="noopener" class="btn-diario-modal" onclick="event.stopPropagation()">📖 Travel Diary</a>`;
