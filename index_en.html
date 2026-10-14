@@ -1,4 +1,4 @@
-<!-- VERSION: 3.23_LANDSCAPE_MODAL_FULLSCREEN_LOCALSTORAGE_WEBP (ENGLISH) -->
+<!-- VERSION: 3.26_GUIDA_PULITA (ENGLISH) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,10 +17,14 @@
 
 <script>
 function selezionaViaggioEChiudi(nomeViaggio) {
+  // 1. Closes the enlarged photo modal/popup
   chiudiModalFoto(false);
+  
+  // 2. Selects the trip from the top dropdown
   const selectViaggio = document.getElementById('select-viaggio');
   if (selectViaggio) {
     selectViaggio.value = nomeViaggio;
+    // Executes trip change updating the map and showing the Slideshow button
     cambiaViaggio();
   }
 }  
@@ -58,6 +62,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
   </script>
 
   <style>
+    /* GLOBAL IMAGE PROTECTION AGAINST SAVING / DRAGGING */
     img {
       user-select: none !important;
       -webkit-user-select: none !important;
@@ -134,32 +139,87 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       background: #aad3df;
     }
 
+    /* MAP INSTRUCTIONS TOOLTIP STYLE */
     #tooltip-istruzioni {
       display: none;
       position: absolute;
-      bottom: 80px;
+      bottom: 125px;
       left: 50%;
       transform: translateX(-50%);
       z-index: 2000;
       background: rgba(30, 60, 114, 0.92);
       color: #ffffff;
-      padding: 10px 18px;
-      border-radius: 25px;
+      padding: 12px 20px;
+      border-radius: 20px;
       font-size: 13px;
-      font-weight: 600;
+      font-weight: 500;
       box-shadow: 0 4px 15px rgba(0,0,0,0.35);
+      flex-direction: column;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
       pointer-events: auto;
       backdrop-filter: blur(4px);
       -webkit-backdrop-filter: blur(4px);
       border: 1px solid rgba(255, 255, 255, 0.3);
       animation: fadeInTooltip 0.5s ease-in-out;
+      text-align: center;
+      max-width: 85vw;
+      width: max-content;
+    }
+
+    #tooltip-istruzioni div.btn-container {
+      display: flex;
+      gap: 15px;
+      margin-top: 5px;
+    }
+
+    #tooltip-istruzioni button {
+      background: rgba(255,255,255,0.2);
+      border: 1px solid rgba(255,255,255,0.4);
+      color: #ffffff;
+      font-size: 12px;
+      cursor: pointer;
+      padding: 5px 12px;
+      border-radius: 12px;
+      transition: background 0.2s;
+    }
+
+    #tooltip-istruzioni button:hover {
+      background: rgba(255,255,255,0.4);
     }
 
     @keyframes fadeInTooltip {
       from { opacity: 0; transform: translate(-50%, 10px); }
       to { opacity: 1; transform: translate(-50%, 0); }
+    }
+    
+    /* TOOLTIP DURING FLIGHT ANIMATION */
+    #tooltip-animazione {
+      display: none;
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2001;
+      background: rgba(220, 53, 69, 0.95);
+      color: #ffffff;
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-size: 14px;
+      font-weight: bold;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+      text-align: center;
+      pointer-events: none;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      width: 85vw;
+      max-width: 350px;
+      animation: pulseAnim 2s infinite;
+    }
+
+    @keyframes pulseAnim {
+      0% { box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.7); }
+      70% { box-shadow: 0 0 0 12px rgba(220, 53, 69, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(220, 53, 69, 0); }
     }
 
     body.slideshow-active #header-container {
@@ -183,6 +243,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       display: flex;
     }
 
+    /* DRAGGABLE SPLIT RESIZER BAR */
     #slideshow-resizer {
       display: none;
       position: absolute;
@@ -201,6 +262,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       background: #007bff;
     }
 
+    /* --- LANDSCAPE SCREEN --- */
     @media (orientation: landscape) {
       body.slideshow-active #slideshow-photo-panel {
         top: 0;
@@ -275,6 +337,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       }
     }
 
+    /* --- PORTRAIT SCREEN --- */
     @media (orientation: portrait) {
       body.slideshow-active #slideshow-photo-panel {
         top: 0;
@@ -398,7 +461,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       box-shadow: 0 4px 12px rgba(0,0,0,0.25);
       flex-direction: column;
       gap: 10px;
-      min-width: 220px;
+      min-width: 230px;
     }
 
     #menu-panel.show {
@@ -628,6 +691,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       border: none;
     }
 
+    /* FULLSCREEN PHOTO MODAL */
     .modal-foto {
       display: none;
       position: fixed;
@@ -691,20 +755,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       box-sizing: border-box;
     }
 
-    .box-seo-guida {
-      background: #eef7f6;
-      border-left: 4px solid #52b69a;
-      padding: 10px 12px;
-      border-radius: 6px;
-      margin: 10px 0;
-      font-size: 12px;
-    }
-    .box-seo-guida a {
-      color: #1e3c72;
-      font-weight: bold;
-      text-decoration: underline;
-    }
-
+    /* TRAVEL REPORT CARDS & MODAL STYLE */
     #report-modal {
       position: fixed;
       top: 50%;
@@ -768,7 +819,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
     @media (max-width: 900px) {
       #header-container { display: none !important; }
       #filtro-container { padding: 6px 10px; gap: 6px; top: 10px; right: 10px; }
-      #menu-panel { top: calc(100% + 5px); right: 0; min-width: 180px; }
+      #menu-panel { top: calc(100% + 5px); right: 0; min-width: 200px; }
       .filtro-group label, select, .checkbox-label { font-size: 11px; }
       select { padding: 4px 6px; min-width: 110px; }
       #slideshow-controls { padding: 6px 10px; gap: 4px; }
@@ -776,7 +827,17 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       .slideshow-speed-container { font-size: 10px; }
       #select-speed { font-size: 10px; padding: 2px 4px; }
       #modal-caption { font-size: 11px; padding: 6px 10px; }
-      #tooltip-istruzioni { font-size: 11px; padding: 8px 12px; bottom: 60px; width: 80vw; }
+      #tooltip-istruzioni { font-size: 11px; padding: 8px 12px; bottom: 115px; width: 80vw; }
+    }
+    
+    /* ENLARGE TEXT ONLY ON PC (> 768px) */
+    @media (min-width: 768px) {
+      #slideshow-caption,
+      #modal-caption {
+        font-size: 22px !important;
+        line-height: 1.4 !important;
+        max-height: 30vh !important;
+      }
     }
   </style>
 </head>
@@ -821,7 +882,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
     <!-- HAMBURGER MENU -->
     <div id="menu-panel">
 	
-      <!-- LANGUAGE SELECTOR -->
+      <!-- DOMAIN-INDEPENDENT LANGUAGE SELECTOR -->
       <div class="filtro-group" style="flex-direction: column; align-items: flex-start; gap: 4px; margin-bottom: 4px;">
         <label for="select-lingua"><b>🌐 Language / Lingua:</b></label>
         <select id="select-lingua" onchange="window.location.href = this.value;" style="width: 100%;">
@@ -832,16 +893,33 @@ function selezionaViaggioEChiudi(nomeViaggio) {
 
       <hr style="border:0; border-top:1px solid #eee; margin:2px 0;">
 
+      <!-- TRIP SORTING -->
+      <div class="filtro-group" style="flex-direction: column; align-items: flex-start; gap: 4px; margin-bottom: 4px;">
+        <label for="select-ordinamento-viaggi"><b>Sort Trips:</b></label>
+        <select id="select-ordinamento-viaggi" onchange="popolaViaggi(); salvaImpostazioni();" style="width: 100%;">
+          <option value="alfabetico" selected>Alphabetical (Default)</option>
+          <option value="anno_desc">By Year (Newest first)</option>
+          <option value="anno_asc">By Year (Oldest first)</option>
+        </select>
+      </div>
+
+      <!-- ALGORITHMIC TRAVEL DIARIES SELECTOR -->
+      <div class="filtro-group" style="flex-direction: column; align-items: flex-start; gap: 4px; margin-bottom: 4px;">
+        <label for="select-diario"><b>📖 Travel Diaries:</b></label>
+        <select id="select-diario" onchange="apriDiarioDaSelect(this)" style="width: 100%;">
+          <option value="">Select a diary...</option>
+        </select>
+      </div>
+
       <div class="filtro-group" style="flex-direction: column; align-items: flex-start; gap: 4px; margin-bottom: 4px;">
         <label for="select-mappa"><b>Map Style:</b></label>
         <select id="select-mappa" onchange="cambiaStileMappa(); salvaImpostazioni();" style="width: 100%;">
+		  <option value="esri-street" selected>Esri Streets (Default)</option>
           <option value="osm">OpenStreetMap (Standard)</option>
           <option value="satellite">Esri Satellite (Satellite)</option>
           <option value="ibrida">Esri Hybrid (Satellite + Roads)</option>
           <option value="topo">Esri Topographic (Relief & Trails)</option>
           <option value="terrain">Esri Terrain (Physical)</option>
-          <option value="carto-light">CARTO Light (Minimal Light)</option>
-          <option value="carto-dark">CARTO Dark (Minimal Dark)</option>
         </select>
       </div>
 
@@ -873,6 +951,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
 
       <hr style="border:0; border-top:1px solid #eee; margin:2px 0;">
 
+      <!-- REPORT BUTTON IN MENU -->
       <a href="javascript:void(0)" onclick="apriReport()" style="text-decoration:none; color:#17a589; font-size:12px; font-weight:700; display:flex; align-items:center; gap:6px; margin-bottom: 6px;">
         📊 Travel Stats / Report
       </a>
@@ -880,7 +959,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
         🎬 Start Guided Demo
       </a>
       <a href="javascript:void(0)" onclick="mostraAiuto()" style="text-decoration:none; color:#007bff; font-size:12px; font-weight:600; display:flex; align-items:center; gap:6px;">
-        ❓ Guide / Help / Diaries
+        ❓ Guide
       </a>
     </div>
   </div>
@@ -890,7 +969,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
     <div id="slideshow-caption"></div>
   </div>
 
-  <!-- SLIDESHOW SPLIT RESIZER -->
+  <!-- DRAGGABLE SPLIT RESIZER BAR -->
   <div id="slideshow-resizer"></div>
 
   <div id="slideshow-controls">
@@ -904,6 +983,8 @@ function selezionaViaggioEChiudi(nomeViaggio) {
         <option value="4000" selected>4s</option>
         <option value="6000">6s</option>
         <option value="8000">8s</option>
+        <option value="10000">10s</option>
+        <option value="12000">12s</option>
       </select>
     </div>
 
@@ -918,13 +999,22 @@ function selezionaViaggioEChiudi(nomeViaggio) {
 
   <div id="map"></div>
 
-  <!-- INSTRUCTIONS TOOLTIP -->
+  <!-- INSTRUCTIONS TOOLTIP SHOWN ON STARTUP WHEN MAP IS READY -->
   <div id="tooltip-istruzioni">
-    <span>👉 Click on a colored cluster <span style="display:inline-block; background-color:rgba(181, 226, 140, 0.6); padding:2px;"><span style="display:inline-block; width:22px; height:22px; line-height:22px; background-color:rgba(110, 204, 57, 0.9); color:#000; border-radius:50%; text-align:center; font-weight:bold; font-size:12px;">10</span></span> on the map, then on the location pins 📍 to see photos and trip details. Click thumbnails to enlarge to full screen.</span>
-    <button onclick="document.getElementById('tooltip-istruzioni').style.display='none'" style="background:transparent; border:none; color:#ffffff; font-size:16px; cursor:pointer; margin-left:6px; line-height:1;">✖</button>
+    <span>👉 Click on a colored cluster <span style="display:inline-block; background-color:rgba(181, 226, 140, 0.6); padding:2px;"><span style="display:inline-block; width:22px; height:22px; line-height:22px; background-color:rgba(110, 204, 57, 0.9); color:#000; border-radius:50%; text-align:center; font-weight:bold; font-size:12px;">10</span></span> on the map, then on the location pins 📍 that appear to see photos and trip details. Click on thumbnail photos to view full screen.</span>
+    <div class="btn-container">
+      <button onclick="chiudiTooltip(false)">OK, Close</button>
+      <button onclick="chiudiTooltip(true)" style="background:rgba(220, 53, 69, 0.6); border:none;">✖ Don't show again</button>
+    </div>
+  </div>
+  
+  <!-- TOOLTIP SHOWN DURING INITIAL AUTOMATIC FLIGHT -->
+  <div id="tooltip-animazione">
+    ✈️ Flight in progress...<br>
+    <span style="font-size: 12px; font-weight: normal;">Touch the map to take control and explore</span>
   </div>
 
-  <!-- LIST MODAL -->
+  <!-- DETAILED LIST MODAL (COUNTRIES / US STATES) -->
   <div id="lista-modal" class="modal-foto" onclick="chiudiListaModal()" style="z-index: 100010;">
     <div class="modal-aiuto-card" onclick="event.stopPropagation()">
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; border-bottom: 2px solid #007bff; padding-bottom: 6px;">
@@ -937,13 +1027,14 @@ function selezionaViaggioEChiudi(nomeViaggio) {
     </div>
   </div>
   
-  <!-- REPORT MODAL -->
+  <!-- REPORT & STATISTICS MODAL -->
   <div id="report-modal">
     <div class="report-header">
       <h3 id="report-modal-title">📊 Travel Statistics and Report</h3>
       <button class="btn-chiudi-modal" onclick="chiudiReport()">✖</button>
     </div>
 
+    <!-- REPORT VIEW -->
     <div id="report-view">
       <div class="report-grid">
         <div class="report-card clickable" onclick="mostraListaPaesi()" title="Click for list"><h4>Countries Visited 🔍</h4><p id="rep-paesi">0</p></div>
@@ -958,7 +1049,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
     <img class="modal-foto-content" id="imgModalSrc" draggable="false" onclick="event.stopPropagation()">
   </div>
 
-  <!-- HELP & GUIDE MODAL -->
+  <!-- COMPLETE HELP / GUIDE MODAL -->
   <div id="modal-aiuto" class="modal-foto" onclick="chiudiModalAiuto()" style="z-index: 100002;">
     <div class="modal-aiuto-card" onclick="event.stopPropagation()" style="
       background: linear-gradient(rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.35)), url('mappamondo.jpg');
@@ -967,43 +1058,31 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       border: 1px solid rgba(0,0,0,0.15);
     ">
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; border-bottom: 2px solid #007bff; padding-bottom: 6px;">
-        <h3 style="margin:0; font-size:16px; color:#2c3e50;">🌍 Guide & Information (v3.23)</h3>
+        <h3 style="margin:0; font-size:16px; color:#2c3e50;">🌍 Guide and Information</h3>
         <button onclick="chiudiModalAiuto()" style="background:none; border:none; font-size:20px; cursor:pointer; color:#666;">✖</button>
       </div>
       
       <div style="font-size: 13px; color: #2c3e50; max-height: 65vh; overflow-y: auto; padding-right: 5px; line-height: 1.5;">
-        <div class="box-seo-guida">
-          📖 <b>Featured Guide:</b> Read our full travel log<br>
-          <a href="diario_spagna_marocco_2023.html" target="_blank">Camper Travel Diary in Morocco and Spain: Route, Customs & Advice</a>
-        </div>
-        <div class="box-seo-guida">
-          📖 <b>Featured Guide:</b> Read our full travel log<br>
-          <a href="Diario_Sudafrica_2009.html" target="_blank">Travel Diary in South Africa: Itinerary & Tips</a>
-        </div>
-        <div class="box-seo-guida">
-          📖 <b>Featured Guide:</b> Read our full travel log<br>
-          <a href="firenzevenezia2023_en.html" target="_blank">Camper Travel Diary: The Charm of Florence and the Magic of Venice</a>
-        </div>
 
         <p style="margin-top:6px;">
-          This project gathers over 30 years of independent travel, conducted entirely on our own by camper and flights. Every picture is geolocated and mapped right where it was taken.
+          This project gathers over 30 years of independent travel, conducted in total autonomy by camper and DIY flights. Every photo is geolocated and placed at the exact spot where it was taken.
         </p>
 
         <hr style="border:0; border-top:1px solid #ddd; margin:10px 0;">
 
         <b style="color:#007bff;">📍 MAP EXPLORATION & PHOTOS</b>
         <p style="margin: 4px 0 10px 0;">
-          Click on a colored pin to open the preview popup with date and location details. Click on the thumbnail to view the photo in full screen.
+          Click on a colored pin to open the popup with preview, date, and location description. Click on the photo to enlarge it to full screen.
         </p>
 
         <b style="color:#28a745;">📖 TRAVEL DIARY</b>
         <p style="margin: 4px 0 10px 0;">
-          If a written report is available for the selected trip or stage, you will see a green <b>📖 Travel Diary</b> button both inside the map popup and at the top of the enlarged full-screen picture. Clicking it opens the diary in a new tab.
+          If a written travelogue is available for the selected trip or stop, you will find the green <b>📖 Travel Diary</b> button both inside the map popup and on the full-screen enlarged photo. Complete diaries can also be accessed directly from the dedicated option in the menu.
         </p>
 
         <b style="color:#007bff;">▶ SLIDESHOW MODE</b>
         <p style="margin: 4px 0 10px 0;">
-          Selecting a specific <b>Trip</b> from the dropdown reveals the <b>▶ Start Slideshow</b> button. The screen splits: photos on one side, and the map on the other highlighting each stop in yellow sequentially.
+          Selecting a specific <b>Trip</b> from the top menu reveals the <b>▶ Start Slideshow</b> button. The screen will split in two: the photo on one side and the map on the other with the current pin highlighted in yellow.
         </p>
 
         <b style="color:#007bff;">📱 CONTROLS & GESTURES</b>
@@ -1015,16 +1094,17 @@ function selezionaViaggioEChiudi(nomeViaggio) {
           <span style="background:#dc3545; color:white; padding:3px 8px; border-radius:12px; font-size:11px;">✖ Exit</span>
         </p>
         <p style="margin: 4px 0 10px 0; font-style: italic; font-size: 11px; color: #555;">
-          On touch devices you can swipe horizontally across the picture to move to the previous or next slide.
+          On touch devices you can swipe horizontally on the photo to move to the previous or next photo.
         </p>
 
         <b style="color:#007bff;">⚙ MENU OPTIONS (☰)</b>
         <ul style="margin: 4px 0 10px 0; padding-left: 18px; font-size: 12px;">
-          <li><b>Map Style:</b> choose between OpenStreetMap, Satellite (Esri), Hybrid, Topographic, or clean CARTO basemaps.</li>
-          <li><b>Pin Size:</b> resize pins (Small, Standard, Large) to suit your display.</li>
-          <li><b>Group points (Clustering):</b> clusters nearby locations into numbered bubbles to declutter the view.</li>
-          <li><b>Enable Year selection:</b> filters markers by a chosen year.</li>
-          <li><b>Years Legend:</b> displays a color-coded legend of years at the bottom right.</li>
+          <li><b>Travel Diaries:</b> automatic and updated list of available travel diaries.</li>
+          <li><b>Map Style:</b> choose between Esri Streets, standard OpenStreetMap, Satellite (Esri), Hybrid, Topographic, or Terrain basemaps.</li>
+          <li><b>Pin Size:</b> enlarge or shrink pins (Small, Standard, Large) to fit your screen.</li>
+          <li><b>Group points (Clustering):</b> merges nearby pins into a single numbered circle to keep the map clean.</li>
+          <li><b>Enable Year selection:</b> activates an additional dropdown to show only stops from a specific year.</li>
+          <li><b>Years Legend:</b> displays a box at the bottom right showing the color code for each year.</li>
         </ul>
 
         <hr style="border:0; border-top:1px solid #ddd; margin:10px 0;">
@@ -1045,13 +1125,15 @@ function selezionaViaggioEChiudi(nomeViaggio) {
   <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
 
   <script>
+    // --- LOCALSTORAGE MANAGEMENT FOR SAVING PREFERENCES ---
     function salvaImpostazioni() {
       const impostazioni = {
         checkCluster: document.getElementById('check-cluster').checked,
         checkAbilitaAnno: document.getElementById('check-abilita-anno').checked,
         checkLegendaAnni: document.getElementById('check-legenda-anni').checked,
         selectMappa: document.getElementById('select-mappa').value,
-        selectDimensionePin: document.getElementById('select-dimensione-pin').value
+        selectDimensionePin: document.getElementById('select-dimensione-pin').value,
+        selectOrdinamentoViaggi: document.getElementById('select-ordinamento-viaggi') ? document.getElementById('select-ordinamento-viaggi').value : 'alfabetico'
       };
       localStorage.setItem('mappaViaggiSettings', JSON.stringify(impostazioni));
     }
@@ -1077,6 +1159,9 @@ function selezionaViaggioEChiudi(nomeViaggio) {
           if (impostazioni.selectDimensionePin !== undefined) {
             document.getElementById('select-dimensione-pin').value = impostazioni.selectDimensionePin;
           }
+          if (impostazioni.selectOrdinamentoViaggi !== undefined && document.getElementById('select-ordinamento-viaggi')) {
+            document.getElementById('select-ordinamento-viaggi').value = impostazioni.selectOrdinamentoViaggi;
+          }
         } catch(e) {
           console.error("Error restoring settings from localStorage:", e);
         }
@@ -1085,6 +1170,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       }
     }
 
+    // GLOBAL PROTECTION AGAINST RIGHT-CLICK AND DRAGGING OF ANY IMAGE
     document.addEventListener('contextmenu', function(e) {
       if (e.target.tagName === 'IMG') {
         e.preventDefault();
@@ -1168,17 +1254,40 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       }
     }, 1000);
 
+    // INSTRUCTIONS TOOLTIP FUNCTIONS
+    let tooltipTimeout = null;
+
     function mostraGuidaFumetto() {
+      const nascondiFumetto = localStorage.getItem('nascondiFumetto');
+      if (nascondiFumetto === 'true') {
+        return;
+      }
+
       if (typeof map !== 'undefined' && map) {
         map.whenReady(() => {
           const tooltip = document.getElementById('tooltip-istruzioni');
           if (tooltip && markersSlideshow && markersSlideshow.length > 0) {
             tooltip.style.display = 'flex';
-            setTimeout(() => {
-              if (tooltip) tooltip.style.display = 'none';
-            }, 12000);
+
+            tooltipTimeout = setTimeout(() => {
+              chiudiTooltip(false);
+            }, 15000);
           }
         });
+      }
+    }
+
+    function chiudiTooltip(nonMostrarePiu) {
+      const tooltip = document.getElementById('tooltip-istruzioni');
+      if (tooltip) {
+        tooltip.style.display = 'none';
+      }
+      if (tooltipTimeout) {
+        clearTimeout(tooltipTimeout);
+      }
+      
+      if (nonMostrarePiu) {
+        localStorage.setItem('nascondiFumetto', 'true');
       }
     }
 
@@ -1191,7 +1300,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
         setTimeout(() => {
           splash.style.display = 'none';
           map.invalidateSize();
-          avviaPanIniziale();
+          avviaAnimazioneApertura();
           mostraGuidaFumetto();
         }, 800);
       }
@@ -1199,57 +1308,61 @@ function selezionaViaggioEChiudi(nomeViaggio) {
 
     const map = L.map('map', { minZoom: 2, tap: false}).setView([40, -140], 3);
 
+    const opzioniTileFluide = {
+      updateWhenZooming: false,
+      updateInterval: 150,
+      keepBuffer: 6
+    };
+	
+    const layerEsriStreet = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
+      ...opzioniTileFluide,
+      maxZoom: 19,
+      attribution: 'Tiles &copy; Esri'
+    });
+
     const layerOSM = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      ...opzioniTileFluide,
       maxZoom: 19,
       attribution: '© OpenStreetMap'
     });
 
     const layerSatellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+      ...opzioniTileFluide,
       maxZoom: 19,
       attribution: 'Tiles &copy; Esri'
     });
 
     const layerIbrido = L.layerGroup([
-      L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', { maxZoom: 19 }),
-      L.tileLayer('https://services.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}', { maxZoom: 19 })
+      L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', { ...opzioniTileFluide, maxZoom: 19 }),
+      L.tileLayer('https://services.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}', { ...opzioniTileFluide, maxZoom: 19 })
     ]);
 
     const layerTopo = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
+      ...opzioniTileFluide,
       maxZoom: 19,
       attribution: 'Tiles &copy; Esri Topo'
     });
 
     const layerTerrain = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Physical_Map/MapServer/tile/{z}/{y}/{x}', {
+      ...opzioniTileFluide,
       maxZoom: 8,
       attribution: 'Tiles &copy; Esri Physical'
     });
 
-    const layerCartoLight = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-      maxZoom: 20,
-      subdomains: 'abcd',
-      attribution: '&copy; OpenStreetMap &copy; CARTO'
-    });
-
-    const layerCartoDark = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-      maxZoom: 20,
-      subdomains: 'abcd',
-      attribution: '&copy; OpenStreetMap &copy; CARTO'
-    });
-
-    let currentTileLayer = layerOSM.addTo(map);
-
-    function cambiaStileMappa() {
+    let currentTileLayer = layerEsriStreet.addTo(map);
+    
+	function cambiaStileMappa() {
       const scelta = document.getElementById('select-mappa').value;
       map.removeLayer(currentTileLayer);
 
       switch(scelta) {
+        case 'esri-street': currentTileLayer = layerEsriStreet; break;
+        case 'osm': currentTileLayer = layerOSM; break;
         case 'satellite': currentTileLayer = layerSatellite; break;
         case 'ibrida': currentTileLayer = layerIbrido; break;
         case 'topo': currentTileLayer = layerTopo; break;
         case 'terrain': currentTileLayer = layerTerrain; break;
-        case 'carto-light': currentTileLayer = layerCartoLight; break;
-        case 'carto-dark': currentTileLayer = layerCartoDark; break;
-        default: currentTileLayer = layerOSM;
+        default: currentTileLayer = layerEsriStreet;
       }
 
       currentTileLayer.addTo(map);
@@ -1259,12 +1372,11 @@ function selezionaViaggioEChiudi(nomeViaggio) {
     let datiPaesiVisitati = null;
     let paesiAttuali = [];
     let statiUsaAttuali = [];
-    let panInizialeAttivo = false;
-    let animazionePanId = null;
+    let animazioneInCorso = false;
 
     const clusterGroup = L.markerClusterGroup({ 
-      disableClusteringAtZoom: 16,
-      maxClusterRadius: 40 
+      disableClusteringAtZoom: 11,
+      maxClusterRadius: 30 
     });
     const singleGroup = L.layerGroup();
     
@@ -1291,6 +1403,10 @@ function selezionaViaggioEChiudi(nomeViaggio) {
     let markersSlideshow = [];
     let wakeLock = null;
 
+    let touchStartX = 0;
+    let touchStartY = 0;
+
+    // --- SCREEN WAKE LOCK API ---
     async function attivaWakeLock() {
       try {
         if ('wakeLock' in navigator) {
@@ -1309,55 +1425,209 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       }
     }
 
-    function avviaPanIniziale() {
-      panInizialeAttivo = true;
-      map.setView([40, -140], 3, { animate: false });
+    // Preloads target tiles and photo thumbnail for an apertura.json step
+    function precaricaStepApertura(step) {
+      if (!step || !step.lat || !step.lon || !step.zoom) return;
 
-      let startTime = null;
-      const durataMs = 20000;
+      const z = Math.round(step.zoom);
+      const latRad = step.lat * Math.PI / 180;
+      const n = Math.pow(2, z);
 
-      const startLat = 40;
-      const endLat = 30;
-      const startLon = -140;
-      const endLon = 140;
+      const centerX = Math.floor((step.lon + 180) / 360 * n);
+      const centerY = Math.floor((1 - Math.log(Math.tan(latRad) + 1 / Math.cos(latRad)) / Math.PI) / 2 * n);
 
-      function anima(timestamp) {
-        if (!panInizialeAttivo) return;
-        if (!startTime) startTime = timestamp;
+      const rangeX = Math.ceil((window.innerWidth / 256) / 2) + 1;
+      const rangeY = Math.ceil((window.innerHeight / 256) / 2) + 1;
 
-        const trascorso = timestamp - startTime;
-        const progresso = Math.min(trascorso / durataMs, 1);
+      const scelta = document.getElementById('select-mappa') ? document.getElementById('select-mappa').value : 'esri-street';
 
-        const currentLat = startLat + (endLat - startLat) * progresso;
-        const currentLon = startLon + (endLon - startLon) * progresso;
+      for (let dx = -rangeX; dx <= rangeX; dx++) {
+        for (let dy = -rangeY; dy <= rangeY; dy++) {
+          const x = (centerX + dx + n) % n;
+          const y = centerY + dy;
 
-        map.setView([currentLat, currentLon], 3, { animate: false });
-
-        if (progresso < 1 && panInizialeAttivo) {
-          animazionePanId = requestAnimationFrame(anima);
-        } else {
-          panInizialeAttivo = false;
+          if (y >= 0 && y < n) {
+            const img = new Image();
+            switch (scelta) {
+              case 'osm':
+                const sub = ['a', 'b', 'c'][Math.abs(x + y) % 3];
+                img.src = `https://${sub}.tile.openstreetmap.org/${z}/${x}/${y}.png`;
+                break;
+              case 'satellite':
+              case 'ibrida':
+                img.src = `https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/${z}/${y}/${x}`;
+                break;
+              case 'topo':
+                img.src = `https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/${z}/${y}/${x}`;
+                break;
+              case 'terrain':
+                if (z <= 8) img.src = `https://server.arcgisonline.com/ArcGIS/rest/services/World_Physical_Map/MapServer/tile/${z}/${y}/${x}`;
+                break;
+              default: // esri-street
+                img.src = `https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/${z}/${y}/${x}`;
+            }
+          }
         }
       }
 
-      setTimeout(() => {
-        if (panInizialeAttivo) {
-          animazionePanId = requestAnimationFrame(anima);
-        }
-      }, 400);
-    }
-
-    function fermaPanIniziale() {
-      if (panInizialeAttivo) {
-        panInizialeAttivo = false;
-        if (animazionePanId) {
-          cancelAnimationFrame(animazionePanId);
-          animazionePanId = null;
-        }
+      if (step.foto) {
+        const imgFoto = new Image();
+        imgFoto.src = step.foto.replace(/^foto[\/\\]/, 'webp/').replace(/\.jpg$/i, '.webp');
       }
     }
 
-    map.on('dragstart zoomstart mousedown touchstart', fermaPanIniziale);
+    function avviaAnimazioneApertura() {
+      animazioneInCorso = true;
+      
+      const tooltipAnim = document.getElementById('tooltip-animazione');
+      if (tooltipAnim) tooltipAnim.style.display = 'block';
+
+      fetch('apertura.json')
+        .then(response => response.json())
+        .then(config => {
+          if (!animazioneInCorso) return;
+          map.setView([15, -160], 2, { animate: false }); 
+
+          if (config.destinazioni && config.destinazioni.length > 0) {
+            let blocchi = [];
+            
+            for (let i = 0; i < config.destinazioni.length; i += 2) {
+              if (i + 1 < config.destinazioni.length) {
+                blocchi.push([config.destinazioni[i], config.destinazioni[i + 1]]);
+              } else {
+                blocchi.push([config.destinazioni[i]]);
+              }
+            }
+
+            let primeCoppie = [];
+            let altreCoppie = [];
+
+            const haTagVip = blocchi.some(b => b[0] && b[0].vip !== undefined);
+            if (haTagVip) {
+              blocchi.forEach(blocco => {
+                if (blocco[0].vip === true) {
+                  primeCoppie.push(blocco);
+                } else {
+                  altreCoppie.push(blocco);
+                }
+              });
+            } else {
+              const numeroPrimeCoppie = config.numero_prime_coppie_prioritarie || 24;
+              primeCoppie = blocchi.slice(0, numeroPrimeCoppie);
+              altreCoppie = blocchi.slice(numeroPrimeCoppie);
+            }
+
+            function mescolaArray(arr) {
+              for (let i = arr.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [arr[i], arr[j]] = [arr[j], arr[i]];
+              }
+            }
+
+            mescolaArray(primeCoppie);
+            mescolaArray(altreCoppie);
+
+            console.log(`🎬 Opening sequence: ${primeCoppie.length} VIP pairs first + ${altreCoppie.length} secondary pairs.`);
+
+            config.destinazioni = [];
+            primeCoppie.concat(altreCoppie).forEach(blocco => {
+              config.destinazioni.push(...blocco);
+            });
+          }
+
+          if (config.destinazioni && config.destinazioni.length > 0) {
+            precaricaStepApertura(config.destinazioni[0]);
+            precaricaStepApertura(config.destinazioni[1]);
+          }
+          eseguiStepAnimazione(config, 0);
+        })
+        .catch(err => {
+          console.warn("File apertura.json not found, using static view.", err);
+          map.setView([40, 10], 4); 
+          if (tooltipAnim) tooltipAnim.style.display = 'none';
+        });
+    }
+
+    function eseguiStepAnimazione(config, index) {
+      if (!animazioneInCorso || index >= config.destinazioni.length) {
+        animazioneInCorso = false;
+        
+        const tooltipAnim = document.getElementById('tooltip-animazione');
+        if (tooltipAnim) tooltipAnim.style.display = 'none';
+        
+        return;
+      }
+
+      const step = config.destinazioni[index];
+      const isVetta = step.nome.startsWith("Vetta");
+
+      if (step.nome.startsWith("Avvicinamento")) {
+        map.closePopup();
+      }
+      
+      const durataVolo = isVetta 
+        ? (config.durata_vetta_secondi || config.durata_volo_secondi || 3.5)
+        : (config.durata_avvicinamento_secondi || config.durata_volo_secondi || 6);
+
+      precaricaStepApertura(config.destinazioni[index + 1]);
+      precaricaStepApertura(config.destinazioni[index + 2]);
+
+      map.flyTo([step.lat, step.lon], step.zoom, {
+        animate: true,
+        duration: durataVolo,
+        easeLinearity: isVetta ? 0.5 : 0.15
+      });
+
+      map.once('moveend', function() {
+        if (!animazioneInCorso) return;
+
+        let tempoDiAttesa = config.pausa_tra_zoom_ms || 1200;
+
+        if (isVetta) {
+          setTimeout(() => {
+            if (!animazioneInCorso) return;
+
+            let markerTrovato = null;
+
+            if (step.foto) {
+              const idxFoto = puntiSlideshow.findIndex(p => p.foto === step.foto);
+              if (idxFoto !== -1 && markersSlideshow[idxFoto]) {
+                markerTrovato = markersSlideshow[idxFoto];
+              }
+            }
+
+            if (!markerTrovato) {
+              markerTrovato = markersSlideshow.find(m => {
+                const ll = m.getLatLng();
+                return Math.abs(ll.lat - step.lat) < 0.005 && Math.abs(ll.lng - step.lon) < 0.005;
+              });
+            }
+            
+            if (markerTrovato) {
+              markerTrovato.openPopup();
+            }
+          }, 400);
+
+          tempoDiAttesa = 4000; 
+        }
+
+        setTimeout(() => {
+          eseguiStepAnimazione(config, index + 1);
+        }, tempoDiAttesa);
+      });
+    }
+
+    function fermaAnimazioneIniziale() {
+      if (animazioneInCorso) {
+        animazioneInCorso = false;
+        map.stop();
+      }
+      
+      const tooltipAnim = document.getElementById('tooltip-animazione');
+      if (tooltipAnim) tooltipAnim.style.display = 'none';
+    }
+
+    map.on('dragstart mousedown touchstart wheel', fermaAnimazioneIniziale);
 
     function creaIconaColorata(coloreHex, isBig = false) {
       const taglia = document.getElementById('select-dimensione-pin') ? document.getElementById('select-dimensione-pin').value : 'standard';
@@ -1394,6 +1664,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
 
     caricaImpostazioni();
 
+    // JOINT LOADING OF DATI.JSON AND PAESI_VISITATI.JSON
     Promise.all([
       fetch('dati.json').then(r => r.json()),
       fetch('paesi_visitati.json').then(r => r.json()).catch(err => {
@@ -1405,9 +1676,11 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       datiPaesiVisitati = datiPaesi;
       popolaAnni();
       popolaViaggi();
+      popolaDiari();
       aggiornaMappa();
     }).catch(err => console.error("Error loading data:", err));
 
+    // --- REPORT CALCULATION & MANAGEMENT FUNCTIONS ---
     function calcolaReport(dati) {
       const viaggioSel = document.getElementById('select-viaggio') ? document.getElementById('select-viaggio').value : 'tutti';
 
@@ -1515,40 +1788,155 @@ function selezionaViaggioEChiudi(nomeViaggio) {
 
       toggleAbilitaAnno();
       toggleLegendaAnni();
+
       aggiornaLegenda(anniOrdinati);
     }
 
     function popolaViaggi() {
       const selectAnno = document.getElementById('select-anno').value;
       const selectViaggio = document.getElementById('select-viaggio');
-      const viaggiSet = new Set();
+      const ordinamento = document.getElementById('select-ordinamento-viaggi') ? document.getElementById('select-ordinamento-viaggi').value : 'alfabetico';
+      
+      const viaggiMap = new Map();
 
       tuttiIDati.forEach(p => {
         if (selectAnno === 'tutti' || p.anno === selectAnno) {
-          if (p.viaggio) viaggiSet.add(p.viaggio);
+          if (p.viaggio) {
+             const annoVal = p.anno && p.anno !== "Sconosciuto" ? Number(p.anno) : 0;
+             if (!viaggiMap.has(p.viaggio)) {
+               viaggiMap.set(p.viaggio, annoVal);
+             } else {
+               if (annoVal > viaggiMap.get(p.viaggio)) {
+                 viaggiMap.set(p.viaggio, annoVal);
+               }
+             }
+          }
         }
       });
 
+      let viaggiArray = Array.from(viaggiMap.keys()).map(v => ({
+        nome: v,
+        anno: viaggiMap.get(v)
+      }));
+
+      if (ordinamento === 'alfabetico') {
+        viaggiArray.sort((a, b) => a.nome.localeCompare(b.nome));
+      } else if (ordinamento === 'anno_desc') {
+        viaggiArray.sort((a, b) => {
+          if (b.anno === a.anno) return a.nome.localeCompare(b.nome);
+          return b.anno - a.anno;
+        });
+      } else if (ordinamento === 'anno_asc') {
+        viaggiArray.sort((a, b) => {
+          if (a.anno === b.anno) return a.nome.localeCompare(b.nome);
+          return a.anno - b.anno;
+        });
+      }
+
+      const currentSelection = selectViaggio.value;
+
       selectViaggio.innerHTML = '<option value="tutti">All trips</option>';
-      Array.from(viaggiSet).sort().forEach(v => {
+      
+      viaggiArray.forEach(v => {
         const option = document.createElement('option');
-        option.value = v;
-        option.textContent = v;
+        option.value = v.nome;
+        option.textContent = v.nome;
         selectViaggio.appendChild(option);
+      });
+
+      if (Array.from(selectViaggio.options).some(opt => opt.value === currentSelection)) {
+         selectViaggio.value = currentSelection;
+      } else {
+         selectViaggio.value = 'tutti';
+      }
+    }
+
+    // --- ALGORITHMIC EXTRACTION OF TRAVEL DIARIES ---
+    function popolaDiari() {
+      const selectDiario = document.getElementById('select-diario');
+      if (!selectDiario) return;
+
+      const diariMap = new Map();
+
+      tuttiIDati.forEach(p => {
+        if (p.diario && typeof p.diario === 'string' && p.diario.trim() !== '') {
+          let url = p.diario.trim();
+          if (url.includes('firenzevenezia2023.html')) {
+            url = 'firenzevenezia2023_en.html';
+          }
+          if (!diariMap.has(url)) {
+            const annoVal = p.anno && p.anno !== "Sconosciuto" ? p.anno : "";
+            const nomeViaggio = p.viaggio || p.nome || "Travel Diary";
+            let etichetta = nomeViaggio;
+            if (annoVal && !etichetta.includes(annoVal)) {
+              etichetta += ` (${annoVal})`;
+            }
+
+            diariMap.set(url, {
+              url: url,
+              titolo: etichetta,
+              viaggio: p.viaggio || "",
+              anno: annoVal ? Number(annoVal) : 0
+            });
+          }
+        }
+      });
+
+      const diariArray = Array.from(diariMap.values()).sort((a, b) => {
+        if (b.anno !== a.anno) return b.anno - a.anno;
+        return a.titolo.localeCompare(b.titolo);
+      });
+
+      selectDiario.innerHTML = '<option value="">Select a diary...</option>';
+      diariArray.forEach(d => {
+        const option = document.createElement('option');
+        option.value = d.url;
+        option.dataset.viaggio = d.viaggio;
+        option.textContent = `📖 ${d.titolo}`;
+        selectDiario.appendChild(option);
       });
     }
 
+    function apriDiarioDaSelect(selectElem) {
+      const url = selectElem.value;
+      if (!url) return;
+
+      const optSelezionata = selectElem.options[selectElem.selectedIndex];
+      const nomeViaggio = optSelezionata ? optSelezionata.dataset.viaggio : '';
+
+      if (nomeViaggio) {
+        const selectViaggio = document.getElementById('select-viaggio');
+        if (selectViaggio && selectViaggio.value !== nomeViaggio) {
+          selectViaggio.value = nomeViaggio;
+          cambiaViaggio();
+        }
+      }
+
+      const menu = document.getElementById('menu-panel');
+      if (menu) menu.classList.remove('show');
+
+      window.open(url, '_blank', 'noopener');
+
+      selectElem.value = "";
+    }
+
     function cambiaAnno() {
-      fermaPanIniziale();
+      fermaAnimazioneIniziale();
       if (isSlideshowActive) fermaSlideshow();
       popolaViaggi();
       aggiornaMappa();
     }
 
     function cambiaViaggio() {
-      fermaPanIniziale();
+      fermaAnimazioneIniziale();
       if (isSlideshowActive) fermaSlideshow();
       aggiornaMappa();
+    }
+	
+    function saltaASlide(index) {
+      if (!isSlideshowActive) return;
+      currentSlideIndex = index;
+      mostraSlide(currentSlideIndex);
     }
 
     function aggiornaMappa() {
@@ -1595,9 +1983,15 @@ function selezionaViaggioEChiudi(nomeViaggio) {
           const marker = L.marker([lat, lon], opzioniMarker);
           marker.coloreOriginale = coloreHex;
 
-          marker.on('click', function() {
-            const tooltip = document.getElementById('tooltip-istruzioni');
-            if (tooltip) tooltip.style.display = 'none';
+          marker.on('click', function(e) {
+            chiudiTooltip(false);
+
+            if (isSlideshowActive) {
+              if (marker.isPopupOpen()) {
+                marker.closePopup();
+              }
+              saltaASlide(indexAttuale);
+            }
           });
 
           const tooltipContent = `<b>${p.nome || p.viaggio}</b><br>📅 ${p.data}`;
@@ -1612,7 +2006,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
           const fotoThumb = p.thumb || p.foto.replace(/^foto[\/\\]/, 'webp/').replace(/\.jpg$/i, '.webp');
           const fotoWebp = p.foto.replace(/^foto[\/\\]/, 'webp/').replace(/\.jpg$/i, '.webp');
           const htmlDescrizione = p.descrizione ? `<div class="popup-descrizione">${p.descrizione}</div>` : '';
-          
+
           let diaryLink = p.diario;
           if (diaryLink && diaryLink.includes('firenzevenezia2023.html')) {
             diaryLink = 'firenzevenezia2023_en.html';
@@ -1649,7 +2043,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
 
       if (puntiValidi.length > 0 && !isSlideshowActive) {
         if (viaggioSel !== 'tutti') {
-          fermaPanIniziale();
+          fermaAnimazioneIniziale();
           const bounds = L.latLngBounds(puntiValidi);
           map.fitBounds(bounds, { padding: [50, 50], maxZoom: 15 });
         }
@@ -1658,7 +2052,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
 
     function avviaSlideshow() {
       if (markersSlideshow.length === 0) return;
-      fermaPanIniziale();
+      fermaAnimazioneIniziale();
       attivaWakeLock();
 
       isSlideshowActive = true;
@@ -1676,7 +2070,6 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       setTimeout(() => {
         map.invalidateSize();
         mostraSlide(currentSlideIndex);
-        avviaTimer();
       }, 150);
     }
 
@@ -1688,9 +2081,15 @@ function selezionaViaggioEChiudi(nomeViaggio) {
     }
 
     function avviaTimer() {
-      clearInterval(slideshowTimer);
-      slideshowTimer = setInterval(() => {
-        if (!isSlideshowPaused) {
+      clearTimeout(slideshowTimer);
+      slideshowTimer = null;
+
+      if (!isSlideshowActive || isSlideshowPaused) return;
+
+      tempoIntervallo = parseInt(document.getElementById('select-speed').value, 10) || 4000;
+
+      slideshowTimer = setTimeout(() => {
+        if (isSlideshowActive && !isSlideshowPaused) {
           nextSlide();
         }
       }, tempoIntervallo);
@@ -1698,6 +2097,9 @@ function selezionaViaggioEChiudi(nomeViaggio) {
 
     function mostraSlide(index) {
       if (index < 0 || index >= markersSlideshow.length) return;
+
+      clearTimeout(slideshowTimer);
+      slideshowTimer = null;
 
       map.invalidateSize({ pan: false });
 
@@ -1720,19 +2122,40 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       }
 
       const p = puntiSlideshow[index];
+      const imgElem = document.getElementById('slideshow-img');
+      const nuovoSrc = p.foto.replace(/^foto[\/\\]/, 'webp/').replace(/\.jpg$/i, '.webp');
 
-      document.getElementById('slideshow-img').src = p.foto.replace(/^foto[\/\\]/, 'webp/').replace(/\.jpg$/i, '.webp');
+      imgElem.onload = function() {
+        if (isSlideshowActive && !isSlideshowPaused) {
+          avviaTimer();
+        }
+      };
+      imgElem.onerror = function() {
+        if (isSlideshowActive && !isSlideshowPaused) {
+          avviaTimer();
+        }
+      };
+
+      imgElem.src = nuovoSrc;
+
       const descTesto = p.descrizione ? ` — ${p.descrizione}` : '';
       document.getElementById('slideshow-caption').textContent = `${p.nome || p.viaggio} (${p.data})${descTesto}`;
+
       document.getElementById('slideshow-counter').textContent = `${index + 1} / ${markersSlideshow.length}`;
+
+      if (imgElem.complete && isSlideshowActive && !isSlideshowPaused) {
+        avviaTimer();
+      }
     }
 
     function nextSlide() {
+      if (markersSlideshow.length === 0) return;
       currentSlideIndex = (currentSlideIndex + 1) % markersSlideshow.length;
       mostraSlide(currentSlideIndex);
     }
 
     function prevSlide() {
+      if (markersSlideshow.length === 0) return;
       currentSlideIndex = (currentSlideIndex - 1 + markersSlideshow.length) % markersSlideshow.length;
       mostraSlide(currentSlideIndex);
     }
@@ -1740,11 +2163,19 @@ function selezionaViaggioEChiudi(nomeViaggio) {
     function togglePlayPause() {
       isSlideshowPaused = !isSlideshowPaused;
       document.getElementById('btn-play-pause').textContent = isSlideshowPaused ? '▶' : '⏸';
+
+      if (isSlideshowPaused) {
+        clearTimeout(slideshowTimer);
+        slideshowTimer = null;
+      } else {
+        avviaTimer();
+      }
     }
 
     function fermaSlideshow() {
       isSlideshowActive = false;
-      clearInterval(slideshowTimer);
+      clearTimeout(slideshowTimer);
+      slideshowTimer = null;
       disattivaWakeLock();
       
       document.body.classList.remove('slideshow-active');
@@ -1769,6 +2200,12 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       document.getElementById('filtro-container').style.display = 'flex';
       controls.style.display = 'none';
       
+      // Reset dropdown to "All trips"
+      const selectViaggio = document.getElementById('select-viaggio');
+      if (selectViaggio) {
+        selectViaggio.value = 'tutti';
+      }
+      
       aggiornaMappa();
     }
 
@@ -1786,6 +2223,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       });
     }
 
+    // --- DYNAMIC DRAG / RESIZE LOGIC ---
     const resizer = document.getElementById('slideshow-resizer');
     const photoPanel = document.getElementById('slideshow-photo-panel');
     const mapElement = document.getElementById('map');
@@ -1893,10 +2331,11 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       }
     });
 
+    // --- ENLARGED PHOTO MANAGEMENT WITH SWIPE ---
     let currentModalIndex = -1;
 
     function apriModalFoto(urlFoto, index = -1) {
-      fermaPanIniziale();
+      fermaAnimazioneIniziale();
       currentModalIndex = index;
 
       const modal = document.getElementById('imageModal');
@@ -2021,7 +2460,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
 
     photoPanel.addEventListener('touchend', function(e) {
       const touchEndX = e.changedTouches[0].screenX;
-      const touchEndY = e.changedTouches[0].screenY;
+      touchEndY = e.changedTouches[0].screenY;
       
       const diffX = touchEndX - touchStartX;
       const diffY = touchEndY - touchStartY;
@@ -2045,10 +2484,12 @@ function selezionaViaggioEChiudi(nomeViaggio) {
         chiudiListaModal();
         chiudiReport();
         if (isSlideshowActive) fermaSlideshow();
-      } else if (isModalOpen && e.key === "ArrowRight") {
-        modalFotoNext();
-      } else if (isModalOpen && e.key === "ArrowLeft") {
-        modalFotoPrev();
+      } else if (e.key === "ArrowRight") {
+        if (isModalOpen) modalFotoNext();
+        else if (isSlideshowActive) nextSlide();
+      } else if (e.key === "ArrowLeft") {
+        if (isModalOpen) modalFotoPrev();
+        else if (isSlideshowActive) prevSlide();
       }
     });
   </script>
