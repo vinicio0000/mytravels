@@ -1292,9 +1292,15 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       }
     }
 
-    // Gestione del pan iniziale in 2 fasi: dalle Hawaii -> Giappone -> discesa sull'Europa
+	// Gestione del pan iniziale in 2 fasi: dalle Hawaii -> Giappone -> discesa sull'Europa
     let panInizialeAttivo = false;
     let panFaseDueTimeout = null;
+
+    function ripristinaBufferStandard() {
+      if (currentTileLayer && currentTileLayer.options) {
+        currentTileLayer.options.keepBuffer = 2;
+      }
+    }
 
     function fermaPanIniziale() {
       if (panInizialeAttivo) {
@@ -1303,6 +1309,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
           clearTimeout(panFaseDueTimeout);
           panFaseDueTimeout = null;
         }
+        ripristinaBufferStandard();
         map.stop();
       }
     }
@@ -1310,18 +1317,20 @@ function selezionaViaggioEChiudi(nomeViaggio) {
     function avviaPanHawaiiGiapponeEuropa() {
       panInizialeAttivo = true;
 
-      // FASE 1: Pan orizzontale dalle Hawaii ([20, -155]) fino a mostrare il Giappone ([35, 115]) a zoom 2
-      map.flyTo([35, 115], 2, {
+      // FASE 1: Scorrimento orizzontale puro (panTo) dalle Hawaii ([20, -155]) al Giappone ([35, 115]) a zoom 2
+      // Usando panTo invece di flyTo, lo zoom non cambia e tutti i marker/cluster restano visibili durante la traversata
+      map.panTo([35, 115], {
         animate: true,
-        duration: 4.0,
-        easeLinearity: 0.25
+        duration: 6.0,
+        easeLinearity: 0.4
       });
 
-      // FASE 2: Arrivato sul Giappone, si abbassa sull'Europa ([38, 12], zoom 4)
+      // FASE 2: Arrivato sul Giappone, scende morbido sull'Europa ([38, 12], zoom 4)
       map.once('moveend', function() {
         if (!panInizialeAttivo) return;
         panFaseDueTimeout = setTimeout(() => {
           if (!panInizialeAttivo) return;
+          ripristinaBufferStandard();
           map.flyTo([38, 12], 4, {
             animate: true,
             duration: 3.2,
@@ -1330,7 +1339,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
           map.once('moveend', function() {
             panInizialeAttivo = false;
           });
-        }, 300);
+        }, 400);
       });
     }
 
@@ -1356,32 +1365,44 @@ function selezionaViaggioEChiudi(nomeViaggio) {
     // Se l'utente tocca o trascina la mappa durante il pan iniziale, ferma subito lo scorrimento automatico
     map.on('dragstart mousedown touchstart wheel', fermaPanIniziale);
 
+    // Su mobile sblocca il caricamento dei tile in movimento (updateWhenIdle: false)
+    // e all'avvio a zoom 2 tiene in cache l'intero planisfero (keepBuffer: 4, poi riportato a 2 sull'Europa)
+    const opzioniTile = {
+      updateWhenIdle: false,
+      keepBuffer: saltaIntro ? 2 : 4
+    };
+
     const layerOSM = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      ...opzioniTile,
       maxZoom: 19,
       attribution: '© OpenStreetMap'
     });
 
     const layerEsriStreet = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
+      ...opzioniTile,
       maxZoom: 19,
       attribution: 'Tiles &copy; Esri'
     });
 
     const layerSatellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+      ...opzioniTile,
       maxZoom: 19,
       attribution: 'Tiles &copy; Esri'
     });
 
     const layerIbrido = L.layerGroup([
-      L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', { maxZoom: 19 }),
-      L.tileLayer('https://services.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}', { maxZoom: 19 })
+      L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', { ...opzioniTile, maxZoom: 19 }),
+      L.tileLayer('https://services.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}', { ...opzioniTile, maxZoom: 19 })
     ]);
 
     const layerTopo = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
+      ...opzioniTile,
       maxZoom: 19,
       attribution: 'Tiles &copy; Esri Topo'
     });
 
     const layerTerrain = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Physical_Map/MapServer/tile/{z}/{y}/{x}', {
+      ...opzioniTile,
       maxZoom: 8,
       attribution: 'Tiles &copy; Esri Physical'
     });
@@ -1410,14 +1431,18 @@ function selezionaViaggioEChiudi(nomeViaggio) {
     let paesiAttuali = [];
     let statiUsaAttuali = [];
 
+    // removeOutsideVisibleBounds: false fa sì che tutti i cluster del mondo (Hawaii, USA, Europa, Giappone)
+    // vengano creati subito durante lo Splash Screen anche sullo schermo stretto dello smartphone
     const clusterGroup = L.markerClusterGroup({ 
       disableClusteringAtZoom: 11,
-      maxClusterRadius: 30 
+      maxClusterRadius: 30,
+      removeOutsideVisibleBounds: false
     });
     const singleGroup = L.layerGroup();
     
     map.addLayer(clusterGroup);
     map.addLayer(singleGroup);
+	
 
     const mappaColoriAnni = {};
     const tavolozzaColori = [
