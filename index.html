@@ -932,13 +932,12 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       <div class="filtro-group" style="flex-direction: column; align-items: flex-start; gap: 4px; margin-bottom: 4px;">
         <label for="select-mappa"><b>Stile Mappa:</b></label>
         <select id="select-mappa" onchange="cambiaStileMappa(); salvaImpostazioni();" style="width: 100%;">
+		  <option value="esri-street" selected>Esri Streets (Default)</option>
           <option value="osm">OpenStreetMap (Standard)</option>
           <option value="satellite">Esri Satellite (Satellitare)</option>
           <option value="ibrida">Esri Hybrid (Satellite + Strade)</option>
           <option value="topo">Esri Topografica (Rilievi e Sentieri)</option>
           <option value="terrain">Esri Terreno (Fisica)</option>
-          <option value="carto-light">CARTO Light (Minimal Chiara)</option>
-          <option value="carto-dark">CARTO Dark (Minimal Scura)</option>
         </select>
       </div>
 
@@ -1328,10 +1327,17 @@ function selezionaViaggioEChiudi(nomeViaggio) {
     const map = L.map('map', { minZoom: 2, tap: false}).setView([40, -140], 3);
 
     const opzioniTileFluide = {
-      updateWhenZooming: true,
+      updateWhenZooming: false,
       updateInterval: 150,
       keepBuffer: 6
     };
+	
+    const layerEsriStreet = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
+      ...opzioniTileFluide,
+      maxZoom: 19,
+      attribution: 'Tiles &copy; Esri'
+    });
+
 
     const layerOSM = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       ...opzioniTileFluide,
@@ -1362,38 +1368,26 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       attribution: 'Tiles &copy; Esri Physical'
     });
 
-    const layerCartoLight = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-      ...opzioniTileFluide,
-      maxZoom: 20,
-      subdomains: 'abcd',
-      attribution: '&copy; OpenStreetMap &copy; CARTO'
-    });
-
-    const layerCartoDark = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-      ...opzioniTileFluide,
-      maxZoom: 20,
-      subdomains: 'abcd',
-      attribution: '&copy; OpenStreetMap &copy; CARTO'
-    });
-
-    let currentTileLayer = layerOSM.addTo(map);
-
-    function cambiaStileMappa() {
+ 
+    let currentTileLayer = layerEsriStreet.addTo(map);
+    
+	function cambiaStileMappa() {
       const scelta = document.getElementById('select-mappa').value;
       map.removeLayer(currentTileLayer);
 
       switch(scelta) {
+        case 'esri-street': currentTileLayer = layerEsriStreet; break;
+        case 'osm': currentTileLayer = layerOSM; break;
         case 'satellite': currentTileLayer = layerSatellite; break;
         case 'ibrida': currentTileLayer = layerIbrido; break;
         case 'topo': currentTileLayer = layerTopo; break;
         case 'terrain': currentTileLayer = layerTerrain; break;
-        case 'carto-light': currentTileLayer = layerCartoLight; break;
-        case 'carto-dark': currentTileLayer = layerCartoDark; break;
-        default: currentTileLayer = layerOSM;
+        default: currentTileLayer = layerEsriStreet;
       }
 
       currentTileLayer.addTo(map);
     }
+
 
     let tuttiIDati = [];
     let datiPaesiVisitati = null;
@@ -1449,6 +1443,60 @@ function selezionaViaggioEChiudi(nomeViaggio) {
         wakeLock.release().then(() => {
           wakeLock = null;
         });
+      }
+    }
+
+    // Funzione che precarica i tile di arrivo e la miniatura foto di uno step di apertura.json
+    function precaricaStepApertura(step) {
+      if (!step || !step.lat || !step.lon || !step.zoom) return;
+
+      const z = Math.round(step.zoom);
+      const latRad = step.lat * Math.PI / 180;
+      const n = Math.pow(2, z);
+
+      // Calcola il tile centrale (x, y) alla coordinata e zoom di arrivo
+      const centerX = Math.floor((step.lon + 180) / 360 * n);
+      const centerY = Math.floor((1 - Math.log(Math.tan(latRad) + 1 / Math.cos(latRad)) / Math.PI) / 2 * n);
+
+      // Calcola quanti tile coprono lo schermo attuale (+1 di margine)
+      const rangeX = Math.ceil((window.innerWidth / 256) / 2) + 1;
+      const rangeY = Math.ceil((window.innerHeight / 256) / 2) + 1;
+
+      const scelta = document.getElementById('select-mappa') ? document.getElementById('select-mappa').value : 'esri-street';
+
+      for (let dx = -rangeX; dx <= rangeX; dx++) {
+        for (let dy = -rangeY; dy <= rangeY; dy++) {
+          const x = (centerX + dx + n) % n;
+          const y = centerY + dy;
+
+          if (y >= 0 && y < n) {
+            const img = new Image();
+            switch (scelta) {
+              case 'osm':
+                const sub = ['a', 'b', 'c'][Math.abs(x + y) % 3];
+                img.src = `https://${sub}.tile.openstreetmap.org/${z}/${x}/${y}.png`;
+                break;
+              case 'satellite':
+              case 'ibrida':
+                img.src = `https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/${z}/${y}/${x}`;
+                break;
+              case 'topo':
+                img.src = `https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/${z}/${y}/${x}`;
+                break;
+              case 'terrain':
+                if (z <= 8) img.src = `https://server.arcgisonline.com/ArcGIS/rest/services/World_Physical_Map/MapServer/tile/${z}/${y}/${x}`;
+                break;
+              default: // esri-street
+                img.src = `https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/${z}/${y}/${x}`;
+            }
+          }
+        }
+      }
+
+      // Se lo step ha una foto VIP associata, precarica anche la miniatura del popup
+      if (step.foto) {
+        const imgFoto = new Image();
+        imgFoto.src = step.foto.replace(/^foto[\/\\]/, 'webp/').replace(/\.jpg$/i, '.webp');
       }
     }
 
@@ -1519,6 +1567,10 @@ function selezionaViaggioEChiudi(nomeViaggio) {
             });
           }
 
+          if (config.destinazioni && config.destinazioni.length > 0) {
+            precaricaStepApertura(config.destinazioni[0]);
+            precaricaStepApertura(config.destinazioni[1]);
+          }
           eseguiStepAnimazione(config, 0);
         })
         .catch(err => {
@@ -1550,6 +1602,10 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       const durataVolo = isVetta 
         ? (config.durata_vetta_secondi || config.durata_volo_secondi || 3.5)
         : (config.durata_avvicinamento_secondi || config.durata_volo_secondi || 6);
+
+      // Mentre vola verso lo step corrente, precarica già i 2 step successivi
+      precaricaStepApertura(config.destinazioni[index + 1]);
+      precaricaStepApertura(config.destinazioni[index + 2]);
 
       map.flyTo([step.lat, step.lon], step.zoom, {
         animate: true,

@@ -1,7 +1,7 @@
 {
-  "durata_avvicinamento_secondi": 6,
+  "durata_avvicinamento_secondi": 8,
   "durata_vetta_secondi": 3.5,
-  "durata_volo_secondi": 6,
+  "durata_volo_secondi": 10,
   "pausa_tra_zoom_ms": 1200,
   "numero_prime_coppie_prioritarie": 24,
   "destinazioni": [
