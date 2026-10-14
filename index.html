@@ -681,6 +681,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       font-weight: bold;
       text-decoration: none;
       transition: background 0.2s;
+      cursor: pointer;
     }
 
     .btn-diario:hover {
@@ -698,6 +699,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       font-weight: bold;
       text-decoration: none;
       box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+      cursor: pointer;
     }
 
     .btn-diario-modal:hover {
@@ -1143,6 +1145,41 @@ function selezionaViaggioEChiudi(nomeViaggio) {
   <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
 
   <script>
+    // --- FUNZIONE UNIFICATA PER APRIRE QUALSIASI DIARIO (DA MENU, POPUP O FOTO INGRANDITA) ---
+    function segnaRitornoDaDiario(nomeViaggio) {
+      sessionStorage.setItem('mappaGiaVista', 'true');
+      localStorage.setItem('ritornoDaDiarioTime', Date.now().toString());
+      if (nomeViaggio) {
+        sessionStorage.setItem('ultimoViaggio', nomeViaggio);
+        localStorage.setItem('ultimoViaggioDiario', nomeViaggio);
+      }
+    }
+
+    function apriDiario(url, nomeViaggio) {
+      if (!url) return;
+      segnaRitornoDaDiario(nomeViaggio);
+      // Apre nella stessa scheda così il tasto "Indietro" o il link "Torna alla mappa" del diario
+      // mantengono sempre la sessione e non ricaricano l'animazione iniziale
+      window.location.href = url;
+    }
+
+    // --- CONTROLLO RITORNO DA DIARIO (ANCHE SE APERTO IN ALTRA SCHEDA CON LOCALSTORAGE) ---
+    const ritornoTime = parseInt(localStorage.getItem('ritornoDaDiarioTime') || '0', 10);
+    const entro30Minuti = (Date.now() - ritornoTime) < (30 * 60 * 1000);
+    const provieneDaPaginaInterna = document.referrer && (
+      document.referrer.indexOf(window.location.hostname) !== -1 ||
+      document.referrer.toLowerCase().indexOf('diario') !== -1 ||
+      document.referrer.toLowerCase().indexOf('.html') !== -1
+    );
+
+    const saltaIntro = sessionStorage.getItem('mappaGiaVista') === 'true' || entro30Minuti || provieneDaPaginaInterna;
+
+    if (saltaIntro) {
+      sessionStorage.setItem('mappaGiaVista', 'true');
+      const splashEl = document.getElementById('splash-screen');
+      if (splashEl) splashEl.style.display = 'none';
+    }
+
     // --- GESTIONE LOCALSTORAGE PER SALVATAGGIO PREFERENZE ---
     function salvaImpostazioni() {
       const impostazioni = {
@@ -1212,7 +1249,9 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       }
     }
 
-    applicaImmagineSplash();
+    if (!saltaIntro) {
+      applicaImmagineSplash();
+    }
 
     function toggleMenu() {
       const menu = document.getElementById('menu-panel');
@@ -1265,12 +1304,15 @@ function selezionaViaggioEChiudi(nomeViaggio) {
     }
 
     let splashSeconds = 4;
-    const splashTimer = setInterval(() => {
-      splashSeconds--;
-      if (splashSeconds <= 0) {
-        chiudiSplash();
-      }
-    }, 1000);
+    let splashTimer = null;
+    if (!saltaIntro) {
+      splashTimer = setInterval(() => {
+        splashSeconds--;
+        if (splashSeconds <= 0) {
+          chiudiSplash();
+        }
+      }, 1000);
+    }
 
     // FUNZIONI FUMETTO ISTRUZIONI
     let tooltipTimeout = null;
@@ -1310,7 +1352,8 @@ function selezionaViaggioEChiudi(nomeViaggio) {
     }
 
     function chiudiSplash() {
-      clearInterval(splashTimer);
+      if (splashTimer) clearInterval(splashTimer);
+      sessionStorage.setItem('mappaGiaVista', 'true');
       const splash = document.getElementById('splash-screen');
       if (splash && splash.style.display !== 'none') {
         splash.style.opacity = '0';
@@ -1324,7 +1367,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       }
     }
 
-    const map = L.map('map', { minZoom: 2, tap: false}).setView([40, -140], 3);
+    const map = L.map('map', { minZoom: 2, tap: false}).setView(saltaIntro ? [35, 10] : [40, -140], 3);
 
     const opzioniTileFluide = {
       updateWhenZooming: false,
@@ -1695,6 +1738,16 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       popolaAnni();
       popolaViaggi();
       popolaDiari();
+
+      // Se stiamo tornando da un diario (da menu o da dentro una foto), ripristina il viaggio selezionato
+      const ultimoViaggio = sessionStorage.getItem('ultimoViaggio') || (entro30Minuti ? localStorage.getItem('ultimoViaggioDiario') : null);
+      if (saltaIntro && ultimoViaggio) {
+        const selectViaggio = document.getElementById('select-viaggio');
+        if (selectViaggio && Array.from(selectViaggio.options).some(opt => opt.value === ultimoViaggio)) {
+          selectViaggio.value = ultimoViaggio;
+        }
+      }
+
       aggiornaMappa();
     }).catch(err => console.error("Errore nel caricamento dei dati:", err));
 
@@ -1919,20 +1972,11 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       const optSelezionata = selectElem.options[selectElem.selectedIndex];
       const nomeViaggio = optSelezionata ? optSelezionata.dataset.viaggio : '';
 
-      if (nomeViaggio) {
-        const selectViaggio = document.getElementById('select-viaggio');
-        if (selectViaggio && selectViaggio.value !== nomeViaggio) {
-          selectViaggio.value = nomeViaggio;
-          cambiaViaggio();
-        }
-      }
-
       const menu = document.getElementById('menu-panel');
       if (menu) menu.classList.remove('show');
 
-      window.open(url, '_blank', 'noopener');
-
       selectElem.value = "";
+      apriDiario(url, nomeViaggio);
     }
 
     function cambiaAnno() {
@@ -1945,6 +1989,9 @@ function selezionaViaggioEChiudi(nomeViaggio) {
     function cambiaViaggio() {
       fermaAnimazioneIniziale();
       if (isSlideshowActive) fermaSlideshow();
+      const viaggioSel = document.getElementById('select-viaggio').value;
+      sessionStorage.setItem('ultimoViaggio', viaggioSel);
+      localStorage.setItem('ultimoViaggioDiario', viaggioSel);
       aggiornaMappa();
     }
 	
@@ -2021,9 +2068,11 @@ function selezionaViaggioEChiudi(nomeViaggio) {
           const fotoThumb = p.thumb || p.foto.replace(/^foto[\/\\]/, 'webp/').replace(/\.jpg$/i, '.webp');
           const fotoWebp = p.foto.replace(/^foto[\/\\]/, 'webp/').replace(/\.jpg$/i, '.webp');
           const htmlDescrizione = p.descrizione ? `<div class="popup-descrizione">${p.descrizione}</div>` : '';
-          const htmlBtnDiario = p.diario ? `<br><a href="${p.diario}" target="_blank" rel="noopener" class="btn-diario">📖 Diario di Viaggio</a>` : '';
+          const viagemSafe = (p.viaggio || '').replace(/'/g, "\\'");
+          const diarioSafe = (p.diario || '').replace(/'/g, "\\'");
+          const htmlBtnDiario = p.diario ? `<br><a href="javascript:void(0)" class="btn-diario" onclick="apriDiario('${diarioSafe}', '${viagemSafe}')">📖 Diario di Viaggio</a>` : '';
 
-          const htmlBtnViaggio = p.viaggio ? `<br><a href="javascript:void(0)" onclick="selezionaViaggioEChiudi('${p.viaggio.replace(/'/g, "\\'")}')" style="display:inline-block; margin-top:6px; color:#17a589; font-weight:bold; text-decoration:none; font-size:11px;">✈ Vai al viaggio: ${p.viaggio}</a>` : '';
+          const htmlBtnViaggio = p.viaggio ? `<br><a href="javascript:void(0)" onclick="selezionaViaggioEChiudi('${viagemSafe}')" style="display:inline-block; margin-top:6px; color:#17a589; font-weight:bold; text-decoration:none; font-size:11px;">✈ Vai al viaggio: ${p.viaggio}</a>` : '';
 
           const popupContent = `
             <div class="popup-container">
@@ -2214,6 +2263,8 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       if (selectViaggio) {
         selectViaggio.value = 'tutti';
       }
+      sessionStorage.setItem('ultimoViaggio', 'tutti');
+      localStorage.setItem('ultimoViaggioDiario', 'tutti');
       
       aggiornaMappa();
     }
@@ -2369,7 +2420,9 @@ function selezionaViaggioEChiudi(nomeViaggio) {
         let htmlCaption = `<div>${p.nome || p.viaggio} (${p.data})${descTesto}</div>`;
 
         if (p.diario) {
-          htmlCaption += `<a href="${p.diario}" target="_blank" rel="noopener" class="btn-diario-modal" onclick="event.stopPropagation()">📖 Diario di Viaggio</a>`;
+          const viagemSafe = (p.viaggio || '').replace(/'/g, "\\'");
+          const diarioSafe = (p.diario || '').replace(/'/g, "\\'");
+          htmlCaption += `<a href="javascript:void(0)" class="btn-diario-modal" onclick="event.stopPropagation(); apriDiario('${diarioSafe}', '${viagemSafe}');">📖 Diario di Viaggio</a>`;
         }
 
         captionElem.innerHTML = htmlCaption;
