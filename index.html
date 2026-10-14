@@ -159,7 +159,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
     #tooltip-istruzioni {
       display: none;
       position: absolute;
-      bottom: 80px;
+      bottom: 125px;
       left: 50%;
       transform: translateX(-50%);
       z-index: 2000;
@@ -845,7 +845,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       .slideshow-speed-container { font-size: 10px; }
       #select-speed { font-size: 10px; padding: 2px 4px; }
       #modal-caption { font-size: 11px; padding: 6px 10px; }
-      #tooltip-istruzioni { font-size: 11px; padding: 8px 12px; bottom: 60px; width: 80vw; }
+      #tooltip-istruzioni { font-size: 11px; padding: 8px 12px; bottom: 115px; width: 80vw; }
     }
     
     /* INGRANDISCE IL TESTO SOLO SU PC (> 768px) */
@@ -1002,6 +1002,8 @@ function selezionaViaggioEChiudi(nomeViaggio) {
         <option value="4000" selected>4s</option>
         <option value="6000">6s</option>
         <option value="8000">8s</option>
+        <option value="10000">10s</option>
+        <option value="12000">12s</option>
       </select>
     </div>
 
@@ -1325,38 +1327,50 @@ function selezionaViaggioEChiudi(nomeViaggio) {
 
     const map = L.map('map', { minZoom: 2, tap: false}).setView([40, -140], 3);
 
+    const opzioniTileFluide = {
+      updateWhenZooming: true,
+      updateInterval: 150,
+      keepBuffer: 6
+    };
+
     const layerOSM = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      ...opzioniTileFluide,
       maxZoom: 19,
       attribution: '© OpenStreetMap'
     });
 
     const layerSatellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+      ...opzioniTileFluide,
       maxZoom: 19,
       attribution: 'Tiles &copy; Esri'
     });
 
     const layerIbrido = L.layerGroup([
-      L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', { maxZoom: 19 }),
-      L.tileLayer('https://services.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}', { maxZoom: 19 })
+      L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', { ...opzioniTileFluide, maxZoom: 19 }),
+      L.tileLayer('https://services.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}', { ...opzioniTileFluide, maxZoom: 19 })
     ]);
 
     const layerTopo = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
+      ...opzioniTileFluide,
       maxZoom: 19,
       attribution: 'Tiles &copy; Esri Topo'
     });
 
     const layerTerrain = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Physical_Map/MapServer/tile/{z}/{y}/{x}', {
+      ...opzioniTileFluide,
       maxZoom: 8,
       attribution: 'Tiles &copy; Esri Physical'
     });
 
     const layerCartoLight = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+      ...opzioniTileFluide,
       maxZoom: 20,
       subdomains: 'abcd',
       attribution: '&copy; OpenStreetMap &copy; CARTO'
     });
 
     const layerCartoDark = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+      ...opzioniTileFluide,
       maxZoom: 20,
       subdomains: 'abcd',
       attribution: '&copy; OpenStreetMap &copy; CARTO'
@@ -1438,7 +1452,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       }
     }
 
- function avviaAnimazioneApertura() {
+    function avviaAnimazioneApertura() {
       animazioneInCorso = true;
       
       // Mostra il fumetto di avviso
@@ -1450,30 +1464,57 @@ function selezionaViaggioEChiudi(nomeViaggio) {
         .then(config => {
           if (!animazioneInCorso) return;
           map.setView([15, -160], 2, { animate: false }); 
-          
 
-		  // MODIFICA: Mescola in modo casuale a blocchi di 2 (Avvicinamento + Vetta)
+          // Mescola in modo casuale a blocchi di 2 (Avvicinamento + Vetta)
+          // mantenendo TUTTE le coppie VIP sempre per prime (mescolate tra loro)
           if (config.destinazioni && config.destinazioni.length > 0) {
             let blocchi = [];
             
-            // 1. Raggruppa le destinazioni a due a due
+            // 1. Raggruppa le destinazioni a due a due (coppie Avvicinamento + Vetta)
             for (let i = 0; i < config.destinazioni.length; i += 2) {
               if (i + 1 < config.destinazioni.length) {
                 blocchi.push([config.destinazioni[i], config.destinazioni[i + 1]]);
               } else {
-                blocchi.push([config.destinazioni[i]]); // Salva l'ultimo se dispari
+                blocchi.push([config.destinazioni[i]]);
               }
             }
 
-            // 2. Rimescola l'ordine dei blocchi (Fisher-Yates)
-            for (let i = blocchi.length - 1; i > 0; i--) {
-              const j = Math.floor(Math.random() * (i + 1));
-              [blocchi[i], blocchi[j]] = [blocchi[j], blocchi[i]];
+            // 2. Separa le coppie VIP dalle restanti
+            let primeCoppie = [];
+            let altreCoppie = [];
+
+            const haTagVip = blocchi.some(b => b[0] && b[0].vip !== undefined);
+            if (haTagVip) {
+              blocchi.forEach(blocco => {
+                if (blocco[0].vip === true) {
+                  primeCoppie.push(blocco);
+                } else {
+                  altreCoppie.push(blocco);
+                }
+              });
+            } else {
+              const numeroPrimeCoppie = config.numero_prime_coppie_prioritarie || 24;
+              primeCoppie = blocchi.slice(0, numeroPrimeCoppie);
+              altreCoppie = blocchi.slice(numeroPrimeCoppie);
             }
 
-            // 3. Ricostruisci l'array finale appiattendo i blocchi
+            // Funzione di rimescolamento (Fisher-Yates)
+            function mescolaArray(arr) {
+              for (let i = arr.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [arr[i], arr[j]] = [arr[j], arr[i]];
+              }
+            }
+
+            // 3. Rimescola separatamente i VIP e i non-VIP
+            mescolaArray(primeCoppie);
+            mescolaArray(altreCoppie);
+
+            console.log(`🎬 Regia apertura: ${primeCoppie.length} coppie VIP in testa + ${altreCoppie.length} coppie secondarie.`);
+
+            // 4. Ricostruisci l'array finale unendo prima tutte le coppie VIP e poi le altre
             config.destinazioni = [];
-            blocchi.forEach(blocco => {
+            primeCoppie.concat(altreCoppie).forEach(blocco => {
               config.destinazioni.push(...blocco);
             });
           }
@@ -1487,12 +1528,10 @@ function selezionaViaggioEChiudi(nomeViaggio) {
         });
     }
 
-    
-	function eseguiStepAnimazione(config, index) {
+    function eseguiStepAnimazione(config, index) {
       if (!animazioneInCorso || index >= config.destinazioni.length) {
         animazioneInCorso = false;
         
-        // Se il volo finisce il suo giro da solo, nascondiamo il fumetto
         const tooltipAnim = document.getElementById('tooltip-animazione');
         if (tooltipAnim) tooltipAnim.style.display = 'none';
         
@@ -1500,56 +1539,64 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       }
 
       const step = config.destinazioni[index];
+      const isVetta = step.nome.startsWith("Vetta");
 
       // Chiude la foto precedente all'inizio di un nuovo avvicinamento
       if (step.nome.startsWith("Avvicinamento")) {
         map.closePopup();
       }
       
-      // Il metodo map.flyTo() avvia il volo
+      // Sceglie la durata corretta dal JSON (Avvicinamento vs Vetta)
+      const durataVolo = isVetta 
+        ? (config.durata_vetta_secondi || config.durata_volo_secondi || 3.5)
+        : (config.durata_avvicinamento_secondi || config.durata_volo_secondi || 6);
+
       map.flyTo([step.lat, step.lon], step.zoom, {
         animate: true,
-        duration: config.durata_volo_secondi,
-        easeLinearity: 0.15 
+        duration: durataVolo,
+        easeLinearity: isVetta ? 0.5 : 0.15
       });
 
-      // map.once('moveend') aspetta che la mappa si sia fermata del tutto
       map.once('moveend', function() {
         if (!animazioneInCorso) return;
 
-        let tempoDiAttesa = config.pausa_tra_zoom_ms;
+        let tempoDiAttesa = config.pausa_tra_zoom_ms || 1200;
 
-        // Se siamo atterrati su una Vetta, gestiamo l'apertura e aumentiamo il tempo
-        if (step.nome.startsWith("Vetta")) {
-          
-          // Ritardo di 400ms per permettere all'animazione dei cluster di scompattare le puntine
+        if (isVetta) {
           setTimeout(() => {
             if (!animazioneInCorso) return;
 
-            const markerTrovato = markersSlideshow.find(m => {
-              const ll = m.getLatLng();
-              return Math.abs(ll.lat - step.lat) < 0.005 && Math.abs(ll.lng - step.lon) < 0.005;
-            });
+            let markerTrovato = null;
+
+            // 1. Cerca prima il marker esatto tramite il nome del file foto (così apre sempre la foto VIP giusta!)
+            if (step.foto) {
+              const idxFoto = puntiSlideshow.findIndex(p => p.foto === step.foto);
+              if (idxFoto !== -1 && markersSlideshow[idxFoto]) {
+                markerTrovato = markersSlideshow[idxFoto];
+              }
+            }
+
+            // 2. Fallback per coordinate se il campo foto non è presente
+            if (!markerTrovato) {
+              markerTrovato = markersSlideshow.find(m => {
+                const ll = m.getLatLng();
+                return Math.abs(ll.lat - step.lat) < 0.005 && Math.abs(ll.lng - step.lon) < 0.005;
+              });
+            }
             
             if (markerTrovato) {
               markerTrovato.openPopup();
             }
           }, 400);
 
-          // Aumentiamo dinamicamente il tempo di lettura della foto:
-          // Invece di 1 secondo (scritto nel JSON), lo forziamo a 4 secondi (4000 ms)
           tempoDiAttesa = 4000; 
         }
 
-        // Timer per far partire il volo verso la tappa successiva
         setTimeout(() => {
           eseguiStepAnimazione(config, index + 1);
         }, tempoDiAttesa);
       });
     }
-	
-	
-	
 
     function fermaAnimazioneIniziale() {
       if (animazioneInCorso) {
@@ -1874,10 +1921,6 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       if (!isSlideshowActive) return;
       currentSlideIndex = index;
       mostraSlide(currentSlideIndex);
-
-      if (!isSlideshowPaused) {
-        avviaTimer();
-      }
     }
 
     function aggiornaMappa() {
@@ -2006,21 +2049,27 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       setTimeout(() => {
         map.invalidateSize();
         mostraSlide(currentSlideIndex);
-        avviaTimer();
       }, 150);
     }
 
     function cambiaVelocita() {
       tempoIntervallo = parseInt(document.getElementById('select-speed').value, 10) || 4000;
       if (isSlideshowActive && !isSlideshowPaused) {
-        avviaTimer();
+        avviaTimer(); // Riparte subito da capo con la nuova velocità scelta
       }
     }
 
     function avviaTimer() {
-      clearInterval(slideshowTimer);
-      slideshowTimer = setInterval(() => {
-        if (!isSlideshowPaused) {
+      clearTimeout(slideshowTimer);
+      slideshowTimer = null;
+
+      if (!isSlideshowActive || isSlideshowPaused) return;
+
+      // Legge sempre il valore aggiornato dal selettore (2s, 4s, 6s, 8s, 10s, 12s)
+      tempoIntervallo = parseInt(document.getElementById('select-speed').value, 10) || 4000;
+
+      slideshowTimer = setTimeout(() => {
+        if (isSlideshowActive && !isSlideshowPaused) {
           nextSlide();
         }
       }, tempoIntervallo);
@@ -2028,6 +2077,10 @@ function selezionaViaggioEChiudi(nomeViaggio) {
 
     function mostraSlide(index) {
       if (index < 0 || index >= markersSlideshow.length) return;
+
+      // Ferma subito qualunque conto alla rovescia precedente
+      clearTimeout(slideshowTimer);
+      slideshowTimer = null;
 
       map.invalidateSize({ pan: false });
 
@@ -2050,32 +2103,64 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       }
 
       const p = puntiSlideshow[index];
+      const imgElem = document.getElementById('slideshow-img');
+      const nuovoSrc = p.foto.replace(/^foto[\/\\]/, 'webp/').replace(/\.jpg$/i, '.webp');
 
-      document.getElementById('slideshow-img').src = p.foto.replace(/^foto[\/\\]/, 'webp/').replace(/\.jpg$/i, '.webp');
+      // Il timer parte DA ZERO solo quando la nuova foto è effettivamente caricata a schermo
+      imgElem.onload = function() {
+        if (isSlideshowActive && !isSlideshowPaused) {
+          avviaTimer();
+        }
+      };
+      imgElem.onerror = function() {
+        if (isSlideshowActive && !isSlideshowPaused) {
+          avviaTimer();
+        }
+      };
+
+      imgElem.src = nuovoSrc;
+
       const descTesto = p.descrizione ? ` — ${p.descrizione}` : '';
       document.getElementById('slideshow-caption').textContent = `${p.nome || p.viaggio} (${p.data})${descTesto}`;
 
       document.getElementById('slideshow-counter').textContent = `${index + 1} / ${markersSlideshow.length}`;
+
+      // Sicurezza extra se l'immagine era già in cache immediata
+      if (imgElem.complete && isSlideshowActive && !isSlideshowPaused) {
+        avviaTimer();
+      }
     }
 
     function nextSlide() {
+      if (markersSlideshow.length === 0) return;
       currentSlideIndex = (currentSlideIndex + 1) % markersSlideshow.length;
-      mostraSlide(currentSlideIndex);
+      mostraSlide(currentSlideIndex); // mostraSlide azzera e fa ripartire il timer da capo
     }
 
     function prevSlide() {
+      if (markersSlideshow.length === 0) return;
       currentSlideIndex = (currentSlideIndex - 1 + markersSlideshow.length) % markersSlideshow.length;
-      mostraSlide(currentSlideIndex);
+      mostraSlide(currentSlideIndex); // mostraSlide azzera e fa ripartire il timer da capo
     }
 
     function togglePlayPause() {
       isSlideshowPaused = !isSlideshowPaused;
       document.getElementById('btn-play-pause').textContent = isSlideshowPaused ? '▶' : '⏸';
+
+      if (isSlideshowPaused) {
+        // In pausa: cancella completamente il timer
+        clearTimeout(slideshowTimer);
+        slideshowTimer = null;
+      } else {
+        // Quando si toglie la pausa: il timer riparte da zero per l'intera durata!
+        avviaTimer();
+      }
     }
 
- function fermaSlideshow() {
+    function fermaSlideshow() {
       isSlideshowActive = false;
-      clearInterval(slideshowTimer);
+      clearTimeout(slideshowTimer);
+      slideshowTimer = null;
       disattivaWakeLock();
       
       document.body.classList.remove('slideshow-active');
@@ -2379,10 +2464,12 @@ function selezionaViaggioEChiudi(nomeViaggio) {
         chiudiListaModal();
         chiudiReport();
         if (isSlideshowActive) fermaSlideshow();
-      } else if (isModalOpen && e.key === "ArrowRight") {
-        modalFotoNext();
-      } else if (isModalOpen && e.key === "ArrowLeft") {
-        modalFotoPrev();
+      } else if (e.key === "ArrowRight") {
+        if (isModalOpen) modalFotoNext();
+        else if (isSlideshowActive) nextSlide();
+      } else if (e.key === "ArrowLeft") {
+        if (isModalOpen) modalFotoPrev();
+        else if (isSlideshowActive) prevSlide();
       }
     });
   </script>

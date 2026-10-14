@@ -1,606 +1,809 @@
 {
+  "durata_avvicinamento_secondi": 6,
+  "durata_vetta_secondi": 3.5,
   "durata_volo_secondi": 6,
-  "pausa_tra_zoom_ms": 1500,
+  "pausa_tra_zoom_ms": 1200,
+  "numero_prime_coppie_prioritarie": 24,
   "destinazioni": [
     {
       "nome": "Avvicinamento zona 2007-12-27-14H43M21",
-      "lat": 19.4136,
-      "lon": -155.2854,
-      "zoom": 5
+      "lat": 19.413578,
+      "lon": -155.285397,
+      "zoom": 6,
+      "vip": true,
+      "foto": "foto/hawaii 2007/2007-12-27-14h43m21.jpg"
     },
     {
       "nome": "Vetta: 2007-12-27-14H43M21",
-      "lat": 19.4136,
-      "lon": -155.2854,
-      "zoom": 12
+      "lat": 19.413578,
+      "lon": -155.285397,
+      "zoom": 12,
+      "vip": true,
+      "foto": "foto/hawaii 2007/2007-12-27-14h43m21.jpg"
     },
     {
       "nome": "Avvicinamento zona 2005-07-24-20H38M52",
-      "lat": 44.5256,
-      "lon": -110.8381,
-      "zoom": 5
+      "lat": 44.525594,
+      "lon": -110.838146,
+      "zoom": 6,
+      "vip": true,
+      "foto": "foto/stati uniti 2005/2005-07-24-20h38m52.jpg"
     },
     {
       "nome": "Vetta: 2005-07-24-20H38M52",
-      "lat": 44.5256,
-      "lon": -110.8381,
-      "zoom": 12
+      "lat": 44.525594,
+      "lon": -110.838146,
+      "zoom": 12,
+      "vip": true,
+      "foto": "foto/stati uniti 2005/2005-07-24-20h38m52.jpg"
     },
     {
       "nome": "Avvicinamento zona 2005-08-06-21H54M52",
-      "lat": 37.2577,
-      "lon": -109.8155,
-      "zoom": 5
+      "lat": 37.257727,
+      "lon": -109.815495,
+      "zoom": 6,
+      "vip": true,
+      "foto": "foto/stati uniti 2005/2005-08-06-21h54m52.jpg"
     },
     {
       "nome": "Vetta: 2005-08-06-21H54M52",
-      "lat": 37.2577,
-      "lon": -109.8155,
-      "zoom": 12
+      "lat": 37.257727,
+      "lon": -109.815495,
+      "zoom": 12,
+      "vip": true,
+      "foto": "foto/stati uniti 2005/2005-08-06-21h54m52.jpg"
     },
     {
       "nome": "Avvicinamento zona 2012-01-05-19H32M31",
-      "lat": 24.5467,
-      "lon": -81.7959,
-      "zoom": 5
+      "lat": 24.546664,
+      "lon": -81.795884,
+      "zoom": 6,
+      "vip": true,
+      "foto": "foto/florida 2011/2012-01-05-19h32m31.jpg"
     },
     {
       "nome": "Vetta: 2012-01-05-19H32M31",
-      "lat": 24.5467,
-      "lon": -81.7959,
-      "zoom": 12
+      "lat": 24.546664,
+      "lon": -81.795884,
+      "zoom": 12,
+      "vip": true,
+      "foto": "foto/florida 2011/2012-01-05-19h32m31.jpg"
     },
     {
       "nome": "Avvicinamento zona 2004-03-17-08H58M45",
-      "lat": 36.111,
-      "lon": -115.172,
-      "zoom": 5
+      "lat": 36.111044,
+      "lon": -115.171952,
+      "zoom": 6,
+      "vip": true,
+      "foto": "foto/stati uniti 2004/2004-03-17-08h58m45.jpg"
     },
     {
       "nome": "Vetta: 2004-03-17-08H58M45",
-      "lat": 36.111,
-      "lon": -115.172,
-      "zoom": 12
+      "lat": 36.111044,
+      "lon": -115.171952,
+      "zoom": 12,
+      "vip": true,
+      "foto": "foto/stati uniti 2004/2004-03-17-08h58m45.jpg"
     },
     {
       "nome": "Avvicinamento zona 2005-07-28-04H15M43",
-      "lat": 37.8073,
-      "lon": -122.4699,
-      "zoom": 5
+      "lat": 37.807275,
+      "lon": -122.469878,
+      "zoom": 6,
+      "vip": true,
+      "foto": "foto/stati uniti 2005/2005-07-28-04h15m43.jpg"
     },
     {
       "nome": "Vetta: 2005-07-28-04H15M43",
-      "lat": 37.8073,
-      "lon": -122.4699,
-      "zoom": 12
+      "lat": 37.807275,
+      "lon": -122.469878,
+      "zoom": 12,
+      "vip": true,
+      "foto": "foto/stati uniti 2005/2005-07-28-04h15m43.jpg"
     },
     {
       "nome": "Avvicinamento zona 2004-03-15-08H38M45",
-      "lat": 40.7724,
-      "lon": -73.9809,
-      "zoom": 5
+      "lat": 40.772449,
+      "lon": -73.980904,
+      "zoom": 6,
+      "vip": true,
+      "foto": "foto/stati uniti 2004/2004-03-15-08h38m45.jpg"
     },
     {
       "nome": "Vetta: 2004-03-15-08H38M45",
-      "lat": 40.7724,
-      "lon": -73.9809,
-      "zoom": 12
+      "lat": 40.772449,
+      "lon": -73.980904,
+      "zoom": 12,
+      "vip": true,
+      "foto": "foto/stati uniti 2004/2004-03-15-08h38m45.jpg"
     },
     {
       "nome": "Avvicinamento zona 2014-08-06-09H24M55",
-      "lat": 28.0885,
-      "lon": -16.7368,
-      "zoom": 5
+      "lat": 28.088522,
+      "lon": -16.736813,
+      "zoom": 6,
+      "vip": true,
+      "foto": "foto/irlanda tenerife 2014/2014-08-06-09h24m55.jpg"
     },
     {
       "nome": "Vetta: 2014-08-06-09H24M55",
-      "lat": 28.0885,
-      "lon": -16.7368,
-      "zoom": 12
+      "lat": 28.088522,
+      "lon": -16.736813,
+      "zoom": 12,
+      "vip": true,
+      "foto": "foto/irlanda tenerife 2014/2014-08-06-09h24m55.jpg"
     },
     {
       "nome": "Avvicinamento zona 2023-10-30-17H54M43",
-      "lat": 31.0887,
-      "lon": -4.0002,
-      "zoom": 5
+      "lat": 31.088743,
+      "lon": -4.000171,
+      "zoom": 6,
+      "vip": true,
+      "foto": "foto/spagna marocco 2023/2023-10-30-17h54m43.jpg"
     },
     {
       "nome": "Vetta: 2023-10-30-17H54M43",
-      "lat": 31.0887,
-      "lon": -4.0002,
-      "zoom": 12
+      "lat": 31.088743,
+      "lon": -4.000171,
+      "zoom": 12,
+      "vip": true,
+      "foto": "foto/spagna marocco 2023/2023-10-30-17h54m43.jpg"
     },
     {
       "nome": "Avvicinamento zona 2023-10-26-10H49M35",
-      "lat": 35.1697,
-      "lon": -5.263,
-      "zoom": 5
+      "lat": 35.169695,
+      "lon": -5.263028,
+      "zoom": 6,
+      "vip": true,
+      "foto": "foto/spagna marocco 2023/2023-10-26-10h49m35.jpg"
     },
     {
       "nome": "Vetta: 2023-10-26-10H49M35",
-      "lat": 35.1697,
-      "lon": -5.263,
-      "zoom": 12
+      "lat": 35.169695,
+      "lon": -5.263028,
+      "zoom": 12,
+      "vip": true,
+      "foto": "foto/spagna marocco 2023/2023-10-26-10h49m35.jpg"
     },
     {
       "nome": "Avvicinamento zona 2007-03-10-07H41M44",
       "lat": 55.2403,
       "lon": -6.5085,
-      "zoom": 5
+      "zoom": 6,
+      "vip": true,
+      "foto": "foto/irlanda 2007/2007-03-10-07h41m44.jpg"
     },
     {
       "nome": "Vetta: 2007-03-10-07H41M44",
       "lat": 55.2403,
       "lon": -6.5085,
-      "zoom": 12
+      "zoom": 12,
+      "vip": true,
+      "foto": "foto/irlanda 2007/2007-03-10-07h41m44.jpg"
     },
     {
       "nome": "Avvicinamento zona 2010-08-01-11H51M06",
-      "lat": 57.0393,
-      "lon": -3.2292,
-      "zoom": 5
+      "lat": 57.039329,
+      "lon": -3.229165,
+      "zoom": 6,
+      "vip": true,
+      "foto": "foto/scozia 2010/2010-08-01-11h51m06.jpg"
     },
     {
       "nome": "Vetta: 2010-08-01-11H51M06",
-      "lat": 57.0393,
-      "lon": -3.2292,
-      "zoom": 12
+      "lat": 57.039329,
+      "lon": -3.229165,
+      "zoom": 12,
+      "vip": true,
+      "foto": "foto/scozia 2010/2010-08-01-11h51m06.jpg"
     },
     {
       "nome": "Avvicinamento zona 1996-08-21-14H32M00",
-      "lat": 38.6428,
-      "lon": 34.8349,
-      "zoom": 5
+      "lat": 38.642811,
+      "lon": 34.834868,
+      "zoom": 6,
+      "vip": true,
+      "foto": "foto/ungheria romania turchia 1996/1996-08-21-14h32m00.jpg"
     },
     {
       "nome": "Vetta: 1996-08-21-14H32M00",
-      "lat": 38.6428,
-      "lon": 34.8349,
-      "zoom": 12
+      "lat": 38.642811,
+      "lon": 34.834868,
+      "zoom": 12,
+      "vip": true,
+      "foto": "foto/ungheria romania turchia 1996/1996-08-21-14h32m00.jpg"
     },
     {
       "nome": "Avvicinamento zona 2024-03-03-16H49M14",
-      "lat": 50.0863,
+      "lat": 50.086262,
       "lon": 14.4135,
-      "zoom": 5
+      "zoom": 6,
+      "vip": true,
+      "foto": "foto/praga 2024/2024-03-03-16h49m14.jpg"
     },
     {
       "nome": "Vetta: 2024-03-03-16H49M14",
-      "lat": 50.0863,
+      "lat": 50.086262,
       "lon": 14.4135,
-      "zoom": 12
+      "zoom": 12,
+      "vip": true,
+      "foto": "foto/praga 2024/2024-03-03-16h49m14.jpg"
     },
     {
       "nome": "Avvicinamento zona 2024-10-05-12H01M11",
-      "lat": 40.6344,
-      "lon": 14.603,
-      "zoom": 5
+      "lat": 40.634428,
+      "lon": 14.602976,
+      "zoom": 6,
+      "vip": true,
+      "foto": "foto/sorrento 2024/2024-10-05-12h01m11.jpg"
     },
     {
       "nome": "Vetta: 2024-10-05-12H01M11",
-      "lat": 40.6344,
-      "lon": 14.603,
-      "zoom": 12
+      "lat": 40.634428,
+      "lon": 14.602976,
+      "zoom": 12,
+      "vip": true,
+      "foto": "foto/sorrento 2024/2024-10-05-12h01m11.jpg"
     },
     {
       "nome": "Avvicinamento zona 2017-07-27-19H58M29",
       "lat": 27.9142,
       "lon": 34.3328,
-      "zoom": 5
+      "zoom": 6,
+      "vip": true,
+      "foto": "foto/sharm 2017/2017-07-27-19h58m29.jpg"
     },
     {
       "nome": "Vetta: 2017-07-27-19H58M29",
       "lat": 27.9142,
       "lon": 34.3328,
-      "zoom": 12
+      "zoom": 12,
+      "vip": true,
+      "foto": "foto/sharm 2017/2017-07-27-19h58m29.jpg"
     },
     {
       "nome": "Avvicinamento zona 2023-02-25-10H22M00",
-      "lat": 29.5189,
-      "lon": 35.4142,
-      "zoom": 5
+      "lat": 29.518949,
+      "lon": 35.414171,
+      "zoom": 6,
+      "vip": true,
+      "foto": "foto/giordania 2023/2023-02-25-10h22m00.jpg"
     },
     {
       "nome": "Vetta: 2023-02-25-10H22M00",
-      "lat": 29.5189,
-      "lon": 35.4142,
-      "zoom": 12
+      "lat": 29.518949,
+      "lon": 35.414171,
+      "zoom": 12,
+      "vip": true,
+      "foto": "foto/giordania 2023/2023-02-25-10h22m00.jpg"
     },
     {
       "nome": "Avvicinamento zona 2018-07-21-17H07M47",
-      "lat": -17.9291,
-      "lon": 25.8429,
-      "zoom": 5
+      "lat": -17.929102,
+      "lon": 25.842942,
+      "zoom": 6,
+      "vip": true,
+      "foto": "foto/africa 2018/2018-07-21-17h07m47.jpg"
     },
     {
       "nome": "Vetta: 2018-07-21-17H07M47",
-      "lat": -17.9291,
-      "lon": 25.8429,
-      "zoom": 12
+      "lat": -17.929102,
+      "lon": 25.842942,
+      "zoom": 12,
+      "vip": true,
+      "foto": "foto/africa 2018/2018-07-21-17h07m47.jpg"
     },
     {
       "nome": "Avvicinamento zona 2002-07-22-12H38M42",
-      "lat": 26.9865,
-      "lon": 75.8507,
-      "zoom": 5
+      "lat": 26.986508,
+      "lon": 75.850704,
+      "zoom": 6,
+      "vip": true,
+      "foto": "foto/india 2002/2002-07-22-12h38m42.jpg"
     },
     {
       "nome": "Vetta: 2002-07-22-12H38M42",
-      "lat": 26.9865,
-      "lon": 75.8507,
-      "zoom": 12
+      "lat": 26.986508,
+      "lon": 75.850704,
+      "zoom": 12,
+      "vip": true,
+      "foto": "foto/india 2002/2002-07-22-12h38m42.jpg"
     },
     {
       "nome": "Avvicinamento zona 2002-07-22-13H08M42",
-      "lat": 26.9553,
-      "lon": 70.8877,
-      "zoom": 5
+      "lat": 26.95531,
+      "lon": 70.887687,
+      "zoom": 6,
+      "vip": true,
+      "foto": "foto/india 2002/2002-07-22-13h08m42.jpg"
     },
     {
       "nome": "Vetta: 2002-07-22-13H08M42",
-      "lat": 26.9553,
-      "lon": 70.8877,
-      "zoom": 12
+      "lat": 26.95531,
+      "lon": 70.887687,
+      "zoom": 12,
+      "vip": true,
+      "foto": "foto/india 2002/2002-07-22-13h08m42.jpg"
     },
     {
       "nome": "Avvicinamento zona 2006-04-15-12H38M35",
-      "lat": 35.6288,
+      "lat": 35.62885,
       "lon": 139.738,
-      "zoom": 5
+      "zoom": 6,
+      "vip": true,
+      "foto": "foto/giappone 2006/2006-04-15-12h38m35.jpg"
     },
     {
       "nome": "Vetta: 2006-04-15-12H38M35",
-      "lat": 35.6288,
+      "lat": 35.62885,
       "lon": 139.738,
-      "zoom": 12
+      "zoom": 12,
+      "vip": true,
+      "foto": "foto/giappone 2006/2006-04-15-12h38m35.jpg"
     },
     {
       "nome": "Avvicinamento zona 2006-04-11-07H57M48",
-      "lat": 34.6886,
-      "lon": 135.8399,
-      "zoom": 5
+      "lat": 34.688623,
+      "lon": 135.83988,
+      "zoom": 6,
+      "vip": true,
+      "foto": "foto/giappone 2006/2006-04-11-07h57m48.jpg"
     },
     {
       "nome": "Vetta: 2006-04-11-07H57M48",
-      "lat": 34.6886,
-      "lon": 135.8399,
-      "zoom": 12
+      "lat": 34.688623,
+      "lon": 135.83988,
+      "zoom": 12,
+      "vip": true,
+      "foto": "foto/giappone 2006/2006-04-11-07h57m48.jpg"
     },
     {
       "nome": "Avvicinamento zona 2011-08-07-06H40M04",
-      "lat": -7.6089,
-      "lon": 110.2038,
-      "zoom": 5
+      "lat": -7.608871,
+      "lon": 110.203815,
+      "zoom": 6,
+      "vip": true,
+      "foto": "foto/indonesia malesia 2011/2011-08-07-06h40m04.jpg"
     },
     {
       "nome": "Vetta: 2011-08-07-06H40M04",
-      "lat": -7.6089,
-      "lon": 110.2038,
-      "zoom": 12
+      "lat": -7.608871,
+      "lon": 110.203815,
+      "zoom": 12,
+      "vip": true,
+      "foto": "foto/indonesia malesia 2011/2011-08-07-06h40m04.jpg"
     },
     {
       "nome": "Avvicinamento zona 2011-08-09-07H08M44",
-      "lat": -5.1347,
-      "lon": 109.5337,
-      "zoom": 5
+      "lat": -5.134715,
+      "lon": 109.533691,
+      "zoom": 6,
+      "vip": true,
+      "foto": "foto/indonesia malesia 2011/2011-08-09-07h08m44.jpg"
     },
     {
       "nome": "Vetta: 2011-08-09-07H08M44",
-      "lat": -5.1347,
-      "lon": 109.5337,
-      "zoom": 12
+      "lat": -5.134715,
+      "lon": 109.533691,
+      "zoom": 12,
+      "vip": true,
+      "foto": "foto/indonesia malesia 2011/2011-08-09-07h08m44.jpg"
     },
     {
       "nome": "Avvicinamento zona 2025-05-15-12H14M38",
-      "lat": 41.0649,
-      "lon": 1.0596,
-      "zoom": 5
+      "lat": 41.064891,
+      "lon": 1.059594,
+      "zoom": 6,
+      "vip": false,
+      "foto": "foto/spagna 2025/2025-05-15-12h14m38.jpg"
     },
     {
       "nome": "Vetta: 2025-05-15-12H14M38",
-      "lat": 41.0649,
-      "lon": 1.0596,
-      "zoom": 12
+      "lat": 41.064891,
+      "lon": 1.059594,
+      "zoom": 12,
+      "vip": false,
+      "foto": "foto/spagna 2025/2025-05-15-12h14m38.jpg"
     },
     {
       "nome": "Avvicinamento zona 2024-09-03-17H50M17",
-      "lat": 41.0368,
-      "lon": 28.9866,
-      "zoom": 5
+      "lat": 41.036798,
+      "lon": 28.986633,
+      "zoom": 6,
+      "vip": false,
+      "foto": "foto/istanbul 2024/2024-09-03-17h50m17.jpg"
     },
     {
       "nome": "Vetta: 2024-09-03-17H50M17",
-      "lat": 41.0368,
-      "lon": 28.9866,
-      "zoom": 12
+      "lat": 41.036798,
+      "lon": 28.986633,
+      "zoom": 12,
+      "vip": false,
+      "foto": "foto/istanbul 2024/2024-09-03-17h50m17.jpg"
     },
     {
       "nome": "Avvicinamento zona 2023-11-04-10H50M01",
-      "lat": 30.5098,
-      "lon": -9.6871,
-      "zoom": 5
+      "lat": 30.509838,
+      "lon": -9.687088,
+      "zoom": 6,
+      "vip": false,
+      "foto": "foto/spagna marocco 2023/2023-11-04-10h50m01.jpg"
     },
     {
       "nome": "Vetta: 2023-11-04-10H50M01",
-      "lat": 30.5098,
-      "lon": -9.6871,
-      "zoom": 12
+      "lat": 30.509838,
+      "lon": -9.687088,
+      "zoom": 12,
+      "vip": false,
+      "foto": "foto/spagna marocco 2023/2023-11-04-10h50m01.jpg"
     },
     {
       "nome": "Avvicinamento zona 2009-07-26-12H00M00-1",
-      "lat": 25.2339,
-      "lon": 55.2655,
-      "zoom": 5
+      "lat": 25.233943,
+      "lon": 55.265522,
+      "zoom": 6,
+      "vip": false,
+      "foto": "foto/dubai 2009/2009-07-26-12h00m00-1.jpg"
     },
     {
       "nome": "Vetta: 2009-07-26-12H00M00-1",
-      "lat": 25.2339,
-      "lon": 55.2655,
-      "zoom": 12
+      "lat": 25.233943,
+      "lon": 55.265522,
+      "zoom": 12,
+      "vip": false,
+      "foto": "foto/dubai 2009/2009-07-26-12h00m00-1.jpg"
     },
     {
       "nome": "Avvicinamento zona 2009-08-14-10H52M00",
-      "lat": -25.1043,
-      "lon": 31.4326,
-      "zoom": 5
+      "lat": -25.104254,
+      "lon": 31.432571,
+      "zoom": 6,
+      "vip": false,
+      "foto": "foto/sudafrica 2009/2009-08-14-10h52m00.jpg"
     },
     {
       "nome": "Vetta: 2009-08-14-10H52M00",
-      "lat": -25.1043,
-      "lon": 31.4326,
-      "zoom": 12
+      "lat": -25.104254,
+      "lon": 31.432571,
+      "zoom": 12,
+      "vip": false,
+      "foto": "foto/sudafrica 2009/2009-08-14-10h52m00.jpg"
     },
     {
       "nome": "Avvicinamento zona 2012-07-29-07H22M39",
       "lat": 1.1472,
       "lon": 111.8743,
-      "zoom": 5
+      "zoom": 6,
+      "vip": false,
+      "foto": "foto/borneo 2012/2012-07-29-07h22m39.jpg"
     },
     {
       "nome": "Vetta: 2012-07-29-07H22M39",
       "lat": 1.1472,
       "lon": 111.8743,
-      "zoom": 12
+      "zoom": 12,
+      "vip": false,
+      "foto": "foto/borneo 2012/2012-07-29-07h22m39.jpg"
     },
     {
       "nome": "Avvicinamento zona 2025-10-26-19H39M35",
-      "lat": 37.0921,
-      "lon": -8.2277,
-      "zoom": 5
+      "lat": 37.092141,
+      "lon": -8.227732,
+      "zoom": 6,
+      "vip": false,
+      "foto": "foto/spagna marocco 2025/2025-10-26-19h39m35.jpg"
     },
     {
       "nome": "Vetta: 2025-10-26-19H39M35",
-      "lat": 37.0921,
-      "lon": -8.2277,
-      "zoom": 12
+      "lat": 37.092141,
+      "lon": -8.227732,
+      "zoom": 12,
+      "vip": false,
+      "foto": "foto/spagna marocco 2025/2025-10-26-19h39m35.jpg"
     },
     {
       "nome": "Avvicinamento zona 2021-12-28-13H08M46",
       "lat": 36.792,
       "lon": 14.704,
-      "zoom": 5
+      "zoom": 6,
+      "vip": false,
+      "foto": "foto/sicilia 2021/2021-12-28-13h08m46.jpg"
     },
     {
       "nome": "Vetta: 2021-12-28-13H08M46",
       "lat": 36.792,
       "lon": 14.704,
-      "zoom": 12
+      "zoom": 12,
+      "vip": false,
+      "foto": "foto/sicilia 2021/2021-12-28-13h08m46.jpg"
     },
     {
       "nome": "Avvicinamento zona 2017-12-04-07H41M40",
-      "lat": 7.9001,
-      "lon": 98.2988,
-      "zoom": 5
+      "lat": 7.900132,
+      "lon": 98.298822,
+      "zoom": 6,
+      "vip": false,
+      "foto": "foto/thailandia 2017/2017-12-04-07h41m40.jpg"
     },
     {
       "nome": "Vetta: 2017-12-04-07H41M40",
-      "lat": 7.9001,
-      "lon": 98.2988,
-      "zoom": 12
+      "lat": 7.900132,
+      "lon": 98.298822,
+      "zoom": 12,
+      "vip": false,
+      "foto": "foto/thailandia 2017/2017-12-04-07h41m40.jpg"
     },
     {
       "nome": "Avvicinamento zona 2023-10-19-09H25M57",
-      "lat": 36.4868,
-      "lon": -4.7459,
-      "zoom": 5
+      "lat": 36.486833,
+      "lon": -4.745922,
+      "zoom": 6,
+      "vip": false,
+      "foto": "foto/spagna marocco 2023/2023-10-19-09h25m57.jpg"
     },
     {
       "nome": "Vetta: 2023-10-19-09H25M57",
-      "lat": 36.4868,
-      "lon": -4.7459,
-      "zoom": 12
+      "lat": 36.486833,
+      "lon": -4.745922,
+      "zoom": 12,
+      "vip": false,
+      "foto": "foto/spagna marocco 2023/2023-10-19-09h25m57.jpg"
     },
     {
       "nome": "Avvicinamento zona 2018-07-30-10H14M46",
-      "lat": -24.1068,
-      "lon": 31.6914,
-      "zoom": 5
+      "lat": -24.106804,
+      "lon": 31.691437,
+      "zoom": 6,
+      "vip": false,
+      "foto": "foto/africa 2018/2018-07-30-10h14m46.jpg"
     },
     {
       "nome": "Vetta: 2018-07-30-10H14M46",
-      "lat": -24.1068,
-      "lon": 31.6914,
-      "zoom": 12
+      "lat": -24.106804,
+      "lon": 31.691437,
+      "zoom": 12,
+      "vip": false,
+      "foto": "foto/africa 2018/2018-07-30-10h14m46.jpg"
     },
     {
       "nome": "Avvicinamento zona 2025-05-25-21H30M37",
-      "lat": 38.5767,
-      "lon": -0.0647,
-      "zoom": 5
+      "lat": 38.576703,
+      "lon": -0.064749,
+      "zoom": 6,
+      "vip": false,
+      "foto": "foto/spagna 2025/2025-05-25-21h30m37.jpg"
     },
     {
       "nome": "Vetta: 2025-05-25-21H30M37",
-      "lat": 38.5767,
-      "lon": -0.0647,
-      "zoom": 12
+      "lat": 38.576703,
+      "lon": -0.064749,
+      "zoom": 12,
+      "vip": false,
+      "foto": "foto/spagna 2025/2025-05-25-21h30m37.jpg"
     },
     {
       "nome": "Avvicinamento zona 2023-04-02-07H08M26",
       "lat": 43.7645,
       "lon": 11.3141,
-      "zoom": 5
+      "zoom": 6,
+      "vip": false,
+      "foto": "foto/firenze venezia 2023/2023-04-02-07h08m26.jpg"
     },
     {
       "nome": "Vetta: 2023-04-02-07H08M26",
       "lat": 43.7645,
       "lon": 11.3141,
-      "zoom": 12
+      "zoom": 12,
+      "vip": false,
+      "foto": "foto/firenze venezia 2023/2023-04-02-07h08m26.jpg"
     },
     {
       "nome": "Avvicinamento zona 2012-07-28-04H07M53",
-      "lat": 1.6628,
-      "lon": 110.4335,
-      "zoom": 5
+      "lat": 1.662822,
+      "lon": 110.43354,
+      "zoom": 6,
+      "vip": false,
+      "foto": "foto/borneo 2012/2012-07-28-04h07m53.jpg"
     },
     {
       "nome": "Vetta: 2012-07-28-04H07M53",
-      "lat": 1.6628,
-      "lon": 110.4335,
-      "zoom": 12
+      "lat": 1.662822,
+      "lon": 110.43354,
+      "zoom": 12,
+      "vip": false,
+      "foto": "foto/borneo 2012/2012-07-28-04h07m53.jpg"
     },
     {
       "nome": "Avvicinamento zona 2012-08-03-04H33M59",
-      "lat": 9.5599,
-      "lon": 100.0329,
-      "zoom": 5
+      "lat": 9.559851,
+      "lon": 100.032899,
+      "zoom": 6,
+      "vip": false,
+      "foto": "foto/thailandia 2012/2012-08-03-04h33m59.jpg"
     },
     {
       "nome": "Vetta: 2012-08-03-04H33M59",
-      "lat": 9.5599,
-      "lon": 100.0329,
-      "zoom": 12
+      "lat": 9.559851,
+      "lon": 100.032899,
+      "zoom": 12,
+      "vip": false,
+      "foto": "foto/thailandia 2012/2012-08-03-04h33m59.jpg"
     },
     {
       "nome": "Avvicinamento zona 20250622 203612",
-      "lat": 45.3167,
-      "lon": 13.5624,
-      "zoom": 5
+      "lat": 45.31668,
+      "lon": 13.562369,
+      "zoom": 6,
+      "vip": false,
+      "foto": "foto/istria 2025/20250622_203612.jpg"
     },
     {
       "nome": "Vetta: 20250622 203612",
-      "lat": 45.3167,
-      "lon": 13.5624,
-      "zoom": 12
+      "lat": 45.31668,
+      "lon": 13.562369,
+      "zoom": 12,
+      "vip": false,
+      "foto": "foto/istria 2025/20250622_203612.jpg"
     },
     {
       "nome": "Avvicinamento zona 2011-12-30-23H21M26",
-      "lat": 25.7923,
-      "lon": -80.2891,
-      "zoom": 5
+      "lat": 25.792318,
+      "lon": -80.289116,
+      "zoom": 6,
+      "vip": false,
+      "foto": "foto/florida 2011/2011-12-30-23h21m26.jpg"
     },
     {
       "nome": "Vetta: 2011-12-30-23H21M26",
-      "lat": 25.7923,
-      "lon": -80.2891,
-      "zoom": 12
+      "lat": 25.792318,
+      "lon": -80.289116,
+      "zoom": 12,
+      "vip": false,
+      "foto": "foto/florida 2011/2011-12-30-23h21m26.jpg"
     },
     {
       "nome": "Avvicinamento zona 2022-04-10-18H20M23",
       "lat": 39.7135,
       "lon": 21.63,
-      "zoom": 5
+      "zoom": 6,
+      "vip": false,
+      "foto": "foto/grecia pasqua 2022/2022-04-10-18h20m23.jpg"
     },
     {
       "nome": "Vetta: 2022-04-10-18H20M23",
       "lat": 39.7135,
       "lon": 21.63,
-      "zoom": 12
+      "zoom": 12,
+      "vip": false,
+      "foto": "foto/grecia pasqua 2022/2022-04-10-18h20m23.jpg"
     },
     {
       "nome": "Avvicinamento zona 2009-04-04-08H29M08",
-      "lat": 30.0284,
-      "lon": 31.2595,
-      "zoom": 5
+      "lat": 30.02838,
+      "lon": 31.259494,
+      "zoom": 6,
+      "vip": false,
+      "foto": "foto/cairo 2009/2009-04-04-08h29m08.jpg"
     },
     {
       "nome": "Vetta: 2009-04-04-08H29M08",
-      "lat": 30.0284,
-      "lon": 31.2595,
-      "zoom": 12
+      "lat": 30.02838,
+      "lon": 31.259494,
+      "zoom": 12,
+      "vip": false,
+      "foto": "foto/cairo 2009/2009-04-04-08h29m08.jpg"
     },
     {
       "nome": "Avvicinamento zona 2013-04-02-11H31M58",
-      "lat": 23.6237,
-      "lon": 58.5795,
-      "zoom": 5
+      "lat": 23.623746,
+      "lon": 58.579509,
+      "zoom": 6,
+      "vip": false,
+      "foto": "foto/eau_oman 2013/2013-04-02-11h31m58.jpg"
     },
     {
       "nome": "Vetta: 2013-04-02-11H31M58",
-      "lat": 23.6237,
-      "lon": 58.5795,
-      "zoom": 12
+      "lat": 23.623746,
+      "lon": 58.579509,
+      "zoom": 12,
+      "vip": false,
+      "foto": "foto/eau_oman 2013/2013-04-02-11h31m58.jpg"
     },
     {
       "nome": "Avvicinamento zona 2012-12-30-15H03M56",
-      "lat": 33.4377,
-      "lon": 9.0339,
-      "zoom": 5
+      "lat": 33.437659,
+      "lon": 9.03386,
+      "zoom": 6,
+      "vip": false,
+      "foto": "foto/tunisia 2012/2012-12-30-15h03m56.jpg"
     },
     {
       "nome": "Vetta: 2012-12-30-15H03M56",
-      "lat": 33.4377,
-      "lon": 9.0339,
-      "zoom": 12
+      "lat": 33.437659,
+      "lon": 9.03386,
+      "zoom": 12,
+      "vip": false,
+      "foto": "foto/tunisia 2012/2012-12-30-15h03m56.jpg"
     },
     {
       "nome": "Avvicinamento zona 2008-07-30-11H30M08",
-      "lat": 42.9562,
-      "lon": 17.1556,
-      "zoom": 5
+      "lat": 42.956234,
+      "lon": 17.155581,
+      "zoom": 6,
+      "vip": false,
+      "foto": "foto/croazia 2008/2008-07-30-11h30m08.jpg"
     },
     {
       "nome": "Vetta: 2008-07-30-11H30M08",
-      "lat": 42.9562,
-      "lon": 17.1556,
-      "zoom": 12
+      "lat": 42.956234,
+      "lon": 17.155581,
+      "zoom": 12,
+      "vip": false,
+      "foto": "foto/croazia 2008/2008-07-30-11h30m08.jpg"
     },
     {
       "nome": "Avvicinamento zona 2026-03-03-09H20M13",
-      "lat": 45.4196,
-      "lon": 12.2564,
-      "zoom": 5
+      "lat": 45.419553,
+      "lon": 12.256351,
+      "zoom": 6,
+      "vip": false,
+      "foto": "foto/germania 2026/2026-03-03-09h20m13.jpg"
     },
     {
       "nome": "Vetta: 2026-03-03-09H20M13",
-      "lat": 45.4196,
-      "lon": 12.2564,
-      "zoom": 12
+      "lat": 45.419553,
+      "lon": 12.256351,
+      "zoom": 12,
+      "vip": false,
+      "foto": "foto/germania 2026/2026-03-03-09h20m13.jpg"
     },
     {
       "nome": "Avvicinamento zona 2022-07-26-19H55M58",
       "lat": 41.127,
       "lon": 9.055,
-      "zoom": 5
+      "zoom": 6,
+      "vip": false,
+      "foto": "foto/sardegna 2022/2022-07-26-19h55m58.jpg"
     },
     {
       "nome": "Vetta: 2022-07-26-19H55M58",
       "lat": 41.127,
       "lon": 9.055,
-      "zoom": 12
+      "zoom": 12,
+      "vip": false,
+      "foto": "foto/sardegna 2022/2022-07-26-19h55m58.jpg"
     },
     {
       "nome": "Avvicinamento zona 2021-06-19-10H42M37",
       "lat": 46.1412,
       "lon": 10.9655,
-      "zoom": 5
+      "zoom": 6,
+      "vip": false,
+      "foto": "foto/garda ledro molveno 2021/2021-06-19-10h42m37.jpg"
     },
     {
       "nome": "Vetta: 2021-06-19-10H42M37",
       "lat": 46.1412,
       "lon": 10.9655,
-      "zoom": 12
+      "zoom": 12,
+      "vip": false,
+      "foto": "foto/garda ledro molveno 2021/2021-06-19-10h42m37.jpg"
     },
     {
       "nome": "Avvicinamento zona 2013-03-29-10H14M15",
-      "lat": 24.4132,
-      "lon": 54.4731,
-      "zoom": 5
+      "lat": 24.413156,
+      "lon": 54.473133,
+      "zoom": 6,
+      "vip": false,
+      "foto": "foto/eau_oman 2013/2013-03-29-10h14m15.jpg"
     },
     {
       "nome": "Vetta: 2013-03-29-10H14M15",
-      "lat": 24.4132,
-      "lon": 54.4731,
-      "zoom": 12
+      "lat": 24.413156,
+      "lon": 54.473133,
+      "zoom": 12,
+      "vip": false,
+      "foto": "foto/eau_oman 2013/2013-03-29-10h14m15.jpg"
     }
   ]
 }
