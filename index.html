@@ -217,7 +217,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       left: 50%;
       transform: translateX(-50%);
       z-index: 2001;
-      background: rgba(220, 53, 69, 0.95); /* Rosso scuro per spiccare molto */
+      background: rgba(220, 53, 69, 0.95);
       color: #ffffff;
       padding: 10px 20px;
       border-radius: 30px;
@@ -225,7 +225,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       font-weight: bold;
       box-shadow: 0 4px 15px rgba(0,0,0,0.5);
       text-align: center;
-      pointer-events: none; /* Lascia passare i click alla mappa sottostante */
+      pointer-events: none;
       border: 1px solid rgba(255, 255, 255, 0.5);
       width: 85vw;
       max-width: 350px;
@@ -903,7 +903,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       <!-- SELETTORE LINGUA INDIPENDENTE DAL DOMINIO -->
       <div class="filtro-group" style="flex-direction: column; align-items: flex-start; gap: 4px; margin-bottom: 4px;">
         <label for="select-lingua"><b>🌐 Lingua / Language:</b></label>
-        <select id="select-lingua" onchange="window.location.href = this.value + ?t;" style="width: 100%;">
+        <select id="select-lingua" onchange="window.location.href = this.value;" style="width: 100%;">
           <option value="index.html" selected>🇮🇹 Italiano</option>
           <option value="index_en.html">🇬🇧 English</option>
         </select>
@@ -1076,7 +1076,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       border: 1px solid rgba(0,0,0,0.15);
     ">
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; border-bottom: 2px solid #007bff; padding-bottom: 6px;">
-        <h3 style="margin:0; font-size:16px; color:#2c3e50;">🌍 Guida e Informazioni</h3>
+        <h3 style="margin:0; font-size:16px; color:#2c3e50;">🌍 Guida e Informazioni (v3.26)</h3>
         <button onclick="chiudiModalAiuto()" style="background:none; border:none; font-size:20px; cursor:pointer; color:#666;">✖</button>
       </div>
       
@@ -1118,7 +1118,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
         <b style="color:#007bff;">⚙ OPZIONI MENU (☰)</b>
         <ul style="margin: 4px 0 10px 0; padding-left: 18px; font-size: 12px;">
           <li><b>Diari di Viaggio:</b> elenco automatico e aggiornato dei diari consultabili.</li>
-          <li><b>Stile Mappa:</b> per scegliere tra mappa standard (OpenStreetMap), satellitare (Esri), ibrida, topografica o sfondi minimali CARTO.</li>
+          <li><b>Stile Mappa:</b> per scegliere tra mappa Esri Streets, standard (OpenStreetMap), satellitare (Esri), ibrida, topografica o terreno.</li>
           <li><b>Dimensione Puntine:</b> permette di ingrandire o rimpicciolire i pin (Piccole, Standard, Grandi) per adattarli al tuo schermo.</li>
           <li><b>Raggruppa punti (Clustering):</b> unisce le puntine vicine in un unico cerchio numerato per non affollare la mappa.</li>
           <li><b>Abilita selezione Anno:</b> attiva un menu aggiuntivo per mostrare solo le tappe di un anno specifico.</li>
@@ -1338,7 +1338,6 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       attribution: 'Tiles &copy; Esri'
     });
 
-
     const layerOSM = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       ...opzioniTileFluide,
       maxZoom: 19,
@@ -1368,7 +1367,6 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       attribution: 'Tiles &copy; Esri Physical'
     });
 
- 
     let currentTileLayer = layerEsriStreet.addTo(map);
     
 	function cambiaStileMappa() {
@@ -1387,7 +1385,6 @@ function selezionaViaggioEChiudi(nomeViaggio) {
 
       currentTileLayer.addTo(map);
     }
-
 
     let tuttiIDati = [];
     let datiPaesiVisitati = null;
@@ -1454,11 +1451,9 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       const latRad = step.lat * Math.PI / 180;
       const n = Math.pow(2, z);
 
-      // Calcola il tile centrale (x, y) alla coordinata e zoom di arrivo
       const centerX = Math.floor((step.lon + 180) / 360 * n);
       const centerY = Math.floor((1 - Math.log(Math.tan(latRad) + 1 / Math.cos(latRad)) / Math.PI) / 2 * n);
 
-      // Calcola quanti tile coprono lo schermo attuale (+1 di margine)
       const rangeX = Math.ceil((window.innerWidth / 256) / 2) + 1;
       const rangeY = Math.ceil((window.innerHeight / 256) / 2) + 1;
 
@@ -1493,7 +1488,6 @@ function selezionaViaggioEChiudi(nomeViaggio) {
         }
       }
 
-      // Se lo step ha una foto VIP associata, precarica anche la miniatura del popup
       if (step.foto) {
         const imgFoto = new Image();
         imgFoto.src = step.foto.replace(/^foto[\/\\]/, 'webp/').replace(/\.jpg$/i, '.webp');
@@ -1503,7 +1497,6 @@ function selezionaViaggioEChiudi(nomeViaggio) {
     function avviaAnimazioneApertura() {
       animazioneInCorso = true;
       
-      // Mostra il fumetto di avviso
       const tooltipAnim = document.getElementById('tooltip-animazione');
       if (tooltipAnim) tooltipAnim.style.display = 'block';
 
@@ -1513,12 +1506,9 @@ function selezionaViaggioEChiudi(nomeViaggio) {
           if (!animazioneInCorso) return;
           map.setView([15, -160], 2, { animate: false }); 
 
-          // Mescola in modo casuale a blocchi di 2 (Avvicinamento + Vetta)
-          // mantenendo TUTTE le coppie VIP sempre per prime (mescolate tra loro)
           if (config.destinazioni && config.destinazioni.length > 0) {
             let blocchi = [];
             
-            // 1. Raggruppa le destinazioni a due a due (coppie Avvicinamento + Vetta)
             for (let i = 0; i < config.destinazioni.length; i += 2) {
               if (i + 1 < config.destinazioni.length) {
                 blocchi.push([config.destinazioni[i], config.destinazioni[i + 1]]);
@@ -1527,7 +1517,6 @@ function selezionaViaggioEChiudi(nomeViaggio) {
               }
             }
 
-            // 2. Separa le coppie VIP dalle restanti
             let primeCoppie = [];
             let altreCoppie = [];
 
@@ -1546,7 +1535,6 @@ function selezionaViaggioEChiudi(nomeViaggio) {
               altreCoppie = blocchi.slice(numeroPrimeCoppie);
             }
 
-            // Funzione di rimescolamento (Fisher-Yates)
             function mescolaArray(arr) {
               for (let i = arr.length - 1; i > 0; i--) {
                 const j = Math.floor(Math.random() * (i + 1));
@@ -1554,13 +1542,11 @@ function selezionaViaggioEChiudi(nomeViaggio) {
               }
             }
 
-            // 3. Rimescola separatamente i VIP e i non-VIP
             mescolaArray(primeCoppie);
             mescolaArray(altreCoppie);
 
             console.log(`🎬 Regia apertura: ${primeCoppie.length} coppie VIP in testa + ${altreCoppie.length} coppie secondarie.`);
 
-            // 4. Ricostruisci l'array finale unendo prima tutte le coppie VIP e poi le altre
             config.destinazioni = [];
             primeCoppie.concat(altreCoppie).forEach(blocco => {
               config.destinazioni.push(...blocco);
@@ -1587,23 +1573,20 @@ function selezionaViaggioEChiudi(nomeViaggio) {
         const tooltipAnim = document.getElementById('tooltip-animazione');
         if (tooltipAnim) tooltipAnim.style.display = 'none';
         
-        return; // Sequenza terminata
+        return;
       }
 
       const step = config.destinazioni[index];
       const isVetta = step.nome.startsWith("Vetta");
 
-      // Chiude la foto precedente all'inizio di un nuovo avvicinamento
       if (step.nome.startsWith("Avvicinamento")) {
         map.closePopup();
       }
       
-      // Sceglie la durata corretta dal JSON (Avvicinamento vs Vetta)
       const durataVolo = isVetta 
         ? (config.durata_vetta_secondi || config.durata_volo_secondi || 3.5)
         : (config.durata_avvicinamento_secondi || config.durata_volo_secondi || 6);
 
-      // Mentre vola verso lo step corrente, precarica già i 2 step successivi
       precaricaStepApertura(config.destinazioni[index + 1]);
       precaricaStepApertura(config.destinazioni[index + 2]);
 
@@ -1624,7 +1607,6 @@ function selezionaViaggioEChiudi(nomeViaggio) {
 
             let markerTrovato = null;
 
-            // 1. Cerca prima il marker esatto tramite il nome del file foto (così apre sempre la foto VIP giusta!)
             if (step.foto) {
               const idxFoto = puntiSlideshow.findIndex(p => p.foto === step.foto);
               if (idxFoto !== -1 && markersSlideshow[idxFoto]) {
@@ -1632,7 +1614,6 @@ function selezionaViaggioEChiudi(nomeViaggio) {
               }
             }
 
-            // 2. Fallback per coordinate se il campo foto non è presente
             if (!markerTrovato) {
               markerTrovato = markersSlideshow.find(m => {
                 const ll = m.getLatLng();
@@ -1657,10 +1638,9 @@ function selezionaViaggioEChiudi(nomeViaggio) {
     function fermaAnimazioneIniziale() {
       if (animazioneInCorso) {
         animazioneInCorso = false;
-        map.stop(); // Blocca il volo immediatamente
+        map.stop();
       }
       
-      // Nasconde il fumetto dell'animazione al primo tocco
       const tooltipAnim = document.getElementById('tooltip-animazione');
       if (tooltipAnim) tooltipAnim.style.display = 'none';
     }
@@ -1922,7 +1902,6 @@ function selezionaViaggioEChiudi(nomeViaggio) {
         return a.titolo.localeCompare(b.titolo);
       });
 
-      // Popola il selettore nel menu hamburger
       selectDiario.innerHTML = '<option value="">Seleziona un diario...</option>';
       diariArray.forEach(d => {
         const option = document.createElement('option');
@@ -1940,7 +1919,6 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       const optSelezionata = selectElem.options[selectElem.selectedIndex];
       const nomeViaggio = optSelezionata ? optSelezionata.dataset.viaggio : '';
 
-      // Se associato a un viaggio specifico, aggiorna anche la selezione e la mappa
       if (nomeViaggio) {
         const selectViaggio = document.getElementById('select-viaggio');
         if (selectViaggio && selectViaggio.value !== nomeViaggio) {
@@ -1949,14 +1927,11 @@ function selezionaViaggioEChiudi(nomeViaggio) {
         }
       }
 
-      // Chiude il menu a comparsa
       const menu = document.getElementById('menu-panel');
       if (menu) menu.classList.remove('show');
 
-      // Apre il diario in una nuova scheda
       window.open(url, '_blank', 'noopener');
 
-      // Resetta il selettore alla prima opzione
       selectElem.value = "";
     }
 
@@ -2111,7 +2086,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
     function cambiaVelocita() {
       tempoIntervallo = parseInt(document.getElementById('select-speed').value, 10) || 4000;
       if (isSlideshowActive && !isSlideshowPaused) {
-        avviaTimer(); // Riparte subito da capo con la nuova velocità scelta
+        avviaTimer();
       }
     }
 
@@ -2121,7 +2096,6 @@ function selezionaViaggioEChiudi(nomeViaggio) {
 
       if (!isSlideshowActive || isSlideshowPaused) return;
 
-      // Legge sempre il valore aggiornato dal selettore (2s, 4s, 6s, 8s, 10s, 12s)
       tempoIntervallo = parseInt(document.getElementById('select-speed').value, 10) || 4000;
 
       slideshowTimer = setTimeout(() => {
@@ -2134,7 +2108,6 @@ function selezionaViaggioEChiudi(nomeViaggio) {
     function mostraSlide(index) {
       if (index < 0 || index >= markersSlideshow.length) return;
 
-      // Ferma subito qualunque conto alla rovescia precedente
       clearTimeout(slideshowTimer);
       slideshowTimer = null;
 
@@ -2162,7 +2135,6 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       const imgElem = document.getElementById('slideshow-img');
       const nuovoSrc = p.foto.replace(/^foto[\/\\]/, 'webp/').replace(/\.jpg$/i, '.webp');
 
-      // Il timer parte DA ZERO solo quando la nuova foto è effettivamente caricata a schermo
       imgElem.onload = function() {
         if (isSlideshowActive && !isSlideshowPaused) {
           avviaTimer();
@@ -2181,7 +2153,6 @@ function selezionaViaggioEChiudi(nomeViaggio) {
 
       document.getElementById('slideshow-counter').textContent = `${index + 1} / ${markersSlideshow.length}`;
 
-      // Sicurezza extra se l'immagine era già in cache immediata
       if (imgElem.complete && isSlideshowActive && !isSlideshowPaused) {
         avviaTimer();
       }
@@ -2190,13 +2161,13 @@ function selezionaViaggioEChiudi(nomeViaggio) {
     function nextSlide() {
       if (markersSlideshow.length === 0) return;
       currentSlideIndex = (currentSlideIndex + 1) % markersSlideshow.length;
-      mostraSlide(currentSlideIndex); // mostraSlide azzera e fa ripartire il timer da capo
+      mostraSlide(currentSlideIndex);
     }
 
     function prevSlide() {
       if (markersSlideshow.length === 0) return;
       currentSlideIndex = (currentSlideIndex - 1 + markersSlideshow.length) % markersSlideshow.length;
-      mostraSlide(currentSlideIndex); // mostraSlide azzera e fa ripartire il timer da capo
+      mostraSlide(currentSlideIndex);
     }
 
     function togglePlayPause() {
@@ -2204,11 +2175,9 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       document.getElementById('btn-play-pause').textContent = isSlideshowPaused ? '▶' : '⏸';
 
       if (isSlideshowPaused) {
-        // In pausa: cancella completamente il timer
         clearTimeout(slideshowTimer);
         slideshowTimer = null;
       } else {
-        // Quando si toglie la pausa: il timer riparte da zero per l'intera durata!
         avviaTimer();
       }
     }
@@ -2241,7 +2210,6 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       document.getElementById('filtro-container').style.display = 'flex';
       controls.style.display = 'none';
       
-      // NUOVA MODIFICA: Ripristina la select su "Tutti i viaggi"
       const selectViaggio = document.getElementById('select-viaggio');
       if (selectViaggio) {
         selectViaggio.value = 'tutti';
