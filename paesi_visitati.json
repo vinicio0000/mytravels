@@ -333,6 +333,12 @@
       ],
       "stati_usa": []
     },
+    "salento 2019": {
+      "paesi": [
+        "Italia"
+      ],
+      "stati_usa": []
+    },
     "sardegna 1996": {
       "paesi": [
         "Italia"
@@ -346,6 +352,12 @@
       "stati_usa": []
     },
     "sardegna 2022": {
+      "paesi": [
+        "Italia"
+      ],
+      "stati_usa": []
+    },
+    "scanno 2011": {
       "paesi": [
         "Italia"
       ],
@@ -505,6 +517,18 @@
         "Romania",
         "Turchia",
         "Ungheria"
+      ],
+      "stati_usa": []
+    },
+    "val d'aosta 2023": {
+      "paesi": [
+        "Italia"
+      ],
+      "stati_usa": []
+    },
+    "venezia 2019": {
+      "paesi": [
+        "Italia"
       ],
       "stati_usa": []
     },
