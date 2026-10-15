@@ -1,4 +1,4 @@
-<!-- VERSION: 3.28_PAN_GIAPPONE_EUROPA_STESSA_SCHEDA -->
+<!-- VERSION: 3.29_SLIDESHOW_DEFAULT_10S_14S_16S -->
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -969,11 +969,13 @@ function selezionaViaggioEChiudi(nomeViaggio) {
     <div class="slideshow-speed-container">
       <select id="select-speed" onchange="cambiaVelocita()">
         <option value="2000">2s</option>
-        <option value="4000" selected>4s</option>
+        <option value="4000">4s</option>
         <option value="6000">6s</option>
         <option value="8000">8s</option>
-        <option value="10000">10s</option>
+        <option value="10000" selected>10s</option>
         <option value="12000">12s</option>
+        <option value="14000">14s</option>
+        <option value="16000">16s</option>
       </select>
     </div>
 
@@ -1041,7 +1043,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       border: 1px solid rgba(0,0,0,0.15);
     ">
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; border-bottom: 2px solid #007bff; padding-bottom: 6px;">
-        <h3 style="margin:0; font-size:16px; color:#2c3e50;">🌍 Guida e Informazioni (v3.28)</h3>
+        <h3 style="margin:0; font-size:16px; color:#2c3e50;">🌍 Guida e Informazioni (v3.29)</h3>
         <button onclick="chiudiModalAiuto()" style="background:none; border:none; font-size:20px; cursor:pointer; color:#666;">✖</button>
       </div>
       
@@ -1073,7 +1075,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
           <span style="background:#2c3e50; color:white; padding:3px 8px; border-radius:12px; font-size:11px;">◀</span>
           <span style="background:#2c3e50; color:white; padding:3px 8px; border-radius:12px; font-size:11px;">⏸</span>
           <span style="background:#2c3e50; color:white; padding:3px 8px; border-radius:12px; font-size:11px;">▶</span>
-          <span style="background:#2c3e50; color:white; padding:3px 8px; border-radius:12px; font-size:11px;">4s ▾ Velocità</span>
+          <span style="background:#2c3e50; color:white; padding:3px 8px; border-radius:12px; font-size:11px;">10s ▾ Velocità</span>
           <span style="background:#dc3545; color:white; padding:3px 8px; border-radius:12px; font-size:11px;">✖ Esci</span>
         </p>
         <p style="margin: 4px 0 10px 0; font-style: italic; font-size: 11px; color: #555;">
@@ -1459,7 +1461,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
     let isSlideshowActive = false;
     let isSlideshowPaused = false;
     let currentSlideIndex = 0;
-    let tempoIntervallo = 4000;
+    let tempoIntervallo = 10000;
     let puntiSlideshow = [];
     let markersSlideshow = [];
     let wakeLock = null;
@@ -1923,7 +1925,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       document.getElementById('slideshow-controls').style.display = 'flex';
       document.getElementById('btn-play-pause').textContent = '⏸';
 
-      tempoIntervallo = parseInt(document.getElementById('select-speed').value, 10) || 4000;
+      tempoIntervallo = parseInt(document.getElementById('select-speed').value, 10) || 10000;
 
       setTimeout(() => {
         map.invalidateSize();
@@ -1932,7 +1934,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
     }
 
     function cambiaVelocita() {
-      tempoIntervallo = parseInt(document.getElementById('select-speed').value, 10) || 4000;
+      tempoIntervallo = parseInt(document.getElementById('select-speed').value, 10) || 10000;
       if (isSlideshowActive && !isSlideshowPaused) {
         avviaTimer();
       }
@@ -1944,7 +1946,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
 
       if (!isSlideshowActive || isSlideshowPaused) return;
 
-      tempoIntervallo = parseInt(document.getElementById('select-speed').value, 10) || 4000;
+      tempoIntervallo = parseInt(document.getElementById('select-speed').value, 10) || 10000;
 
       slideshowTimer = setTimeout(() => {
         if (isSlideshowActive && !isSlideshowPaused) {
