@@ -1,5 +1,125 @@
 [
   {
+    "nome": "20200228 120332",
+    "viaggio": "abruzzo 2020",
+    "anno": "2020",
+    "data": "28/02/2020",
+    "lat": 42.0468,
+    "lon": 13.9248,
+    "foto": "foto/abruzzo 2020/20200228_120332.jpg",
+    "descrizione": "Luisa e il cocker spaniel nero in sosta davanti alla bottega storica dei celebri confetti Pelino sotto un arco in pietra a Sulmona, con colorate composizioni floreali di confetti in cesti di vimini."
+  },
+  {
+    "nome": "20200228 120442",
+    "viaggio": "abruzzo 2020",
+    "anno": "2020",
+    "data": "28/02/2020",
+    "lat": 42.0475,
+    "lon": 13.9252,
+    "foto": "foto/abruzzo 2020/20200228_120442.jpg",
+    "descrizione": "Scorcio prospettico delle arcate ogivali dell'Acquedotto Medievale in Piazza Garibaldi a Sulmona, con vista verso la Chiesa di San Filippo Neri e le colline circostanti."
+  },
+  {
+    "nome": "20200228 120453",
+    "viaggio": "abruzzo 2020",
+    "anno": "2020",
+    "data": "28/02/2020",
+    "lat": 42.0476,
+    "lon": 13.9253,
+    "foto": "foto/abruzzo 2020/20200228_120453.jpg",
+    "descrizione": "Luisa a passeggio con il cocker spaniel nero lungo il camminamento rialzato dell'Acquedotto Medievale a Sulmona, con le campate in pietra e gli edifici storici sullo sfondo."
+  },
+  {
+    "nome": "20200228 181404",
+    "viaggio": "abruzzo 2020",
+    "anno": "2020",
+    "data": "28/02/2020",
+    "lat": 41.9791,
+    "lon": 13.8742,
+    "foto": "foto/abruzzo 2020/20200228_181404.jpg",
+    "descrizione": "Luisa in abbigliamento invernale con il fedele cocker spaniel al guinzaglio all'imbrunire tra i suggestivi vicoli medievali e le gradinate in pietra di Scanno."
+  },
+  {
+    "nome": "20200228 181413",
+    "viaggio": "abruzzo 2020",
+    "anno": "2020",
+    "data": "28/02/2020",
+    "lat": 41.9792,
+    "lon": 13.8743,
+    "foto": "foto/abruzzo 2020/20200228_181413.jpg",
+    "descrizione": "Scorcio serale nel borgo di Scanno, con Luisa e il cocker spaniel nero su pavimentazione lastricata davanti ad antichi portali in pietra e all'insegna della trattoria La Nocella."
+  },
+  {
+    "nome": "20200228 183758",
+    "viaggio": "abruzzo 2020",
+    "anno": "2020",
+    "data": "28/02/2020",
+    "lat": 41.9804,
+    "lon": 13.8735,
+    "foto": "foto/abruzzo 2020/20200228_183758.jpg",
+    "descrizione": "Facciata e torre campanaria in pietra squadrata della Chiesa Parrocchiale di Santa Maria della Valle a Scanno, con la nicchia della statua votiva e l'orologio illuminato di notte."
+  },
+  {
+    "nome": "20200228 184327",
+    "viaggio": "abruzzo 2020",
+    "anno": "2020",
+    "data": "28/02/2020",
+    "lat": 41.9808,
+    "lon": 13.8729,
+    "foto": "foto/abruzzo 2020/20200228_184327.jpg",
+    "descrizione": "Suggestivo e ripido vicolo a gradoni (la 'camicia') che scende tra le strette case in pietra del borgo antico di Scanno, rischiarato dalle lanterne serali."
+  },
+  {
+    "nome": "20200228 185240",
+    "viaggio": "abruzzo 2020",
+    "anno": "2020",
+    "data": "28/02/2020",
+    "lat": 41.9812,
+    "lon": 13.8732,
+    "foto": "foto/abruzzo 2020/20200228_185240.jpg",
+    "descrizione": "Scorcio notturno di un antico edificio rustico a Scanno caratterizzato da una scenografica scala d'accesso esterna con arco a tutto sesto e portale monumentale in pietra."
+  },
+  {
+    "nome": "20200229 102309",
+    "viaggio": "abruzzo 2020",
+    "anno": "2020",
+    "data": "29/02/2020",
+    "lat": 41.8105,
+    "lon": 13.8643,
+    "foto": "foto/abruzzo 2020/20200229_102309.jpg",
+    "descrizione": "Ingresso del borgo montano di Civitella Alfedena nel Parco Nazionale d'Abruzzo, con antico fontanile in pietra in primo piano e muli da soma condotti lungo la strada lastricata."
+  },
+  {
+    "nome": "20200229 103005",
+    "viaggio": "abruzzo 2020",
+    "anno": "2020",
+    "data": "29/02/2020",
+    "lat": 41.8118,
+    "lon": 13.8652,
+    "foto": "foto/abruzzo 2020/20200229_103005.jpg",
+    "descrizione": "Scena di vita rurale a Civitella Alfedena con un mulattiere locale accanto a una fila di muli e cavalli da soma con basto, pronti per il trasporto della legna nel bosco."
+  },
+  {
+    "nome": "20200229 104759",
+    "viaggio": "abruzzo 2020",
+    "anno": "2020",
+    "data": "29/02/2020",
+    "lat": 41.8111,
+    "lon": 13.8654,
+    "foto": "foto/abruzzo 2020/20200229_104759.jpg",
+    "descrizione": "Vinicio e il cocker spaniel nero in sosta sulla caratteristica scalinata in selciato di Civitella Alfedena, ai piedi della cinquecentesca Torre Saetta dell'albergo diffuso."
+  },
+  {
+    "nome": "20200229 105235",
+    "viaggio": "abruzzo 2020",
+    "anno": "2020",
+    "data": "29/02/2020",
+    "lat": 41.8114,
+    "lon": 13.8651,
+    "foto": "foto/abruzzo 2020/20200229_105235.jpg",
+    "descrizione": "Piazzetta e scalinata lastricata tra le caratteristiche case montane in pietra intonacata di bianco a Civitella Alfedena, con fioriera rustica in pietra locale."
+  },
+  {
     "nome": "2018-07-20-21H57M07",
     "viaggio": "africa 2018",
     "anno": "2018",
@@ -12393,6 +12513,446 @@
     "descrizione": "Ampio e curato prato verde di un campeggio o parco, incorniciato da alberi, con una spettacolare e limpida vista sulle imponenti cime rocciose delle Dolomiti di Brenta sullo sfondo.[cite: 99]"
   },
   {
+    "nome": "Dsc00243",
+    "viaggio": "gargano 2020",
+    "anno": "2020",
+    "data": "26/08/2020",
+    "lat": 41.8942,
+    "lon": 16.1558,
+    "foto": "foto/gargano 2020/DSC00243.jpg",
+    "descrizione": "Luisa a passeggio con il cocker spaniel nero lungo il viale pavimentato e ombreggiato da pini marittimi e oleandri del villaggio camping a Vieste."
+  },
+  {
+    "nome": "Dsc00249",
+    "viaggio": "gargano 2020",
+    "anno": "2020",
+    "data": "26/08/2020",
+    "lat": 41.8965,
+    "lon": 16.1581,
+    "foto": "foto/gargano 2020/DSC00249.jpg",
+    "descrizione": "Vinicio in costume e maglietta chiara sul bagnasciuga della spiaggia sabbiosa di Vieste con il cane al guinzaglio, tra bagnanti e colline costiere sullo sfondo."
+  },
+  {
+    "nome": "Dsc00256",
+    "viaggio": "gargano 2020",
+    "anno": "2020",
+    "data": "26/08/2020",
+    "lat": 41.8786,
+    "lon": 16.1794,
+    "foto": "foto/gargano 2020/DSC00256.jpg",
+    "descrizione": "Scorcio serale della Spiaggia del Castello (Scialara) a Vieste, con stabilimento balneare a file ordinate di ombrelloni arancioni, falesia calcarea bianca e l'imponente monolite del Pizzomunno."
+  },
+  {
+    "nome": "Dsc00260",
+    "viaggio": "gargano 2020",
+    "anno": "2020",
+    "data": "26/08/2020",
+    "lat": 41.8783,
+    "lon": 16.1791,
+    "foto": "foto/gargano 2020/DSC00260.jpg",
+    "descrizione": "Suggestiva vista notturna illuminata della candida falesia a strapiombo e del faraglione calcareo del Pizzomunno a Vieste, simbolo del Gargano."
+  },
+  {
+    "nome": "Dsc00264",
+    "viaggio": "gargano 2020",
+    "anno": "2020",
+    "data": "26/08/2020",
+    "lat": 41.8817,
+    "lon": 16.1764,
+    "foto": "foto/gargano 2020/DSC00264.jpg",
+    "descrizione": "Monumento ai Caduti di Vieste in notturna con la statua bronzea della Vittoria alata, affiancata dalle bandiere istituzionale ed europea, lungo Corso Lorenzo Fazzini."
+  },
+  {
+    "nome": "Dsc00265",
+    "viaggio": "gargano 2020",
+    "anno": "2020",
+    "data": "26/08/2020",
+    "lat": 41.8821,
+    "lon": 16.177,
+    "foto": "foto/gargano 2020/DSC00265.jpg",
+    "descrizione": "Piazza del Fosso (Piazza Vittorio Emanuele II) a Vieste in notturna, animata da tavoli all'aperto di ristoranti tipici e dominata dalla fontana ornamentale a pianta poligonale."
+  },
+  {
+    "nome": "Dsc00266",
+    "viaggio": "gargano 2020",
+    "anno": "2020",
+    "data": "26/08/2020",
+    "lat": 41.8837,
+    "lon": 16.1822,
+    "foto": "foto/gargano 2020/DSC00266.jpg",
+    "descrizione": "Piazzale di Marina Piccola a Vieste in notturna, con passeggiata lastricata affacciata sul mare e sullo sfondo l'antico borgo medievale illuminato verso Punta San Francesco."
+  },
+  {
+    "nome": "Dsc00269",
+    "viaggio": "gargano 2020",
+    "anno": "2020",
+    "data": "26/08/2020",
+    "lat": 41.8828,
+    "lon": 16.1804,
+    "foto": "foto/gargano 2020/DSC00269.jpg",
+    "descrizione": "Veduta notturna del campanile barocco della Concattedrale di Santa Maria Assunta a Vieste che svetta illuminato sopra i tetti del centro storico."
+  },
+  {
+    "nome": "Dsc00272",
+    "viaggio": "gargano 2020",
+    "anno": "2020",
+    "data": "27/08/2020",
+    "lat": 41.8935,
+    "lon": 16.1562,
+    "foto": "foto/gargano 2020/DSC00272.jpg",
+    "descrizione": "Il fedele cocker spaniel nero accucciato all'ombra nella pineta del campeggio a Vieste, accanto a un pino su telo da campeggio con ciotola dell'acqua."
+  },
+  {
+    "nome": "Dsc00273",
+    "viaggio": "gargano 2020",
+    "anno": "2020",
+    "data": "27/08/2020",
+    "lat": 41.8936,
+    "lon": 16.1563,
+    "foto": "foto/gargano 2020/DSC00273.jpg",
+    "descrizione": "Piazzola camper attrezzata in campeggio a Vieste, completa di veranda aperta, tavolo da pranzo, sedie a sdraio e rete ombreggiante superiore."
+  },
+  {
+    "nome": "Dsc00274",
+    "viaggio": "gargano 2020",
+    "anno": "2020",
+    "data": "27/08/2020",
+    "lat": 41.8718,
+    "lon": 16.1824,
+    "foto": "foto/gargano 2020/DSC00274.jpg",
+    "descrizione": "Vinicio in riva al mare con il cocker spaniel nero sulla battigia della Spiaggia della Scialara a Vieste alle prime luci del giorno."
+  },
+  {
+    "nome": "Dsc00281",
+    "viaggio": "gargano 2020",
+    "anno": "2020",
+    "data": "27/08/2020",
+    "lat": 41.8705,
+    "lon": 16.1827,
+    "foto": "foto/gargano 2020/DSC00281.jpg",
+    "descrizione": "Tratto meridionale della Spiaggia della Scialara a Vieste, caratterizzato dalla foce di un piccolo corso d'acqua che solca la sabbia verso il mare aperto."
+  },
+  {
+    "nome": "Dsc00289",
+    "viaggio": "gargano 2020",
+    "anno": "2020",
+    "data": "27/08/2020",
+    "lat": 41.8741,
+    "lon": 16.1835,
+    "foto": "foto/gargano 2020/DSC00289.jpg",
+    "descrizione": "Panoramica dal mare del centro storico di Vieste abbarbicato sulla falesia calcarea bianca, dominato dal Castello Svevo Aragonese e dalla cattedrale."
+  },
+  {
+    "nome": "Dsc00301",
+    "viaggio": "gargano 2020",
+    "anno": "2020",
+    "data": "27/08/2020",
+    "lat": 41.8672,
+    "lon": 16.1856,
+    "foto": "foto/gargano 2020/DSC00301.jpg",
+    "descrizione": "Caletta rocciosa riparata tra le falesie bianche a sud di Vieste, con vista prospettica in lontananza sul profilo della città vecchia sul mare."
+  },
+  {
+    "nome": "Dsc00315",
+    "viaggio": "gargano 2020",
+    "anno": "2020",
+    "data": "27/08/2020",
+    "lat": 41.8665,
+    "lon": 16.1861,
+    "foto": "foto/gargano 2020/DSC00315.jpg",
+    "descrizione": "Scogliera calcarea a picco sulle acque limpide del Gargano con palo ligneo in primo piano e borgo storico di Vieste sullo sfondo dell'orizzonte marino."
+  },
+  {
+    "nome": "Dsc00317",
+    "viaggio": "gargano 2020",
+    "anno": "2020",
+    "data": "27/08/2020",
+    "lat": 41.8651,
+    "lon": 16.1869,
+    "foto": "foto/gargano 2020/DSC00317.jpg",
+    "descrizione": "Grotta marina naturale con spiaggia interna incastonata nella candida falesia calcarea stratificata e macchia mediterranea lungo la costa garganica."
+  },
+  {
+    "nome": "Dsc00343",
+    "viaggio": "gargano 2020",
+    "anno": "2020",
+    "data": "27/08/2020",
+    "lat": 41.8698,
+    "lon": 16.1798,
+    "foto": "foto/gargano 2020/DSC00343.jpg",
+    "descrizione": "Ingresso del Villaggio Camping Arizona sul Lungomare Enrico Mattei a Vieste, con muretto in pietra, cancello in ferro battuto e folta vegetazione di palme."
+  },
+  {
+    "nome": "Dsc00346",
+    "viaggio": "gargano 2020",
+    "anno": "2020",
+    "data": "27/08/2020",
+    "lat": 41.8823,
+    "lon": 16.1762,
+    "foto": "foto/gargano 2020/DSC00346.jpg",
+    "descrizione": "Bancarella di tipicità gastronomiche garganiche a Vieste con trecce decorative di peperoncini piccanti essiccati, aglio, origano montano e caciocavalli."
+  },
+  {
+    "nome": "Dsc00347",
+    "viaggio": "gargano 2020",
+    "anno": "2020",
+    "data": "27/08/2020",
+    "lat": 41.8824,
+    "lon": 16.1763,
+    "foto": "foto/gargano 2020/DSC00347.jpg",
+    "descrizione": "Banco artigianale a Vieste con grandi conchiglie marine Tonna galea e modellini in miniatura in legno dei celebri trabucchi da pesca del Gargano."
+  },
+  {
+    "nome": "Dsc00348",
+    "viaggio": "gargano 2020",
+    "anno": "2020",
+    "data": "27/08/2020",
+    "lat": 41.8824,
+    "lon": 16.1763,
+    "foto": "foto/gargano 2020/DSC00348.jpg",
+    "descrizione": "Esposizione di modellini artigianali in legno di trabucchi da pesca e riproduzioni in pietra del monolite Pizzomunno con listino prezzi a Vieste."
+  },
+  {
+    "nome": "Dsc00349",
+    "viaggio": "gargano 2020",
+    "anno": "2020",
+    "data": "27/08/2020",
+    "lat": 41.8824,
+    "lon": 16.1763,
+    "foto": "foto/gargano 2020/DSC00349.jpg",
+    "descrizione": "Bancarella di pasta secca artigianale tipica pugliese a Vieste (orecchiette, strascinate, cavatelli tricolore e trofie) esposta su tovaglia a scacchi."
+  },
+  {
+    "nome": "Dsc00350",
+    "viaggio": "gargano 2020",
+    "anno": "2020",
+    "data": "27/08/2020",
+    "lat": 41.8825,
+    "lon": 16.1764,
+    "foto": "foto/gargano 2020/DSC00350.jpg",
+    "descrizione": "Bottega gastronomica con ricco assortimento di formaggi garganici, tra cui caciocavallo podolico, cacioricotta, provole e salumi artigianali."
+  },
+  {
+    "nome": "Dsc00351",
+    "viaggio": "gargano 2020",
+    "anno": "2020",
+    "data": "27/08/2020",
+    "lat": 41.8827,
+    "lon": 16.1795,
+    "foto": "foto/gargano 2020/DSC00351.jpg",
+    "descrizione": "Scorcio prospettico di una tipica scalinata lastricata in pietra nel centro storico di Vieste, fiancheggiata da case intonacate a calce bianca."
+  },
+  {
+    "nome": "Dsc00354",
+    "viaggio": "gargano 2020",
+    "anno": "2020",
+    "data": "27/08/2020",
+    "lat": 41.8833,
+    "lon": 16.182,
+    "foto": "foto/gargano 2020/DSC00354.jpg",
+    "descrizione": "Veduta panoramica sul mare azzurro dell'Isola di Sant'Eufemia e del Faro di Vieste che domina l'isolotto a protezione del porto turistico."
+  },
+  {
+    "nome": "Dsc00356",
+    "viaggio": "gargano 2020",
+    "anno": "2020",
+    "data": "27/08/2020",
+    "lat": 41.8826,
+    "lon": 16.1801,
+    "foto": "foto/gargano 2020/DSC00356.jpg",
+    "descrizione": "Negozietto di souvenir e artigianato locale nei vicoli di Vieste, con campanelle decorative, canovacci illustrati delle Isole Tremiti e conchiglie marine."
+  },
+  {
+    "nome": "Dsc00360",
+    "viaggio": "gargano 2020",
+    "anno": "2020",
+    "data": "27/08/2020",
+    "lat": 41.8829,
+    "lon": 16.1803,
+    "foto": "foto/gargano 2020/DSC00360.jpg",
+    "descrizione": "Scalinata in pietra e facciata laterale in pietra viva della Concattedrale di Santa Maria Assunta a Vieste, sovrastata dal campanile settecentesco."
+  },
+  {
+    "nome": "Dsc00364",
+    "viaggio": "gargano 2020",
+    "anno": "2020",
+    "data": "27/08/2020",
+    "lat": 41.8831,
+    "lon": 16.1808,
+    "foto": "foto/gargano 2020/DSC00364.jpg",
+    "descrizione": "Caratteristico passaggio medievale a gradoni sotto un arco con volta a botte in pietra nel centro storico di Vieste, nei pressi dell'Osteria degli Angeli."
+  },
+  {
+    "nome": "Dsc00368",
+    "viaggio": "gargano 2020",
+    "anno": "2020",
+    "data": "27/08/2020",
+    "lat": 41.8834,
+    "lon": 16.1802,
+    "foto": "foto/gargano 2020/DSC00368.jpg",
+    "descrizione": "Vinicio in polo arancione e bermuda davanti all'ingresso del Museo Malacologico di Vieste in Via Pola, con esposizione all'aperto di prodotti tipici."
+  },
+  {
+    "nome": "Dsc00372",
+    "viaggio": "gargano 2020",
+    "anno": "2020",
+    "data": "27/08/2020",
+    "lat": 41.8835,
+    "lon": 16.1821,
+    "foto": "foto/gargano 2020/DSC00372.jpg",
+    "descrizione": "Vinicio affacciato al belvedere con ringhiera di Punta San Francesco a Vieste, con l'Isola di Sant'Eufemia e il faro sullo sfondo delle acque turchesi."
+  },
+  {
+    "nome": "Dsc00382",
+    "viaggio": "gargano 2020",
+    "anno": "2020",
+    "data": "27/08/2020",
+    "lat": 41.8839,
+    "lon": 16.1826,
+    "foto": "foto/gargano 2020/DSC00382.jpg",
+    "descrizione": "Scogli affioranti e acque cristalline poco profonde nei pressi di Punta San Francesco a Vieste, con bagnanti che nuotano attorno alla scogliera."
+  },
+  {
+    "nome": "Dsc00383",
+    "viaggio": "gargano 2020",
+    "anno": "2020",
+    "data": "27/08/2020",
+    "lat": 41.8837,
+    "lon": 16.1823,
+    "foto": "foto/gargano 2020/DSC00383.jpg",
+    "descrizione": "Camminamento panoramico sulla cinta muraria di Punta San Francesco a Vieste verso la seicentesca Chiesa di San Francesco protesa sulla punta estrema."
+  },
+  {
+    "nome": "Dsc00384",
+    "viaggio": "gargano 2020",
+    "anno": "2020",
+    "data": "27/08/2020",
+    "lat": 41.8838,
+    "lon": 16.1825,
+    "foto": "foto/gargano 2020/DSC00384.jpg",
+    "descrizione": "Veduta dall'alto della caletta con acque trasparenti e fondali bassi di Punta San Francesco a Vieste, contornata da grandi massi e vegetazione rupestre."
+  },
+  {
+    "nome": "Dsc00392",
+    "viaggio": "gargano 2020",
+    "anno": "2020",
+    "data": "28/08/2020",
+    "lat": 41.9168,
+    "lon": 16.1342,
+    "foto": "foto/gargano 2020/DSC00392.jpg",
+    "descrizione": "Piscina del Villaggio Camping Oasi a Vieste (Baia di Scialmarino), con vasca idromassaggio a fungo, lettini solarium e fabbricati bianchi in stile mediterraneo."
+  },
+  {
+    "nome": "Dsc00393",
+    "viaggio": "gargano 2020",
+    "anno": "2020",
+    "data": "28/08/2020",
+    "lat": 41.9169,
+    "lon": 16.1345,
+    "foto": "foto/gargano 2020/DSC00393.jpg",
+    "descrizione": "Viale interno lastricato del Villaggio Camping Oasi a Vieste, delimitato da staccionate bianche, aiuole fiorite di oleandri e pini verso l'uscita mare."
+  },
+  {
+    "nome": "Dsc00406",
+    "viaggio": "gargano 2020",
+    "anno": "2020",
+    "data": "28/08/2020",
+    "lat": 41.9165,
+    "lon": 16.1338,
+    "foto": "foto/gargano 2020/DSC00406.jpg",
+    "descrizione": "Piazzola ombreggiata per camper con tettoia verde al Villaggio Camping Oasi a Vieste, completa di camper in sosta, veranda e biciclette."
+  },
+  {
+    "nome": "Dsc00413",
+    "viaggio": "gargano 2020",
+    "anno": "2020",
+    "data": "29/08/2020",
+    "lat": 41.9167,
+    "lon": 16.1341,
+    "foto": "foto/gargano 2020/DSC00413.jpg",
+    "descrizione": "Atmosfera serale a bordo piscina al Villaggio Camping Oasi a Vieste, con lettini prendisole blu, riflessi calmi nell'acqua e bouganville sulla veranda."
+  },
+  {
+    "nome": "Dsc00426",
+    "viaggio": "gargano 2020",
+    "anno": "2020",
+    "data": "04/09/2020",
+    "lat": 41.9185,
+    "lon": 16.1352,
+    "foto": "foto/gargano 2020/DSC00426.jpg",
+    "descrizione": "Spettacolo di onde frangenti e vele da kitesurf che volteggiano nel vento sopra il mare Adriatico alla Baia di Scialmarino a Vieste."
+  },
+  {
+    "nome": "Dsc00438",
+    "viaggio": "gargano 2020",
+    "anno": "2020",
+    "data": "04/09/2020",
+    "lat": 41.9068,
+    "lon": 16.1554,
+    "foto": "foto/gargano 2020/DSC00438.jpg",
+    "descrizione": "Luisa in felpa bianca con il cocker spaniel nero al guinzaglio sulla scogliera calcarea battuta dalla brezza marina a Cala Molinella a Vieste."
+  },
+  {
+    "nome": "Dsc00441",
+    "viaggio": "gargano 2020",
+    "anno": "2020",
+    "data": "04/09/2020",
+    "lat": 41.9069,
+    "lon": 16.1556,
+    "foto": "foto/gargano 2020/DSC00441.jpg",
+    "descrizione": "Struttura in legno e travi del tipico trabucco garganico ancorato alla scogliera a picco sul mare mosso di Cala Molinella a Vieste."
+  },
+  {
+    "nome": "Dsc00457",
+    "viaggio": "gargano 2020",
+    "anno": "2020",
+    "data": "04/09/2020",
+    "lat": 41.9055,
+    "lon": 16.1538,
+    "foto": "foto/gargano 2020/DSC00457.jpg",
+    "descrizione": "Sentiero panoramico costiero tra la macchia mediterranea e collinette di fichi d'India carichi di frutti sul promontorio di Molinella a Vieste."
+  },
+  {
+    "nome": "Dsc00458",
+    "viaggio": "gargano 2020",
+    "anno": "2020",
+    "data": "04/09/2020",
+    "lat": 41.9056,
+    "lon": 16.1539,
+    "foto": "foto/gargano 2020/DSC00458.jpg",
+    "descrizione": "Primo piano di pale di fico d'India con frutti gialli e arancioni lungo il percorso naturalistico della scogliera di Molinella a Vieste."
+  },
+  {
+    "nome": "Dsc00475",
+    "viaggio": "gargano 2020",
+    "anno": "2020",
+    "data": "06/09/2020",
+    "lat": 41.8882,
+    "lon": 16.1718,
+    "foto": "foto/gargano 2020/DSC00475.jpg",
+    "descrizione": "Ingresso e reception del Villaggio Camping Baia degli Aranci sul Lungomare Europa a Vieste, con viale di accesso, sbarra e pineta marittima circostante."
+  },
+  {
+    "nome": "Dsc00487",
+    "viaggio": "gargano 2020",
+    "anno": "2020",
+    "data": "06/09/2020",
+    "lat": 41.8837,
+    "lon": 16.1821,
+    "foto": "foto/gargano 2020/DSC00487.jpg",
+    "descrizione": "Ritratto notturno di Vinicio e Luisa sorridenti ai tavoli all'aperto di Marina Piccola a Vieste, con il lungomare illuminato alle loro spalle."
+  },
+  {
+    "nome": "Dsc00489",
+    "viaggio": "gargano 2020",
+    "anno": "2020",
+    "data": "06/09/2020",
+    "lat": 41.8836,
+    "lon": 16.1818,
+    "foto": "foto/gargano 2020/DSC00489.jpg",
+    "descrizione": "Scorcio notturno del vasto piazzale e della passeggiata lastricata di Marina Piccola a Vieste, illuminata dai lampioni con palme e muretto sul mare."
+  },
+  {
     "nome": "2024-09-21-08H14M26",
     "viaggio": "gargano 2024",
     "anno": "2024",
@@ -21573,6 +22133,1016 @@
     "descrizione": "Orsera - Regione istriana, Croazia"
   },
   {
+    "nome": "2019-07-12-16H54M57",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "12/07/2019",
+    "lat": 45.454,
+    "lon": 13.521,
+    "foto": "foto/istria dolomiti 2019/2019-07-12-16h54m57.jpg",
+    "descrizione": "Vista del parco acquatico e della piscina del Camping Stella Maris a Umago (Istria) filtrata dai pini marittimi e dall'ampio prato verdeggiante."
+  },
+  {
+    "nome": "2019-07-12-17H04M10",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "12/07/2019",
+    "lat": 45.4505,
+    "lon": 13.5175,
+    "foto": "foto/istria dolomiti 2019/2019-07-12-17h04m10.jpg",
+    "descrizione": "Terrazza bar con tavolini e ombrelloni blu Pepsi affacciata sulla spiaggia di ghiaia della Laguna Stella Maris a Umago, con acque calme balneabili."
+  },
+  {
+    "nome": "2019-07-12-17H08M37",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "12/07/2019",
+    "lat": 45.4518,
+    "lon": 13.5152,
+    "foto": "foto/istria dolomiti 2019/2019-07-12-17h08m37.jpg",
+    "descrizione": "Passeggiata litoranea lastricata dello Stella Maris Resort a Umago, tra prato con palme, scogliera rocciosa naturale a picco sul mare Adriatico e bagnanti al sole."
+  },
+  {
+    "nome": "2019-07-12-17H08M41",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "12/07/2019",
+    "lat": 45.4519,
+    "lon": 13.5156,
+    "foto": "foto/istria dolomiti 2019/2019-07-12-17h08m41.jpg",
+    "descrizione": "Pineta e area relax dello Stella Maris Resort a Umago con il totem rosso d'ingresso Plava Laguna e villeggianti distesi sul prato all'ombra dei pini d'Aleppo."
+  },
+  {
+    "nome": "2019-07-12-17H21M28",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "12/07/2019",
+    "lat": 45.4508,
+    "lon": 13.5165,
+    "foto": "foto/istria dolomiti 2019/2019-07-12-17h21m28.jpg",
+    "descrizione": "Struttura coperta in pietra con porticato e aiuole curate all'interno del parco dello Stella Maris Resort a Umago, con scorcio sull'insenatura della laguna."
+  },
+  {
+    "nome": "2019-07-12-17H21M40",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "12/07/2019",
+    "lat": 45.4508,
+    "lon": 13.5165,
+    "foto": "foto/istria dolomiti 2019/2019-07-12-17h21m40.jpg",
+    "descrizione": "Scoiattolo rosso europeo immortalato mentre corre agilmente sul manto erboso all'ombra della pineta nello Stella Maris Resort a Umago."
+  },
+  {
+    "nome": "2019-07-12-18H06M06",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "12/07/2019",
+    "lat": 45.4538,
+    "lon": 13.522,
+    "foto": "foto/istria dolomiti 2019/2019-07-12-18h06m06.jpg",
+    "descrizione": "Piazzola alberata nel Camping Stella Maris a Umago con il camper Elnagh T-Loft, tendalino aperto, stuoia a terra e set da campeggio allestito all'ombra della pineta."
+  },
+  {
+    "nome": "2019-07-12-18H06M59",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "12/07/2019",
+    "lat": 45.4542,
+    "lon": 13.5213,
+    "foto": "foto/istria dolomiti 2019/2019-07-12-18h06m59.jpg",
+    "descrizione": "Panoramica della grande piscina sagomata e dell'area giochi d'acqua per bambini del Camping Stella Maris a Umago, gremita di bagnanti sotto il cielo estivo."
+  },
+  {
+    "nome": "2019-07-12-18H32M31",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "12/07/2019",
+    "lat": 45.4542,
+    "lon": 13.5213,
+    "foto": "foto/istria dolomiti 2019/2019-07-12-18h32m31.jpg",
+    "descrizione": "Vinicio sorridente e con occhiali da sole immerso nelle acque limpide della piscina all'aperto del Camping Stella Maris a Umago."
+  },
+  {
+    "nome": "2019-07-12-18H39M35",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "12/07/2019",
+    "lat": 45.4541,
+    "lon": 13.5211,
+    "foto": "foto/istria dolomiti 2019/2019-07-12-18h39m35.jpg",
+    "descrizione": "Luisa con pareo estivo e borsa gialla a tracolla lungo la recinzione fiorita che costeggia la piscina e il parco verde del Camping Stella Maris a Umago."
+  },
+  {
+    "nome": "2019-07-12-18H53M50",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "12/07/2019",
+    "lat": 45.4503,
+    "lon": 13.5185,
+    "foto": "foto/istria dolomiti 2019/2019-07-12-18h53m50.jpg",
+    "descrizione": "Imbarcazioni a motore per il noleggio ormeggiate lungo la banchina della laguna interna dello Stella Maris Resort a Umago, con le strutture del resort sullo sfondo."
+  },
+  {
+    "nome": "2019-07-12-18H53M59",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "12/07/2019",
+    "lat": 45.451,
+    "lon": 13.519,
+    "foto": "foto/istria dolomiti 2019/2019-07-12-18h53m59.jpg",
+    "descrizione": "Vista del curato prato all'inglese e delle villette turistiche a due piani (Apartments Stella / Sol Amfora) all'interno del complesso Stella Maris a Umago."
+  },
+  {
+    "nome": "2019-07-12-19H24M55",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "12/07/2019",
+    "lat": 45.4525,
+    "lon": 13.514,
+    "foto": "foto/istria dolomiti 2019/2019-07-12-19h24m55.jpg",
+    "descrizione": "Tratto di costa rocciosa e terrazzata con lettini prendisole bianchi e pineta presso la spiaggia dello Stella Maris Resort a Umago, con vista panoramica verso il mare aperto."
+  },
+  {
+    "nome": "2019-07-13-08H08M04",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "13/07/2019",
+    "lat": 45.45,
+    "lon": 13.517,
+    "foto": "foto/istria dolomiti 2019/2019-07-13-08h08m04.jpg",
+    "descrizione": "Quiete mattutina sulla spiaggia di ghiaia a mezzaluna della Laguna Stella Maris a Umago, circondata da file ordinate di lettini prendisole e dalla pineta."
+  },
+  {
+    "nome": "2019-07-13-08H08M11",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "13/07/2019",
+    "lat": 45.4511,
+    "lon": 13.5173,
+    "foto": "foto/istria dolomiti 2019/2019-07-13-08h08m11.jpg",
+    "descrizione": "Totem d'ingresso rosso e bianco dello Stella Maris Resort (Plava Laguna) a Umago, con le indicazioni per gli alloggi e l'edificio della clinica turistica (Ambulanta)."
+  },
+  {
+    "nome": "2019-07-13-09H27M52",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "13/07/2019",
+    "lat": 45.4415,
+    "lon": 13.518,
+    "foto": "foto/istria dolomiti 2019/2019-07-13-09h27m52.jpg",
+    "descrizione": "Leo accucciato nel cestello anteriore del risciò a pedali a quattro ruote durante una passeggiata sul lungomare alberato verso Umago."
+  },
+  {
+    "nome": "2019-07-13-09H41M48",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "13/07/2019",
+    "lat": 45.4398,
+    "lon": 13.5185,
+    "foto": "foto/istria dolomiti 2019/2019-07-13-09h41m48.jpg",
+    "descrizione": "Vinicio alla guida del risciò a pedali con tettuccio parasole giallo e Leo a bordo lungo la banchina del porto di Umago, nei pressi del distributore costiero INA."
+  },
+  {
+    "nome": "2019-07-13-09H46M17",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "13/07/2019",
+    "lat": 45.4385,
+    "lon": 13.5188,
+    "foto": "foto/istria dolomiti 2019/2019-07-13-09h46m17.jpg",
+    "descrizione": "Luisa a bordo del risciò a pedali insieme a Leo sul lungomare di Umago, con vista panoramica sulla baia gremita di barche a vela e sul centro storico."
+  },
+  {
+    "nome": "2019-07-13-09H49M38",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "13/07/2019",
+    "lat": 45.4342,
+    "lon": 13.5222,
+    "foto": "foto/istria dolomiti 2019/2019-07-13-09h49m38.jpg",
+    "descrizione": "Passeggiata pedonale animata da bancarelle di souvenir e gazebo estivi all'ingresso del centro storico di Umago, con il campanile della parrocchiale di San Pellegrino sullo sfondo."
+  },
+  {
+    "nome": "2019-07-13-10H21M36",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "13/07/2019",
+    "lat": 45.445,
+    "lon": 13.5175,
+    "foto": "foto/istria dolomiti 2019/2019-07-13-10h21m36.jpg",
+    "descrizione": "Autoscatto sorridente di Vinicio e Luisa a bordo del risciò a pedali con tendalino parasole giallo durante il rientro verso Stella Maris lungo il litorale di Umago."
+  },
+  {
+    "nome": "2019-07-14-07H37M57",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "14/07/2019",
+    "lat": 45.0612,
+    "lon": 13.6708,
+    "foto": "foto/istria dolomiti 2019/2019-07-14-07h37m57.jpg",
+    "descrizione": "Leo seduto con fare attento su un lettino prendisole sulla spiaggia di ciottoli (dog beach) del Camping Polari a Rovigno, con vista sulle acque calme della baia al primo mattino."
+  },
+  {
+    "nome": "2019-07-14-07H43M54",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "14/07/2019",
+    "lat": 45.061,
+    "lon": 13.6705,
+    "foto": "foto/istria dolomiti 2019/2019-07-14-07h43m54.jpg",
+    "descrizione": "Vinicio immerso nelle acque basse e trasparenti della baia di Polari a Rovigno, mentre tiene al guinzaglio Leo che nuota sereno in mare."
+  },
+  {
+    "nome": "2019-07-14-07H44M22",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "14/07/2019",
+    "lat": 45.061,
+    "lon": 13.6705,
+    "foto": "foto/istria dolomiti 2019/2019-07-14-07h44m22.jpg",
+    "descrizione": "Vinicio in acqua sulla battigia ciottolosa e rocciosa della spiaggia per cani di Camping Polari, mentre osserva Leo che fa il bagno nell'Adriatico."
+  },
+  {
+    "nome": "2019-07-14-10H13M52",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "14/07/2019",
+    "lat": 45.0645,
+    "lon": 13.6735,
+    "foto": "foto/istria dolomiti 2019/2019-07-14-10h13m52.jpg",
+    "descrizione": "Scorcio dell'area solarium e del prato con ulivi secolari all'interno del parco acquatico del Camping Polari a Rovigno, con lettini bianchi e giochi d'acqua sullo sfondo."
+  },
+  {
+    "nome": "2019-07-14-10H19M49",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "14/07/2019",
+    "lat": 45.0648,
+    "lon": 13.6738,
+    "foto": "foto/istria dolomiti 2019/2019-07-14-10h19m49.jpg",
+    "descrizione": "La grande piscina all'aperto del Camping Polari a Rovigno con getti d'acqua e zona idromassaggio, animata da bagnanti in una calda mattinata estiva."
+  },
+  {
+    "nome": "2019-07-14-10H21M14",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "14/07/2019",
+    "lat": 45.0643,
+    "lon": 13.673,
+    "foto": "foto/istria dolomiti 2019/2019-07-14-10h21m14.jpg",
+    "descrizione": "Ampia panoramica dello Spray Park per bambini del Camping Polari a Rovigno, con l'iconica torre del secchio a ribalta giallo, vasche circolari e famiglie distese sul prato tra gli ulivi."
+  },
+  {
+    "nome": "2019-07-15-19H00M30",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "15/07/2019",
+    "lat": 45.0622,
+    "lon": 13.6758,
+    "foto": "foto/istria dolomiti 2019/2019-07-15-19h00m30.jpg",
+    "descrizione": "Molo e banchina d'imbarco del Camping Polari nella baia riparata al tramonto, con battelli, motoscafi e taxi boat ormeggiati per i collegamenti con Rovigno."
+  },
+  {
+    "nome": "2019-07-15-19H10M31",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "15/07/2019",
+    "lat": 45.067,
+    "lon": 13.655,
+    "foto": "foto/istria dolomiti 2019/2019-07-15-19h10m31.jpg",
+    "descrizione": "Leo accucciato sulla panca in legno a bordo del taxi boat in navigazione dal Camping Polari verso il porto di Rovigno, tenuto al guinzaglio da Luisa."
+  },
+  {
+    "nome": "2019-07-15-19H10M51",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "15/07/2019",
+    "lat": 45.0675,
+    "lon": 13.654,
+    "foto": "foto/istria dolomiti 2019/2019-07-15-19h10m51.jpg",
+    "descrizione": "Luisa seduta a bordo del battello turistico accarezza affettuosamente Leo sul ponte dell'imbarcazione durante la traversata pomeridiana verso Rovigno."
+  },
+  {
+    "nome": "2019-07-15-19H16M20",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "15/07/2019",
+    "lat": 45.072,
+    "lon": 13.645,
+    "foto": "foto/istria dolomiti 2019/2019-07-15-19h16m20.jpg",
+    "descrizione": "Luisa sorridente e rilassata sulla panca di poppa dell'imbarcazione turistica in navigazione lungo la costa verso il borgo marinaro di Rovigno, con la scia bianca del battello e Leo al suo fianco."
+  },
+  {
+    "nome": "2019-07-15-19H24M34",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "15/07/2019",
+    "lat": 45.065,
+    "lon": 13.633,
+    "foto": "foto/istria dolomiti 2019/2019-07-15-19h24m34.jpg",
+    "descrizione": "Veduta dal battello turistico dell'Isola di Sant'Andrea (Crveni Otok / Isola Rossa) al largo di Rovigno, con l'antico convento francescano trasformato in castello residenziale e il moderno complesso alberghiero circondato dalla pineta."
+  },
+  {
+    "nome": "2019-07-15-19H33M53",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "15/07/2019",
+    "lat": 45.0805,
+    "lon": 13.6345,
+    "foto": "foto/istria dolomiti 2019/2019-07-15-19h33m53.jpg",
+    "descrizione": "Ingresso dell'imbarcazione nel porto meridionale di Rovigno (Luka Rovinj), con vista sul lungomare cittadino, gli edifici storici e l'alta ciminiera dell'ex manifattura tabacchi."
+  },
+  {
+    "nome": "2019-07-15-19H35M24",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "15/07/2019",
+    "lat": 45.0815,
+    "lon": 13.633,
+    "foto": "foto/istria dolomiti 2019/2019-07-15-19h35m24.jpg",
+    "descrizione": "Panoramica dal mare del centro storico di Rovigno arroccato sulla penisola, con le caratteristiche facciate colorate in stile veneziano affacciate sull'acqua e il campanile di Sant'Eufemia che svetta sulla sommità."
+  },
+  {
+    "nome": "2019-07-15-19H49M36",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "15/07/2019",
+    "lat": 45.0831,
+    "lon": 13.6312,
+    "foto": "foto/istria dolomiti 2019/2019-07-15-19h49m36.jpg",
+    "descrizione": "Salita lastricata in pietra calcarea lucida tra i vicoli storici di Rovigno verso il colle della Chiesa di Sant'Eufemia, il cui campanile svetta tra le chiome dei cipressi."
+  },
+  {
+    "nome": "2019-07-15-19H56M45",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "15/07/2019",
+    "lat": 45.0835,
+    "lon": 13.6305,
+    "foto": "foto/istria dolomiti 2019/2019-07-15-19h56m45.jpg",
+    "descrizione": "Ritratto di Luisa e Vinicio insieme a Leo sul parapetto in pietra del piazzale di Sant'Eufemia a Rovigno, affacciato sul mare aperto."
+  },
+  {
+    "nome": "2019-07-15-22H50M57",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "15/07/2019",
+    "lat": 45.0818,
+    "lon": 13.6352,
+    "foto": "foto/istria dolomiti 2019/2019-07-15-22h50m57.jpg",
+    "descrizione": "Scorcio notturno del porto peschereccio di Rovigno con le tradizionali imbarcazioni in legno (batane) ormeggiate lungo la banchina, i riflessi dorati dei ristoranti e la luna piena nel cielo estivo."
+  },
+  {
+    "nome": "2019-07-15-22H51M11",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "15/07/2019",
+    "lat": 45.0818,
+    "lon": 13.6352,
+    "foto": "foto/istria dolomiti 2019/2019-07-15-22h51m11.jpg",
+    "descrizione": "Dettaglio della luna piena nel cielo notturno, immortalata dal lungomare del porto di Rovigno durante la passeggiata serale."
+  },
+  {
+    "nome": "2019-07-17-11H08M19",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "17/07/2019",
+    "lat": 45.0608,
+    "lon": 13.6702,
+    "foto": "foto/istria dolomiti 2019/2019-07-17-11h08m19.jpg",
+    "descrizione": "Tratto di litorale con muretto in pietra, prato e spiaggia di ciottoli del Camping Polari a Rovigno, con lettini prendisole, scogli affioranti e vista sugli isolotti all'orizzonte."
+  },
+  {
+    "nome": "2019-07-17-11H10M13",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "17/07/2019",
+    "lat": 45.0608,
+    "lon": 13.6702,
+    "foto": "foto/istria dolomiti 2019/2019-07-17-11h10m13.jpg",
+    "descrizione": "Luisa immersa nelle acque cristalline e calme del litorale di Camping Polari a Rovigno mentre fa il bagno insieme a Leo che nuota al suo fianco."
+  },
+  {
+    "nome": "2019-07-17-11H20M34",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "17/07/2019",
+    "lat": 45.0628,
+    "lon": 13.6745,
+    "foto": "foto/istria dolomiti 2019/2019-07-17-11h20m34.jpg",
+    "descrizione": "Chiosco e centro noleggio 'Sport Centar Polari' presso la spiaggia del Camping Polari a Rovigno, con trampolino elastico recintato e kayak colorati pronti all'uso."
+  },
+  {
+    "nome": "2019-07-17-11H23M36",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "17/07/2019",
+    "lat": 45.0645,
+    "lon": 13.6732,
+    "foto": "foto/istria dolomiti 2019/2019-07-17-11h23m36.jpg",
+    "descrizione": "Area giochi d'acqua e parco acquatico per bambini al Camping Polari a Rovigno, con scivolo tubolare verde, torre con secchio a ribalta e aiuole ornamentali."
+  },
+  {
+    "nome": "2019-07-17-20H41M19",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "17/07/2019",
+    "lat": 45.0625,
+    "lon": 13.674,
+    "foto": "foto/istria dolomiti 2019/2019-07-17-20h41m19.jpg",
+    "descrizione": "Primo piano di Leo in attesa tranquilla al tavolo all'aperto durante la cena serale al Camping Polari."
+  },
+  {
+    "nome": "2019-07-17-21H29M26",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "17/07/2019",
+    "lat": 45.061,
+    "lon": 13.67,
+    "foto": "foto/istria dolomiti 2019/2019-07-17-21h29m26.jpg",
+    "descrizione": "Luisa e Vinicio abbracciati con Leo in braccio sul litorale del Camping Polari a Rovigno, con i colori del tramonto sul mare e gli isolotti all'orizzonte."
+  },
+  {
+    "nome": "2019-07-17-21H29M46",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "17/07/2019",
+    "lat": 45.061,
+    "lon": 13.67,
+    "foto": "foto/istria dolomiti 2019/2019-07-17-21h29m46.jpg",
+    "descrizione": "Ritratto a figura intera di Luisa e Vinicio con Leo al loro fianco in riva al mare al Camping Polari, sotto il cielo del crepuscolo estivo."
+  },
+  {
+    "nome": "2019-07-18-09H49M51",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "18/07/2019",
+    "lat": 45.0808,
+    "lon": 13.6338,
+    "foto": "foto/istria dolomiti 2019/2019-07-18-09h49m51.jpg",
+    "descrizione": "Luisa in abiti estivi con Leo al guinzaglio sulla banchina del porto di Rovigno, circondata da barche ormeggiate e con la vista panoramica del borgo antico dominato dalla torre di Sant'Eufemia."
+  },
+  {
+    "nome": "2019-07-18-10H33M13",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "18/07/2019",
+    "lat": 45.083,
+    "lon": 13.6358,
+    "foto": "foto/istria dolomiti 2019/2019-07-18-10h33m13.jpg",
+    "descrizione": "Bancarelle di souvenir e artigianato con grandi ombrelloni blu nel mercato all'aperto di Rovigno (Piazza Valdibora), con il campanile di Sant'Eufemia che svetta sopra i tetti del borgo."
+  },
+  {
+    "nome": "2019-07-19-08H33M26",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "19/07/2019",
+    "lat": 45.0605,
+    "lon": 13.671,
+    "foto": "foto/istria dolomiti 2019/2019-07-19-08h33m26.jpg",
+    "descrizione": "Momento di relax mattutino su lettino prendisole sulla spiaggia di ciottoli e scogli del Camping Polari a Rovigno, affacciata sulle acque calme della baia e sull'isolotto di Polari."
+  },
+  {
+    "nome": "2019-07-19-08H42M26",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "19/07/2019",
+    "lat": 45.0605,
+    "lon": 13.671,
+    "foto": "foto/istria dolomiti 2019/2019-07-19-08h42m26.jpg",
+    "descrizione": "Vista panoramica mattutina dello specchio di mare calmo e dell'isolotto verdeggiante di Polari (Otok Polari) di fronte alla scogliera costiera del campeggio a Rovigno."
+  },
+  {
+    "nome": "2019-07-19-08H43M34",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "19/07/2019",
+    "lat": 45.0605,
+    "lon": 13.671,
+    "foto": "foto/istria dolomiti 2019/2019-07-19-08h43m34.jpg",
+    "descrizione": "Leo al guinzaglio che cammina nelle acque trasparenti e poco profonde del mare sulla battigia ciottolosa della spiaggia per cani del Camping Polari a Rovigno."
+  },
+  {
+    "nome": "2019-07-19-08H43M51",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "19/07/2019",
+    "lat": 45.0605,
+    "lon": 13.671,
+    "foto": "foto/istria dolomiti 2019/2019-07-19-08h43m51.jpg",
+    "descrizione": "Leo mentre nuota sereno al guinzaglio nelle acque cristalline e calme della baia del Camping Polari a Rovigno."
+  },
+  {
+    "nome": "2019-07-19-08H43M55",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "19/07/2019",
+    "lat": 45.0605,
+    "lon": 13.671,
+    "foto": "foto/istria dolomiti 2019/2019-07-19-08h43m55.jpg",
+    "descrizione": "Primo piano di Leo che nuota a pelo d'acqua nel mare limpido dell'Adriatico, tenuto al guinzaglio durante il bagno mattutino a Polari."
+  },
+  {
+    "nome": "2019-07-20-23H04M03",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "20/07/2019",
+    "lat": 45.062,
+    "lon": 13.673,
+    "foto": "foto/istria dolomiti 2019/2019-07-20-23h04m03.jpg",
+    "descrizione": "Passeggiata lungomare del Camping Polari a Rovigno illuminata di notte, con lampioncini di design e gradinata semicircolare d'accesso al mare con vista panoramica sulle luci della baia."
+  },
+  {
+    "nome": "2019-07-20-23H05M33",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "20/07/2019",
+    "lat": 45.0621,
+    "lon": 13.6732,
+    "foto": "foto/istria dolomiti 2019/2019-07-20-23h05m33.jpg",
+    "descrizione": "Piazzola camper vista mare al Camping Polari di notte, con il camper Elnagh T-Loft illuminato sotto il tendalino, tavolo da campeggio apparecchiato e lettini prendisole."
+  },
+  {
+    "nome": "2019-07-21-10H45M53",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "21/07/2019",
+    "lat": 45.0621,
+    "lon": 13.6732,
+    "foto": "foto/istria dolomiti 2019/2019-07-21-10h45m53.jpg",
+    "descrizione": "Vista interna del corridoio del camper Elnagh T-Loft in sosta al Camping Polari, con arredi in legno chiaro, colonna frigo scura e visuale verso il letto matrimoniale rialzato di poppa."
+  },
+  {
+    "nome": "2019-07-21-10H46M14",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "21/07/2019",
+    "lat": 45.0621,
+    "lon": 13.6732,
+    "foto": "foto/istria dolomiti 2019/2019-07-21-10h46m14.jpg",
+    "descrizione": "Interno della zona notte posteriore del camper con letto matrimoniale rifatto, pensili superiori e finestra panoramica aperta con affaccio sul verde del campeggio."
+  },
+  {
+    "nome": "2019-07-21-10H46M23",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "21/07/2019",
+    "lat": 45.0621,
+    "lon": 13.6732,
+    "foto": "foto/istria dolomiti 2019/2019-07-21-10h46m23.jpg",
+    "descrizione": "Zona giorno e cucina interna del camper con lavello inox circolare, macchina per il caffè espresso, tavolo dinette e sedili della cabina guida girevoli sotto l'oblò a tetto."
+  },
+  {
+    "nome": "2019-07-21-10H48M20",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "21/07/2019",
+    "lat": 45.0621,
+    "lon": 13.6732,
+    "foto": "foto/istria dolomiti 2019/2019-07-21-10h48m20.jpg",
+    "descrizione": "Piazzola del Camping Polari a Rovigno con il camper Elnagh T-Loft, veranda aperta e Leo che sbuca curioso attraverso la siepe divisoria."
+  },
+  {
+    "nome": "2019-07-21-10H48M24",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "21/07/2019",
+    "lat": 45.0621,
+    "lon": 13.6732,
+    "foto": "foto/istria dolomiti 2019/2019-07-21-10h48m24.jpg",
+    "descrizione": "Dettaglio di Leo che osserva attento tra le foglie argentee della siepe mediterranea che delimita la piazzola al Camping Polari."
+  },
+  {
+    "nome": "2019-07-21-10H49M18",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "21/07/2019",
+    "lat": 45.1656,
+    "lon": 13.6008,
+    "foto": "foto/istria dolomiti 2019/2019-07-21-10h49m18.jpg",
+    "descrizione": "Passeggiata lastricata lungomare all'interno del Camping Valkanela (tra Funtana e Vrsar), con prato verdeggiante, grande pino marittimo, bagnanti al sole e camper in piazzola dietro la siepe."
+  },
+  {
+    "nome": "2019-07-21-11H02M04",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "21/07/2019",
+    "lat": 45.1662,
+    "lon": 13.6015,
+    "foto": "foto/istria dolomiti 2019/2019-07-21-11h02m04.jpg",
+    "descrizione": "Vinicio in costume da bagno a passeggio con Leo lungo il muretto in pietra della scogliera del Camping Valkanela, tra la pineta e lo specchio di mare della baia."
+  },
+  {
+    "nome": "2019-07-21-11H03M50",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "21/07/2019",
+    "lat": 45.1665,
+    "lon": 13.6018,
+    "foto": "foto/istria dolomiti 2019/2019-07-21-11h03m50.jpg",
+    "descrizione": "Momento di relax sul prato fronte mare del Camping Valkanela: in primo piano Vinicio disteso sul lettino prendisole e di fronte Luisa che legge all'ombra dell'ombrellone."
+  },
+  {
+    "nome": "2019-07-21-22H02M31",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "21/07/2019",
+    "lat": 45.165,
+    "lon": 13.5998,
+    "foto": "foto/istria dolomiti 2019/2019-07-21-22h02m31.jpg",
+    "descrizione": "Luisa e Leo sulla terrazza panoramica in pietra della scogliera del Camping Valkanela, durante un suggestivo tramonto dai toni violacei sul mare Adriatico."
+  },
+  {
+    "nome": "2019-07-21-22H04M09",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "21/07/2019",
+    "lat": 45.167,
+    "lon": 13.6045,
+    "foto": "foto/istria dolomiti 2019/2019-07-21-22h04m09.jpg",
+    "descrizione": "Veduta serale della baia del Camping Valkanela con le strutture gonfiabili galleggianti dell'aquapark (Wibit) in acqua e le luci dei locali e del lungomare che si riflettono sul mare calmo."
+  },
+  {
+    "nome": "2019-07-21-22H05M07",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "21/07/2019",
+    "lat": 45.1672,
+    "lon": 13.6048,
+    "foto": "foto/istria dolomiti 2019/2019-07-21-22h05m07.jpg",
+    "descrizione": "Scorcio della spiaggia di ghiaia e delle scogliere del Camping Valkanela all'imbrunire, con la piattaforma del parco acquatico gonfiabile e la passeggiata costiera illuminata."
+  },
+  {
+    "nome": "2019-07-21-22H12M18",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "21/07/2019",
+    "lat": 45.1675,
+    "lon": 13.6052,
+    "foto": "foto/istria dolomiti 2019/2019-07-21-22h12m18.jpg",
+    "descrizione": "Vinicio con Leo al guinzaglio sul lungomare del Camping Valkanela all'imbrunire, con la fila di pedalò con scivolo parcheggiati sulla battigia."
+  },
+  {
+    "nome": "2019-07-21-22H38M49",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "21/07/2019",
+    "lat": 45.1668,
+    "lon": 13.604,
+    "foto": "foto/istria dolomiti 2019/2019-07-21-22h38m49.jpg",
+    "descrizione": "Luisa e Vinicio seduti insieme a un tavolino all'aperto sulla gradinata illuminata del lounge bar del Camping Valkanela per un drink serale, con Leo accucciato vicino a loro."
+  },
+  {
+    "nome": "2019-07-21-22H38M54",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "21/07/2019",
+    "lat": 45.1668,
+    "lon": 13.604,
+    "foto": "foto/istria dolomiti 2019/2019-07-21-22h38m54.jpg",
+    "descrizione": "Scatto serale di Luisa e Vinicio al tavolino del bar con i cocktail e una candela, con Leo seduto composto e la ciotola dell'acqua ai loro piedi."
+  },
+  {
+    "nome": "2019-07-22-07H41M04",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "22/07/2019",
+    "lat": 45.1655,
+    "lon": 13.6005,
+    "foto": "foto/istria dolomiti 2019/2019-07-22-07h41m04.jpg",
+    "descrizione": "Leo accucciato sull'erba dietro la siepe della piazzola al Camping Valkanela, con vista sul mare calmo e sull'isolotto verdeggiante al mattino."
+  },
+  {
+    "nome": "2019-07-23-13H50M08",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "23/07/2019",
+    "lat": 45.1658,
+    "lon": 13.6015,
+    "foto": "foto/istria dolomiti 2019/2019-07-23-13h50m08.jpg",
+    "descrizione": "Filetto di salmone alle erbe in cottura sulla griglia elettrica Tefal all'esterno del camper Elnagh T-Loft, nella piazzola del Camping Valkanela."
+  },
+  {
+    "nome": "2019-07-23-21H33M23",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "23/07/2019",
+    "lat": 45.1658,
+    "lon": 13.6015,
+    "foto": "foto/istria dolomiti 2019/2019-07-23-21h33m23.jpg",
+    "descrizione": "Luisa all'esterno del camper Elnagh T-Loft 450 nella piazzola del Camping Valkanela, intenta a sistemare la propria borsa prima dell'uscita serale."
+  },
+  {
+    "nome": "2019-07-23-21H41M42",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "23/07/2019",
+    "lat": 45.167,
+    "lon": 13.6045,
+    "foto": "foto/istria dolomiti 2019/2019-07-23-21h41m42.jpg",
+    "descrizione": "Luisa in primo piano sulla passeggiata lungomare del Camping Valkanela all'ora del tramonto, con la baia, la spiaggia di ciottoli e i giochi gonfiabili galleggianti sullo sfondo."
+  },
+  {
+    "nome": "2019-07-23-23H05M01",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "23/07/2019",
+    "lat": 45.1512,
+    "lon": 13.6035,
+    "foto": "foto/istria dolomiti 2019/2019-07-23-23h05m01.jpg",
+    "descrizione": "Spettacolo musicale serale all'aperto con pubblico numeroso radunato per l'evento estivo, illuminato da fari scenici sotto gli alberi nei pressi di Orsera (Vrsar)."
+  },
+  {
+    "nome": "2019-07-25-12H37M18",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "25/07/2019",
+    "lat": 46.5385,
+    "lon": 12.1375,
+    "foto": "foto/istria dolomiti 2019/2019-07-25-12h37m18.jpg",
+    "descrizione": "Luisa a passeggio lungo la via pedonale di Corso Italia a Cortina d'Ampezzo, tra le caratteristiche fioriere con gerani rossi e gli edifici storici con l'Hotel Concordia sullo sfondo."
+  },
+  {
+    "nome": "2019-07-25-13H12M28",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "25/07/2019",
+    "lat": 46.5369,
+    "lon": 12.1357,
+    "foto": "foto/istria dolomiti 2019/2019-07-25-13h12m28.jpg",
+    "descrizione": "L'imponente campanile della Basilica dei Santi Filippo e Giacomo a Cortina d'Ampezzo, adornato con lo stendardo tricolore celebrativo per l'assegnazione dei Giochi Olimpici Invernali Milano Cortina 2026."
+  },
+  {
+    "nome": "2019-07-26-10H38M23",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "26/07/2019",
+    "lat": 46.5388,
+    "lon": 12.1373,
+    "foto": "foto/istria dolomiti 2019/2019-07-26-10h38m23.jpg",
+    "descrizione": "Scorcio prospettico di Corso Italia a Cortina d'Ampezzo in una limpida mattinata estiva, con fioriere curate, architettura alpina e le pareti rocciose delle Dolomiti che sovrastano l'abitato."
+  },
+  {
+    "nome": "2019-07-26-10H44M09",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "26/07/2019",
+    "lat": 46.5372,
+    "lon": 12.1359,
+    "foto": "foto/istria dolomiti 2019/2019-07-26-10h44m09.jpg",
+    "descrizione": "Luisa e Leo in sosta in Piazza Angelo Dibona a Cortina d'Ampezzo, con alle spalle il campanile con lo stendardo olimpico e le vette delle Tofane."
+  },
+  {
+    "nome": "2019-07-26-10H44M19",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "26/07/2019",
+    "lat": 46.5372,
+    "lon": 12.1359,
+    "foto": "foto/istria dolomiti 2019/2019-07-26-10h44m19.jpg",
+    "descrizione": "Dettaglio di Leo che si sporge curioso sulle zampe posteriori per annusare i gerani rossi di una fioriera in centro a Cortina d'Ampezzo, accanto a Luisa."
+  },
+  {
+    "nome": "2019-07-26-10H46M49",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "26/07/2019",
+    "lat": 46.5372,
+    "lon": 12.1359,
+    "foto": "foto/istria dolomiti 2019/2019-07-26-10h46m49.jpg",
+    "descrizione": "Scorcio di Piazza Angelo Dibona a Cortina d'Ampezzo con il fianco della Basilica dei Santi Filippo e Giacomo e la facciata affrescata della Casa delle Regole, con le vette dolomitiche sullo sfondo."
+  },
+  {
+    "nome": "2019-07-26-11H19M51",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "26/07/2019",
+    "lat": 46.5371,
+    "lon": 12.1358,
+    "foto": "foto/istria dolomiti 2019/2019-07-26-11h19m51.jpg",
+    "descrizione": "Pianista che si esibisce all'aperto al pianoforte a coda nero sul selciato di Piazza Angelo Dibona a Cortina d'Ampezzo durante la mattinata estiva."
+  },
+  {
+    "nome": "2019-07-26-11H20M25",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "26/07/2019",
+    "lat": 46.5371,
+    "lon": 12.1359,
+    "foto": "foto/istria dolomiti 2019/2019-07-26-11h20m25.jpg",
+    "descrizione": "Vinicio con Leo al guinzaglio al centro di Piazza Angelo Dibona a Cortina d'Ampezzo, con la storica Casa delle Regole e le montagne sullo sfondo."
+  },
+  {
+    "nome": "2019-07-26-14H08M36",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "26/07/2019",
+    "lat": 46.5265,
+    "lon": 12.0678,
+    "foto": "foto/istria dolomiti 2019/2019-07-26-14h08m36.jpg",
+    "descrizione": "Imponente vista della parete rocciosa della Tofana di Rozes (3.225 m) che domina i boschi di conifere lungo la Strada Statale 48 delle Dolomiti salendo verso il Passo Falzarego."
+  },
+  {
+    "nome": "2019-07-26-14H18M20",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "26/07/2019",
+    "lat": 46.5218,
+    "lon": 12.0185,
+    "foto": "foto/istria dolomiti 2019/2019-07-26-14h18m20.jpg",
+    "descrizione": "La bastionata del Piccolo Lagazuoi con i cavi della Funivia Lagazuoi e il rifugio sulla cresta sommitale, visti dalla SR48 durante la salita al passo."
+  },
+  {
+    "nome": "2019-07-26-14H20M21",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "26/07/2019",
+    "lat": 46.5195,
+    "lon": 12.011,
+    "foto": "foto/istria dolomiti 2019/2019-07-26-14h20m21.jpg",
+    "descrizione": "Scorcio ravvicinato delle pareti rocciose e dei ghiaioni del Piccolo Lagazuoi con il Rifugio Lagazuoi arroccato sul ciglio superiore della parete."
+  },
+  {
+    "nome": "2019-07-26-14H22M14",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "26/07/2019",
+    "lat": 46.5188,
+    "lon": 12.0075,
+    "foto": "foto/istria dolomiti 2019/2019-07-26-14h22m14.jpg",
+    "descrizione": "Il valico alpino del Passo Falzarego a quota 2.117 m, con il rifugio-bar ristorante omonimo, i negozi di souvenir e moto in sosta sul piazzale panoramico."
+  },
+  {
+    "nome": "2019-07-26-14H22M44",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "26/07/2019",
+    "lat": 46.5192,
+    "lon": 12.0068,
+    "foto": "foto/istria dolomiti 2019/2019-07-26-14h22m44.jpg",
+    "descrizione": "Tratto stradale della SR48 al Passo Falzarego tra pascoli d'alta quota e balze rocciose, con escursionisti a piedi lungo la carreggiata."
+  },
+  {
+    "nome": "2019-07-26-14H44M46",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "26/07/2019",
+    "lat": 46.4832,
+    "lon": 11.9542,
+    "foto": "foto/istria dolomiti 2019/2019-07-26-14h44m46.jpg",
+    "descrizione": "Ingresso al borgo di Pieve di Livinallongo (La Plié de Fodom) lungo la SR48, con il campanile a cuspide della Chiesa di San Giacomo e l'imponente Gruppo del Sella all'orizzonte."
+  },
+  {
+    "nome": "2019-07-26-15H07M18",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "26/07/2019",
+    "lat": 46.4952,
+    "lon": 11.8485,
+    "foto": "foto/istria dolomiti 2019/2019-07-26-15h07m18.jpg",
+    "descrizione": "Verdi pascoli d'alta quota e impianti di risalita alle pendici dell'imponente Gruppo del Sella, lungo i tornanti verso il Passo Pordoi in direzione di Canazei."
+  },
+  {
+    "nome": "2019-07-26-15H10M10",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "26/07/2019",
+    "lat": 46.4938,
+    "lon": 11.8315,
+    "foto": "foto/istria dolomiti 2019/2019-07-26-15h10m10.jpg",
+    "descrizione": "Panoramica delle pendici erbose d'alta quota e delle imponenti pareti rocciose del Gruppo del Sella lungo la salita della SR48 verso il Passo Pordoi."
+  },
+  {
+    "nome": "2019-07-26-15H10M43",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "26/07/2019",
+    "lat": 46.4925,
+    "lon": 11.8252,
+    "foto": "foto/istria dolomiti 2019/2019-07-26-15h10m43.jpg",
+    "descrizione": "Scorcio della carreggiata della SR48 che sale verso il Passo Pordoi tra pascoli alpini, fienili in legno e le scogliere dolomitiche del Sella."
+  },
+  {
+    "nome": "2019-07-26-15H11M01",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "26/07/2019",
+    "lat": 46.4918,
+    "lon": 11.821,
+    "foto": "foto/istria dolomiti 2019/2019-07-26-15h11m01.jpg",
+    "descrizione": "Veduta panoramica sui tornanti della SR48 e sulla vallata sottostante verso Arabba e la Marmolada, sotto un cielo estivo con grandi nubi cumuliformi."
+  },
+  {
+    "nome": "2019-07-26-15H11M37",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "26/07/2019",
+    "lat": 46.4905,
+    "lon": 11.8175,
+    "foto": "foto/istria dolomiti 2019/2019-07-26-15h11m37.jpg",
+    "descrizione": "Vinicio alla guida del camper Elnagh lungo i tornanti panoramici della Grande Strada delle Dolomiti durante la salita finale al valico del Passo Pordoi."
+  },
+  {
+    "nome": "2019-07-26-15H14M47",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "26/07/2019",
+    "lat": 46.4879,
+    "lon": 11.8115,
+    "foto": "foto/istria dolomiti 2019/2019-07-26-15h14m47.jpg",
+    "descrizione": "Il valico alpino del Passo Pordoi (2.239 m) con il rifugio-ristorante Maria, negozi tipici di souvenir, motociclisti e le balze rocciose del Sass Pordoi sullo sfondo."
+  },
+  {
+    "nome": "2019-07-26-15H14M51",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "26/07/2019",
+    "lat": 46.4877,
+    "lon": 11.811,
+    "foto": "foto/istria dolomiti 2019/2019-07-26-15h14m51.jpg",
+    "descrizione": "Piazzale del Passo Pordoi con il monumento in pietra e bronzo a Fausto Coppi sulla sinistra, strutture ricettive d'alta quota e turisti al confine tra Veneto e Trentino."
+  },
+  {
+    "nome": "2019-07-26-15H15M16",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "26/07/2019",
+    "lat": 46.4874,
+    "lon": 11.8102,
+    "foto": "foto/istria dolomiti 2019/2019-07-26-15h15m16.jpg",
+    "descrizione": "Cartello informativo UNESCO World Heritage 'The Dolomites' al Passo Pordoi sul versante trentino di Canazei, con i verdi pascoli e il massiccio del Sella a fare da cornice."
+  },
+  {
+    "nome": "2019-07-26-15H15M21",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "26/07/2019",
+    "lat": 46.4872,
+    "lon": 11.8093,
+    "foto": "foto/istria dolomiti 2019/2019-07-26-15h15m21.jpg",
+    "descrizione": "Stazione di partenza della funivia per il Sass Pordoi (la Terrazza delle Dolomiti) al Passo Pordoi, con bandiere esposte, turisti e l'imponente pilastro roccioso sullo sfondo."
+  },
+  {
+    "nome": "2019-07-27-07H44M54",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "27/07/2019",
+    "lat": 46.4762,
+    "lon": 11.7708,
+    "foto": "foto/istria dolomiti 2019/2019-07-27-07h44m54.jpg",
+    "descrizione": "Il torrente montano Ruf de Antermont con briglie in pietra e cascatelle d'acqua che attraversa il centro abitato di Canazei in Val di Fassa al mattino."
+  },
+  {
+    "nome": "2019-07-27-07H49M44",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "27/07/2019",
+    "lat": 46.4769,
+    "lon": 11.7715,
+    "foto": "foto/istria dolomiti 2019/2019-07-27-07h49m44.jpg",
+    "descrizione": "Facciata asburgica decorata con affreschi storici dell'Hotel Dolomiti Schloss e insegna del locale Kaiserkeller lungo la via centrale di Canazei."
+  },
+  {
+    "nome": "2019-07-27-07H49M57",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "27/07/2019",
+    "lat": 46.477,
+    "lon": 11.7718,
+    "foto": "foto/istria dolomiti 2019/2019-07-27-07h49m57.jpg",
+    "descrizione": "Edificio alpino con balconate in legno nel centro di Canazei lungo Strèda Dolomites, che ospita il ristorante pizzeria L'Ostaria da Bepe e il negozio noleggio sci Sport Walter."
+  },
+  {
+    "nome": "2019-07-30-08H53M40",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "30/07/2019",
+    "lat": 45.1612,
+    "lon": 10.8018,
+    "foto": "foto/istria dolomiti 2019/2019-07-30-08h53m40.jpg",
+    "descrizione": "Luisa a passeggio con Leo al guinzaglio sul percorso pedonale lungo Viale Mincio a Mantova, con vista panoramica sul complesso monumentale di Palazzo Ducale e del Castello di San Giorgio."
+  },
+  {
+    "nome": "2019-07-30-09H03M18",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "30/07/2019",
+    "lat": 45.1603,
+    "lon": 10.7975,
+    "foto": "foto/istria dolomiti 2019/2019-07-30-09h03m18.jpg",
+    "descrizione": "La grandiosa facciata trecentesca in mattoni a vista del Palazzo del Capitano (Palazzo Ducale) in Piazza Sordello a Mantova, con porticato ad archi ogivali, bifore gotiche e merlatura ghibellina."
+  },
+  {
+    "nome": "2019-07-31-11H43M29",
+    "viaggio": "istria dolomiti 2019",
+    "anno": "2019",
+    "data": "31/07/2019",
+    "lat": 45.1634,
+    "lon": 10.8125,
+    "foto": "foto/istria dolomiti 2019/2019-07-31-11h43m29.jpg",
+    "descrizione": "Il camper Elnagh T-Loft 450 posizionato sulla piazzola erbosa dell'Area Sosta Camper Sparafucile a Mantova, con tendalino aperto, telo ombreggiante, tavolo e stendibiancheria all'ombra degli alberi."
+  },
+  {
     "nome": "2011-12-09-12H46M20",
     "viaggio": "madrid 2011",
     "anno": "2011",
@@ -22991,6 +24561,246 @@
     "lon": 14.416444,
     "foto": "foto/praga 2024/2024-03-07-13h17m32.jpg",
     "descrizione": "Trojská lávka, Praga, Repubblica Ceca"
+  },
+  {
+    "nome": "P1070613",
+    "viaggio": "roma 2019",
+    "anno": "2019",
+    "data": "10/02/2019",
+    "lat": 41.9009,
+    "lon": 12.4833,
+    "foto": "foto/roma 2019/P1070613.jpg",
+    "descrizione": "Veduta frontale della monumentale Fontana di Trevi a Roma, con la statua di Oceano al centro della grande nicchia di Palazzo Poli, affiancata dalle statue dell'Abbondanza e della Salubrità e dai cavalli marini guidati dai tritoni sopra la cascata d'acqua."
+  },
+  {
+    "nome": "P1070614",
+    "viaggio": "roma 2019",
+    "anno": "2019",
+    "data": "10/02/2019",
+    "lat": 41.9008,
+    "lon": 12.4832,
+    "foto": "foto/roma 2019/P1070614.jpg",
+    "descrizione": "Luisa in piumino nero con collo di pelliccia seduta sul bordo marmoreo della vasca della Fontana di Trevi a Roma, con Leo al guinzaglio che si sporge curioso con le zampe anteriori sul parapetto per osservare l'acqua azzurra."
+  },
+  {
+    "nome": "P1070619",
+    "viaggio": "roma 2019",
+    "anno": "2019",
+    "data": "10/02/2019",
+    "lat": 41.9008,
+    "lon": 12.4831,
+    "foto": "foto/roma 2019/P1070619.jpg",
+    "descrizione": "Scorcio panoramico della Fontana di Trevi a Roma e del suo ampio bacino d'acqua limpida gremito di visitatori, con la scogliera barocca in travertino di Nicola Salvi sulla sinistra e i palazzi storici della piazza sullo sfondo."
+  },
+  {
+    "nome": "P1070622",
+    "viaggio": "roma 2019",
+    "anno": "2019",
+    "data": "10/02/2019",
+    "lat": 41.9058,
+    "lon": 12.4825,
+    "foto": "foto/roma 2019/P1070622.jpg",
+    "descrizione": "La celebre scalinata di Trinità dei Monti in Piazza di Spagna a Roma, sormontata dall'Obelisco Sallustiano e dalla facciata bianca a due campanili della chiesa della Santissima Trinità dei Monti sotto un cielo parzialmente nuvoloso."
+  },
+  {
+    "nome": "P1070623",
+    "viaggio": "roma 2019",
+    "anno": "2019",
+    "data": "10/02/2019",
+    "lat": 41.9057,
+    "lon": 12.4822,
+    "foto": "foto/roma 2019/P1070623.jpg",
+    "descrizione": "Luisa in piumino nero e cardigan rosa con Leo al guinzaglio sul selciato in sampietrini di Piazza di Spagna a Roma, proprio davanti alla Fontana della Barcaccia scolpita dal Bernini."
+  },
+  {
+    "nome": "P1070632",
+    "viaggio": "roma 2019",
+    "anno": "2019",
+    "data": "10/02/2019",
+    "lat": 41.9057,
+    "lon": 12.4822,
+    "foto": "foto/roma 2019/P1070632.jpg",
+    "descrizione": "Vinicio in giacca invernale scura e camicia grigia con Leo al guinzaglio in posa davanti alla Fontana della Barcaccia in Piazza di Spagna a Roma, ai piedi della scalinata di Trinità dei Monti."
+  },
+  {
+    "nome": "P1070635",
+    "viaggio": "roma 2019",
+    "anno": "2019",
+    "data": "10/02/2019",
+    "lat": 41.9059,
+    "lon": 12.4826,
+    "foto": "foto/roma 2019/P1070635.jpg",
+    "descrizione": "Luisa con Leo al guinzaglio in posa sui larghi gradini in travertino della scalinata di Trinità dei Monti in Piazza di Spagna a Roma, animata da turisti seduti al sole."
+  },
+  {
+    "nome": "P1070638",
+    "viaggio": "roma 2019",
+    "anno": "2019",
+    "data": "10/02/2019",
+    "lat": 41.9056,
+    "lon": 12.4821,
+    "foto": "foto/roma 2019/P1070638.jpg",
+    "descrizione": "Veduta d'insieme di Piazza di Spagna a Roma con uno scorcio della Fontana della Barcaccia in basso a destra, l'intera scalinata di Trinità dei Monti fiancheggiata dalla Keats-Shelley House e dalla sala da tè Babington's, e la chiesa con l'obelisco sulla sommità."
+  },
+  {
+    "nome": "P1070642",
+    "viaggio": "roma 2019",
+    "anno": "2019",
+    "data": "10/02/2019",
+    "lat": 41.8955,
+    "lon": 12.4823,
+    "foto": "foto/roma 2019/P1070642.jpg",
+    "descrizione": "Visione frontale da Piazza Venezia del grandioso Vittoriano (Altare della Patria) a Roma, con la statua equestre di Vittorio Emanuele II, il sacello del Milite Ignoto affiancato dalle bandiere tricolori, il maestoso colonnato in marmo botticino e le quadrighe alate sui propilei."
+  },
+  {
+    "nome": "P1070643",
+    "viaggio": "roma 2019",
+    "anno": "2019",
+    "data": "10/02/2019",
+    "lat": 41.8962,
+    "lon": 12.4819,
+    "foto": "foto/roma 2019/P1070643.jpg",
+    "descrizione": "Dettaglio della facciata rinascimentale di Palazzo Venezia in Piazza Venezia a Roma, con lo storico balcone marmoreo centrale imbandierato con il tricolore italiano e la bandiera europea, le finestre crociate guelfe con l'iscrizione di Papa Paolo II e lo stendardo del Polo Museale del Lazio."
+  },
+  {
+    "nome": "P1070649",
+    "viaggio": "roma 2019",
+    "anno": "2019",
+    "data": "10/02/2019",
+    "lat": 41.8958,
+    "lon": 12.4842,
+    "foto": "foto/roma 2019/P1070649.jpg",
+    "descrizione": "Vinicio in giacca invernale scura con Leo al guinzaglio affacciato alla balaustra del Foro di Traiano a Roma, tra i resti delle colonne marmoree della Basilica Ulpia e la chiesa del Santissimo Nome di Maria sullo sfondo."
+  },
+  {
+    "nome": "P1070652",
+    "viaggio": "roma 2019",
+    "anno": "2019",
+    "data": "10/02/2019",
+    "lat": 41.8954,
+    "lon": 12.4847,
+    "foto": "foto/roma 2019/P1070652.jpg",
+    "descrizione": "Vinicio con Leo al guinzaglio lungo la passerella pedonale panoramica di Via dei Fori Imperiali a Roma, con le rovine archeologiche del Foro di Traiano e i Mercati di Traiano in mattoni sullo sfondo."
+  },
+  {
+    "nome": "P1070655",
+    "viaggio": "roma 2019",
+    "anno": "2019",
+    "data": "10/02/2019",
+    "lat": 41.8956,
+    "lon": 12.4845,
+    "foto": "foto/roma 2019/P1070655.jpg",
+    "descrizione": "Veduta dal Foro di Traiano a Roma della celebre Colonna Traiana istoriata, affiancata dalle cupole gemelle delle chiese di Santa Maria di Loreto a sinistra e del Santissimo Nome di Maria al Foro Traiano a destra."
+  },
+  {
+    "nome": "P1070659",
+    "viaggio": "roma 2019",
+    "anno": "2019",
+    "data": "10/02/2019",
+    "lat": 41.8946,
+    "lon": 12.4845,
+    "foto": "foto/roma 2019/P1070659.jpg",
+    "descrizione": "Scorcio laterale da Via dei Fori Imperiali del fianco sinistro in marmo bianco del Vittoriano (Altare della Patria) a Roma, incorniciato dai pini marittimi e da un lampione storico con la quadriga bronzea sulla sommità."
+  },
+  {
+    "nome": "P1070660",
+    "viaggio": "roma 2019",
+    "anno": "2019",
+    "data": "10/02/2019",
+    "lat": 41.8943,
+    "lon": 12.4848,
+    "foto": "foto/roma 2019/P1070660.jpg",
+    "descrizione": "Luisa in piumino nero con collo di pelliccia e Leo al guinzaglio al centro di Via dei Fori Imperiali pavimentata in sampietrini a Roma, con le colonne corinzie del Foro di Cesare sullo sfondo."
+  },
+  {
+    "nome": "P1070661",
+    "viaggio": "roma 2019",
+    "anno": "2019",
+    "data": "10/02/2019",
+    "lat": 41.8944,
+    "lon": 12.4855,
+    "foto": "foto/roma 2019/P1070661.jpg",
+    "descrizione": "Statua bronzea dell'imperatore Ottaviano Augusto in abiti militari (copia dell'Augusto di Prima Porta) lungo Via dei Fori Imperiali a Roma, con l'esedra in laterizio dei Mercati di Traiano e la Torre delle Milizie alle spalle."
+  },
+  {
+    "nome": "P1070663",
+    "viaggio": "roma 2019",
+    "anno": "2019",
+    "data": "10/02/2019",
+    "lat": 41.8938,
+    "lon": 12.4856,
+    "foto": "foto/roma 2019/P1070663.jpg",
+    "descrizione": "Statua bronzea di Giulio Cesare vista di spalle su Via dei Fori Imperiali a Roma, immersa tra le chiome dei pini domestici con la cupola dei Santi Luca e Martina a sinistra e il Vittoriano sulla destra."
+  },
+  {
+    "nome": "P1070664",
+    "viaggio": "roma 2019",
+    "anno": "2019",
+    "data": "10/02/2019",
+    "lat": 41.8926,
+    "lon": 12.4862,
+    "foto": "foto/roma 2019/P1070664.jpg",
+    "descrizione": "Ampia panoramica del Foro Romano e del Foro di Cesare visti da Via dei Fori Imperiali a Roma, con l'edificio in mattoni della Curia Iulia, la cupola barocca dei Santi Luca e Martina, il colonnato del Tempio di Saturno e il Vittoriano in alto a destra."
+  },
+  {
+    "nome": "P1070665",
+    "viaggio": "roma 2019",
+    "anno": "2019",
+    "data": "10/02/2019",
+    "lat": 41.8924,
+    "lon": 12.4864,
+    "foto": "foto/roma 2019/P1070665.jpg",
+    "descrizione": "Allineamento di colonne antiche rialzate su gradinata nell'area archeologica dei Fori a Roma, con vista verso il Foro Romano e le colonne superstiti del Tempio di Saturno ai piedi del Campidoglio."
+  },
+  {
+    "nome": "P1070667",
+    "viaggio": "roma 2019",
+    "anno": "2019",
+    "data": "10/02/2019",
+    "lat": 41.8907,
+    "lon": 12.4912,
+    "foto": "foto/roma 2019/P1070667.jpg",
+    "descrizione": "Dettaglio ravvicinato dell'imponente anello esterno in travertino del Colosseo (Anfiteatro Flavio) a Roma, scandito dai tre ordini di arcate sovrapposte e dall'attico superiore."
+  },
+  {
+    "nome": "P1070684",
+    "viaggio": "roma 2019",
+    "anno": "2019",
+    "data": "11/02/2019",
+    "lat": 42.6269,
+    "lon": 12.1066,
+    "foto": "foto/roma 2019/P1070684.jpg",
+    "descrizione": "Veduta panoramica dal belvedere di Bagnoregio del borgo antico di Civita di Bagnoregio ('la città che muore') arroccato sullo sperone di tufo e argilla, con il campanile romanico di San Donato, la Porta Santa Maria e l'ultimo tratto del ponte pedonale d'accesso."
+  },
+  {
+    "nome": "P1070686",
+    "viaggio": "roma 2019",
+    "anno": "2019",
+    "data": "11/02/2019",
+    "lat": 42.6269,
+    "lon": 12.1066,
+    "foto": "foto/roma 2019/P1070686.jpg",
+    "descrizione": "Luisa in piumino nero con collo di pelliccia in primo piano alla ringhiera del belvedere di Bagnoregio, con la rupe tufacea di Civita di Bagnoregio e il lungo viadotto pedonale sospeso sulla Valle dei Calanchi sullo sfondo."
+  },
+  {
+    "nome": "P1070691",
+    "viaggio": "roma 2019",
+    "anno": "2019",
+    "data": "11/02/2019",
+    "lat": 42.6271,
+    "lon": 12.1095,
+    "foto": "foto/roma 2019/P1070691.jpg",
+    "descrizione": "Vinicio in giacca invernale scura con Leo al guinzaglio sul tratto iniziale del ponte pedonale che conduce alla rupe e al borgo medievale di Civita di Bagnoregio, circondato dai calanchi della vallata."
+  },
+  {
+    "nome": "P1070694",
+    "viaggio": "roma 2019",
+    "anno": "2019",
+    "data": "11/02/2019",
+    "lat": 42.6272,
+    "lon": 12.1102,
+    "foto": "foto/roma 2019/P1070694.jpg",
+    "descrizione": "Scorcio prospettico del lungo viadotto pedonale in salita sostenuto da alti piloni che si inerpica fin sotto le stratificazioni di tufo e l'arco d'ingresso di Porta Santa Maria a Civita di Bagnoregio."
   },
   {
     "nome": "1996-04-04-10H00M00",
@@ -47538,6 +49348,816 @@
     "lon": 23.725512,
     "foto": "foto/ungheria romania turchia 1996/1996-08-22-10h00m00.jpg",
     "descrizione": "Δημοτική Ενότητα Σιθωνίας - Περιφέρεια Κεντρικής Μακεδονίας, Grecia"
+  },
+  {
+    "nome": "2019-04-17-18H49M51",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "17/04/2019",
+    "lat": 44.217222,
+    "lon": 12.178056,
+    "foto": "foto/vienna erding 2019/2019-04-17-18h49m51.jpg",
+    "descrizione": "Interno della zona notte posteriore del camper Elnagh T-Loft 450 pronto per la partenza, con il letto matrimoniale rifatto con lenzuola a motivi floreali, cuscino rosa con un peluche a forma di cagnolino bianco e grigio, pensili bianchi lucidi e specchio sulla testiera."
+  },
+  {
+    "nome": "2019-04-17-18H50M00",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "17/04/2019",
+    "lat": 44.217222,
+    "lon": 12.178056,
+    "foto": "foto/vienna erding 2019/2019-04-17-18h50m00.jpg",
+    "descrizione": "Dettaglio del vano bagno interno del camper Elnagh T-Loft 450, con lavabo circolare bianco integrato nel mobile in legno chiaro, rubinetto cromato, specchiera ad angolo, dispenser per sapone, portaspazzolino e finestra laterale."
+  },
+  {
+    "nome": "2019-04-17-22H01M43",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "17/04/2019",
+    "lat": 45.8285,
+    "lon": 13.045,
+    "foto": "foto/vienna erding 2019/2019-04-17-22h01m43.jpg",
+    "descrizione": "Luisa seduta alla dinette interna del camper Elnagh T-Loft durante la sosta serale per la cena lungo il viaggio verso l'Austria, con il tavolo apparecchiato con tovaglia a righe bianche e rosse, filetti di pollo alle erbe con peperoni, insalata e grissini."
+  },
+  {
+    "nome": "2019-04-18-11H34M59",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "18/04/2019",
+    "lat": 46.524444,
+    "lon": 14.1725,
+    "foto": "foto/vienna erding 2019/2019-04-18-11h34m59.jpg",
+    "descrizione": "Luisa in giacca di pelle nera con Leo al guinzaglio lungo una stradina asfaltata costeggiata da una staccionata in legno e ampi prati verdi a Kirschentheuer (Ferlach), nella valle Rosental in Carinzia, con case tradizionali austriache e alberi in fiore sullo sfondo."
+  },
+  {
+    "nome": "2019-04-18-11H46M27",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "18/04/2019",
+    "lat": 46.5255,
+    "lon": 14.1728,
+    "foto": "foto/vienna erding 2019/2019-04-18-11h46m27.jpg",
+    "descrizione": "Luisa in cardigan rosa con Leo al guinzaglio salito sull'argine erboso lungo una stradina di campagna a Kirschentheuer (Ferlach, Carinzia), con le vette innevate delle Caravanche che svettano sullo sfondo sotto il cielo azzurro primaverile."
+  },
+  {
+    "nome": "2019-04-18-13H31M07",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "18/04/2019",
+    "lat": 46.528889,
+    "lon": 14.173056,
+    "foto": "foto/vienna erding 2019/2019-04-18-13h31m07.jpg",
+    "descrizione": "Vinicio seduto a capotavola all'esterno del camper Elnagh T-Loft 450 per il pranzo nella piazzola erbosa del Radcamping Schütz a Kirschentheuer (Ferlach), con bottiglia di vino rosso in tavola e Leo disteso sull'erba al sole sullo sfondo."
+  },
+  {
+    "nome": "2019-04-18-18H33M41",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "18/04/2019",
+    "lat": 46.5335,
+    "lon": 14.1745,
+    "foto": "foto/vienna erding 2019/2019-04-18-18h33m41.jpg",
+    "descrizione": "Vista panoramica tardo-pomeridiana del Ferlacher Stausee (bacino del fiume Drava) nei pressi di Kirschentheuer e Ferlach in Carinzia, incorniciata dagli alberi sulle sponde con i riflessi del sole sull'acqua e il profilo delle montagne delle Caravanche all'orizzonte."
+  },
+  {
+    "nome": "2019-04-19-16H25M12",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "19/04/2019",
+    "lat": 48.2082,
+    "lon": 16.3735,
+    "foto": "foto/vienna erding 2019/2019-04-19-16h25m12.jpg",
+    "descrizione": "Scorcio dal basso dell'imponente torre meridionale gotica (Südturm) del Duomo di Santo Stefano (Stephansdom) in Stephansplatz a Vienna, con le ricche guglie traforate in pietra chiara che svettano nel cielo azzurro terso e parte della facciata in restauro."
+  },
+  {
+    "nome": "2019-04-19-16H28M03",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "19/04/2019",
+    "lat": 48.2081,
+    "lon": 16.3736,
+    "foto": "foto/vienna erding 2019/2019-04-19-16h28m03.jpg",
+    "descrizione": "Vinicio in camicia a quadretti con borsa a tracolla e Leo al guinzaglio in Stephansplatz a Vienna, davanti alla grandiosa fiancata gotica del Duomo di Santo Stefano (Stephansdom) celebre per il tetto spiovente decorato con maioliche colorate a motivi geometrici."
+  },
+  {
+    "nome": "2019-04-19-16H33M00",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "19/04/2019",
+    "lat": 48.2066,
+    "lon": 16.3721,
+    "foto": "foto/vienna erding 2019/2019-04-19-16h33m00.jpg",
+    "descrizione": "Luisa in polo bianca con collana rossa e Leo al guinzaglio lungo l'elegante via pedonale Kärntner Straße nel centro storico di Vienna, tra i tavolini all'aperto dei caffè con ombrelloni bianchi, la storica pasticceria Sluka e numerosi passanti."
+  },
+  {
+    "nome": "2019-04-19-16H33M11",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "19/04/2019",
+    "lat": 48.2063,
+    "lon": 16.3718,
+    "foto": "foto/vienna erding 2019/2019-04-19-16h33m11.jpg",
+    "descrizione": "Dettaglio dell'elegante insegna metallica e della facciata in vetro e acciaio del flagship store Swarovski Kristallwelten lungo la via pedonale Kärntner Straße a Vienna."
+  },
+  {
+    "nome": "2019-04-19-16H37M48",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "19/04/2019",
+    "lat": 48.2045,
+    "lon": 16.3702,
+    "foto": "foto/vienna erding 2019/2019-04-19-16h37m48.jpg",
+    "descrizione": "Scorcio dal basso di una caratteristica torretta angolare con cupola a cipolla rivestita in ardesia scura e lanternino sommitale su un palazzo storico del centro di Vienna, stagliata contro il cielo azzurro limpido."
+  },
+  {
+    "nome": "2019-04-19-17H32M57",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "19/04/2019",
+    "lat": 48.2087,
+    "lon": 16.3698,
+    "foto": "foto/vienna erding 2019/2019-04-19-17h32m57.jpg",
+    "descrizione": "Dettaglio della sommità dorata della Colonna della Peste (Pestsäule) sul Graben nel centro storico di Vienna, con il gruppo scultoreo barocco della Santissima Trinità avvolto da nubi e cherubini sotto una raggiera splendente."
+  },
+  {
+    "nome": "2019-04-19-18H02M22",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "19/04/2019",
+    "lat": 48.2064,
+    "lon": 16.3638,
+    "foto": "foto/vienna erding 2019/2019-04-19-18h02m22.jpg",
+    "descrizione": "Vinicio con Leo al guinzaglio sul prato verdeggiante dell'Heldenplatz a Vienna, tra rigogliosi cespugli di lillà in fiore e la lunga facciata storico-imperiale dell'ala Leopoldina (Leopoldinischer Trakt) del palazzo dell'Hofburg."
+  },
+  {
+    "nome": "2019-04-19-18H03M46",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "19/04/2019",
+    "lat": 48.2059,
+    "lon": 16.3627,
+    "foto": "foto/vienna erding 2019/2019-04-19-18h03m46.jpg",
+    "descrizione": "Vinicio in posa accanto al tronco di un ippocastano nel parco dell'Heldenplatz a Vienna, con il monumento equestre dell'Arciduca Carlo, la cupola del Kunsthistorisches Museum e il porticato neoclassico del Burgtor sullo sfondo."
+  },
+  {
+    "nome": "2019-04-19-18H05M49",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "19/04/2019",
+    "lat": 48.2055,
+    "lon": 16.3636,
+    "foto": "foto/vienna erding 2019/2019-04-19-18h05m49.jpg",
+    "descrizione": "Ampia veduta panoramica della Neue Burg in Heldenplatz a Vienna, con la monumentale facciata semicircolare a colonnato neoclassico del complesso imperiale dell'Hofburg e il monumento equestre del Principe Eugenio di Savoia."
+  },
+  {
+    "nome": "2019-04-19-18H13M11",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "19/04/2019",
+    "lat": 48.2078,
+    "lon": 16.3662,
+    "foto": "foto/vienna erding 2019/2019-04-19-18h13m11.jpg",
+    "descrizione": "Dettaglio della caratteristica cupola in rame verde e oro della Michaelerkuppel dell'Hofburg in Michaelerplatz a Vienna, preceduta dal fastigio marmoreo con gruppi scultorei allegorici e dall'iscrizione dedicatoria di Francesco Giuseppe I."
+  },
+  {
+    "nome": "2019-04-20-12H06M08",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "20/04/2019",
+    "lat": 48.2074,
+    "lon": 16.365,
+    "foto": "foto/vienna erding 2019/2019-04-20-12h06m08.jpg",
+    "descrizione": "Vinicio in polo rossa con Leo al guinzaglio al centro della corte interna In der Burg (Franzensplatz) del palazzo imperiale dell'Hofburg a Vienna, davanti all'imponente monumento in bronzo dell'Imperatore Francesco I d'Austria."
+  },
+  {
+    "nome": "2019-04-20-12H09M13",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "20/04/2019",
+    "lat": 48.2063,
+    "lon": 16.3635,
+    "foto": "foto/vienna erding 2019/2019-04-20-12h09m13.jpg",
+    "descrizione": "Luisa in maglietta bianca con golfino a righe sulle spalle e Leo al guinzaglio sul prato fiorito di tarassachi in Heldenplatz a Vienna, davanti a grandi cespugli di lillà viola in piena fioritura e alla facciata dell'Hofburg."
+  },
+  {
+    "nome": "2019-04-20-12H22M10",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "20/04/2019",
+    "lat": 48.2075,
+    "lon": 16.3612,
+    "foto": "foto/vienna erding 2019/2019-04-20-12h22m10.jpg",
+    "descrizione": "Luisa con Leo al guinzaglio sul manto erboso del parco Volksgarten a Vienna, incorniciata da rigogliose aiuole di arbusti ornamentali con fioriture primaverili bianche e fucsia."
+  },
+  {
+    "nome": "2019-04-20-12H27M14",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "20/04/2019",
+    "lat": 48.2051,
+    "lon": 16.3675,
+    "foto": "foto/vienna erding 2019/2019-04-20-12h27m14.jpg",
+    "descrizione": "L'elegante struttura liberty in ferro verde e vetro della Palmenhaus (Casa delle Palme e Schmetterlinghaus) ai margini del Burggarten di Vienna, preceduta dal portale monumentale in pietra bianca."
+  },
+  {
+    "nome": "2019-04-20-12H35M19",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "20/04/2019",
+    "lat": 48.2085,
+    "lon": 16.3695,
+    "foto": "foto/vienna erding 2019/2019-04-20-12h35m19.jpg",
+    "descrizione": "Dettaglio della cupola angolare in rame verde di uno storico palazzo sulla via Graben a Vienna, decorata con statue allegoriche in bronzo che sorreggono il globo luminoso delle Assicurazioni Generali."
+  },
+  {
+    "nome": "2019-04-20-12H42M38",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "20/04/2019",
+    "lat": 48.2061,
+    "lon": 16.3665,
+    "foto": "foto/vienna erding 2019/2019-04-20-12h42m38.jpg",
+    "descrizione": "Particolare del gruppo scultoreo barocco sul tetto della Biblioteca Nazionale Austriaca (Prunksaal) in Josefsplatz all'Hofburg di Vienna, con la figura di Atlante che sorregge il grande globo terrestre dorato affiancato da statue allegoriche e strumenti astronomici."
+  },
+  {
+    "nome": "2019-04-20-13H35M33",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "20/04/2019",
+    "lat": 48.2152,
+    "lon": 16.3982,
+    "foto": "foto/vienna erding 2019/2019-04-20-13h35m33.jpg",
+    "descrizione": "I binari rossi intrecciati e i piloni azzurri delle montagne russe 'Megablitz' all'interno del celebre parco divertimenti Wurstelprater di Vienna, sotto il cielo terso primaverile."
+  },
+  {
+    "nome": "2019-04-20-13H40M10",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "20/04/2019",
+    "lat": 48.2156,
+    "lon": 16.3978,
+    "foto": "foto/vienna erding 2019/2019-04-20-13h40m10.jpg",
+    "descrizione": "Vinicio in polo rossa con Leo al guinzaglio lungo un viale acciottolato del parco divertimenti Prater di Vienna, tra stand di dolciumi, sale giochi colorate e la grande ruota panoramica Blumenrad sullo sfondo."
+  },
+  {
+    "nome": "2019-04-20-13H41M35",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "20/04/2019",
+    "lat": 48.2155,
+    "lon": 16.3972,
+    "foto": "foto/vienna erding 2019/2019-04-20-13h41m35.jpg",
+    "descrizione": "Vista dal basso della giostra ad alta quota con torre bianca e anello giallo rotante al Prater di Vienna, con i passeggeri seduti con le gambe sospese nel vuoto contro il cielo azzurro."
+  },
+  {
+    "nome": "2019-04-20-13H45M39",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "20/04/2019",
+    "lat": 48.2159,
+    "lon": 16.3965,
+    "foto": "foto/vienna erding 2019/2019-04-20-13h45m39.jpg",
+    "descrizione": "Scorcio dal basso della grande ruota panoramica bianca Blumenrad al Prater di Vienna, caratterizzata dal grande fiore colorato al centro dei raggi e dalle gondole aperte."
+  },
+  {
+    "nome": "2019-04-20-13H58M03",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "20/04/2019",
+    "lat": 48.2144,
+    "lon": 16.4001,
+    "foto": "foto/vienna erding 2019/2019-04-20-13h58m03.jpg",
+    "descrizione": "Spettacolare impatto in acqua con grandi spruzzi bianchi di un'imbarcazione al termine della discesa sull'attrazione acquatica 'Aqua Gaudi' al parco divertimenti Prater di Vienna."
+  },
+  {
+    "nome": "2019-04-21-10H54M38",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "21/04/2019",
+    "lat": 48.2063,
+    "lon": 16.3852,
+    "foto": "foto/vienna erding 2019/2019-04-21-10h54m38.jpg",
+    "descrizione": "La moderna facciata grigia decorata da un intreccio geometrico di fasce bianche dell'edificio del centro commerciale The Mall presso il nodo ferroviario e metropolitano di Wien Mitte-Landstraße a Vienna."
+  },
+  {
+    "nome": "2019-04-21-11H11M22",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "21/04/2019",
+    "lat": 48.2073,
+    "lon": 16.3941,
+    "foto": "foto/vienna erding 2019/2019-04-21-11h11m22.jpg",
+    "descrizione": "La celebre facciata multicolore dalle linee ondulate della Hundertwasserhaus a Vienna (all'angolo tra Kegelgasse e Löwengasse), arricchita da colonne in ceramica smaltata, finestre irregolari e alberi che crescono su balconi e terrazze."
+  },
+  {
+    "nome": "2019-04-21-11H11M48",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "21/04/2019",
+    "lat": 48.2072,
+    "lon": 16.3941,
+    "foto": "foto/vienna erding 2019/2019-04-21-11h11m48.jpg",
+    "descrizione": "Scorcio dell'ingresso porticato e della terrazza del 'Terrassencafé im Hundertwasserhaus' lungo Kegelgasse a Vienna, sorretto dalle caratteristiche colonne colorate in ceramica e affiancato da un edificio dipinto a fasce ondulate gialle e arancioni."
+  },
+  {
+    "nome": "2019-04-21-11H12M27",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "21/04/2019",
+    "lat": 48.2072,
+    "lon": 16.3942,
+    "foto": "foto/vienna erding 2019/2019-04-21-11h12m27.jpg",
+    "descrizione": "Dettaglio del passaggio pedonale coperto sotto la Hundertwasserhaus a Vienna, caratterizzato dalla pavimentazione ondulata in cubetti di porfido e dalle colonne panciute rivestite in ceramica rossa, bianca e argento."
+  },
+  {
+    "nome": "2019-04-21-11H12M56",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "21/04/2019",
+    "lat": 48.2073,
+    "lon": 16.3943,
+    "foto": "foto/vienna erding 2019/2019-04-21-11h12m56.jpg",
+    "descrizione": "Scorcio dal basso delle pareti azzurre e gialle dalle linee morbide e asimmetriche della Hundertwasserhaus a Vienna, circondate dalle chiome verdi degli alberi primaverili."
+  },
+  {
+    "nome": "2019-04-21-11H13M24",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "21/04/2019",
+    "lat": 48.2073,
+    "lon": 16.3944,
+    "foto": "foto/vienna erding 2019/2019-04-21-11h13m24.jpg",
+    "descrizione": "Luisa in cardigan rosa e pantaloni chiari con Leo al guinzaglio sulla pavimentazione sconnessa in pietra davanti al muretto ricurvo in mattoni e alla facciata colorata della Hundertwasserhaus a Vienna."
+  },
+  {
+    "nome": "2019-04-21-11H13M36",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "21/04/2019",
+    "lat": 48.2074,
+    "lon": 16.3943,
+    "foto": "foto/vienna erding 2019/2019-04-21-11h13m36.jpg",
+    "descrizione": "Dettaglio architettonico della facciata della Hundertwasserhaus a Vienna, con intonaci color pastello, balconcino bombato, inserti irregolari di tessere a mosaico specchianti e a scacchiera e piante rampicanti."
+  },
+  {
+    "nome": "2019-04-21-11H14M08",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "21/04/2019",
+    "lat": 48.2075,
+    "lon": 16.3942,
+    "foto": "foto/vienna erding 2019/2019-04-21-11h14m08.jpg",
+    "descrizione": "La caratteristica fontana a più vasche con zampilli d'acqua e fondo decorato a mosaico colorato sotto il portico d'ingresso della Hundertwasserhaus a Vienna."
+  },
+  {
+    "nome": "2019-04-21-11H15M02",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "21/04/2019",
+    "lat": 48.2074,
+    "lon": 16.3938,
+    "foto": "foto/vienna erding 2019/2019-04-21-11h15m02.jpg",
+    "descrizione": "L'ingresso della galleria commerciale e artistica 'Hundertwasser Village' in Kegelgasse a Vienna, sormontato dall'insegna luminosa al neon blu e da una terrazza pensile alberata."
+  },
+  {
+    "nome": "2019-04-21-11H18M37",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "21/04/2019",
+    "lat": 48.2075,
+    "lon": 16.3941,
+    "foto": "foto/vienna erding 2019/2019-04-21-11h18m37.jpg",
+    "descrizione": "Vinicio in polo azzurra in primo piano lungo l'isola pedonale alberata davanti alla facciata multicolore della Hundertwasserhaus a Vienna, animata da numerosi visitatori."
+  },
+  {
+    "nome": "2019-04-21-12H55M51",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "21/04/2019",
+    "lat": 48.136111,
+    "lon": 16.315,
+    "foto": "foto/vienna erding 2019/2019-04-21-12h55m51.jpg",
+    "descrizione": "Luisa seduta a tavola all'esterno del camper Elnagh T-Loft 450 per il pranzo di Pasqua sulla piazzola erbosa dell'area sosta Reisemobilstellplatz Wien in Perfektastraße a Vienna, con il trasportino di Leo accanto."
+  },
+  {
+    "nome": "2019-04-21-12H56M10",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "21/04/2019",
+    "lat": 48.135556,
+    "lon": 16.315556,
+    "foto": "foto/vienna erding 2019/2019-04-21-12h56m10.jpg",
+    "descrizione": "Primo piano del piatto di costolette d'agnello arrosto guarnite con spicchi di limone, servito in tavola per il pranzo pasquale all'area sosta camper di Vienna."
+  },
+  {
+    "nome": "2019-04-22-11H33M26",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "22/04/2019",
+    "lat": 48.257,
+    "lon": 14.5008,
+    "foto": "foto/vienna erding 2019/2019-04-22-11h33m26.jpg",
+    "descrizione": "Mura perimetrali in blocchi di granito, torretta di guardia e ciminiera in mattoni del Memoriale del campo di concentramento di Mauthausen (KZ-Gedenkstätte Mauthausen), viste dal tetto inverdito del centro visitatori."
+  },
+  {
+    "nome": "2019-04-22-11H38M40",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "22/04/2019",
+    "lat": 48.241389,
+    "lon": 14.513611,
+    "foto": "foto/vienna erding 2019/2019-04-22-11h38m40.jpg",
+    "descrizione": "Pontile d'attracco fluviale (Anlegestelle Mauthausen) lungo la sponda del fiume Danubio a Mauthausen, con l'insegna arcuata recante lo stemma cittadino, la bacheca informativa e la riva boscosa opposta."
+  },
+  {
+    "nome": "2019-04-22-11H42M02",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "22/04/2019",
+    "lat": 48.2573,
+    "lon": 14.5011,
+    "foto": "foto/vienna erding 2019/2019-04-22-11h42m02.jpg",
+    "descrizione": "Piazzale esterno e portale d'ingresso fortificato in pietra del campo di concentramento di Mauthausen, fiancheggiato dalla torretta circolare e dall'alta torre di guardia quadrata sotto il cielo azzurro."
+  },
+  {
+    "nome": "2019-04-22-11H43M11",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "22/04/2019",
+    "lat": 48.2574,
+    "lon": 14.5009,
+    "foto": "foto/vienna erding 2019/2019-04-22-11h43m11.jpg",
+    "descrizione": "Vista ravvicinata del portone d'ingresso ad arco (Jourhaus) nelle mura di granito del Memoriale di Mauthausen, aperto sul cortile interno dei garage delle SS."
+  },
+  {
+    "nome": "2019-04-22-11H45M20",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "22/04/2019",
+    "lat": 48.2578,
+    "lon": 14.4995,
+    "foto": "foto/vienna erding 2019/2019-04-22-11h45m20.jpg",
+    "descrizione": "L'area dei monumenti commemorativi internazionali all'esterno della cinta muraria del campo di Mauthausen, con il grande monolito bianco in primo piano e gli obelischi dedicati alle vittime sullo sfondo."
+  },
+  {
+    "nome": "2019-04-22-11H45M52",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "22/04/2019",
+    "lat": 48.2572,
+    "lon": 14.5003,
+    "foto": "foto/vienna erding 2019/2019-04-22-11h45m52.jpg",
+    "descrizione": "Scorcio attraverso l'arco in pietra del portone principale di Mauthausen verso il lungo piazzale dell'appello (Appellplatz), fiancheggiato dalle baracche in legno verdi."
+  },
+  {
+    "nome": "2019-04-22-11H46M25",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "22/04/2019",
+    "lat": 48.2572,
+    "lon": 14.5004,
+    "foto": "foto/vienna erding 2019/2019-04-22-11h46m25.jpg",
+    "descrizione": "Il Muro del Pianto (Klagemauer) appena oltre l'ingresso del campo di Mauthausen, sormontato dal filo spinato con isolatori e ricoperto di lapidi commemorative in marmo e granito in memoria dei deportati."
+  },
+  {
+    "nome": "2019-04-22-11H47M55",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "22/04/2019",
+    "lat": 48.2571,
+    "lon": 14.5001,
+    "foto": "foto/vienna erding 2019/2019-04-22-11h47m55.jpg",
+    "descrizione": "Interno spoglio di una delle baracche in legno dei prigionieri a Mauthausen, con le pareti scure in perlinato, tracce di vernice scrostata e due finestre affacciate sul verde esterno."
+  },
+  {
+    "nome": "2019-04-22-11H49M51",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "22/04/2019",
+    "lat": 48.257,
+    "lon": 14.5002,
+    "foto": "foto/vienna erding 2019/2019-04-22-11h49m51.jpg",
+    "descrizione": "Sala commemorativa interna con soffitto a capriate e pilastri in legno nel Memoriale di Mauthausen, allestita con le bandiere nazionali dei paesi delle vittime e cippi in granito."
+  },
+  {
+    "nome": "2019-04-22-11H52M18",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "22/04/2019",
+    "lat": 48.2574,
+    "lon": 14.4999,
+    "foto": "foto/vienna erding 2019/2019-04-22-11h52m18.jpg",
+    "descrizione": "Locale dei lavatoi all'interno di una baracca in legno del campo di concentramento di Mauthausen, con le due caratteristiche vasche circolari collettive in cemento grigio al centro della stanza."
+  },
+  {
+    "nome": "2019-04-22-12H04M13",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "22/04/2019",
+    "lat": 48.2568,
+    "lon": 14.5005,
+    "foto": "foto/vienna erding 2019/2019-04-22-12h04m13.jpg",
+    "descrizione": "Struttura in mattoni refrattari e profili in ferro del forno crematorio all'interno del Memoriale del campo di concentramento di Mauthausen, con i due sportelli metallici superiori di caricamento aperti."
+  },
+  {
+    "nome": "2019-04-22-12H04M35",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "22/04/2019",
+    "lat": 48.2568,
+    "lon": 14.5005,
+    "foto": "foto/vienna erding 2019/2019-04-22-12h04m35.jpg",
+    "descrizione": "Bacheca commemorativa in legno e vetro nel Memoriale di Mauthausen che raccoglie decine di fotografie segnaletiche, nomi, date e gagliardetti comunali (tra cui Sesto San Giovanni) in memoria dei deportati italiani caduti nel campo."
+  },
+  {
+    "nome": "2019-04-22-12H04M51",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "22/04/2019",
+    "lat": 48.2568,
+    "lon": 14.5005,
+    "foto": "foto/vienna erding 2019/2019-04-22-12h04m51.jpg",
+    "descrizione": "Parte frontale del forno crematorio a doppia bocca in mattoni e ghisa nel campo di concentramento di Mauthausen, con le porte metalliche aperte, i carrelli di introduzione, un lumino acceso e targhe commemorative alla base."
+  },
+  {
+    "nome": "2019-04-22-12H06M18",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "22/04/2019",
+    "lat": 48.2569,
+    "lon": 14.5006,
+    "foto": "foto/vienna erding 2019/2019-04-22-12h06m18.jpg",
+    "descrizione": "La suggestiva 'Sala dei Nomi' (Raum der Namen) nel museo sotterraneo del Memoriale di Mauthausen, con le lunghe lastre in vetro nero retroilluminate su cui sono incisi i nomi di oltre 81.000 vittime."
+  },
+  {
+    "nome": "2019-04-22-12H06M24",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "22/04/2019",
+    "lat": 48.2569,
+    "lon": 14.5006,
+    "foto": "foto/vienna erding 2019/2019-04-22-12h06m24.jpg",
+    "descrizione": "Dettaglio ravvicinato delle scritte luminose bianche su sfondo nero nella Sala dei Nomi a Mauthausen, con l'elenco dei deportati di diverse nazionalità e alfabeti deceduti nel campo."
+  },
+  {
+    "nome": "2019-04-22-12H09M20",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "22/04/2019",
+    "lat": 48.2569,
+    "lon": 14.5006,
+    "foto": "foto/vienna erding 2019/2019-04-22-12h09m20.jpg",
+    "descrizione": "Luisa con la mappa del sito in mano mentre consulta i grandi registri cartacei illuminati con l'elenco alfabetico dei caduti (tra cui numerosi cognomi italiani) nella Sala dei Nomi del Memoriale di Mauthausen."
+  },
+  {
+    "nome": "2019-04-22-12H10M08",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "22/04/2019",
+    "lat": 48.2568,
+    "lon": 14.5004,
+    "foto": "foto/vienna erding 2019/2019-04-22-12h10m08.jpg",
+    "descrizione": "Corridoio sotterraneo e pesante porta stagna in metallo con spioncino che conduce dalla cella di immissione del gas (Gaszelle) alla camera a gas del campo di concentramento di Mauthausen."
+  },
+  {
+    "nome": "2019-04-22-12H10M25",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "22/04/2019",
+    "lat": 48.2568,
+    "lon": 14.5004,
+    "foto": "foto/vienna erding 2019/2019-04-22-12h10m25.jpg",
+    "descrizione": "Interno della camera a gas (Gaskammer) del campo di Mauthausen, con le pareti rivestite di piastrelle bianche, le serpentine di riscaldamento a parete e le tubature sul soffitto che simulavano una sala docce."
+  },
+  {
+    "nome": "2019-04-22-12H10M48",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "22/04/2019",
+    "lat": 48.2568,
+    "lon": 14.5004,
+    "foto": "foto/vienna erding 2019/2019-04-22-12h10m48.jpg",
+    "descrizione": "Pannello informativo bilingue in tedesco e inglese all'ingresso della cella del gas (Gaszelle) e della camera a gas (Gaskammer) a Mauthausen, dove tra il marzo 1942 e l'aprile 1945 furono assassinate almeno 3.455 persone."
+  },
+  {
+    "nome": "2019-04-22-12H12M27",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "22/04/2019",
+    "lat": 48.2569,
+    "lon": 14.5005,
+    "foto": "foto/vienna erding 2019/2019-04-22-12h12m27.jpg",
+    "descrizione": "Targa storica in metallo con la scritta 'Krematorium' in rilievo nero su fondo chiaro, affissa sulla parete esterna dell'edificio dei forni crematori nel campo di Mauthausen."
+  },
+  {
+    "nome": "2019-04-22-12H12M41",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "22/04/2019",
+    "lat": 48.2571,
+    "lon": 14.5005,
+    "foto": "foto/vienna erding 2019/2019-04-22-12h12m41.jpg",
+    "descrizione": "Dettaglio dei fili spinati elettrificati sorretti da una staffa metallica angolare con isolatori in ceramica bianca sopra il muro perimetrale in granito del campo di Mauthausen, contro il cielo azzurro."
+  },
+  {
+    "nome": "2019-04-22-12H14M10",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "22/04/2019",
+    "lat": 48.2573,
+    "lon": 14.5008,
+    "foto": "foto/vienna erding 2019/2019-04-22-12h14m10.jpg",
+    "descrizione": "Scorcio dal basso del muro di cinta in blocchi di pietra sormontato dal filo spinato e di una delle torrette di guardia angolari in granito del campo di concentramento di Mauthausen."
+  },
+  {
+    "nome": "2019-04-22-12H16M19",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "22/04/2019",
+    "lat": 48.2574,
+    "lon": 14.501,
+    "foto": "foto/vienna erding 2019/2019-04-22-12h16m19.jpg",
+    "descrizione": "Targa commemorativa in marmo bianco affissa sulla muratura in pietra a Mauthausen, dedicata alla 65ª Divisione di Fanteria dell'Esercito statunitense e al 131° Ospedale di Evacuazione per il soccorso prestato ai sopravvissuti durante la liberazione nel maggio 1945."
+  },
+  {
+    "nome": "2019-04-22-13H20M52",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "22/04/2019",
+    "lat": 47.830278,
+    "lon": 13.364722,
+    "foto": "foto/vienna erding 2019/2019-04-22-13h20m52.jpg",
+    "descrizione": "Luisa lungo il viale interno del campeggio sulle rive del lago Mondsee mentre tiene al guinzaglio Leo, seduto ad annusare un grande cane bovaro, con camper parcheggiati sulle piazzole erbose e una passante in abito tradizionale Dirndl sullo sfondo."
+  },
+  {
+    "nome": "2019-04-22-14H31M30",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "22/04/2019",
+    "lat": 47.830556,
+    "lon": 13.365556,
+    "foto": "foto/vienna erding 2019/2019-04-22-14h31m30.jpg",
+    "descrizione": "Il camper Elnagh T-Loft 450 posizionato sulla piazzola fronte lago presso il campeggio sul Mondsee (Salzkammergut), con il tavolo da pranzo apparecchiato all'aperto, Leo accanto al suo trasportino e una barca a vela ormeggiata sullo specchio d'acqua."
+  },
+  {
+    "nome": "2019-04-22-14H32M03",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "22/04/2019",
+    "lat": 47.830556,
+    "lon": 13.365556,
+    "foto": "foto/vienna erding 2019/2019-04-22-14h32m03.jpg",
+    "descrizione": "Veduta della riva erbosa alberata e delle acque calme del lago Mondsee dalla piazzola del campeggio, con una barca a vela bianca alla fonda, piccoli natanti, il canneto e le colline boscose sulla sponda opposta."
+  },
+  {
+    "nome": "2019-04-22-14H33M35",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "22/04/2019",
+    "lat": 47.830278,
+    "lon": 13.365556,
+    "foto": "foto/vienna erding 2019/2019-04-22-14h33m35.jpg",
+    "descrizione": "Primo piano del tavolo apparecchiato all'aperto per il pranzo in riva al lago Mondsee, con un piatto di gnocchi cremosi al salmone e prezzemolo, affettati misti, pane, vino bianco e una bottiglia di birra scura austriaca Wieselburger Schwarzbier, mentre Luisa serve l'insalata."
+  },
+  {
+    "nome": "2019-04-22-15H07M41",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "22/04/2019",
+    "lat": 47.830833,
+    "lon": 13.366389,
+    "foto": "foto/vienna erding 2019/2019-04-22-15h07m41.jpg",
+    "descrizione": "Panoramica del lago Mondsee con un cigno bianco che nuota vicino alla riva, una barca a vela ormeggiata e l'inconfondibile profilo roccioso e appuntito del monte Schafberg che svetta all'orizzonte."
+  },
+  {
+    "nome": "2019-04-22-19H41M56",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "22/04/2019",
+    "lat": 47.8285,
+    "lon": 13.362,
+    "foto": "foto/vienna erding 2019/2019-04-22-19h41m56.jpg",
+    "descrizione": "Ampio prato verde illuminato dalla luce calda del tardo pomeriggio nei pressi del lago Mondsee, sovrastato dall'imponente parete rocciosa calcarea della Drachenwand."
+  },
+  {
+    "nome": "2019-04-22-19H54M30",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "22/04/2019",
+    "lat": 47.8306,
+    "lon": 13.3658,
+    "foto": "foto/vienna erding 2019/2019-04-22-19h54m30.jpg",
+    "descrizione": "Scorcio serale della sponda erbosa del lago Mondsee con le lunghe ombre degli alberi al tramonto, una barca a vela sull'acqua blu intensa e il massiccio dello Schafberg illuminato dal sole sulla destra."
+  },
+  {
+    "nome": "2019-04-23-07H08M14",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "23/04/2019",
+    "lat": 47.8306,
+    "lon": 13.3658,
+    "foto": "foto/vienna erding 2019/2019-04-23-07h08m14.jpg",
+    "descrizione": "Suggestiva alba sul lago Mondsee vista dalla riva del campeggio, con le sagome scure degli alberi in controluce, una barca a vela ormeggiata e i caldi riflessi arancioni del cielo mattutino sull'acqua."
+  },
+  {
+    "nome": "2019-04-23-07H13M08",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "23/04/2019",
+    "lat": 47.8303,
+    "lon": 13.365,
+    "foto": "foto/vienna erding 2019/2019-04-23-07h13m08.jpg",
+    "descrizione": "Piazzole in ghiaia e moderni bungalow in legno affacciati sul lago Mondsee alle prime luci del mattino, circondati da siepi e alberi primaverili."
+  },
+  {
+    "nome": "2019-04-23-11H34M34",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "23/04/2019",
+    "lat": 48.292222,
+    "lon": 11.885833,
+    "foto": "foto/vienna erding 2019/2019-04-23-11h34m34.jpg",
+    "descrizione": "Parte posteriore del camper Elnagh T-Loft 450 in sosta nell'area camper Wohnmobilpark Therme Erding in Baviera, con vista sull'ingresso del parcheggio e sui grandi silos multipiano del complesso termale."
+  },
+  {
+    "nome": "2019-04-23-11H34M50",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "23/04/2019",
+    "lat": 48.292222,
+    "lon": 11.885833,
+    "foto": "foto/vienna erding 2019/2019-04-23-11h34m50.jpg",
+    "descrizione": "Vista frontale del camper Elnagh T-Loft 450 parcheggiato sulla piazzola in ghiaia presso le Terme di Erding, con il grande edificio decorato del complesso termale, i parcheggi multipiano circolari e la casetta in legno della reception sullo sfondo."
+  },
+  {
+    "nome": "2019-04-24-12H16M17",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "24/04/2019",
+    "lat": 47.6844,
+    "lon": 12.8016,
+    "foto": "foto/vienna erding 2019/2019-04-24-12h16m17.jpg",
+    "descrizione": "Tratto della Strada Alpina Tedesca (Deutsche Alpenstraße B305) a Schneizlreuth in Baviera, con la locanda tradizionale Gasthof Wurznwirt ai piedi delle imponenti pareti rocciose calcaree."
+  },
+  {
+    "nome": "2019-04-24-12H20M11",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "24/04/2019",
+    "lat": 47.6595,
+    "lon": 12.785,
+    "foto": "foto/vienna erding 2019/2019-04-24-12h20m11.jpg",
+    "descrizione": "Carreggiata della strada alpina B305 immersa tra verdi prati primaverili e boschi di conifere in direzione di Ramsau bei Berchtesgaden, con le vette innevate delle Alpi di Berchtesgaden all'orizzonte."
+  },
+  {
+    "nome": "2019-04-24-12H28M37",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "24/04/2019",
+    "lat": 47.6322,
+    "lon": 12.7485,
+    "foto": "foto/vienna erding 2019/2019-04-24-12h28m37.jpg",
+    "descrizione": "Vista panoramica lungo la strada B305 nei pressi di Schneizlreuth/Unterjettenberg con un edificio rurale giallo a sinistra e la grandiosa catena rocciosa innevata del Reiter Alpe che domina la vallata."
+  },
+  {
+    "nome": "2019-04-24-12H39M48",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "24/04/2019",
+    "lat": 47.619,
+    "lon": 12.6915,
+    "foto": "foto/vienna erding 2019/2019-04-24-12h39m48.jpg",
+    "descrizione": "Veduta pittoresca della chiesa parrocchiale con il caratteristico campanile bianco a cipolla rossa tra Unken e Lofer, incorniciata dalle cime innevate dei Monti dello Stein sotto il cielo terso."
+  },
+  {
+    "nome": "2019-04-24-12H40M26",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "24/04/2019",
+    "lat": 47.619,
+    "lon": 12.6915,
+    "foto": "foto/vienna erding 2019/2019-04-24-12h40m26.jpg",
+    "descrizione": "Dettaglio ravvicinato della cuspide barocca a doppia cipolla rivestita in scandole di legno rosse e dell'orologio del campanile alpino, stagliato contro le pareti rocciose innevate."
+  },
+  {
+    "nome": "2019-04-24-13H14M16",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "24/04/2019",
+    "lat": 47.5515,
+    "lon": 12.592,
+    "foto": "foto/vienna erding 2019/2019-04-24-13h14m16.jpg",
+    "descrizione": "Lungo rettilineo stradale tra verdi pascoli alpini e fienili in legno lungo la Loferer Straße (B178) in Tirolo, diretto verso le imponenti vette innevate del massiccio del Wilder Kaiser."
+  },
+  {
+    "nome": "2019-04-24-13H21M54",
+    "viaggio": "vienna erding 2019",
+    "anno": "2019",
+    "data": "24/04/2019",
+    "lat": 47.5235,
+    "lon": 12.4285,
+    "foto": "foto/vienna erding 2019/2019-04-24-13h21m54.jpg",
+    "descrizione": "Panoramica dalla Loferer Straße (B178) nei pressi di Sankt Johann in Tirol ed Ellmau durante il viaggio di rientro verso il Brennero, con ampi prati verdi, grandi fattorie tirolesi e i pendii innevati con le piste da sci del Kitzbüheler Horn e dell'Hartkaiser sullo sfondo."
   },
   {
     "nome": "2021-07-05-10H54M49",

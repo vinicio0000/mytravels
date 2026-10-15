@@ -55,6 +55,12 @@
     "Wyoming"
   ],
   "dettaglio_per_viaggio": {
+    "abruzzo 2020": {
+      "paesi": [
+        "Italia"
+      ],
+      "stati_usa": []
+    },
     "africa 2018": {
       "paesi": [
         "Etiopia",
@@ -156,6 +162,12 @@
       "stati_usa": []
     },
     "garda ledro molveno 2021": {
+      "paesi": [
+        "Italia"
+      ],
+      "stati_usa": []
+    },
+    "gargano 2020": {
       "paesi": [
         "Italia"
       ],
@@ -271,6 +283,13 @@
       ],
       "stati_usa": []
     },
+    "istria dolomiti 2019": {
+      "paesi": [
+        "Croazia",
+        "Italia"
+      ],
+      "stati_usa": []
+    },
     "madrid 2011": {
       "paesi": [
         "Spagna"
@@ -305,6 +324,12 @@
     "praga 2024": {
       "paesi": [
         "Repubblica Ceca"
+      ],
+      "stati_usa": []
+    },
+    "roma 2019": {
+      "paesi": [
+        "Italia"
       ],
       "stati_usa": []
     },
@@ -480,6 +505,15 @@
         "Romania",
         "Turchia",
         "Ungheria"
+      ],
+      "stati_usa": []
+    },
+    "vienna erding 2019": {
+      "paesi": [
+        "Austria",
+        "Germania",
+        "Italia",
+        "Slovenia"
       ],
       "stati_usa": []
     },
