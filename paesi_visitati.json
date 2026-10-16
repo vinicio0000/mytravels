@@ -1,10 +1,11 @@
 {
-  "totale_paesi_visitati": 36,
+  "totale_paesi_visitati": 38,
   "totale_stati_usa_visitati": 13,
   "lista_paesi": [
     "Albania",
     "Arabia Saudita",
     "Austria",
+    "Belgio",
     "Bulgaria",
     "Croazia",
     "Egitto",
@@ -25,6 +26,7 @@
     "Marocco",
     "Norvegia",
     "Oman",
+    "Paesi Bassi",
     "Portogallo",
     "Regno Unito",
     "Repubblica Ceca",
@@ -70,6 +72,13 @@
       ],
       "stati_usa": []
     },
+    "amsterdam 2011": {
+      "paesi": [
+        "Germania",
+        "Paesi Bassi"
+      ],
+      "stati_usa": []
+    },
     "austria praga 2007": {
       "paesi": [
         "Austria",
@@ -80,6 +89,12 @@
     "borneo 2012": {
       "paesi": [
         "Malesia"
+      ],
+      "stati_usa": []
+    },
+    "bruxelles 2012": {
+      "paesi": [
+        "Belgio"
       ],
       "stati_usa": []
     },
@@ -327,6 +342,12 @@
       ],
       "stati_usa": []
     },
+    "roma 2006": {
+      "paesi": [
+        "Italia"
+      ],
+      "stati_usa": []
+    },
     "roma 2019": {
       "paesi": [
         "Italia"
@@ -444,6 +465,12 @@
       ],
       "stati_usa": []
     },
+    "spello 2012": {
+      "paesi": [
+        "Italia"
+      ],
+      "stati_usa": []
+    },
     "stati uniti 2004": {
       "paesi": [
         "Stati Uniti d'America"
@@ -506,6 +533,12 @@
     "tunisia 2012": {
       "paesi": [
         "Tunisia"
+      ],
+      "stati_usa": []
+    },
+    "turchia 2010": {
+      "paesi": [
+        "Turchia"
       ],
       "stati_usa": []
     },
