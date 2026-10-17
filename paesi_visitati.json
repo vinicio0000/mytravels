@@ -116,6 +116,14 @@
       ],
       "stati_usa": []
     },
+    "chicago 2014": {
+      "paesi": [
+        "Stati Uniti d'America"
+      ],
+      "stati_usa": [
+        "Illinois"
+      ]
+    },
     "cielo verde 2022": {
       "paesi": [
         "Italia"
@@ -201,6 +209,12 @@
       "stati_usa": []
     },
     "germania 2006": {
+      "paesi": [
+        "Germania"
+      ],
+      "stati_usa": []
+    },
+    "germania 2014": {
       "paesi": [
         "Germania"
       ],
