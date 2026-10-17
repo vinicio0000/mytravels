@@ -1438,7 +1438,7 @@ function selezionaViaggioEChiudi(nomeViaggio) {
     const clusterGroup = L.markerClusterGroup({ 
       disableClusteringAtZoom: 11,
       maxClusterRadius: 30,
-      removeOutsideVisibleBounds: false
+      removeOutsideVisibleBounds: true
     });
     const singleGroup = L.layerGroup();
     
@@ -1803,6 +1803,24 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       mostraSlide(currentSlideIndex);
     }
 
+    
+	// 1. SISTEMA DI CACHE PER LE ICONE (Incollalo subito PRIMA di aggiornaMappa)
+    const cacheIcone = {};
+
+    function ottieniIconaInCache(coloreHex, isBig = false) {
+      const taglia = document.getElementById('select-dimensione-pin') ? document.getElementById('select-dimensione-pin').value : 'standard';
+      // Creiamo una chiave unica basata su colore, taglia e ingrandimento
+      const cacheKey = coloreHex + '_' + taglia + '_' + isBig;
+      
+      // Se l'icona non esiste in memoria, la crea una volta sola
+      if (!cacheIcone[cacheKey]) {
+        cacheIcone[cacheKey] = creaIconaColorata(coloreHex, isBig);
+      }
+      return cacheIcone[cacheKey]; // Restituisce l'oggetto già pronto
+    }
+
+
+    // 2. LA FUNZIONE AGGIORNATA
     function aggiornaMappa() {
       const annoSel = document.getElementById('select-anno').value;
       const viaggioSel = document.getElementById('select-viaggio').value;
@@ -1833,6 +1851,9 @@ function selezionaViaggioEChiudi(nomeViaggio) {
       calcolaReport(datiFiltrati);
 
       const puntiValidi = [];
+      
+      // IMPORTANTE: Array temporaneo per l'inserimento massivo nel cluster
+      const markerDaRaggruppare = [];
 
       datiFiltrati.forEach((p) => {
         const lat = parseFloat(p.lat);
@@ -1840,8 +1861,10 @@ function selezionaViaggioEChiudi(nomeViaggio) {
 
         if (!isNaN(lat) && !isNaN(lon)) {
           let coloreHex = mappaColoriAnni[p.anno] || '#007bff';
+          
+          // Uso la cache per non "sovraccaricare" il browser creando migliaia di icone
           let opzioniMarker = {
-            icon: creaIconaColorata(coloreHex)
+            icon: ottieniIconaInCache(coloreHex, false)
           };
 
           const marker = L.marker([lat, lon], opzioniMarker);
@@ -1849,7 +1872,6 @@ function selezionaViaggioEChiudi(nomeViaggio) {
 
           marker.on('click', function(e) {
             chiudiTooltip(false);
-
             if (isSlideshowActive) {
               if (marker.isPopupOpen()) {
                 marker.closePopup();
@@ -1890,7 +1912,8 @@ function selezionaViaggioEChiudi(nomeViaggio) {
           marker.bindPopup(popupContent, { autoPan: false });
 
           if (viaggioSel === 'tutti' && usaClusterCheckbox) {
-            clusterGroup.addLayer(marker);
+            // Push nell'array temporaneo anziché calcolare subito il cluster
+            markerDaRaggruppare.push(marker);
           } else {
             singleGroup.addLayer(marker);
           }
@@ -1901,6 +1924,11 @@ function selezionaViaggioEChiudi(nomeViaggio) {
         }
       });
 
+      // INSERIMENTO MASSIVO: Esegue i calcoli della mappa una sola volta!
+      if (markerDaRaggruppare.length > 0) {
+        clusterGroup.addLayers(markerDaRaggruppare);
+      }
+
       if (puntiValidi.length > 0 && !isSlideshowActive) {
         if (viaggioSel !== 'tutti') {
           fermaPanIniziale();
@@ -1909,6 +1937,9 @@ function selezionaViaggioEChiudi(nomeViaggio) {
         }
       }
     }
+
+
+
 
     function avviaSlideshow() {
       if (markersSlideshow.length === 0) return;
@@ -1963,10 +1994,12 @@ function selezionaViaggioEChiudi(nomeViaggio) {
 
       map.invalidateSize({ pan: false });
 
+    // DENTRO mostraSlide()
       markersSlideshow.forEach((m, idx) => {
         const p = puntiSlideshow[idx];
         const col = mappaColoriAnni[p.anno] || '#007bff';
-        m.setIcon(creaIconaColorata(col, false));
+        // Utilizziamo la cache invece di chiamare creaIconaColorata
+        m.setIcon(ottieniIconaInCache(col, false)); 
       });
 
       const activeMarker = markersSlideshow[index];
